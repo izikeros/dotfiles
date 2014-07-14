@@ -1,0 +1,34 @@
+# screenrc file
+
+# no annoying audible bell, please
+vbell on
+
+# detach on hangup
+autodetach on
+
+# don't display the copyright page
+startup_message off
+
+# emulate .logout message
+pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
+
+defscrollback 1000
+
+bind + resize +1
+bind - resize -1
+bind r screen -t '% |root:' su
+bind ^e screen -t '% |vim:' vim ./
+
+# Bind F11 and F12 (NOT F1 and F2) to previous and next screen window
+bind -k F1 prev
+bind -k F2 next
+
+#attrcolor u "-u b"
+#attrcolor b "R"
+
+
+hardstatus alwayslastline                                                                                                                          
+#hardstatus string '%{= kG}%-Lw%{= Gk}%50>%n%f* %t%{= kG}%+Lw%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
+hardstatus string '%{= kg}[ %{G}%H %{g}][%= %{= kG}%?%-Lw%?%{=b kr}(%{g}%n*%f %t%?(%u)%?%{=b kr})%{= kG}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}][%{B}%Y-%m-%d %{G}%c:%s%{-}%{g}]'
+
+
