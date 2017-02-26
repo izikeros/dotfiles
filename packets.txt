@@ -1,0 +1,17 @@
+neovim
+mc
+git
+gitk
+curl
+synaptic
+terminator
+tmux
+zsh
+firmware-iwlwifi
+i3
+tightvncserver
+ssh
+htop
+vlc
+iceweasel
+
