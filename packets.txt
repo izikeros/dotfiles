@@ -2,6 +2,8 @@ neovim
 mc
 git
 gitk
+gitgui
+gedit
 curl
 synaptic
 terminator
@@ -14,4 +16,9 @@ ssh
 htop
 vlc
 iceweasel
-
+fonts-powerline
+libreoffice
+darktable
+gimp
+fping
+wget
