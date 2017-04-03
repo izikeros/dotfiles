@@ -101,45 +101,48 @@
 	sa = stash apply
 	ss = stash save
 	
-[core]
-	autocrlf = true
-	eol = lf
-[diff]
-	tool = winmerge
-[difftool "winmerge"]
-	name = WinMerge
-	trustExitCode = true
-	cmd = winmerge-merge.sh $LOCAL $REMOTE
-[gui]
-	recentrepo = D:/local/bravo
+#[core]
+#	autocrlf = true
+#	eol = lf
+#[diff]
+#	tool = winmerge
+#[difftool "winmerge"]
+#	name = WinMerge
+#	trustExitCode = true
+#	cmd = winmerge-merge.sh $LOCAL $REMOTE
+#[gui]
+#	recentrepo = D:/local/bravo
+#[user]
+#	name = Krystian Safjan
+#	email = krystian.safjan@nsn.com
+#[push]
+#	default = simple
+#[merge]
+#	tool = p4merge
+#[mergetool "kdiff3"]
+#	name = Kdiff3
+#	prompt = false
+#	keepBackup = false
+#	keepTemporaries = false
+#	path = C:\\Program Files (x86)/KDiff3/kdiff3.exe
+#	trustExitCode = true
+#[mergetool "p4merge"]
+#	name = p4merge
+#	path = C:/Program Files/Perforce/p4merge.exe
+#    prompt = false
+#	trustExitCode = true
+#[mergetool "winmerge"]
+#	name = winmerge
+#	trustExitCode = true
+#	cmd = winmerge-merge.sh $LOCAL $REMOTE $BASE $MERGED
+#[difftool "sourcetree"]
+#	cmd = 'C:/Program Files (x86)/KDiff3/kdiff3.exe' \"$LOCAL\" \"$REMOTE\"
+#[mergetool "sourcetree"]
+#	cmd = 'C:/Program Files (x86)/KDiff3/kdiff3.exe' \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+#	trustExitCode = true
+#[mergetool]
+#	prompt = false
+#	keepBackup = false
 [user]
 	name = Krystian Safjan
-	email = krystian.safjan@nsn.com
-[push]
-	default = simple
-[merge]
-	tool = p4merge
-[mergetool "kdiff3"]
-	name = Kdiff3
-	prompt = false
-	keepBackup = false
-	keepTemporaries = false
-	path = C:\\Program Files (x86)/KDiff3/kdiff3.exe
-	trustExitCode = true
-[mergetool "p4merge"]
-	name = p4merge
-	path = C:/Program Files/Perforce/p4merge.exe
-    prompt = false
-	trustExitCode = true
-[mergetool "winmerge"]
-	name = winmerge
-	trustExitCode = true
-	cmd = winmerge-merge.sh $LOCAL $REMOTE $BASE $MERGED
-[difftool "sourcetree"]
-	cmd = 'C:/Program Files (x86)/KDiff3/kdiff3.exe' \"$LOCAL\" \"$REMOTE\"
-[mergetool "sourcetree"]
-	cmd = 'C:/Program Files (x86)/KDiff3/kdiff3.exe' \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-	trustExitCode = true
-[mergetool]
-	prompt = false
-	keepBackup = false
+	email = krystian.safjan@wilabs.com
