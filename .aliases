@@ -1,0 +1,8 @@
+alias ducks='du -cksh *|sort -rh|head -11'
+alias vim=nvim
+alias vz="vim ~/.zshrc"
+alias s="sudo su"
+alias ww=workon
+alias tw="tmuxifier load-window"
+alias gg="git gui"
+alias cd..="cd .."
