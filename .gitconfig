@@ -146,3 +146,5 @@
 [user]
 	name = Krystian Safjan
 	email = krystian.safjan@wilabs.com
+[push]
+	default = current
