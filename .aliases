@@ -16,16 +16,16 @@ alias gg="git gui"
 alias cd..="cd .."
 
 # Smart ls alias (l=long, detailed, a=all including hidded, h=size human readable)
-alias l='ls -lah'
+alias l="ls -lah"
 
 # Make and change directory at once
-alias mkcd='_(){ mkdir -p $1; cd $1; }; _'
+alias mkcd="_(){ mkdir -p $1; cd $1; }; _"
 
 # fast find filename
-alias ff='find . -name $1'
+alias ff="find . -name $1"
 
 # find in files (excluding .git directories)
-alias fif = fgrep --exclude-dir={.git}-rnw ./ -e
+alias fif="fgrep --exclude-dir={.git}-rnw ./ -e"
 
 # find in python files (excluding .git directories)
-alias fpy = fgrep --include=\*.{py} --exclude-dir={.git}-rnw ./ -e
+alias fpy="fgrep --include=\*.{py} --exclude-dir={.git}-rnw ./ -e"
