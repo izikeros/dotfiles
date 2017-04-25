@@ -1,8 +1,31 @@
+# list size of top 11 directories
 alias ducks='du -cksh *|sort -rh|head -11'
+
 alias vim=nvim
 alias vz="vim ~/.zshrc"
 alias s="sudo su"
+
+# virtualenvwrapper workon
 alias ww=workon
+
+# shortcut for tmuxifier
 alias tw="tmuxifier load-window"
+
 alias gg="git gui"
+
 alias cd..="cd .."
+
+# Smart ls alias (l=long, detailed, a=all including hidded, h=size human readable)
+alias l='ls -lah'
+
+# Make and change directory at once
+alias mkcd='_(){ mkdir -p $1; cd $1; }; _'
+
+# fast find filename
+alias ff='find . -name $1'
+
+# find in files (excluding .git directories)
+alias fif = fgrep --exclude-dir={.git}-rnw ./ -e
+
+# find in python files (excluding .git directories)
+alias fpy = fgrep --include=\*.{py} --exclude-dir={.git}-rnw ./ -e
