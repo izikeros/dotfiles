@@ -1,8 +1,14 @@
 # list size of top 11 directories
 alias ducks='du -cksh *|sort -rh|head -11'
 
+### EDITING
 alias vim=nvim
 alias vz="vim ~/.zshrc"
+
+# Aliases
+alias va="vim ~/.aliases"
+alias galias="alias | grep -i -e"
+
 alias s="sudo su"
 
 # virtualenvwrapper workon
@@ -21,11 +27,32 @@ alias l="ls -lah"
 # Make and change directory at once
 alias mkcd="_(){ mkdir -p $1; cd $1; }; _"
 
+alias mt="mount | column -t"
+
 # fast find filename
 alias ff="find . -name $1"
 
+# find test
+alias ft="find ./ -name 'test*.py' | grep"
+
 # find in files (excluding .git directories)
-alias fif="fgrep --exclude-dir={.git}-rnw ./ -e"
+alias fif="fgrep --exclude-dir={.git} --color=auto -rnw ./ -e"
 
 # find in python files (excluding .git directories)
-alias fpy="fgrep --include=\*.{py} --exclude-dir={.git}-rnw ./ -e"
+alias fipy1="fgrep --include=\"*.py\" --exclude-dir={.git} --color=always -rnwi ./ -e"
+
+# find in python test files:
+alias fipyt="fgrep --include=\"test*.py\" --exclude-dir={.git} --color=always -rnwi ./ -e"
+
+### DJANGO
+alias mp="./manage.py"
+alias mpr="./manage.py runserver"
+alias mpm="./manage.py migrate"
+alias mpmkm="./manage.py makemigration"
+alias mpsm="./manage.py showmigrations"
+alias mpsp="./manage.py shell_plus"
+
+## Scripts section
+fipy(){
+	fgrep --include="*.py" --exclude-dir={.git} --color=always -rnwi ./ -e	$1 | less -R
+}
