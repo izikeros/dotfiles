@@ -148,3 +148,5 @@
 	email = krystian.safjan@wilabs.com
 [push]
 	default = current
+[core]
+	editor = vim
