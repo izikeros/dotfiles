@@ -30,7 +30,7 @@ alias mkcd="_(){ mkdir -p $1; cd $1; }; _"
 alias mt="mount | column -t"
 
 # fast find filename
-alias ff="find . -name $1"
+alias ff="find . -iname $1"
 
 # find test
 alias ft="find ./ -name 'test*.py' | grep"
