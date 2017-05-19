@@ -4,7 +4,8 @@ alias ducks='du -cksh *|sort -rh|head -11'
 ### EDITING
 alias vim=nvim
 alias vz="vim ~/.zshrc"
-
+alias vs="vim ~/.ssh/config"
+alias vg="vim ./.git/config"
 # Aliases
 alias va="vim ~/.aliases"
 alias galias="alias | grep -i -e"
@@ -44,6 +45,8 @@ alias fipy1="fgrep --include=\"*.py\" --exclude-dir={.git} --color=always -rnwi 
 # find in python test files:
 alias fipyt="fgrep --include=\"test*.py\" --exclude-dir={.git} --color=always -rnwi ./ -e"
 
+alias count_loc="wc -l **/*.py"
+
 ### DJANGO
 alias mp="./manage.py"
 alias mpr="./manage.py runserver"
@@ -52,7 +55,13 @@ alias mpmkm="./manage.py makemigration"
 alias mpsm="./manage.py showmigrations"
 alias mpsp="./manage.py shell_plus"
 
+
+
 ## Scripts section
 fipy(){
 	fgrep --include="*.py" --exclude-dir={.git} --color=always -rnwi ./ -e	$1 | less -R
+}
+
+fipy2(){
+	fgrep --include="*.py" --exclude-dir={.git} --color=always -rnwi ./ -e $1 | grep $2
 }
