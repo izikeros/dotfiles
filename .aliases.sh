@@ -2,15 +2,18 @@
 alias ducks='du -cksh *|sort -rh|head -11'
 
 ### EDITING
-alias vim=nvim
 alias vz="vim ~/.zshrc"
 alias vs="vim ~/.ssh/config"
 alias vg="vim ./.git/config"
 # Aliases
-alias va="vim ~/.aliases"
+alias va="vim ~/.aliases.sh"
 alias galias="alias | grep -i -e"
 
 alias s="sudo su"
+
+alias ai="sudo apt install"
+alias as="sudo apt search"
+alias au="sudo apt update"
 
 # virtualenvwrapper workon
 alias ww=workon
@@ -28,7 +31,9 @@ alias l="ls -lah"
 # Make and change directory at once
 alias mkcd="_(){ mkdir -p $1; cd $1; }; _"
 
+# mount
 alias mt="mount | column -t"
+alias gmount="mount | grep -i -e"
 
 # fast find filename
 alias ff="find . -iname $1"
@@ -51,7 +56,7 @@ alias count_loc="wc -l **/*.py"
 alias mp="./manage.py"
 alias mpr="./manage.py runserver"
 alias mpm="./manage.py migrate"
-alias mpmkm="./manage.py makemigration"
+alias mpmkm="./manage.py makemigrations"
 alias mpsm="./manage.py showmigrations"
 alias mpsp="./manage.py shell_plus"
 
