@@ -1,0 +1,73 @@
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 0.1.3
+#
+# If you edit this, do not forget to uncomment any lines that you change.
+# The pound(#) symbol may be used anywhere for comments.
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h 
+# The XK_ is not needed. 
+#
+# List of modifier (on my keyboard): 
+#   Control, Shift, Mod1 (Alt), Mod2 (NumLock), 
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll). 
+#
+# Another way to specifie a key is to use 'xev' and set the 
+# keycode with c:nnn or the modifier with m:nnn where nnn is 
+# the keycode or the state returned by xev 
+#
+# This file is created by xbindkey_config 
+# The structure is : 
+# # Remark 
+# "command" 
+# m:xxx + c:xxx 
+# Shift+... 
+
+
+
+
+#keystate_numlock = enable
+#keystate_scrolllock = enable
+#keystate_capslock = enable
+
+
+
+#show key bindings
+"xbindkeys_show"
+   control+shift + q
+
+#rofi
+"rofi -combi-modi window,drun,ssh,run -show combi"
+   control+space
+
+#"rofi -color-window \"#000000, #000000, #000000\" -color-normal \"#000000, #b3e774, #000000, #b3e774, #000000\" -color-active \"#000000, #b3e774, #000000, #b3e774, #000000\" -color-urgent \"#000000, #b3e774, #000000, #b3e774, #000000\" -combi-modi window,drun,ssh,run,combi -show combi"
+
+# websearch
+#"rofi -kb-row-select \"Tab\" -kb-row-tab \"Control+space\" -color-window \"#000000, #000000, #000000\" -color-normal \"#000000, #b3e774, #000000, #b3e774, #000000\" -color-active \"#000000, #b3e774, #000000, #b3e774, #000000\" -color-urgent \"#000000, #b3e774, #000000, #b3e774, #000000\" -dmenu -mesg \">>> Tab = Autocomplete\" -i -p \"websearch: \""
+#  control+alt+space
+
+# bookmarks
+#rofi-surfraw-bookmarks: bookmarks with tags via surfraw
+#surfraw -browser=$BROWSER "$(cat ~/.config/surfraw/bookmarks | sed '/^$/d' | sed '/^#/d' | sed '/^\//d' | sort -n | rofi -color-window "#000000, #000000, #000000" -color-normal "#000000, #b3e774, #000000, #b3e774, #000000" -color-active "#000000, #b3e774, #000000, #b3e774, #000000" -color-urgent "#000000, #b3e774, #000000, #b3e774, #000000" -dmenu -mesg ">>> Edit to add new bookmarks at ~/.config/surfraw/bookmarks" -i -p "bookmarks: ")"
+
+#xbindkeys config
+"xbindkeys-config"
+   control+alt+shift+x
+
+#laptop
+"laptop.sh"
+   XF86Launch5
+
+#dualscreen
+"dualscreen.sh"
+   XF86Launch7
+
+#external
+"external.sh"
+   XF86Launch6
+
+#
+# End of xbindkeys configuration

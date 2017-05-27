@@ -1,3 +1,5 @@
+# vi ft=shell
+
 # list size of top 11 directories
 alias ducks='du -cksh *|sort -rh|head -11'
 
@@ -24,6 +26,7 @@ alias tw="tmuxifier load-window"
 alias gg="git gui"
 
 alias cd..="cd .."
+alias cdh="cd ~"
 
 # Smart ls alias (l=long, detailed, a=all including hidded, h=size human readable)
 alias l="ls -lah"
