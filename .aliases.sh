@@ -3,6 +3,11 @@
 # list size of top 11 directories
 alias ducks='du -cksh *|sort -rh|head -11'
 
+alias duu='du -sh --max-depth=1'
+
+alias load='sar -u 2 1 | tail -n 1'
+
+
 ### EDITING
 alias vz="vim ~/.zshrc"
 alias vs="vim ~/.ssh/config"
@@ -24,7 +29,7 @@ alias ww=workon
 alias tw="tmuxifier load-window"
 
 alias gg="git gui"
-
+alias recent-branches="git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format=\"%(refname:short)\""
 alias cd..="cd .."
 alias cdh="cd ~"
 
