@@ -35,11 +35,14 @@
 	# List with no colors if you need to chain the out put with Unix pipes:
 	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
 	
-	# List oneline commits showing dates
+	## List oneline commits
+	# 	showing dates
 	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-	
-	# List oneline commits showing relative dates: (e.g. $ git ld -10)
+	# 	showing relative dates: (e.g. $ git ld -10)
 	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+
+	# List today's oneline commits
+	today = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --color --date=short --since=midnight
 	
 	# short git log
 	le = log --oneline --decorate
@@ -79,7 +82,7 @@
 	### TAG
 	lasttag = describe --tags --abbrev=0
 	lt = describe --tags --abbrev=0
-	#lt = !git describe $(git rev-list --tags --max-count=1)
+	lt1 = !git describe $(git rev-list --tags --max-count=1)
 	
 	### MERGE
     # delete all branches merged with master
@@ -101,6 +104,23 @@
 	sa = stash apply
 	ss = stash save
 	
+
+[merge]
+    tool = kdiff3
+[mergetool "kdiff3"]
+    trustExitCode = false
+[diff]
+    guitool = kdiff3
+[difftool "kdiff3"]
+    trustExitCode = false
+
+[user]
+	name = Krystian Safjan
+	email = krystian.safjan@wilabs.com
+[push]
+	default = current
+[core]
+	editor = vim
 #[core]
 #	autocrlf = true
 #	eol = lf
@@ -110,11 +130,7 @@
 #	name = WinMerge
 #	trustExitCode = true
 #	cmd = winmerge-merge.sh $LOCAL $REMOTE
-#[gui]
-#	recentrepo = D:/local/bravo
-#[user]
-#	name = Krystian Safjan
-#	email = krystian.safjan@nsn.com
+
 #[push]
 #	default = simple
 #[merge]
@@ -143,10 +159,4 @@
 #[mergetool]
 #	prompt = false
 #	keepBackup = false
-[user]
-	name = Krystian Safjan
-	email = krystian.safjan@wilabs.com
-[push]
-	default = current
-[core]
-	editor = nvim
+
