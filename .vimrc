@@ -18,6 +18,8 @@ Bundle 'Valloric/YouCompleteMe'
 " navigation
 Bundle 'Lokaltog/vim-easymotion'
 " ??
+Bundle 'techlivezheng/vim-plugin-minibufexpl'
+" ??
 Bundle 'nathanaelkane/vim-indent-guides'
 " ??
 Bundle 'kien/ctrlp.vim'
@@ -72,8 +74,9 @@ set paste				" to preserve indentation while copy-paste
 " with this line:
 set clipboard=unnamed
 
+" line numbers hybrid mode: show both relative and absolute line number
 set relativenumber			" show relative line numbers
-" set number				" show line numbers
+set number					" show line numbers
 
 set ruler					" show line and column information
 set notitle					" don't set change terminal's title
