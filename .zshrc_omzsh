@@ -8,9 +8,14 @@
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-# avit, bira, agnoster, honukai, ys, powerlevel9k
+# bureau, strug, smt, avit, bira, agnoster, honukai, ys, powerlevel9k
 ZSH_THEME="bureau"
-
+#ZSH_THEME="strug"
+#ZSH_THEME="smt"
+#ZSH_THEME="strug"
+#ZSH_THEME="strug"
+#ZSH_THEME="strug"
+#ZSH_THEME="strug"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -54,8 +59,8 @@ ZSH_THEME="bureau"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-# ubuntu, pip
-plugins=(git colored-man-pages k pip django docker docker-compose)
+# ubuntu, pip, zsh-autosuggestions 
+plugins=(git colored-man-pages k pip django docker docker-compose zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -74,7 +79,7 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -92,6 +97,11 @@ source $ZSH/oh-my-zsh.sh
 
 source $HOME/.aliases.sh
 
+#source $HOME/antigen/antigen.zsh
+#antigen-use oh-my-zsh
+#antigen-bundle arialdomartini/oh-my-git
+#antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
+
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
@@ -101,7 +111,7 @@ export PATH="$HOME/.screenlayout:$PATH"
 export PATH="$HOME/pycharm-community-2017.1/bin:$PATH"
 export BROWSER=firefox
 # for colorfull man pages
-#export PAGER="most"
+export PAGER="most"
 
 export DJANGO_SETTINGS_MODULE=ebadu.settings
 
@@ -110,3 +120,6 @@ autoload -Uz promptinit
 promptinit
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+$HOME/wall.sh&
+

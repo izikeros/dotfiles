@@ -13,28 +13,33 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" code completion
+" -- code completion
 Bundle 'Valloric/YouCompleteMe'
-" navigation
-Bundle 'Lokaltog/vim-easymotion'
+" -- navigation
+" Bundle 'Lokaltog/vim-easymotion'
+" -- file navigation
 " ??
 Bundle 'techlivezheng/vim-plugin-minibufexpl'
+" ?? Tabularize display
+Bundle 'godlygeek/tabular'
 " ??
-Bundle 'nathanaelkane/vim-indent-guides'
+"Bundle 'nathanaelkane/vim-indent-guides'
 " ??
-Bundle 'kien/ctrlp.vim'
+"Bundle 'kien/ctrlp.vim'
 " ??
-Bundle 'terryma/vim-multiple-cursors'
+"Bundle 'terryma/vim-multiple-cursors'
 " ??
-Bundle 'jeetsukumaran/vim-buffergator'
-Bundle 'majutsushi/tagbar'
-" Python
-Plugin 'scrooloose/syntastic'
-Plugin 'nvie/vim-flake8'
-" Themes
-Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'dracula/vim'
+"Bundle 'jeetsukumaran/vim-buffergator'
+"
+" Bundle 'majutsushi/tagbar'
+" ---- Python
+" Plugin 'scrooloose/syntastic'
+" Plugin 'nvie/vim-flake8'
+
+" ---- Themes
+"Plugin 'jnurmine/Zenburn'
+"Plugin 'altercation/vim-colors-solarized'
+"Plugin 'dracula/vim'
 Plugin 'sickill/vim-monokai'
 
 " Powerline
@@ -82,11 +87,25 @@ set ruler					" show line and column information
 set notitle					" don't set change terminal's title
 set backspace=2				" backspaces can go over lines
 set tabstop=4				" tabs are every 8 columns
+" ?
 :if version >= 600
   set listchars=eol:$,tab:>-,trail:-,extends:>,precedes:<
 :elseif version >= 500
   set listchars=eol:$,tab:>-,trail:-,extends:+
 :endif
+
+
+if has("linebreak")
+  let &sbr = nr2char(8618).' '  " Show ↪ at the beginning of wrapped lines
+endif
+
+
+if v:version >= 703
+  set colorcolumn=81            " highlight column 81
+  let &colorcolumn=join(range(81,999),",") " and columns after that
+endif
+
+
 set laststatus=2			" always show status line
 set showmode				" always show command or insert mode
 set shortmess=lnrxI			" brief messages, don't show intro
@@ -107,13 +126,17 @@ set esckeys						" allow arrow keys in insert mode
 set showmatch					" show matching brackets
 
 " COMPLETE OPTIONS
-set complete=.,i,w,b
+set complete=.,i,w,b			" ?
 let Vimplate="/usr/bin/vimplate"
 
 " SEARCH OPTIONS
-set nohlsearch				" don't highlight search patterns
+"set nohlsearch				" don't highlight search patterns
 set incsearch				" search while typing
 set ignorecase				" make searches case-insensitive
+if has("extra_search")
+  set hlsearch                  " highlight search matches
+  nohlsearch                    " but not initially
+endif
 
 " MISCELLANEOUS OPTIONS
 " set dictionary=/usr/share/dict/words	" get words from system dictionary
@@ -133,13 +156,21 @@ endfunc
 
 nnoremap <C-n> :call NumberToggle()<cr>
 
+" moving lines up/down
+" noremap <c-s-up> :call feedkeys( line('.')==1 ? '' : 'ddkP' )<CR>
+" noremap <c-s-down> ddp
 
+nmap n :m +1<CR>
+nmap m :m -2<CR>
+
+" Clever tab 
 function! CleverTab()
 	if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
 		return "\<Tab>"
 	else
 		return "\<C-N>"
 endfunction
+inoremap <C-D> <C-R>=CleverTab()<CR>
 
 if &term =~ '256color'
     " Disable Background Color Erase (BCE) so that color schemes
@@ -147,8 +178,10 @@ if &term =~ '256color'
     set t_ut=
 endif
 
-imap <C-W> <ESC><C-w>w<CR>
-inoremap <C-D> <C-R>=CleverTab()<CR>
+" for easymotion?
+"imap <C-W> <ESC><C-w>w<CR>
+
+" navigate between buffers with F2 and F3
 map <F2> :bp!<CR>
 imap <F2> <ESC>:bp!<CR>
 map <F3> :bn!<CR>
