@@ -1,6 +1,6 @@
 # vi ft=shell
 
-### DIRECTORY SIZE, LISTING, NAVIGATION
+### DIRECTORY SIZE, LISTING
 # list size of top 11 directories
 alias ducks='du -cksh *|sort -rh|head -11'
 
@@ -12,8 +12,11 @@ alias df="pydf"
 # display CPU load (requires sar installed)
 alias load='sar -u 2 1 | tail -n 1'
 
+### QUICk CHANGE DIRECTORY
 alias cd..="cd .."
-alias h="cd ~"
+alias h="cd $HOME"
+alias cdh="cd $HOME"
+alias awdir="cd $HOME/.config/awesome"
 
 # Smart ls alias (l=long, detailed, a=all including hidded, h=size human readable)
 alias l="ls -lah"
@@ -22,15 +25,16 @@ alias l="ls -lah"
 alias mkcd="_(){ mkdir -p $1; cd $1; }; _"
 
 
-### EDIT CONFIG FILES
-alias vz="vim ~/.zshrc"
-alias vs="vim ~/.ssh/config"
+### EDIT ACTIONS
+alias v="vim"
+alias vz="vim $HOME/.zshrc"
+alias vs="vim $HOME/.ssh/config"
 alias vg="vim ./.git/config"
-alias vv="vim ~/.vimrc"
-alias va="vim ~/.aliases.sh"
-alias vn="vim ~/notes/"
-alias vd="vim ~/dotfiles"
-
+alias vv="vim $HOME/.vimrc"
+alias va="vim $HOME/.aliases.sh"
+alias vn="vim $HOME/notes/"
+alias vd="vim $HOME/dotfiles"
+alias vawrc="vim $HOME/.config/awesome/rc.lua"
 alias galias="alias | grep -i -e"
 
 
@@ -38,7 +42,17 @@ alias s="sudo su"
 
 ### APT, APTITUDE
 alias ai="sudo apt install"
-alias as="apt search"
+
+# search pattern only in package names
+alias asn="apt-cache --names-only search"
+
+# search onli in package names starting with pattern
+asa(){
+	aptitude search ^$1 | awk '{print $2}'
+	}
+
+
+alias as="apt-cache search"
 alias au="sudo apt update"
 asa(){
 	aptitude search ^$1 | awk '{print $2}'
@@ -97,6 +111,7 @@ alias mpsp="./manage.py shell_plus"
 # virtualenvwrapper workon
 alias ww=workon
 
+alias wilabsvpn_up="nmcli connection up \"wilabs (openvpn)\""
 
 ### Docker (compose)
 alias dcf="docker-compose -f dev-compose.yml"

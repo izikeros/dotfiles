@@ -8,23 +8,23 @@
 # The pound(#) symbol may be used anywhere for comments.
 #
 # A list of keys is in /usr/include/X11/keysym.h and in
-# /usr/include/X11/keysymdef.h 
-# The XK_ is not needed. 
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
 #
-# List of modifier (on my keyboard): 
-#   Control, Shift, Mod1 (Alt), Mod2 (NumLock), 
-#   Mod3 (CapsLock), Mod4, Mod5 (Scroll). 
+# List of modifier (on my keyboard):
+#   Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
 #
-# Another way to specifie a key is to use 'xev' and set the 
-# keycode with c:nnn or the modifier with m:nnn where nnn is 
-# the keycode or the state returned by xev 
+# Another way to specifie a key is to use 'xev' and set the
+# keycode with c:nnn or the modifier with m:nnn where nnn is
+# the keycode or the state returned by xev
 #
-# This file is created by xbindkey_config 
-# The structure is : 
-# # Remark 
-# "command" 
-# m:xxx + c:xxx 
-# Shift+... 
+# This file is created by xbindkey_config
+# The structure is :
+# # Remark
+# "command"
+# m:xxx + c:xxx
+# Shift+...
 
 
 
@@ -37,7 +37,7 @@
 
 #show key bindings
 "xbindkeys_show"
-   control+shift + q
+   control+shift+q
 
 #rofi
 "rofi -combi-modi window,drun,ssh,run -show combi"
@@ -55,19 +55,30 @@
 
 #xbindkeys config
 "xbindkeys-config"
-   control+alt+shift+x
+    control+alt+shift+x
 
 #laptop
 "laptop.sh"
-   XF86Launch5
+    XF86Launch5
 
 #dualscreen
 "dualscreen.sh"
-   XF86Launch7
+    XF86Launch7
 
 #external
 "external.sh"
-   XF86Launch6
+    XF86Launch6
 
-#
+#firefox
+"firefox"
+    control+alt+f
+
+#chrome
+"google-chrome"
+    control+alt+c
+
+#double commander
+"doublecmd"
+    control+alt+d
+
 # End of xbindkeys configuration
