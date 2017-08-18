@@ -105,11 +105,6 @@ alias sdr='screen -dR'
 alias cd3='cd ../../../'
 alias cd5='cd ../../../../../'
 alias duu='du -h --max-depth=1' 2>/dev/null
-alias killUprise='killall Run.x86_64-suse-linux-gnu'
-
-# CVS
-alias cvsd='cvsUprise39 -n update 2>/dev/null'
-alias cvsu='cvs update'
 
 # grep
 alias grepcpp='find ./ -name *.cpp | xargs grep -n --color'
@@ -122,7 +117,6 @@ taxbreak(){
     default="1 month ago"
 	git log --committer=krystian.safjan@nsn.com --pretty=format:"%Cgreen%ar (%h)%n%Creset> %s %b%n" --since="${1:-$default}" --no-merges
 }
-alias cbravo=git clone wro03456@10.159.86.111:/home/gitRepo/bravo.git .
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -144,9 +138,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#------------------------------ 
-# This will enable to utilize all processors on a given machine for the make process and improve the compilation time 
-alias make='make -j `grep -c "model name" /proc/cpuinfo`' 
+#------------------------------
+# This will enable to utilize all processors on a given machine for the make process and improve the compilation time
+alias make='make -j `grep -c "model name" /proc/cpuinfo`'
 #------------------------------
 
 
