@@ -1,93 +1,94 @@
 [alias]
 	########### Basic aliases ###########
 	br = branch -v
-	
+
 	# add to staged and commit (new files should be added anyway)
 	ca = commit -a
-	
+
 	cam = commit -am
 	ci = commit
 	cm = commit -m
-	
+
 	cl = clone
-	
+
 	diff = diff --word-diff
 	dc = diff --cached
-	
+
 	co = checkout
 	k = !gitk
 	pu  = pull
 	pur = pull --rebase
 
-		
+
 	######## LOG and DIFF ###############
-	lg1 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --color 
+	lg1 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --color
 	lg2 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 	h = !git --no-pager log origin/master..HEAD --abbrev-commit --pretty=oneline
-	
+
 	# List commits in short form, with colors and branch/tag annotations
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-	
+
 	# List commits showing changed files
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-	
+
 	# List with no colors if you need to chain the out put with Unix pipes:
 	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
-	
+
 	## List oneline commits
 	# 	showing dates
 	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-	# 	showing relative dates: (e.g. $ git ld -10)
+
+# 	showing relative dates: (e.g. $ git ld -10)
 	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 
 	# List today's oneline commits
 	today = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --color --date=short --since=midnight
-	
+
 	# short git log
 	le = log --oneline --decorate
-	
+
 	# see all the commits related to a file, with the diff of the changes
 	filelog = log -u
 	fl = log -u
 
 	# Show modified files in last commit:
 	dl = "!git ll -1"
-	
+
 	# Show a diff last commit e.g.:
 	# $ git f trenches
 	# source/drafts/2012-11-12-more-curated-git-tips-from-the-trenches.html.md
 	dlc = diff --cached HEAD^
-	
+
 	#### FIND & GREP
 	# Find a file path in codebase:
 	f = "!git ls-files | grep -i"
-	
+
 	# Search/grep your entire codebase for a string
 	grep = grep -Ii
 	gr = grep -Ii
-	
+
 	# Grep from root folder:
 	gra = "!f() { A=$(pwd) && TOPLEVEL=$(git rev-parse --show-toplevel) && cd $TOPLEVEL && git grep --full-name -In $1 | xargs -I{} echo $TOPLEVEL/{} && cd $A; }; f"
-	
+
 	# List all your Aliases
 	la = "!git config -l | grep alias | cut -c 7-"
-	
+
 	find = !sh -c 'git ls-tree -r --name-only HEAD | grep --color $1' -
-	
+
 	st = status
 	unstage = reset HEAD --
 	v = !gvim $*
-	
+
 	### TAG
 	lasttag = describe --tags --abbrev=0
 	lt = describe --tags --abbrev=0
 	lt1 = !git describe $(git rev-list --tags --max-count=1)
-	
+
 	### MERGE
     # delete all branches merged with master
 	cleanup = !git branch --merged master | grep -v 'master$' | xargs git branch -d
-	 
+
 	ours = "!f() { git co --ours $@ && git add $@; }; f"
 	theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 
@@ -103,14 +104,19 @@
 	sl = stash list
 	sa = stash apply
 	ss = stash save
-	
 
 [merge]
-    tool = kdiff3
+    tool = mymeld
+    #tool = kdiff3
+    conflictstyle = diff3
+[mergetool "mymeld"]
+    #cmd = meld --diff $BASE $LOCAL --diff $BASE $REMOTE --diff $LOCAL $BASE $REMOTE $MERGED
+    cmd = meld --diff $BASE $LOCAL --diff $BASE $REMOTE --auto-merge $LOCAL $BASE $REMOTE --output $MERGED
 [mergetool "kdiff3"]
     trustExitCode = false
 [diff]
-    guitool = kdiff3
+    guitool = meld
+    #guitool = kdiff3
 [difftool "kdiff3"]
     trustExitCode = false
 
