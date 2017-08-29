@@ -337,3 +337,14 @@ set completeopt-=preview
 "
 nmap <leader>g :YcmCompleter GoTo<CR>
 nmap <leader>d :YcmCompleter GoToDefinition<CR>
+
+" Move selected lines up/down
+" in visual mode (Esc-v or Esc-V for line-wise visual mode)
+" use Ctrl-j to move selected lines down and Ctrl-k for move up
+" move selected lines up one line
+xnoremap <c-k>  :m-2<CR>gv=gv
+
+" move selected lines down one line
+ xnoremap <c-j> :m'>+<CR>gv=gv
+
+" use YP to duplicate line
