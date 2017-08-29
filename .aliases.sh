@@ -35,6 +35,7 @@ alias v="vim"
 alias vn="vim $HOME/notes/"
 alias galias="alias | grep -i -e"
 alias wikimd="vim $HOME/notes/index.md"
+alias wt="vim ~/notes/wilabs_today.md"
 
 alias cfg-zsh="vim $HOME/.zshrc"
 alias cfg-ssh="vim $HOME/.ssh/config"
@@ -84,7 +85,8 @@ alias fipyt="fgrep --include=\"test*.py\" --exclude-dir={.git} --color=always -r
 # find in python files excluding tests (pynt - python no tests)
 alias fipynt="fgrep --include=\"*.py\" --exclude-dir={.git,tests} --color=always -rnwi ./ -e"
 
-
+# find markdown files created today
+alias mdtoday="find . -name \"*.md\" -mtime -1 -type f -print"
 #--------------------------------------------
 # GIT
 #--------------------------------------------
@@ -140,9 +142,13 @@ alias dpsa="docker ps -a"
 # OTHER
 #--------------------------------------------
 alias wilabsvpn_up="nmcli connection up \"wilabs (openvpn)\""
-
+alias hnfav="firefox https://news.ycombinator.com/favorites\\?id\=izik"
 # shortcut for tmuxifier
 alias tw="tmuxifier load-window"
 
-# alias catnc="egrep -v \"^\s*(#|\$)\""
-# egrep -v "^\s*(#|$)" /etc/squid/squid.conf
+# grep no comments
+alias catnc="egrep -v \"^\s*(#|\$)\""
+alias grepnc1="egrep -v \"^\s*(#|$)\""
+alias kr="killall Ryver"
+
+
