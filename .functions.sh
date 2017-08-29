@@ -15,3 +15,9 @@ fipy2(){
 asa(){
 	aptitude search ^$1 | awk '{print $2}'
 	}
+
+# create directory and move into it
+mkcd () {
+  mkdir "$1"
+  cd "$1"
+}
