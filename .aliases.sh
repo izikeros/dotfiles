@@ -25,26 +25,33 @@ alias h="cd $HOME"
 alias cdh="cd $HOME"
 alias awdir="cd $HOME/.config/awesome"
 
-# Make and change directory at once
-#alias mkcd="_(){ mkdir -p $1; cd $1; }; _"
-
 #--------------------------------------------
 # EDIT ACTIONS
 #--------------------------------------------
 alias v="vim"
-alias vn="vim $HOME/notes/"
-alias galias="alias | grep -i -e"
-alias wikimd="vim $HOME/notes/index.md"
-alias wt="vim ~/notes/wilabs_today.md"
 
-alias cfg-zsh="vim $HOME/.zshrc"
-alias cfg-ssh="vim $HOME/.ssh/config"
-alias cfg-git="vim $HOME/.gitconfig"
-alias cfg-vim="vim $HOME/.vimrc"
-alias cfg-aliases="vim $HOME/.aliases.sh"
-alias cfg-fish="vim $HOME/.config/fish/config.fish"
-alias cfg-dir="vim $HOME/dotfiles"
-alias cfg-awesome="vim $HOME/.config/awesome/rc.lua"
+# notes
+alias vn="vim $HOME/notes/"
+alias wiki="vim $HOME/Dropbox/wiki/index.md"
+alias wt="vim ~/notes/wilabs_today.md"
+alias td="vim $HOME/notes/TODO.md"
+
+alias vz="vim $HOME/.zshrc"
+alias vs="vim $HOME/.ssh/config"
+alias vg="vim $HOME/.gitconfig"
+alias vv="vim $HOME/.vimrc"
+alias va="vim $HOME/dotfiles/.aliases.sh"
+#alias vf="vim $HOME/.config/fish/config.fish"
+alias vd="vim $HOME/dotfiles"
+#alias cfg-awesome="vim $HOME/.config/awesome/rc.lua"
+alias vx="vim $HOME/dotfiles/.xbindkeysrc"
+alias vkeys="grep -e 'map' $HOME/dotfiles/.vimrc"
+
+#--------------------------------------------
+# MEATA-ALIAS
+#--------------------------------------------
+alias galias="alias | grep -i -e"
+# TODO: add alias
 
 #--------------------------------------------
 # APT, APTITUDE, SUDO ACTIONS
@@ -87,11 +94,12 @@ alias fipynt="fgrep --include=\"*.py\" --exclude-dir={.git,tests} --color=always
 
 # find markdown files created today
 alias mdtoday="find . -name \"*.md\" -mtime -1 -type f -print"
+
 #--------------------------------------------
 # GIT
 #--------------------------------------------
 ## git push with verbose ssh
-#alias gpv="GIT_SSH_COMMAND=\"ssh -v\" git push"
+alias gpv="GIT_SSH_COMMAND=\"ssh -v\" git push"
 
 # open git gui
 alias gg="git gui"
@@ -130,13 +138,14 @@ alias mpsp="./manage.py shell_plus"
 # virtualenvwrapper workon
 alias ww=workon
 
-
 #--------------------------------------------
 # DOCKER (compose)
 #-------------------------------------------
 alias dcf="docker-compose -f dev-compose.yml"
-alias dps="docker ps"
-alias dpsa="docker ps -a"
+alias dl='docker ps -lq'
+alias dll='docker_fit ps -l'
+alias dps='docker_fit ps -a'
+alias docker-clean-exited-containers='docker ps -aqf status=exited | xargs -n1 docker rm'
 
 #--------------------------------------------
 # OTHER
@@ -146,9 +155,20 @@ alias hnfav="firefox https://news.ycombinator.com/favorites\\?id\=izik"
 # shortcut for tmuxifier
 alias tw="tmuxifier load-window"
 
+
 # grep no comments
 alias catnc="egrep -v \"^\s*(#|\$)\""
 alias grepnc1="egrep -v \"^\s*(#|$)\""
 alias kr="killall Ryver"
 
+# find all git repositories in current directory excluding vim files (usually:
+# vim plugins)
+alias find-git-repos="find . -name \".git\" -type d | sed s/\.git//g | grep -v '.vim/'"
+# TODO: check all git repos if they can be updated if so, ask one by one if update
+
+# backup
+alias firma-backup="restic -r $HOME/Dropbox/restic-firma backup $HOME/firma"
+alias firma-snapshots="restic -r $HOME/Dropbox/restic-firma snapshots"
+alias brightness="xrandr --output LVDS-1 --brightness $1"
+alias sz="source ~/.zshrc"
 
