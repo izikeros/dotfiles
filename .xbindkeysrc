@@ -57,28 +57,35 @@
 "xbindkeys-config"
     control+alt+shift+x
 
-#laptop
+#laptop (button 1)
 "laptop.sh"
     XF86Launch5
 
-#dualscreen
+#dualscreen (button 2)
 "dualscreen.sh"
-    XF86Launch7
-
-#external
-"external.sh"
     XF86Launch6
+
+#external (button 3)
+"external.sh"
+    XF86Launch3
 
 #firefox
 "firefox"
     control+alt+f
 
 #chrome
-"google-chrome"
+"chromium-browser"
     control+alt+c
 
 #double commander
 "doublecmd"
     control+alt+d
+
+# Terminal (terminator)
+"terminator"
+    control+alt+t
+
+"gnome-calculator"
+    XF86Calculator
 
 # End of xbindkeys configuration
