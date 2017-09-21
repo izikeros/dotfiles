@@ -1,162 +1,123 @@
-" TODO:
+" TODO: read http//stevelosh.com/blog/2010/09/coming-home-to-vim/
+" TODO: check: https://github.com/nvie/vimrc
+"
 " based on .vimrc file by:
 " Dan Sheffner,Martin Brochhaus (Presented at PyCon APAC 2012)
 
 " ================== PLUGINS =========================
-set nocompatible              " be iMproved, required
+set nocompatible              " use vim improvements compared to vi
 filetype off                  " required
 
 set shell=/bin/bash
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim 			" set the runtime path to include Vundle and initialize
 
 call vundle#begin()
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-" ---- code completion
+Plugin 'VundleVim/Vundle.vim'				" let Vundle manage Vundle, required
 Bundle 'Valloric/YouCompleteMe'
-" ---- navigation
-" panel with directory tree
-Bundle 'scrooloose/nerdtree'
 
-" This plugin aims at making NERDTree feel like a true panel, independent of
-" tabs. Just one NERDTree, always and ever. It will always look the same in
-" all tabs, including expanded/collapsed nodes, scroll position etc.
-" Bundle 'jistr/vim-nerdtree-tabs'tabs
-
-" additional configuration:
+" additional configuration for vim
 Bundle 'tpope/vim-sensible'
 
 " guidelines for indentation
 Bundle 'Yggdroot/indentLine'
 
-" ---- powerline
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
-" fuzzy find files
-Bundle 'kien/ctrlp.vim'
-
-"Bundle 'terryma/vim-multiple-cursors'
-"Bundle 'jeetsukumaran/vim-buffergator'
-" Bundle 'majutsushi/tagbar'
+" powerline
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+Plugin 'itchyny/lightline.vim'
 
 Bundle 'airblade/vim-gitgutter'
 
 " nice startup screen when vim openerd without any file
 Bundle 'mhinz/vim-startify'
 
-" Tagbar is a Vim plugin that provides an easy way to browse the tags of the
-" current file and get an overview of its structure. It does this by creating a
-" sidebar that displays the ctags-generated tags of the current file, ordered
-" by their scope. This means that for example methods in C++ are displayed
-" under the class they are defined in.
+Bundle 'zhou13/vim-easyescape'
+
 Bundle 'majutsushi/tagbar'
 
+Bundle 'mattn/calendar-vim'
 Bundle 'vimwiki/vimwiki'
 Bundle 'suan/vim-instant-markdown'
 
 Bundle 'wikitopian/hardmode'
 
-" ---- Python
+" Python plugins
 Plugin 'janko-m/vim-test'
 Plugin 'python-mode/python-mode'
 Bundle 'nvie/vim-flake8'
 "Plugin 'thesheff17/youtube/master/vim/python_editing.vim'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " require
+call vundle#end()
 " =================== / PLUGINS ===============================
+filetype plugin indent on
 
 
-
-" ----- vim-airline
-let g:airline#extensions#tabline#enabled=1
-let g:airline_powerline_fonts=1
-let g:airline_theme='wombat'  " powerlineish | badwolf
-set laststatus=2
-set encoding=utf-8
-" Don't show seperators (in case powerline fonts are not working
-"let g:airline_left_sep=''
-"let g:airline_right_sep=''
-
-" Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
+"========================
+" GENERAL SETTINGS
+"========================
+autocmd! bufwritepost .vimrc source % " Automatic reloading of .vimrc
 
 " gets rid of extra space (tailing spaces in the end of the line)
 autocmd BufWritePre * %s/\s\+$//e
 
-" Uncomment the following to have Vim jump to the last position when
-" reopening a file
+" jump to the last position when reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" map ctrl n to line numbers
-:nmap <C-N><C-N> :set invnumber<CR>
 
-" Mouse and backspace
+let g:easyescape_chars = { "j": 1, "k": 1 }
+let g:easyescape_timeout = 100
+cnoremap jk <ESC>				" map ESC to jk
+cnoremap kj <ESC>				" map ESC to kj
+
+
+nmap <C-N><C-N> :set invnumber<CR> :GitGutterToggle<CR> " toggle numbers and git gutter by hitting C-n twice
+
 set bs=2 " make backspace behave like normal again
 
 " Rebind <Leader> key
 " I like to have it here becuase it is easier to reach than the default and
 " it is next to ``m`` and ``n`` which I use for navigating between tabs.
-let mapleader = ","
+let mapleader = ","             " change leaderkey to comma (,)
 
-" Bind nohl
-" Removes highlight of your last search
-noremap <C-n> :nohl<CR>
+noremap <C-n> :nohl<CR>         " Removes highlight of your last search
 vnoremap <C-n> :nohl<CR>
 inoremap <C-n> :nohl<CR>
 
-" Quicksave command
-noremap <C-Z> :update<CR>
+noremap <C-Z> :update<CR>       " Quicksave command
 vnoremap <C-Z> <C-C>:update<CR>
 inoremap <C-Z> <C-O>:update<CR>
 
-" Quick quit command
-noremap <Leader>e :quit<CR> " Quit current window
-noremap <Leader>E :qa!<CR> " Quit all windows
+noremap <Leader>e :quit<CR>     " Quit current window
+noremap <Leader>E :qa!<CR>      " Quit all windows
 
-" bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
-" Every unnecessary keystroke that can be saved is good for your health :)
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
+"map <c-j> <c-w>j                " already reserved for moving line(s) up/down
+"map <c-k> <c-w>k
+map <c-l> <c-w> 				 " bind Ctrl+l/h keys to move to the right/left window, instead of using Ctrl+w + <movement>
 map <c-h> <c-w>h
 
 " easier moving between tabs
-map <Leader>n <esc>:tabprevious<CR>
-map <Leader>m <esc>:tabnext<CR>
+map <Leader>n <esc>:tabprevious<CR>     " moving between tabs
+map <Leader>m <esc>:tabnext<CR>			" conflict with markdown preview?
 
-" map sort function to a key
-vnoremap <Leader>s :sort<CR>
+vnoremap <Leader>s :sort<CR>            " map sort function to a key
 
-" easier moving of code blocks
 " Try to go into visual mode (v), thenselect several lines of code here and
 " then press ``>`` several times.
-vnoremap < <gv " better indentation
-vnoremap > >gv " better indentation
+vnoremap < <gv                          " better indentation (in visual mode)
+vnoremap > >gv
 
-" Show whitespace
+" Show tailing whitespace
 " MUST be inserted BEFORE the colorscheme command
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-au InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red  " highlight tailing spaces
+au InsertLeave * match ExtraWhitespace /\s\+$/      " remove tailing whitespaces at exit
 
-" --- Color scheme
-" mkdir -p ~/.vim/colors && cd ~/.vim/colors
-" wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
+" Color scheme
 set t_Co=256
 color wombat256mod
 
-" Enable syntax highlighting
-" You need to reload this file for the change to apply
-filetype plugin indent on
-syntax on
-
-" ??
-set nocp
+syntax on 								" Enable syntax highlighting
 
 " Showing absolute line numbers for cursor line and relative for other lines
 set number 						" show line numbers
@@ -170,7 +131,7 @@ highlight ColorColumn ctermbg=233
 
 
 " easier formatting of paragraphs ??
-vmap Q gq
+vmap Q gq                       " easier formatting paragraphs (?)
 nmap Q gqap
 
 " Useful settings
@@ -196,32 +157,53 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" ============================================================================
-" Python IDE Setup
-" ============================================================================
-
-" Enable vim Hardmode by default
-" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-
 " disable arrows in normal mode
 nnoremap <left> <nop>
 nnoremap <right> <nop>
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 
-" Settings for vim-powerline
-" cd ~/.vim/bundle
-" git clone git://github.com/Lokaltog/vim-powerline.git
+nnoremap <F5> "=strftime("%Y-%m_d")<CR>P		" insert current date
+inoremap <F5> <C-R>=strftime("%Y-%m-%d")<CR>
+
+" Enable vim Hardmode by default
+" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+
+set wildmenu
+set wildmode=list:longest,full
+
+" Clipboard configuration
+" unnamed - register is the selection buffer (try to select something with the
+"           mouse and then center click or click both sx and dx mouse buttons
+"           in another place).
+" unnamedplus - register is actually the system clipboard
+"
+set clipboard=unnamed
+
+" paste toggle
+set pastetoggle=<F2>                  " map paste toggle to F2
+
+nnoremap <c-j> :m .+1<CR>==             " move selected lines up/down with Alt+j/k
+nnoremap <c-k> :m .-2<CR>==
+inoremap <c-j> <Esc>:m .+1<CR>==gi
+inoremap <c-k> <Esc>:m .-2<CR>==gi
+vnoremap <c-j> :m '>+1<CR>gv=gv
+vnoremap <c-k> :m '<-2<CR>gv=gv
+
+"=====================
+" vim-airline
+"=====================
+"let g:airline#extensions#tabline#enabled=1
+"let g:airline_powerline_fonts=1
+"let g:airline_theme='wombat'  " powerlineish | badwolf
 set laststatus=2
+set encoding=utf-8
+"let g:airline_left_sep=''		" Don't show seperators (in case powerline fonts are not working
+"let g:airline_right_sep=''
 
-" Settings for ctrlp
-" cd ~/.vim/bundle
-" git clone https://github.com/kien/ctrlp.vim.git
-let g:ctrlp_max_height = 30
-set wildignore+=*.pyc
-set wildignore+=*_build/*
-set wildignore+=*/coverage/*
-
+"============================================================================
+" Python IDE Setup
+"===========================================================================
 " Settings for python-mode
 " cd ~/.vim/bundle
 " git clone https://github.com/klen/python-mode
@@ -234,24 +216,8 @@ set wildignore+=*/coverage/*
 " let g:pymode_syntax_builtin_objs = 0
 " let g:pymode_syntax_builtin_funcs = 0
 " let g:pymode_rope_lookup_project = 0
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>  " insert breakpoint
 
-" Better navigating through omnicomplete option list
-" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
-set completeopt=longest,menuone
-function! OmniPopup(action)
-  if pumvisible()
-    if a:action == 'j'
-      return "\<C-N>"
-    elseif a:action == 'k'
-      return "\<C-P>"
-    endif
-  endif
-  return a:action
-endfunction
-
-inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
-inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
 " Python folding
 " mkdir -p ~/.vim/ftplugin
@@ -260,91 +226,75 @@ set nofoldenable
 
 " Neocomplete
 " let g:neocomplete#enable_at_startup = 1
-"
-set wildmenu
-set wildmode=list:longest,full
-
-" Clipboard configuration
-" unnamed - register is the selection buffer (try to select something with the
-"           mouse and then center click or click both sx and dx mouse buttons
-"           in another place).
-" unnamedplus - register is actually the system clipboard
-"
-set clipboard=unnamed
-
-"=====================================================
-"" NERDTree settings
-"=====================================================
-let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']     " Ignore files in NERDTree
-let NERDTreeWinSize=40
-"autocmd VimEnter * if !argc() | NERDTree | endif  " Load NERDTree only if vim is run without arguments
-nmap " :NERDTreeToggle<CR>
-" map <F5> :NERDTreeToggle<cr><c-w>p
-
-" load up the nerd tree
-" autocmd vimenter * NERDTree
-map <Leader>t <plug>NERDTreeTabsToggle<CR>
-
-" move nerdtree to the right
-let g:NERDTreeWinPos = "right"
-" move to the first buffer
-" autocmd VimEnter * wincmd p
-let NERDTreeShowHidden=1
-
-" paste toggle
-set pastetoggle=<F2>
 
 " turn off auto complete
 " let g:pymode_rope_completion = 0
 " let g:pymode_rope_complete_on_dot = 0
 
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
-
+"=====================================================
 " vimwiki with markdown support
-let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-" helppage -> :h vimwiki-syntax
+"=====================================================
+" vimwiki/vimwiki
+let g:vimwiki_list = [{'path': '~/Dropbox/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+" Have vimwiki set filetype only within wikihome
+"let g:vimwiki_ext2syntax = {}
 
+"let s:vimwiki = {}
+"let s:vimwiki.path = '~/Dropbox/wiki'
+"let s:vimwiki.ext = '.md'
+"let s:vimwiki.syntax = '.md'    "?
+"let s:vimwiki.diary_rel_path = 'diary_index/'
+"let s:vimwiki.diary_index = 'index'
+"let s:vimwiki.diary_header = 'Diary'
+"let s:vimwiki.diary_sort = 'asc'
+"let g:vimwiki_list = [{'path':'~/Dropbox/wiki', 'path_html':'~/Dropbox/wiki_export/html/'}]
+"let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+" help page -> :h vimwiki-syntax
+
+
+
+" :autocmd FileType vimwiki map d :VimwikiMakeDiaryNote "
+function! ToggleCalendar()
+  execute ":Calendar"
+  if exists("g:calendar_open")
+    if g:calendar_open == 1
+      execute "q"
+      unlet g:calendar_open
+    else
+      g:calendar_open = 1
+    end
+  else
+    let g:calendar_open = 1
+  end
+endfunction
+:autocmd FileType vimwiki map c :call ToggleCalendar()
 
 "=====================================================
-"" TagBar settings
+" TagBar settings
 "=====================================================
 let g:tagbar_autofocus=0
 let g:tagbar_width=42
 autocmd BufEnter *.py :call tagbar#autoopen(0)
 autocmd BufWinLeave *.py :TagbarClose
 
-" ===================================================
+"===================================================
 " Instant markdown
-" ====================================================
+"====================================================
 let g:instant_markdown_autostart = 0    " disable autostart
-map <leader>md :InstantMarkdownPreview<CR>
+map <leader>md :InstantMarkdownPreview<CR>  " leader+md - markdown preview
 
-" ====================================================
+"====================================================
 " YouCompleteMe
-" ====================================================
+"====================================================
 set completeopt-=preview
-"
 "let g:ycm_global_ycm_extra_conf='~/.vim/ycm_extra_conf.py'
 "let g:ycm_confirm_extra_conf=0
-"
-nmap <leader>g :YcmCompleter GoTo<CR>
-nmap <leader>d :YcmCompleter GoToDefinition<CR>
+nmap <leader>g :YcmCompleter GoTo<CR>           " YCM goto with leader-g
+nmap <leader>d :YcmCompleter GoToDefinition<CR> " YCM goto definition with leader-d
 
-" Move selected lines up/down
-" in visual mode (Esc-v or Esc-V for line-wise visual mode)
-" use Ctrl-j to move selected lines down and Ctrl-k for move up
-" move selected lines up one line
-xnoremap <c-k>  :m-2<CR>gv=gv
+" hint: use (or map) YP to duplicate line
 
-" move selected lines down one line
- xnoremap <c-j> :m'>+<CR>gv=gv
 
-" use YP to duplicate line
+
+
