@@ -13,7 +13,7 @@ set rtp+=~/.vim/bundle/Vundle.vim 			" set the runtime path to include Vundle an
 
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'				" let Vundle manage Vundle, required
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'           " not working with python (some problems with python 3)
 
 " additional configuration for vim
 Bundle 'tpope/vim-sensible'
