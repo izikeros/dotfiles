@@ -171,4 +171,4 @@ alias firma-backup="restic -r $HOME/Dropbox/restic-firma backup $HOME/firma"
 alias firma-snapshots="restic -r $HOME/Dropbox/restic-firma snapshots"
 alias brightness="xrandr --output LVDS-1 --brightness $1"
 alias sz="source ~/.zshrc"
-
+alias hawk="echo awk -F\':\' \'{print \$\2}\'"
