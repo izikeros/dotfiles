@@ -48,14 +48,7 @@ symlink_dotfile() {
 # /etc/fstab
 # veracrypt volumes
 
-log_msg "Updating repo list"
-apt-get update
 
-#TODO: add ppa
-
-# install minimal set of packages from curated list
-log_msg "Initiating install of basics"
-apt-get install -y git mc ranger rofi htop curl wget ran rscync zsh openssh-client openssh-server python-pip
 
 # log_msg "Getting configuration/dotfiles"
 # apt-get install -y git
@@ -69,14 +62,20 @@ symlink_dotfile ./dotfiles/functions.sh ~/functions.sh
 symlink_dotfile ./dotfiles/.vimrc ~/.vimrc
 symlink_dotfile ./dotfiles/.xbindkeysrc ~/.xbindkeysrc
 symlink_dotfile ./dotfiles/.Xresources ~/.Xresources
+symlink_dotfile ./dotfiles/.gitconfig ~/.gitconfig
 
 # install Dropbox
-cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-~/.dropbox-dist/dropboxd
+#cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+#~/.dropbox-dist/dropboxd &
+
+# install vim vundle
+mkdir -p ~/.vim/bundle/
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # install ppa repositories
 
-# TODO: install omzsh
+# install omzsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # TODO: chsh zsh
 
