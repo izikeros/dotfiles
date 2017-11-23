@@ -134,6 +134,9 @@ alias num_test_cases="ag \"class Test\" | wc -l"
 alias num_tests="ag \"def test_\" | wc -l"
 alias num_assertions="ag \"self.assert|ok_|eq_\" | wc -l"
 
+# coloured cat for source code:
+alias ccat=ccat.sh
+
 #-------------------------------------------
 # DJANGO, MANAGE.PY
 #--------------------------------------------
