@@ -1,5 +1,8 @@
 #!/bin/sh
 #https://askubuntu.com/questions/9135/how-to-backup-settings-and-list-of-installed-packages
+
+BACKUP_DIR="$HOME/backup"
+
 exec >> err_file
 
 # Logging functions
@@ -23,6 +26,7 @@ symlink_dotfile() {
 	src=$1
 	dst=$2
 
+	#make backup of existing file
 	if [ -f "$dst" ]
 	then
 		echo "$dst found."
@@ -33,7 +37,7 @@ symlink_dotfile() {
 		echo "$2 not found."
 	fi
 	echo "symlinking $src to $dst"
-	#ln -s $src $dst
+	ln -s $src $dst
 	echo "done"
 }
 
@@ -45,19 +49,36 @@ symlink_dotfile() {
 # veracrypt volumes
 
 log_msg "Updating repo list"
-#apt-get update
+apt-get update
 
-log_msg "Setting up configuration/dotfiles"
-apt-get install -y git
-git clone https://github.com/izikeros/dotfiles.git
+#TODO: add ppa
 
 # install minimal set of packages from curated list
 log_msg "Initiating install of basics"
+apt-get install -y git mc ranger rofi htop curl wget ran rscync zsh openssh-client openssh-server python-pip
 
-ln -s ./dotfiles/.bashrc ~/.bashrc
-chmod 644 ~/.bashrc
-log_msg ".bashrc installed"
+# log_msg "Getting configuration/dotfiles"
+# apt-get install -y git
+# git clone https://github.com/izikeros/dotfiles.git
 
+symlink_dotfile ./dotfiles/.bashrc ~/.bashrc
+symlink_dotfile ./dotfiles/.zshrc_omzsh ~/.zshrc
+symlink_dotfile ./dotfiles/.aliases.sh ~/.aliases.sh
+symlink_dotfile ./dotfiles/env_vars.sh ~/env_vars.sh
+symlink_dotfile ./dotfiles/functions.sh ~/functions.sh
+symlink_dotfile ./dotfiles/.vimrc ~/.vimrc
+symlink_dotfile ./dotfiles/.xbindkeysrc ~/.xbindkeysrc
+symlink_dotfile ./dotfiles/.Xresources ~/.Xresources
+
+# install Dropbox
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+~/.dropbox-dist/dropboxd
+
+# install ppa repositories
+
+# TODO: install omzsh
+
+# TODO: chsh zsh
 
 # TODO:
 
