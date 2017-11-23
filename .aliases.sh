@@ -17,6 +17,10 @@ alias load='sar -u 2 1 | tail -n 1'
 # Smart ls alias (l=long, detailed, a=all including hidded, h=size human readable)
 alias l="ls -lah"
 
+alias top10files="find . -type f -print0 | xargs -0 du | sort -n | tail -10 | cut -f2 | xargs -I{} du -sh {}"
+
+alias top10dirs="find . -type d -print0 | xargs -0 du | sort -n | tail -10 | cut -f2 | xargs -I{} du -sh {}"
+
 #--------------------------------------------
 # QUICK CHANGE DIRECTORY
 #--------------------------------------------
@@ -69,6 +73,10 @@ alias au="sudo apt update"
 # mount
 alias mt="mount | column -t"
 alias gmount="mount | grep -i -e"
+
+alias purge='dpkg --list |grep "^rc" | cut -d " " -f 3 | xargs sudo dpkg --purge'
+
+#alias largest-packages=dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
 
 #--------------------------------------------
 # FIND (IN) FILES
@@ -155,6 +163,7 @@ alias hnfav="firefox https://news.ycombinator.com/favorites\\?id\=izik"
 # shortcut for tmuxifier
 alias tw="tmuxifier load-window"
 
+alias jl="jupyter-lab"
 
 # grep no comments
 alias catnc="egrep -v \"^\s*(#|\$)\""

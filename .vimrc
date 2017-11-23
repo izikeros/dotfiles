@@ -13,7 +13,7 @@ set rtp+=~/.vim/bundle/Vundle.vim 			" set the runtime path to include Vundle an
 
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'				" let Vundle manage Vundle, required
-" Bundle 'Valloric/YouCompleteMe'           " not working with python (some problems with python 3)
+"Bundle 'Valloric/YouCompleteMe'           " not working with python (some problems with python 3)
 
 " additional configuration for vim
 Bundle 'tpope/vim-sensible'
@@ -31,20 +31,24 @@ Bundle 'airblade/vim-gitgutter'
 " nice startup screen when vim openerd without any file
 Bundle 'mhinz/vim-startify'
 
+" to map 'jk' and 'kj' to ESC
 Bundle 'zhou13/vim-easyescape'
 
 Bundle 'majutsushi/tagbar'
 
-Bundle 'mattn/calendar-vim'
+" bundle 'mattn/calendar-vim'
 Bundle 'vimwiki/vimwiki'
+
+" markdown preview
 Bundle 'suan/vim-instant-markdown'
 
+" for learning vim
 Bundle 'wikitopian/hardmode'
 
 " Python plugins
-Plugin 'janko-m/vim-test'
-Plugin 'python-mode/python-mode'
-Bundle 'nvie/vim-flake8'
+" Plugin 'janko-m/vim-test'
+" Plugin 'python-mode/python-mode'
+" Bundle 'nvie/vim-flake8'
 "Plugin 'thesheff17/youtube/master/vim/python_editing.vim'
 
 call vundle#end()
@@ -65,7 +69,7 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-
+" map ESC to jk and kj
 let g:easyescape_chars = { "j": 1, "k": 1 }
 let g:easyescape_timeout = 100
 cnoremap jk <ESC>				" map ESC to jk
@@ -163,7 +167,7 @@ nnoremap <right> <nop>
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 
-nnoremap <F5> "=strftime("%Y-%m_d")<CR>P		" insert current date
+nnoremap <F5> "=strftime("%Y-%m-%d")<CR>P		" insert current date
 inoremap <F5> <C-R>=strftime("%Y-%m-%d")<CR>
 
 " Enable vim Hardmode by default
@@ -235,7 +239,7 @@ set nofoldenable
 " vimwiki with markdown support
 "=====================================================
 " vimwiki/vimwiki
-let g:vimwiki_list = [{'path': '~/Dropbox/wiki', 'syntax': 'markdown', 'ext': '.md'}]
+"let g:vimwiki_list = [{'path': '~/Dropbox/wiki', 'syntax': 'markdown', 'ext': '.md'},{'path': '~/testwiki', 'syntax': 'wiki', 'ext': '.wiki'}]
 
 " Have vimwiki set filetype only within wikihome
 "let g:vimwiki_ext2syntax = {}
@@ -254,29 +258,29 @@ let g:vimwiki_list = [{'path': '~/Dropbox/wiki', 'syntax': 'markdown', 'ext': '.
 
 
 
-" :autocmd FileType vimwiki map d :VimwikiMakeDiaryNote "
-function! ToggleCalendar()
-  execute ":Calendar"
-  if exists("g:calendar_open")
-    if g:calendar_open == 1
-      execute "q"
-      unlet g:calendar_open
-    else
-      g:calendar_open = 1
-    end
-  else
-    let g:calendar_open = 1
-  end
-endfunction
-:autocmd FileType vimwiki map c :call ToggleCalendar()
+":autocmd FileType vimwiki map d :VimwikiMakeDiaryNote "
+"function! ToggleCalendar()
+"  execute ":Calendar"
+"  if exists("g:calendar_open")
+"    if g:calendar_open == 1
+"      execute "q"
+"      unlet g:calendar_open
+"    else
+"      g:calendar_open = 1
+"    end
+"  else
+"    let g:calendar_open = 1
+"  end
+"endfunction
+":autocmd FileType vimwiki map c :call ToggleCalendar()
 
 "=====================================================
 " TagBar settings
 "=====================================================
 let g:tagbar_autofocus=0
 let g:tagbar_width=42
-autocmd BufEnter *.py :call tagbar#autoopen(0)
-autocmd BufWinLeave *.py :TagbarClose
+" autocmd BufEnter *.py :call tagbar#autoopen(0)
+" autocmd BufWinLeave *.py :TagbarClose " ! causes error on leave
 
 "===================================================
 " Instant markdown
