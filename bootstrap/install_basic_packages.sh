@@ -1,10 +1,12 @@
 #!/bin/bash
+# run this as su
 
-log_msg "Updating repo list"
+echo "Updating repo list"
 apt-get update
 
 #TODO: add ppa
 
 # install minimal set of packages from curated list
-log_msg "Initiating install of basics"
-apt-get install -y git mc ranger rofi htop curl wget ran rscync zsh openssh-client openssh-server python-pip
+echo "Initiating install of basics"
+apt-get install -y git mc htop curl wget rscync zsh openssh-client openssh-server python-pip terminator
+apt-get install -y ranger rofi tree
