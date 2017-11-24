@@ -184,3 +184,6 @@ alias firma-snapshots="restic -r $HOME/Dropbox/restic-firma snapshots"
 alias brightness="xrandr --output LVDS-1 --brightness $1"
 alias sz="source ~/.zshrc"
 alias hawk="echo awk -F\':\' \'{print \$\2}\'"
+
+alias ytmp3="youtube-dl --extract-audio --audio-format mp3 --prefer-ffmpeg"
+
