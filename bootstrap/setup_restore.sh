@@ -49,7 +49,6 @@ symlink_dotfile() {
 # veracrypt volumes
 
 
-
 # log_msg "Getting configuration/dotfiles"
 # apt-get install -y git
 # git clone https://github.com/izikeros/dotfiles.git
@@ -65,21 +64,30 @@ symlink_dotfile ./dotfiles/.Xresources ~/.Xresources
 symlink_dotfile ./dotfiles/.gitconfig ~/.gitconfig
 
 # install Dropbox
-#cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+if hash dropbox 2>/dev/null; then
+	echo "Seems that Dropbox is already installed"
+else
+	echo "Installing Dropbox"
+	cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -    date "$@"
+fi
+# run Dropbox
 #~/.dropbox-dist/dropboxd &
 
 # install vim vundle
-mkdir -p ~/.vim/bundle/
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [ ! -f ~/.vim/bundle/Vundle.vim ]; then
+	mkdir -p ~/.vim/bundle/
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
 
 # install ppa repositories
+
 
 # install omzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# TODO: chsh zsh
 
-# TODO:
+echo "omzsh should be installed, you might want to switch shell to zsh via command: 'chsh -s /bin/zsh'"
+
 
 # install tools from pip packages
 
