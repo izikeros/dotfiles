@@ -78,16 +78,23 @@ if [ ! -f ~/.vim/bundle/Vundle.vim ]; then
 	mkdir -p ~/.vim/bundle/
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
+# install wobat colors
+# TODO
 
 # install ppa repositories
 
 
 # install omzsh
-if [ ! -f ~/.oh-my-zsh ]; then
+if [ ! -d ~/.oh-my-zsh ]; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 echo "omzsh should be installed, you might want to switch shell to zsh via command: 'chsh -s /bin/zsh'"
 
+# install z
+if [ ! -d ~/.z ]; then
+    git clone https://github.com/rupa/z
+fi
+echo "z installed"
 
 # install tools from pip packages
 
