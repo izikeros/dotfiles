@@ -9,7 +9,11 @@ alias ducks='du -cksh *|sort -rh|head -11'
 # list directory size in current dir
 alias duu='du -sh --max-depth=1'
 
+# free/used space on devices
 alias df="pydf"
+
+# free/used space on disk devices
+alias dfd="pydf | head -n 1; pydf | grep --colour=never /dev/sd"
 
 # display CPU load (requires sar installed)
 alias load='sar -u 2 1 | tail -n 1'
@@ -72,6 +76,7 @@ alias au="sudo apt update"
 # mount
 alias mt="mount | column -t"
 alias gmount="mount | grep -i -e"
+alias mountd="mount | grep /dev/sd | column -t"
 
 alias purge='dpkg --list |grep "^rc" | cut -d " " -f 3 | xargs sudo dpkg --purge'
 
