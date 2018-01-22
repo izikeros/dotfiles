@@ -36,7 +36,6 @@ Bundle 'zhou13/vim-easyescape'
 
 Bundle 'majutsushi/tagbar'
 
-" bundle 'mattn/calendar-vim'
 Bundle 'vimwiki/vimwiki'
 
 " markdown preview
@@ -44,6 +43,9 @@ Bundle 'suan/vim-instant-markdown'
 
 " for learning vim
 Bundle 'wikitopian/hardmode'
+
+" to search
+Bundle 'kien/ctrlp.vim'
 
 " Python plugins
 " Plugin 'janko-m/vim-test'
@@ -167,7 +169,7 @@ nnoremap <right> <nop>
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 
-nnoremap <F5> "=strftime("%Y-%m-%d")<CR>P		" insert current date
+nnoremap <F5> "=strftime("%Y-%m-%d")<CR>		" insert current date
 inoremap <F5> <C-R>=strftime("%Y-%m-%d")<CR>
 
 " Enable vim Hardmode by default
@@ -187,16 +189,16 @@ set clipboard=unnamed
 " paste toggle
 set pastetoggle=<F2>                  " map paste toggle to F2
 
-nnoremap <c-j> :m .+1<CR>==             " move selected lines up/down with Alt+j/k
+nnoremap <c-j> :m .+1<CR>==             " move selected lines up/down with CTRL+j/k
 nnoremap <c-k> :m .-2<CR>==
 inoremap <c-j> <Esc>:m .+1<CR>==gi
 inoremap <c-k> <Esc>:m .-2<CR>==gi
 vnoremap <c-j> :m '>+1<CR>gv=gv
 vnoremap <c-k> :m '<-2<CR>gv=gv
 
-"=====================
+"===========================================================================
 " vim-airline
-"=====================
+"===========================================================================
 "let g:airline#extensions#tabline#enabled=1
 "let g:airline_powerline_fonts=1
 "let g:airline_theme='wombat'  " powerlineish | badwolf
@@ -238,16 +240,14 @@ set nofoldenable
 "=====================================================
 " vimwiki with markdown support
 "=====================================================
-" vimwiki/vimwiki
-let g:vimwiki_list = [{'path': '~/Dropbox/wiki', 'syntax': 'markdown', 'ext': '.md'},{'path': '~/testwiki', 'syntax': 'wiki', 'ext': '.wiki'}]
-
+let g:vimwiki_list = [{'path': '~/Dropbox/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 " Have vimwiki set filetype only within wikihome
 "let g:vimwiki_ext2syntax = {}
 
 "let s:vimwiki = {}
 "let s:vimwiki.path = '~/Dropbox/wiki'
 "let s:vimwiki.ext = '.md'
-"let s:vimwiki.syntax = '.md'    "?
+"let s:vimwiki.syntax = 'markdown'
 "let s:vimwiki.diary_rel_path = 'diary_index/'
 "let s:vimwiki.diary_index = 'index'
 "let s:vimwiki.diary_header = 'Diary'
@@ -256,23 +256,12 @@ let g:vimwiki_list = [{'path': '~/Dropbox/wiki', 'syntax': 'markdown', 'ext': '.
 "let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 " help page -> :h vimwiki-syntax
 
+" open vimwiki diary note for today if vim called with dummy file:
+" DiaryNoteToday
+autocmd VimEnter * if argv() ==# ['DiaryNoteToday'] | execute 'VimwikiMakeDiaryNote' | endif
 
-
-":autocmd FileType vimwiki map d :VimwikiMakeDiaryNote "
-"function! ToggleCalendar()
-"  execute ":Calendar"
-"  if exists("g:calendar_open")
-"    if g:calendar_open == 1
-"      execute "q"
-"      unlet g:calendar_open
-"    else
-"      g:calendar_open = 1
-"    end
-"  else
-"    let g:calendar_open = 1
-"  end
-"endfunction
-":autocmd FileType vimwiki map c :call ToggleCalendar()
+" use 'd' in vimwiki mode to jump to today's diary note
+"autocmd FileType vimwiki map d :VimwikiMakeDiaryNote<CR>
 
 "=====================================================
 " TagBar settings
