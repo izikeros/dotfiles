@@ -35,10 +35,9 @@ alias awdir="cd $HOME/.config/awesome"
 alias v="vim"
 
 # notes
-alias vn="vim $HOME/notes/"
+alias t="vim DiaryNoteToday"
 alias wiki="vim $HOME/Dropbox/wiki/index.md"
-alias wt="vim ~/notes/wilabs_today.md"
-alias td="vim $HOME/notes/TODO.md"
+alias td="vim $HOME/Dropbox/wiki/TODO.md"
 
 alias vz="vim $HOME/.zshrc"
 alias vs="vim $HOME/.ssh/config"
@@ -103,6 +102,8 @@ alias fipynt="fgrep --include=\"*.py\" --exclude-dir={.git,tests} --color=always
 # find markdown files created today
 alias mdtoday="find . -name \"*.md\" -mtime -1 -type f -print"
 
+#alias todo-extract="find ./ | xargs grep -h \"TODO:\" | sed \"s/^[ \s]*//g\""
+alias todo-extract="find ./ -name \"*.py\" | xargs grep -h \"TODO:\|FIXME:\" 2>/dev/null | sed \"s/^[ \s]*//g\" | sed \"s/TODO://\" | sed \"s/FIXME://\" | sed \"s/# # /# /g\""
 #--------------------------------------------
 # GIT
 #--------------------------------------------
@@ -118,10 +119,12 @@ alias gg1="git gui citool"
 # list branches you worked on recently
 alias recent-branches="git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format=\"%(refname:short)\""
 
+alias git-repos="find ./ -name \"*.git\" -type d | sed 's/\.git$//'"
+
 #--------------------------------------------
 # PYTHON, SOFTWARE PROJECT
 #-------------------------------------------
-# provide pep8 violation statisctics for current directory (.)
+# provide pep8 violation statistics for current directory (.)
 alias pep8-stats="pep8 --statistics -qq . | sort -k 1 -n -r"
 alias nb="jupyter-notebook --notebook-dir $HOME/src"
 
@@ -129,13 +132,16 @@ alias nb="jupyter-notebook --notebook-dir $HOME/src"
 alias count_loc="wc -l **/*.py"
 
 # test statistics
-alias num_test_files="find ./ -name \"test*\" | wc -l"
-alias num_test_cases="ag \"class Test\" | wc -l"
-alias num_tests="ag \"def test_\" | wc -l"
-alias num_assertions="ag \"self.assert|ok_|eq_\" | wc -l"
+alias test-num-files="find ./ -name \"test*\" | wc -l"
+alias test-num-cases="ag \"class Test\" | wc -l"
+alias test-num="ag \"def test_\" | wc -l"
+alias test-num-assertions="ag \"self.assert|ok_|eq_\" | wc -l"
 
 # coloured cat for source code:
 alias ccat=ccat.sh
+
+# upgrade all pip packages (system or virt-env if in virt-env)
+alias pip-upgrade='pip freeze local > ~/pip_before_upgrade.txt && sudo -h pip install pipdate && sudo -H pipdate'
 
 #-------------------------------------------
 # DJANGO, MANAGE.PY
@@ -146,8 +152,12 @@ alias mpm="./manage.py migrate"
 alias mpmkm="./manage.py makemigrations"
 alias mpsm="./manage.py showmigrations"
 alias mpsp="./manage.py shell_plus"
-# virtualenvwrapper workon
-alias ww=workon
+
+#-------------------------------------------
+# Activate virtualenvs
+#-------------------------------------------
+alias a-pelican="source ~/.virtualenvs/pelican/bin/activate"
+alias a-ebadu="source ~/.virtualenvs/ebadu-d1.11/bin/activate"
 
 #--------------------------------------------
 # DOCKER (compose)
@@ -162,15 +172,19 @@ alias docker-clean-exited-containers='docker ps -aqf status=exited | xargs -n1 d
 # OTHER
 #--------------------------------------------
 alias wilabsvpn_up="nmcli connection up \"wilabs (openvpn)\""
+
 alias hnfav="firefox https://news.ycombinator.com/favorites\\?id\=izik"
+
 # shortcut for tmuxifier
 alias tw="tmuxifier load-window"
 
+# launch jupyter-lab
 alias jl="jupyter-lab"
 
 # grep no comments
 alias catnc="egrep -v \"^\s*(#|\$)\""
 alias grepnc1="egrep -v \"^\s*(#|$)\""
+
 alias kr="killall Ryver"
 
 # find all git repositories in current directory excluding vim files (usually:
@@ -183,7 +197,9 @@ alias firma-backup="restic -r $HOME/Dropbox/restic-firma backup $HOME/firma"
 alias firma-snapshots="restic -r $HOME/Dropbox/restic-firma snapshots"
 alias brightness="xrandr --output LVDS-1 --brightness $1"
 alias sz="source ~/.zshrc"
+
+# help on how to use awk to extract given column
 alias hawk="echo awk -F\':\' \'{print \$\2}\'"
 
 alias ytmp3="youtube-dl --extract-audio --audio-format mp3 --prefer-ffmpeg"
-
+alias yd=youtube-dl
