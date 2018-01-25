@@ -1,0 +1,863 @@
+aapt       | Android Asset Packaging Tool Google build tools for Android (aapt, aidl, dexdump, dx)                
+adb        | Android Debug Bridge                                                                                 
+aidl       | Binder generator of AIDL interfaces                                                                  
+alsa-base  | ALSA driver configuration files                                                                      
+android-libaapt | Android Asset Packaging Tool                                                                         
+android-libadb | Library for Android Debug Bridge                                                                     
+android-libandroidfw | Android utility library                                                                              
+android-libbacktrace | Android backtrace library                                                                            
+android-libbase | Android base library                                                                                 
+android-libcutils | Android utils library for C                                                                          
+android-libdex | Dalvik Executable library                                                                            
+android-libetc1 | ETC1 compression library                                                                             
+android-libext4-utils | Android ext4 utility library                                                                         
+android-libf2fs-utils | Android F2FS utility library                                                                         
+android-liblog | Android NDK logger interfaces                                                                        
+android-libselinux | Security-Enhanced Linux for Android                                                                  
+android-libsparse | Library for sparse files                                                                             
+android-libunwind | libunwind for Android                                                                                
+android-libutils | Android Utility Function Library                                                                     
+android-libziparchive | Library for ZIP archives                                                                             
+android-platform-tools-base | base tools for developing applications for the Android system                                        
+android-sdk | Software development kit for Android platform                                                        
+android-sdk-build-tools | Tools for building Android applications                                                              
+android-sdk-build-tools-common | Tools for building Android applications                                                              
+android-sdk-common | Common files of Android SDK base toolset                                                             
+android-sdk-platform-tools | Tools for interacting with an Android platform                                                       
+android-sdk-platform-tools-common | Tools for interacting with an Android platform                                                       
+ant        | Java based build tool like make                                                                      
+antlr      | language tool for constructing recognizers, compilers etc                                            
+ant-optional | Java based build tool like make                                                                      
+app-install-data-partner | Application Installer (data files for partner applications/repositories)                             
+aptitude   | terminal-based package manager                                                                       
+apt-offline | offline APT package manager                                                                          
+arandr     | Simple visual front end for XRandR                                                                   
+aspell-pl  | Polish dictionary for aspell                                                                         
+astrometry.net | Astrometry plate solver                                                                              
+atom       | A hackable text editor for the 21st Century.                                                         
+audacity   | fast, cross-platform audio editor                                                                    
+audacity-data | fast, cross-platform audio editor (data)                                                             
+avahi-autoipd | Avahi IPv4LL network address configuration daemon                                                    
+awesome    | highly configurable X window manager                                                                 
+awesome-extra | additional modules for awesome                                                                       
+bastet     | ncurses Tetris clone with a bastard algorithm                                                        
+bbswitch-dkms | Interface for toggling the power on NVIDIA Optimus video cards                                       
+blockout2  | Tetris like game (3D-tetris)                                                                         
+bluez-cups | Bluetooth printer driver for CUPS                                                                    
+bmon       | portable bandwidth monitor and rate estimator                                                        
+bnd        | tool to create and diagnose OSGi bundles                                                             
+brltty     | Access software for a blind person using a braille display                                           
+brltty-x11 | Access software for a blind person using a braille display                                           
+bsdtar     | transitional dummy package for moving bsdtar to libarchive-tools                                     
+build-essential | Informational list of build-essential packages                                                       
+bwm-ng     | small and simple console-based bandwidth monitor                                                     
+byobu      | text window manager, shell multiplexer, integrated DevOps environment                                
+calibre    | e-book converter and library management                                                              
+camorama   | gnome utility to view and save images from a webcam                                                  
+catfish    | File searching tool which is configurable via the command line                                       
+cbm        | display the current network traffic in colors                                                        
+cgit       | hyperfast web frontend for git repositories written in C                                             
+cheese-common | Common files for the Cheese tool to take pictures and videos                                         
+chromium-browser | Chromium web browser, open-source version of Chrome                                                  
+clang-3.8  | C, C++ and Objective-C compiler (LLVM based)                                                         
+cmake      | cross-platform, open-source make system                                                              
+cmatrix    | simulates the display from "The Matrix"                                                              
+cmus       | lightweight ncurses audio player                                                                     
+code       | Code editing. Redefined.                                                                             
+compton    | compositor for X11, based on xcompmgr                                                                
+cpufrequtils | utilities to deal with the cpufreq Linux kernel feature                                              
+cup        | LALR parser generator for Java(tm)                                                                   
+curl       | command line tool for transferring data with URL syntax                                              
+dalvik-exchange | Manipulate Dalvik eXchange format and produce dex files                                              
+darktable  | Virtual lighttable and darkroom for photographers                                                    
+deadbeef-static | The Ultimate Music Player                                                                            
+debian-archive-keyring | GnuPG archive keys of the Debian archive                                                             
+default-jdk-headless | Standard Java or Java compatible Development Kit (headless)                                          
+dex        | generate and execute Application type .desktop files                                                 
+dexdump    | Tool to display information about Android .dex files                                                 
+dmtracedump | Java method trace dump tool                                                                          
+doc-base   | utilities to manage online documentation                                                             
+docker     | System tray for KDE3/GNOME2 docklet applications                                                     
+docker-ce  | Docker: the open-source application container engine                                                 
+docky      | Elegant, powerful, clean dock                                                                        
+dos2unix   | convert text file line endings between CRLF and LF                                                   
+doublecmd-qt | twin-panel (commander-style) file manager (Qt5)                                                      
+dropbox    | cloud synchronization engine                                                                         
+dstat      | versatile resource statistics tool                                                                   
+duplicati  | Backup client for encrypted online backups                                                           
+emacs      | GNU Emacs editor (metapackage)                                                                       
+emacs25-nox | GNU Emacs editor (without GUI support)                                                               
+enblend    | image blending tool                                                                                  
+enfuse     | image exposure blending tool                                                                         
+espeak     | Multi-lingual software speech synthesizer Multi-lingual software speech synthesizer                  
+espeak-data | Multi-lingual software speech synthesizer: speech data files                                         
+espeak-ng-data | Multi-lingual software speech synthesizer: speech data files                                         
+etc1tool   | ETC1 conversion tool                                                                                 
+eviacam    | camera based mouse emulator                                                                          
+evtest     | utility to monitor Linux input device events                                                         
+exiftran   | digital camera JPEG image transformer                                                                
+exiv2      | EXIF/IPTC/XMP metadata manipulation tool                                                             
+extundelete | utility to recover deleted files from ext3/ext4 partition                                            
+exuberant-ctags | build tag file indexes of source code definitions                                                    
+fastboot   | Android fastboot tool                                                                                
+fdupes     | identifies duplicate files within given directories                                                  
+fgallery   | static HTML+JavaScript photo album generator                                                         
+fig2dev    | Utilities for converting XFig figure files                                                           
+fish       | friendly interactive shell                                                                           
+fman       | A modern file manager for power users. Beautiful, fast and extensible                                
+fonts-guru | Meta package to install all Punjabi fonts                                                            
+fonts-guru-extra | Free fonts for Punjabi language                                                                      
+fonts-kacst | KACST free TrueType Arabic fonts                                                                     
+fonts-kacst-one | TrueType font designed for Arabic language                                                           
+fonts-khmeros-core | KhmerOS Unicode fonts for the Khmer language of Cambodia                                             
+fonts-lao  | TrueType font for Lao language                                                                       
+fonts-lklug-sinhala | Unicode Sinhala font by Lanka Linux User Group                                                       
+fonts-lohit-guru | Lohit TrueType font for Punjabi Language                                                             
+fonts-powerline | powerline symbols font                                                                               
+fonts-sil-abyssinica | smart Unicode font for Ethiopian and Erythrean scripts (Amharic et al.)                              
+fonts-sil-padauk | smart Unicode font for languages in Myanmar                                                          
+fonts-symbola | symbolic font providing emoji characters from Unicode 9.0                                            
+fonts-takao-pgothic | Japanese TrueType font set, Takao P Gothic Fonts                                                     
+fonts-thai-tlwg | Thai fonts maintained by TLWG (metapackage)                                                          
+fonts-tibetan-machine | font for Tibetan, Dzongkha and Ladakhi (OpenType Unicode)                                            
+fonts-tlwg-garuda | Thai Garuda font (dependency package)                                                                
+fonts-tlwg-garuda-ttf | Thai Garuda TrueType font                                                                            
+fonts-tlwg-kinnari | Thai Kinnari font (dependency package)                                                               
+fonts-tlwg-kinnari-ttf | Thai Kinnari TrueType font                                                                           
+fonts-tlwg-laksaman | Thai Laksaman font (dependency package)                                                              
+fonts-tlwg-laksaman-ttf | Thai Laksaman TrueType font                                                                          
+fonts-tlwg-loma | Thai Loma font (dependency package)                                                                  
+fonts-tlwg-loma-ttf | Thai Loma TrueType font                                                                              
+fonts-tlwg-mono | Thai TlwgMono font (dependency package)                                                              
+fonts-tlwg-mono-ttf | Thai TlwgMono TrueType font                                                                          
+fonts-tlwg-norasi | Thai Norasi font (dependency package)                                                                
+fonts-tlwg-norasi-ttf | Thai Norasi TrueType font                                                                            
+fonts-tlwg-purisa | Thai Purisa font (dependency package)                                                                
+fonts-tlwg-purisa-ttf | Thai Purisa TrueType font                                                                            
+fonts-tlwg-sawasdee | Thai Sawasdee font (dependency package)                                                              
+fonts-tlwg-sawasdee-ttf | Thai Sawasdee TrueType font                                                                          
+fonts-tlwg-typewriter | Thai TlwgTypewriter font (dependency package)                                                        
+fonts-tlwg-typewriter-ttf | Thai TlwgTypewriter TrueType font                                                                    
+fonts-tlwg-typist | Thai TlwgTypist font (dependency package)                                                            
+fonts-tlwg-typist-ttf | Thai TlwgTypist TrueType font                                                                        
+fonts-tlwg-typo | Thai TlwgTypo font (dependency package)                                                              
+fonts-tlwg-typo-ttf | Thai TlwgTypo TrueType font                                                                          
+fonts-tlwg-umpush | Thai Umpush font (dependency package)                                                                
+fonts-tlwg-umpush-ttf | Thai Umpush TrueType font                                                                            
+fonts-tlwg-waree | Thai Waree font (dependency package)                                                                 
+fonts-tlwg-waree-ttf | Thai Waree TrueType font                                                                             
+fping      | sends ICMP ECHO_REQUEST packets to network hosts                                                     
+fslint     | Utility collection to find and fix common errors in file storage                                     
+fs-uae     | Cross-platform Amiga emulator based on UAE/WinUAE                                                    
+fs-uae-arcade | Fullscreen game browser for FS-UAE                                                                   
+fs-uae-launcher | Launcher and configuration program for FS-UAE                                                        
+fwupd      | Firmware update daemon                                                                               
+gdebi      | simple tool to view and install deb files                                                            
+gdmap      | Tool to visualize diskspace                                                                          
+geeqie     | image viewer using GTK+                                                                              
+gigolo     | frontend to manage connections to remote filesystems using GIO/GVfs                                  
+gimp       | GNU Image Manipulation Program                                                                       
+gir1.2-appstreamglib-1.0 | GObject introspection data for the libappstream-glib library                                         
+gir1.2-atspi-2.0 | Assistive Technology Service Provider (GObject introspection)                                        
+gir1.2-cheese-3.0 | tool to take pictures and videos from your webcam                                                    
+gir1.2-clutter-1.0 | GObject introspection data for the Clutter 1.0 library                                               
+gir1.2-cogl-1.0 | GObject introspection data for the Cogl 1.0 library                                                  
+gir1.2-coglpango-1.0 | GObject introspection data for the CoglPango 1.0 library                                             
+gir1.2-gst-plugins-base-1.0 | GObject introspection data for the GStreamer Plugins Base library                                    
+gir1.2-gstreamer-1.0 | GObject introspection data for the GStreamer library                                                 
+gir1.2-gtkclutter-1.0 | GObject introspection data for the GTK+ Clutter library                                              
+gir1.2-gusb-1.0 | GObject introspection data for libgusb                                                               
+gir1.2-json-1.0 | GLib JSON manipulation library (introspection data)                                                  
+gitg       | git repository viewer                                                                                
+git-gui    | fast, scalable, distributed revision control system (GUI)                                            
+gitk       | fast, scalable, distributed revision control system (revision tree visualizer)                       
+glances    | Curses-based monitoring tool                                                                         
+glassfish-jmac-api | Open source Java EE 5 Application Server                                                             
+gnome-accessibility-themes | Accessibility themes for the GNOME desktop                                                           
+gnome-calculator | GNOME desktop calculator                                                                             
+gnome-mines | popular minesweeper puzzle game for GNOME                                                            
+gnome-sudoku | Sudoku puzzle game for GNOME                                                                         
+google-chrome-stable | The web browser from Google                                                                          
+google-drive-ocamlfuse | FUSE filesystem for Google Drive                                                                     
+google-play-music-desktop-player | An Electron wrapper for Google Play Music                                                            
+googler    | Power tool to Google(Web & News) and Google Site Search from the terminal                            
+gparted    | GNOME partition editor                                                                               
+gradle     | Powerful build system for the JVM                                                                    
+graphviz   | rich set of graph drawing tools                                                                      
+groovy     | Agile dynamic language for the Java Virtual Machine                                                  
+growl-for-linux | Pluggable notification system which supports GNTP                                                    
+grub-customizer | Grub Customizer                                                                                      
+gstreamer1.0-tools | Tools for use with GStreamer                                                                         
+gtk-theme-config | simple interface to change GTK+ themes                                                               
+handbrake  | versatile DVD ripper and video transcoder (GTK+ GUI)                                                 
+heroku     | Client library and CLI to deploy apps on Heroku.                                                     
+howdoi     | command line tool for instant coding answers                                                         
+hprof-conv | HPROF Converter                                                                                      
+htop       | interactive processes viewer                                                                         
+hugin      | panorama photo stitcher                                                                              
+hugin-data | panorama photo stitcher                                                                              
+hugin-tools | panorama photo stitcher                                                                              
+hyphen-pl  | Polish hyphenation patterns for LibreOffice/OpenOffice.org                                           
+i3         | metapackage (i3 window manager, screen locker, menu, statusbar)                                      
+i3blocks   | highly flexible status line for the i3 window manager                                                
+i3status   | Generates a status line for dzen2, xmobar or i3bar                                                   
+i7z        | reporting tool for i7, i5, i3 CPUs                                                                   
+i7z-gui    | GUI for i7z, a reporting tool for i7, i5, i3 CPUs                                                    
+imagemagick-common | image manipulation programs -- infrastructure image manipulation programs -- infrastructure dummy package 
+indi-bin   | INDI server, drivers and tools                                                                       
+indicator-cpufreq | CPU frequency scaling indicator                                                                      
+indicator-messages | indicator that collects messages that need a response                                                
+inkscape   | vector-based drawing program                                                                         
+inkscape-open-symbols | Open source SVG symbol sets that can be used as Inkscape symbols                                     
+intel-microcode | Processor microcode firmware for Intel CPUs                                                          
+inxi       | full featured system information script                                                              
+ivy        | agile dependency manager                                                                             
+java-wrappers | wrappers for java executables                                                                        
+jpegoptim  | utility to optimize jpeg files                                                                       
+junit      | Automated testing framework for Java                                                                 
+junit4     | JUnit regression test framework for Java                                                             
+jupyter-client | Jupyter protocol client APIs (tools)                                                                 
+jupyter-nbextension-jupyter-js-widgets | Interactive widgets                                                                                  
+jupyter-notebook | Jupyter interactive notebook                                                                         
+kdenlive   | non-linear video editor                                                                              
+kdiff3     | compares and merges 2 or 3 files or directories                                                      
+kstars     | desktop planetarium for KDE                                                                          
+kstars-data | data files for KStars desktop planetarium                                                            
+lib32gcc1  | GCC support library (32 bit Version)                                                                 
+libandroid-23-java | Android framework for API Level 23 (6.0 Marshmallow)                                                 
+libandroid-ddms-java | Communicate with devices through adb                                                                 
+libandroid-dex-java | Dalvik Executable Java library                                                                       
+libandroid-tools-annotations-java | annotations used throughout the Android tools libraries                                              
+libandroid-tools-common-java | common library used by other Android tools libraries                                                 
+libantlr-java | language tool for constructing recognizers, compilers etc (java library)                             
+libaopalliance-java | library for interoperability for Java AOP implementations                                            
+libarchive-tools | FreeBSD implementations of 'tar' and 'cpio' and other archive tools                                  
+libasm-java | Java bytecode manipulation framework                                                                 
+libasound2-dev | shared library for ALSA applications -- development files                                            
+libastrometry0 | Astrometry plate solver (shared lib)                                                                 
+libatinject-jsr330-api-java | Java API for JSR-330 Dependency Injection                                                            
+libatk-adaptor | AT-SPI 2 toolkit bridge                                                                              
+libaudcore5 | audacious core engine library                                                                        
+libaudgui5 | audacious media player (libaudgui shared library)                                                    
+libaudqt2  | audacious media player (libaudqt shared library)                                                     
+libbcel-java | Analyze, create, and manipulate (binary) Java class files                                            
+libbcpg-java | Bouncy Castle generators/processors for OpenPGP                                                      
+libbcprov-java | Bouncy Castle Java Cryptographic Service Provider                                                    
+libbindex-java | OSGi BIndex reader                                                                                   
+libbrlapi0.6 | braille display access via BRLTTY                                                                    
+libbsf-java | Bean Scripting Framework to support scripting languages in Java                                      
+libcdi-api-java | Contexts and Dependency Injection for Java EE                                                        
+libcfitsio5 | shared library for I/O with FITS format data files                                                   
+libcfitsio-bin | CFITSIO based utilities                                                                              
+libcglib-java | Code generation library for Java                                                                     
+libcheese8 | tool to take pictures and videos from your webcam                                                    
+libclang1-3.8 | C interface to the clang library                                                                     
+libclang-common-3.8-dev | clang library                                                                                        
+libclassworlds-java | framework for container developers requiring manipulation of ClassLoaders                            
+libclutter-gst-3.0-0 | Open GL based interactive canvas library GStreamer elements                                          
+libcommons-cli-java | Command line arguments and options parsing library                                                   
+libcommons-codec-java | encoder and decoders such as Base64 and hexadecimal codec                                            
+libcommons-collections3-java | Apache Commons Collections                                                                           
+libcommons-dbcp-java | Database Connection Pooling Services                                                                 
+libcommons-httpclient-java | Commons HTTPClient                                                                                   
+libcommons-io-java | Common useful IO related classes                                                                     
+libcommons-lang3-java | Extension of the java.lang package (for Java 5+)                                                     
+libcommons-lang-java | Commons Lang                                                                                         
+libcommons-net-java | Apache Commons Net                                                                                   
+libcommons-pool-java | pooling implementation for Java objects                                                              
+libcpanel-json-xs-perl | module for fast and correct serialising to JSON                                                      
+libcublas8.0 | NVIDIA cuBLAS Library                                                                                
+libcudart8.0 | NVIDIA CUDA Runtime Library                                                                          
+libcufft8.0 | NVIDIA cuFFT Library                                                                                 
+libcufftw8.0 | NVIDIA cuFFTW Library                                                                                
+libcurand8.0 | NVIDIA cuRAND Library                                                                                
+libcusolver8.0 | NVIDIA cuSOLVER Library                                                                              
+libcusparse8.0 | NVIDIA cuSPARSE Library                                                                              
+libdfu1    | Firmware update daemon library for DFU support                                                       
+libdom4j-java | flexible XML framework for Java                                                                      
+libdotconf0 | Configuration file parser library                                                                    
+libdoxia-core-java | Doxia content generation framework (core)                                                            
+libdrm-dev | Userspace interface to kernel DRM services -- development files                                      
+libeasymock-java | Java library to generate Mock Objects for given interfaces                                           
+libecj-java | Eclipse Java compiler (library)                                                                      
+libeclipse-aether-java | Library to handle Java artifact repositories                                                         
+liberfa1   | Essential Routines for Fundamental Astronomy                                                         
+libespeak1 | Multi-lingual software speech synthesizer: shared library Multi-lingual software speech synthesizer: shared library 
+libespeak-ng1 | Multi-lingual software speech synthesizer: shared library                                            
+libf2fs0   | Core libraries for Flash-Friendly File System                                                        
+libfelix-osgi-obr-java | OSGi OBR Service API                                                                                 
+libffi-dev | Foreign Function Interface library (development files)                                               
+libfindbugs-java | Static java code analyzer to find bugs (Library)                                                     
+libflac++6v5 |                                                                                                      
+libflann1.9 | Fast Library for Approximate Nearest Neighbors                                                       
+libfltk1.1 | Fast Light Toolkit                                                                                   
+libfreeimage3 | Support library for graphics image formats (library)                                                 
+libgail-common | GNOME Accessibility Implementation Library -- common modules                                         
+libgeronimo-interceptor-3.0-spec-java | Geronimo API implementation of the Interceptor 3.0 spec                                              
+libgl1-mesa-dev | free implementation of the OpenGL API -- GLX development files                                       
+libglew2.0 | OpenGL Extension Wrangler                                                                            
+libgoogle-gson-java | Converts Java objects into their JSON representation                                                 
+libgpars-groovy-java | open-source concurrency library for Groovy                                                           
+libgphoto2-dev | gphoto2 digital camera library (development files)                                                   
+libgradle-core-java | Powerful build system for the JVM                                                                    
+libgradle-plugins-java | Powerful build system for the JVM                                                                    
+libguava-java | Suite of Google common libraries for Java                                                            
+libguice-java | lightweight dependency injection framework for Java 5 and above                                      
+libhamcrest-java | library of matchers for building test expressions                                                    
+libhawtjni-runtime-java | Java library that provide JNI code generation                                                        
+libhttpclient-java | HTTP/1.1 compliant HTTP agent implementation                                                         
+libhttpcore-java | set of low level HTTP transport components for Java                                                  
+libimage-exiftool-perl | library and program to read and write meta information in multimedia files                           
+libindialignmentdriver1 | Instrument-Neutral Device Interface library -- alignment driver lib                                  
+libindi-data | Instrument-Neutral Device Interface library -- shared data                                           
+libindidriver1 | Instrument-Neutral Device Interface library -- driver library                                        
+libindi-plugins | Instrument-Neutral Device Interface library -- plugins                                               
+libjansi-java | Java library for generating and interpreting ANSI escape sequences                                   
+libjansi-native-java | Java library for ANSI escape sequences                                                               
+libjarjar-java | repackage third-party jars                                                                           
+libjatl-java | JATL                                                                                                 
+libjaxen-java | Java XPath engine                                                                                    
+libjaxp1.3-java | Java XML parser and transformer APIs (DOM, SAX, JAXP, TrAX)                                          
+libjcifs-java | Java library for the CIFS/SMB networking protocol                                                    
+libjcip-annotations-java | Java Concurrency In Practice annotations library                                                     
+libjcommander-java | Java framework for parsing command line parameters                                                   
+libjcsp-java | Java library providing Communicating Sequential Processes (CSP) features                             
+libjdom1-java | lightweight and fast library using XML                                                               
+libjetty9-extra-java | Java servlet engine and webserver -- extra libraries                                                 
+libjetty9-java | Java servlet engine and webserver -- core libraries                                                  
+libjformatstring-java | Java format string compile-time checker                                                              
+libjline2-java | console input handling in Java                                                                       
+libjna-java | Dynamic access of native libraries from Java without JNI                                             
+libjna-jni | Dynamic access of native libraries from Java without JNI (native libs)                               
+libjpeg62  | Independent JPEG Group's JPEG runtime library (version 6.2)                                          
+libjsch-java | Java implementation of the SSH2 protocol                                                             
+libjs-jquery-datatables | jQuery plug-in that makes nice tables from different data sources                                    
+libjsoup-java | Java HTML parser that makes sense of real-world HTML soup                                            
+libjsr166y-java | Parallel computation framework for Java                                                              
+libjsr305-java | Java library that provides annotations for software defect detection                                 
+libjxr0    | JPEG-XR lib                                                                                          
+libjzlib-java | Java Zlib implementation                                                                             
+libkf5plotting5 | KPlotting provides classes to do plotting.                                                           
+libkryo-java | object graph serialization framework for Java                                                        
+libkxml2-java | small XML parser, designed for small environments                                                    
+libllvm3.8 | Modular compiler and toolchain technologies, runtime library                                         
+liblog4j1.2-java | Logging library for java                                                                             
+liblogback-java | flexible logging library for Java                                                                    
+libmagick++-6.q16-7 |                                                                                                      
+libmail-java | JavaMail API Reference Implementation                                                                
+libmaven2-core-java | Core libraries for Maven2                                                                            
+libmaven3-core-java | Core libraries for Maven 3                                                                           
+libmaven-parent-java | Maven metadata for Apache Maven itself                                                               
+libmediainfo0v5 | library for reading metadata from media files -- shared library                                      
+libminlog-java | minimal Java logging library                                                                         
+libmultiverse-core-java | Java library implementing Software Transactional Memory (STM)                                        
+libnative-platform-java | Java bindings for various native APIs                                                                
+libnative-platform-jni | Java bindings for various native APIs                                                                
+libnekohtml-java | NekoHTML                                                                                             
+libnetpbm10 | Graphics conversion tools shared libraries                                                           
+libnetty-3.9-java | Java NIO client/server socket framework                                                              
+libnginx-mod-http-geoip | GeoIP HTTP module for Nginx                                                                          
+libnginx-mod-http-image-filter | HTTP image filter module for Nginx                                                                   
+libnginx-mod-http-xslt-filter | XSLT Transformation module for Nginx                                                                 
+libnginx-mod-mail | Mail module for Nginx                                                                                
+libnginx-mod-stream | Stream module for Nginx                                                                              
+libnova-0.16-0 | celestial mechanics, astrometry and astrodynamics library                                            
+libnppc8.0 | NVIDIA Performance Primitives core runtime library                                                   
+libnppi8.0 | NVIDIA Performance Primitives for image processing runtime library                                   
+libnppial8.0 | NVIDIA Performance Primitives lib for Image Arithmetic and Logic                                     
+libnppicc8.0 | NVIDIA Performance Primitives lib for Image Color Conversion                                         
+libnppicom8.0 | NVIDIA Performance Primitives lib for Image Compression                                              
+libnppidei8.0 | NVIDIA Performance Primitives lib for Image Data Exchange and Initialization                         
+libnppif8.0 | NVIDIA Performance Primitives lib for Image Filters                                                  
+libnppig8.0 | NVIDIA Performance Primitives lib for Image Geometry transforms                                      
+libnppim8.0 | NVIDIA Performance Primitives lib for Image Morphological operations                                 
+libnppist8.0 | NVIDIA Performance Primitives lib for Image Statistics                                               
+libnppisu8.0 | NVIDIA Performance Primitives lib for Image Support                                                  
+libnppitc8.0 | NVIDIA Performance Primitives lib for Image Threshold and Compare                                    
+libnpps8.0 | NVIDIA Performance Primitives for signal processing runtime library                                  
+libnvblas8.0 | NVBLAS runtime library                                                                               
+libnvgraph8.0 | NVIDIA Graph Analytics library (nvGRAPH)                                                             
+libnvrtc8.0 | CUDA Runtime Compilation (NVIDIA NVRTC Library)                                                      
+libnvtoolsext1 | NVIDIA Tools Extension Library                                                                       
+libnvvm3   | NVIDIA NVVM Library                                                                                  
+libobjc4   | Runtime library for GNU Objective-C applications                                                     
+libobjc-6-dev | Runtime library for GNU Objective-C applications (development files)                                 
+libobjenesis-java | Java library to instantiate a new object of a particular class                                       
+libopenjfx-java | JavaFX/OpenJFX 8                                                                                     
+libopenjfx-jni | JavaFX/OpenJFX 8                                                                                     
+libosgi-annotation-java | Java OSGi API                                                                                        
+libosgi-compendium-java | Java OSGi API                                                                                        
+libosgi-core-java | Java OSGi API                                                                                        
+libotr5    | Off-the-Record Messaging library                                                                     
+libpam-gnome-keyring | PAM module to unlock the GNOME keyring upon login                                                    
+libpano13-3 | panorama tools library                                                                               
+libpano13-bin | panorama tools utilities                                                                             
+libpcaudio0 | C API to different audio devices                                                                     
+libplexus-ant-factory-java | Plexus Ant Factory                                                                                   
+libplexus-archiver-java | Archiver plugin for the Plexus compiler system                                                       
+libplexus-bsh-factory-java | Plexus Beanshell Factory                                                                             
+libplexus-cipher-java | Plexus Cipher Component used by Maven                                                                
+libplexus-classworlds2-java | Class loading utilities for the Plexus framework (transitional package)                              
+libplexus-classworlds-java | Class loading utilities for the Plexus framework                                                     
+libplexus-cli-java | Easily create CLIs with Plexus components                                                            
+libplexus-component-annotations-java | Plexus Component Annotations                                                                         
+libplexus-component-metadata-java | Component Metadata Maven plugin for Plexus                                                           
+libplexus-container-default1.5-java | Plexus Inversion-of-control Container                                                                
+libplexus-container-default-java | utilities for the Plexus framework                                                                   
+libplexus-containers1.5-java | Plexus IoC Container core with companion tools                                                       
+libplexus-containers-java | utilities for the Plexus framework                                                                   
+libplexus-interactivity-api-java | interactivity API for the Plexus framework                                                           
+libplexus-interpolation-java | Plexus Interpolation API                                                                             
+libplexus-io-java | Plexus IO Components                                                                                 
+libplexus-sec-dispatcher-java | Plexus Security Dispatcher Component used by Maven                                                   
+libplexus-utils2-java | utilities for the Plexus framework                                                                   
+libplexus-utils-java | utilities for the Plexus framework                                                                   
+libpolyglot-maven-java | modules to enable Maven usage in others JVM languages                                                
+libportsmf0v5 | Portable Standard Midi File Library                                                                  
+libpotrace0 | library for tracing bitmaps                                                                          
+libproguard-java | Java class file shrinker, optimizer, and obfuscator (Library)                                        
+libpthread-stubs0-dev | pthread stubs not provided by native libc, development files                                         
+libpulse-dev | PulseAudio client development headers and libraries                                                  
+libpython3.6-minimal | Minimal subset of the Python language (version 3.6)                                                  
+libpython3.6-stdlib | Interactive high-level object-oriented language (standard library, version 3.6)                      
+libqdox2-java | quickly parses declarations and Javadoc from Java source                                             
+libqdox-java | Quickly parses declarations and Javadoc from Java source                                             
+libqqwing2v5 | tool for generating and solving Sudoku puzzles (library)                                             
+libqt5serialport5 | Qt 5 serial port support                                                                             
+libraw-bin | raw image decoder library (tools)                                                                    
+libreflectasm-java | library that provides reflection by using code generation                                            
+libreoffice | office productivity suite (metapackage)                                                              
+libreoffice-gtk | transitional package for LibreOffice gtk2 backend                                                    
+libreoffice-gtk2 | office productivity suite -- GTK+ 2 integration                                                      
+libreoffice-l10n-pl | office productivity suite -- Polish language package                                                 
+librhino-java | Libraries for rhino Java Script Engine                                                               
+libsbsms10 | Subband Sinusoidal Modeling Synthesis                                                                
+libsimple-http-java | high-performance, embeddable Java HTTP engine                                                        
+libsisu-inject-java | Dependency Injection container for Java                                                              
+libsisu-plexus-java | Plexus adapter for the Sisu dependency injection container                                           
+libslf4j-java | Simple Logging Facade for Java                                                                       
+libsonic0  | Simple library to speed up or slow down speech                                                       
+libsource-highlight4v5 | source highlighting library                                                                          
+libsource-highlight-common | architecture-independent files for source highlighting library                                       
+libspeechd2 | Speech Dispatcher: Shared libraries                                                                  
+libspring-beans-java | modular Java/J2EE application framework                                                              
+libspring-core-java | modular Java/J2EE application framework                                                              
+libssl-dev | Secure Sockets Layer toolkit                                                                         
+libsuil-0-0 | library for loading and wrapping LV2 plugin UIs                                                      
+libtagc0   | audio meta-data library                                                                              
+libtaglibs-standard-impl-java | Apache JSP Standard Taglib Implementation                                                            
+libtaglibs-standard-spec-java | Apache JSP Standard Taglib Specification API                                                         
+libthrust-dev | Thrust                                                                                               
+libtomcat8-java | Apache Tomcat 8                                                                                      
+libuuid-perl | Perl extension for using UUID interfaces as defined in e2fsprogs                                     
+libvamp-hostsdk3v5 | helper library for Vamp hosts written in C++                                                         
+libvdpau-dev | Video Decode and Presentation API for Unix (development files)                                       
+libvigraimpex6 | C++ computer vision library                                                                          
+libwagon2-java | resources' transport abstraction that is used in Maven                                               
+libwagon-java | tools to manage Maven artifacts and deployment                                                       
+libwcs5    | Implementation of the FITS WCS standard                                                              
+libwmf-bin | Windows metafile conversion tools                                                                    
+libx11-dev | X11 client-side library (development headers)                                                        
+libx11-doc | X11 client-side library (development documentation)                                                  
+libx11-xcb-dev | Xlib/XCB interface library (development headers)                                                     
+libxalan2-java | XSL Transformations (XSLT) processor in Java                                                         
+libxau-dev | X11 authorisation library (development headers)                                                      
+libxbean-java | plugin based Java application server                                                                 
+libxcb1-dev | X C Binding, development files                                                                       
+libxcb-dri2-0-dev | X C Binding, dri2 extension, development files                                                       
+libxcb-dri3-dev | X C Binding, dri3 extension, development files                                                       
+libxcb-glx0-dev | X C Binding, glx extension, development files                                                        
+libxcb-present-dev | X C Binding, present extension, development files                                                    
+libxcb-randr0-dev | X C Binding, randr extension, development files                                                      
+libxcb-render0-dev | X C Binding, render extension, development files                                                     
+libxcb-shape0-dev | X C Binding, shape extension, development files                                                      
+libxcb-sync-dev | X C Binding, sync extension, development files                                                       
+libxcb-xfixes0-dev | X C Binding, xfixes extension, development files                                                     
+libxdamage-dev | X11 damaged region extension library (development headers)                                           
+libxdmcp-dev | X11 authorisation library (development headers)                                                      
+libxerces2-java | Validating XML parser for Java with DOM level 3 support                                              
+libxext-dev | X11 miscellaneous extensions library (development headers)                                           
+libxfcegui4-4 | Basic GUI C functions for Xfce4                                                                      
+libxfixes-dev | X11 miscellaneous 'fixes' extension library (development headers)                                    
+libxml-commons-external-java | XML Commons external code                                                                            
+libxml-commons-resolver1.1-java | XML entity and URI resolver library                                                                  
+libxom-java | New XML object model for Java                                                                        
+libxpp2-java | XML pull parser library for java V2                                                                  
+libxpp3-java | XML pull parser library for java                                                                     
+libxshmfence-dev | X shared memory fences                                                                               
+libxstream-java | Java library to serialize objects to XML and back again                                              
+libxxf86vm-dev | X11 XFree86 video mode extension library (development headers)                                       
+libyaml-snake-java | YAML parser and emitter for the Java programming language                                            
+libyaml-tiny-perl | Perl module for reading and writing YAML files                                                       
+libzopfli1 | zlib (gzip, deflate) compatible compressor                                                           
+linux-sound-base | base package for ALSA and OSS sound systems                                                          
+llgal      | Command-line online gallery generator                                                                
+llvm-3.8   | Modular compiler and toolchain technologies                                                          
+llvm-3.8-dev | Modular compiler and toolchain technologies, libraries and headers                                   
+llvm-3.8-runtime | Modular compiler and toolchain technologies, IR interpreter                                          
+lm-sensors | utilities to read temperature/voltage/fan sensors                                                    
+lxdm       | LXDE display manager                                                                                 
+lxqt       | Metapackage for LXQt                                                                                 
+lxsession-edit | configure what application start up automaticlly in LXDE                                             
+markdown   | Text-to-HTML conversion tool                                                                         
+mc         | Midnight Commander                                                                                   
+meld       | graphical tool to diff and merge files                                                               
+mencoder   | MPlayer's Movie Encoder                                                                              
+menulibre  | advanced FreeDesktop.org compliant menu editor                                                       
+mesa-common-dev | Developer documentation for Mesa                                                                     
+mkusb      | mkusb                                                                                                
+most       | Pager program similar to more and less                                                               
+mousepad   | simple Xfce oriented text editor                                                                     
+mpc        | command-line tool to interface MPD                                                                   
+mpd        | Music Player Daemon                                                                                  
+mplayer    | movie player for Unix-like systems                                                                   
+mtr        | Full screen ncurses and X11 traceroute tool                                                          
+mugshot    | lightweight user-configuration application                                                           
+multitail  | view multiple logfiles windowed on console                                                           
+mutt       | text-based mailreader supporting MIME, GPG, PGP and threading                                        
+ncdu       | ncurses disk usage viewer                                                                            
+ncmpcpp    | ncurses-based client for the Music Player Daemon (MPD)                                               
+neofetch   | Shows Linux System Information with Distribution Logo                                                
+neovim     | heavily refactored vim fork                                                                          
+nethogs    | Net top tool grouping bandwidth per process                                                          
+netpbm     | Graphics conversion tools between image formats                                                      
+network-manager-openvpn-gnome | network management framework (OpenVPN plugin GNOME GUI)                                              
+network-manager-pptp | network management framework (PPTP plugin core)                                                      
+network-manager-pptp-gnome | network management framework (PPTP plugin GNOME GUI)                                                 
+network-manager-vpnc | network management framework (VPNC plugin core)                                                      
+nginx-common | small, powerful, scalable web/proxy server                                                           
+nginx-core | nginx web/proxy server (standard version)                                                            
+nim        | Nim programming language                                                                             
+nitrogen   | wallpaper browser and changing utility for X                                                         
+nload      | realtime console network usage monitor                                                               
+nomacs     | image viewer with capability of syncing multiple instances                                           
+npm        | package manager for Node.js                                                                          
+numix-gtk-theme | modern flat theme from the Numix project                                                             
+numlockx   | enable NumLock in X11 sessions                                                                       
+nvidia-384 | NVIDIA binary driver                                                                                 
+nvidia-cuda-doc | NVIDIA CUDA and OpenCL documentation                                                                 
+nvidia-cuda-gdb | NVIDIA CUDA Debugger (GDB)                                                                           
+nvidia-opencl-dev | NVIDIA OpenCL development files                                                                      
+nvidia-prime | Tools to enable NVIDIA's Prime                                                                       
+nvidia-settings | Tool for configuring the NVIDIA graphics driver                                                      
+okular     | universal document viewer                                                                            
+onboard    | Simple On-screen Keyboard                                                                            
+onboard-common | Simple On-screen Keyboard (common files)                                                             
+onboard-data | Language model files for the word suggestion feature of Onboard                                      
+opencl-c-headers | OpenCL (Open Computing Language) C header files                                                      
+opencl-clhpp-headers | C++ headers for OpenCL development                                                                   
+opencl-headers | OpenCL (Open Computing Language) header files                                                        
+openjdk-8-jdk-headless | OpenJDK Development Kit (JDK) (headless) Oracle Java(TM) Development Kit (JDK) 8 Oracle Java(TM) Development Kit (JDK) 9 
+openjfx    | JavaFX/OpenJFX 8                                                                                     
+openssh-server | secure shell (SSH) server, for secure access from remote machines                                    
+p7zip      | 7zr file archiver with high compression ratio                                                        
+parallel   | build and execute command lines from standard input in parallel                                      
+parole     | media player based on GStreamer framework                                                            
+pastebinit | command-line pastebin client                                                                         
+pdfgrep    | search in pdf files for strings matching a regular expression                                        
+pdfsam-basic | Open source desktop application to split, merge, rotate and mix PDF files.                           
+pep8       | Python PEP 8 code style checker                                                                      
+pidgin-otr | Off-the-Record Messaging plugin for Pidgin                                                           
+plymouth-theme-xubuntu-logo | graphical boot animation and logger                                                                  
+plymouth-theme-xubuntu-text | graphical boot animation and logger                                                                  
+pngcrush   | optimizes PNG (Portable Network Graphics) files                                                      
+portaudio19-dev | Portable audio I/O                                                                                   
+posterazor | splits an image across multiple pages for assembly into a poster                                     
+postgresql | object-relational SQL database (supported version)                                                   
+powertop   | diagnose issues with power consumption and management                                                
+ppa-purge  | disables a PPA and reverts to official packages                                                      
+pptp-linux | Point-to-Point Tunneling Protocol (PPTP) Client                                                      
+proguard-cli | Java class file shrinker, optimizer, and obfuscator (CLI)                                            
+psensor    | display graphs for monitoring hardware temperature                                                   
+pycodestyle | Python style guide checker (formerly called pep8)                                                    
+pydf       | colourised df(1)-clone                                                                               
+pyflakes   | passive checker of Python 2 and 3 programs                                                           
+pyflakes3  | passive checker of Python 2 and 3 programs                                                           
+pylint     | Python code static checker and UML diagram generator                                                 
+pypy       | fast alternative implementation of Python                                                            
+python3.6  | Interactive high-level object-oriented language (version 3.6)                                        
+python3.6-dev | Header files and a static library for Python (v3.6)                                                  
+python3.6-minimal | Minimal subset of the Python language (version 3.6)                                                  
+python3-arrow | Python3 library to manipulate dates, times, and timestamps                                           
+python3-cairocffi | cffi-based cairo bindings for Python (Python3)                                                       
+python3-cffi | Foreign Function Interface for Python 3 calling C code                                               
+python3-colorlog | formatter to use with the logging module of Python 3                                                 
+python3-dev | header files and a static library for Python (default)                                               
+python3-distutils-extra | enhancements to the Python3 build system                                                             
+python3-easygui | module for very simple, very easy GUI programming in Python3                                         
+python3-newt | NEWT module for Python3                                                                              
+python3-pip | Python package installer                                                                             
+python3-ply | Lex and Yacc implementation for Python3                                                              
+python3-pycodestyle | Python style guide checker (formerly called pep8)                                                    
+python3-pycparser | C parser in Python 3                                                                                 
+python3-pyflakes | passive checker of Python 3 programs                                                                 
+python3-pypeg2 | Intrinsic PEG Parser-Interpreter for Python                                                          
+python3-pyqt5 | Python 3 bindings for Qt5                                                                            
+python3-pyqt5.qtopengl | Python 3 bindings for Qt5's OpenGL module                                                            
+python3-pyqt5.qtwebengine | Python 3 bindings for Qt5's WebEngine module                                                         
+python3-qtile | This package is a library for developing X window managers (Python 3)                                
+python3-setproctitle | Setproctitle implementation for Python 3                                                             
+python3-setuptools | Python3 Distutils Enhancements                                                                       
+python3-sortedcontainers | sorted container types: SortedList, SortedDict, and SortedSet (Python 3)                             
+python3-venv | pyvenv-3 binary for python3 (default python3 version)                                                
+python3-wheel | built-package format for Python                                                                      
+python3-widgetsnbextension | Interactive widgets                                                                                  
+python3-xcffib | This package is a Python binding for XCB (Python 3)                                                  
+python-alabaster | Configurable sidebar-enabled Sphinx theme (Python 2)                                                 
+python-antlr | language tool for constructing recognizers, compilers etc                                            
+python-astroid | rebuild a new abstract syntax tree from Python's AST                                                 
+python-astrometry | Astrometry plate solver (Python package)                                                             
+python-astropy | Core functionality for performing astrophysics with Python                                           
+python-babel | tools for internationalizing Python applications                                                     
+python-babel-localedata | tools for internationalizing Python applications                                                     
+python-backports-abc | Backport of the "collections.abc" stdlib module (Python 2)                                           
+python-backports.functools-lru-cache | backport of functools.lru_cache from Python 3.3                                                      
+python-backports-shutil-get-terminal-size | Backport of the "shutil.get_terminal_size" function (Python 2)                                       
+python-configobj | simple but powerful config file reader and writer for Python 2                                       
+python-configparser | backport of the enhanced config parser introduced in Python 3.2                                      
+python-cycler | composable kwarg iterator (Python 2)                                                                 
+python-dbus | simple interprocess messaging system (Python interface)                                              
+python-decorator | simplify usage of Python decorators by programmers                                                   
+python-defusedxml | XML bomb protection for Python stdlib modules (for Python 2)                                         
+python-dev | header files and a static library for Python (default)                                               
+python-entrypoints | Discover and load entry points from installed packages (Python 2)                                    
+python-funcsigs | function signatures from PEP362                                                                      
+python-functools32 | Backport of the functools module from Python 3.2.3 to Python 2.7                                     
+python-gtk2 | Python bindings for the GTK+ widget set                                                              
+python-imagesize | Python 2 module for getting image size from png/jpeg/jpeg2000/gif file                               
+python-ipython | Enhanced interactive Python shell (Python 2 version)                                                 
+python-ipython-genutils | IPython vestigial utilities for Python 2                                                             
+python-isort | library for sorting Python imports (Python 2)                                                        
+python-jdcal | Julian dates from proleptic Gregorian and Julian calendars                                           
+python-jedi | autocompletion tool for Python                                                                       
+python-jinja2 | small but fast and easy to use stand-alone template engine                                           
+python-joblib | tools to provide lightweight pipelining in Python                                                    
+python-jsonschema | An(other) implementation of JSON Schema (Draft 3 and 4)                                              
+python-jupyter-client | Jupyter protocol client APIs (Python 2)                                                              
+python-jupyter-core | Core common functionality of Jupyter projects for Python 2                                           
+python-lazy-object-proxy | Python fast and thorough lazy object proxy                                                           
+python-lzma | Python bindings for liblzma                                                                          
+python-magic | Recognize the type of data in a file using "magic" numbers                                           
+python-markupsafe | HTML/XHTML/XML string library for Python                                                             
+python-matplotlib | Python based plotting system in a style similar to Matlab                                            
+python-mistune | Markdown parser for Python 2                                                                         
+python-mock | Mocking and Testing Library                                                                          
+python-nbformat | Jupyter notebook format (Python 2)                                                                   
+python-ndg-httpsclient | enhanced HTTPS support for httplib and urllib2 using PyOpenSSL for Python2                           
+python-nose | test discovery and running of Python's unittest                                                      
+python-numexpr | Fast numerical array expression evaluator for Python and NumPy                                       
+python-numpy | Numerical Python adds a fast array facility to the Python language                                   
+python-openpyxl | module to read/write OpenXML xlsx/xlsm files                                                         
+python-openssl | Python 2 wrapper around the OpenSSL library                                                          
+python-pandas | data structures for "relational" or "labeled" data                                                   
+python-pandas-lib | low-level implementations and bindings for pandas                                                    
+python-pathlib2 | Backport of the "pathlib" stdlib module (Python 2)                                                   
+python-patsy | statistical models in Python using symbolic formulas                                                 
+python-pep8 | Python PEP 8 code style checker                                                                      
+python-pickleshare | File system based database that uses Python pickles for Python 2                                     
+python-pip | Python package installer                                                                             
+python-ply | Lex and Yacc implementation for Python2                                                              
+python-prompt-toolkit | library for building interactive command lines (Python 2)                                            
+python-py  | Advanced Python development support library (Python 2)                                               
+python-pyaudio | Python bindings for PortAudio v19                                                                    
+python-pycurl | Python bindings to libcurl                                                                           
+python-pyflakes | passive checker of Python 2 programs                                                                 
+python-pytest | Simple, powerful testing in Python                                                                   
+python-qt4 | Python bindings for Qt4                                                                              
+python-requests | elegant and simple HTTP library for Python2, built for human beings                                  
+python-roman | module for generating/analyzing Roman numerals for Python 2                                          
+python-scipy | scientific tools for Python                                                                          
+python-simplegeneric | simple generic functions for Python                                                                  
+python-simplejson | simple, fast, extensible JSON encoder/decoder for Python 2.x                                         
+python-singledispatch | single-dispatch generic functions for Python                                                         
+python-soappy | SOAP Support for Python                                                                              
+python-statsmodels | Python module for the estimation of statistical models                                               
+python-statsmodels-lib | low-level implementations and bindings for statsmodels                                               
+python-subprocess32 | backport of the Py3 stdlib subprocess module for Py2                                                 
+python-tables-data | hierarchical database for Python based on HDF5                                                       
+python-tk  | Tkinter                                                                                              
+python-tornado | scalable, non-blocking web server and tools                                                          
+python-traitlets | Lightweight Traits-like package for Python 2                                                         
+python-urllib3 | HTTP library with thread-safe connection pooling for Python                                          
+python-wcwidth | determine printable width of a string on a terminal (Python 2)                                       
+python-widgetsnbextension | Interactive widgets                                                                                  
+python-wnck | Python bindings for the WNCK library                                                                 
+python-wrapt | decorators, wrappers and monkey patching.                                                            
+python-wstools | WSDL parsing tools Python module                                                                     
+python-xlib | interface for Python to the X11 protocol                                                             
+python-xlrd | extract data from Microsoft Excel spreadsheet files                                                  
+python-xlwt | module for writing Microsoft Excel spreadsheet files                                                 
+python-zmq | Python bindings for 0MQ library                                                                      
+qownnotes  | Plain text notepad and todo list manager with markdown support that works together with ownCloud     
+qterminal  | Lightweight Qt terminal emulator                                                                     
+qtile      | Small, simple, extensible X11 window manager written in Python                                       
+ranger     | File manager with an ncurses frontend written in Python                                              
+r-base     | GNU R statistical computation and graphics system                                                    
+r-cran-curl | GNU R modern and flexible web client for R                                                           
+r-cran-httr | GNU R tools for working with URLs and HTTP                                                           
+recoll     | Personal full text search package with a Qt GUI                                                      
+redshift   | Adjusts the color temperature of your screen                                                         
+ristretto  | lightweight picture-viewer for the Xfce desktop environment                                          
+rofi       | window switcher, run dialog and dmenu replacement                                                    
+rstudio    | RStudio                                                                                              
+ruby       | Interpreter of object-oriented scripting language Ruby (default version)                             
+ruby-bundler | Manage Ruby application dependencies (runtime)                                                       
+ruby-childprocess | Ruby library for controlling external programs running in the background                             
+ruby-dev   | Header files for compiling extension modules for Ruby (default version)                              
+ruby-domain-name | Domain Name manipulation library for Ruby                                                            
+ruby-erubis | fast and extensible eRuby implementation which supports multi-language                               
+ruby-ffi   | load dynamic libraries, bind functions from within ruby code                                         
+ruby-http-cookie | Ruby library to handle HTTP Cookies based on RFC 6265                                                
+ruby-i18n  | I18n and localization solution for Ruby                                                              
+ruby-listen | Ruby library listening to file modifications                                                         
+ruby-log4r | Logging library for Ruby                                                                             
+ruby-mime-types | guess MIME type of files                                                                             
+ruby-molinillo | generic dependency resolution algorithm                                                              
+ruby-net-http-persistent | Manages persistent connections using Net::HTTP                                                       
+ruby-netrc | Ruby library to read and write netrc files                                                           
+ruby-net-scp | pure ruby implementation of the SCP protocol                                                         
+ruby-net-sftp | Ruby implementation of the SFTP protocol                                                             
+ruby-net-ssh | Ruby implementation of the SSH protocol                                                              
+ruby-nokogiri | HTML, XML, SAX, and Reader parser for Ruby                                                           
+ruby-pkg-config | pkg-config implementation for Ruby                                                                   
+ruby-rb-inotify | A Ruby wrapper for Linux's inotify, using FFI                                                        
+ruby-rest-client | simple REST client for Ruby                                                                          
+ruby-sqlite3 | SQLite3 interface for Ruby                                                                           
+ruby-thor  | Ruby scripting framework                                                                             
+ruby-unf   | Wrapper library to bring Unicode Normalization Form support to Ruby                                  
+ruby-unf-ext | Unicode Normalization Form support library for CRuby                                                 
+run-one    | run just one instance of a command and its args at a time                                            
+ryver      | Ryver Desktop                                                                                        
+s3cmd      | command-line Amazon S3 client                                                                        
+s3fs       | FUSE-based file system backed by Amazon S3                                                           
+screen     | terminal multiplexer with VT100/ANSI terminal emulation                                              
+screenfetch | Bash Screenshot Information Tool                                                                     
+screen-resolution-extra | Extension for the GNOME screen resolution applet                                                     
+sddm       | modern display manager for X11                                                                       
+sextractor | Source extractor for astronomical images                                                             
+sgt-launcher | launcher for sgt-puzzles collection                                                                  
+sgt-puzzles | Simon Tatham's Portable Puzzle Collection                                                            
+shimmer-themes | Gtk+ themes from Shimmer Project                                                                     
+shutter    | feature-rich screenshot program                                                                      
+silversearcher-ag | very fast grep-like program, alternative to ack-grep                                                 
+simplescreenrecorder | Feature-rich screen recorder for X11 and OpenGL                                                      
+slim       | desktop-independent graphical login manager for X11                                                  
+slurm      | Realtime network interface monitor                                                                   
+source-highlight | convert source code to syntax highlighted document                                                   
+speech-dispatcher | Common interface to speech synthesizers                                                              
+speech-dispatcher-audio-plugins | Speech Dispatcher: Audio output plugins                                                              
+speech-dispatcher-espeak-ng | Speech Dispatcher: Espeak-ng output module                                                           
+sphinx-common | documentation generator for Python projects                                                          
+split-select | APK split and selection tool                                                                         
+sqlite3    | Command line interface for SQLite 3                                                                  
+stellarium | real-time photo-realistic sky generator                                                              
+stellarium-data | Stellarium data files                                                                                
+sublime-text | Sublime Text is a sophisticated text editor for code, markup and prose                               
+suckless-tools | simple commands for minimalistic window managers                                                     
+surfraw    | fast unix command line interface to WWW                                                              
+sway       | tiling window manager for Wayland                                                                    
+swig       | Generate scripting interfaces to C/C++ code                                                          
+sxiv       | simple X image viewer                                                                                
+system-config-printer-gnome | graphical interface to configure printers (transitional package)                                     
+terminator | multiple GNOME terminals in one window                                                               
+tesseract-ocr | Tesseract command line OCR tool                                                                      
+tesseract-ocr-pol | tesseract-ocr language files for Polish                                                              
+testng     | testing framework for Java                                                                           
+thermald   | Thermal monitoring and controlling daemon                                                            
+thunar-archive-plugin | Archive plugin for Thunar file manager                                                               
+thunar-media-tags-plugin | Media tags plugin for Thunar file manager                                                            
+tlp        | Save battery power on laptops                                                                        
+tmux       | terminal multiplexer                                                                                 
+tomate-gtk | Gtk version from Tomate pomodoro timer.                                                              
+transfig   | Utilities for converting XFig figure files transitional dummy package for fig2dev                    
+tree       | displays an indented directory tree, in color                                                        
+tshark     | network traffic analyzer                                                                             
+ttf-ancient-fonts-symbola | symbolic font providing emoji characters from Unicode 9.0 symbolic font providing emoji chars from Unicode 9.0 (transit. pkg) 
+unclutter  | hides the mouse cursor in X after a period of inactivity                                             
+unetbootin | installer of Linux/BSD distributions to a partition or USB drive                                     
+vagrant    | Tool for building and distributing virtualized development environments                              
+veracrypt  | Cross-platform on-the-fly encryption                                                                 
+vim        | Vi IMproved Vi IMproved Vi IMproved Vi IMproved Vi IMproved                                          
+virtualbox | x86 virtualization solution                                                                          
+virtualenvwrapper | extension to virtualenv for managing multiple virtual Python environments                            
+vlc        | multimedia player and streamer                                                                       
+vrms       | virtual Richard M. Stallman                                                                          
+w3m        | WWW browsable pager with excellent tables/frames support                                             
+weka       | Machine learning algorithms for data mining tasks                                                    
+wicd-curses | wired and wireless network manager                                                                   
+wine64-development | Windows API implementation                                                                           
+winpdb     | Platform independent Python debugger                                                                 
+wmctrl     | control an EWMH/NetWM compatible X Window Manager                                                    
+x11proto-core-dev | X11 core wire protocol and auxiliary headers                                                         
+x11proto-damage-dev | X11 Damage extension wire protocol                                                                   
+x11proto-dri2-dev | X11 DRI2 extension wire protocol                                                                     
+x11proto-fixes-dev | X11 Fixes extension wire protocol                                                                    
+x11proto-gl-dev | X11 OpenGL extension wire protocol                                                                   
+x11proto-input-dev | X11 Input extension wire protocol                                                                    
+x11proto-kb-dev | X11 XKB extension wire protocol                                                                      
+x11proto-xext-dev | X11 various extension wire protocol                                                                  
+x11proto-xf86vidmode-dev | X11 Video Mode extension wire protocol                                                               
+xara-gtk   | GTK+ utility for searching the Debian package database                                               
+xbindkeys  | Associate a combination of keys or mouse buttons with a shell command                                
+xbindkeys-config | an easy to use gtk program for configuring Xbindkeys                                                 
+xbrlapi    | Access software for a blind person using a braille display                                           
+xchm       | Compiled HTML Help (CHM) file viewer for X                                                           
+xclip      | command line interface to X selections                                                               
+xcursor-themes | Base X cursor themes                                                                                 
+xdotool    | simulate (generate) X11 keyboard/mouse input events                                                  
+xfce4      | Meta-package for the Xfce Lightweight Desktop Environment                                            
+xfce4-battery-plugin | battery monitor plugin for the Xfce4 panel                                                           
+xfce4-clipman | clipboard history utility                                                                            
+xfce4-clipman-plugin | clipboard history plugin for Xfce panel                                                              
+xfce4-cpufreq-plugin | cpufreq information plugin for the Xfce4 panel                                                       
+xfce4-cpugraph-plugin | CPU load graph plugin for the Xfce4 panel                                                            
+xfce4-datetime-plugin | date and time plugin for the Xfce4 panel                                                             
+xfce4-dict | Dictionary plugin for Xfce4 panel                                                                    
+xfce4-diskperf-plugin | disk performance display plugin for the Xfce4 panel                                                  
+xfce4-fsguard-plugin | filesystem monitor plugin for the Xfce4 panel                                                        
+xfce4-genmon-plugin | Generic Monitor for the Xfce4 panel                                                                  
+xfce4-goodies | enhancements for the Xfce4 Desktop Environment                                                       
+xfce4-indicator-plugin | plugin to display information from applications in the Xfce4 panel                                   
+xfce4-mailwatch-plugin | mail watcher plugin for the Xfce4 panel                                                              
+xfce4-mount-plugin | mount plugin for the Xfce4 panel                                                                     
+xfce4-netload-plugin | network load monitor plugin for the Xfce4 panel                                                      
+xfce4-notes | Notes application for the Xfce4 desktop                                                              
+xfce4-notes-plugin | Notes plugin for the Xfce4 desktop                                                                   
+xfce4-places-plugin | quick access to folders, documents and removable media                                               
+xfce4-quicklauncher-plugin | rapid launcher plugin for the Xfce4 panel                                                            
+xfce4-screenshooter | screenshots utility for Xfce                                                                         
+xfce4-sensors-plugin | hardware sensors plugin for the Xfce4 panel                                                          
+xfce4-smartbookmark-plugin | search the web via the Xfce4 panel                                                                   
+xfce4-systemload-plugin | system load monitor plugin for the Xfce4 panel                                                       
+xfce4-taskmanager | process manager for the Xfce4 Desktop Environment                                                    
+xfce4-terminal | Xfce terminal emulator                                                                               
+xfce4-timer-plugin | timer plugin for Xfce panel                                                                          
+xfce4-verve-plugin | Verve (command line) plugin for Xfce panel                                                           
+xfce4-volumed | volume keys daemon                                                                                   
+xfce4-wavelan-plugin | wavelan status plugin for the Xfce4 panel                                                            
+xfce4-weather-plugin | weather information plugin for the Xfce4 panel                                                       
+xfce4-whiskermenu-plugin | Alternate menu plugin for the Xfce desktop environment                                               
+xfce4-windowck-plugin | Xfce panel plugin which allows to put the maximized window title on the panel.                       
+xfce4-xkb-plugin | xkb layout switch plugin for the Xfce4 panel                                                         
+xfonts-terminus | Fixed-width fonts for fast reading                                                                   
+xfpanel-switch | layout manager for the Xfce panel                                                                    
+xnview     | Graphic viewer, browser, converter.                                                                  
+xorg-sgml-doctools | Common tools for building X.Org SGML documentation                                                   
+xplanet    | planetary body renderer                                                                              
+xplanet-images | imagery for xplanet                                                                                  
+xsel       | command-line tool to access X clipboard and selection buffers                                        
+xserver-xorg-legacy | setuid root Xorg server wrapper                                                                      
+xtrans-dev | X transport library (development files)                                                              
+xubuntu-artwork | Xubuntu themes and artwork                                                                           
+xubuntu-community-wallpapers | Xubuntu community wallpapers                                                                         
+xubuntu-community-wallpapers-xenial | Xubuntu community wallpapers (Xenial)                                                                
+xubuntu-core | Xubuntu core system                                                                                  
+xubuntu-default-settings | default settings for the Xubuntu desktop                                                             
+xubuntu-desktop | Xubuntu desktop system                                                                               
+xubuntu-docs | Xubuntu documentation                                                                                
+xubuntu-wallpapers | Xubuntu wallpapers                                                                                   
+youtube-dl | downloader of videos from YouTube and other sites                                                    
+youtube-viewer | YouTube Viewer                                                                                       
+zathura-pdf-poppler | PDF support for zathura                                                                              
+zipalign   | Zip archive alignment tool Google build tools for Android (aapt, aidl, dexdump, dx)                  
+zsh        | shell with lots of features                                                                          
