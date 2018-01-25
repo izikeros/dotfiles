@@ -3,6 +3,24 @@
 
 BACKUP_DIR="$HOME/backup"
 
+# Get proper command for installation
+SYS=""
+uname -a | grep -q  "Ubuntu" && SYS="ubuntu"
+uname -a | grep -q  "Arch" && SYS="arch"
+if [ "$SYS" == "ubuntu" ]; then
+    #TODO: add ppa repositories(?, perhaps not in this script)
+    echo "-- Ubuntu Linux detected, using apt-get"
+    echo "-- Updating repo list"
+    apt-get update
+    CMD="apt-get install -y"
+fi
+
+if [ "$SYS" == "arch" ]; then
+    CMD="apt-get install -y"
+    echo "Arch Linux detected, using pacman"
+    CMD="pacman -Sy"
+fi
+
 exec >> err_file
 
 # Logging functions
@@ -18,7 +36,7 @@ log_msg () {
 
 # Installer function
 install_package() {
-	apt-get install $1 -y
+    $CMD $1
 	log_end $1
 }
 
@@ -78,6 +96,7 @@ if [ ! -f ~/.vim/bundle/Vundle.vim ]; then
 	mkdir -p ~/.vim/bundle/
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
+
 # install wombat colors
 if [ ! -f ~/.vim/colors/wombat256mod.vim ]; then
 	mkdir -p ~/.vim/colors/
