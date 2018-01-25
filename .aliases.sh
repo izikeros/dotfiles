@@ -172,6 +172,7 @@ alias dl='docker ps -lq'
 alias dll='docker_fit ps -l'
 alias dps='docker_fit ps -a'
 alias docker-clean-exited-containers='docker ps -aqf status=exited | xargs -n1 docker rm'
+alias docker-remove-untagged-images='docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")'
 
 #--------------------------------------------
 # OTHER
