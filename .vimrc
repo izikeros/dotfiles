@@ -1,7 +1,7 @@
+" inspired by:
+"
 " TODO: read http//stevelosh.com/blog/2010/09/coming-home-to-vim/
 " TODO: check: https://github.com/nvie/vimrc
-"
-" based on .vimrc file by:
 " Dan Sheffner,Martin Brochhaus (Presented at PyCon APAC 2012)
 
 " ================== PLUGINS =========================
@@ -12,8 +12,11 @@ set shell=/bin/bash
 set rtp+=~/.vim/bundle/Vundle.vim 			" set the runtime path to include Vundle and initialize
 
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'				" let Vundle manage Vundle, required
-"Bundle 'Valloric/YouCompleteMe'           " not working with python (some problems with python 3)
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" not working with python (some problems with python 3)
+"Bundle 'Valloric/YouCompleteMe'
 
 " additional configuration for vim
 Bundle 'tpope/vim-sensible'
@@ -31,12 +34,20 @@ Bundle 'airblade/vim-gitgutter'
 " nice startup screen when vim openerd without any file
 Bundle 'mhinz/vim-startify'
 
+" for snippets (mainly my own templates for documents)
+"Bundle 'sirver/UltiSnips'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+
 " to map 'jk' and 'kj' to ESC
 Bundle 'zhou13/vim-easyescape'
 
 Bundle 'majutsushi/tagbar'
 
 Bundle 'vimwiki/vimwiki'
+" Try alternative, together with his dotnvim repo
+"Bundle lervag/wiki
 
 " markdown preview
 Bundle 'suan/vim-instant-markdown'
@@ -71,7 +82,6 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" map ESC to jk and kj
 let g:easyescape_chars = { "j": 1, "k": 1 }
 let g:easyescape_timeout = 100
 cnoremap jk <ESC>				" map ESC to jk
@@ -100,7 +110,7 @@ noremap <Leader>E :qa!<CR>      " Quit all windows
 
 "map <c-j> <c-w>j                " already reserved for moving line(s) up/down
 "map <c-k> <c-w>k
-map <c-l> <c-w> 				 " bind Ctrl+l/h keys to move to the right/left window, instead of using Ctrl+w + <movement>
+map <c-l> <c-w>j 				 " (not working now) bind Ctrl+l/h keys to move to the right/left window, instead of using Ctrl+w + <movement>
 map <c-h> <c-w>h
 
 " easier moving between tabs
@@ -262,7 +272,9 @@ autocmd VimEnter * if argv() ==# ['DiaryNoteToday'] | execute 'VimwikiMakeDiaryN
 
 " use 'd' in vimwiki mode to jump to today's diary note
 "autocmd FileType vimwiki map d :VimwikiMakeDiaryNote<CR>
-
+:let g:vimwiki_table_mappings = 0	"to make vim-snippets working
+:let g:vimwiki_autowriteall = 0 " to fix error with ultisnip
+:let s:vimwiki_autowriteall = 0 " to fix error with ultisnip
 "=====================================================
 " TagBar settings
 "=====================================================
@@ -274,7 +286,7 @@ let g:tagbar_width=42
 "===================================================
 " Instant markdown
 "====================================================
-let g:instant_markdown_autostart = 0    " disable autostart
+let g:instant_markdown_autostart = 1    " disable autostart
 map <leader>md :InstantMarkdownPreview<CR>  " leader+md - markdown preview
 
 "====================================================
@@ -289,5 +301,8 @@ nmap <leader>d :YcmCompleter GoToDefinition<CR> " YCM goto definition with leade
 " hint: use (or map) YP to duplicate line
 
 
-
+" better key bindings for UltiSnipsExpandTrigger
+"let g:UltiSnipsExpandTrigger = "<tab>"
+"let g:UltiSnipsJumpForwardTrigger = "<tab>"
+"let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
