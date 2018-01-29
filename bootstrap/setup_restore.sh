@@ -71,8 +71,11 @@ symlink_dotfile() {
 # apt-get install -y git
 # git clone https://github.com/izikeros/dotfiles.git
 
+# TODO: for some reason symlinking on existing file doesn't work (.bashrc,
+# .zshrc)
 symlink_dotfile ./dotfiles/.bashrc ~/.bashrc
 symlink_dotfile ./dotfiles/.zshrc_omzsh ~/.zshrc
+
 symlink_dotfile ./dotfiles/.aliases.sh ~/.aliases.sh
 symlink_dotfile ./dotfiles/env_vars.sh ~/env_vars.sh
 symlink_dotfile ./dotfiles/functions.sh ~/functions.sh
@@ -82,12 +85,12 @@ symlink_dotfile ./dotfiles/.Xresources ~/.Xresources
 symlink_dotfile ./dotfiles/.gitconfig ~/.gitconfig
 
 # install Dropbox
-if hash dropbox 2>/dev/null; then
-	echo "Seems that Dropbox is already installed"
-else
-	echo "Installing Dropbox"
-	cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -    date "$@"
-fi
+#if hash dropbox 2>/dev/null; then
+#	echo "Seems that Dropbox is already installed"
+#else
+#	echo "Installing Dropbox"
+#	cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -    date "$@"
+#fi
 # run Dropbox
 #~/.dropbox-dist/dropboxd &
 
@@ -100,7 +103,7 @@ fi
 # install wombat colors
 if [ ! -f ~/.vim/colors/wombat256mod.vim ]; then
 	mkdir -p ~/.vim/colors/
-	symlink_dotfile ./dotfiles/wombat256mod.vim ~/.vim/colors/wombat256mod.vim
+	symlink_dotfile ~/dotfiles/wombat256mod.vim ~/.vim/colors/wombat256mod.vim
 fi
 # TODO
 
@@ -108,14 +111,15 @@ fi
 
 
 # install omzsh
-if [ ! -d ~/.oh-my-zsh ]; then
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-fi
-echo "omzsh should be installed, you might want to switch shell to zsh via command: 'chsh -s /bin/zsh'"
+#if [ ! -d ~/.oh-my-zsh ]; then
+#	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+#fi
+#echo "omzsh should be installed, you might want to switch shell to zsh via command: 'chsh -s /bin/zsh'"
+# TODO clone spaceship theme to themes
 
 # install z
 if [ ! -d ~/.z ]; then
-    git clone https://github.com/rupa/z
+    git clone https://github.com/rupa/z ~/
 fi
 echo "z installed"
 
