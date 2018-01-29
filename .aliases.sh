@@ -66,11 +66,13 @@ alias galias="alias | grep -i -e"
 alias s="sudo su"
 
 alias ai="sudo apt install"
+alias pi="sudo pacman -S"
 
 # search pattern only in package names
 alias asn="apt-cache --names-only search"
 
 alias as="apt-cache search"
+alias pacs="pacman -Ss"
 alias au="sudo apt update"
 
 # mount
