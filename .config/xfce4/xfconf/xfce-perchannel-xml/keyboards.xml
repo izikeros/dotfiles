@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="keyboards" version="1.0">
+  <property name="Default" type="empty">
+    <property name="Numlock" type="bool" value="true"/>
+  </property>
+  <property name="backdrop" type="empty">
+    <property name="screen0" type="empty">
+      <property name="xinerama-stretch" type="bool" value="true"/>
+    </property>
+  </property>
+</channel>

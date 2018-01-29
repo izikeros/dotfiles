@@ -7,4 +7,4 @@ export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/external/restic:$PATH"
 export BROWSER=chromium-browser
 export PAGER="most"
-#export DJANGO_SETTINGS_MODULE=ebadu.settings
+export DJANGO_SETTINGS_MODULE=ebadu.settings

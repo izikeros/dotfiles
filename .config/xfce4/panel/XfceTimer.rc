@@ -1,0 +1,37 @@
+[G0]
+timername=tomato_1
+time=1500
+timercommand=
+timerinfo=25m 0s
+is_countdown=true
+
+[G1]
+timername=short break
+time=300
+timercommand=
+timerinfo=5m 0s
+is_countdown=true
+
+[G2]
+timername=tomato_2
+time=1500
+timercommand=
+timerinfo=25m 0s
+is_countdown=true
+
+[G3]
+timername=long break
+time=900
+timercommand=
+timerinfo=15m 0s
+is_countdown=true
+
+[others]
+nowin_if_alarm=false
+selecting_starts=false
+use_global_command=false
+global_command=
+repeat_alarm=false
+repetitions=1
+repeat_interval=10
+
