@@ -27,14 +27,14 @@ symlink_dotfile() {
 	#make backup of existing file
 	if [ -f "$dst" ]
 	then
-		log_msg("$dst found.")
+		echo "$dst found."
 		dst_backup="$dst.bak"
-		log_mgs("moving $dst to $dst_backup")
+		echo "moving $dst to $dst_backup"
 		mv $dst $
 	else
-		echo log_msg("$2 not found.")
+		echo "$2 not found."
 	fi
-	echo log_msg("symlinking $src to $dst")
+	echo "symlinking $src to $dst"
 	ln -s $src $dst
-	echo log_msg("done")
+	echo "done"
 }
