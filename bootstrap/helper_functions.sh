@@ -8,6 +8,7 @@ log_end (){
 	echo "\n======================\n"
 }
 
+
 log_msg () {
 	>&2 echo $1
 }
@@ -18,6 +19,7 @@ install_package() {
 	log_end $1
 }
 
+# symlink and backup if already exist
 symlink_dotfile() {
 	src=$1
 	dst=$2
@@ -25,14 +27,14 @@ symlink_dotfile() {
 	#make backup of existing file
 	if [ -f "$dst" ]
 	then
-		echo "$dst found."
+		log_msg("$dst found.")
 		dst_backup="$dst.bak"
-		echo "moving $dst to $dst_backup"
-		#mv $dst $
+		log_mgs("moving $dst to $dst_backup")
+		mv $dst $
 	else
-		echo "$2 not found."
+		echo log_msg("$2 not found.")
 	fi
-	echo "symlinking $src to $dst"
+	echo log_msg("symlinking $src to $dst")
 	ln -s $src $dst
-	echo "done"
+	echo log_msg("done")
 }
