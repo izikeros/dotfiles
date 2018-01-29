@@ -13,7 +13,6 @@ if [ "$SYS" == "ubuntu" ]; then
 fi
 
 if [ "$SYS" == "arch" ]; then
-    CMD="apt-get install -y"
     echo "Arch Linux detected, using pacman"
     CMD="pacman -Sy"
 fi
