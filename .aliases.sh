@@ -72,7 +72,7 @@ alias pi="sudo pacman -S"
 alias asn="apt-cache --names-only search"
 
 alias as="apt-cache search"
-alias pacs="pacman -Ss"
+alias pas="pacman -Ss"
 alias au="sudo apt update"
 
 # mount
