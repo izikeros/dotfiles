@@ -1,0 +1,14 @@
+doublecmdr-qt5
+firefox
+lightdm-gtk-greeter
+ligthdm
+rofi
+terminator
+veracrypt
+xbindkeys
+xfce4
+xfce4-goodies
+xorg-server
+meld
+sublime-text
+

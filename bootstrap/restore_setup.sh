@@ -17,8 +17,8 @@ symlink_dotfile ./dotfiles/.vimrc ~/.vimrc
 symlink_dotfile ./dotfiles/.xbindkeysrc ~/.xbindkeysrc
 symlink_dotfile ./dotfiles/.Xresources ~/.Xresources
 symlink_dotfile ./dotfiles/.gitconfig ~/.gitconfig
-
-
+# doublecommander
+# rofi theme
 
 # ======= prepare vim
 # install vim vundle
