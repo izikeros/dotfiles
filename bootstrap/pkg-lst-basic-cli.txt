@@ -2,6 +2,7 @@ curl
 docker
 docker-compose
 git
+htop
 markdowm
 mc
 most
