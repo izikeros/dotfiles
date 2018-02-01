@@ -18,7 +18,12 @@ symlink_dotfile ./dotfiles/.xbindkeysrc ~/.xbindkeysrc
 symlink_dotfile ./dotfiles/.Xresources ~/.Xresources
 symlink_dotfile ./dotfiles/.gitconfig ~/.gitconfig
 # doublecommander
-# rofi theme
+# -- symlink/copy settings file
+
+# rofi theme:
+# -- lb (use rofi-theme-selector)
+
+# symlink xfce4keyboard (id xfce4 dir exist in .config)
 
 # ======= prepare vim
 # install vim vundle
@@ -51,6 +56,7 @@ fi
 echo "z installed"
 
 # ======== install fzf
+# NOTE: On arch can be installed from packages
 if [ ! -d ~/.fzf ]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     ~/.fzf/install
