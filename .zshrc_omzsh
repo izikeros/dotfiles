@@ -33,28 +33,15 @@ plugins=(arch git colored-man-pages k pylint zsh-syntax-highlighting zsh-autosug
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
-
 source $ZSH/oh-my-zsh.sh
-
 source $HOME/env_vars.sh
-
 source $HOME/dotfiles/functions.sh
-
 source $HOME/dotfiles/.aliases.sh
 
 # source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
-
 . ~/z/z.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-#source $HOME/antigen/antigen.zsh
-#antigen-use oh-my-zsh
-#antigen-bundle arialdomartini/oh-my-git
-#antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
 
 source $HOME/dotfiles/my_spaceship.sh
 
