@@ -1,0 +1,19 @@
+[global_config]
+[keybindings]
+  help =
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+    font = FontAwesome 10
+    foreground_color = "#ffffff"
+    show_titlebar = False

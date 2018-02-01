@@ -21,8 +21,10 @@ alias load='sar -u 2 1 | tail -n 1'
 # Smart ls alias (l=long, detailed, a=all including hidded, h=size human readable)
 alias l="ls -lah"
 
+# Find 10 largest files
 alias top10files="find . -type f -print0 | xargs -0 du | sort -n | tail -10 | cut -f2 | xargs -I{} du -sh {}"
 
+# Find 10 largest directories
 alias top10dirs="find . -type d -print0 | xargs -0 du | sort -n | tail -10 | cut -f2 | xargs -I{} du -sh {}"
 
 #--------------------------------------------
@@ -57,23 +59,30 @@ alias vkeys="grep -e 'map' $HOME/dotfiles/.vimrc"
 #--------------------------------------------
 # MEATA-ALIAS
 #--------------------------------------------
-alias galias="alias | grep -i -e"
-# TODO: add alias
+alias galias="alias | grep --color=never -i -e"
+# TODO: add alias from commandline (and append to this file)
 
 #--------------------------------------------
 # APT, APTITUDE, SUDO ACTIONS
 #--------------------------------------------
 alias s="sudo su"
 
+# install package
 alias ai="sudo apt install"
 alias pi="sudo pacman -S"
+alias yi="yaourt -S"
 
 # search pattern only in package names
 alias asn="apt-cache --names-only search"
 
 alias as="apt-cache search"
 alias pas="pacman -Ss"
+alias ys="yaourt -Ss"
+
 alias au="sudo apt update"
+
+# remove (uninstall) package
+alias prm="sudo pacman -Rns"
 
 # mount
 alias mt="mount | column -t"
@@ -167,15 +176,15 @@ alias a-pelican="source ~/.virtualenvs/pelican/bin/activate"
 alias a-ebadu="source ~/.virtualenvs/ebadu-d1.11/bin/activate"
 
 #--------------------------------------------
-# DOCKER (compose)
+# DOCKER (and docker-compose)
 #-------------------------------------------
 alias dcf="docker-compose -f dev-compose.yml"
 alias dl='docker ps -lq'
 alias dll='docker_fit ps -l'
 alias dps='docker_fit ps -a'
 alias docker-clean-exited-containers='docker ps -aqf status=exited | xargs -n1 docker rm'
+alias docker-list-untagged-images='echo $(docker images | grep "<none>" | awk "{print \$3}")'
 alias docker-remove-untagged-images='docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")'
-
 #--------------------------------------------
 # OTHER
 #--------------------------------------------

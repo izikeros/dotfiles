@@ -1,4 +1,6 @@
+arandr
 doublecmdr-qt5
+chromium
 firefox
 lightdm-gtk-greeter
 ligthdm
@@ -12,3 +14,12 @@ xorg-server
 meld
 sublime-text
 
+# simplescreenrecorder
+# yi screenkey
+# libreoffice
+# audacity
+# gucview? (for screencast)
+# atom
+# visual studio code
+# gimp
+# use meld to populate the list
