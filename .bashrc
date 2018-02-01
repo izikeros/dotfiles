@@ -160,3 +160,5 @@ no_proxy() {
 	unset ftp_proxy
 }
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
