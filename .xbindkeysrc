@@ -1,4 +1,4 @@
-###########################
+##########################
 # xbindkeys configuration #
 ###########################
 #
@@ -75,7 +75,7 @@
     control+alt+f
 
 #chrome
-"chromium-browser"
+"chromium"
     control+alt+c
 
 #double commander
