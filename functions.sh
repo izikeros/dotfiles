@@ -11,14 +11,13 @@ function fipy2(){
 	fgrep --include="*.py" --exclude-dir={.git} --color=always -rnwi ./ -e $1 | grep $2
 }
 
-# search onli in package names starting with pattern
+# search only in package names starting with pattern
 function asa(){
 	aptitude search ^$1 | awk '{print $2}'
 	}
 
 # docker-related functions
 # source: https://github.com/rhoit/my-config/blob/master/shell/shellrc.d/docker.sh
-
 function dimg() {
     docker images $@ |
         sed "s/  \+/;/g" |
@@ -65,6 +64,23 @@ function dlo() {
         return
     fi
     docker logs $@
+}
+# /end of source
+
+# remove dicker container using rofi
+function drm() {
+    echo "$(docker ps -a | rofi -threads 0 -width 100 -dmenu -i -p "locate:")" | awk {'print $1'} | xargs docker rm
+}
+
+# search onli in package names starting with pattern
+function asa(){
+    aptitude search ^$1 | awk '{print $2}'
+    }
+
+# create directory and move into it
+function mkcd () {
+  mkdir -p "$1"
+  cd "$1"
 }
 
 function extract() {
