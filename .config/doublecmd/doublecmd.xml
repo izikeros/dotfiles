@@ -1,0 +1,1231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doublecmd DCVersion="0.7.8 beta" ConfigVersion="9">
+  <Configuration Save="True" SortOrder="0">
+    <UseConfigInProgramDir>False</UseConfigInProgramDir>
+  </Configuration>
+  <Colors>
+    <FileFilters>
+      <Filter>
+        <Name>hidden</Name>
+        <FileMasks>.*</FileMasks>
+        <Color>7375813</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>executables</Name>
+        <FileMasks>*.exe;*.bat;*.sh</FileMasks>
+        <Color>32768</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>pictures</Name>
+        <FileMasks>*.jpg;*.png;*.bmp;*.jpeg;*.tiff;*.tif;*.gif;</FileMasks>
+        <Color>16711935</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>vector_graphics</Name>
+        <FileMasks>*emf;*.svg;*.ps;*.eps;*.wmf</FileMasks>
+        <Color>8388736</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>music</Name>
+        <FileMasks>*.mp3;*.mpc;*.ogg;*.flac</FileMasks>
+        <Color>33023</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>Documents</Name>
+        <FileMasks>*.docx;*.doc;*.rtf;*.odt</FileMasks>
+        <Color>8388608</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>Presentations</Name>
+        <FileMasks>*.ppt;*.pptx;*.pptm</FileMasks>
+        <Color>128</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>Data sheet</Name>
+        <FileMasks>*.xls;*.xlsx;*.xlsm;*.csv;*.ini</FileMasks>
+        <Color>32768</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>PDF</Name>
+        <FileMasks>*.pdf</FileMasks>
+        <Color>128</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>Source code</Name>
+        <FileMasks>*.cpp;*.h;*.py;*.pl;*.c;*.m;*.cs</FileMasks>
+        <Color>8388736</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>Video</Name>
+        <FileMasks>*.mp4;*.avi;*.mpg;*.wmv;*.ifo;*.mpeg</FileMasks>
+        <Color>8421376</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>Tab separated values</Name>
+        <FileMasks>*.mean;*.median;*.total</FileMasks>
+        <Color>8388608</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>Trace</Name>
+        <FileMasks>*.trace</FileMasks>
+        <Color>8388736</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>text file</Name>
+        <FileMasks>*.txt;*.ini;*.dat</FileMasks>
+        <Color>8421504</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>Markup</Name>
+        <FileMasks>*.html;*.htm;*.md;*.markdown;*.rst</FileMasks>
+        <Color>38655</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>Notebooks</Name>
+        <FileMasks>*.ipynb</FileMasks>
+        <Color>32768</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>New</Name>
+        <FileMasks>*</FileMasks>
+        <Color>0</Color>
+        <Attributes/>
+      </Filter>
+    </FileFilters>
+    <UseCursorBorder>False</UseCursorBorder>
+    <CursorBorderColor>-2147483635</CursorBorderColor>
+    <UseFrameCursor>True</UseFrameCursor>
+    <Foreground>-2147483640</Foreground>
+    <Background>-2147483643</Background>
+    <Background2>-2147483643</Background2>
+    <Cursor>-2147483635</Cursor>
+    <CursorText>-2147483634</CursorText>
+    <Mark>255</Mark>
+    <InactiveCursor>-2147483645</InactiveCursor>
+    <InactiveMark>128</InactiveMark>
+    <UseInvertedSelection>False</UseInvertedSelection>
+    <UseInactiveSelColor>False</UseInactiveSelColor>
+    <AllowOverColor>True</AllowOverColor>
+    <InactivePanelBrightness>92</InactivePanelBrightness>
+    <FreeSpaceIndicator>
+      <UseGradient>True</UseGradient>
+      <ForeColor>0</ForeColor>
+      <BackColor>16777215</BackColor>
+    </FreeSpaceIndicator>
+  </Colors>
+  <Plugins>
+    <WlxPlugins>
+      <WlxPlugin Enabled="True">
+        <Name>wlxMplayer</Name>
+        <Path>%COMMANDER_PATH%/plugins/wlx/wlxmplayer/wlxmplayer.wlx</Path>
+        <DetectString>(EXT="MPG")|(EXT="AVI")|(EXT="MPEG")|(EXT="FLV")</DetectString>
+      </WlxPlugin>
+    </WlxPlugins>
+    <DsxPlugins/>
+    <WcxPlugins>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>zip</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>735</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>tar</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>223</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>bz2</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>91</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>tbz</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>95</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>gz</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>91</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>tgz</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>95</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>lzma</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>1</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>tlz</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>95</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>xz</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>91</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>txz</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>95</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>zipx</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>212</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>cpio</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/cpio/cpio.wcx</Path>
+        <Flags>4</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>deb</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/deb/deb.wcx</Path>
+        <Flags>4</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>rpm</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/rpm/rpm.wcx</Path>
+        <Flags>4</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>rar</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/unrar/unrar.wcx</Path>
+        <Flags>68</Flags>
+      </WcxPlugin>
+    </WcxPlugins>
+    <WdxPlugins>
+      <WdxPlugin>
+        <Name>deb_wdx</Name>
+        <Path>%COMMANDER_PATH%/plugins/wdx/deb_wdx/deb_wdx.wdx</Path>
+        <DetectString>EXT="DEB"</DetectString>
+      </WdxPlugin>
+      <WdxPlugin>
+        <Name>rpm_wdx</Name>
+        <Path>%COMMANDER_PATH%/plugins/wdx/rpm_wdx/rpm_wdx.wdx</Path>
+        <DetectString>EXT="RPM"</DetectString>
+      </WdxPlugin>
+    </WdxPlugins>
+    <WfxPlugins>
+      <WfxPlugin Enabled="True">
+        <Name>FTP</Name>
+        <Path>%commander_path%/plugins/wfx/ftp/ftp.wfx</Path>
+      </WfxPlugin>
+      <WfxPlugin Enabled="True">
+        <Name>Windows Network</Name>
+        <Path>%commander_path%/plugins/wfx/samba/samba.wfx</Path>
+      </WfxPlugin>
+    </WfxPlugins>
+  </Plugins>
+  <Toolbars>
+    <MainToolbar>
+      <Row>
+        <Command>
+          <ID>{D5A407ED-83AB-426C-AB08-22E2604C5847}</ID>
+          <Icon>cm_showmainmenu</Icon>
+          <Command>cm_ShowMainMenu</Command>
+        </Command>
+      </Row>
+    </MainToolbar>
+  </Toolbars>
+  <Tabs>
+    <OpenedTabs>
+      <Left>
+        <ActiveTab>0</ActiveTab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path Filename="wilabs">/home/izik/</Path>
+                  <Path Filename="ebadu">/home/izik/wilabs/</Path>
+                  <Path Filename="..">/home/izik/wilabs/ebadu/</Path>
+                  <Path Filename="firma">/home/izik/</Path>
+                  <Path Filename="faktury">/home/izik/firma/</Path>
+                  <Path Filename="2017_05">/home/izik/firma/faktury/</Path>
+                  <Path Filename="20596078_Faktura_20170421.pdf.pdf">/home/izik/firma/faktury/2017_05/</Path>
+                  <Path Filename="Pictures">/home/izik/</Path>
+                  <Path Filename="_darktest">/home/izik/Pictures/</Path>
+                  <Path Filename="a_MG_7274.CR2">/home/izik/Pictures/_darktest/</Path>
+                  <Path Filename="Downloads">/home/izik/</Path>
+                  <Path Filename="wfirma.ics">/home/izik/Downloads/</Path>
+                  <Path Filename="src">/home/izik/</Path>
+                  <Path Filename="filecluster.ipynb">/home/izik/src/</Path>
+                  <Path Filename="..">/home/izik/</Path>
+                  <Path Filename="..">/media/izik/LUBUNTU 17_/</Path>
+                  <Path Filename="..">/home/izik/</Path>
+                  <Path Filename="..">/home/</Path>
+                  <Path Filename="mnt">/</Path>
+                  <Path Filename="home">/mnt/</Path>
+                  <Path Filename="Documents">/mnt/home/</Path>
+                  <Path Filename="..">/mnt/home/Documents/</Path>
+                  <Path Filename="Documents">/mnt/home/</Path>
+                  <Path Filename="..">/mnt/home/Documents/</Path>
+                  <Path Filename="Downloads">/mnt/home/</Path>
+                  <Path Filename="..">/mnt/home/Downloads/</Path>
+                  <Path Filename="izik_home">/mnt/home/</Path>
+                  <Path Filename="..">/mnt/home/izik_home/</Path>
+                  <Path Filename="Pictures">/mnt/home/</Path>
+                  <Path Filename="..">/mnt/home/Pictures/</Path>
+                  <Path Filename="..">/mnt/home/</Path>
+                  <Path Filename="home">/mnt/</Path>
+                  <Path Filename="backup">/mnt/home/</Path>
+                  <Path Filename="src">/home/izik/</Path>
+                  <Path Filename="filecluster">/home/izik/src/</Path>
+                  <Path Filename="inbox">/home/izik/src/filecluster/</Path>
+                  <Path Filename="_MG_2268.jpg">/home/izik/src/filecluster/inbox/</Path>
+                  <Path Filename="scripts">/home/izik/</Path>
+                  <Path Filename="..">/home/izik/scripts/</Path>
+                  <Path Filename="Templates">/home/izik/</Path>
+                  <Path Filename="..">/home/izik/Templates/</Path>
+                  <Path Filename="Python For Data Analysis V413HAV">/home/izik/</Path>
+                  <Path Filename="..">/home/izik/Python For Data Analysis V413HAV/</Path>
+                  <Path Filename="Python For Data Analysis V413HAV">/home/izik/</Path>
+                  <Path Filename="Read Me.txt">/home/izik/Python For Data Analysis V413HAV/</Path>
+                  <Path Filename="vladikoff-archon-e3c9b322402a">/home/izik/</Path>
+                  <Path Filename="..">/home/izik/vladikoff-archon-e3c9b322402a/</Path>
+                  <Path Filename="vladikoff-archon-e3c9b322402a">/home/izik/</Path>
+                  <Path Filename="..">/home/izik/vladikoff-archon-e3c9b322402a/</Path>
+                  <Path Filename="rec-2017-06-09_12.07.32.mkv">/home/izik/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/izik/</LockPath>
+          <Title>izik</Title>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path Filename="_old_stuff">/home/izik/Documents/</Path>
+                  <Path Filename="Pictures">/home/izik/</Path>
+                  <Path Filename="..">/home/izik/Pictures/</Path>
+                  <Path Filename="Documents">/home/izik/</Path>
+                  <Path Filename="documents">/home/izik/Documents/</Path>
+                  <Path Filename="..">/home/izik/Documents/documents/</Path>
+                  <Path Filename="..">/home/izik/Documents/</Path>
+                  <Path Filename="Documents">/home/izik/</Path>
+                  <Path Filename="src">/home/izik/Documents/</Path>
+                  <Path Filename="..">/home/izik/Documents/src/</Path>
+                  <Path Filename="_NOKIA_remove">/home/izik/Documents/</Path>
+                  <Path Filename="..">/home/izik/Documents/_NOKIA_remove/</Path>
+                  <Path Filename="_NOKIA_remove">/home/izik/Documents/</Path>
+                  <Path Filename="..">/home/izik/Documents/_NOKIA_remove/</Path>
+                  <Path Filename="ergonomia">/home/izik/Documents/</Path>
+                  <Path Filename="..">/home/izik/Documents/ergonomia/</Path>
+                  <Path Filename="documents">/home/izik/Documents/</Path>
+                  <Path Filename="..">/home/izik/Documents/documents/</Path>
+                  <Path Filename="documents">/home/izik/Documents/</Path>
+                  <Path Filename="wilabs">/home/izik/</Path>
+                  <Path Filename="..">/home/izik/wilabs/</Path>
+                  <Path Filename="Documents">/home/izik/</Path>
+                  <Path Filename="documents">/home/izik/Documents/</Path>
+                  <Path Filename="luxmed">/home/izik/Documents/documents/</Path>
+                  <Path Filename="..">/home/izik/Documents/documents/luxmed/</Path>
+                  <Path Filename="Faktury">/home/izik/Documents/documents/</Path>
+                  <Path Filename="..">/home/izik/Documents/documents/Faktury/</Path>
+                  <Path Filename="..">/home/izik/Documents/documents/</Path>
+                  <Path Filename="5_priv">/home/izik/Documents/</Path>
+                  <Path Filename="..">/home/izik/Documents/5_priv/</Path>
+                  <Path Filename="priv">/home/izik/Documents/</Path>
+                  <Path Filename="..">/home/izik/Documents/priv/</Path>
+                  <Path Filename="My Documents">/home/izik/Documents/</Path>
+                  <Path Filename="5_priv">/home/izik/Documents/My Documents/</Path>
+                  <Path Filename="foto">/home/izik/Documents/My Documents/5_priv/</Path>
+                  <Path Filename="Susan Sontag-O Fotografii.pdf">/home/izik/Documents/My Documents/5_priv/foto/</Path>
+                  <Path Filename="..">/home/izik/Documents/My Documents/5_priv/</Path>
+                  <Path Filename="..">/home/izik/Documents/My Documents/</Path>
+                  <Path Filename="..">/home/izik/Documents/</Path>
+                  <Path Filename="Pictures">/home/izik/</Path>
+                  <Path Filename="..">/home/izik/Pictures/</Path>
+                  <Path Filename="Documents">/home/izik/</Path>
+                  <Path Filename="..">/home/izik/Documents/</Path>
+                  <Path Filename="import">/home/izik/</Path>
+                  <Path Filename="..">/home/izik/import/</Path>
+                  <Path Filename="..">/home/izik/</Path>
+                  <Path Filename="..">/home/</Path>
+                  <Path Filename="media">/</Path>
+                  <Path Filename="..">/media/</Path>
+                  <Path Filename="">/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path Filename="..">/usr/lib/doublecmd/</Path>
+                  <Path Filename="..">/usr/lib/</Path>
+                  <Path Filename="..">/usr/</Path>
+                  <Path Filename="home">/</Path>
+                  <Path Filename="izik">/home/</Path>
+                  <Path Filename="wilabs">/home/izik/</Path>
+                  <Path Filename="analyzer">/home/izik/wilabs/</Path>
+                  <Path Filename="output">/home/izik/wilabs/analyzer/</Path>
+                  <Path Filename="creativity_report.pdf">/home/izik/wilabs/analyzer/output/</Path>
+                  <Path Filename="wilabs">/home/izik/</Path>
+                  <Path Filename="analyzer">/home/izik/wilabs/</Path>
+                  <Path Filename="output">/home/izik/wilabs/analyzer/</Path>
+                  <Path Filename="reviews_confusion.png">/home/izik/wilabs/analyzer/output/</Path>
+                  <Path Filename="Dropbox">/home/izik/</Path>
+                  <Path Filename="firma">/home/izik/Dropbox/</Path>
+                  <Path Filename="..">/home/izik/Dropbox/firma/</Path>
+                  <Path Filename="..">/home/izik/Dropbox/</Path>
+                  <Path Filename="..">/home/izik/</Path>
+                  <Path Filename="..">/home/</Path>
+                  <Path Filename="mnt">/</Path>
+                  <Path Filename="home">/mnt/</Path>
+                  <Path Filename="izik_home">/mnt/home/</Path>
+                  <Path Filename="..">/mnt/home/izik_home/</Path>
+                  <Path Filename="..">/mnt/home/</Path>
+                  <Path Filename="old">/mnt/</Path>
+                  <Path Filename="..">/mnt/old/</Path>
+                  <Path Filename="..">/mnt/</Path>
+                  <Path Filename="mnt">/</Path>
+                  <Path Filename="..">/home/izik/</Path>
+                  <Path Filename="izik">/home/</Path>
+                  <Path Filename="wilabs">/home/izik/</Path>
+                  <Path Filename="analyzer">/home/izik/wilabs/</Path>
+                  <Path Filename="output">/home/izik/wilabs/analyzer/</Path>
+                  <Path Filename="..">/home/izik/wilabs/analyzer/output/</Path>
+                  <Path Filename="..">/home/izik/wilabs/analyzer/</Path>
+                  <Path Filename="..">/home/izik/wilabs/</Path>
+                  <Path Filename="old">/home/izik/</Path>
+                  <Path Filename="izik">/home/</Path>
+                  <Path Filename="home">/</Path>
+                  <Path Filename="..">/home/izik/</Path>
+                  <Path Filename="..">/home/</Path>
+                  <Path Filename="mnt">/</Path>
+                  <Path Filename="old">/mnt/</Path>
+                  <Path Filename="home">/mnt/old/</Path>
+                  <Path Filename="izik">/mnt/old/home/</Path>
+                  <Path Filename="..">/mnt/old/home/izik/</Path>
+                  <Path Filename="">/home/izik/firma/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/izik/firma/</LockPath>
+          <Title>firma</Title>
+        </Tab>
+      </Left>
+      <Right>
+        <ActiveTab>0</ActiveTab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>2</Direction>
+                <Function>7</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path Filename="documents">/mnt/home/</Path>
+                  <Path Filename="Faktury">/mnt/home/documents/</Path>
+                  <Path Filename="..">/mnt/home/documents/Faktury/</Path>
+                  <Path Filename="luxmed">/mnt/home/documents/</Path>
+                  <Path Filename="..">/mnt/home/documents/luxmed/</Path>
+                  <Path Filename="taxBreak_reports">/mnt/home/documents/</Path>
+                  <Path Filename="..">/mnt/home/documents/taxBreak_reports/</Path>
+                  <Path Filename="..">/mnt/home/documents/</Path>
+                  <Path Filename="_cleanup">/mnt/home/</Path>
+                  <Path Filename="cheatsheet">/mnt/home/_cleanup/</Path>
+                  <Path Filename="tmux_screen_cheatsheets_links">/mnt/home/_cleanup/cheatsheet/</Path>
+                  <Path Filename="..">/mnt/home/_cleanup/cheatsheet/tmux_screen_cheatsheets_links/</Path>
+                  <Path Filename="..">/mnt/home/_cleanup/cheatsheet/</Path>
+                  <Path Filename="..">/mnt/home/_cleanup/</Path>
+                  <Path Filename="5_priv">/mnt/home/</Path>
+                  <Path Filename="_storage_documents">/mnt/home/5_priv/</Path>
+                  <Path Filename="Mieszkanie">/mnt/home/5_priv/_storage_documents/</Path>
+                  <Path Filename="..">/mnt/home/5_priv/_storage_documents/Mieszkanie/</Path>
+                  <Path Filename="Mieszkanie">/mnt/home/5_priv/_storage_documents/</Path>
+                  <Path Filename="materia?y_dodatkowe">/mnt/home/5_priv/_storage_documents/umowa_strzegomska/</Path>
+                  <Path Filename="..">/mnt/home/5_priv/_storage_documents/umowa_strzegomska/materia?y_dodatkowe/</Path>
+                  <Path Filename="..">/mnt/home/5_priv/_storage_documents/umowa_strzegomska/</Path>
+                  <Path Filename="2010_and older">/mnt/home/5_priv/_storage_documents/</Path>
+                  <Path Filename="mgr_Natalia_Oprzedek">/mnt/home/5_priv/_storage_documents/2010_and older/</Path>
+                  <Path Filename="plyta">/mnt/home/5_priv/_storage_documents/2010_and older/mgr_Natalia_Oprzedek/</Path>
+                  <Path Filename="..">/mnt/home/5_priv/_storage_documents/2010_and older/mgr_Natalia_Oprzedek/plyta/</Path>
+                  <Path Filename="plyta">/mnt/home/5_priv/_storage_documents/2010_and older/mgr_Natalia_Oprzedek/</Path>
+                  <Path Filename="..">/mnt/home/5_priv/_storage_documents/2010_and older/mgr_Natalia_Oprzedek/plyta/</Path>
+                  <Path Filename="..">/mnt/home/5_priv/_storage_documents/2010_and older/mgr_Natalia_Oprzedek/</Path>
+                  <Path Filename="..">/mnt/home/5_priv/_storage_documents/2010_and older/</Path>
+                  <Path Filename="_moto">/mnt/home/5_priv/_storage_documents/</Path>
+                  <Path Filename="_auto_moto">/mnt/home/5_priv/_storage_documents/_moto/</Path>
+                  <Path Filename="umowy kupna-sprzedazy auta">/mnt/home/5_priv/_storage_documents/_moto/_auto_moto/</Path>
+                  <Path Filename="..">/mnt/home/5_priv/_storage_documents/_moto/_auto_moto/umowy kupna-sprzedazy auta/</Path>
+                  <Path Filename="Postepowanie na miejscu kolizji.pdf">/mnt/home/5_priv/_storage_documents/_moto/_auto_moto/</Path>
+                  <Path Filename="_auto_moto">/mnt/home/5_priv/_storage_documents/_moto/</Path>
+                  <Path Filename="Post?powanie na miejscu kolizji drogow">/mnt/home/5_priv/_storage_documents/_moto/_auto_moto/</Path>
+                  <Path Filename="src">/home/izik/</Path>
+                  <Path Filename="filecluster">/home/izik/src/</Path>
+                  <Path Filename="inbox">/home/izik/src/filecluster/</Path>
+                  <Path Filename="..">/home/izik/src/filecluster/inbox/</Path>
+                  <Path Filename="[2017_01_26]_mix">/home/izik/src/filecluster/</Path>
+                  <Path Filename="..">/home/izik/src/filecluster/[2017_01_26]_mix/</Path>
+                  <Path Filename="[2017_01_28]_mix">/home/izik/src/filecluster/</Path>
+                  <Path Filename="IMG_1064.JPG">/home/izik/src/filecluster/[2017_01_28]_mix/</Path>
+                  <Path Filename="Documents">/home/izik/</Path>
+                  <Path Filename="..">/home/izik/Documents/</Path>
+                  <Path Filename="wilabs">/home/izik/</Path>
+                  <Path Filename="books">/home/izik/wilabs/</Path>
+                  <Path Filename="writing_idiomatic_python_3.pdf">/home/izik/wilabs/books/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/izik/</LockPath>
+          <Title>izik</Title>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>2</Direction>
+                <Function>7</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path Filename="home">/mnt/</Path>
+                  <Path Filename="izik">/mnt/home/</Path>
+                  <Path Filename="Videos">/mnt/home/izik/</Path>
+                  <Path Filename="_brak_napisow">/mnt/home/izik/Videos/</Path>
+                  <Path Filename="..">/mnt/home/izik/Videos/_brak_napisow/</Path>
+                  <Path Filename="Appleseed">/mnt/home/izik/Videos/</Path>
+                  <Path Filename="..">/mnt/home/izik/Videos/Appleseed/</Path>
+                  <Path Filename="Globecom_Arch">/mnt/home/izik/Videos/</Path>
+                  <Path Filename="One slide demo">/mnt/home/izik/Videos/Globecom_Arch/</Path>
+                  <Path Filename="..">/mnt/home/izik/Videos/Globecom_Arch/One slide demo/</Path>
+                  <Path Filename="..">/mnt/home/izik/Videos/Globecom_Arch/</Path>
+                  <Path Filename="TED">/mnt/home/izik/Videos/</Path>
+                  <Path Filename="..">/mnt/home/izik/Videos/TED/</Path>
+                  <Path Filename="Promo">/mnt/home/izik/Videos/</Path>
+                  <Path Filename="..">/mnt/home/izik/Videos/Promo/</Path>
+                  <Path Filename="Sluzby Specjalne">/mnt/home/izik/Videos/</Path>
+                  <Path Filename="..">/mnt/home/izik/Videos/Sluzby Specjalne/</Path>
+                  <Path Filename="Stalker (1979) Andrei Tarkovsky">/mnt/home/izik/Videos/</Path>
+                  <Path Filename="..">/mnt/home/izik/Videos/Stalker (1979) Andrei Tarkovsky/</Path>
+                  <Path Filename="Stalker (1979) Andrei Tarkovsky">/mnt/home/izik/Videos/</Path>
+                  <Path Filename="..">/mnt/home/izik/Videos/Stalker (1979) Andrei Tarkovsky/</Path>
+                  <Path Filename="LTE Radio Access">/mnt/home/izik/Videos/</Path>
+                  <Path Filename="..">/mnt/home/izik/Videos/LTE Radio Access/</Path>
+                  <Path Filename="Zawitkowski">/mnt/home/izik/Videos/</Path>
+                  <Path Filename="..">/mnt/home/izik/Videos/Zawitkowski/</Path>
+                  <Path Filename="Promo">/mnt/home/izik/Videos/</Path>
+                  <Path Filename="..">/mnt/home/izik/Videos/Promo/</Path>
+                  <Path Filename="TED">/mnt/home/izik/Videos/</Path>
+                  <Path Filename="..">/mnt/home/izik/Videos/TED/</Path>
+                  <Path Filename="..">/mnt/home/izik/Videos/</Path>
+                  <Path Filename="books">/mnt/home/izik/</Path>
+                  <Path Filename="ChomikBox">/mnt/home/izik/books/</Path>
+                  <Path Filename="..">/mnt/home/izik/books/ChomikBox/</Path>
+                  <Path Filename="books_and_reading_priv">/mnt/home/izik/books/</Path>
+                  <Path Filename="biology">/mnt/home/izik/books/books_and_reading_priv/</Path>
+                  <Path Filename="..">/mnt/home/izik/books/books_and_reading_priv/biology/</Path>
+                  <Path Filename="books_Self Improvement">/mnt/home/izik/books/books_and_reading_priv/</Path>
+                  <Path Filename="Seven Steps To Goal Setting.pdf">/mnt/home/izik/books/books_and_reading_priv/books_Self Improvement/</Path>
+                  <Path Filename="..">/home/izik/Downloads/</Path>
+                  <Path Filename="..">/mnt/home/Downloads/</Path>
+                  <Path Filename="Downloads">/mnt/home/</Path>
+                  <Path Filename="">/home/izik/Downloads/</Path>
+                  <Path Filename="">/home/izik/</Path>
+                  <Path Filename="">/home/izik/Downloads/</Path>
+                  <Path Filename="">/home/izik/</Path>
+                  <Path Filename="">/home/izik/Downloads/</Path>
+                  <Path Filename="">/home/izik/</Path>
+                  <Path Filename="">/home/izik/Downloads/</Path>
+                  <Path Filename="">/home/izik/</Path>
+                  <Path Filename="">/home/izik/Downloads/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/izik/Downloads/</LockPath>
+          <Title>Downloads</Title>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>2</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path Filename="dotfiles">/home/izik/</Path>
+                  <Path Filename=".tmux.conf">/home/izik/dotfiles/</Path>
+                  <Path Filename="..">/home/izik/Documents/</Path>
+                  <Path Filename="dotfiles">/home/izik/</Path>
+                  <Path Filename="..">/home/izik/dotfiles/</Path>
+                  <Path Filename="z">/home/izik/</Path>
+                  <Path Filename="..">/home/izik/z/</Path>
+                  <Path Filename="import">/home/izik/</Path>
+                  <Path Filename="..">/home/izik/import/</Path>
+                  <Path Filename=".oh-my-zsh">/home/izik/</Path>
+                  <Path Filename=".gitignore">/home/izik/.oh-my-zsh/</Path>
+                  <Path Filename="..">/home/izik/Documents/</Path>
+                  <Path Filename="dotfiles">/home/izik/</Path>
+                  <Path Filename=".aliases">/home/izik/dotfiles/</Path>
+                  <Path Filename="..">/home/izik/Documents/</Path>
+                  <Path Filename="dotfiles">/home/izik/</Path>
+                  <Path Filename=".aliases">/home/izik/dotfiles/</Path>
+                  <Path Filename="_cleanup">/home/izik/Documents/</Path>
+                  <Path Filename="OneNote Notebooks">/home/izik/Documents/_cleanup/</Path>
+                  <Path Filename="..">/home/izik/Documents/</Path>
+                  <Path Filename="wilabs">/home/izik/</Path>
+                  <Path Filename="ebadu">/home/izik/wilabs/</Path>
+                  <Path Filename="ebadu">/home/izik/wilabs/ebadu/</Path>
+                  <Path Filename="apps">/home/izik/wilabs/ebadu/ebadu/</Path>
+                  <Path Filename="mainapp">/home/izik/wilabs/ebadu/ebadu/apps/</Path>
+                  <Path Filename="scripts">/home/izik/wilabs/ebadu/ebadu/apps/mainapp/</Path>
+                  <Path Filename="update_items_transfertime.py">/home/izik/wilabs/ebadu/ebadu/apps/mainapp/scripts/</Path>
+                  <Path Filename="..">/home/izik/Documents/</Path>
+                  <Path Filename="wilabs">/home/izik/</Path>
+                  <Path Filename="NOTES.md">/home/izik/wilabs/</Path>
+                  <Path Filename="faktury">/home/izik/Documents/</Path>
+                  <Path Filename="2017_06">/home/izik/Documents/faktury/</Path>
+                  <Path Filename="..">/home/izik/Documents/faktury/2017_06/</Path>
+                  <Path Filename="..">/home/izik/Documents/faktury/</Path>
+                  <Path Filename="My Documents">/home/izik/Documents/</Path>
+                  <Path Filename="5_priv">/home/izik/Documents/My Documents/</Path>
+                  <Path Filename="..">/home/izik/Documents/My Documents/5_priv/</Path>
+                  <Path Filename="backup_calibre">/home/izik/Documents/My Documents/</Path>
+                  <Path Filename="5_priv">/home/izik/Documents/</Path>
+                  <Path Filename="_budzet_finanse">/home/izik/Documents/5_priv/</Path>
+                  <Path Filename="PIT">/home/izik/Documents/5_priv/_budzet_finanse/</Path>
+                  <Path Filename="pit_2016_wspolny">/home/izik/Documents/5_priv/_budzet_finanse/PIT/</Path>
+                  <Path Filename="PIT_2016_wspolny_UPO.pdf">/home/izik/Documents/5_priv/_budzet_finanse/PIT/pit_2016_wspolny/</Path>
+                  <Path Filename="">/home/izik/Documents/</Path>
+                  <Path Filename="">/home/izik/</Path>
+                  <Path Filename="">/home/izik/Documents/</Path>
+                  <Path Filename="..">/home/izik/</Path>
+                  <Path Filename="">/home/izik/Documents/</Path>
+                  <Path Filename="">/home/izik/</Path>
+                  <Path Filename="">/home/izik/Documents/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/izik/Documents/</LockPath>
+          <Title>Documents</Title>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>2</Direction>
+                <Function>2</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
+                  <Path Filename="">/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/Pamięć wewnętrzna/Pictures/Office Lens/</LockPath>
+          <Title>Office Lens</Title>
+        </Tab>
+      </Right>
+    </OpenedTabs>
+    <Options>49937</Options>
+    <CharacterLimit>32</CharacterLimit>
+    <Position>0</Position>
+    <ActionOnDoubleClick>2</ActionOnDoubleClick>
+  </Tabs>
+  <MainWindow>
+    <Position>
+      <Maximized>True</Maximized>
+      <Splitter>58,9229805886036</Splitter>
+      <Left>0</Left>
+      <Top>0</Top>
+      <Width>1600</Width>
+      <Height>874</Height>
+    </Position>
+  </MainWindow>
+  <Language>
+    <POFileName>doublecmd.en.po</POFileName>
+  </Language>
+  <Behaviours>
+    <GoToRoot>False</GoToRoot>
+    <RunInTerminalStayOpenCmd>x-terminal-emulator</RunInTerminalStayOpenCmd>
+    <RunInTerminalStayOpenParams>-e sh -c '{command}; echo -n Press ENTER to exit... ; read a'</RunInTerminalStayOpenParams>
+    <RunInTerminalCloseCmd>x-terminal-emulator</RunInTerminalCloseCmd>
+    <RunInTerminalCloseParams>-e sh -c {command}</RunInTerminalCloseParams>
+    <JustRunTerminal>x-terminal-emulator</JustRunTerminal>
+    <JustRunTermParams/>
+    <OnlyOneAppInstance>False</OnlyOneAppInstance>
+    <LynxLike>True</LynxLike>
+    <FileSizeFormat>0</FileSizeFormat>
+    <MinimizeToTray>False</MinimizeToTray>
+    <AlwaysShowTrayIcon>False</AlwaysShowTrayIcon>
+    <Mouse>
+      <Selection Enabled="True">
+        <Button>0</Button>
+      </Selection>
+      <ScrollMode>1</ScrollMode>
+      <WheelScrollLines>3</WheelScrollLines>
+    </Mouse>
+    <AutoFillColumns>False</AutoFillColumns>
+    <AutoSizeColumn>1</AutoSizeColumn>
+    <CustomColumnsChangeAllColumns>False</CustomColumnsChangeAllColumns>
+    <BriefViewFileExtAligned>False</BriefViewFileExtAligned>
+    <DateTimeFormat>dd.mm.yyyy hh:nn:ss</DateTimeFormat>
+    <CutTextToColumnWidth>True</CutTextToColumnWidth>
+    <ShowSystemFiles>False</ShowSystemFiles>
+    <ListFilesInThread>True</ListFilesInThread>
+    <LoadIconsSeparately>True</LoadIconsSeparately>
+    <DelayLoadingTabs>True</DelayLoadingTabs>
+    <HighlightUpdatedFiles>True</HighlightUpdatedFiles>
+    <DriveBlackList/>
+    <DriveBlackListUnmounted>False</DriveBlackListUnmounted>
+  </Behaviours>
+  <Tools>
+    <Viewer Enabled="False">
+      <Path/>
+      <Parameters/>
+      <RunInTerminal>False</RunInTerminal>
+      <KeepTerminalOpen>False</KeepTerminalOpen>
+    </Viewer>
+    <Editor Enabled="False">
+      <Path/>
+      <Parameters/>
+      <RunInTerminal>False</RunInTerminal>
+      <KeepTerminalOpen>False</KeepTerminalOpen>
+    </Editor>
+    <Differ Enabled="True">
+      <Path>/usr/bin/meld</Path>
+      <Parameters/>
+      <RunInTerminal>False</RunInTerminal>
+      <KeepTerminalOpen>False</KeepTerminalOpen>
+      <FramePosAfterComp>0</FramePosAfterComp>
+    </Differ>
+  </Tools>
+  <Fonts>
+    <Main>
+      <Name>Sans</Name>
+      <Size>12</Size>
+      <Style>0</Style>
+      <Quality>0</Quality>
+    </Main>
+    <Editor>
+      <Name>Liberation Mono</Name>
+      <Size>14</Size>
+      <Style>0</Style>
+      <Quality>0</Quality>
+    </Editor>
+    <Viewer>
+      <Name>Monospace</Name>
+      <Size>14</Size>
+      <Style>0</Style>
+      <Quality>0</Quality>
+    </Viewer>
+    <Log>
+      <Name>Monospace</Name>
+      <Size>12</Size>
+      <Style>0</Style>
+      <Quality>0</Quality>
+    </Log>
+    <ViewerBook>
+      <Name>default</Name>
+      <Size>16</Size>
+      <Style>1</Style>
+      <Quality>0</Quality>
+    </ViewerBook>
+    <Console>
+      <Name>Monospace</Name>
+      <Size>12</Size>
+      <Style>0</Style>
+      <Quality>0</Quality>
+    </Console>
+  </Fonts>
+  <ToolTips>
+    <ShowToolTipMode>True</ShowToolTipMode>
+    <CustomFields/>
+  </ToolTips>
+  <Layout>
+    <MainMenu>True</MainMenu>
+    <ButtonBar Enabled="True">
+      <FlatIcons>True</FlatIcons>
+      <ButtonHeight>24</ButtonHeight>
+      <IconSize>16</IconSize>
+      <ReportErrorWithCommands>False</ReportErrorWithCommands>
+    </ButtonBar>
+    <DriveBar1>True</DriveBar1>
+    <DriveBar2>True</DriveBar2>
+    <DriveBarFlat>True</DriveBarFlat>
+    <DrivesListButton Enabled="True">
+      <ShowLabel>True</ShowLabel>
+      <ShowFileSystem>True</ShowFileSystem>
+      <ShowFreeSpace>True</ShowFreeSpace>
+    </DrivesListButton>
+    <SeparateTree>False</SeparateTree>
+    <DirectoryTabs>True</DirectoryTabs>
+    <CurrentDirectory>True</CurrentDirectory>
+    <TabHeader>True</TabHeader>
+    <StatusBar>True</StatusBar>
+    <CmdLine>True</CmdLine>
+    <LogWindow>False</LogWindow>
+    <TermWindow>False</TermWindow>
+    <KeyButtons>True</KeyButtons>
+    <InterfaceFlat>True</InterfaceFlat>
+    <DriveFreeSpace>True</DriveFreeSpace>
+    <DriveIndicator>False</DriveIndicator>
+    <ProgressInMenuBar>False</ProgressInMenuBar>
+    <PanelOfOperationsInBackground>True</PanelOfOperationsInBackground>
+    <HorizontalFilePanels>False</HorizontalFilePanels>
+    <ShortFormatDriveInfo>True</ShortFormatDriveInfo>
+  </Layout>
+  <FilesViews>
+    <Sorting>
+      <CaseSensitivity>0</CaseSensitivity>
+      <NaturalSorting>True</NaturalSorting>
+      <SortFolderMode>0</SortFolderMode>
+      <NewFilesPosition>2</NewFilesPosition>
+      <UpdatedFilesPosition>2</UpdatedFilesPosition>
+    </Sorting>
+    <ColumnsView>
+      <AutoSaveWidth>True</AutoSaveWidth>
+      <TitleStyle>1</TitleStyle>
+    </ColumnsView>
+    <BriefView>
+      <FileExtAligned>False</FileExtAligned>
+      <Columns>
+        <FixedWidth>100</FixedWidth>
+        <FixedCount>2</FixedCount>
+        <AutoSize>2</AutoSize>
+      </Columns>
+    </BriefView>
+  </FilesViews>
+  <Keyboard>
+    <Typing>
+      <Actions>
+        <NoModifier>2</NoModifier>
+        <Alt>0</Alt>
+        <CtrlAlt>3</CtrlAlt>
+      </Actions>
+    </Typing>
+  </Keyboard>
+  <FileOperations>
+    <BufferSize>524288</BufferSize>
+    <HashBufferSize>8388608</HashBufferSize>
+    <UseMmapInSearch>False</UseMmapInSearch>
+    <PartialNameSearch>True</PartialNameSearch>
+    <WipePassNumber>1</WipePassNumber>
+    <DropReadOnlyFlag>False</DropReadOnlyFlag>
+    <ProcessComments>False</ProcessComments>
+    <RenameSelOnlyName>False</RenameSelOnlyName>
+    <ShowCopyTabSelectPanel>False</ShowCopyTabSelectPanel>
+    <UseTrash>True</UseTrash>
+    <SkipFileOpError>False</SkipFileOpError>
+    <TypeOfDuplicatedRename>0</TypeOfDuplicatedRename>
+    <ShowDialogOnDragDrop>False</ShowDialogOnDragDrop>
+    <DragAndDropTextRichtextDesireLevel>0</DragAndDropTextRichtextDesireLevel>
+    <DragAndDropTextHtmlDesireLevel>1</DragAndDropTextHtmlDesireLevel>
+    <DragAndDropTextUnicodeDesireLevel>2</DragAndDropTextUnicodeDesireLevel>
+    <DragAndDropTextSimpletextDesireLevel>3</DragAndDropTextSimpletextDesireLevel>
+    <DragAndDropAskFormatEachTime>False</DragAndDropAskFormatEachTime>
+    <DragAndDropTextAutoFilename>False</DragAndDropTextAutoFilename>
+    <DragAndDropSaveUnicodeTextInUFT8>True</DragAndDropSaveUnicodeTextInUFT8>
+    <OverwriteFolder>False</OverwriteFolder>
+    <NtfsHourTimeDelay>False</NtfsHourTimeDelay>
+    <AutoExtractOpenMask/>
+    <SearchDefaultTemplate/>
+    <ProgressKind>0</ProgressKind>
+    <Confirmations>15</Confirmations>
+    <Options>
+      <Symlink>0</Symlink>
+      <CorrectLinks>False</CorrectLinks>
+      <FileExists>0</FileExists>
+      <DirectoryExists>0</DirectoryExists>
+      <SetPropertyError>0</SetPropertyError>
+      <ReserveSpace>False</ReserveSpace>
+      <CheckFreeSpace>True</CheckFreeSpace>
+      <CopyAttributes>True</CopyAttributes>
+      <CopyTime>True</CopyTime>
+      <CopyOwnership>False</CopyOwnership>
+      <CopyPermissions>False</CopyPermissions>
+      <ExcludeEmptyTemplateDirectories>True</ExcludeEmptyTemplateDirectories>
+    </Options>
+  </FileOperations>
+  <Log Enabled="False" LogFileWithDateInName="False">
+    <FileName>%DC_CONFIG_PATH%/doublecmd.log</FileName>
+    <Options>1023</Options>
+  </Log>
+  <History>
+    <SearchReplaceHistory Save="True"/>
+    <DirHistory Save="True"/>
+    <CmdLineHistory Save="True"/>
+    <FileMaskHistory Save="True"/>
+  </History>
+  <QuickSearch>
+    <MatchBeginning>True</MatchBeginning>
+    <MatchEnding>True</MatchEnding>
+    <Case>1</Case>
+    <Items>2</Items>
+  </QuickSearch>
+  <QuickFilter>
+    <AutoHide>True</AutoHide>
+    <SaveSessionModifications>False</SaveSessionModifications>
+  </QuickFilter>
+  <Miscellaneous>
+    <GridVertLine>False</GridVertLine>
+    <GridHorzLine>False</GridHorzLine>
+    <ShowWarningMessages>True</ShowWarningMessages>
+    <SpaceMovesDown>True</SpaceMovesDown>
+    <DirBrackets>True</DirBrackets>
+    <InplaceRename>False</InplaceRename>
+    <HotDirAddTargetOrNot>False</HotDirAddTargetOrNot>
+    <HotDirFullExpandOrNot>False</HotDirFullExpandOrNot>
+    <ShowPathInPopup>False</ShowPathInPopup>
+    <ShowOnlyValidEnv>True</ShowOnlyValidEnv>
+    <WhereToAddNewHotDir>2</WhereToAddNewHotDir>
+  </Miscellaneous>
+  <Thumbnails Save="True">
+    <Width>128</Width>
+    <Height>128</Height>
+  </Thumbnails>
+  <AutoRefresh>
+    <Options>3</Options>
+    <ExcludeDirs/>
+    <Mode>1</Mode>
+  </AutoRefresh>
+  <Icons>
+    <ShowMode>3</ShowMode>
+    <ShowOverlays>False</ShowOverlays>
+    <Size>16</Size>
+    <Exclude>False</Exclude>
+    <ExcludeDirs/>
+    <CustomDriveIcons>False</CustomDriveIcons>
+    <ShowInMenus Enabled="False">
+      <Size>16</Size>
+    </ShowInMenus>
+  </Icons>
+  <IgnoreList Enabled="False">
+    <IgnoreListFile>%DC_CONFIG_PATH%/ignorelist.txt</IgnoreListFile>
+  </IgnoreList>
+  <DirectoryHotList/>
+  <Viewer>
+    <PreviewVisible>False</PreviewVisible>
+    <ImageStretch>False</ImageStretch>
+    <ImageStretchLargeOnly>False</ImageStretchLargeOnly>
+    <ImageCenter>True</ImageCenter>
+    <CopyMovePath1/>
+    <CopyMovePath2/>
+    <CopyMovePath3/>
+    <CopyMovePath4/>
+    <CopyMovePath5/>
+    <PaintMode>Pen</PaintMode>
+    <PaintWidth>5</PaintWidth>
+    <NumberOfColumns>1</NumberOfColumns>
+    <ViewerMode>1</ViewerMode>
+    <PaintColor>255</PaintColor>
+    <BackgroundColor>0</BackgroundColor>
+    <FontColor>16777215</FontColor>
+    <TextPosition>0</TextPosition>
+  </Viewer>
+  <Editor>
+    <EditWaitTime>2000</EditWaitTime>
+    <SynEditOptions>856075</SynEditOptions>
+  </Editor>
+  <SyncDirs>
+    <Subdirs>False</Subdirs>
+    <ByContent>False</ByContent>
+    <IgnoreDate>True</IgnoreDate>
+    <FilterCopyRight>True</FilterCopyRight>
+    <FilterEqual>False</FilterEqual>
+    <FilterNotEqual>False</FilterNotEqual>
+    <FilterCopyLeft>False</FilterCopyLeft>
+    <FilterDuplicates>True</FilterDuplicates>
+    <FilterSingles>True</FilterSingles>
+    <FileMask>*</FileMask>
+  </SyncDirs>
+  <InternalAssociations>
+    <OfferToAddNewFileType>True</OfferToAddNewFileType>
+    <LastCustomAction>Custom action</LastCustomAction>
+    <ExpandedContextMenu>False</ExpandedContextMenu>
+    <ExecuteViaShell>False</ExecuteViaShell>
+    <OpenSystemWithTerminalClose>False</OpenSystemWithTerminalClose>
+    <OpenSystemWithTerminalStayOpen>False</OpenSystemWithTerminalStayOpen>
+    <IncludeFileAssociation>False</IncludeFileAssociation>
+  </InternalAssociations>
+  <FavoriteTabsOptions>
+    <FavoriteTabsUseRestoreExtraOptions>False</FavoriteTabsUseRestoreExtraOptions>
+    <WhereToAdd>1</WhereToAdd>
+    <Expand>True</Expand>
+    <GotoConfigAftSav>False</GotoConfigAftSav>
+    <GotoConfigAftReSav>False</GotoConfigAftReSav>
+    <DfltLeftGoTo>0</DfltLeftGoTo>
+    <DfltRightGoTo>1</DfltRightGoTo>
+    <DfltKeep>5</DfltKeep>
+    <DfltSaveDirHistory>False</DfltSaveDirHistory>
+    <FavTabsLastUniqueID>{91820B69-FA4D-4688-88D9-4E7721A69FD6}</FavTabsLastUniqueID>
+  </FavoriteTabsOptions>
+  <Lua>
+    <PathToLibrary>liblua5.1.so.0</PathToLibrary>
+  </Lua>
+  <NameShortcutFile>shortcuts.scf</NameShortcutFile>
+  <LastUsedPacker>zip</LastUsedPacker>
+  <UseShellForFileOperations>False</UseShellForFileOperations>
+  <LastDoAnyCommand>cm_Refresh</LastDoAnyCommand>
+  <SearchTemplates/>
+  <ColumnsSets DefaultTitleHash="540805403">
+    <ColumnsSet UseFrameCursor="False">
+      <Name>Default</Name>
+      <CustomView>False</CustomView>
+      <CursorBorder Enabled="False">
+        <Color>0</Color>
+      </CursorBorder>
+      <Columns>
+        <Column>
+          <Title>Name</Title>
+          <FuncString>[DC().GETFILENAMENOEXT{}]</FuncString>
+          <Width>381</Width>
+          <Align>0</Align>
+          <Font>
+            <Name>default</Name>
+            <Size>10</Size>
+            <Style>1</Style>
+            <Quality>0</Quality>
+          </Font>
+          <TextColor>-2147483640</TextColor>
+          <Background>-2147483643</Background>
+          <Background2>-2147483643</Background2>
+          <MarkColor>255</MarkColor>
+          <CursorColor>-2147483635</CursorColor>
+          <CursorText>-2147483634</CursorText>
+          <InactiveCursorColor>-2147483645</InactiveCursorColor>
+          <InactiveMarkColor>128</InactiveMarkColor>
+          <UseInvertedSelection>False</UseInvertedSelection>
+          <UseInactiveSelColor>False</UseInactiveSelColor>
+          <Overcolor>True</Overcolor>
+        </Column>
+        <Column>
+          <Title>Ext</Title>
+          <FuncString>[DC().GETFILEEXT{}]</FuncString>
+          <Width>147</Width>
+          <Align>0</Align>
+          <Font>
+            <Name>default</Name>
+            <Size>10</Size>
+            <Style>1</Style>
+            <Quality>0</Quality>
+          </Font>
+          <TextColor>-2147483640</TextColor>
+          <Background>-2147483643</Background>
+          <Background2>-2147483643</Background2>
+          <MarkColor>255</MarkColor>
+          <CursorColor>-2147483635</CursorColor>
+          <CursorText>-2147483634</CursorText>
+          <InactiveCursorColor>-2147483645</InactiveCursorColor>
+          <InactiveMarkColor>128</InactiveMarkColor>
+          <UseInvertedSelection>False</UseInvertedSelection>
+          <UseInactiveSelColor>False</UseInactiveSelColor>
+          <Overcolor>True</Overcolor>
+        </Column>
+        <Column>
+          <Title>Size</Title>
+          <FuncString>[DC().GETFILESIZE{}]</FuncString>
+          <Width>70</Width>
+          <Align>1</Align>
+          <Font>
+            <Name>default</Name>
+            <Size>10</Size>
+            <Style>1</Style>
+            <Quality>0</Quality>
+          </Font>
+          <TextColor>-2147483640</TextColor>
+          <Background>-2147483643</Background>
+          <Background2>-2147483643</Background2>
+          <MarkColor>255</MarkColor>
+          <CursorColor>-2147483635</CursorColor>
+          <CursorText>-2147483634</CursorText>
+          <InactiveCursorColor>-2147483645</InactiveCursorColor>
+          <InactiveMarkColor>128</InactiveMarkColor>
+          <UseInvertedSelection>False</UseInvertedSelection>
+          <UseInactiveSelColor>False</UseInactiveSelColor>
+          <Overcolor>True</Overcolor>
+        </Column>
+        <Column>
+          <Title>Date</Title>
+          <FuncString>[DC().GETFILETIME{}]</FuncString>
+          <Width>140</Width>
+          <Align>1</Align>
+          <Font>
+            <Name>default</Name>
+            <Size>10</Size>
+            <Style>1</Style>
+            <Quality>0</Quality>
+          </Font>
+          <TextColor>-2147483640</TextColor>
+          <Background>-2147483643</Background>
+          <Background2>-2147483643</Background2>
+          <MarkColor>255</MarkColor>
+          <CursorColor>-2147483635</CursorColor>
+          <CursorText>-2147483634</CursorText>
+          <InactiveCursorColor>-2147483645</InactiveCursorColor>
+          <InactiveMarkColor>128</InactiveMarkColor>
+          <UseInvertedSelection>False</UseInvertedSelection>
+          <UseInactiveSelColor>False</UseInactiveSelColor>
+          <Overcolor>True</Overcolor>
+        </Column>
+        <Column>
+          <Title>Attr</Title>
+          <FuncString>[DC().GETFILEATTR{}]</FuncString>
+          <Width>100</Width>
+          <Align>0</Align>
+          <Font>
+            <Name>default</Name>
+            <Size>10</Size>
+            <Style>1</Style>
+            <Quality>0</Quality>
+          </Font>
+          <TextColor>-2147483640</TextColor>
+          <Background>-2147483643</Background>
+          <Background2>-2147483643</Background2>
+          <MarkColor>255</MarkColor>
+          <CursorColor>-2147483635</CursorColor>
+          <CursorText>-2147483634</CursorText>
+          <InactiveCursorColor>-2147483645</InactiveCursorColor>
+          <InactiveMarkColor>128</InactiveMarkColor>
+          <UseInvertedSelection>False</UseInvertedSelection>
+          <UseInactiveSelColor>False</UseInactiveSelColor>
+          <Overcolor>True</Overcolor>
+        </Column>
+      </Columns>
+    </ColumnsSet>
+  </ColumnsSets>
+  <MultiRenamePresets>
+    <LastPreset/>
+    <Presets/>
+  </MultiRenamePresets>
+</doublecmd>
