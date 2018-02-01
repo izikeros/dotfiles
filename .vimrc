@@ -3,7 +3,9 @@
 " TODO: read http//stevelosh.com/blog/2010/09/coming-home-to-vim/
 " TODO: check: https://github.com/nvie/vimrc
 " Dan Sheffner,Martin Brochhaus (Presented at PyCon APAC 2012)
-
+"
+" Some nice tips after you get bit of experience:
+" https://hackernoon.com/learning-vim-what-i-wish-i-knew-b5dca186bef7
 " ================== PLUGINS =========================
 set nocompatible              " use vim improvements compared to vi
 filetype off                  " required
@@ -24,9 +26,7 @@ Bundle 'tpope/vim-sensible'
 " guidelines for indentation
 Bundle 'Yggdroot/indentLine'
 
-" powerline
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
+" powerline replacement
 Plugin 'itchyny/lightline.vim'
 
 Bundle 'airblade/vim-gitgutter'
@@ -56,7 +56,7 @@ Bundle 'suan/vim-instant-markdown'
 Bundle 'wikitopian/hardmode'
 
 " to search
-Bundle 'kien/ctrlp.vim'
+"Bundle 'kien/ctrlp.vim'
 
 " Python plugins
 " Plugin 'janko-m/vim-test'
