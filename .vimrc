@@ -47,7 +47,7 @@ Bundle 'majutsushi/tagbar'
 
 Bundle 'vimwiki/vimwiki'
 " Try alternative, together with his dotnvim repo
-"Bundle lervag/wiki
+" Bundle 'lervag/wiki'
 
 " markdown preview
 Bundle 'suan/vim-instant-markdown'
