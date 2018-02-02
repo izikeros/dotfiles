@@ -40,8 +40,9 @@
    control+shift+q
 
 #rofi
-"rofi -combi-modi window,drun,ssh,run -show combi"
+   "rofi -combi-modi window,drun,ssh,run -show combi"
    control+space
+   #"~/dotfiles/scripts/rofi-scripts-collection/rofi-bangs.sh"
    #XF86Favorites
 
 #"rofi -color-window \"#000000, #000000, #000000\" -color-normal \"#000000, #b3e774, #000000, #b3e774, #000000\" -color-active \"#000000, #b3e774, #000000, #b3e774, #000000\" -color-urgent \"#000000, #b3e774, #000000, #b3e774, #000000\" -combi-modi window,drun,ssh,run,combi -show combi"
