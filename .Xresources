@@ -1,13 +1,19 @@
+
+
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
+! TO change edit and reload:
+! vim ~/.Xresources && xrdb -load ~/.Xresources
+! https://davedavenport.github.io/rofi/p11-Generator.html
+
 !rofi.color-enabled: true
 !rofi.color-window: #273238, #273238, #1e2529
 !rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
 !rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
 !rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
 
-
+! Matrix color scheme
 !rofi.color-enabled: true
 !rofi.color-window: #000000, #000000, #000000
 !rofi.color-normal: #000000, #b3e774, #000000, #b3e774, #000000
