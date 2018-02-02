@@ -1,7 +1,7 @@
 export ARCHFLAGS="-arch x86_64"
 export EDITOR='vim'
-export PATH="$HOME/.screenlayout:$PATH"
-export PATH="$HOME/scripts:$PATH"
+export PATH="$HOME/bulk/.screenlayout:$PATH"
+export PATH="$HOME/dotfiles/scripts:$PATH"
 export PATH="$HOME/bulk/external/pip-pop/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/bulk/external/restic:$PATH"
