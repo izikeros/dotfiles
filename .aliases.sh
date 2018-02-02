@@ -42,6 +42,7 @@ alias v="vim"
 # notes
 alias t="vim DiaryNoteToday"
 alias wiki="vim $HOME/Dropbox/wiki/index.md"
+alias wi="vim $HOME/Dropbox/wiki/index.md"
 alias td="vim $HOME/Dropbox/wiki/TODO.md"
 
 alias vz="vim $HOME/.zshrc"
@@ -211,8 +212,9 @@ alias find-git-repos="find . -name \".git\" -type d | sed s/\.git//g | grep -v '
 # TODO: check all git repos if they can be updated if so, ask one by one if update
 
 # backup
-alias firma-backup="restic -r $HOME/Dropbox/restic-firma backup $HOME/firma"
+alias firma-backup="restic -r $HOME/Dropbox/restic-firma backup $HOME/bulk/firma"
 alias firma-snapshots="restic -r $HOME/Dropbox/restic-firma snapshots"
+
 alias brightness="xrandr --output LVDS-1 --brightness $1"
 alias sz="source ~/.zshrc"
 
