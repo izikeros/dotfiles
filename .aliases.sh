@@ -33,7 +33,6 @@ alias top10dirs="find . -type d -print0 | xargs -0 du | sort -n | tail -10 | cut
 alias cd..="cd .."
 alias h="cd $HOME"
 alias cdh="cd $HOME"
-alias awdir="cd $HOME/.config/awesome"
 
 #--------------------------------------------
 # EDIT ACTIONS
@@ -50,11 +49,11 @@ alias vs="vim $HOME/.ssh/config"
 alias vg="vim $HOME/.gitconfig"
 alias vv="vim $HOME/.vimrc"
 alias va="vim $HOME/dotfiles/.aliases.sh"
-#alias vf="vim $HOME/.config/fish/config.fish"
-alias vd="vim $HOME/dotfiles"
-#alias cfg-awesome="vim $HOME/.config/awesome/rc.lua"
+alias vd="vim $HOME/dotfiles/"
+alias vb="vim $HOME/dotfiles/bootstrap/"
 alias vx="vim $HOME/dotfiles/.xbindkeysrc"
-alias vkeys="grep -e 'map' $HOME/dotfiles/.vimrc"
+alias ve="vim $HOME/env_vars.sh"
+alias vkeys="grep --color=never -e 'map' $HOME/dotfiles/.vimrc"
 
 #--------------------------------------------
 # MEATA-ALIAS
@@ -192,6 +191,8 @@ alias wilabsvpn_up="nmcli connection up \"wilabs (openvpn)\""
 
 alias hnfav="firefox https://news.ycombinator.com/favorites\\?id\=izik"
 
+alias cx="chmod +x"
+
 # shortcut for tmuxifier
 alias tw="tmuxifier load-window"
 
@@ -217,6 +218,5 @@ alias sz="source ~/.zshrc"
 
 # help on how to use awk to extract given column
 alias hawk="echo awk -F\':\' \'{print \$\2}\'"
-
 alias ytmp3="youtube-dl --extract-audio --audio-format mp3 --prefer-ffmpeg"
 alias yd=youtube-dl
