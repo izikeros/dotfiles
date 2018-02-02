@@ -1,6 +1,6 @@
 [global_config]
 [keybindings]
-  help =
+  help = ""
 [layouts]
   [[default]]
     [[[child1]]]
@@ -10,10 +10,39 @@
     [[[window0]]]
       parent = ""
       type = Window
+  [[izix_term]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 9b124e0a-4e6b-4456-8a5f-cef6da57d137
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:31
+      size = 1920, 1140
+      title = izix@archiz: ~/dotfiles/bootstrap
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 958
+      ratio = 0.500261096606
+      type = HPaned
+    [[[terminal2]]]
+      order = 0
+      parent = child1
+      profile = default
+      type = Terminal
+      uuid = 9b124e0a-4e6b-4456-8a5f-cef6da57d137
+    [[[terminal3]]]
+      order = 1
+      parent = child1
+      profile = default
+      type = Terminal
+      uuid = df84661e-568e-401a-94bf-fc8c48e58190
 [plugins]
 [profiles]
   [[default]]
     cursor_color = "#aaaaaa"
     font = FontAwesome 10
     foreground_color = "#ffffff"
-    show_titlebar = False
