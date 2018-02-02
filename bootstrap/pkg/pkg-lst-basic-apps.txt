@@ -1,3 +1,24 @@
+atom
+audacity
+calibre
+darktable
+gdmap
+gimp
+git-gui
+gparted
+handbrake
+inkscape
+kdenlive
+kstars
+stellarium
+psfsam-basic
+posterazor
+recoll
+redshift
+screenfetch
+shutter
+simplescreerecorder
+libreoffice
 arandr
 doublecmdr-qt5
 chromium
@@ -13,13 +34,10 @@ xfce4-goodies
 xorg-server
 meld
 sublime-text
+sxiv
+vlc
 
-# simplescreenrecorder
 # yi screenkey
-# libreoffice
-# audacity
 # gucview? (for screencast)
-# atom
 # visual studio code
-# gimp
-# use meld to populate the list
+

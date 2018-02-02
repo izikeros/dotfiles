@@ -63,6 +63,9 @@ if [ ! -d ~/.fzf ]; then
 fi
 echo "fzf installed"
 
+# ======= install k
+git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/custom/plugins/k
+
 # TODO:
 # install ppa repositories
 # install tools from pip packages
