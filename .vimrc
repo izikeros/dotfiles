@@ -250,7 +250,13 @@ set nofoldenable
 "=====================================================
 " vimwiki with markdown support
 "=====================================================
-let g:vimwiki_list = [{'path': '~/Dropbox/wiki', 'syntax': 'markdown', 'ext': '.md'}]
+"let g:vimwiki_list = [{'path': '~/Dropbox/wiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/Dropbox/wiki',
+  \ 'path_html': '~/Dropbox/wiki_html',
+  \ 'syntax': 'markdown',
+  \ 'ext': '.md',
+  \ 'custom_wiki2html': '~/wiki2html.sh'}]
+
 " Have vimwiki set filetype only within wikihome
 "let g:vimwiki_ext2syntax = {}
 
