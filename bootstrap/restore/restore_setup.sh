@@ -1,6 +1,7 @@
 #!/bin/bash
 
-BACKUP_DIR="$HOME/backup"
+# not used
+#BACKUP_DIR="$HOME/backup"
 
 exec >> err_file
 
@@ -17,13 +18,18 @@ symlink_dotfile ./dotfiles/.vimrc ~/.vimrc
 symlink_dotfile ./dotfiles/.xbindkeysrc ~/.xbindkeysrc
 symlink_dotfile ./dotfiles/.Xresources ~/.Xresources
 symlink_dotfile ./dotfiles/.gitconfig ~/.gitconfig
-# doublecommander
-# -- symlink/copy settings file
 
-# rofi theme:
-# -- lb (use rofi-theme-selector)
+# double commander
+DCMDR_PATH=".config/doublecmd"
+mkdir -p $HOME/$DCMDR_PATH
+symlink_dotfile ./dotfiles/$DCMDR_PATH/doublecmd.xml $HOME/DCMDR_PATH//doublecmd.xml
 
-# symlink xfce4keyboard (id xfce4 dir exist in .config)
+# rofi theme (set manually, use rofi-theme-selector):
+# -- lb 
+
+XFCE_DIR=".config/xfce4/xfce-perchannel-xml"
+mkdir -p $HOME/$XFCE_DIR
+symlink_dotfile ./dotfiles/$XFCE_DIR/xfce4-keyboard-shortcuts.xml $HOME/$XFCE_DIR/xfce4-keyboard-shortcuts.xml
 
 # ======= prepare vim
 # install vim vundle
@@ -38,16 +44,13 @@ if [ ! -L ~/.vim/colors/wombat256mod.vim ]; then
 	symlink_dotfile ~/dotfiles/wombat256mod.vim ~/.vim/colors/wombat256mod.vim
 fi
 
+# TODO: symlink snippets
+
 # ======== install omzsh
 if [ ! -d ~/.oh-my-zsh ]; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 echo "omzsh should be installed, you might want to switch shell to zsh via command: 'chsh -s /bin/zsh'"
-
-# ======== install ZSH spaceship theme
-# TODO: $ZSH_CUSTOM seems to be not set, need to install manually for now
-#git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
-#ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 # ======== install z
 if [ ! -d ~/z ]; then
@@ -65,6 +68,11 @@ echo "fzf installed"
 
 # ======= install k
 git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/custom/plugins/k
+
+# ======== install ZSH spaceship theme
+# TODO: $ZSH_CUSTOM seems to be not set, need to install manually for now
+#git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+#ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 # TODO:
 # install ppa repositories
