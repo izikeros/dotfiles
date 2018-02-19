@@ -40,7 +40,7 @@
    control+shift+q
 
 #rofi
-   "rofi -combi-modi window,drun,ssh,run -show combi"
+"rofi -combi-modi window,drun,ssh,run -show combi "
    control+space
    #"~/dotfiles/scripts/rofi-scripts-collection/rofi-bangs.sh"
    #XF86Favorites
@@ -89,5 +89,8 @@
 
 "gnome-calculator"
     XF86Calculator
+
+#"pgrep xfce4-panel && xfce4-panel -q || xfce4-panel"
+#    control+mod4
 
 # End of xbindkeys configuration
