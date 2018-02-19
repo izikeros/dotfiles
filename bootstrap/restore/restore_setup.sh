@@ -22,10 +22,10 @@ symlink_dotfile ./dotfiles/.gitconfig ~/.gitconfig
 # double commander
 DCMDR_PATH=".config/doublecmd"
 mkdir -p $HOME/$DCMDR_PATH
-symlink_dotfile ./dotfiles/$DCMDR_PATH/doublecmd.xml $HOME/DCMDR_PATH//doublecmd.xml
+symlink_dotfile ./dotfiles/$DCMDR_PATH/doublecmd.xml $HOME/$DCMDR_PATH/doublecmd.xml
 
 # rofi theme (set manually, use rofi-theme-selector):
-# -- lb 
+# -- lb
 
 XFCE_DIR=".config/xfce4/xfce-perchannel-xml"
 mkdir -p $HOME/$XFCE_DIR
@@ -67,7 +67,10 @@ fi
 echo "fzf installed"
 
 # ======= install k
-git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/custom/plugins/k
+
+if [ ! -d $HOME/.oh-my-zsh/custom/plugins/k ]; then
+    git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/custom/plugins/k
+fi
 
 # ======== install ZSH spaceship theme
 # TODO: $ZSH_CUSTOM seems to be not set, need to install manually for now
