@@ -9,7 +9,7 @@
 
 # handle yaourt markings
 
-CMD=`get_distro_pkg_install_command`
+CMD=`$HOME/dotfiles/bootstrap/restore/get_distro_pkg_install_command.sh`
 while read package;
 do
 	echo "--- $package ---"
