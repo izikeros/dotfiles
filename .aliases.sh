@@ -40,11 +40,14 @@ alias cdh="cd $HOME"
 alias v="vim"
 
 # notes
+WIKI_HOME="$HOME/Dropbox/wiki"
 alias t="vim DiaryNoteToday"
-alias wiki="vim $HOME/Dropbox/wiki/index.md"
-alias wi="vim $HOME/Dropbox/wiki/index.md"
-alias td="vim $HOME/Dropbox/wiki/TODO.md"
+alias wiki="vim $WIKI_HOME/index.md"
+alias wi="vim $WIKI_HOME/index.md"
+alias td="vim $WIKI_HOME/TODO.md"
+alias cdw="cd $WIKI_HOME"
 
+# shortcuts to edit files (mostly config files)
 alias vz="vim $HOME/.zshrc"
 alias vs="vim $HOME/.ssh/config"
 alias vg="vim $HOME/.gitconfig"
@@ -52,6 +55,7 @@ alias vv="vim $HOME/.vimrc"
 alias va="vim $HOME/dotfiles/.aliases.sh"
 alias vd="vim $HOME/dotfiles/"
 alias vb="vim $HOME/dotfiles/bootstrap/"
+alias vp="vim $HOME/dotfiles/bootstrap/packages/"
 alias vx="vim $HOME/dotfiles/.xbindkeysrc"
 alias ve="vim $HOME/env_vars.sh"
 alias vkeys="grep --color=never -e 'map' $HOME/dotfiles/.vimrc"
@@ -185,6 +189,14 @@ alias dps='docker_fit ps -a'
 alias docker-clean-exited-containers='docker ps -aqf status=exited | xargs -n1 docker rm'
 alias docker-list-untagged-images='echo $(docker images | grep "<none>" | awk "{print \$3}")'
 alias docker-remove-untagged-images='docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")'
+
+#--------------------------------------------
+# CALIBRE
+#--------------------------------------------
+alias c-it='calibre --with-library=/mnt/veracrypt3/books_it'
+alias c-astro='calibre --with-library=/mnt/veracrypt3/books_astro'
+alias c-life='calibre --with-library=/mnt/veracrypt3/books_life'
+
 #--------------------------------------------
 # OTHER
 #--------------------------------------------
@@ -198,7 +210,7 @@ alias cx="chmod +x"
 alias tw="tmuxifier load-window"
 
 # launch jupyter-lab
-alias jl="jupyter-lab"
+alias jl="source $HOME/.venv/jl/bin/activate && jupyter lab"
 
 # grep no comments
 alias catnc="egrep -v \"^\s*(#|\$)\""
@@ -222,3 +234,7 @@ alias sz="source ~/.zshrc"
 alias hawk="echo awk -F\':\' \'{print \$\2}\'"
 alias ytmp3="youtube-dl --extract-audio --audio-format mp3 --prefer-ffmpeg"
 alias yd=youtube-dl
+
+# show 50 most used cli commands
+alias history-top="history |  cut -c7- | sort  | uniq -c | sort -nr | head -n 50"
+
