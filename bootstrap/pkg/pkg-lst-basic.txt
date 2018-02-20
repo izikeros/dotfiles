@@ -4,7 +4,6 @@ htop
 mc
 most
 numlockx
-openssh
 openssh-client
 openssh-server
 python-pip
@@ -13,12 +12,10 @@ ranger
 redshift
 rsync
 screen
-the_silver_searcher
 tmux
 tree
 vim
 w3m
 wget
 xclip
-yaourt
 zsh

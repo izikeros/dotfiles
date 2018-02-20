@@ -238,5 +238,9 @@ alias yd=youtube-dl
 # show 50 most used cli commands
 alias history-top="history |  cut -c7- | sort  | uniq -c | sort -nr | head -n 50"
 
+# remove comments from file
+alias rm-comments="sed -e \"s/#.*$//gi\" -e \"/^$/d\""
+
 # lsblk
 # dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
+
