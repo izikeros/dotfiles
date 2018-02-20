@@ -3,12 +3,13 @@
 # not used
 #BACKUP_DIR="$HOME/backup"
 
-exec >> err_file
+# exec >> err_file # redirect stdout to logfile
 
 CMD=`./get_distro_pkg_install_command.sh`
 
 source ./helper_functions.sh
 
+echo "-------- symlinking configuration files -----------"
 symlink_dotfile ./dotfiles/.bashrc ~/.bashrc
 symlink_dotfile ./dotfiles/.zshrc_omzsh ~/.zshrc
 symlink_dotfile ./dotfiles/.aliases.sh ~/.aliases.sh
@@ -22,14 +23,14 @@ symlink_dotfile ./dotfiles/.gitconfig ~/.gitconfig
 # double commander
 DCMDR_PATH=".config/doublecmd"
 mkdir -p $HOME/$DCMDR_PATH
-symlink_dotfile ./dotfiles/$DCMDR_PATH/doublecmd.xml $HOME/$DCMDR_PATH/doublecmd.xml
+#symlink_dotfile ./dotfiles/$DCMDR_PATH/doublecmd.xml $HOME/$DCMDR_PATH/doublecmd.xml
 
 # rofi theme (set manually, use rofi-theme-selector):
 # -- lb
 
 XFCE_DIR=".config/xfce4/xfce-perchannel-xml"
 mkdir -p $HOME/$XFCE_DIR
-symlink_dotfile ./dotfiles/$XFCE_DIR/xfce4-keyboard-shortcuts.xml $HOME/$XFCE_DIR/xfce4-keyboard-shortcuts.xml
+#symlink_dotfile ./dotfiles/$XFCE_DIR/xfce4-keyboard-shortcuts.xml $HOME/$XFCE_DIR/xfce4-keyboard-shortcuts.xml
 
 # ======= prepare vim
 # install vim vundle
@@ -55,22 +56,30 @@ echo "omzsh should be installed, you might want to switch shell to zsh via comma
 # ======== install z
 if [ ! -d ~/z ]; then
     git clone https://github.com/rupa/z ~/z
+    echo "z cloned to ~/z"
+else
+    echo "z directory already exist, skipping cloning"
 fi
-echo "z installed"
+echo
 
 # ======== install fzf
 # NOTE: On arch can be installed from packages
 if [ ! -d ~/.fzf ]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     ~/.fzf/install
+    echo "fzf installed"
+else
+    echo "~/.fzf directory already exist, skipping cloning and installation"
 fi
-echo "fzf installed"
+echo
 
 # ======= install k
-
 if [ ! -d $HOME/.oh-my-zsh/custom/plugins/k ]; then
     git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/custom/plugins/k
+else
+    echo "k plugin already exist, cloning skipped"
 fi
+echo
 
 # ======== install ZSH spaceship theme
 # TODO: $ZSH_CUSTOM seems to be not set, need to install manually for now
