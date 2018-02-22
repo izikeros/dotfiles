@@ -1,23 +1,18 @@
 #!/bin/bash
 
-# not used
 #BACKUP_DIR="$HOME/backup"
-
 # exec >> err_file # redirect stdout to logfile
-
-CMD=`./get_distro_pkg_install_command.sh`
+# CMD=`./get_distro_pkg_install_command.sh`
 
 source ./helper_functions.sh
 
 echo "-------- symlinking configuration files -----------"
 symlink_dotfile ./dotfiles/.bashrc ~/.bashrc
-symlink_dotfile ./dotfiles/.zshrc_omzsh ~/.zshrc
-symlink_dotfile ./dotfiles/.aliases.sh ~/.aliases.sh
 symlink_dotfile ./dotfiles/env_vars.sh ~/env_vars.sh
-symlink_dotfile ./dotfiles/functions.sh ~/functions.sh
-symlink_dotfile ./dotfiles/.vimrc ~/.vimrc
+
 symlink_dotfile ./dotfiles/.xbindkeysrc ~/.xbindkeysrc
 symlink_dotfile ./dotfiles/.Xresources ~/.Xresources
+
 symlink_dotfile ./dotfiles/.gitconfig ~/.gitconfig
 
 # double commander
@@ -33,6 +28,7 @@ mkdir -p $HOME/$XFCE_DIR
 #symlink_dotfile ./dotfiles/$XFCE_DIR/xfce4-keyboard-shortcuts.xml $HOME/$XFCE_DIR/xfce4-keyboard-shortcuts.xml
 
 # ======= prepare vim
+symlink_dotfile ./dotfiles/.vimrc ~/.vimrc
 # install vim vundle
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
 	mkdir -p ~/.vim/bundle/
@@ -52,6 +48,7 @@ if [ ! -d ~/.oh-my-zsh ]; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 echo "omzsh should be installed, you might want to switch shell to zsh via command: 'chsh -s /bin/zsh'"
+symlink_dotfile ./dotfiles/.zshrc_omzsh ~/.zshrc
 
 # ======== install z
 if [ ! -d ~/z ]; then
