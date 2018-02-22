@@ -3,12 +3,7 @@
 # visual studio code
 # yi screenkey
 arandr
-atom
-audacity
 byobu
-calibre
-chromium
-darktable
 docker
 docker-compose
 doublecmdr-qt5
@@ -16,18 +11,11 @@ fgallery
 firefox
 fping
 gdmap
-gimp
 git-gui
 glances
 gparted
 graphviz
 handbrake
-inkscape
-kdenlive
-kstars
-libreoffice
-lightdm-gtk-greeter
-ligthdm
 llgal
 markdowm
 meld
@@ -49,16 +37,13 @@ shutter
 simplescreerecorder
 source-highlight
 sqlite3
-stellarium
-sublime-text
 sxiv
 terminator
 tlp
+tk
 veracrypt
 vlc
 xbindkeys
-xfce4
-xfce4-goodies
 xorg-server
 xorg-xhost
 youtube-dl

@@ -1,0 +1,16 @@
+atom
+audacity
+calibre
+chromium
+darktable
+gimp
+inkscape
+kdenlive
+kstars
+libreoffice
+lightdm-gtk-greeter
+ligthdm
+stellarium
+sublime-text
+xfce4
+xfce4-goodies
