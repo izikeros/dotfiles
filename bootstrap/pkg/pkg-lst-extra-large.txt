@@ -1,3 +1,5 @@
+# 1) ask for each
+# 2) use rofi to launch installation
 atom
 audacity
 calibre
@@ -12,5 +14,6 @@ lightdm-gtk-greeter
 ligthdm
 stellarium
 sublime-text
+visual studio code
 xfce4
 xfce4-goodies

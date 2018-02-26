@@ -2,6 +2,8 @@
 # gucview? (for screencast)
 # visual studio code
 # yi screenkey
+aspell
+aspell-en
 arandr
 byobu
 docker
