@@ -15,6 +15,8 @@ symlink_dotfile ./dotfiles/.Xresources ~/.Xresources
 
 symlink_dotfile ./dotfiles/.gitconfig ~/.gitconfig
 
+# if Arch linux symlink .yaourtrc
+
 # double commander
 DCMDR_PATH=".config/doublecmd"
 mkdir -p $HOME/$DCMDR_PATH
