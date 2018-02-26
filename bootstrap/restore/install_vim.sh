@@ -16,6 +16,11 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
 	mkdir -p ~/.vim/bundle/
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
-vim -c ":VundleInstall"
+
+# install vundle plugins
+vim -S <(echo -e "VundleInstall \n q \n q")
+
+# symlink snippets
+symlink_dotfile ./dotfiles/snippets ~/.vim/snippets
 
 # TODO: symlink snippets
