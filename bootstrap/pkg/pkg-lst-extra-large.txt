@@ -6,6 +6,8 @@ calibre
 chromium
 darktable
 gimp
+graphviz
+handbrake
 inkscape
 kdenlive
 kstars

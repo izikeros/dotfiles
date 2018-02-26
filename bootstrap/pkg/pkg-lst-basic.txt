@@ -8,12 +8,8 @@ openssh-client
 openssh-server
 python-pip
 python3
-ranger
 redshift
 rsync
-screen
-tmux
-tree
 vim
 w3m
 wget

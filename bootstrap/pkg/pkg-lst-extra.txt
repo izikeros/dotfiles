@@ -16,8 +16,6 @@ gdmap
 git-gui
 glances
 gparted
-graphviz
-handbrake
 llgal
 markdowm
 meld
@@ -31,9 +29,11 @@ posterazor
 postgresql
 powertop
 psfsam-basic
+ranger
 recoll
 redshift
 rofi
+screen
 screenfetch
 shutter
 simplescreerecorder
@@ -41,8 +41,10 @@ source-highlight
 sqlite3
 sxiv
 terminator
+tmux
 tlp
 tk
+tree
 veracrypt
 vlc
 xbindkeys
