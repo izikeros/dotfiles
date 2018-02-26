@@ -244,3 +244,6 @@ alias rm-comments="sed -e \"s/#.*$//gi\" -e \"/^$/d\""
 # lsblk
 # dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
 
+alias pacman="pacman --color=always"
+alias update="sudo pacman -Syu --color=always"
+alias windirstat="gdmap"
