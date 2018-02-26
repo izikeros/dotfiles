@@ -1,6 +1,8 @@
 #!/bin/bash
 # Return proper command for package installation on Ubuntu or Arch linux
 
+# Arch linux ultimate installer
+# https://github.com/helmuthdu/aui/blob/master/sharedfuncs
 SYS=""
 uname -a | grep -q  "Ubuntu" && SYS="ubuntu"
 uname -a | grep -q  "Arch\|archlabs" && SYS="arch"
@@ -14,7 +16,7 @@ fi
 
 if [ "$SYS" == "arch" ]; then
     #echo "Arch Linux detected, using pacman"
-    CMD="pacman -Sy"
+    CMD="sudo pacman -Sy --noconfirm"
 fi
 
 if [ "$SYS" == "" ]; then
