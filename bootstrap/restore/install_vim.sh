@@ -21,6 +21,6 @@ fi
 vim -S <(echo -e "VundleInstall \n q \n q")
 
 # symlink snippets
-symlink_dotfile ./dotfiles/snippets ~/.vim/snippets
+symlink_dotfile ~/dotfiles/snippets ~/.vim/snippets
 
 # TODO: symlink snippets
