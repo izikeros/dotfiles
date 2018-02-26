@@ -33,6 +33,7 @@ ranger
 recoll
 redshift
 rofi
+ripgrep
 screen
 screenfetch
 shutter
@@ -41,6 +42,7 @@ source-highlight
 sqlite3
 sxiv
 terminator
+the_silver_searcher
 tmux
 tlp
 tk
