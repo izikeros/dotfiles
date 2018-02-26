@@ -3,7 +3,7 @@
 
 SYS=""
 uname -a | grep -q  "Ubuntu" && SYS="ubuntu"
-uname -a | grep -q  "Arch" && SYS="arch"
+uname -a | grep -q  "Arch\|archlabs" && SYS="arch"
 
 if [ "$SYS" == "ubuntu" ]; then
     #echo "-- Ubuntu Linux detected, using apt-get"
