@@ -9,6 +9,7 @@ byobu
 docker
 docker-compose
 doublecmdr-qt5
+dropbox
 fgallery
 firefox
 fping
