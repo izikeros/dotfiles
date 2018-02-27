@@ -3,7 +3,6 @@ git
 htop
 mc
 most
-numlockx
 openssh-client
 openssh-server
 python-pip

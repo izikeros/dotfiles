@@ -22,6 +22,7 @@ meld
 ncdu
 neofetch (YI)
 nethogs
+numlockx
 npm
 parallel
 pep8pyflakes
