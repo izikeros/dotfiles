@@ -8,7 +8,7 @@
 # 4. if ubuntu install from ppa
 
 # Get system and install command
-source $HOME/dotfiles/bootstrap/restore/get_distro_pkg_install_command.sh
+#source $HOME/dotfiles/bootstrap/restore/get_distro_pkg_install_command.sh
 
 # ---- Preprocess packages list: ----
 # TODO: ignore comments
@@ -21,10 +21,11 @@ source $HOME/dotfiles/bootstrap/restore/get_distro_pkg_install_command.sh
 
 
 CMD=`$HOME/dotfiles/bootstrap/restore/get_distro_pkg_install_command.sh`
+echo "Using command: $CMD"
 while read package;
 do
 	echo "--- $package ---"
-	$CMD install $package
+	$CMD $package
 	echo ""
 done < $1
 

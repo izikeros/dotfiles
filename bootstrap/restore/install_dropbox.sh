@@ -1,4 +1,5 @@
-# TODO: move to separate script
+#!/bin/bash
+
 # ======= install Dropbox
 if hash dropbox 2>/dev/null; then
 	echo "Seems that Dropbox is already installed"

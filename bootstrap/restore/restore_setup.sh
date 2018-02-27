@@ -15,6 +15,8 @@ symlink_dotfile ./dotfiles/.Xresources ~/.Xresources
 
 symlink_dotfile ./dotfiles/.gitconfig ~/.gitconfig
 
+# if Arch linux symlink .yaourtrc
+
 # double commander
 DCMDR_PATH=".config/doublecmd"
 mkdir -p $HOME/$DCMDR_PATH
@@ -27,21 +29,7 @@ XFCE_DIR=".config/xfce4/xfce-perchannel-xml"
 mkdir -p $HOME/$XFCE_DIR
 #symlink_dotfile ./dotfiles/$XFCE_DIR/xfce4-keyboard-shortcuts.xml $HOME/$XFCE_DIR/xfce4-keyboard-shortcuts.xml
 
-# ======= prepare vim
-symlink_dotfile ./dotfiles/.vimrc ~/.vimrc
-# install vim vundle
-if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
-	mkdir -p ~/.vim/bundle/
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
 
-# install wombat colors
-if [ ! -L ~/.vim/colors/wombat256mod.vim ]; then
-	mkdir -p ~/.vim/colors/
-	symlink_dotfile ~/dotfiles/wombat256mod.vim ~/.vim/colors/wombat256mod.vim
-fi
-
-# TODO: symlink snippets
 
 # ======== install omzsh
 if [ ! -d ~/.oh-my-zsh ]; then
@@ -70,13 +58,7 @@ else
 fi
 echo
 
-# ======= install k
-if [ ! -d $HOME/.oh-my-zsh/custom/plugins/k ]; then
-    git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/custom/plugins/k
-else
-    echo "k plugin already exist, cloning skipped"
-fi
-echo
+
 
 # ======== install ZSH spaceship theme
 # TODO: $ZSH_CUSTOM seems to be not set, need to install manually for now

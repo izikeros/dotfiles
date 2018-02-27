@@ -40,7 +40,7 @@ alias cdh="cd $HOME"
 alias v="vim"
 
 # notes
-WIKI_HOME="$HOME/Dropbox/wiki"
+WIKI_HOME="$HOME/vimwiki"
 alias t="vim DiaryNoteToday"
 alias wiki="vim $WIKI_HOME/index.md"
 alias wi="vim $WIKI_HOME/index.md"

@@ -47,7 +47,7 @@ Bundle 'majutsushi/tagbar'
 
 Bundle 'vimwiki/vimwiki'
 " Try alternative, together with his dotnvim repo
-" Bundle 'lervag/wiki'
+"Bundle 'lervag/wiki'
 
 " markdown preview
 Bundle 'suan/vim-instant-markdown'
@@ -247,37 +247,47 @@ set nofoldenable
 " let g:pymode_rope_completion = 0
 " let g:pymode_rope_complete_on_dot = 0
 
+"====================================================
+" wiki
+"====================================================
+"let g:wiki_root = '~/wiki'
+
 "=====================================================
 " vimwiki with markdown support
 "=====================================================
 "let g:vimwiki_list = [{'path': '~/Dropbox/wiki', 'syntax': 'markdown', 'ext': '.md'}]
-let g:vimwiki_list = [{'path': '~/Dropbox/wiki',
-  \ 'path_html': '~/Dropbox/wiki_html',
-  \ 'syntax': 'markdown',
-  \ 'ext': '.md',
-  \ 'custom_wiki2html': '~/wiki2html.sh'}]
+let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
+"let g:vimwiki_list = [{'path': '~/Dropbox/wiki',
+"  \ 'path_html': '~/Dropbox/wiki_html',
+"  \ 'syntax': 'markdown',
+"  \ 'ext': '.md',
+"  \ 'custom_wiki2html': '~/wiki2html.sh',
+"  \ 'diary_rel_path': 'diary/',
+"  \ 'diary_index': 'index'}]
 
 " Have vimwiki set filetype only within wikihome
 "let g:vimwiki_ext2syntax = {}
 
 "let s:vimwiki = {}
 "let s:vimwiki.path = '~/Dropbox/wiki'
+"let s:vimwiki.path_html = '~/Dropbox/wiki_html'
 "let s:vimwiki.ext = '.md'
 "let s:vimwiki.syntax = 'markdown'
 "let s:vimwiki.diary_rel_path = 'diary_index/'
 "let s:vimwiki.diary_index = 'index'
 "let s:vimwiki.diary_header = 'Diary'
 "let s:vimwiki.diary_sort = 'asc'
-"let g:vimwiki_list = [{'path':'~/Dropbox/wiki', 'path_html':'~/Dropbox/wiki_export/html/'}]
+
 "let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+"let g:vimwiki_list = [{'path':'~/Dropbox/wiki', 'path_html':'~/Dropbox/wiki_export/html/'}]
 " help page -> :h vimwiki-syntax
 
 " open vimwiki diary note for today if vim called with dummy file:
 " DiaryNoteToday
-autocmd VimEnter * if argv() ==# ['DiaryNoteToday'] | execute 'VimwikiMakeDiaryNote' | endif
+"autocmd VimEnter * if argv() ==# ['DiaryNoteToday'] | execute 'VimwikiMakeDiaryNote' | endif
 
 " use 'd' in vimwiki mode to jump to today's diary note
-"autocmd FileType vimwiki map d :VimwikiMakeDiaryNote<CR>
+autocmd FileType vimwiki map d :VimwikiMakeDiaryNote<CR>
 :let g:vimwiki_table_mappings = 0	"to make vim-snippets working
 :let g:vimwiki_autowriteall = 0 " to fix error with ultisnip
 :let s:vimwiki_autowriteall = 0 " to fix error with ultisnip
