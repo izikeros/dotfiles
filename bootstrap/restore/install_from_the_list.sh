@@ -20,13 +20,15 @@
 # and arch, split arch to pacman and yaourt lists:
 
 
+TMP_FILE=/tmp/install_list.txt
 CMD=`$HOME/dotfiles/bootstrap/restore/get_distro_pkg_install_command.sh`
+
+cat $1 | sed -e "s/#.*$//gi" -e "/^$/d" > $TMP_FILE
 echo "Using command: $CMD"
 while read package;
 do
 	echo "--- $package ---"
 	$CMD $package
 	echo ""
-done < $1
-
-
+done < $TMP_FILE
+rm $TMP_FILE
