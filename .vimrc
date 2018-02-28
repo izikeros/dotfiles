@@ -256,17 +256,17 @@ set nofoldenable
 " vimwiki with markdown support
 "=====================================================
 "let g:vimwiki_list = [{'path': '~/Dropbox/wiki', 'syntax': 'markdown', 'ext': '.md'}]
-let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
-"let g:vimwiki_list = [{'path': '~/Dropbox/wiki',
-"  \ 'path_html': '~/Dropbox/wiki_html',
-"  \ 'syntax': 'markdown',
-"  \ 'ext': '.md',
-"  \ 'custom_wiki2html': '~/wiki2html.sh',
-"  \ 'diary_rel_path': 'diary/',
-"  \ 'diary_index': 'index'}]
+"let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/vimwiki',
+  \ 'path_html': '~/vimwiki_html',
+  \ 'syntax': 'markdown',
+  \ 'ext': '.md',
+  \ 'custom_wiki2html': '~/dotfiles/srcipts/wiki2html.sh',
+  \ 'diary_rel_path': 'diary/',
+  \ 'diary_index': 'diary'}]
 
 " Have vimwiki set filetype only within wikihome
-"let g:vimwiki_ext2syntax = {}
+let g:vimwiki_ext2syntax = {}
 
 "let s:vimwiki = {}
 "let s:vimwiki.path = '~/Dropbox/wiki'
@@ -284,10 +284,11 @@ let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
 
 " open vimwiki diary note for today if vim called with dummy file:
 " DiaryNoteToday
-"autocmd VimEnter * if argv() ==# ['DiaryNoteToday'] | execute 'VimwikiMakeDiaryNote' | endif
+autocmd VimEnter * if argv() ==# ['DiaryNoteToday'] | execute 'VimwikiMakeDiaryNote' | endif
 
 " use 'd' in vimwiki mode to jump to today's diary note
 autocmd FileType vimwiki map d :VimwikiMakeDiaryNote<CR>
+
 :let g:vimwiki_table_mappings = 0	"to make vim-snippets working
 :let g:vimwiki_autowriteall = 0 " to fix error with ultisnip
 :let s:vimwiki_autowriteall = 0 " to fix error with ultisnip
