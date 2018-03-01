@@ -287,7 +287,7 @@ let g:vimwiki_ext2syntax = {}
 autocmd VimEnter * if argv() ==# ['DiaryNoteToday'] | execute 'VimwikiMakeDiaryNote' | endif
 
 " use 'd' in vimwiki mode to jump to today's diary note
-autocmd FileType vimwiki map d :VimwikiMakeDiaryNote<CR>
+"autocmd FileType vimwiki map d :VimwikiMakeDiaryNote<CR>
 
 :let g:vimwiki_table_mappings = 0	"to make vim-snippets working
 :let g:vimwiki_autowriteall = 0 " to fix error with ultisnip
