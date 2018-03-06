@@ -24,8 +24,8 @@ COMMANDS["rr"]="rofi -show run \"\${input}\""
 LABELS["rr"]="rofi-run"
 
 # open bookmarks
-COMMANDS["bookmarks"]="~/.scripts/rofi-scripts-collection/rofi-surfraw-bookmarks.sh"
-LABELS["bookmarks"]=""
+#COMMANDS["bookmarks"]="~/.scripts/rofi-scripts-collection/rofi-surfraw-bookmarks.sh"
+#LABELS["bookmarks"]=""
 
 #############
 # below a webbookmarks script is called
@@ -33,11 +33,11 @@ COMMANDS["rb"]=" '/home/dka/bin/rofi-scripts/rofi-bookmarks' \"\${input}\""
 LABELS["rb"]="rofi-bookmarks"
 
 #below test of running a script to run double commander
-COMMANDS["dc"]="'/home/dka/bin/startdc'"
+COMMANDS["dc"]="'doublecmd'"
 LABELS["dc"]=""
 
-COMMANDS["iv"]="'/home/dka/bin/run-geeqie'"
-LABELS["iv"]=""
+#COMMANDS["iv"]="'/home/dka/bin/run-geeqie'"
+#LABELS["iv"]=""
 
 #my open private folder script
 COMMANDS["open-pf"]="  '/home/dka/bin/rofi-scripts/open-pf'"
@@ -216,7 +216,7 @@ function print_menu()
 ##
 function start()
 {
-    # print_menu | rofi -dmenu -p "?=>" 
+    # print_menu | rofi -dmenu -p "?=>"
     print_menu | sort | rofi -dmenu -mesg ">>> launch your collection of rofi scripts" -i -p "rofi-bangs: "
 
 }
@@ -247,6 +247,6 @@ then
     eval ${COMMANDS[$choice]}
 else
  eval  $choice | rofi
- # prefer my above so I can use this same script to also launch apps like geany or leafpad etc (DK) 
+ # prefer my above so I can use this same script to also launch apps like geany or leafpad etc (DK)
  #   echo "Unknown command: ${choice}" | rofi -dmenu -p "error"
 fi

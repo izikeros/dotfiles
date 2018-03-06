@@ -36,7 +36,7 @@ symlink_dotfile() {
 		echo "$2 not found."
 	fi
 	echo "  -- symlinking $src to $dst"
-	ln -s $src $dst
+	ln -s "$src" "$dst"
 	echo "done"
     echo
 }

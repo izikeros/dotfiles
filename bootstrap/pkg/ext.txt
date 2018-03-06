@@ -1,7 +1,3 @@
-# DNS tools, bind tools?
-# gucview? (for screencast)
-# visual studio code
-# yi screenkey
 aspell
 aspell-en
 arandr
@@ -9,7 +5,7 @@ byobu
 docker
 docker-compose
 doublecmdr-qt5
-dropbox
+evince
 fgallery
 firefox
 fping
@@ -17,11 +13,12 @@ gdmap
 git-gui
 glances
 gparted
+hugo
 llgal
 markdowm
 meld
 ncdu
-neofetch (YI)
+neofetch
 nethogs
 numlockx
 npm
@@ -31,6 +28,7 @@ posterazor
 postgresql
 powertop
 psfsam-basic
+python-pipenv
 ranger
 recoll
 redshift

@@ -3,11 +3,9 @@ git
 htop
 mc
 most
-openssh-client
-openssh-server
+openssh
 python-pip
 python3
-redshift
 rsync
 vim
 w3m

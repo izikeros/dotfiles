@@ -14,3 +14,7 @@ symlink_dotfile $B/Dropbox ~/Dropbox
 symlink_dotfile $B/Music ~/Music
 symlink_dotfile $B/Pictures ~/Pictures
 symlink_dotfile $B/src ~/src
+symlink_dotfile $B/vimwiki ~/vimwiki
+symlink_dotfile $B/vc ~/vc
+ln -s /mnt/veracrypt1 ~/wilabs
+

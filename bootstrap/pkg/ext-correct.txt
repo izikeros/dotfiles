@@ -1,0 +1,12 @@
+byobu
+doublecmdr-qt5
+fgallery
+git-gui
+llgal
+markdowm
+pep8pyflakes
+posterazor
+psfsam-basic
+rofi
+shutter
+simplescreerecorder
