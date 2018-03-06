@@ -257,13 +257,22 @@ set nofoldenable
 "=====================================================
 "let g:vimwiki_list = [{'path': '~/Dropbox/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 "let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
+
 let g:vimwiki_list = [{'path': '~/vimwiki',
   \ 'path_html': '~/vimwiki_html',
   \ 'syntax': 'markdown',
   \ 'ext': '.md',
   \ 'custom_wiki2html': '~/dotfiles/srcipts/wiki2html.sh',
   \ 'diary_rel_path': 'diary/',
-  \ 'diary_index': 'diary'}]
+  \ 'diary_index': 'diary',
+  \ 'auto_tags': 1,
+  \ 'auto_toc': 1},
+  \ {'path': '~/vimwiki2',
+  \ 'path_html': '~/vimwiki2_html',
+  \ 'diary_rel_path': 'diary/',
+  \ 'diary_index': 'diary',
+  \ 'auto_tags': 1,
+  \ 'auto_toc': 1}]
 
 " Have vimwiki set filetype only within wikihome
 let g:vimwiki_ext2syntax = {}
