@@ -191,11 +191,14 @@ alias docker-list-untagged-images='echo $(docker images | grep "<none>" | awk "{
 alias docker-remove-untagged-images='docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")'
 
 #--------------------------------------------
-# CALIBRE
+# CALIBRE & RECOLL
 #--------------------------------------------
 alias c-it='calibre --with-library=/mnt/veracrypt3/books_it'
+alias r-it='recoll -c $HOME/.recoll_indexes/.recoll_it'
 alias c-astro='calibre --with-library=/mnt/veracrypt3/books_astro'
+alias r-astro='recoll -c $HOME/.recoll_indexes/.recoll_astro'
 alias c-life='calibre --with-library=/mnt/veracrypt3/books_life'
+alias r-life='recoll -c $HOME/.recoll_indexes/.recoll_life'
 
 #--------------------------------------------
 # OTHER
