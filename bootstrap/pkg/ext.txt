@@ -7,16 +7,17 @@ docker-compose
 doublecmdr-qt5
 evince
 fgallery
+figlet          # large letters from text (terminal)
 firefox
 fping
-gdmap
-git-gui
+gdmap           # windirstat-like app
 glances
 gparted
 hugo
-llgal
+llgal           # static gallery generator
 markdowm
 meld
+mlocate         # media locate (used in rofi scripts)
 ncdu
 neofetch
 nethogs
@@ -27,13 +28,13 @@ pep8pyflakes
 posterazor
 postgresql
 powertop
-psfsam-basic
+psfsam          # (pdfsam-basic) for debian
 python-pipenv
 ranger
 recoll
 redshift
 rofi
-ripgrep
+ripgrep         # the silver searger (ag), faster alternative
 screen
 screenfetch
 shutter
