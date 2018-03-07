@@ -55,7 +55,8 @@ alias vv="vim $HOME/.vimrc"
 alias va="vim $HOME/dotfiles/.aliases.sh"
 alias vd="vim $HOME/dotfiles/"
 alias vb="vim $HOME/dotfiles/bootstrap/"
-alias vp="vim $HOME/dotfiles/bootstrap/packages/"
+alias vp="vim $HOME/dotfiles/bootstrap/pkg/"
+alias vp-ext="vim $HOME/dotfiles/bootstrap/pkg/ext.txt"
 alias vx="vim $HOME/dotfiles/.xbindkeysrc"
 alias ve="vim $HOME/env_vars.sh"
 alias vkeys="grep --color=never -e 'map' $HOME/dotfiles/.vimrc"
@@ -234,7 +235,10 @@ alias brightness="xrandr --output LVDS-1 --brightness $1"
 alias sz="source ~/.zshrc"
 
 # help on how to use awk to extract given column
-alias hawk="echo awk -F\':\' \'{print \$\2}\'"
+alias h-awk="echo awk -F\':\' \'{print \$\2}\'"
+alias h-sed="man sed"
+alias h-perl="man perl"
+
 alias ytmp3="youtube-dl --extract-audio --audio-format mp3 --prefer-ffmpeg"
 alias yd=youtube-dl
 
