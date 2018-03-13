@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/  file:///usr/share/openbox/menu.xsd">
+  <menu id="root-menu" label="Openbox 3">
+    <separator label="ArchLabs"/>
+    <menu execute="al-terminal-pipemenu" id="TerminalPipeMenu" label="Terminal"/>
+    <menu execute="al-files-pipemenu" id="FilePipeMenu" label="File Manager"/>
+    <menu execute="al-browsers-pipemenu" id="BrowserPipeMenu" label="Web Browser"/>
+    <menu execute="al-editors-pipemenu" id="EditorPipeMenu" label="Text Editor"/>
+    <separator/>
+    <menu execute="al-office-pipemenu" id="OfficePipeMenu" label="Office"/>
+    <menu execute="al-media-pipemenu" id="MediaPipeMenu" label="Multimedia"/>
+    <menu execute="al-graphics-pipemenu" id="GraphicPipeMenu" label="Graphics"/>
+    <menu id="AccessoriesMenu" label="Accessories">
+      <menu execute="al-mail-pipemenu" id="MailPipeMenu" label="Mail"/>
+      <menu execute="al-messaging-pipemenu" id="MessagingPipeMenu" label="Messaging"/>
+      <menu execute="al-filesharing-pipemenu" id="FilesharingPipeMenu" label="File Sharing"/>
+      <menu id="screenshot" label="Screenshot">
+        <item label="Screenshot Now">
+          <action name="Execute">
+            <command>scrot 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'</command>
+          </action>
+        </item>
+        <item label="Screenshot in 5">
+          <action name="Execute">
+            <command>scrot -d 5 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'</command>
+          </action>
+        </item>
+        <item label="Screenshot in 10">
+          <action name="Execute">
+            <command>scrot -d 10 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'</command>
+          </action>
+        </item>
+        <item label="Screenshot With Selection">
+          <action name="Execute">
+            <command>scrot -s 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'</command>
+          </action>
+        </item>
+      </menu>
+    </menu>
+    <separator/>
+    <menu execute="al-places-pipemenu --recent ~/" id="pipe-placesmenu" label="Places"/>
+    <separator/>
+    <menu id="preferences" label="Preferences">
+      <menu id="obConfig" label="Openbox">
+        <item label="Openbox Settings">
+          <action name="Execute">
+            <command>obconf</command>
+          </action>
+        </item>
+        <item label="Menu GUI">
+          <action name="Execute">
+            <command>kickshaw</command>
+          </action>
+        </item>
+        <item label="Keybind GUI">
+          <action name="Execute">
+            <command>obkey</command>
+          </action>
+        </item>
+        <item label="Autostart GUI">
+          <action name="Execute">
+            <command>ob-autostart</command>
+          </action>
+        </item>
+        <separator/>
+        <item label="Edit menu.xml">
+          <action name="Execute">
+            <command>exo-open ~/.config/openbox/menu.xml</command>
+          </action>
+        </item>
+        <item label="Edit rc.xml">
+          <action name="Execute">
+            <command>exo-open ~/.config/openbox/rc.xml</command>
+          </action>
+        </item>
+        <item label="Edit autostart">
+          <action name="Execute">
+            <command>exo-open ~/.config/openbox/autostart</command>
+          </action>
+        </item>
+        <separator/>
+        <item label="Openbox Reconfigure">
+          <action name="Reconfigure"/>
+        </item>
+        <item label="Openbox Restart">
+            <action name="Restart"/>
+        </item>
+      </menu>
+      <menu execute="al-compositor" id="CompositingPipeMenu" label="Compositor"/>
+      <menu execute="al-polybar-pipemenu" id="PolybarPipeMenu" label="Polybar"/>
+      <menu execute="al-conky-pipemenu" id="ConkyPipeMenu" label="Conky"/>
+      <menu execute="al-tint2-pipemenu" id="TintPipeMenu" label="Tint2"/>
+      <menu execute="al-settings-pipemenu" id="SettingsPipeMenu" label="Settings"/>
+      <menu execute="al-system-pipemenu" id="SystemPipeMenu" label="System"/>
+    </menu>
+    <menu execute="al-help-pipemenu" id="help" label="Help and Info"/>
+    <menu execute="al-kb-pipemenu" id="keybinds" label="Keybinds"/>
+    <separator/>
+    <item label="Lock Screen">
+      <action name="Execute">
+        <command>i3lock-fancy -p</command>
+      </action>
+    </item>
+    <item label="Exit Openbox">
+      <action name="Execute">
+        <command>rofr.sh -l</command>
+      </action>
+    </item>
+  </menu>
+</openbox_menu>
+<!-- vim:sw=2
+-->
