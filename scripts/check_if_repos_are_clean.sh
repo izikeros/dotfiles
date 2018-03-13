@@ -1,4 +1,16 @@
 #!/usr/bin/env sh
+# Text color variables
+txtund=$(tput sgr 0 1)          # Underline
+txtbld=$(tput bold)             # Bold
+bldred=${txtbld}$(tput setaf 1) #  red
+bldblu=${txtbld}$(tput setaf 4) #  blue
+bldwht=${txtbld}$(tput setaf 7) #  white
+txtrst=$(tput sgr0)             # Reset
+info=${bldwht}*${txtrst}        # Feedback
+pass=${bldblu}*${txtrst}
+warn=${bldred}*${txtrst}
+ques=${bldblu}?${txtrst}
+
 list=(~/dotfiles /home/bulk/Dockerfiles)
 
 for repo in "${list[@]}"
@@ -11,12 +23,12 @@ do
 
     push_txt=""
     if [ $num_commits -gt 0 ];then
-        push_txt=" # commits to push: $num_commits."
+        push_txt=" # commits to push: $txtbld$num_commits.$txtrst"
     fi
 
-    status_txt="-- $repo is clean"
+    status_txt="-- $bldblu$repo$txtrst is clean"
     if [ $st == 'dirty' ];then
-        status_txt="-- $repo is dirty"
+        status_txt="-- $bldblu$repo$txtrst is $bldred dirty$txtrst"
     fi
 
     echo "$status_txt $push_txt"
