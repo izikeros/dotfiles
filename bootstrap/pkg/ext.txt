@@ -29,6 +29,7 @@ posterazor
 postgresql
 powertop
 psfsam          # (pdfsam-basic) for debian
+pydf
 python-pipenv
 ranger
 recoll
@@ -40,6 +41,7 @@ screenfetch
 shutter
 simplescreerecorder
 source-highlight
+stow            # replacing files
 sqlite3
 sxiv
 terminator
