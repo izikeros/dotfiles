@@ -104,3 +104,39 @@ function extract() {
         echo "'$1' is not a valid file"
     fi
 }
+
+# from zgen starting kit (Joseph Block <jpb@unixorn.net>)
+# Batch change extension from $1 to $2
+chg-ext() {
+  for file in *.$1
+  do
+    mv $file $(echo $file | sed "s/\(.*\.\)$1/\1$2/")
+  done
+}
+
+# Probe a /24 for hosts
+scan24() {
+  nmap -sP ${1}/24
+}
+
+# Pretty JSON
+# from: https://coderwall.com/p/hwu5uq?i=9&p=1&q=sort%3Ascore+desc&t%5B%5D=zsh
+function pjson {
+  if [ $# -gt 0 ];
+    then
+    for arg in $@
+    do
+      if [ -f $arg ];
+        then
+        less $arg | python -m json.tool
+      else
+        echo "$arg" | python -m json.tool
+      fi
+    done
+  fi
+}
+
+# lists zombie processes
+function zombie() {
+  ps aux | awk '{if ($8=="Z") { print $2 }}'
+}
