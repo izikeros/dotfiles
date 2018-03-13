@@ -19,6 +19,6 @@ do
         status_txt="-- $repo is dirty"
     fi
 
-    echo $status_txt$push_txt
+    echo "$status_txt $push_txt"
 done
 cd $cwd
