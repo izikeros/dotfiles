@@ -9,7 +9,7 @@ do
 
     num_commits=`git cherry -v | wc -l`
 
-    push_txt="."
+    push_txt=""
     if [ num_commits > 0 ];then
         push_txt=" # commits to push: $num_commits."
     fi
