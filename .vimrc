@@ -19,6 +19,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " not working with python (some problems with python 3)
 "Bundle 'Valloric/YouCompleteMe'
+Plugin 'davidhalter/jedi-vim'
 
 " additional configuration for vim
 Bundle 'tpope/vim-sensible'
@@ -36,6 +37,8 @@ Bundle 'mhinz/vim-startify'
 
 " for snippets (mainly my own templates for documents)
 "Bundle 'sirver/UltiSnips'
+
+" vim-sipmate and required plugins
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
@@ -110,8 +113,8 @@ noremap <Leader>E :qa!<CR>      " Quit all windows
 
 "map <c-j> <c-w>j                " already reserved for moving line(s) up/down
 "map <c-k> <c-w>k
-map <c-l> <c-w>j 				 " (not working now) bind Ctrl+l/h keys to move to the right/left window, instead of using Ctrl+w + <movement>
-map <c-h> <c-w>h
+"map <c-l> <c-w>j 				 " (not working now) bind Ctrl+l/h keys to move to the right/left window, instead of using Ctrl+w + <movement>
+"map <c-h> <c-w>h
 
 " easier moving between tabs
 map <Leader>n <esc>:tabprevious<CR>     " moving between tabs
@@ -328,7 +331,7 @@ nmap <leader>d :YcmCompleter GoToDefinition<CR> " YCM goto definition with leade
 
 
 " better key bindings for UltiSnipsExpandTrigger
-"let g:UltiSnipsExpandTrigger = "<tab>"
-"let g:UltiSnipsJumpForwardTrigger = "<tab>"
-"let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsListSnippets="<c-l>"
