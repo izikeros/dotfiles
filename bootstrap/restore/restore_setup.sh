@@ -8,8 +8,6 @@ source ./helper_functions.sh
 
 echo "-------- symlinking configuration files -----------"
 symlink_dotfile ~/dotfiles/.bashrc ~/.bashrc
-symlink_dotfile ~/dotfiles/env_vars.sh ~/env_vars.sh
-
 symlink_dotfile ~/dotfiles/.xbindkeysrc ~/.xbindkeysrc
 symlink_dotfile ~/dotfiles/.Xresources ~/.Xresources
 
