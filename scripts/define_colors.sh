@@ -1,6 +1,8 @@
 #!/bin/bash
 # scriptname - description of script
 
+#TODO: make snippet out of it
+
 # Text color variables
 txtund=$(tput sgr 0 1)          # Underline
 txtbld=$(tput bold)             # Bold
@@ -13,5 +15,4 @@ pass=${bldblu}*${txtrst}
 warn=${bldred}*${txtrst}
 ques=${bldblu}?${txtrst}
 
-echo "wer $txtbld ertqwer $txtrst"
 
