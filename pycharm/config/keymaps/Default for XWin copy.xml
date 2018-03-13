@@ -1,0 +1,5 @@
+<keymap version="1" name="Default for XWin copy" parent="Default for XWin">
+  <action id="ToggleFullScreen">
+    <keyboard-shortcut first-keystroke="alt f11" />
+  </action>
+</keymap>
