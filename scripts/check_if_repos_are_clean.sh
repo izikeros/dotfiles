@@ -7,8 +7,17 @@ do
     cd $repo
     git status | grep -q "nothing to commit, working tree clean" && st="clean" || st="dirty"
 
-    if [ $st == 'dirty' ];then
-        echo "-- git repo: $repo is dirty"
+    num_commits=`git cherry -v | wc -l`
+
+    push_txt="."
+    if [ num_commits > 0 ];then
+        push_txt=" # commits to push: $num_commits."
     fi
+
+    if [ $st == 'dirty' ];then
+        status_txt="-- $repo is dirty"
+    fi
+
+    echo $status_txt$push_txt
 done
 cd $cwd
