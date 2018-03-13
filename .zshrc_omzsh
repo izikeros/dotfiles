@@ -1,4 +1,9 @@
 # zmodload zsh/zprof
+
+# If not running interactively return
+#[[ $- != *i* ]] && return
+
+# ========= OMZSH PART
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -29,20 +34,40 @@ DISABLE_AUTO_UPDATE="true"
 # ubuntu, pip, zsh-autosuggestions
 # plugins=(git colored-man-pages k pip django docker docker-compose zsh-syntax-highlighting zsh-autosuggestions)
 
-plugins=(arch git colored-man-pages k pylint zsh-syntax-highlighting zsh-autosuggestions)
+#plugins=(archlinux git colored-man-pages k pylint zsh-syntax-highlighting zsh-autosuggestions)
+# NOTE: install manually these plugins:
+# k zsh-syntax-highlighting zsh-autosuggestions
 
+source $ZSH/oh-my-zsh.sh
+
+# ========= Arch  =====================
+#setopt AUTO_CD BANG_HIST EXTENDED_HISTORY HIST_EXPIRE_DUPS_FIRST
+#setopt HIST_IGNORE_ALL_DUPS HIST_FIND_NO_DUPS HIST_IGNORE_DUPS
+#setopt HIST_IGNORE_SPACE HIST_REDUCE_BLANKS HIST_SAVE_NO_DUPS
+#setopt INC_APPEND_HISTORY SHARE_HISTORY
+
+# Alias
+#alias l='ls'
+#alias la='ls -A'
+#alias ll='ls -lA'
+#alias ls='ls --color=auto'
+#alias update='sudo pacman -Syyu'
+#alias pacman='sudo pacman --color auto'
+#alias merge='xrdb -merge ~/.Xresources'
+#alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+#alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
+
+# ========= Customization =============
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
-source $ZSH/oh-my-zsh.sh
-source $HOME/env_vars.sh
+source $HOME/env_and_path.sh
 source $HOME/dotfiles/functions.sh
 source $HOME/dotfiles/.aliases.sh
 
-# source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
-. ~/z/z.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/z/z.sh ] && source ~/z/z.sh
 
-source $HOME/dotfiles/my_spaceship.sh
+#source $HOME/dotfiles/my_spaceship.sh
 
 # zprof # end of profiling
