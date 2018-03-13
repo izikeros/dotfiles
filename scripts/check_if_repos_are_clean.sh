@@ -14,6 +14,7 @@ do
         push_txt=" # commits to push: $num_commits."
     fi
 
+    status_txt="-- $repo is clean"
     if [ $st == 'dirty' ];then
         status_txt="-- $repo is dirty"
     fi
