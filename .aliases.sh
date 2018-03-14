@@ -59,6 +59,8 @@ alias cdw="cd $WIKI_HOME"
 # shortcuts to edit files (mostly config files)
 alias vz="vim $HOME/.zshrc"
 alias s-z="$S $HOME/.zshrc"
+alias vzz="vim $HOME/.zshrc.d/zshrc_arch"
+alias s-zz="$S $HOME/.zshrc.d/zshrc_arch"
 
 alias vv="vim $HOME/.vimrc"
 alias sv="$S $HOME/.vimrc"
