@@ -11,7 +11,7 @@ pass=${bldblu}*${txtrst}
 warn=${bldred}*${txtrst}
 ques=${bldblu}?${txtrst}
 
-list=(~/dotfiles /home/bulk/Dockerfiles)
+list=(~/dotfiles /home/bulk/dockerfiles)
 
 for repo in "${list[@]}"
 do
