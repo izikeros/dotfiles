@@ -43,8 +43,8 @@
 [plugins]
 [profiles]
   [[default]]
-    background_darkness = 0.68
+    background_darkness = 0.95
     cursor_color = "#aaaaaa"
     font = FontAwesome 10
-    foreground_color = "#ffffff"
+    foreground_color = "#fff1c2"
     show_titlebar = False
