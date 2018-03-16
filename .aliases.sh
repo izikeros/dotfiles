@@ -321,3 +321,9 @@ alias wget="wget -c"
 # Dump the last 20 history entries
 alias zh="fc -l -d -D"
 
+# replace https reference to ssh (to be used with my repos)
+alias ssh-it="sed -i 's/url = https:\/\/github\.com\//url = github:/'"
+
+# join two consecutive lines in one line
+alias oneline="sed -rn 'N;s/\n/ /;p'"
+
