@@ -340,6 +340,10 @@
     <keybind key="W-b">
       <action name="ToggleDecorations"/>
     </keybind>
+    <keybind key="A-W-F11">
+      <action name="Execute"/>
+      <command>toggle.sh -p</command>
+    </keybind>
     <keybind key="A-r">
       <action name="Resize"/>
     </keybind>
