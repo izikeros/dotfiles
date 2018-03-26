@@ -48,9 +48,11 @@ alias cdr="cd $HOME/dotfiles/bootstrap/restore"
 # Sublime
 S="/usr/bin/subl3"
 
+alias atom="atom --disable-gpu"
 # notes
 WIKI_HOME="$HOME/vimwiki"
-alias t="vim DiaryNoteToday"
+#alias t="vim DiaryNoteToday"
+alias t="DATE=$(date +%Y-%m-%d) &&  vim $WIKI_HOME/diary/$DATE.md"
 alias wiki="vim $WIKI_HOME/index.md"
 alias wi="vim $WIKI_HOME/index.md"
 alias td="vim $WIKI_HOME/TODO.md"
@@ -327,3 +329,5 @@ alias ssh-it="sed -i 's/url = https:\/\/github\.com\//url = github:/'"
 # join two consecutive lines in one line
 alias oneline="sed -rn 'N;s/\n/ /;p'"
 
+#alias finde='find -L . -type d \( -path "*.git" -o -path "*.fzf*" -o -path "*/Documents" -o -path "*/Downloads" -o -path "*.cache" -o -path "*/Pictures" -o -path "*/.mozilla" -o -path "*.jg" \) -prune -o -print'
+alias finde="find . ! -path '*/.venv*' ! -path '*/.fzf*' ! -path '*./bulk*' ! -path '*.cache*' ! -path '*.git/*' ! -path '*.mozilla*' ! -path '*.jd*' ! -path '*.zgen/*' ! -path '*.vim*' ! -path '*.zplug*'"
