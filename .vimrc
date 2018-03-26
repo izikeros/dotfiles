@@ -261,21 +261,16 @@ set nofoldenable
 "let g:vimwiki_list = [{'path': '~/Dropbox/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 "let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
 
-let g:vimwiki_list = [{'path': '~/vimwiki',
+let g:vimwiki_list = [{
+  \ 'path': '~/vimwiki',
   \ 'path_html': '~/vimwiki_html',
   \ 'syntax': 'markdown',
   \ 'ext': '.md',
   \ 'custom_wiki2html': '~/dotfiles/srcipts/wiki2html.sh',
   \ 'diary_rel_path': 'diary/',
   \ 'diary_index': 'diary',
-  \ 'auto_tags': 1,
-  \ 'auto_toc': 1},
-  \ {'path': '~/vimwiki2',
-  \ 'path_html': '~/vimwiki2_html',
-  \ 'diary_rel_path': 'diary/',
-  \ 'diary_index': 'diary',
-  \ 'auto_tags': 1,
-  \ 'auto_toc': 1}]
+  \ 'auto_tags': 0,
+  \ 'auto_toc': 0}]
 
 " Have vimwiki set filetype only within wikihome
 let g:vimwiki_ext2syntax = {}
@@ -302,8 +297,9 @@ autocmd VimEnter * if argv() ==# ['DiaryNoteToday'] | execute 'VimwikiMakeDiaryN
 "autocmd FileType vimwiki map d :VimwikiMakeDiaryNote<CR>
 
 :let g:vimwiki_table_mappings = 0	"to make vim-snippets working
-:let g:vimwiki_autowriteall = 0 " to fix error with ultisnip
-:let s:vimwiki_autowriteall = 0 " to fix error with ultisnip
+":let g:vimwiki_autowriteall = 0 " to fix error with ultisnip
+":let s:vimwiki_autowriteall = 0 " to fix error with ultisnip
+
 "=====================================================
 " TagBar settings
 "=====================================================
@@ -327,11 +323,14 @@ set completeopt-=preview
 nmap <leader>g :YcmCompleter GoTo<CR>           " YCM goto with leader-g
 nmap <leader>d :YcmCompleter GoToDefinition<CR> " YCM goto definition with leader-d
 
-" hint: use (or map) YP to duplicate line
-
-
+"===================================================
+" Ultisnips
+"===================================================
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsListSnippets="<c-l>"
+
+
+" hint: use (or map) YP to duplicate line
