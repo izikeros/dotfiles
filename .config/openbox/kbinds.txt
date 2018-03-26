@@ -1,4 +1,4 @@
-2018-03-15	rc.xml KEYBINDS
+2018-03-21	rc.xml KEYBINDS
 -------------------------------
 
  0	W-1           				GoToDesktop
@@ -51,23 +51,24 @@
 47	A-F8          				ToggleDecorations
 48	W-d           				ToggleShowDesktop
 49	W-b           				ToggleDecorations
-50	A-r           				Resize
-51	A-m           				Move
-52	S-W-q         				Close
-53	W-space       				root-menu
-54	A-space       				client-menu
-55	W-KP_1        				UnmaximizeFull
-56	W-KP_2        				UnmaximizeFull
-57	W-KP_3        				UnmaximizeFull
-58	W-KP_4        				UnmaximizeFull
-59	W-KP_5        				MaximizeFull
-60	W-KP_6        				UnmaximizeFull
-61	W-KP_7        				UnmaximizeFull
-62	W-KP_8        				UnmaximizeFull
-63	W-KP_9        				UnmaximizeFull
-64	W-Right       				UnmaximizeFull
-65	W-Left        				UnmaximizeFull
-66	W-Up          				MaximizeFull
-67	W-Down        				UnmaximizeFull
-68	W-A-Left      				UnmaximizeFull
-69	W-A-Right     				UnmaximizeFull
+50	A-W-F11       				
+51	A-r           				Resize
+52	A-m           				Move
+53	S-W-q         				Close
+54	W-space       				root-menu
+55	A-space       				client-menu
+56	W-KP_1        				UnmaximizeFull
+57	W-KP_2        				UnmaximizeFull
+58	W-KP_3        				UnmaximizeFull
+59	W-KP_4        				UnmaximizeFull
+60	W-KP_5        				MaximizeFull
+61	W-KP_6        				UnmaximizeFull
+62	W-KP_7        				UnmaximizeFull
+63	W-KP_8        				UnmaximizeFull
+64	W-KP_9        				UnmaximizeFull
+65	W-Right       				UnmaximizeFull
+66	W-Left        				UnmaximizeFull
+67	W-Up          				MaximizeFull
+68	W-Down        				UnmaximizeFull
+69	W-A-Left      				UnmaximizeFull
+70	W-A-Right     				UnmaximizeFull
