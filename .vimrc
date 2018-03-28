@@ -19,6 +19,12 @@ Plugin 'VundleVim/Vundle.vim'
 
 " not working with python (some problems with python 3)
 "Bundle 'Valloric/YouCompleteMe'
+
+" Deoplete (as autocomplete)
+"Plugin 'Shougo/deoplete.nvim'
+"Plugin 'roxma/nvim-yarp'
+"Plugin 'roxma/vim-hug-neovim-rpc'
+
 Plugin 'davidhalter/jedi-vim'
 
 " additional configuration for vim
@@ -322,6 +328,11 @@ set completeopt-=preview
 "let g:ycm_confirm_extra_conf=0
 nmap <leader>g :YcmCompleter GoTo<CR>           " YCM goto with leader-g
 nmap <leader>d :YcmCompleter GoToDefinition<CR> " YCM goto definition with leader-d
+
+" ==================================================
+" Deoplete
+" ==================================================
+"let g:deoplete#enable_at_startup = 1
 
 "===================================================
 " Ultisnips
