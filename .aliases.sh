@@ -47,8 +47,12 @@ alias cdr="cd $HOME/dotfiles/bootstrap/restore"
 #--------------------------------------------
 # Sublime
 S="/usr/bin/subl3"
-
+alias s="subl3"
+# run atom without hardware accelleration
 alias atom="atom --disable-gpu"
+# run visual studio code without hardware acceleration
+alias code="code --disable-gpu"
+
 # notes
 WIKI_HOME="$HOME/vimwiki"
 #alias t="vim DiaryNoteToday"
@@ -92,7 +96,7 @@ alias galias="alias | grep --color=never -i -e"
 #--------------------------------------------
 # APT, APTITUDE, DPKG
 #--------------------------------------------
-alias s="sudo su"
+#alias s="sudo su"
 
 # install packages (Debian)
 alias ai="sudo apt install"
@@ -190,7 +194,7 @@ alias test-num-files="find ./ -name \"test*\" | wc -l"
 alias test-num-cases="ag \"class Test\" | wc -l"
 alias test-num="ag \"def test_\" | wc -l"
 alias test-num-assertions="ag \"self.assert|ok_|eq_\" | wc -l"
-
+alias test-integration-list="find . -type f -name \"test_integration*\" | xargs grep -H -A 1 \"def test\" | sed 's/def//' | sed 's/self//' | sed 's/://'"
 # coloured cat for source code:
 alias ccat=ccat.sh
 
@@ -331,3 +335,12 @@ alias oneline="sed -rn 'N;s/\n/ /;p'"
 
 #alias finde='find -L . -type d \( -path "*.git" -o -path "*.fzf*" -o -path "*/Documents" -o -path "*/Downloads" -o -path "*.cache" -o -path "*/Pictures" -o -path "*/.mozilla" -o -path "*.jg" \) -prune -o -print'
 alias finde="find . ! -path '*/.venv*' ! -path '*/.fzf*' ! -path '*./bulk*' ! -path '*.cache*' ! -path '*.git/*' ! -path '*.mozilla*' ! -path '*.jd*' ! -path '*.zgen/*' ! -path '*.vim*' ! -path '*.zplug*'"
+
+#---------------------------------------------
+#  blog
+#---------------------------------------------
+
+BLG="source ~/.virtualenvs/pelican-blog-H2eFmQ-s/bin/activate; cd ~/blog"
+alias blog="$BLG"
+alias pelican-run="$BLG; pelican content; cd docs; python -m pelican.server"
+alias blog-push="cd ~/blog/docs; git add .; git ci -m \"update\"; gp"
