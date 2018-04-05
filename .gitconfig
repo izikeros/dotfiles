@@ -42,12 +42,11 @@
 
 
     # see all the commits related to a file, with the diff of the changes
-    filelog = log -u
-    fl = log -u
+    lg-filelog = log -u
 
     ####### WHAT'S UP? ##########
     # List today's oneline commits
-    today = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --color --date=short --since=midnight
+    lg-today = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --color --date=short --since=midnight
     lg1-my-week = log --graph --pretty=format:'%C(yellow)%d%Creset %s %Cgreen(%ad, %cr)' --abbrev-commit --date=short --all --since='1 week' --no-merges --author=krystian.safjan@wilabs.com
     lg1-all-week = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all --since='1 week' --no-merges
     log-all-week = git log --all --since='1 weeks' --oneline --no-merges
@@ -57,21 +56,21 @@
 
     ### log  formatting variants
 	# List commits in short form, with colors and branch/tag annotations
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	lg-short-commits = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
 
 	# List with no colors if you need to chain the out put with Unix pipes:
-	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+    lg-no-colors = log --pretty=format:"%h\\ %s\\ [%cn]"
 
 	## List oneline commits
 	# 	showing dates
-	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	lg-dates = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
 	lstat = log --pretty=format:"%ad\\ %cn" --date=short
 
     # 	showing relative dates: (e.g. $ git ld -10)
-	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	lg-dates-relative = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 
 	# short git log
-	le = log --oneline --decorate
+    lg-short-log = log --oneline --decorate
 
 	# Show modified files in last commit:
 	dl = "!git ll -1"
