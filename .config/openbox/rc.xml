@@ -231,6 +231,12 @@
         <command>xbacklight -10</command>
       </action>
     </keybind>
+    <keybind key="XF86Calculator">
+      <action name="Execute">
+        <command>galculator</command>
+      </action>
+    </keybind>
+
     <keybind key="Print">
       <action name="Execute">
         <command>scrot 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'</command>
