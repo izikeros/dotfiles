@@ -46,7 +46,7 @@
 
     ####### WHAT'S UP? ##########
     # List today's oneline commits
-    lg-today = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --color --date=short --since=midnight
+    lg-today = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --color --date=short --since=midnight
     lg1-my-week = log --graph --pretty=format:'%C(yellow)%d%Creset %s %Cgreen(%ad, %cr)' --abbrev-commit --date=short --all --since='1 week' --no-merges --author=krystian.safjan@wilabs.com
     lg1-all-week = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all --since='1 week' --no-merges
     log-all-week = git log --all --since='1 weeks' --oneline --no-merges
@@ -126,8 +126,8 @@
 	ss = stash save
 
 [merge]
-    tool = mymeld
-    #tool = kdiff3
+    #tool = mymeld
+    tool = kdiff3
     conflictstyle = diff3
 [mergetool "mymeld"]
     #cmd = meld --diff $BASE $LOCAL --diff $BASE $REMOTE --diff $LOCAL $BASE $REMOTE $MERGED
