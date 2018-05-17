@@ -56,7 +56,7 @@ alias code="code --disable-gpu"
 # notes
 WIKI_HOME="$HOME/vimwiki"
 #alias t="vim DiaryNoteToday"
-alias t="DATE=$(date +%Y-%m-%d) &&  vim $WIKI_HOME/diary/$DATE.md"
+#alias t="DATE=$(date +%Y-%m-%d) &&  vim $WIKI_HOME/diary/$DATE.md"
 alias wiki="vim $WIKI_HOME/index.md"
 alias wi="vim $WIKI_HOME/index.md"
 alias td="vim $WIKI_HOME/TODO.md"
@@ -121,6 +121,7 @@ alias prm="sudo pacman -Rns"
 
 alias pacman="pacman --color=always"
 alias update="sudo pacman -Syu --color=always"
+alias u="sudo pacman -Syu --color=always"
 
 #---------------------------------------------
 # Mount
@@ -210,9 +211,10 @@ alias mp="./manage.py"
 alias mpr="./manage.py runserver"
 alias mprp="./manage.py runserver_plus"
 alias mpm="./manage.py migrate"
-alias mpmkm="./manage.py makemigrations"
-alias mpsm="./manage.py showmigrations"
+alias mpk="./manage.py makemigrations"
+alias mps="./manage.py showmigrations"
 alias mpsp="./manage.py shell_plus"
+
 alias mptc='coverage run ./manage.py test --pattern="test_*.py"'
 alias mpt='./manage.py test --pattern="test_*.py"'
 
@@ -335,6 +337,7 @@ alias oneline="sed -rn 'N;s/\n/ /;p'"
 
 #alias finde='find -L . -type d \( -path "*.git" -o -path "*.fzf*" -o -path "*/Documents" -o -path "*/Downloads" -o -path "*.cache" -o -path "*/Pictures" -o -path "*/.mozilla" -o -path "*.jg" \) -prune -o -print'
 alias finde="find . ! -path '*/.venv*' ! -path '*/.fzf*' ! -path '*./bulk*' ! -path '*.cache*' ! -path '*.git/*' ! -path '*.mozilla*' ! -path '*.jd*' ! -path '*.zgen/*' ! -path '*.vim*' ! -path '*.zplug*'"
+alias finde-files="find . -type f ! -path '*/.venv*' ! -path '*/.fzf*' ! -path '*./bulk*' ! -path '*.cache*' ! -path '*.git/*' ! -path '*.mozilla*' ! -path '*.jd*' ! -path '*.zgen/*' ! -path '*.vim*' ! -path '*.zplug*'"
 
 #---------------------------------------------
 #  blog
@@ -345,3 +348,5 @@ alias blog="$BLG"
 alias pelican-run="$BLG; pelican content; cd docs; python -m pelican.server"
 alias blog-push="cd ~/blog/docs; git add .; git ci -m \"update\"; gp"
 alias list-boots="journalctl --list-boots"
+
+alias pipup="pip install --upgrade pip"
