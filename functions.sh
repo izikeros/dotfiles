@@ -1,6 +1,17 @@
 # vi ft=shell
 
 ## Functions
+function t(){
+	DATE=$(date +%Y-%m-%d)
+	vim ~/vimwiki/diary/$DATE.md
+}
+
+
+function st(){
+	DATE=$(date +%Y-%m-%d)
+	subl3 ~/vimwiki/diary/$DATE.md
+}
+
 # find in python files
 function fipy(){
 	fgrep --include="*.py" --exclude-dir={.git} --color=always -rnwi ./ -e	$1 | less -R
