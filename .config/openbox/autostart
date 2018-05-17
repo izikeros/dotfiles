@@ -25,3 +25,5 @@ xfsettingsd &
 # Side shortcuts for file managers
 xdg-user-dirs-gtk-update &
 
+# Launch drop-down terminal at startup (F1 to show/shide)
+#tilda
