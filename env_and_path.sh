@@ -6,7 +6,7 @@ export PATH="$HOME/dotfiles/scripts:$PATH"
 
 export PATH="$HOME/bulk/external/pip-pop/bin:$PATH"
 
-export BROWSER="firefox"
+export BROWSER="chromium"
 export PAGER="most"
 #export DJANGO_SETTINGS_MODULE=ebadu.settings
 

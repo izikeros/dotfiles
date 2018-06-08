@@ -292,12 +292,12 @@
         <command>rofr.sh -r</command>
       </action>
     </keybind>
-    <keybind key="C-space">
+    <keybind key="W-space">
       <action name="Execute">
         <command>rofi -combi-modi window,drun,ssh,run -show combi</command>
       </action>
     </keybind>
-    <keybind key="C-S-space">
+    <keybind key="W-S-space">
       <action name="Execute">
         <command>~/dotfiles/scripts/rofi-scripts-collection/rofi-bangs.sh</command>
       </action>
@@ -359,11 +359,15 @@
     <keybind key="S-W-q">
       <action name="Close"/>
     </keybind>
+
+    <!--
     <keybind key="W-space">
       <action name="ShowMenu">
         <menu>root-menu</menu>
       </action>
     </keybind>
+    -->
+
     <keybind key="A-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>

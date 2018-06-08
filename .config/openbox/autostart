@@ -1,8 +1,11 @@
+#
+~/.screenlayout/dualscreen.sh
+
 # compton
 al-compositor --start &
 
 # enable numlock, commented out for laptop users
-# numlockx &
+numlockx &
 
 # restore wallpaper
 nitrogen --restore &
@@ -11,7 +14,7 @@ nitrogen --restore &
 sleep 1; al-polybar-session &
 
 # system tray
-sleep 1; trayer --edge bottom --align left --widthtype request --SetDockType false --expand true &
+#sleep 1; trayer --edge bottom --align left --widthtype request --SetDockType false --expand true &
 
 # Openbox autostart
 ob-autostart -d &
