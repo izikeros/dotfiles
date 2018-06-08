@@ -47,7 +47,7 @@ alias cdr="cd $HOME/dotfiles/bootstrap/restore"
 #--------------------------------------------
 # Sublime
 S="/usr/bin/subl3"
-alias s="subl3"
+alias s3="subl3"
 # run atom without hardware accelleration
 alias atom="atom --disable-gpu"
 # run visual studio code without hardware acceleration
@@ -181,6 +181,10 @@ alias recent-branches="git for-each-ref --count=10 --sort=-committerdate refs/he
 # list git repos in current directory
 alias git-repos="find ./ -name \"*.git\" -type d | sed 's/\.git$//'"
 
+# quick push (with not too correct message)
+alias gpq="git add . && git commit -m 'update' && git push"
+
+alias dev="git checkout development"
 #--------------------------------------------
 # PYTHON, SOFTWARE PROJECT
 #-------------------------------------------
@@ -196,7 +200,8 @@ alias test-num-cases="ag \"class Test\" | wc -l"
 alias test-num="ag \"def test_\" | wc -l"
 alias test-num-assertions="ag \"self.assert|ok_|eq_\" | wc -l"
 alias test-integration-list="find . -type f -name \"test_integration*\" | xargs grep -H -A 1 \"def test\" | sed 's/def//' | sed 's/self//' | sed 's/://'"
-# coloured cat for source code:
+
+# colored cat for source code:
 alias ccat=ccat.sh
 
 # upgrade all pip packages (system or virt-env if in virt-env)
