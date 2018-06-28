@@ -59,8 +59,10 @@ WIKI_HOME="$HOME/vimwiki"
 #alias t="DATE=$(date +%Y-%m-%d) &&  vim $WIKI_HOME/diary/$DATE.md"
 alias wiki="vim $WIKI_HOME/index.md"
 alias wi="vim $WIKI_HOME/index.md"
+alias wit="vim $WIKI_HOME/Technology_notes.md"
 alias td="vim $WIKI_HOME/TODO.md"
 alias cdw="cd $WIKI_HOME"
+
 
 # shortcuts to edit files (mostly config files)
 alias vz="vim $HOME/.zshrc"
@@ -122,7 +124,7 @@ alias prm="sudo pacman -Rns"
 alias pacman="pacman --color=always"
 alias update="sudo pacman -Syu --color=always"
 alias u="sudo pacman -Syu --color=always"
-
+alias pacman-bigpkg="expac -s '%-30n %m' | sort -rhk 2 | less"
 #---------------------------------------------
 # Mount
 #---------------------------------------------
@@ -185,6 +187,28 @@ alias git-repos="find ./ -name \"*.git\" -type d | sed 's/\.git$//'"
 alias gpq="git add . && git commit -m 'update' && git push"
 
 alias dev="git checkout development"
+alias lg="git --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -15"
+
+#alias lg2="!git lg2" # TODO
+#alias lg3="!git lg3" #TODO
+alias my-week="git lg1-my-week"
+alias all-week="git lg1-all-week"
+alias week-stats="git stats --until='7 days ago'"
+# TODO: change to function or repair:
+#alias all-my-todos="for FILE in $(git ls-files) ; do git blame $FILE | grep 'Krystian' | grep 'TODO'; done | less"
+
+# git guilt
+# https://www.atlassian.com/blog/archives/git-guilt-blame-code-review
+
+#how blame shifted from one author to another during your last commit:
+# git guilt HEAD~1
+
+# How blame changed over period of time
+alias week-stats-guilt="git guilt \`git log --until=\"7 days ago\" --format=\"%H\" -n 1\`"
+#
+# How blame changed since feature branch was created
+# git guilt `git merge-base development my-feature-branch` my-feature-branch
+
 #--------------------------------------------
 # PYTHON, SOFTWARE PROJECT
 #-------------------------------------------
@@ -219,10 +243,10 @@ alias mpm="./manage.py migrate"
 alias mpk="./manage.py makemigrations"
 alias mps="./manage.py showmigrations"
 alias mpsp="./manage.py shell_plus"
-
+alias mpc="./manage.py createsuperuser"
 alias mptc='coverage run ./manage.py test --pattern="test_*.py"'
 alias mpt='./manage.py test --pattern="test_*.py"'
-
+alias list-models="find . -type f -name 'models.py' | xargs grep -H -P '^class' | sed 's/class/''/' | sed -E 's/\(.*$/''/' | grep -v -P '.+:$' | sed 's/\/models\.py:/''/'"
 #-------------------------------------------
 # Activate virtualenvs (& launch app)
 #-------------------------------------------
@@ -335,7 +359,7 @@ alias wget="wget -c"
 alias zh="fc -l -d -D"
 
 # replace https reference to ssh (to be used with my repos)
-alias ssh-it="sed -i 's/url = https:\/\/github\.com\//url = github:/'"
+alias ssh-it-github="sed -i 's/url = https:\/\/github\.com\//url = github:/'"
 
 # join two consecutive lines in one line
 alias oneline="sed -rn 'N;s/\n/ /;p'"
@@ -355,3 +379,10 @@ alias blog-push="cd ~/blog/docs; git add .; git ci -m \"update\"; gp"
 alias list-boots="journalctl --list-boots"
 
 alias pipup="pip install --upgrade pip"
+alias pip-outdated="pip list --outdated --format=freeze"
+
+# list all top level packages available in environment
+alias pip-top-level="pipdeptree -fl | grep -P '^\w'"  # https://pypi.org/project/pipdeptree/
+
+# decrypt volume without mounting, then use e.g. test disk etc.
+# veracrypt --filesystem=none -m nokernelcrypto --mount bulk/bbb /mnt/veracrypt3

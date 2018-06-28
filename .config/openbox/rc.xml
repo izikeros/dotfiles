@@ -151,8 +151,8 @@
     </keybind>
     <keybind key="A-Tab">
       <action name="NextWindow">
-        <allDesktops>yes</allDesktops>
         <raise>yes</raise>
+        <allDesktops>yes</allDesktops>
         <finalactions>
           <action name="Focus"/>
           <action name="UnshadeRaise"/>
@@ -163,7 +163,9 @@
       <action name="NextWindow">
         <allDesktops>yes</allDesktops>
         <finalactions>
-          <action name="SendToDesktop"><to>current</to></action>
+          <action name="SendToDesktop">
+            <desktop>1</desktop>
+          </action>
           <action name="focus"/>
           <action name="raise"/>
         </finalactions>
@@ -236,7 +238,6 @@
         <command>galculator</command>
       </action>
     </keybind>
-
     <keybind key="Print">
       <action name="Execute">
         <command>scrot 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'</command>
@@ -265,11 +266,6 @@
     <keybind key="W-e">
       <action name="Execute">
         <command>geany</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-m">
-      <action name="Execute">
-        <command>xfce4-settings-manager</command>
       </action>
     </keybind>
     <keybind key="W-m">
@@ -315,11 +311,6 @@
     <keybind key="W-S-Escape">
       <action name="Exit"/>
     </keybind>
-    <!-- confilicting with pycharm's shortcut (back to last edit)''
-    <keybind key="C-S-BackSpace">
-      <action name="Restart"/>
-    </keybind>
-    -->
     <keybind key="C-S-Enter">
       <action name="Reconfigure"/>
     </keybind>
@@ -348,7 +339,6 @@
     </keybind>
     <keybind key="A-W-F11">
       <action name="Execute"/>
-      <command>toggle.sh -p</command>
     </keybind>
     <keybind key="A-r">
       <action name="Resize"/>
@@ -359,15 +349,6 @@
     <keybind key="S-W-q">
       <action name="Close"/>
     </keybind>
-
-    <!--
-    <keybind key="W-space">
-      <action name="ShowMenu">
-        <menu>root-menu</menu>
-      </action>
-    </keybind>
-    -->
-
     <keybind key="A-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>
@@ -763,5 +744,3 @@
     </application>
   </applications>
 </openbox_config>
-<!-- vim:sw=2
--->

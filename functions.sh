@@ -78,9 +78,35 @@ function dlo() {
 }
 # /end of source
 
-# remove dicker container using rofi
+# remove docker container using rofi
 function drm() {
     echo "$(docker ps -a | rofi -threads 0 -width 100 -dmenu -i -p "locate:")" | awk {'print $1'} | xargs docker rm
+}
+
+# remove docker image using rofi
+function drmi() {
+    echo "$(docker images | rofi -threads 0 -width 100 -dmenu -i -p "locate:")" | awk {'print $1'} | xargs docker rmi
+}
+
+# checkout to one of the recent branches
+function rco() {
+    echo "$(recent-branches | rofi -threads 0 -width 100 -dmenu -i -p "locate:")" | xargs git checkout
+}
+
+#install package and save it's name into requirements.txt
+function pips() {
+        echo $'\n'$1 >> requirements.txt; pip install $1
+    }
+
+function todos() {
+    AUTHOR=$1
+    TYPE=$2
+    AUTHOR="${AUTHOR:-Krystian}"
+    TYPE="${TYPE:-TODO}"
+    for FILE in $(git ls-files)
+    do
+        git blame $FILE | grep "$1" | grep "$2";
+    done
 }
 
 # search onli in package names starting with pattern

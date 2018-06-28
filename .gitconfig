@@ -32,12 +32,15 @@
     h = !git --no-pager log origin/master..HEAD --abbrev-commit --pretty=oneline
 
     # baseline log - showing tree, relative date,...
-    lg1 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lg1 = --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -15
+    lg1a = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
     # more info
-    lg2 = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+    lg2 = --no-pager log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\" -15
+    lg2a = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
 
     # List commits showing changed files
+    lg3 = --no-pager log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat -15
     lg3 = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 
 
@@ -46,8 +49,8 @@
 
     ####### WHAT'S UP? ##########
     # List today's oneline commits
-    lg-today = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --color --date=short --since=midnight
-    lg1-my-week = log --graph --pretty=format:'%C(yellow)%d%Creset %s %Cgreen(%ad, %cr)' --abbrev-commit --date=short --all --since='1 week' --no-merges --author=krystian.safjan@wilabs.com
+    lg-today = --no-pager log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --color --date=short --since=midnight
+    lg1-my-week =!git --no-pager log --graph --pretty=format:'%C(yellow)%d%Creset %s %Cgreen(%ad, %cr)' --abbrev-commit --date=short --all --since='1 week' --no-merges --author=krystian.safjan@wilabs.com
     lg1-all-week = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all --since='1 week' --no-merges
     log-all-week = git log --all --since='1 weeks' --oneline --no-merges
 
@@ -142,47 +145,9 @@
 
 [user]
 	name = Krystian Safjan
-	email = krystian.safjan@wilabs.com
+	email = ksafjan@gmail.com
 [push]
 	default = current
 [core]
 	editor = vim
-#[core]
-#	autocrlf = true
-#	eol = lf
-#[diff]
-#	tool = winmerge
-#[difftool "winmerge"]
-#	name = WinMerge
-#	trustExitCode = true
-#	cmd = winmerge-merge.sh $LOCAL $REMOTE
-
-#[push]
-#	default = simple
-#[merge]
-#	tool = p4merge
-#[mergetool "kdiff3"]
-#	name = Kdiff3
-#	prompt = false
-#	keepBackup = false
-#	keepTemporaries = false
-#	path = C:\\Program Files (x86)/KDiff3/kdiff3.exe
-#	trustExitCode = true
-#[mergetool "p4merge"]
-#	name = p4merge
-#	path = C:/Program Files/Perforce/p4merge.exe
-#    prompt = false
-#	trustExitCode = true
-#[mergetool "winmerge"]
-#	name = winmerge
-#	trustExitCode = true
-#	cmd = winmerge-merge.sh $LOCAL $REMOTE $BASE $MERGED
-#[difftool "sourcetree"]
-#	cmd = 'C:/Program Files (x86)/KDiff3/kdiff3.exe' \"$LOCAL\" \"$REMOTE\"
-#[mergetool "sourcetree"]
-#	cmd = 'C:/Program Files (x86)/KDiff3/kdiff3.exe' \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-#	trustExitCode = true
-#[mergetool]
-#	prompt = false
-#	keepBackup = false
 
