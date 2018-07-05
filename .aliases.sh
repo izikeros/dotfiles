@@ -178,7 +178,7 @@ alias gg="git gui"
 alias gg1="git gui citool"
 
 # list branches you worked on recently
-alias recent-branches="git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format=\"%(refname:short)\""
+alias recent-branches="git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format=\"%(refname:short)\""
 
 # list git repos in current directory
 alias git-repos="find ./ -name \"*.git\" -type d | sed 's/\.git$//'"
