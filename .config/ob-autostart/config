@@ -1,0 +1,6 @@
+# OB_Autostart config
+LAUNCH_LIST = [ 
+	 ("Enable window snapping","opensnap --daemon -c /etc/opensnap","0","*"),
+	 ("redshift","redshift","5","*"),
+	 ("activate numpad by default (numlockx)","numlockx","0","*"),
+	]
