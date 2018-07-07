@@ -125,8 +125,8 @@ setopt INC_APPEND_HISTORY SHARE_HISTORY
 
 
 
-source ~/.zsh_aliases
-source ~/.zsh_functions
+#source ~/.zsh_aliases
+#source ~/.zsh_functions
 source /home/izik/dotfiles/env_and_path.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -136,7 +136,7 @@ eval "$(thefuck --alias)"
 ~/dotfiles/scripts/runonce.sh neofetch
 ~/dotfiles/scripts/runonce.sh ~/dotfiles/scripts/check_if_repos_are_clean.sh
 
-source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+#source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 # Limit to the last two folders
@@ -157,7 +157,6 @@ POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND=default
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='blue'
 POWERLEVEL9K_DIR_DEFAULT_BACKGROUND=default
 
-
 # Advanced `vcs` color customization
 POWERLEVEL9K_VCS_CLEAN_FOREGROUND='green'
 POWERLEVEL9K_VCS_CLEAN_BACKGROUND=dafault
@@ -165,7 +164,6 @@ POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='yellow'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=default
 POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='red'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=default
-
 
 # In case a plugin adds a redundant path entry, remove duplicate entries
 # from PATH
