@@ -1,2 +1,2 @@
 #!/bin/bash
-git clone git@github.com:tarjoilija/zgen.git
+git clone https://github.com/tarjoilija/zgen.git

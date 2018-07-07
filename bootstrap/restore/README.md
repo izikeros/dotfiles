@@ -1,5 +1,6 @@
-1. install zsh
-2. clone zgen
-3. symlink zsh-relate files
-4. install fzf
-5. instal fasd
+* install zsh
+* symlink zsh-relate files (e.g. using mc)
+* clone zgen (install_zgen)
+* setup zgen (~/.zgen-setup)
+* install fzf (install_fzf)
+* instal fasd  (sudo apt-get install fasd)
