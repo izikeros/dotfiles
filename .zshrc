@@ -29,14 +29,14 @@ unsetopt correctall
 export LSCOLORS='Exfxcxdxbxegedabagacad'
 export LS_COLORS='di=1;34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
 
-
-# Now that we have $PATH set up and ssh keys loaded, configure zgen.
-
 # start zgen
 if [ -f ~/.zgen-setup ]; then
   source ~/.zgen-setup
 fi
 # end zgen
+
+# temporal hack to ensure that my aliases has priority
+source ~/.zsh_aliases
 
 # set some history options
 setopt append_history
@@ -123,10 +123,6 @@ setopt HIST_IGNORE_ALL_DUPS HIST_FIND_NO_DUPS HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE HIST_REDUCE_BLANKS HIST_SAVE_NO_DUPS
 setopt INC_APPEND_HISTORY SHARE_HISTORY
 
-
-
-#source ~/.zsh_aliases
-#source ~/.zsh_functions
 source /home/izik/dotfiles/env_and_path.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
