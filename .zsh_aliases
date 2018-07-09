@@ -113,6 +113,7 @@ fi
 # MEATA-ALIAS
 #--------------------------------------------
 alias galias="alias | grep --color=never -i -e"
+alias list-functions="grep function ~/.zsh_functions --color=never"
 # TODO: add alias from commandline (and append to this file)
 
 #--------------------------------------------
