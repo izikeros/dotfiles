@@ -82,11 +82,12 @@ alias cdw="cd $WIKI_HOME"
 # shortcuts to edit files (mostly config files)
 alias vz="vim $HOME/.zshrc"
 
-alias vzz="vim $HOME/.zshrc.d/zshrc_arch"
+alias vzs="vim $HOME/.zgen-setup"
 
 alias vv="vim $HOME/.vimrc"
 
-alias va="vim $HOME/dotfiles/.aliases.sh"
+alias va="vim $HOME/dotfiles/.zsh_aliases"
+alias vf="vim $HOME/dotfiles/.zsh_functions"
 
 alias vs="vim $HOME/.ssh/config"
 alias vg="vim $HOME/.gitconfig"
@@ -103,9 +104,9 @@ alias vkeys="grep --color=never -e 'map' $HOME/dotfiles/.vimrc"
 
 if [[ -x /usr/bin/subl3 ]]; then
   alias s-z="$S $HOME/.zshrc"
-  alias s-zz="$S $HOME/.zshrc.d/zshrc_arch"
+  alias s-zs="$S $HOME/.zgen-setup"
   alias sv="$S $HOME/.vimrc"
-  alias sa="$S $HOME/dotfiles/.aliases.sh"
+  alias sa="$S $HOME/dotfiles/.zsh_aliases"
 fi
 
 #--------------------------------------------
