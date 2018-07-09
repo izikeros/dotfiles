@@ -220,7 +220,7 @@ alias find-git-repos="find . -name \".git\" -type d | sed s/\.git//g | grep -v '
 alias gpq="git add . && git commit -m 'update' && git push"
 
 alias devl="git checkout development"
-alias dev="git checkout development"
+alias dev="git checkout devel
 
 alias lg="git --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -15"
 
