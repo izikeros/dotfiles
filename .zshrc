@@ -37,6 +37,7 @@ fi
 
 # temporal hack to ensure that my aliases has priority
 source ~/.zsh_aliases
+source ~/.zsh_functions
 
 # set some history options
 setopt append_history
