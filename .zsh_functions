@@ -1,43 +1,47 @@
 #!/bin/zsh
 
-## Functions
-function t(){
+# == Vimviki diary functions
+function t(){		# open diary for today
   DATE=$(date +%Y-%m-%d)
   vim ~/vimwiki/diary/$DATE.md
 }
 
-
-function st(){
+function st(){		# open diary for today in sublime text
   DATE=$(date +%Y-%m-%d)
   subl3 ~/vimwiki/diary/$DATE.md
 }
 
-# find in python files
-function fipy(){
+
+# == Find functions
+function fipy(){	# find in python files
   fgrep --include="*.py" --exclude-dir={.git} --color=always -rnwi ./ -e  $1 | less -R
 }
 
-# find in python files - grep using two keywords
-function fipy2(){
+function fipy2(){	# find in python files - grep using two keywords
   fgrep --include="*.py" --exclude-dir={.git} --color=always -rnwi ./ -e $1 | grep $2
 }
 
-# search only in package names starting with pattern
-function asa(){
+# == Packages-related functions
+function asa(){		# search only in deb package names starting with pattern
   aptitude search ^$1 | awk '{print $2}'
   }
 
-# docker-related functions
+
+# == Docker-related
 # source: https://github.com/rhoit/my-config/blob/master/shell/shellrc.d/docker.sh
-function dimg() {
+function dimg(){	# list docker images
     docker images $@ |
         sed "s/  \+/;/g" |
         column -s\; -t |
         sed "1s/.*/\x1B[1m&\x1B[m/"
 }
 
-function docker_fit() {
-    # docker fit output
+# http://networkstatic.net/10-examples-of-how-to-get-docker-container-ip-address/
+function dockerip(){	# display IP of docker image
+  docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
+}
+
+function docker_fit(){	# docker fit output (???)
     docker $@ |
     sed '
         1s/ *NAMES$//g;
@@ -56,13 +60,12 @@ function docker_fit() {
     sed "1s/.*/\x1B[1m&\x1B[m/"
 }
 
-function dlc() {
-    # cache docker last container id DOCKER_CACHE
+function dlc(){		# cache docker last container id DOCKER_CACHE
     1>&2 docker ps -l
     export DOCKER_CACHE=$(docker ps -lq)
 }
 
-function dlo() {
+function dlo(){		# display logs of container with given name or name stores in cache (see: dlc function)
     if [[ -t 1 ]]; then
         while read data; do
             args+="$data"
@@ -76,29 +79,24 @@ function dlo() {
     fi
     docker logs $@
 }
-# /end of source
 
-# remove docker container using rofi
-function drm() {
+function drm(){		# remove docker container using rofi
     echo "$(docker ps -a | rofi -threads 0 -width 100 -dmenu -i -p "locate:")" | awk {'print $1'} | xargs docker rm
 }
 
-# remove docker image using rofi
-function drmi() {
+function drmi(){	# remove docker image using rofi
     echo "$(docker images | rofi -threads 0 -width 100 -dmenu -i -p "locate:")" | awk {'print $1'} | xargs docker rmi
 }
 
-# checkout to one of the recent branches
-function rco() {
+function rco(){		# git checkout to one of the recent branches
     echo "$(recent-branches | rofi -threads 0 -width 100 -dmenu -i -p "locate:")" | xargs git checkout
 }
 
-#install package and save it's name into requirements.txt
-function pips() {
+function pips(){	# install package and save it's name into requirements.txt
         echo $'\n'$1 >> requirements.txt; pip install $1
     }
 
-function todos() {
+function todos(){	# git blame who put TODO statement in the code
     AUTHOR=$1
     TYPE=$2
     AUTHOR="${AUTHOR:-Krystian}"
@@ -109,18 +107,12 @@ function todos() {
     done
 }
 
-# search onli in package names starting with pattern
-function asa(){
-    aptitude search ^$1 | awk '{print $2}'
-    }
 
-# create directory and move into it
-function mkcd () {
+function mkcd () {	# create directory and move into it
   mkdir -p "$1"
   cd "$1"
 }
-
-function extract() {
+function extract() {	# extract content from archive
     if [ -f $1 ] ; then
         case $1 in
             *.7z)       7z x $1       ;;
@@ -143,22 +135,19 @@ function extract() {
 }
 
 # from zgen starting kit (Joseph Block <jpb@unixorn.net>)
-# Batch change extension from $1 to $2
-chg-ext() {
+function chg-ext() {	# Batch change extension from $1 to $2
   for file in *.$1
   do
     mv $file $(echo $file | sed "s/\(.*\.\)$1/\1$2/")
   done
 }
 
-# Probe a /24 for hosts
-scan24() {
+function scan24() {	# Probe a /24 network for hosts
   nmap -sP ${1}/24
 }
 
-# Pretty JSON
 # from: https://coderwall.com/p/hwu5uq?i=9&p=1&q=sort%3Ascore+desc&t%5B%5D=zsh
-function pjson {
+function pjson {	# Pretty JSON
   if [ $# -gt 0 ];
     then
     for arg in $@
@@ -173,40 +162,36 @@ function pjson {
   fi
 }
 
-# lists zombie processes
-function zombie() {
+function zombie() {	# lists zombie processes
   ps aux | awk '{if ($8=="Z") { print $2 }}'
 }
 
-
-function exists() {
+function exists() { 	# ???
   if (( $+commands[$1] )); then return 0; else return 1; fi
 }
 
-# from cads@ooyala.com
-function f-f() {
+function f-f() {	# find file with given name (or pattern?) from cads@ooyala.com
   find . -type f -iname '*'$@'*' -ls
 }
 
-# Find things in that enormous command history file
-function hgrep40 {
+function hgrep40 {	# history-grep: find things in that enormous command history file (last 40 results)
   history | egrep --color -i "$@" | tail -40
 }
 
-function hgrep {
+function hgrep {	# history-grep: find things in that enormous command history file (last 20 results)
   history | grep -i "$@" | tail -20
 }
 
-function hgrep_full {
+function hgrep_full {	# history-grep: find things in that enormous command history file (all results)
   history | egrep --color -i "$@"
 }
 
-function envgrep() {
+function envgrep() {	# grep through evnironmental variables
   printenv | grep -i "$@"
 }
 
 # From Dan Ryan's blog - http://danryan.co/using-antigen-for-zsh.html
-man() {
+man() {		# some settings for man?
   env \
     LESS_TERMCAP_mb=$(printf "\e[1;31m") \
     LESS_TERMCAP_md=$(printf "\e[1;31m") \
@@ -219,37 +204,39 @@ man() {
 }
 
 # From commandlinefu.com
-function watch() { t=$1; shift; while test :; do clear; date=$(date); echo -e "Every $ts: $@ \t\t\t\t $date"; $@; sleep $t; done }
+function watch() {
+	t=$1; shift; while test :; do clear; date=$(date); echo -e "Every $ts: $@ \t\t\t\t $date"; $@; sleep $t; done
+}
 
-# scp file to machine you're sshing into this machine from
-function mecp () {
+
+function mecp () {	# scp file to machine you're sshing into this machine from
   scp "$@" ${SSH_CLIENT%% *}:~/Downloads/;
 }
 
-function calc() {
+function calc() {	# calcularor
   awk "BEGIN{ print $* }" ;
 }
 
-function procs_for_path() {
+function procs_for_path() {		# list processes for given path
   for pid in $(lsof "$@" | cut -d' ' -f 3 | sort | uniq)
   do
     ps -f -p $pid
   done
 }
 
-# Begin sysadvent2011 functions
-function _awk_col() {
+# == Begin sysadvent2011
+function _awk_col(){	# display column using awk (?)
   echo "$1" | egrep -v '^[0-9]+$' || echo "\$$1"
 }
 
-function sum() {
+function sum(){		# ???
   [ "${1#-F}" != "$1" ] && SP=${1} && shift
   [ "$#" -eq 0 ] && set -- 0
   key="$(_awk_col "$1")"
   awk $SP "{ x+=$key } END { printf(\"%d\n\", x) }"
 }
 
-function sumby() {
+function sumby(){	# ???
   [ "${1#-F}" != "$1" ] && SP=${1} && shift
   [ "$#" -lt 0 ] && set -- 0 1
   key="$(_awk_col "$1")"
@@ -257,7 +244,7 @@ function sumby() {
   awk $SP "{ a[$key] += $val } END { for (i in a) { printf(\"%d %s\\n\", a[i], i) } }"
 }
 
-function countby() {
+function countby(){ 	# ???
   [ "${1#-F}" != "$1" ] && SP=${1} && shift
   [ "$#" -eq 0 ] && set -- 0
   key="$(_awk_col "$1")"
@@ -266,19 +253,19 @@ function countby() {
 # end sysadvent
 
 # ssh helper
-function rmhost () {
+function rmhost (){ 	# ???
   perl -i -ne "print unless $1 .. $1" ~/.ssh/known_hosts;
 }
 
-get_nr_jobs() {
+function get_nr_jobs(){ # get number of jobs in the system
   jobs | wc -l
 }
 
-get_load() {
+function get_load(){	# get system load
   uptime | awk '{print $11}' | tr ',' ' '
 }
 
-function bash_repeat() {
+function bash_repeat(){	# repeat command?
   n=$1
   shift
   while [ $(( n -= 1 )) -ge 0 ]
@@ -287,35 +274,33 @@ function bash_repeat() {
   done
 }
 
-function authme {
-  ssh "$1" 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_dsa.pub
-}
+#function authme {	# send authentication key (id_dsa.pub) to remote host
+#  ssh "$1" 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_dsa.pub
+#}
 
-function mtr_url {
+function mtr_url(){	# ???
   host=$(ruby -ruri -e "puts (URI.parse('$1').host or '$1')")
   sudo mtr -t $host
 }
 
-function jsoncurl() {
+function jsoncurl(){ 	# ???
   curl "$@" | python -m json.tool
 }
 
-# Recursively touch, e.g. touch + mkdir -p
-# so files can easily be created at depth
 #
-canhaz() {
+function canhaz(){	# Recursively touch, e.g. touch + mkdir -p so files can easily be created at depth
   mkdir -p -- "${1%/*}" && touch -- "$1"
 }
 
-canhaz-script() {
+function canhaz-script(){ # Recursively touch with execute flag, e.g. touch + mkdir -p so files can easily be created at depth
   canhaz "${1}" && chmod +x "$1"
 }
 
-pong() {
+function pong(){ 	# ???
   ping -c 10 "$@"
 }
 
-fix_tmux_ssh_agent() {
+function fix_tmux_ssh_agent() { # ???
   for key in SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT; do
     if (tmux show-environment | grep "^${key}" > /dev/null); then
       value=$(tmux show-environment | grep "^${key}" | sed -e "s/^[A-Z_]*=//")
@@ -324,59 +309,24 @@ fix_tmux_ssh_agent() {
   done
 }
 
-show_terminal_colors() {
+function show_terminal_colors() { # ???
   for i in {0..255} ; do
     printf "\x1b[38;5;${i}mcolour${i}\n"
   done
 }
 
-# Batch change extension from $1 to $2
-chg-ext() {
-  for file in *.$1
-  do
-    mv $file $(echo $file | sed "s/\(.*\.\)$1/\1$2/")
-  done
-}
 
-# Probe a /24 for hosts
-scan24() {
-  nmap -sP ${1}/24
-}
 
-# Netjoin - Block until a network connection is obtained.
 # Originally from https://github.com/bamos/dotfiles/blob/master/.funcs
-nj() {
+function nj() {		# Netjoin - Block until a network connection is obtained.
   while true; do
     ping -c 1 8.8.8.8 &> /dev/null && break
     sleep 1
   done
 }
 
-# Pretty JSON
-# from: https://coderwall.com/p/hwu5uq?i=9&p=1&q=sort%3Ascore+desc&t%5B%5D=zsh
-function pjson {
-  if [ $# -gt 0 ];
-    then
-    for arg in $@
-    do
-      if [ -f $arg ];
-        then
-        less $arg | python -m json.tool
-      else
-        echo "$arg" | python -m json.tool
-      fi
-    done
-  fi
-}
-
-# lists zombie processes
-function zombie() {
-  ps aux | awk '{if ($8=="Z") { print $2 }}'
-}
-
-# get the content type of an http resource
 # from https://github.com/jleclanche/dotfiles/blob/master/.zshrc
-function htmime {
+function htmime {	# get the content type of an http resource
   if [[ -z $1 ]]; then
     print "USAGE: htmime <URL>"
     return 1
@@ -385,17 +335,10 @@ function htmime {
   print $mime
 }
 
-# Start an HTTP server from a directory, optionally specifying the port
-function httpserver() {
+function httpserver(){	# Start an HTTP server (python) from a directory, optionally specifying the port
   local port="${1:-8000}";
   sleep 1 && open "http://localhost:${port}/" &
   # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
   # And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
   python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port";
 }
-
-# Honor old .zsh_functions.local customizations, but print depecation warning.
-if [ -f ~/.zsh_functions.local ]; then
-  source .zsh_functions.local
-  echo ".zsh_functions.local is deprecated. Make entries in ~/.zshrc.d instead."
-fi
