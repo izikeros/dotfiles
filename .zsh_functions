@@ -170,7 +170,7 @@ function exists() { 	# ???
   if (( $+commands[$1] )); then return 0; else return 1; fi
 }
 
-function f-f() {	# find file with given name (or pattern?) from cads@ooyala.com
+function ff() {	# find file with given name (or pattern) from cads@ooyala.com
   find . -type f -iname '*'$@'*' -ls
 }
 
