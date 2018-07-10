@@ -160,8 +160,6 @@ alias mountd="mount | grep /dev/sd | column -t"
 #--------------------------------------------
 # FIND (IN) FILES
 #--------------------------------------------
-# find file by filename
-alias ff="find . -iname $1"
 
 # find files in current directory
 alias ff-here="find . -maxdepth 1 -type f"
@@ -268,7 +266,7 @@ alias nb="jupyter-notebook --notebook-dir $HOME/src"
 # PIP
 #--------------------------------------------
 # upgrade all pip packages (system or virt-env if in virt-env)
-alias pip-upgrade='pip freeze local > ~/pip_before_upgrade.txt && sudo -h pip install pipdate && sudo -H pipdate'
+alias pip-upgrade-script='pip freeze local > ~/pip_before_upgrade.txt && sudo -h pip install pipdate && sudo -H pipdate'
 
 alias pipup="pip install --upgrade pip"
 alias pip-outdated="pip list --outdated --format=freeze"
@@ -309,6 +307,24 @@ alias dps='docker_fit ps -a'
 alias docker-clean-exited-containers='docker ps -aqf status=exited | xargs -n1 docker rm'
 alias docker-list-untagged-images='echo $(docker images | grep "<none>" | awk "{print \$3}")'
 alias docker-remove-untagged-images='docker rmi -f $(docker images -a| grep "<none>" | awk "{print \$3}")'
+
+alias c='docker-compose'
+alias cb='docker-compose build'
+alias cup='docker-compose up'
+alias cr='docker-compose run --service-ports --rm'
+alias crl='docker-compose run --service-ports --rm local'
+alias crd='docker-compose run --service-ports --rm develop'
+alias crt='docker-compose run --rm test'
+alias crp='docker-compose run --rm provision'
+alias crci='docker-compose run --rm ci'
+alias crwt='docker-compose run --rm watchtest'
+alias cps='docker-compose ps'
+alias clogs='docker-compose logs'
+
+function crm(){
+	docker-compose stop $1
+	docker-compose rm --force $1
+}
 
 #--------------------------------------------
 # CALIBRE & RECOLL
