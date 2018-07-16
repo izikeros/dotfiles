@@ -1,5 +1,17 @@
 #!/bin/bash
-#zmodload zsh/zprof
+#zmodload zsh/zprof # if using profiler remember to uncomment zprof in the end of file
+
+# # Zsh start up sequence:
+#  1) /etc/zshenv   -> Always run for every zsh.   (login + interactive + other)
+#  2)   ~/.zshenv   -> Usually run for every zsh.  (login + interactive + other)
+#  3) /etc/zprofile -> Run for login shells.       (login)
+#  4)   ~/.zprofile -> Run for login shells.       (login)
+#  5) /etc/zshrc    -> Run for interactive shells. (login + interactive)
+#  6)   ~/.zshrc    -> Run for interactive shells. (login + interactive)
+#  7) /etc/zlogin   -> Run for login shells.       (login)
+#  8)   ~/.zlogin   -> Run for login shells.       (login)
+#
+
 
 # Set this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -14,7 +26,7 @@
 export COMPLETION_WAITING_DOTS="true"
 
 # Correct spelling for commands
-setopt correct
+#setopt correct
 
 # turn off the infernal correctall for filenames
 unsetopt correctall
@@ -22,17 +34,107 @@ unsetopt correctall
 # Base PATH
 #PATH=/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin
 
+# --------------
+# LS colors
+# -------------
 # Yes, these are a pain to customize. Fortunately, Geoff Greer made an online
 # tool that makes it easy to customize your color scheme and keep them in sync
 # across Linux and OS X/*BSD at http://geoff.greer.fm/lscolors/
-
 export LSCOLORS='Exfxcxdxbxegedabagacad'
 export LS_COLORS='di=1;34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
 
+# --------------
+# zsh plugins
+# --------------
+export INC=$HOME/.zgen
+
+R=$INC/zsh-users
+source $R/zsh-completions-master/zsh-completions.plugin.zsh
+source $R/zsh-autosuggestions-master/zsh-autosuggestions.plugin.zsh
+#If zsh-syntax-highlighting is bundled after zsh-history-substring-search,
+#they break, so get the order right.
+source $R/zsh-syntax-highlighting-master/zsh-syntax-highlighting.zsh
+source $R/zsh-history-substring-search-master/zsh-history-substring-search.zsh
+# Load more completion files for zsh from the zsh-lovers github repo
+#source $R/zsh-completions-master src
+
+R=$INC/RobSis
+# Very cool plugin that generates zsh completion functions for commands
+    # if they have getopt-style help text. It doesn't generate them on the fly,
+        # you'll have to explicitly generate a completion, but it's still quite cool.
+#source $R/zsh-completion-generator-master/zsh-completion-generator.plugin.zsh
+
+# Set keystrokes for substring searching
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+R=$INC/unixorn
+  # Add my collection of miscellaneous utility functions.
+  #zgen load unixorn/jpb.zshplugin
+
+  # Colorize the things if you have grc installed. Well, some of the
+  # things, anyway.
+  #zgen load unixorn/warhol.plugin.zsh
+  # Add my collection of git helper scripts
+source $R/git-extra-commands-master/git-extra-commands.plugin.zsh
+
+  # Add my bitbucket git helpers plugin
+  #zgen load unixorn/bitbucket-git-helpers.plugin.zsh
+
+  # A collection of scripts that might be useful to sysadmins
+#  zgen load skx/sysadmin-util
+
+# Adds aliases to open your current repo & branch on github.
+#zgen load peterhurford/git-it-on.zsh
+
+  # Tom Limoncelli's tooling for storing private information (keys, etc)
+  # in a repository securely by encrypting them with gnupg
+  #zgen load StackExchange/blackbox
+
+  # Load some oh-my-zsh plugins
+R=$INC/robbyrussell/oh-my-zsh-master/plugins
+#  zgen oh-my-zsh plugins/pip
+#  zgen oh-my-zsh plugins/sudo
+#  zgen oh-my-zsh plugins/aws
+#  zgen oh-my-zsh plugins/chruby
+#  zgen oh-my-zsh plugins/colored-man-pages
+source $R/git/git.plugin.zsh
+  #zgen oh-my-zsh plugins/github
+  #zgen oh-my-zsh plugins/python
+  #zgen oh-my-zsh plugins/rsync
+  #zgen oh-my-zsh plugins/screen
+  #zgen oh-my-zsh plugins/vagrant
+
+#  zgen load chrissicool/zsh-256color
+
+
+# Docker completion
+#  zgen load srijanshetty/docker-zsh
+
+# Load me last
+GENCOMPL_FPATH=$HOME/.zsh/complete
+
+
+
+  # Add Fish-like autosuggestions to your ZSH
+#  zgen load zsh-users/zsh-autosuggestions
+
+  # k is a zsh script / plugin to make directory listings more readable,
+  # adding a bit of color and some git status information on files and directories
+#  zgen load supercrabtree/k
+
+  # Bullet train prompt setup
+  #zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+#  zgen oh-my-zsh themes/strug
+
+# -------
+
+
 # start zgen
-if [ -f ~/.zgen-setup ]; then
-  source ~/.zgen-setup
-fi
+#if [ -f ~/.zgen-setup ]; then
+#  source ~/.zgen-setup
+#fi
 # end zgen
 
 # temporal hack to ensure that my aliases has priority
@@ -69,22 +171,7 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 REPORTTIME=2
 TIMEFMT="%U user %S system %P cpu %*Es total"
 
-# How often to check for an update. If you want to override this, the
-# easiest way is to add a script fragment in ~/.zshrc.d that unsets
-# QUICKSTART_KIT_REFRESH_IN_DAYS.
-#QUICKSTART_KIT_REFRESH_IN_DAYS=7
-unset QUICKSTART_KIT_REFRESH_IN_DAYS
-
 # Expand aliases inline - see http://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
-globalias() {
-   if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
-     zle _expand_alias
-     zle expand-word
-   fi
-   zle self-insert
-}
-
-zle -N globalias
 
 # Speed up autocomplete, force prefix mapping
 zstyle ':completion:*' accept-exact '*(N)'
@@ -100,21 +187,7 @@ if [ -d ~/.zsh-completions ]; then
   done
 fi
 
-# Make it easy to append your own customizations that override the above by
-# loading all files from .zshrc.d directory
-# mkdir -p ~/.zshrc.d
-
-# if [ -n "$(/bin/ls ~/.zshrc.d)" ]; then
-#   for dotfile in ~/.zshrc.d/*
-#   do
-#     if [ -r "${dotfile}" ]; then
-#       source "${dotfile}"
-#     fi
-#   done
-# fi
-# Zshrc
-
-# If not running interactively return
+# If not running interactively return (??)
 [[ $- != *i* ]] && return
 
 export PATH=$HOME/bin:$PATH
@@ -133,34 +206,41 @@ eval "$(thefuck --alias)"
 ~/dotfiles/scripts/runonce.sh neofetch
 ~/dotfiles/scripts/runonce.sh ~/dotfiles/scripts/check_if_repos_are_clean.sh
 
-#source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+#-----------------------
+# Powerlevel 9k
+#-----------------------
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+
+export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 # Limit to the last two folders
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+export POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 
 # Left, right prompt segments
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv aws)
+export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv context dir vcs)
+export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws)
 
-POWERLEVEL9K_DIR_SHOW_WRITABLE=true
+export POWERLEVEL9K_DIR_SHOW_WRITABLE=true
 # default user (for this user at localhost context is not displayed)
 export DEFAULT_USER=izik
 
-POWERLEVEL9K_DIR_HOME_FOREGROUND='blue'
-POWERLEVEL9K_DIR_HOME_BACKGROUND=default
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='blue'
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND=default
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='blue'
-POWERLEVEL9K_DIR_DEFAULT_BACKGROUND=default
+export POWERLEVEL9K_DIR_HOME_FOREGROUND='blue'
+export POWERLEVEL9K_DIR_HOME_BACKGROUND=default
+export POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='blue'
+export POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND=default
+export POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='blue'
+export POWERLEVEL9K_DIR_DEFAULT_BACKGROUND=default
 
 # Advanced `vcs` color customization
-POWERLEVEL9K_VCS_CLEAN_FOREGROUND='green'
-POWERLEVEL9K_VCS_CLEAN_BACKGROUND=dafault
-POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='yellow'
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=default
-POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='red'
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=default
+export POWERLEVEL9K_VCS_CLEAN_FOREGROUND='green'
+export POWERLEVEL9K_VCS_CLEAN_BACKGROUND=dafault
+export POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='yellow'
+export POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=default
+export POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='red'
+export POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=default
+#----------------
+# dedupe path
+#---------------
 
 # In case a plugin adds a redundant path entry, remove duplicate entries
 # from PATH
@@ -179,7 +259,11 @@ dedupe_path() {
 
   export PATH=${(j+:+)result}
 }
-
-dedupe_path
+# (!!!) Note: takes quite long. Check if deduplications are needed
+#dedupe_path
 
 #zprof # end of profiling
+
+# perform check of shell script
+#shellcheck -x ~/.zshrc
+
