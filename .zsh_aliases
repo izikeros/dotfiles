@@ -232,16 +232,15 @@ alias week-stats="git stats --until='7 days ago'"
 
 # git guilt
 # https://www.atlassian.com/blog/archives/git-guilt-blame-code-review
-
 #how blame shifted from one author to another during your last commit:
 # git guilt HEAD~1
-
 # How blame changed over period of time
 alias week-stats-guilt="git guilt \`git log --until=\"7 days ago\" --format=\"%H\" -n 1\`"
-#
 # How blame changed since feature branch was created
 # git guilt `git merge-base development my-feature-branch` my-feature-branch
 
+alias st="git status --short"
+alias gp="git push"
 #--------------------------------------------
 # PYTHON, SOFTWARE PROJECT
 #-------------------------------------------
@@ -418,9 +417,6 @@ alias cxsh="chmod +x *.sh"
 alias tw="tmuxifier load-window"
 
 
-
-
-
 # On the rare occasions I don't want to continue a download I can always
 # delete the incomplete fragment explicitly. I usually just want to
 # complete it.
@@ -465,6 +461,8 @@ alias merge='xrdb -merge ~/.Xresources'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 alias windirstat="gdmap"
+
+alias zsh-loading-time="for i ({1..10}) time zsh -i -c exit"
 
 # Honor old .zsh_aliases.local customizations, but print depecation warning.
 if [ -f ~/.zsh_aliases.local ]; then

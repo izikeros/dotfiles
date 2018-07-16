@@ -225,11 +225,21 @@ function procs_for_path() {		# list processes for given path
 }
 
 # == Begin sysadvent2011
-function _awk_col(){	# display column using awk (?)
+# for instructions and other data manipulation tools from console visit:
+# http://sysadvent.blogspot.com/2011/12/day-9-data-in-shell.html
+
+
+function _awk_col(){	# display n-th column using awk
   echo "$1" | egrep -v '^[0-9]+$' || echo "\$$1"
 }
 
-function sum(){		# ???
+function sum(){		# sum by n-th field
+  # usage: sum column_idx
+  #
+  # Example:
+  # Simply sum the first field
+  # % seq 10 | sum 1
+  # 55
   [ "${1#-F}" != "$1" ] && SP=${1} && shift
   [ "$#" -eq 0 ] && set -- 0
   key="$(_awk_col "$1")"
