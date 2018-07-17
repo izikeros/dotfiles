@@ -24,19 +24,19 @@ x XF86AudioPrev   	playerctl previous
 x XF86AudioNext   	playerctl next
 x XF86MonBrightnessUp	xbacklight +10
 x XF86MonBrightnessDown	xbacklight -10
+x XF86Calculator  	galculator
 x Print           	scrot 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'
 x A-Print         	scrot -d 5 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'
 x W-f             	exo-open --launch FileManager
 x W-t             	exo-open --launch TerminalEmulator
 x W-w             	exo-open --launch WebBrowser
 x W-e             	geany
-x C-A-m           	xfce4-settings-manager
 x W-m             	audacious
 x W-v             	pavucontrol
 x W-s             	skippy-xd
 x A-F1            	rofr.sh -r
-x C-space         	rofi -combi-modi window,drun,ssh,run -show combi
-x C-S-space       	~/dotfiles/scripts/rofi-scripts-collection/rofi-bangs.sh
+x W-space         	rofi -combi-modi window,drun,ssh,run -show combi
+x W-S-space       	~/dotfiles/scripts/rofi-scripts-collection/rofi-bangs.sh
 x W-x             	rofr.sh -l
 x C-A-Delete      	rofr.sh -l
 o W-S-Escape      	Exit
@@ -52,8 +52,6 @@ x A-W-F11
 o A-r             	Resize
 o A-m             	Move
 o S-W-q           	Close
-o W-space         	root-menu
-o A-space         	client-menu
 o W-KP_1          	UnmaximizeFull
 o W-KP_2          	UnmaximizeFull
 o W-KP_3          	UnmaximizeFull

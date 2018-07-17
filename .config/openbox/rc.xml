@@ -349,11 +349,13 @@
     <keybind key="S-W-q">
       <action name="Close"/>
     </keybind>
+    <!--
     <keybind key="A-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>
       </action>
     </keybind>
+    -->
     <keybind key="W-KP_1">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
