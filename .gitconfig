@@ -27,23 +27,36 @@
     #
     # https://git-scm.com/docs/git-log#_options
     #
-    # show commits that differs Head and and origin/master (??)
-    # (seems powerfull but not sure how it works)
-    h = !git --no-pager log origin/master..HEAD --abbrev-commit --pretty=oneline
+    # show commits that differs development (or master) current HEAD
+    # nice to inspect work in given feature branch
+    hdevel = !git --no-pager log origin/devel..HEAD --abbrev-commit --pretty=oneline
+    hd = !git --no-pager log origin/development..HEAD --abbrev-commit --pretty=oneline
+    hm = !git --no-pager log origin/master..HEAD --abbrev-commit --pretty=oneline
 
-    # baseline log - showing tree, relative date,...
-    lg1 = --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -15
-    lg1a = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    # baseline log - showing tree, relative date, without pager
+    lg = !git --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -15
 
-    # more info
-    lg2 = --no-pager log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\" -15
-    lg2a = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+    lg-all = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
-    # List commits showing changed files
-    lg3 = --no-pager log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat -15
-    lg3 = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    # display change statisctics (num of files changed, which files
+    lg-stat = !git log --abbrev-commit --graph --pretty=oneline --stat
 
+    # List commits in short form, with colors and branch/tag annotations
+    lg-short-log = log --oneline --decorate
 
+    # Commits with date/(time)
+    # showing absolute dates
+    lg-date-absolute = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    # 	showing relative dates: (e.g. $ git ld -10)
+    lg-date-relative = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+
+    # showing date and time
+    lg-date-time-abs-rel = !git --no-pager log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\" -15
+    lg-date-time-abs-rel-all = !git log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+
+    # List commits showing changed files (need fix)
+    lg4 = !git --no-pager log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat -15
+    lg5 = !git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     # see all the commits related to a file, with the diff of the changes
     lg-filelog = log -u
 
@@ -52,28 +65,16 @@
     lg-today = --no-pager log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --color --date=short --since=midnight
     lg1-my-week =!git --no-pager log --graph --pretty=format:'%C(yellow)%d%Creset %s %Cgreen(%ad, %cr)' --abbrev-commit --date=short --all --since='1 week' --no-merges --author=krystian.safjan@wilabs.com
     lg1-all-week = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all --since='1 week' --no-merges
-    log-all-week = git log --all --since='1 weeks' --oneline --no-merges
+    lg-all-week = git log --all --since='1 weeks' --oneline --no-merges
 
     # see commit stats per author
     stats = shortlog -sn --all --no-merges
 
-    ### log  formatting variants
-	# List commits in short form, with colors and branch/tag annotations
-	lg-short-commits = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-
 	# List with no colors if you need to chain the out put with Unix pipes:
     lg-no-colors = log --pretty=format:"%h\\ %s\\ [%cn]"
 
-	## List oneline commits
-	# 	showing dates
-	lg-dates = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-	lstat = log --pretty=format:"%ad\\ %cn" --date=short
-
-    # 	showing relative dates: (e.g. $ git ld -10)
-	lg-dates-relative = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
-
-	# short git log
-    lg-short-log = log --oneline --decorate
+    # 'date name' - used for further processing
+    lstat = log --pretty=format:"%ad\\ %cn" --date=short
 
 	# Show modified files in last commit:
 	dl = "!git ll -1"
@@ -110,7 +111,7 @@
 
 	### MERGE
     # delete all branches merged with master
-	cleanup = !git branch --merged master | grep -v 'master$' | xargs git branch -d
+	cleanup-r-master = !git branch --merged master | grep -v 'master$' | xargs git branch -d
 
 	ours = "!f() { git co --ours $@ && git add $@; }; f"
 	theirs = "!f() { git co --theirs $@ && git add $@; }; f"
@@ -132,9 +133,11 @@
     #tool = mymeld
     tool = kdiff3
     conflictstyle = diff3
+
 [mergetool "mymeld"]
     #cmd = meld --diff $BASE $LOCAL --diff $BASE $REMOTE --diff $LOCAL $BASE $REMOTE $MERGED
     cmd = meld --diff $BASE $LOCAL --diff $BASE $REMOTE --auto-merge $LOCAL $BASE $REMOTE --output $MERGED
+    #cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 [mergetool "kdiff3"]
     trustExitCode = false
 [diff]
