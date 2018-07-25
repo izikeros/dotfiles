@@ -209,7 +209,7 @@ eval "$(thefuck --alias)"
 #-----------------------
 # Powerlevel 9k
 #-----------------------
-source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+source  ~/powerlevel9k/powerlevel9k.zsh-theme
 
 export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
