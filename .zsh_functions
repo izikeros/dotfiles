@@ -21,6 +21,10 @@ function fipy2(){	# find in python files - grep using two keywords
   fgrep --include="*.py" --exclude-dir={.git} --color=always -rnwi ./ -e $1 | grep $2
 }
 
+function fipy-in-test(){	# find in python test files - grep using two keywords
+  fgrep --include="test*.py" --exclude-dir={.git} --color=always -rnwi ./ -e $1 | less -R
+}
+
 # == Packages-related functions
 function asa(){		# search only in deb package names starting with pattern
   aptitude search ^$1 | awk '{print $2}'
@@ -222,6 +226,10 @@ function procs_for_path() {		# list processes for given path
   do
     ps -f -p $pid
   done
+}
+
+function awk_col(){
+    awk -F' ' "{print \$$1}"
 }
 
 # == Begin sysadvent2011

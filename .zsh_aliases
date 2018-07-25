@@ -120,7 +120,7 @@ alias list-functions="grep function ~/.zsh_functions --color=never"
 # APT, APTITUDE, DPKG
 #--------------------------------------------
 #alias s="sudo su"
-
+alias _="sudo"
 # install packages (Debian)
 alias ai="sudo apt install"
 # search pattern only in package names
@@ -329,12 +329,13 @@ function crm(){
 #--------------------------------------------
 # CALIBRE & RECOLL
 #--------------------------------------------
-alias c-it='calibre --with-library=/mnt/veracrypt3/books_it'
-alias r-it='recoll -c $HOME/.recoll_indexes/.recoll_it'
-alias c-astro='calibre --with-library=/mnt/veracrypt3/books_astro'
-alias r-astro='recoll -c $HOME/.recoll_indexes/.recoll_astro'
-alias c-life='calibre --with-library=/mnt/veracrypt3/books_life'
-alias r-life='recoll -c $HOME/.recoll_indexes/.recoll_life'
+CALIBRE_DIR="/mnt/sda5"
+alias c-it="calibre --with-library=$CALIBRE_DIR/books_it"
+alias c-astro="calibre --with-library=$CALIBRE_DIR/books_astro"
+alias c-life="calibre --with-library=$CALIBRE_DIR/books_life"
+alias r-it="recoll -c $HOME/.recoll_indexes/.recoll_it"
+alias r-astro="recoll -c $HOME/.recoll_indexes/.recoll_astro"
+alias r-life="recoll -c $HOME/.recoll_indexes/.recoll_life"
 
 #---------------------------------------------
 # HELP on comonly used sed, awk, perl commands
@@ -342,7 +343,7 @@ alias r-life='recoll -c $HOME/.recoll_indexes/.recoll_life'
 # help on how to use awk to extract given column
 alias h-awk="echo awk -F\':\' \'{print \$\2}\'"
 alias h-sed="man sed"
-alias h-perl="man perl"
+alias h-perl="echo \"echo \"(a b c)(a b c)\" | perl -ne 'print $1 while /(a) b/g'\""
 
 #---------------------------------------------
 # Comments & color removal
@@ -464,6 +465,8 @@ alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias windirstat="gdmap"
 
 alias zsh-loading-time="for i ({1..10}) time zsh -i -c exit"
+
+alias skip-header='tail -n +2'
 
 # Honor old .zsh_aliases.local customizations, but print depecation warning.
 if [ -f ~/.zsh_aliases.local ]; then
