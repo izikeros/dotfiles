@@ -38,7 +38,6 @@ x A-F1            	rofr.sh -r
 x W-space         	rofi -combi-modi window,drun,ssh,run -show combi
 x W-S-space       	~/dotfiles/scripts/rofi-scripts-collection/rofi-bangs.sh
 x W-x             	rofr.sh -l
-x C-A-Delete      	rofr.sh -l
 o W-S-Escape      	Exit
 o C-S-Enter       	Reconfigure
 x W-Escape        	xkill

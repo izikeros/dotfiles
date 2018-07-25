@@ -303,11 +303,13 @@
         <command>rofr.sh -l</command>
       </action>
     </keybind>
+    <!--
     <keybind key="C-A-Delete">
       <action name="Execute">
         <command>rofr.sh -l</command>
       </action>
     </keybind>
+    -->
     <keybind key="W-S-Escape">
       <action name="Exit"/>
     </keybind>
