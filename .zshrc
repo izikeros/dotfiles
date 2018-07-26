@@ -110,7 +110,12 @@ source $R/git/git.plugin.zsh
 
 
 # Docker completion
-#  zgen load srijanshetty/docker-zsh
+R=$INC/srijanshetty
+source $R/docker-zsh-master/docker.plugin.zsh
+
+R=$INC/supercrabtree
+source $R/k-master/k.plugin.zsh
+
 
 # Load me last
 GENCOMPL_FPATH=$HOME/.zsh/complete
@@ -209,12 +214,20 @@ eval "$(thefuck --alias)"
 #-----------------------
 # Powerlevel 9k
 #-----------------------
-source  ~/powerlevel9k/powerlevel9k.zsh-theme
+BG_COL='235'
 
 export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 # Limit to the last two folders
 export POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+
+#
+export POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=true
+
+# Change vcs settings
+export POWERLEVEL9K_STATUS_VERBOSE=true
+export POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
+export POWERLEVEL9K_SHOW_CHANGESET=true
 
 # Left, right prompt segments
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv context dir vcs)
@@ -225,19 +238,22 @@ export POWERLEVEL9K_DIR_SHOW_WRITABLE=true
 export DEFAULT_USER=izik
 
 export POWERLEVEL9K_DIR_HOME_FOREGROUND='blue'
-export POWERLEVEL9K_DIR_HOME_BACKGROUND=default
+export POWERLEVEL9K_DIR_HOME_BACKGROUND=$BG_COL
 export POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='blue'
-export POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND=default
+export POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND=$BG_COL
 export POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='blue'
-export POWERLEVEL9K_DIR_DEFAULT_BACKGROUND=default
+export POWERLEVEL9K_DIR_DEFAULT_BACKGROUND=$BG_COL
 
 # Advanced `vcs` color customization
-export POWERLEVEL9K_VCS_CLEAN_FOREGROUND='green'
-export POWERLEVEL9K_VCS_CLEAN_BACKGROUND=dafault
+export POWERLEVEL9K_VCS_CLEAN_FOREGROUND='green' # green
+export POWERLEVEL9K_VCS_CLEAN_BACKGROUND=$BG_COL
 export POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='yellow'
-export POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=default
+export POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=$BG_COL
 export POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='red'
-export POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=default
+export POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=$BG_COL
+#export POWERLEVEL9K_VCS_CLEAN_FOREGROUND='green'
+
+source  ~/powerlevel9k/powerlevel9k.zsh-theme
 #----------------
 # dedupe path
 #---------------
