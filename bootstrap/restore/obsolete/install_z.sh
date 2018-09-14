@@ -1,4 +1,6 @@
 #!/bin/bash
+# z can be replaced with fasd
+
 # ======== install z
 if [ ! -d ~/z ]; then
     git clone https://github.com/rupa/z ~/z

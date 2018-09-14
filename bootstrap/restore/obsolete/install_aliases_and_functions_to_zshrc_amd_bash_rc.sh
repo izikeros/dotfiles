@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# aliases are now in .zsh_aliases and functions in .zsh_functions
+
 echo "-------- install aliases & functions for bash and zsh -----------"
 ALIAS_PTH=$HOME/dotfiles/.aliases.sh
 FUNCT_PTH=$HOME/dotfiles/functions.sh
