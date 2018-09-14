@@ -133,11 +133,15 @@ alias au="sudo apt update"
 #-------------------------------------------
 # PACMAN, YAOURT
 #-------------------------------------------
+AUR_CMD="yay"
 alias pi="sudo pacman -S"
-alias yi="yaourt -S"
+alias yi="$AUR_CMD -S"
 
 alias pas="pacman -Ss"
-alias ys="yaourt -Ss"
+alias ys="$AUR_CMD -Ss"
+
+alias y-info="$AUR_CMD -Si"
+alias p-info="pacman -Si"
 
 # remove (uninstall) package
 alias prm="sudo pacman -Rns"
@@ -146,9 +150,12 @@ alias pacman="pacman --color=always"
 # alias pacman='sudo pacman --color auto'
 alias update="sudo pacman -Syu --color=always"
 alias u="sudo pacman -Syu --color=always"
-alias uy="sudo yaourt -Syua"
+alias uy="sudo $AUR_CMD -Syua"
 alias pacman-bigpkg="expac -s '%-30n %m' | sort -rhk 2 | less"
-alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
+alias mirrors="sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose"
+alias y-upgradable="sudo $AUR_CMD -Pu"
+alias y-rem-dep="sudo $AUR_CMD -Yc"
+alias p-rm-orphans="sudo pacman -Rns $(pacman -Qtdq)"
 
 #---------------------------------------------
 # Mount
