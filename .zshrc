@@ -49,27 +49,27 @@ export LS_COLORS='di=1;34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;
 export INC=$HOME/.zgen
 
 R=$INC/zsh-users
-source $R/zsh-completions-master/zsh-completions.plugin.zsh
-source $R/zsh-autosuggestions-master/zsh-autosuggestions.plugin.zsh
+#source $R/zsh-completions-master/zsh-completions.plugin.zsh
+#source $R/zsh-autosuggestions-master/zsh-autosuggestions.plugin.zsh
 #If zsh-syntax-highlighting is bundled after zsh-history-substring-search,
 #they break, so get the order right.
-source $R/zsh-syntax-highlighting-master/zsh-syntax-highlighting.zsh
-source $R/zsh-history-substring-search-master/zsh-history-substring-search.zsh
+#source $R/zsh-syntax-highlighting-master/zsh-syntax-highlighting.zsh
+#source $R/zsh-history-substring-search-master/zsh-history-substring-search.zsh
 # Load more completion files for zsh from the zsh-lovers github repo
-#source $R/zsh-completions-master src
+##source $R/zsh-completions-master src
 
-R=$INC/RobSis
+#R=$INC/RobSis
 # Very cool plugin that generates zsh completion functions for commands
     # if they have getopt-style help text. It doesn't generate them on the fly,
         # you'll have to explicitly generate a completion, but it's still quite cool.
-#source $R/zsh-completion-generator-master/zsh-completion-generator.plugin.zsh
+##source $R/zsh-completion-generator-master/zsh-completion-generator.plugin.zsh
 
 # Set keystrokes for substring searching
 zmodload zsh/terminfo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+#bindkey "$terminfo[kcuu1]" history-substring-search-up
+#bindkey "$terminfo[kcud1]" history-substring-search-down
 
-R=$INC/unixorn
+#R=$INC/unixorn
   # Add my collection of miscellaneous utility functions.
   #zgen load unixorn/jpb.zshplugin
 
@@ -77,7 +77,7 @@ R=$INC/unixorn
   # things, anyway.
   #zgen load unixorn/warhol.plugin.zsh
   # Add my collection of git helper scripts
-source $R/git-extra-commands-master/git-extra-commands.plugin.zsh
+#source $R/git-extra-commands-master/git-extra-commands.plugin.zsh
 
   # Add my bitbucket git helpers plugin
   #zgen load unixorn/bitbucket-git-helpers.plugin.zsh
@@ -93,13 +93,13 @@ source $R/git-extra-commands-master/git-extra-commands.plugin.zsh
   #zgen load StackExchange/blackbox
 
   # Load some oh-my-zsh plugins
-R=$INC/robbyrussell/oh-my-zsh-master/plugins
+#R=$INC/robbyrussell/oh-my-zsh-master/plugins
 #  zgen oh-my-zsh plugins/pip
 #  zgen oh-my-zsh plugins/sudo
 #  zgen oh-my-zsh plugins/aws
 #  zgen oh-my-zsh plugins/chruby
 #  zgen oh-my-zsh plugins/colored-man-pages
-source $R/git/git.plugin.zsh
+#source $R/git/git.plugin.zsh
   #zgen oh-my-zsh plugins/github
   #zgen oh-my-zsh plugins/python
   #zgen oh-my-zsh plugins/rsync
@@ -110,11 +110,11 @@ source $R/git/git.plugin.zsh
 
 
 # Docker completion
-R=$INC/srijanshetty
-source $R/docker-zsh-master/docker.plugin.zsh
+#R=$INC/srijanshetty
+#source $R/docker-zsh-master/docker.plugin.zsh
 
-R=$INC/supercrabtree
-source $R/k-master/k.plugin.zsh
+#R=$INC/supercrabtree
+#source $R/k-master/k.plugin.zsh
 
 
 # Load me last
@@ -132,14 +132,56 @@ GENCOMPL_FPATH=$HOME/.zsh/complete
   # Bullet train prompt setup
   #zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 #  zgen oh-my-zsh themes/strug
-
 # -------
+
+#-----------------------
+# Powerlevel 9k
+#-----------------------
+BG_COL='235'
+
+export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
+# Limit to the last two folders
+export POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+
+#
+export POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=true
+
+# Change vcs settings
+export POWERLEVEL9K_STATUS_VERBOSE=true
+export POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
+export POWERLEVEL9K_SHOW_CHANGESET=true
+
+# Left, right prompt segments
+export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv context dir vcs)
+export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws)
+
+export POWERLEVEL9K_DIR_SHOW_WRITABLE=true
+# default user (for this user at localhost context is not displayed)
+export DEFAULT_USER=izik
+
+export POWERLEVEL9K_DIR_HOME_FOREGROUND='blue'
+export POWERLEVEL9K_DIR_HOME_BACKGROUND=$BG_COL
+export POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='blue'
+export POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND=$BG_COL
+export POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='blue'
+export POWERLEVEL9K_DIR_DEFAULT_BACKGROUND=$BG_COL
+
+# Advanced `vcs` color customization
+export POWERLEVEL9K_VCS_CLEAN_FOREGROUND='green' # green
+export POWERLEVEL9K_VCS_CLEAN_BACKGROUND=$BG_COL
+export POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='yellow'
+export POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=$BG_COL
+export POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='red'
+export POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=$BG_COL
+#export POWERLEVEL9K_VCS_CLEAN_FOREGROUND='green'
+
 
 
 # start zgen
-#if [ -f ~/.zgen-setup ]; then
-#  source ~/.zgen-setup
-#fi
+if [ -f ~/.zgen-setup ]; then
+  source ~/.zgen-setup
+fi
 # end zgen
 
 # temporal hack to ensure that my aliases has priority
@@ -253,7 +295,7 @@ export POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='red'
 export POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=$BG_COL
 #export POWERLEVEL9K_VCS_CLEAN_FOREGROUND='green'
 
-source  ~/powerlevel9k/powerlevel9k.zsh-theme
+#source  ~/powerlevel9k/powerlevel9k.zsh-theme
 #----------------
 # dedupe path
 #---------------

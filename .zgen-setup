@@ -16,7 +16,7 @@ if [[ ! -f $ZGEN_PARENT_DIR/zgen/zgen.zsh ]]; then
     mkdir -p "$ZGEN_PARENT_DIR"
   fi
   pushd $ZGEN_PARENT_DIR
-  git clone git@github.com:tarjoilija/zgen.git
+  git clone https://github.com/tarjoilija/zgen.git
   popd
 fi
 source $ZGEN_PARENT_DIR/zgen/zgen.zsh
