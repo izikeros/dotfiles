@@ -1,0 +1,238 @@
+#!/bin/bash
+#zmodload zsh/zprof # if using profiler remember to uncomment zprof in the end of file
+
+# # Zsh start up sequence:
+#  1) /etc/zshenv   -> Always run for every zsh.   (login + interactive + other)
+#  2)   ~/.zshenv   -> Usually run for every zsh.  (login + interactive + other)
+#  3) /etc/zprofile -> Run for login shells.       (login)
+#  4)   ~/.zprofile -> Run for login shells.       (login)
+#  5) /etc/zshrc    -> Run for interactive shells. (login + interactive)
+#  6)   ~/.zshrc    -> Run for interactive shells. (login + interactive)
+#  7) /etc/zlogin   -> Run for login shells.       (login)
+#  8)   ~/.zlogin   -> Run for login shells.       (login)
+#
+
+# not running interactively then bail
+[[ $- != *i* ]] && return
+
+
+# colors in less (default PAGER in Arch)
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+# reload ~/.zshrc and compile to .zwc ...  ZDOTDIR see:
+# https://wiki.archlinux.org/index.php/zsh#Making_Zsh_your_default_shell
+function zsrc() {
+    local cache=""
+    [[ -n $ZSH_CACHE_DIR ]] && cache=$ZSH_CACHE_DIR || cache="${ZDOTDIR:-$HOME}/.cache"
+    autoload -U compinit zrecompile
+    compinit -d "$cache/zcomp-$HOST"
+    for f in ${ZDOTDIR:-$HOME}/.zshrc "$cache/zcomp-$HOST"; do
+        zrecompile -p $f && command rm -f $f.zwc.old
+    done
+    source ${ZDOTDIR:-$HOME}/.zshrc
+}
+[[ ! -e ${ZDOTDIR:-$HOME}/.zshrc.zwc ]] && zsrc &>/dev/null
+
+
+# Set this to use case-sensitive completion
+# CASE_SENSITIVE="true"
+
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+export COMPLETION_WAITING_DOTS="true"
+
+# turn off the infernal correctall for filenames
+unsetopt correctall
+
+
+
+# --------------
+# LS colors
+# -------------
+# Yes, these are a pain to customize. Fortunately, Geoff Greer made an online
+# tool that makes it easy to customize your color scheme and keep them in sync
+# across Linux and OS X/*BSD at http://geoff.greer.fm/lscolors/
+export LSCOLORS='Exfxcxdxbxegedabagacad'
+export LS_COLORS='di=1;34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
+
+
+# Set keystrokes for substring searching
+zmodload zsh/terminfo
+#bindkey "$terminfo[kcuu1]" history-substring-search-up
+#bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# Load me last
+GENCOMPL_FPATH=$HOME/.zsh/complete
+
+
+# start zgen
+if [ -f ~/.zgen-setup ]; then
+  source ~/.zgen-setup
+fi
+# end zgen
+
+# temporal hack to ensure that my aliases has priority
+source ~/.zsh_aliases
+source ~/.zsh_functions
+
+# Base PATH
+PATH=/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin
+export PATH=$HOME/bin:$PATH
+
+# TODO: clean-up this mess with setopt!!
+setopt AUTO_CD BANG_HIST EXTENDED_HISTORY HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_ALL_DUPS HIST_FIND_NO_DUPS HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE HIST_REDUCE_BLANKS HIST_SAVE_NO_DUPS
+setopt INC_APPEND_HISTORY SHARE_HISTORY
+
+# set some history options
+setopt append_history
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
+setopt hist_verify
+setopt histignorealldups
+setopt histfindnodups
+setopt incappendhistory
+setopt sharehistory
+setopt share_history
+
+# Correct spelling for commands
+#setopt correct
+
+# shell opts
+setopt autocd
+setopt completealiases
+
+# Share your history across all your terminal windows
+#setopt noclobber
+
+# set some more options
+setopt pushd_ignore_dups
+#setopt pushd_silent
+
+# Keep a ton of history.
+HISTSIZE=100000
+SAVEHIST=100000
+HISTFILE=~/.zsh_history
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+
+# Long running processes should return time after they complete. Specified
+# in seconds.
+REPORTTIME=2
+TIMEFMT="%U user %S system %P cpu %*Es total"
+
+# Expand aliases inline - see http://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
+
+# Speed up autocomplete, force prefix mapping
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)*==34=34}:${(s.:.)LS_COLORS}")';
+
+# Load any custom zsh completions we've installed
+if [ -d ~/.zsh-completions ]; then
+  for completion in ~/.zsh-completions/*
+  do
+    source "$completion"
+  done
+fi
+
+source /home/izik/dotfiles/env_and_path.sh
+
+# fzf - fuzzy find in history
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# fasd - fast cd
+eval "$(fasd --init auto)"
+
+# fuck - correct last command
+eval "$(thefuck --alias)"
+
+~/dotfiles/scripts/runonce.sh neofetch
+~/dotfiles/scripts/runonce.sh ~/dotfiles/scripts/check_if_repos_are_clean.sh
+
+#-----------------------
+# Powerlevel 9k
+#-----------------------
+BG_COL='235'
+
+export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
+# Limit to the last two folders
+export POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+
+#
+export POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=true
+
+# Change vcs settings
+export POWERLEVEL9K_STATUS_VERBOSE=true
+export POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
+export POWERLEVEL9K_SHOW_CHANGESET=true
+
+# Left, right prompt segments
+export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv context dir vcs)
+export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws)
+
+export POWERLEVEL9K_DIR_SHOW_WRITABLE=true
+# default user (for this user at localhost context is not displayed)
+export DEFAULT_USER=izik
+
+export POWERLEVEL9K_DIR_HOME_FOREGROUND='blue'
+export POWERLEVEL9K_DIR_HOME_BACKGROUND=$BG_COL
+export POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='blue'
+export POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND=$BG_COL
+export POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='blue'
+export POWERLEVEL9K_DIR_DEFAULT_BACKGROUND=$BG_COL
+
+# Advanced `vcs` color customization
+export POWERLEVEL9K_VCS_CLEAN_FOREGROUND='green' # green
+export POWERLEVEL9K_VCS_CLEAN_BACKGROUND=$BG_COL
+export POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='yellow'
+export POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=$BG_COL
+export POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='red'
+export POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=$BG_COL
+
+
+#----------------
+# dedupe path
+#---------------
+# In case a plugin adds a redundant path entry, remove duplicate entries
+# from PATH
+#
+# This snippet is from Mislav Marohnić <mislav.marohnic@gmail.com>'s
+# dotfiles repo at https://github.com/mislav/dotfiles
+dedupe_path() {
+  typeset -a paths result
+  paths=($path)
+
+  while [[ ${#paths} -gt 0 ]]; do
+    p="${paths[1]}"
+    shift paths
+    [[ -z ${paths[(r)$p]} ]] && result+="$p"
+  done
+
+  export PATH=${(j+:+)result}
+}
+# (!!!) Note: takes quite long. Check if deduplications are needed
+#dedupe_path
+
+#zprof # end of profiling
+
+# perform check of shell script
+#shellcheck -x ~/.zshrc
