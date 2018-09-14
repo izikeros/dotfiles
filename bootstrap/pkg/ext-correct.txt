@@ -3,8 +3,8 @@ doublecmdr-qt5
 fgallery
 git-gui
 llgal
-markdowm
-pep8pyflakes
+pep8
+pyflakes
 posterazor
 psfsam-basic
 rofi

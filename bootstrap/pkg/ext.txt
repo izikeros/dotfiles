@@ -1,21 +1,18 @@
 aspell
 aspell-en
 arandr
-byobu
+base-devel # group
+binutils
 docker
 docker-compose
-doublecmdr-qt5
 evince
-fgallery
 figlet          # large letters from text (terminal)
 firefox
 fping
 gdmap           # windirstat-like app
 glances
 gparted
-hugo
-llgal           # static gallery generator
-markdowm
+markdown
 meld
 mlocate         # media locate (used in rofi scripts)
 ncdu
@@ -24,8 +21,6 @@ nethogs
 numlockx
 npm
 parallel
-pep8pyflakes
-posterazor
 postgresql
 powertop
 psfsam          # (pdfsam-basic) for debian
@@ -34,12 +29,9 @@ python-pipenv
 ranger
 recoll
 redshift
-rofi
 ripgrep         # the silver searger (ag), faster alternative
 screen
 screenfetch
-shutter
-simplescreerecorder
 source-highlight
 stow            # replacing files
 sqlite3
