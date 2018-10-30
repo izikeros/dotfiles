@@ -5,6 +5,7 @@
 * symlink .gitconfig
 * if using plain zsh - symlink .zshrc_pure, if using zgen launch .zsh-setup
 * reload .zshrc
+* Arch: dmenu -> settings -> preferred applications -> Terminal: Terminator
 [install pathed fonts for powerline9k]
 * install fzf (install_fzf)
 * instal fasd package present in both Ubuntu, Arch
@@ -19,5 +20,6 @@
 *
 
 TODO:
+- write script for symlinking zsh related files
 - split .zshrc_pure into zshrc_plain and .zshrc_zgen
 - write script symlink XFCE
