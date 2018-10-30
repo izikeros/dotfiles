@@ -153,7 +153,7 @@ if [ -d ~/.zsh-completions ]; then
   done
 fi
 
-source /home/izik/dotfiles/env_and_path.sh
+source ~/dotfiles/env_and_path.sh
 
 # fzf - fuzzy find in history
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
