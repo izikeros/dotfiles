@@ -1,5 +1,6 @@
 * cd bootstrap/restore
 * ./pkg_from_the_list.sh ~/dotfiles/bootstrap/pkg/basic.txt
+* and ext.txt if not on the server but workstation
 * symlink zsh-relate files (e.g. .zsrc, .zsh_aliases, .zsh_functions, .zsh-setup)
 * symlink .gitconfig
 * if using plain zsh - symlink .zshrc_pure, if using zgen launch .zsh-setup
