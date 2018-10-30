@@ -5,6 +5,7 @@ base-devel # group
 binutils
 docker
 docker-compose
+doublecmd-qt5
 evince
 figlet          # large letters from text (terminal)
 firefox
@@ -23,7 +24,7 @@ npm
 parallel
 postgresql
 powertop
-psfsam          # (pdfsam-basic) for debian
+pdfsam          # (pdfsam-basic) for debian
 pydf
 python-pipenv
 ranger
@@ -32,6 +33,7 @@ redshift
 ripgrep         # the silver searger (ag), faster alternative
 screen
 screenfetch
+simplescreenrecorder
 source-highlight
 stow            # replacing files
 sqlite3

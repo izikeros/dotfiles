@@ -1,12 +1,11 @@
 byobu
-doublecmdr-qt5
 fgallery
-git-gui
 llgal
-pep8
-pyflakes
+git-gui # seems to be installed with git?
 posterazor
-psfsam-basic
-rofi
-shutter
-simplescreerecorder
+rofi		# already installed in Archlabs
+
+pep8		# needed system-wise?
+pyflakes	# needed system-wise?
+
+shutter # hard install from AUR (a lot of compilations))
