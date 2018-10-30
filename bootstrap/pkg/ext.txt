@@ -7,6 +7,7 @@ docker
 docker-compose
 doublecmd-qt5
 evince
+fasd
 figlet          # large letters from text (terminal)
 firefox
 fping
@@ -40,6 +41,7 @@ sqlite3
 sxiv
 terminator
 the_silver_searcher
+thefuck
 tmux
 tlp
 tk
