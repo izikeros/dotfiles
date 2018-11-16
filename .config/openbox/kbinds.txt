@@ -10,6 +10,27 @@ o S-W-4           	SendToDesktop
 o S-W-5           	SendToDesktop
 o A-Tab           	NextWindow
 o W-Tab           	NextWindow
+o W-Left          	UnmaximizeFull
+o W-Right         	UnmaximizeFull
+o A-F             	MaximizeFull
+o A-S-F           	UnmaximizeFull
+o A-S-k           	Unmaximize
+o A-S-j           	Unmaximize
+o W-k             	Unmaximize
+o W-h             	Unmaximize
+o W-j             	Unmaximize
+o W-l             	Unmaximize
+o A-z             	Unmaximize
+o A-x             	Unmaximize
+o A-c             	Unmaximize
+o W-Right         	MoveRelative
+o W-Left          	MoveRelative
+o W-Up            	MoveRelative
+o W-Down          	MoveRelative
+o W-S-Right       	ResizeRelative
+o W-S-Left        	ResizeRelative
+o W-S-Down        	ResizeRelative
+o W-S-Up          	ResizeRelative
 o S-W-Left        	SendToDesktopLeft
 o S-W-Right       	SendToDesktopRight
 o S-W-Up          	SendToDesktopUp
@@ -31,6 +52,7 @@ x W-f             	exo-open --launch FileManager
 x W-t             	exo-open --launch TerminalEmulator
 x W-w             	exo-open --launch WebBrowser
 x W-e             	geany
+x W-a             	xfce4-settings-manager
 x W-m             	audacious
 x W-v             	pavucontrol
 x W-s             	skippy-xd
@@ -38,7 +60,9 @@ x A-F1            	rofr.sh -r
 x W-space         	rofi -combi-modi window,drun,ssh,run -show combi
 x W-S-space       	~/dotfiles/scripts/rofi-scripts-collection/rofi-bangs.sh
 x W-x             	rofr.sh -l
+x C-A-Delete      	rofr.sh -l
 o W-S-Escape      	Exit
+o C-S-BackSpace   	Restart
 o C-S-Enter       	Reconfigure
 x W-Escape        	xkill
 o A-F4            	Close

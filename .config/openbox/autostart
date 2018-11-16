@@ -1,5 +1,5 @@
 #
-~/.screenlayout/dualscreen.sh
+#~/.screenlayout/dualscreen.sh
 
 # compton
 al-compositor --start &
@@ -7,23 +7,34 @@ al-compositor --start &
 # enable numlock, commented out for laptop users
 numlockx &
 
+# polkit, required for authentication
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# keyring for storing saved passwords
+gnome-keyring-daemon --start --components=pkcs11 &
+
+# pressing super key alone simulates pressing Alt-F1
+ksuperkey -e 'Super_L=Alt_L|F1' &
+ksuperkey -e 'Super_R=Alt_L|F1' &
+
 # restore wallpaper
 nitrogen --restore &
 
 # start panel
-sleep 1; al-polybar-session &
+al-polybar-session &
 
 # system tray
 #sleep 1; trayer --edge bottom --align left --widthtype request --SetDockType false --expand true &
 
-# Openbox autostart
+# openbox autostart
 ob-autostart -d &
-
-# PolicyKit authentication
-lxpolkit &
 
 # Required for xfce settings to work
 xfsettingsd &
 
-# Side shortcuts for file managers
+# Side panel shortcuts for file managers
 xdg-user-dirs-gtk-update &
+
+# start conky
+#sleep 1; al-conky-session --autostart &
+
