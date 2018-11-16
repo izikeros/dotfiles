@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <resistance>
     <strength>10</strength>
@@ -21,7 +22,7 @@
     <name>ArchLabs-Dark</name>
     <titleLayout>NLIMC</titleLayout>
     <keepBorder>yes</keepBorder>
-    <animateIconify>yes</animateIconify>
+    <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
       <name>Roboto</name>
       <size>11</size>
@@ -117,11 +118,6 @@
     <keybind key="W-4">
       <action name="GoToDesktop">
         <to>4</to>
-      </action>
-    </keybind>
-    <keybind key="W-5">
-      <action name="GoToDesktop">
-        <to>5</to>
       </action>
     </keybind>
     <keybind key="S-W-1">
@@ -414,6 +410,11 @@
         <command>geany</command>
       </action>
     </keybind>
+    <keybind key="W-a">
+      <action name="Execute">
+        <command>xfce4-settings-manager</command>
+      </action>
+    </keybind>
     <keybind key="W-m">
       <action name="Execute">
         <command>audacious</command>
@@ -458,6 +459,9 @@
     -->
     <keybind key="W-S-Escape">
       <action name="Exit"/>
+    </keybind>
+    <keybind key="C-S-BackSpace">
+      <action name="Restart"/>
     </keybind>
     <keybind key="C-S-Enter">
       <action name="Reconfigure"/>
