@@ -392,9 +392,9 @@ alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 #  blog
 #---------------------------------------------
 
-BLG="source ~/.virtualenvs/pelican-blog-H2eFmQ-s/bin/activate; cd ~/blog"
+BLG="cd ~/blog; pipenv shell"
 alias blog="$BLG"
-alias pelican-run="$BLG; pelican content; cd docs; python -m pelican.server"
+alias pelican-run="$BLG; pelican --lr"
 alias blog-push="cd ~/blog/docs; git add .; git ci -m \"update\"; gp"
 
 
