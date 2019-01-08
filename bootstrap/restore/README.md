@@ -40,6 +40,10 @@ meld ~/.config/openbox/rc.xml ~/dotfiles/.config/openbox/rc.xml
 meld ~/.config/openbox/autostart ~/dotfiles/.config/openbox/rc.xml
 meld ~/.config/openbox/environment ~/dotfiles/.config/openbox/environment
 ```
+XFCE4 - keyboard shortcuts:
+```
+meld ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml ~/dotfiles/.config/xfce4/xfwm4/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+```
 
 * wallpapers location: `/usr/share/backgrounds` (get wallpaper from dropbox)
 
