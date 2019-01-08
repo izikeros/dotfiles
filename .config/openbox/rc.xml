@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <resistance>
     <strength>10</strength>
@@ -22,7 +21,7 @@
     <name>ArchLabs-Dark</name>
     <titleLayout>NLIMC</titleLayout>
     <keepBorder>yes</keepBorder>
-    <animateIconify>no</animateIconify>
+    <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>Roboto</name>
       <size>11</size>
@@ -61,7 +60,7 @@
     </font>
   </theme>
   <desktops>
-    <number>2</number>
+    <number>1</number>
     <firstdesk>0</firstdesk>
     <names>
       <name>1</name>
@@ -120,6 +119,11 @@
         <to>4</to>
       </action>
     </keybind>
+    <keybind key="W-5">
+      <action name="GoToDesktop">
+        <to>5</to>
+      </action>
+    </keybind>
     <keybind key="S-W-1">
       <action name="SendToDesktop">
         <desktop>1</desktop>
@@ -159,15 +163,12 @@
       <action name="NextWindow">
         <allDesktops>yes</allDesktops>
         <finalactions>
-          <action name="SendToDesktop">
-            <desktop>1</desktop>
-          </action>
+          <action name="SendToDesktop"><to>current</to></action>
           <action name="focus"/>
           <action name="raise"/>
         </finalactions>
       </action>
     </keybind>
-    <!-- Window Tiling: Snap feature -->
     <keybind key="W-Left">
       <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
@@ -183,135 +184,6 @@
         <width>50%</width>
       </action>
       <action name="MoveToEdgeEast"/>
-    </keybind>
-    <keybind key="A-F">
-      <action name="MaximizeFull"/>
-    </keybind>
-    <keybind key="A-S-F">
-      <action name="UnmaximizeFull"/>
-    </keybind>
-    <keybind key="A-S-k">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>-15</x>
-        <y>15</y>
-        <height>96%</height>
-        <width>47%</width>
-      </action>
-    </keybind>
-    <keybind key="A-S-j">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>15</x>
-        <y>15</y>
-        <height>96%</height>
-        <width>47%</width>
-      </action>
-    </keybind>
-    <!-- Top right-->
-    <keybind key="W-k">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>-15</x>
-        <y>15</y>
-      </action>
-    </keybind>
-    <!-- Top left-->
-    <keybind key="W-h">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>15</x>
-        <y>15</y>
-      </action>
-    </keybind>
-    <!-- Bottom left-->
-    <keybind key="W-j">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>15</x>
-        <y>-15</y>
-      </action>
-    </keybind>
-    <!-- Bottom right-->
-    <keybind key="W-l">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>-15</x>
-        <y>-15</y>
-      </action>
-    </keybind>
-    <keybind key="A-z">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>15</x>
-        <y>15</y>
-        <height>97%</height>
-        <width>32%</width>
-      </action>
-    </keybind>
-    <keybind key="A-x">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>34%</x>
-        <y>15</y>
-        <height>97%</height>
-        <width>32%</width>
-      </action>
-    </keybind>
-    <keybind key="A-c">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>-17</x>
-        <y>15</y>
-        <height>97%</height>
-        <width>32%</width>
-      </action>
-    </keybind>
-    <!-- Move -->
-    <keybind key="W-Right">
-      <action name="MoveRelative">
-        <x>20</x>
-        <y>0</y>
-      </action>
-    </keybind>
-    <keybind key="W-Left">
-      <action name="MoveRelative">
-        <x>-20</x>
-        <y>0</y>
-      </action>
-    </keybind>
-    <keybind key="W-Up">
-      <action name="MoveRelative">
-        <x>0</x>
-        <y>-20</y>
-      </action>
-    </keybind>
-    <keybind key="W-Down">
-      <action name="MoveRelative">
-        <x>0</x>
-        <y>20</y>
-      </action>
-    </keybind>
-    <!-- Resize -->
-    <keybind key="W-S-Right">
-      <action name="ResizeRelative">
-        <right>20</right>
-      </action>
-    </keybind>
-    <keybind key="W-S-Left">
-      <action name="ResizeRelative">
-        <right>-20</right>
-      </action>
-    </keybind>
-    <keybind key="W-S-Down">
-      <action name="ResizeRelative">
-        <bottom>20</bottom>
-      </action>
-    </keybind>
-    <keybind key="W-S-Up">
-      <action name="ResizeRelative">
-        <bottom>-20</bottom>
-      </action>
     </keybind>
     <keybind key="S-W-Left">
       <action name="SendToDesktopLeft"/>
@@ -400,6 +272,16 @@
         <command>exo-open --launch TerminalEmulator</command>
       </action>
     </keybind>
+    <keybind key="C-A-t">
+      <action name="Execute">
+        <command>exo-open --launch TerminalEmulator</command>
+      </action>
+    </keybind>
+    <keybind key="W-Return">
+      <action name="Execute">
+        <command>exo-open --launch TerminalEmulator</command>
+      </action>
+    </keybind>
     <keybind key="W-w">
       <action name="Execute">
         <command>exo-open --launch WebBrowser</command>
@@ -432,7 +314,7 @@
     </keybind>
     <keybind key="A-F1">
       <action name="Execute">
-        <command>rofr.sh -r</command>
+        <command>rofi_run -r</command>
       </action>
     </keybind>
     <keybind key="W-space">
@@ -447,13 +329,13 @@
     </keybind>
     <keybind key="W-x">
       <action name="Execute">
-        <command>rofr.sh -l</command>
+        <command>rofi_run -l</command>
       </action>
     </keybind>
     <!--
     <keybind key="C-A-Delete">
       <action name="Execute">
-        <command>rofr.sh -l</command>
+        <command>rofi_run -l</command>
       </action>
     </keybind>
     -->
@@ -463,7 +345,7 @@
     <keybind key="C-S-BackSpace">
       <action name="Restart"/>
     </keybind>
-    <keybind key="C-S-Enter">
+    <keybind key="C-S-Return">
       <action name="Reconfigure"/>
     </keybind>
     <keybind key="W-Escape">
@@ -498,10 +380,15 @@
     <keybind key="A-m">
       <action name="Move"/>
     </keybind>
-    <keybind key="S-W-q">
+    <keybind key="W-q">
       <action name="Close"/>
     </keybind>
     <!--
+    <keybind key="W-space">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
+      </action>
+    </keybind>
     <keybind key="A-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>
