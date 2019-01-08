@@ -10,20 +10,31 @@ numlockx &
 # restore wallpaper
 nitrogen --restore &
 
-# start panel
-sleep 1; al-polybar-session &
+# required for xfce settings to work
+xfsettingsd &
 
+# fancy window switcher
+skippy-xd --config ~/.config/skippy-xd/skippy-xd.rc --start-daemon &
+
+# start the panel
+al-polybar-session &
+
+# not used:
 # system tray
 #sleep 1; trayer --edge bottom --align left --widthtype request --SetDockType false --expand true &
 
+# perhaps obsolete
 # Openbox autostart
-ob-autostart -d &
+#ob-autostart -d &
 
+# perhaps obsolete
 # PolicyKit authentication
-lxpolkit &
+# lxpolkit &
 
-# Required for xfce settings to work
-xfsettingsd &
+# not used
+# start conky
+#al-conky-session --autostart &
 
+# perhaps obsolete
 # Side shortcuts for file managers
-xdg-user-dirs-gtk-update &
+#xdg-user-dirs-gtk-update &

@@ -163,13 +163,27 @@
       <action name="NextWindow">
         <allDesktops>yes</allDesktops>
         <finalactions>
-          <action name="SendToDesktop">
-            <desktop>1</desktop>
-          </action>
+          <action name="SendToDesktop"><to>current</to></action>
           <action name="focus"/>
           <action name="raise"/>
         </finalactions>
       </action>
+    </keybind>
+    <keybind key="W-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+      </action>
+      <action name="MoveToEdgeWest"/>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+      </action>
+      <action name="MoveToEdgeEast"/>
     </keybind>
     <keybind key="S-W-Left">
       <action name="SendToDesktopLeft"/>
@@ -258,6 +272,16 @@
         <command>exo-open --launch TerminalEmulator</command>
       </action>
     </keybind>
+    <keybind key="C-A-t">
+      <action name="Execute">
+        <command>exo-open --launch TerminalEmulator</command>
+      </action>
+    </keybind>
+    <keybind key="W-Return">
+      <action name="Execute">
+        <command>exo-open --launch TerminalEmulator</command>
+      </action>
+    </keybind>
     <keybind key="W-w">
       <action name="Execute">
         <command>exo-open --launch WebBrowser</command>
@@ -266,6 +290,11 @@
     <keybind key="W-e">
       <action name="Execute">
         <command>geany</command>
+      </action>
+    </keybind>
+    <keybind key="W-a">
+      <action name="Execute">
+        <command>xfce4-settings-manager</command>
       </action>
     </keybind>
     <keybind key="W-m">
@@ -285,7 +314,7 @@
     </keybind>
     <keybind key="A-F1">
       <action name="Execute">
-        <command>rofr.sh -r</command>
+        <command>rofi_run -r</command>
       </action>
     </keybind>
     <keybind key="W-space">
@@ -300,20 +329,23 @@
     </keybind>
     <keybind key="W-x">
       <action name="Execute">
-        <command>rofr.sh -l</command>
+        <command>rofi_run -l</command>
       </action>
     </keybind>
     <!--
     <keybind key="C-A-Delete">
       <action name="Execute">
-        <command>rofr.sh -l</command>
+        <command>rofi_run -l</command>
       </action>
     </keybind>
     -->
     <keybind key="W-S-Escape">
       <action name="Exit"/>
     </keybind>
-    <keybind key="C-S-Enter">
+    <keybind key="C-S-BackSpace">
+      <action name="Restart"/>
+    </keybind>
+    <keybind key="C-S-Return">
       <action name="Reconfigure"/>
     </keybind>
     <keybind key="W-Escape">
@@ -348,10 +380,15 @@
     <keybind key="A-m">
       <action name="Move"/>
     </keybind>
-    <keybind key="S-W-q">
+    <keybind key="W-q">
       <action name="Close"/>
     </keybind>
     <!--
+    <keybind key="W-space">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
+      </action>
+    </keybind>
     <keybind key="A-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>
