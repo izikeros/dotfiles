@@ -130,8 +130,8 @@
 	ss = stash save
 
 [merge]
-    #tool = mymeld
-    tool = kdiff3
+    tool = mymeld
+    #tool = kdiff3
     conflictstyle = diff3
 
 [mergetool "mymeld"]
