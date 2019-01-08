@@ -1,15 +1,32 @@
-* cd bootstrap/restore
-* ./pkg_from_the_list.sh ~/dotfiles/bootstrap/pkg/basic.txt
-* and ext.txt if not on the server but workstation
-* symlink zsh-relate files (e.g. .zsrc, .zsh_aliases, .zsh_functions, .zsh-setup)
+## install packages:
+```
+cd dotfiles/bootstrap/restore
+```
+basic stuff:
+```
+./pkg_from_the_list.sh ~/dotfiles/bootstrap/pkg/basic.txt
+```
+for convenience also packages from `ext.txt` if not on the server but workstation
+
+## symlink zsh-relate files:
+```
+	.zshrc
+	.zsh_aliases
+	.zsh_functions
+	.zgen-setup
+```
 * symlink .gitconfig
+
 * if using plain zsh - symlink .zshrc_pure, if using zgen launch .zsh-setup
 * reload .zshrc
+
 * Arch: dmenu -> settings -> preferred applications -> Terminal: Terminator
+
 [install pathed fonts for powerline9k]
-* install fzf (install_fzf)
-* instal fasd package present in both Ubuntu, Arch
-* install thefuck package (Arch)
+* install fzf (install_fzf, dont want to update shell config files)
+
+* install fasd package present in both Ubuntu, Arch
+
 * ./install_vim.sh
 * install yay (install_yay.sh) or trizen
 
