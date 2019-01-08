@@ -33,6 +33,11 @@ for convenience also packages from `ext.txt` if not on the server but workstatio
 * if using xbindkeysrc: symlink .xbindkeysrc
 
 # symlink/merge content from .config -> manual work
+```
+meld ~/.config/openbox/rc.xml ~/dotfiles/.config/openbox/rc.xml
+meld ~/.config/openbox/autostart ~/dotfiles/.config/openbox/rc.xml
+meld ~/.config/openbox/environment ~/dotfiles/.config/openbox/environment
+```
 * symlink xfce4 settings (see: restore_setup in obsolete)
 *
 
