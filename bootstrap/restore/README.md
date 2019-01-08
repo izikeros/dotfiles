@@ -20,9 +20,12 @@ for convenience also packages from `ext.txt` if not on the server but workstatio
 * if using plain zsh - symlink .zshrc_pure, if using zgen launch .zsh-setup
 * reload .zshrc
 
-* Arch: dmenu -> settings -> preferred applications -> Terminal: Terminator
+* Change default terminal
+```
+Arch: dmenu -> settings -> preferred applications -> Terminal: Terminator
+```
 
-[install pathed fonts for powerline9k]
+* [install patched fonts for powerline9k]
 
 * install fzf (`install_fzf.sh`, dont want to update shell config files)
 
