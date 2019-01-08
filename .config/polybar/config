@@ -1,0 +1,53 @@
+;=====================================================
+;     File Includes
+;=====================================================
+
+[section/base]
+include-file = /home/izix/.config/polybar/master.conf
+include-file = /home/izix/.config/polybar/modules.conf
+
+
+;=====================================================
+;     Openbox Bars
+;=====================================================
+
+[bar/openbox-bar]
+inherit = bar/master
+
+; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor = LVDS1
+
+;modules-left   = jgmenu workspaces
+modules-left   = jgmenu
+modules-center = window_switch redshift pkg
+modules-right  = temperature coreuse filesystem info-trash isrunning-dropbox memory network wifi volume battery clock
+
+
+;=====================================================
+;     i3 Bars
+;=====================================================
+
+[bar/i3-bar]
+inherit = bar/master
+
+; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor =
+
+modules-left   = jgmenu i3 menu
+modules-center = clock
+modules-right  = coreuse temperature memory pkg network volume
+
+
+;=====================================================
+;     Bspwm Bars
+;=====================================================
+
+[bar/bspwm-bar]
+inherit = bar/master
+
+; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor =
+
+modules-left   = bspwm menu
+modules-center = clock
+modules-right  = coreuse temperature memory pkg network volume
