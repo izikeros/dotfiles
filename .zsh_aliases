@@ -131,7 +131,7 @@ alias au="sudo apt update"
 #alias largest-packages=dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
 
 #-------------------------------------------
-# PACMAN, YAOURT
+# PACMAN, YAY (for AUR)
 #-------------------------------------------
 AUR_CMD="yay"
 alias pi="sudo pacman -S"
@@ -142,6 +142,8 @@ alias ys="$AUR_CMD -Ss"
 
 alias y-info="$AUR_CMD -Si"
 alias p-info="pacman -Si"
+
+alias y-stats="$AUR_CMD" -P --stats
 
 # remove (uninstall) package
 alias prm="sudo pacman -Rns"

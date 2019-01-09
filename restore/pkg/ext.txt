@@ -34,6 +34,7 @@ redshift
 ripgrep         # the silver searger (ag), faster alternative
 screen
 screenfetch
+shellcheck		# shell scripts checker
 simplescreenrecorder
 source-highlight
 stow            # replacing files

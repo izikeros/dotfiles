@@ -4,8 +4,8 @@
 # Arch linux ultimate installer
 # https://github.com/helmuthdu/aui/blob/master/sharedfuncs
 SYS=""
-cat /etc/issue | grep -q  "Ubuntu" && SYS="ubuntu"
-cat /etc/issue | grep -q  "Arch\|archlabs" && SYS="arch"
+grep -q  "Ubuntu" /etc/issue && SYS="ubuntu"
+grep -q  "Arch\|archlabs" /etc/issue && SYS="arch"
 
 if [ "$SYS" == "ubuntu" ]; then
     #echo "-- Ubuntu Linux detected, using apt-get"
@@ -24,4 +24,4 @@ if [ "$SYS" == "" ]; then
     exit 1
 fi
 
-echo $CMD
+echo "$CMD"

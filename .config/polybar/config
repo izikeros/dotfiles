@@ -3,8 +3,8 @@
 ;=====================================================
 
 [section/base]
-include-file = /home/izix/.config/polybar/master.conf
-include-file = /home/izix/.config/polybar/modules.conf
+include-file = ~/.config/polybar/master.conf
+include-file = ~/.config/polybar/modules.conf
 
 
 ;=====================================================

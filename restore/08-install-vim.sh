@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # ======= prepare vim
-source $HOME/dotfiles/bootstrap/restore/helper_functions.sh
+# shellcheck source=./helper_functions.sh
+source "$HOME/dotfiles/bootstrap/restore/helper_functions.sh"
 
 symlink_dotfile ./dotfiles/.vimrc ~/.vimrc
 

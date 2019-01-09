@@ -6,6 +6,6 @@ if [ ! -d ~/.fzf ]; then
     ~/.fzf/install
     echo "fzf installed"
 else
-    echo "~/.fzf directory already exist, skipping cloning and installation"
+    echo "$HOME/.fzf directory already exist, skipping cloning and installation"
 fi
 echo

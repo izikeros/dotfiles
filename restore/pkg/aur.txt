@@ -1,6 +1,7 @@
 #  installs from AUR
-
-screenkey
+dropbox
+sublime-text-dev
+screenkey  # show keys (usefull whe recording video tutorials)
 grc # another colorizer
 # visual-studio-code-bin
 peek # capture screen to gif

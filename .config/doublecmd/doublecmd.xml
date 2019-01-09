@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<doublecmd DCVersion="0.7.8 beta" ConfigVersion="9">
+<?xml version="1.0" encoding="UTF-8"?>
+<doublecmd DCVersion="0.8.4 beta" ConfigVersion="10">
   <Configuration Save="True" SortOrder="0">
     <UseConfigInProgramDir>False</UseConfigInProgramDir>
   </Configuration>
@@ -128,6 +128,7 @@
       <ForeColor>0</ForeColor>
       <BackColor>16777215</BackColor>
     </FreeSpaceIndicator>
+    <gBorderFrameWidth>1</gBorderFrameWidth>
   </Colors>
   <Plugins>
     <WlxPlugins>
@@ -192,7 +193,7 @@
       <WcxPlugin Enabled="True">
         <ArchiveExt>zipx</ArchiveExt>
         <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
-        <Flags>212</Flags>
+        <Flags>223</Flags>
       </WcxPlugin>
       <WcxPlugin Enabled="True">
         <ArchiveExt>cpio</ArchiveExt>
@@ -214,6 +215,11 @@
         <Path>%commander_path%/plugins/wcx/unrar/unrar.wcx</Path>
         <Flags>68</Flags>
       </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>jar</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>990</Flags>
+      </WcxPlugin>
     </WcxPlugins>
     <WdxPlugins>
       <WdxPlugin>
@@ -225,6 +231,11 @@
         <Name>rpm_wdx</Name>
         <Path>%COMMANDER_PATH%/plugins/wdx/rpm_wdx/rpm_wdx.wdx</Path>
         <DetectString>EXT="RPM"</DetectString>
+      </WdxPlugin>
+      <WdxPlugin>
+        <Name>audioinfo</Name>
+        <Path>%COMMANDER_PATH%/plugins/wdx/audioinfo/audioinfo.wdx</Path>
+        <DetectString>(EXT="MP3") | (EXT="MP2") | (EXT="MP1") | (EXT="OGG") | (EXT="WMA") | (EXT="WAV") | (EXT="VQF") | (EXT="AAC") | (EXT="APE") | (EXT="MPC") | (EXT="FLAC") | (EXT="CDA") | (EXT="TTA") | (EXT="AC3") | (EXT="DTS") | (EXT="WV") | (EXT="WVC") | (EXT="OFR") | (EXT="OFS") | (EXT="M4A") | (EXT="MP4")</DetectString>
       </WdxPlugin>
     </WdxPlugins>
     <WfxPlugins>
@@ -265,30 +276,6 @@
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="wilabs">/home/izik/</Path>
-                  <Path Filename="ebadu">/home/izik/wilabs/</Path>
-                  <Path Filename="..">/home/izik/wilabs/ebadu/</Path>
-                  <Path Filename="firma">/home/izik/</Path>
-                  <Path Filename="faktury">/home/izik/firma/</Path>
-                  <Path Filename="2017_05">/home/izik/firma/faktury/</Path>
-                  <Path Filename="20596078_Faktura_20170421.pdf.pdf">/home/izik/firma/faktury/2017_05/</Path>
-                  <Path Filename="Pictures">/home/izik/</Path>
-                  <Path Filename="_darktest">/home/izik/Pictures/</Path>
-                  <Path Filename="a_MG_7274.CR2">/home/izik/Pictures/_darktest/</Path>
-                  <Path Filename="Downloads">/home/izik/</Path>
-                  <Path Filename="wfirma.ics">/home/izik/Downloads/</Path>
-                  <Path Filename="src">/home/izik/</Path>
-                  <Path Filename="filecluster.ipynb">/home/izik/src/</Path>
-                  <Path Filename="..">/home/izik/</Path>
-                  <Path Filename="..">/media/izik/LUBUNTU 17_/</Path>
-                  <Path Filename="..">/home/izik/</Path>
-                  <Path Filename="..">/home/</Path>
-                  <Path Filename="mnt">/</Path>
-                  <Path Filename="home">/mnt/</Path>
-                  <Path Filename="Documents">/mnt/home/</Path>
-                  <Path Filename="..">/mnt/home/Documents/</Path>
-                  <Path Filename="Documents">/mnt/home/</Path>
-                  <Path Filename="..">/mnt/home/Documents/</Path>
                   <Path Filename="Downloads">/mnt/home/</Path>
                   <Path Filename="..">/mnt/home/Downloads/</Path>
                   <Path Filename="izik_home">/mnt/home/</Path>
@@ -314,7 +301,31 @@
                   <Path Filename="..">/home/izik/vladikoff-archon-e3c9b322402a/</Path>
                   <Path Filename="vladikoff-archon-e3c9b322402a">/home/izik/</Path>
                   <Path Filename="..">/home/izik/vladikoff-archon-e3c9b322402a/</Path>
-                  <Path Filename="rec-2017-06-09_12.07.32.mkv">/home/izik/</Path>
+                  <Path Filename="dotfiles">/home/izik/</Path>
+                  <Path Filename=".config">/home/izik/dotfiles/</Path>
+                  <Path Filename="..">/home/izik/dotfiles/.config/</Path>
+                  <Path Filename="dotfiles">/home/izik/</Path>
+                  <Path Filename="bootstrap">/home/izik/dotfiles/</Path>
+                  <Path Filename="..">/home/izik/dotfiles/bootstrap/</Path>
+                  <Path Filename="restore">/home/izik/dotfiles/</Path>
+                  <Path Filename="..">/home/izik/dotfiles/restore/</Path>
+                  <Path Filename="restore">/home/izik/dotfiles/</Path>
+                  <Path Filename="dotfiles">/home/izik/</Path>
+                  <Path Filename="restore">/home/izik/dotfiles/</Path>
+                  <Path Filename="..">/home/izik/dotfiles/restore/</Path>
+                  <Path Filename=".config">/home/izik/dotfiles/</Path>
+                  <Path Filename="polybar">/home/izik/dotfiles/.config/</Path>
+                  <Path Filename="modules.conf">/home/izik/dotfiles/.config/polybar/</Path>
+                  <Path Filename="polybar">/home/izik/dotfiles/.config/</Path>
+                  <Path Filename=".config">/home/izik/dotfiles/</Path>
+                  <Path Filename="dotfiles">/home/izik/</Path>
+                  <Path Filename="restore">/home/izik/dotfiles/</Path>
+                  <Path Filename="helper_functions.sh">/home/izik/dotfiles/restore/</Path>
+                  <Path Filename="restore">/home/izik/dotfiles/</Path>
+                  <Path Filename=".config">/home/izik/</Path>
+                  <Path Filename="home">/run/media/izik/3724edaa-54d9-46cf-afc9-8f3940885b04/</Path>
+                  <Path Filename="izix">/run/media/izik/3724edaa-54d9-46cf-afc9-8f3940885b04/home/</Path>
+                  <Path Filename="blog">/run/media/izik/3724edaa-54d9-46cf-afc9-8f3940885b04/home/izix/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -449,6 +460,9 @@
                   <Path Filename="izik">/mnt/old/home/</Path>
                   <Path Filename="..">/mnt/old/home/izik/</Path>
                   <Path Filename="">/home/izik/firma/</Path>
+                  <Path Filename="">/home/izik/</Path>
+                  <Path Filename="">/home/izik/firma/</Path>
+                  <Path Filename="">/home/izik/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -462,38 +476,19 @@
         </Tab>
       </Left>
       <Right>
-        <ActiveTab>0</ActiveTab>
+        <ActiveTab>1</ActiveTab>
         <Tab>
           <FileView Type="columns">
             <Sortings>
               <Sorting>
-                <Direction>2</Direction>
-                <Function>7</Function>
+                <Direction>1</Direction>
+                <Function>12</Function>
               </Sorting>
             </Sortings>
             <History>
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="documents">/mnt/home/</Path>
-                  <Path Filename="Faktury">/mnt/home/documents/</Path>
-                  <Path Filename="..">/mnt/home/documents/Faktury/</Path>
-                  <Path Filename="luxmed">/mnt/home/documents/</Path>
-                  <Path Filename="..">/mnt/home/documents/luxmed/</Path>
-                  <Path Filename="taxBreak_reports">/mnt/home/documents/</Path>
-                  <Path Filename="..">/mnt/home/documents/taxBreak_reports/</Path>
-                  <Path Filename="..">/mnt/home/documents/</Path>
-                  <Path Filename="_cleanup">/mnt/home/</Path>
-                  <Path Filename="cheatsheet">/mnt/home/_cleanup/</Path>
-                  <Path Filename="tmux_screen_cheatsheets_links">/mnt/home/_cleanup/cheatsheet/</Path>
-                  <Path Filename="..">/mnt/home/_cleanup/cheatsheet/tmux_screen_cheatsheets_links/</Path>
-                  <Path Filename="..">/mnt/home/_cleanup/cheatsheet/</Path>
-                  <Path Filename="..">/mnt/home/_cleanup/</Path>
-                  <Path Filename="5_priv">/mnt/home/</Path>
-                  <Path Filename="_storage_documents">/mnt/home/5_priv/</Path>
-                  <Path Filename="Mieszkanie">/mnt/home/5_priv/_storage_documents/</Path>
-                  <Path Filename="..">/mnt/home/5_priv/_storage_documents/Mieszkanie/</Path>
-                  <Path Filename="Mieszkanie">/mnt/home/5_priv/_storage_documents/</Path>
                   <Path Filename="materia?y_dodatkowe">/mnt/home/5_priv/_storage_documents/umowa_strzegomska/</Path>
                   <Path Filename="..">/mnt/home/5_priv/_storage_documents/umowa_strzegomska/materia?y_dodatkowe/</Path>
                   <Path Filename="..">/mnt/home/5_priv/_storage_documents/umowa_strzegomska/</Path>
@@ -525,6 +520,25 @@
                   <Path Filename="wilabs">/home/izik/</Path>
                   <Path Filename="books">/home/izik/wilabs/</Path>
                   <Path Filename="writing_idiomatic_python_3.pdf">/home/izik/wilabs/books/</Path>
+                  <Path Filename="dotfiles">/home/izik/</Path>
+                  <Path Filename=".config">/home/izik/dotfiles/</Path>
+                  <Path Filename="..">/home/izik/dotfiles/.config/</Path>
+                  <Path Filename="home">/mnt/sda3/</Path>
+                  <Path Filename="izix">/mnt/sda3/home/</Path>
+                  <Path Filename=".config">/mnt/sda3/home/izix/</Path>
+                  <Path Filename="polybar">/mnt/sda3/home/izix/.config/</Path>
+                  <Path Filename="..">/mnt/sda3/home/izix/.config/polybar/</Path>
+                  <Path Filename=".config">/home/izik/</Path>
+                  <Path Filename="openbox">/home/izik/.config/</Path>
+                  <Path Filename="..">/home/izik/.config/openbox/</Path>
+                  <Path Filename="xfce4">/home/izik/.config/</Path>
+                  <Path Filename="xfconf">/home/izik/.config/xfce4/</Path>
+                  <Path Filename="xfce-perchannel-xml">/home/izik/.config/xfce4/xfconf/</Path>
+                  <Path Filename="xfce4-keyboard-shortcuts.xml">/home/izik/.config/xfce4/xfconf/xfce-perchannel-xml/</Path>
+                  <Path Filename="..">/home/</Path>
+                  <Path Filename="bin">/</Path>
+                  <Path Filename="al-conkypin">/bin/</Path>
+                  <Path Filename="bin">/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -540,64 +554,64 @@
           <FileView Type="columns">
             <Sortings>
               <Sorting>
-                <Direction>2</Direction>
-                <Function>7</Function>
+                <Direction>1</Direction>
+                <Function>12</Function>
               </Sorting>
             </Sortings>
             <History>
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="home">/mnt/</Path>
-                  <Path Filename="izik">/mnt/home/</Path>
-                  <Path Filename="Videos">/mnt/home/izik/</Path>
-                  <Path Filename="_brak_napisow">/mnt/home/izik/Videos/</Path>
-                  <Path Filename="..">/mnt/home/izik/Videos/_brak_napisow/</Path>
-                  <Path Filename="Appleseed">/mnt/home/izik/Videos/</Path>
-                  <Path Filename="..">/mnt/home/izik/Videos/Appleseed/</Path>
-                  <Path Filename="Globecom_Arch">/mnt/home/izik/Videos/</Path>
-                  <Path Filename="One slide demo">/mnt/home/izik/Videos/Globecom_Arch/</Path>
-                  <Path Filename="..">/mnt/home/izik/Videos/Globecom_Arch/One slide demo/</Path>
-                  <Path Filename="..">/mnt/home/izik/Videos/Globecom_Arch/</Path>
-                  <Path Filename="TED">/mnt/home/izik/Videos/</Path>
-                  <Path Filename="..">/mnt/home/izik/Videos/TED/</Path>
-                  <Path Filename="Promo">/mnt/home/izik/Videos/</Path>
-                  <Path Filename="..">/mnt/home/izik/Videos/Promo/</Path>
-                  <Path Filename="Sluzby Specjalne">/mnt/home/izik/Videos/</Path>
-                  <Path Filename="..">/mnt/home/izik/Videos/Sluzby Specjalne/</Path>
-                  <Path Filename="Stalker (1979) Andrei Tarkovsky">/mnt/home/izik/Videos/</Path>
-                  <Path Filename="..">/mnt/home/izik/Videos/Stalker (1979) Andrei Tarkovsky/</Path>
-                  <Path Filename="Stalker (1979) Andrei Tarkovsky">/mnt/home/izik/Videos/</Path>
-                  <Path Filename="..">/mnt/home/izik/Videos/Stalker (1979) Andrei Tarkovsky/</Path>
-                  <Path Filename="LTE Radio Access">/mnt/home/izik/Videos/</Path>
-                  <Path Filename="..">/mnt/home/izik/Videos/LTE Radio Access/</Path>
-                  <Path Filename="Zawitkowski">/mnt/home/izik/Videos/</Path>
-                  <Path Filename="..">/mnt/home/izik/Videos/Zawitkowski/</Path>
-                  <Path Filename="Promo">/mnt/home/izik/Videos/</Path>
-                  <Path Filename="..">/mnt/home/izik/Videos/Promo/</Path>
-                  <Path Filename="TED">/mnt/home/izik/Videos/</Path>
-                  <Path Filename="..">/mnt/home/izik/Videos/TED/</Path>
-                  <Path Filename="..">/mnt/home/izik/Videos/</Path>
-                  <Path Filename="books">/mnt/home/izik/</Path>
-                  <Path Filename="ChomikBox">/mnt/home/izik/books/</Path>
-                  <Path Filename="..">/mnt/home/izik/books/ChomikBox/</Path>
-                  <Path Filename="books_and_reading_priv">/mnt/home/izik/books/</Path>
-                  <Path Filename="biology">/mnt/home/izik/books/books_and_reading_priv/</Path>
-                  <Path Filename="..">/mnt/home/izik/books/books_and_reading_priv/biology/</Path>
-                  <Path Filename="books_Self Improvement">/mnt/home/izik/books/books_and_reading_priv/</Path>
-                  <Path Filename="Seven Steps To Goal Setting.pdf">/mnt/home/izik/books/books_and_reading_priv/books_Self Improvement/</Path>
-                  <Path Filename="..">/home/izik/Downloads/</Path>
-                  <Path Filename="..">/mnt/home/Downloads/</Path>
-                  <Path Filename="Downloads">/mnt/home/</Path>
-                  <Path Filename="">/home/izik/Downloads/</Path>
-                  <Path Filename="">/home/izik/</Path>
-                  <Path Filename="">/home/izik/Downloads/</Path>
-                  <Path Filename="">/home/izik/</Path>
-                  <Path Filename="">/home/izik/Downloads/</Path>
-                  <Path Filename="">/home/izik/</Path>
-                  <Path Filename="">/home/izik/Downloads/</Path>
-                  <Path Filename="">/home/izik/</Path>
-                  <Path Filename="">/home/izik/Downloads/</Path>
+                  <Path Filename="vimwiki">/home/izik/Dropbox/</Path>
+                  <Path Filename="..">/home/izik/Dropbox/vimwiki/</Path>
+                  <Path Filename="..">/home/izik/Dropbox/</Path>
+                  <Path Filename="dotfiles">/home/izik/</Path>
+                  <Path Filename="restore">/home/izik/dotfiles/</Path>
+                  <Path Filename="13-merge-xfce4-keyboard-shortcuts.sh">/home/izik/dotfiles/restore/</Path>
+                  <Path Filename="restore">/home/izik/dotfiles/</Path>
+                  <Path Filename="src">/home/izik/</Path>
+                  <Path Filename="..">/home/izik/src/</Path>
+                  <Path Filename="..">/home/izik/</Path>
+                  <Path Filename="bulk">/home/</Path>
+                  <Path Filename="blogs">/home/bulk/</Path>
+                  <Path Filename="blog">/home/bulk/blogs/</Path>
+                  <Path Filename="content">/home/bulk/blogs/blog/</Path>
+                  <Path Filename="posts">/home/bulk/blogs/blog/content/</Path>
+                  <Path Filename="..">/home/bulk/blogs/blog/content/posts/</Path>
+                  <Path Filename="..">/home/bulk/blogs/blog/content/</Path>
+                  <Path Filename="..">/home/bulk/blogs/blog/</Path>
+                  <Path Filename="pelican-blog">/home/bulk/blogs/</Path>
+                  <Path Filename="content">/home/bulk/blogs/pelican-blog/</Path>
+                  <Path Filename="posts">/home/bulk/blogs/pelican-blog/content/</Path>
+                  <Path Filename="..">/home/bulk/blogs/pelican-blog/content/posts/</Path>
+                  <Path Filename="..">/home/bulk/blogs/pelican-blog/content/</Path>
+                  <Path Filename="..">/home/bulk/blogs/pelican-blog/</Path>
+                  <Path Filename="..">/home/bulk/blogs/</Path>
+                  <Path Filename="blogs">/home/bulk/</Path>
+                  <Path Filename="blog">/home/bulk/blogs/</Path>
+                  <Path Filename="content">/home/bulk/blogs/blog/</Path>
+                  <Path Filename="posts">/home/bulk/blogs/blog/content/</Path>
+                  <Path Filename="..">/home/bulk/blogs/blog/content/posts/</Path>
+                  <Path Filename="..">/home/bulk/blogs/blog/content/</Path>
+                  <Path Filename="..">/home/bulk/blogs/blog/</Path>
+                  <Path Filename="my-w3-personal-blog">/home/bulk/blogs/</Path>
+                  <Path Filename="readme_img">/home/bulk/blogs/my-w3-personal-blog/</Path>
+                  <Path Filename="..">/home/bulk/blogs/my-w3-personal-blog/readme_img/</Path>
+                  <Path Filename="static">/home/bulk/blogs/my-w3-personal-blog/</Path>
+                  <Path Filename="..">/home/bulk/blogs/my-w3-personal-blog/static/</Path>
+                  <Path Filename="templates">/home/bulk/blogs/my-w3-personal-blog/</Path>
+                  <Path Filename="..">/home/bulk/blogs/my-w3-personal-blog/templates/</Path>
+                  <Path Filename="..">/home/bulk/blogs/my-w3-personal-blog/</Path>
+                  <Path Filename="..">/home/bulk/blogs/</Path>
+                  <Path Filename="..">/home/bulk/</Path>
+                  <Path Filename="izik">/home/</Path>
+                  <Path Filename="..">/home/izik/</Path>
+                  <Path Filename="bulk">/home/</Path>
+                  <Path Filename="blogs">/home/bulk/</Path>
+                  <Path Filename="blog">/home/bulk/blogs/</Path>
+                  <Path Filename=".git">/home/bulk/blogs/blog/</Path>
+                  <Path Filename="..">/home/bulk/blogs/blog/.git/</Path>
+                  <Path Filename=".git">/home/bulk/blogs/blog/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -621,9 +635,6 @@
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="dotfiles">/home/izik/</Path>
-                  <Path Filename=".tmux.conf">/home/izik/dotfiles/</Path>
-                  <Path Filename="..">/home/izik/Documents/</Path>
                   <Path Filename="dotfiles">/home/izik/</Path>
                   <Path Filename="..">/home/izik/dotfiles/</Path>
                   <Path Filename="z">/home/izik/</Path>
@@ -671,6 +682,9 @@
                   <Path Filename="">/home/izik/Documents/</Path>
                   <Path Filename="">/home/izik/</Path>
                   <Path Filename="">/home/izik/Documents/</Path>
+                  <Path Filename="">/home/izik/</Path>
+                  <Path Filename="">/home/izik/Documents/</Path>
+                  <Path Filename="">/home/izik/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -765,7 +779,7 @@
   <MainWindow>
     <Position>
       <Maximized>True</Maximized>
-      <Splitter>58,9229805886036</Splitter>
+      <Splitter>49.8434564809017</Splitter>
       <Left>0</Left>
       <Top>0</Top>
       <Width>1600</Width>
@@ -786,12 +800,14 @@
     <OnlyOneAppInstance>False</OnlyOneAppInstance>
     <LynxLike>True</LynxLike>
     <FileSizeFormat>0</FileSizeFormat>
+    <FileSizeDigits>1</FileSizeDigits>
     <MinimizeToTray>False</MinimizeToTray>
     <AlwaysShowTrayIcon>False</AlwaysShowTrayIcon>
     <Mouse>
       <Selection Enabled="True">
         <Button>0</Button>
       </Selection>
+      <SingleClickStart>0</SingleClickStart>
       <ScrollMode>1</ScrollMode>
       <WheelScrollLines>3</WheelScrollLines>
     </Mouse>
@@ -801,7 +817,8 @@
     <BriefViewFileExtAligned>False</BriefViewFileExtAligned>
     <DateTimeFormat>dd.mm.yyyy hh:nn:ss</DateTimeFormat>
     <CutTextToColumnWidth>True</CutTextToColumnWidth>
-    <ShowSystemFiles>False</ShowSystemFiles>
+    <ExtendCellWidth>False</ExtendCellWidth>
+    <ShowSystemFiles>True</ShowSystemFiles>
     <ListFilesInThread>True</ListFilesInThread>
     <LoadIconsSeparately>True</LoadIconsSeparately>
     <DelayLoadingTabs>True</DelayLoadingTabs>
@@ -816,8 +833,8 @@
       <RunInTerminal>False</RunInTerminal>
       <KeepTerminalOpen>False</KeepTerminalOpen>
     </Viewer>
-    <Editor Enabled="False">
-      <Path/>
+    <Editor Enabled="True">
+      <Path>/opt/sublime_text_3/sublime_text</Path>
       <Parameters/>
       <RunInTerminal>False</RunInTerminal>
       <KeepTerminalOpen>False</KeepTerminalOpen>
@@ -867,6 +884,36 @@
       <Style>0</Style>
       <Quality>0</Quality>
     </Console>
+    <OptionsTree>
+      <Name>default</Name>
+      <Size>10</Size>
+      <Style>0</Style>
+      <Quality>0</Quality>
+    </OptionsTree>
+    <OptionsMain>
+      <Name>default</Name>
+      <Size>10</Size>
+      <Style>0</Style>
+      <Quality>0</Quality>
+    </OptionsMain>
+    <SearchResults>
+      <Name>default</Name>
+      <Size>14</Size>
+      <Style>0</Style>
+      <Quality>0</Quality>
+    </SearchResults>
+    <PathEdit>
+      <Name>default</Name>
+      <Size>8</Size>
+      <Style>0</Style>
+      <Quality>0</Quality>
+    </PathEdit>
+    <FunctionButtons>
+      <Name>default</Name>
+      <Size>8</Size>
+      <Style>0</Style>
+      <Quality>0</Quality>
+    </FunctionButtons>
   </Fonts>
   <ToolTips>
     <ShowToolTipMode>True</ShowToolTipMode>
@@ -899,7 +946,7 @@
     <KeyButtons>True</KeyButtons>
     <InterfaceFlat>True</InterfaceFlat>
     <DriveFreeSpace>True</DriveFreeSpace>
-    <DriveIndicator>False</DriveIndicator>
+    <DriveIndicator>True</DriveIndicator>
     <ProgressInMenuBar>False</ProgressInMenuBar>
     <PanelOfOperationsInBackground>True</PanelOfOperationsInBackground>
     <HorizontalFilePanels>False</HorizontalFilePanels>
@@ -925,6 +972,7 @@
         <AutoSize>2</AutoSize>
       </Columns>
     </BriefView>
+    <ExtraLineSpan>2</ExtraLineSpan>
   </FilesViews>
   <Keyboard>
     <Typing>
@@ -975,7 +1023,11 @@
       <CopyOwnership>False</CopyOwnership>
       <CopyPermissions>False</CopyPermissions>
       <ExcludeEmptyTemplateDirectories>True</ExcludeEmptyTemplateDirectories>
+      <Verify>False</Verify>
     </Options>
+    <InitiallyClearFileMask>True</InitiallyClearFileMask>
+    <NewSearchClearFiltersAction>0</NewSearchClearFiltersAction>
+    <ShowMenuBarInFindFiles>True</ShowMenuBarInFindFiles>
   </FileOperations>
   <Log Enabled="False" LogFileWithDateInName="False">
     <FileName>%DC_CONFIG_PATH%/doublecmd.log</FileName>
@@ -1009,6 +1061,7 @@
     <ShowPathInPopup>False</ShowPathInPopup>
     <ShowOnlyValidEnv>True</ShowOnlyValidEnv>
     <WhereToAddNewHotDir>2</WhereToAddNewHotDir>
+    <DblClickToParent>False</DblClickToParent>
   </Miscellaneous>
   <Thumbnails Save="True">
     <Width>128</Width>
@@ -1025,10 +1078,15 @@
     <Size>16</Size>
     <Exclude>False</Exclude>
     <ExcludeDirs/>
-    <CustomDriveIcons>False</CustomDriveIcons>
     <ShowInMenus Enabled="False">
       <Size>16</Size>
     </ShowInMenus>
+    <Theme>dctheme</Theme>
+    <DiskSize>16</DiskSize>
+    <DiskAlpha>50</DiskAlpha>
+    <CustomIcons>0</CustomIcons>
+    <PixelsPerInch>96</PixelsPerInch>
+    <ShowButtonGlyphs>0</ShowButtonGlyphs>
   </Icons>
   <IgnoreList Enabled="False">
     <IgnoreListFile>%DC_CONFIG_PATH%/ignorelist.txt</IgnoreListFile>
@@ -1052,6 +1110,7 @@
     <BackgroundColor>0</BackgroundColor>
     <FontColor>16777215</FontColor>
     <TextPosition>0</TextPosition>
+    <ImageExifRotate>True</ImageExifRotate>
   </Viewer>
   <Editor>
     <EditWaitTime>2000</EditWaitTime>
@@ -1099,22 +1158,23 @@
   <LastDoAnyCommand>cm_Refresh</LastDoAnyCommand>
   <SearchTemplates/>
   <ColumnsSets DefaultTitleHash="540805403">
-    <ColumnsSet UseFrameCursor="False">
+    <ColumnsSet UseFrameCursor="True">
       <Name>Default</Name>
       <CustomView>False</CustomView>
+      <PixelsPerInch>96</PixelsPerInch>
       <CursorBorder Enabled="False">
-        <Color>0</Color>
+        <Color>-2147483635</Color>
       </CursorBorder>
       <Columns>
         <Column>
           <Title>Name</Title>
           <FuncString>[DC().GETFILENAMENOEXT{}]</FuncString>
-          <Width>381</Width>
+          <Width>428</Width>
           <Align>0</Align>
           <Font>
-            <Name>default</Name>
-            <Size>10</Size>
-            <Style>1</Style>
+            <Name>Sans</Name>
+            <Size>12</Size>
+            <Style>0</Style>
             <Quality>0</Quality>
           </Font>
           <TextColor>-2147483640</TextColor>
@@ -1124,7 +1184,7 @@
           <CursorColor>-2147483635</CursorColor>
           <CursorText>-2147483634</CursorText>
           <InactiveCursorColor>-2147483645</InactiveCursorColor>
-          <InactiveMarkColor>128</InactiveMarkColor>
+          <InactiveMarkColor>255</InactiveMarkColor>
           <UseInvertedSelection>False</UseInvertedSelection>
           <UseInactiveSelColor>False</UseInactiveSelColor>
           <Overcolor>True</Overcolor>
@@ -1135,9 +1195,9 @@
           <Width>147</Width>
           <Align>0</Align>
           <Font>
-            <Name>default</Name>
-            <Size>10</Size>
-            <Style>1</Style>
+            <Name>Sans</Name>
+            <Size>12</Size>
+            <Style>0</Style>
             <Quality>0</Quality>
           </Font>
           <TextColor>-2147483640</TextColor>
@@ -1147,7 +1207,7 @@
           <CursorColor>-2147483635</CursorColor>
           <CursorText>-2147483634</CursorText>
           <InactiveCursorColor>-2147483645</InactiveCursorColor>
-          <InactiveMarkColor>128</InactiveMarkColor>
+          <InactiveMarkColor>255</InactiveMarkColor>
           <UseInvertedSelection>False</UseInvertedSelection>
           <UseInactiveSelColor>False</UseInactiveSelColor>
           <Overcolor>True</Overcolor>
@@ -1158,9 +1218,9 @@
           <Width>70</Width>
           <Align>1</Align>
           <Font>
-            <Name>default</Name>
-            <Size>10</Size>
-            <Style>1</Style>
+            <Name>Sans</Name>
+            <Size>12</Size>
+            <Style>0</Style>
             <Quality>0</Quality>
           </Font>
           <TextColor>-2147483640</TextColor>
@@ -1170,7 +1230,7 @@
           <CursorColor>-2147483635</CursorColor>
           <CursorText>-2147483634</CursorText>
           <InactiveCursorColor>-2147483645</InactiveCursorColor>
-          <InactiveMarkColor>128</InactiveMarkColor>
+          <InactiveMarkColor>255</InactiveMarkColor>
           <UseInvertedSelection>False</UseInvertedSelection>
           <UseInactiveSelColor>False</UseInactiveSelColor>
           <Overcolor>True</Overcolor>
@@ -1181,9 +1241,9 @@
           <Width>140</Width>
           <Align>1</Align>
           <Font>
-            <Name>default</Name>
-            <Size>10</Size>
-            <Style>1</Style>
+            <Name>Sans</Name>
+            <Size>12</Size>
+            <Style>0</Style>
             <Quality>0</Quality>
           </Font>
           <TextColor>-2147483640</TextColor>
@@ -1193,7 +1253,7 @@
           <CursorColor>-2147483635</CursorColor>
           <CursorText>-2147483634</CursorText>
           <InactiveCursorColor>-2147483645</InactiveCursorColor>
-          <InactiveMarkColor>128</InactiveMarkColor>
+          <InactiveMarkColor>255</InactiveMarkColor>
           <UseInvertedSelection>False</UseInvertedSelection>
           <UseInactiveSelColor>False</UseInactiveSelColor>
           <Overcolor>True</Overcolor>
@@ -1204,9 +1264,9 @@
           <Width>100</Width>
           <Align>0</Align>
           <Font>
-            <Name>default</Name>
-            <Size>10</Size>
-            <Style>1</Style>
+            <Name>Sans</Name>
+            <Size>12</Size>
+            <Style>0</Style>
             <Quality>0</Quality>
           </Font>
           <TextColor>-2147483640</TextColor>
@@ -1216,7 +1276,7 @@
           <CursorColor>-2147483635</CursorColor>
           <CursorText>-2147483634</CursorText>
           <InactiveCursorColor>-2147483645</InactiveCursorColor>
-          <InactiveMarkColor>128</InactiveMarkColor>
+          <InactiveMarkColor>255</InactiveMarkColor>
           <UseInvertedSelection>False</UseInvertedSelection>
           <UseInactiveSelColor>False</UseInactiveSelColor>
           <Overcolor>True</Overcolor>
@@ -1228,4 +1288,77 @@
     <LastPreset/>
     <Presets/>
   </MultiRenamePresets>
+  <Description>
+    <CreateNewUnicode>True</CreateNewUnicode>
+    <DefaultEncoding>2</DefaultEncoding>
+    <CreateNewEncoding>3</CreateNewEncoding>
+  </Description>
+  <TreeViewMenu>
+    <UseTVMDirectoryHotlistFMC>False</UseTVMDirectoryHotlistFMC>
+    <UseTVMDirectoryHotlistFDC>False</UseTVMDirectoryHotlistFDC>
+    <UseTVMFavoriteTabsFMC>False</UseTVMFavoriteTabsFMC>
+    <UseTVMFavoriteTabsFDC>False</UseTVMFavoriteTabsFDC>
+    <UseTVMDirHistory>False</UseTVMDirHistory>
+    <UseTVMViewHistory>False</UseTVMViewHistory>
+    <UseTVMCommandLineHistory>False</UseTVMCommandLineHistory>
+    <TreeViewMenuShortcutExit>True</TreeViewMenuShortcutExit>
+    <TreeViewMenuSingleClickExit>True</TreeViewMenuSingleClickExit>
+    <TreeViewMenuDoubleClickExit>True</TreeViewMenuDoubleClickExit>
+    <Context00>
+      <CaseSensitive>False</CaseSensitive>
+      <IgnoreAccents>True</IgnoreAccents>
+      <ShowWholeBranchIfMatch>False</ShowWholeBranchIfMatch>
+    </Context00>
+    <Context01>
+      <CaseSensitive>False</CaseSensitive>
+      <IgnoreAccents>True</IgnoreAccents>
+      <ShowWholeBranchIfMatch>False</ShowWholeBranchIfMatch>
+    </Context01>
+    <Context02>
+      <CaseSensitive>False</CaseSensitive>
+      <IgnoreAccents>True</IgnoreAccents>
+      <ShowWholeBranchIfMatch>False</ShowWholeBranchIfMatch>
+    </Context02>
+    <Context03>
+      <CaseSensitive>False</CaseSensitive>
+      <IgnoreAccents>True</IgnoreAccents>
+      <ShowWholeBranchIfMatch>False</ShowWholeBranchIfMatch>
+    </Context03>
+    <Context04>
+      <CaseSensitive>False</CaseSensitive>
+      <IgnoreAccents>True</IgnoreAccents>
+      <ShowWholeBranchIfMatch>False</ShowWholeBranchIfMatch>
+    </Context04>
+    <Context05>
+      <CaseSensitive>False</CaseSensitive>
+      <IgnoreAccents>True</IgnoreAccents>
+      <ShowWholeBranchIfMatch>False</ShowWholeBranchIfMatch>
+    </Context05>
+    <Context06>
+      <CaseSensitive>False</CaseSensitive>
+      <IgnoreAccents>True</IgnoreAccents>
+      <ShowWholeBranchIfMatch>False</ShowWholeBranchIfMatch>
+    </Context06>
+    <TreeViewMenuUseKeyboardShortcut>True</TreeViewMenuUseKeyboardShortcut>
+    <BackgroundColor>-2147483617</BackgroundColor>
+    <ShortcutColor>255</ShortcutColor>
+    <NormalTextColor>-2147483640</NormalTextColor>
+    <SecondaryTextColor>-2147483642</SecondaryTextColor>
+    <FoundTextColor>-2147483635</FoundTextColor>
+    <UnselectableTextColor>-2147483631</UnselectableTextColor>
+    <CursorColor>-2147483635</CursorColor>
+    <ShortcutUnderCursor>-2147483634</ShortcutUnderCursor>
+    <NormalTextUnderCursor>-2147483634</NormalTextUnderCursor>
+    <SecondaryTextUnderCursor>-2147483628</SecondaryTextUnderCursor>
+    <FoundTextUnderCursor>65535</FoundTextUnderCursor>
+    <UnselectableUnderCursor>-2147483631</UnselectableUnderCursor>
+  </TreeViewMenu>
+  <HotKeySortOrder>0</HotKeySortOrder>
+  <UseEnterToCloseHotKeyEditor>True</UseEnterToCloseHotKeyEditor>
+  <MarkMaskCaseSensitive>False</MarkMaskCaseSensitive>
+  <MarkMaskIgnoreAccents>False</MarkMaskIgnoreAccents>
+  <MarkMaskFilterWindows>False</MarkMaskFilterWindows>
+  <MarkShowWantedAttribute>False</MarkShowWantedAttribute>
+  <MarkDefaultWantedAttribute/>
+  <MarkLastWantedAttribute/>
 </doublecmd>

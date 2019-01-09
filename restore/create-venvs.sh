@@ -1,6 +1,6 @@
 #!/bin/bash
 
 mkdir -p ~/.venv
-cd ~/.venv
+cd ~/.venv || exit
 
 pipenv install jupyterlab

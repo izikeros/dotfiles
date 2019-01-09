@@ -23,7 +23,7 @@
 ASK=$2
 echo "Ask is: $ASK"
 TMP_FILE=/tmp/install_list.txt
-CMD=`$HOME/dotfiles/bootstrap/restore/get_distro_pkg_install_command.sh`
+CMD="yay -S --noconfirm"
 
 if [ -z "${CMD}" ]; then
     echo "Cannot determine distro and package manager. Aborting."
@@ -33,12 +33,12 @@ else
 fi
 
 # remove comments
-cat $1 | sed -e "s/#.*$//gi" -e "/^$/d" > $TMP_FILE
+sed -e "s/#.*$//gi" -e "/^$/d" "$1"> $TMP_FILE
 
-N=`cat $TMP_FILE | wc -l`
+N=$(cat "$TMP_FILE" | wc -l)
 
 echo "Found $N packages on the list:"
-while read package;
+while read -r package;
 do
 	echo -ne "$package "
 done < $TMP_FILE
@@ -46,22 +46,22 @@ echo
 
 do_install=y                      # In batch mode => Default is Yes
 [[ -t 0 ]] &&                  	  # If TTY => Prompt the question
-read -n 1 -p $'\e[1;32m
+read -r -n 1 -p $'\e[1;32m
 Continue with installation? (Y/n)\e[0m ' do_install  # Store the answer in $do_xxxx
 if [[ $do_install =~ ^(y|Y|)$ ]]  # Do if 'y' or 'Y' or empty
 then
 	NOT_INSTALLED=()
-	if [ -z "${ASK}"]; then
+	if [ -z "${ASK}" ]; then
 		# install without asking
-		while read package;
+		while read -r package;
 		do
 			echo "--- $package ---"
-			$CMD $package
+			$CMD "$package"
 			if [ $? == 0 ]; then
 				echo ""
 			else
 				# 
-				NOT_INSTALLED+=($package)
+				NOT_INSTALLED+=("$package")
 			fi
 			echo ""
 		done < $TMP_FILE
@@ -69,12 +69,12 @@ then
 	else
 		# FIXME: asking not working
 		# install with asking
-		while read package;
+		while read -r package;
 		do
-			read -p "Continue (y/n)?" choice
+			read -r -p "Continue (y/n)?" choice
 			case "$choice" in 
 			  y|Y ) echo "--- $package ---"
-					$CMD $package
+					$CMD "$package"
 					echo "";;
 			  n|N ) echo "";;
 			  * ) echo "invalid";;
