@@ -157,7 +157,7 @@ alias pacman-bigpkg="expac -s '%-30n %m' | sort -rhk 2 | less"
 alias mirrors="sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose"
 alias y-upgradable="sudo $AUR_CMD -Pu"
 alias y-rem-dep="sudo $AUR_CMD -Yc"
-alias p-rm-orphans="sudo pacman -Rns $(pacman -Qtdq)"
+#alias p-rm-orphans="sudo pacman -Rns $(pacman -Qtdq)"
 
 #---------------------------------------------
 # Mount
