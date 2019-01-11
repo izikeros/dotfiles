@@ -162,7 +162,7 @@ source ~/dotfiles/env_and_path.sh
 eval "$(fasd --init auto)"
 
 # fuck - correct last command
-eval "$(thefuck --alias)"
+# eval "$(thefuck --alias)"
 
 ~/dotfiles/scripts/runonce.sh neofetch
 ~/dotfiles/scripts/runonce.sh ~/dotfiles/scripts/check_if_repos_are_clean.sh
