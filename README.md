@@ -1,4 +1,4 @@
-# dotfiles
+# <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/204px-Tux.svg.png" width="30"> dotfiles 
 Collection of Linux settings, scripts, aliases that helps to transform fresh system (usually Arch or Xubuntu) to familiar look & fell with the tools I'm using.
 
 Contains:
