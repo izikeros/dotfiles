@@ -13,7 +13,7 @@
 
 # ---- Preprocess packages list: ----
 # TODO: ignore comments
-#	1. lines starting with #
+#   1. lines starting with #
 #   2. everything after #
 
 # TODO: support different package names for different systems
@@ -23,13 +23,13 @@
 ASK=$2
 echo "Ask is: $ASK"
 TMP_FILE=/tmp/install_list.txt
-CMD=$("$HOME/dotfiles/bootstrap/restore/get_distro_pkg_install_command.sh")
+CMD=$("$HOME/dotfiles/restore/get-distro-pkg-install-command.sh")
 
 if [ -z "${CMD}" ]; then
     echo "Cannot determine distro and package manager. Aborting."
     exit 1
 else
-	echo "Using command: $CMD"
+    echo "Using command: $CMD"
 fi
 
 # remove comments
@@ -40,7 +40,7 @@ N=$(cat "$TMP_FILE" | wc -l)
 echo "Found $N packages on the list:"
 while read -r package;
 do
-	echo -ne "$package "
+    echo -ne "$package "
 done < $TMP_FILE
 echo
 

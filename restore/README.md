@@ -4,7 +4,7 @@ cd dotfiles/restore
 ```
 basic packages:
 ```
-./pkg_from_the_list.sh ~/dotfiles/bootstrap/pkg/basic.txt
+./pkg-from-the-list.sh ~/dotfiles/restore/pkg/basic.txt
 ```
 for convenience also packages from `ext.txt` if not on the server but workstation
 
