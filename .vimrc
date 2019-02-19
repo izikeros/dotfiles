@@ -62,7 +62,7 @@ Bundle 'vimwiki/vimwiki'
 Bundle 'suan/vim-instant-markdown'
 
 " for learning vim
-Bundle 'wikitopian/hardmode'
+"Bundle 'wikitopian/hardmode'
 
 " to search
 "Bundle 'kien/ctrlp.vim'
@@ -182,17 +182,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" disable arrows in normal mode
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-nnoremap <up> <nop>
-nnoremap <down> <nop>
 
 nnoremap <F5> "=strftime("%Y-%m-%d")<CR>		" insert current date
 inoremap <F5> <C-R>=strftime("%Y-%m-%d")<CR>
-
-" Enable vim Hardmode by default
-" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 set wildmenu
 set wildmode=list:longest,full
@@ -256,55 +248,6 @@ set nofoldenable
 " let g:pymode_rope_completion = 0
 " let g:pymode_rope_complete_on_dot = 0
 
-"====================================================
-" wiki
-"====================================================
-"let g:wiki_root = '~/wiki'
-
-"=====================================================
-" vimwiki with markdown support
-"=====================================================
-"let g:vimwiki_list = [{'path': '~/Dropbox/wiki', 'syntax': 'markdown', 'ext': '.md'}]
-"let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
-
-let g:vimwiki_list = [{
-  \ 'path': '~/vimwiki',
-  \ 'path_html': '~/vimwiki_html',
-  \ 'syntax': 'markdown',
-  \ 'ext': '.md',
-  \ 'custom_wiki2html': '~/dotfiles/srcipts/wiki2html.sh',
-  \ 'diary_rel_path': 'diary/',
-  \ 'diary_index': 'diary',
-  \ 'auto_tags': 0,
-  \ 'auto_toc': 0}]
-
-" Have vimwiki set filetype only within wikihome
-let g:vimwiki_ext2syntax = {}
-
-"let s:vimwiki = {}
-"let s:vimwiki.path = '~/Dropbox/wiki'
-"let s:vimwiki.path_html = '~/Dropbox/wiki_html'
-"let s:vimwiki.ext = '.md'
-"let s:vimwiki.syntax = 'markdown'
-"let s:vimwiki.diary_rel_path = 'diary_index/'
-"let s:vimwiki.diary_index = 'index'
-"let s:vimwiki.diary_header = 'Diary'
-"let s:vimwiki.diary_sort = 'asc'
-
-"let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-"let g:vimwiki_list = [{'path':'~/Dropbox/wiki', 'path_html':'~/Dropbox/wiki_export/html/'}]
-" help page -> :h vimwiki-syntax
-
-" open vimwiki diary note for today if vim called with dummy file:
-" DiaryNoteToday
-autocmd VimEnter * if argv() ==# ['DiaryNoteToday'] | execute 'VimwikiMakeDiaryNote' | endif
-
-" use 'd' in vimwiki mode to jump to today's diary note
-"autocmd FileType vimwiki map d :VimwikiMakeDiaryNote<CR>
-
-:let g:vimwiki_table_mappings = 0	"to make vim-snippets working
-":let g:vimwiki_autowriteall = 0 " to fix error with ultisnip
-":let s:vimwiki_autowriteall = 0 " to fix error with ultisnip
 
 "=====================================================
 " TagBar settings
