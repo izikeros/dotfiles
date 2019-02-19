@@ -16,19 +16,16 @@ glances
 gparted
 markdown
 meld
-mlocate         # media locate (used in rofi scripts)
 ncdu
 neofetch
 nethogs
 numlockx
 npm
 parallel
-postgresql
 powertop
 pdfsam          # (pdfsam-basic) for debian
 pydf
 python-pipenv
-ranger
 recoll
 redshift
 ripgrep         # the silver searger (ag), faster alternative
@@ -37,19 +34,15 @@ screenfetch
 shellcheck		# shell scripts checker
 simplescreenrecorder
 source-highlight
-stow            # replacing files
 sqlite3
 sxiv
 terminator
 the_silver_searcher
-thefuck
 tmux
 tlp
 tk
 tree
-veracrypt
 vlc
-xbindkeys
 xorg-server
 xorg-xhost
 youtube-dl

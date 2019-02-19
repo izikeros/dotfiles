@@ -1,0 +1,7 @@
+#mlocate         # media locate (used in rofi scripts)
+#postgresql
+#ranger
+#stow            # replacing files
+#thefuck
+#veracrypt
+#xbindkeys
