@@ -1,6 +1,3 @@
-#
-~/.screenlayout/dualscreen.sh
-
 # compton
 al-compositor --start &
 
@@ -19,25 +16,5 @@ skippy-xd --config ~/.config/skippy-xd/skippy-xd.rc --start-daemon &
 # start the panel
 al-polybar-session &
 
-# not used:
-# system tray
-#sleep 1; trayer --edge bottom --align left --widthtype request --SetDockType false --expand true &
-
-# perhaps obsolete
-# Openbox autostart
-#ob-autostart -d &
-
-# Required for xfce settings to work
-xfsettingsd &
-
-# perhaps obsolete
-# PolicyKit authentication
-# lxpolkit &
-
-# not used
 # start conky
-#al-conky-session --autostart &
-
-# perhaps obsolete
-# Side shortcuts for file managers
-#xdg-user-dirs-gtk-update &
+# al-conky-session --autostart &

@@ -21,7 +21,7 @@
     <name>ArchLabs-Dark</name>
     <titleLayout>NLIMC</titleLayout>
     <keepBorder>yes</keepBorder>
-    <animateIconify>yes</animateIconify>
+    <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
       <name>Roboto</name>
       <size>11</size>
@@ -119,40 +119,15 @@
         <to>4</to>
       </action>
     </keybind>
-    <keybind key="W-5">
-      <action name="GoToDesktop">
-        <to>5</to>
-      </action>
-    </keybind>
     <keybind key="S-W-1">
-      <action name="SendToDesktop">
-        <desktop>1</desktop>
-      </action>
-    </keybind>
-    <keybind key="S-W-2">
-      <action name="SendToDesktop">
-        <desktop>1</desktop>
-      </action>
-    </keybind>
-    <keybind key="S-W-3">
-      <action name="SendToDesktop">
-        <desktop>1</desktop>
-      </action>
-    </keybind>
-    <keybind key="S-W-4">
-      <action name="SendToDesktop">
-        <desktop>1</desktop>
-      </action>
-    </keybind>
-    <keybind key="S-W-5">
       <action name="SendToDesktop">
         <desktop>1</desktop>
       </action>
     </keybind>
     <keybind key="A-Tab">
       <action name="NextWindow">
-        <raise>yes</raise>
         <allDesktops>yes</allDesktops>
+        <raise>yes</raise>
         <finalactions>
           <action name="Focus"/>
           <action name="UnshadeRaise"/>
@@ -555,7 +530,6 @@
           <maximizedvertical>yes</maximizedvertical>
           <then>
             <action name="Unmaximize"/>
-            <direction>vertical</direction>
             <action name="MoveResizeTo">
               <x>center</x>
               <y>current</y>
@@ -785,3 +759,5 @@
     </application>
   </applications>
 </openbox_config>
+<!-- vim:sw=2
+-->
