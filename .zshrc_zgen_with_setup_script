@@ -15,6 +15,7 @@
 # not running interactively then bail
 [[ $- != *i* ]] && return
 
+source ~/.zshrc.local
 
 # colors in less (default PAGER in Arch)
 export LESS_TERMCAP_mb=$'\E[01;31m'
