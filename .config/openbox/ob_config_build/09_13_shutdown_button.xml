@@ -1,0 +1,7 @@
+    <!-- Launch logout when push on the shutdown button -->
+    <keybind key="XF86PowerOff">
+      <action name="Execute">
+        <command>lxsession-default quit</command>
+      </action>
+    </keybind>
+  </keyboard>

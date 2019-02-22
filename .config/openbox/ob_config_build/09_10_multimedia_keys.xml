@@ -1,0 +1,39 @@
+<!-- Keybinding for Volume management -->
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+        <command>amixer -q sset Master 3%+ unmute</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <command>amixer -q sset Master 3%- unmute</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+        <command>amixer -q sset Master toggle</command>
+      </action>
+    </keybind>
+    <!-- Keybinding for terminal button-->
+    <keybind key="XF86WWW">
+      <action name="Execute">
+        <command>lxsession-default terminal</command>
+      </action>
+    </keybind>
+    <keybind key="XF86Terminal">
+      <action name="Execute">
+        <command>lxsession-default terminal</command>
+      </action>
+    </keybind>
+    <!-- Keybinding for calculator button-->
+    <keybind key="XF86Calculator">
+      <action name="Execute">
+        <command>lxsession-default calculator</command>
+      </action>
+    </keybind>
+    <!-- Keybinding for computer button-->
+    <keybind key="XF86MyComputer">
+      <action name="Execute">
+        <command>lxsession-default file_manager</command>
+      </action>
+    </keybind>

@@ -1,0 +1,4 @@
+<!-- Keybindings to toggle fullscreen -->
+    <keybind key="F11">
+      <action name="ToggleFullscreen"/>
+    </keybind>

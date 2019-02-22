@@ -1,0 +1,386 @@
+<!-- Keybindings for desktop switching -->
+    <keybind key="C-A-Left">
+      <action name="GoToDesktop">
+        <to>left</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="C-A-Right">
+      <action name="GoToDesktop">
+        <to>right</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="C-A-Up">
+      <action name="GoToDesktop">
+        <to>up</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="C-A-Down">
+      <action name="GoToDesktop">
+        <to>down</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="S-A-Left">
+      <action name="SendToDesktop">
+        <to>left</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="S-A-Right">
+      <action name="SendToDesktop">
+        <to>right</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="S-A-Up">
+      <action name="SendToDesktop">
+        <to>up</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="S-A-Down">
+      <action name="SendToDesktop">
+        <to>down</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="W-F1">
+      <action name="GoToDesktop">
+        <to>1</to>
+      </action>
+    </keybind>
+    <keybind key="W-F2">
+      <action name="GoToDesktop">
+        <to>2</to>
+      </action>
+    </keybind>
+    <keybind key="W-F3">
+      <action name="GoToDesktop">
+        <to>3</to>
+      </action>
+    </keybind>
+    <keybind key="W-F4">
+      <action name="GoToDesktop">
+        <to>4</to>
+      </action>
+    </keybind>
+    <keybind key="W-d">
+      <action name="ToggleShowDesktop"/>
+    </keybind>
+<!-- Keybindings for windows -->
+    <keybind key="A-F4">
+      <action name="Close"/>
+    </keybind>
+    <keybind key="A-Escape">
+      <action name="Lower"/>
+      <action name="FocusToBottom"/>
+      <action name="Unfocus"/>
+    </keybind>
+    <keybind key="A-space">
+      <action name="ShowMenu">
+        <menu>client-menu</menu>
+      </action>
+    </keybind>
+<!-- Keybindings for window switching -->
+<keybind key="A-Tab">
+      <action name="NextWindow">
+        <finalactions>
+          <action name="Focus"/>
+          <action name="Raise"/>
+          <action name="Unshade"/>
+        </finalactions>
+      </action>
+    </keybind>
+    <keybind key="A-S-Tab">
+      <action name="PreviousWindow">
+        <finalactions>
+          <action name="Focus"/>
+          <action name="Raise"/>
+          <action name="Unshade"/>
+        </finalactions>
+      </action>
+    </keybind>
+    <keybind key="C-A-Tab">
+      <action name="NextWindow">
+        <panels>yes</panels>
+        <desktop>yes</desktop>
+        <finalactions>
+          <action name="Focus"/>
+          <action name="Raise"/>
+          <action name="Unshade"/>
+        </finalactions>
+      </action>
+    </keybind>
+<!-- Keybindings for window switching with the arrow keys -->
+    <keybind key="W-S-Right">
+      <action name="DirectionalCycleWindows">
+        <direction>right</direction>
+      </action>
+    </keybind>
+    <keybind key="W-S-Left">
+      <action name="DirectionalCycleWindows">
+        <direction>left</direction>
+      </action>
+    </keybind>
+    <keybind key="W-S-Up">
+      <action name="DirectionalCycleWindows">
+        <direction>up</direction>
+      </action>
+    </keybind>
+    <keybind key="W-S-Down">
+      <action name="DirectionalCycleWindows">
+        <direction>down</direction>
+      </action>
+    </keybind>
+<!--  Lubuntu specific.
+        Keybindings for window tiling
+    -->
+    <!-- move the window to the first monitor -->
+    <keybind key="C-W-Left">
+      <action name="MoveResizeTo">
+        <monitor>1</monitor>
+      </action>
+    </keybind>
+    <!-- move the window to the second monitor -->
+    <keybind key="C-W-Right">
+      <action name="MoveResizeTo">
+        <monitor>2</monitor>
+      </action>
+    </keybind>
+    <keybind key="C-W-Up">
+      <action name="Maximize"/>
+    </keybind>
+    <keybind key="C-W-Down">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>center</x>
+        <y>center</y>
+        <width>50%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+    <!-- UpperQuarterLeft-->
+    <keybind key="C-W-1">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <height>50%</height>
+        <width>50%</width>
+      </action>
+    </keybind>
+    <!-- LowerQuarterLeft-->
+    <keybind key="C-W-2">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>-0</y>
+        <height>50%</height>
+        <width>50%</width>
+      </action>
+    </keybind>
+    <!-- LowerQuarterRight-->
+    <keybind key="C-W-3">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>-0</y>
+        <height>50%</height>
+        <width>50%</width>
+      </action>
+    </keybind>
+    <!-- UpperQuarterRight-->
+    <keybind key="C-W-4">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>0</y>
+        <height>50%</height>
+        <width>50%</width>
+      </action>
+    </keybind>
+    <!-- HalfLeftScreen-->
+    <keybind key="W-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <height>100%</height>
+        <width>50%</width>
+      </action>
+    </keybind>
+    <!-- HalfRightScreen-->
+    <keybind key="W-Right">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>0</y>
+        <height>100%</height>
+        <width>50%</width>
+      </action>
+    </keybind>
+    <!-- HalfUpperScreen-->
+    <keybind key="W-Up">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>100%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+    <!-- HalfLowerScreen -->
+    <keybind key="W-Down">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>-0</y>
+        <width>100%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+<!-- Keybindings for running Run menu from Lxpanel on Home + R-->
+    <keybind key="W-r">
+      <action name="Execute">
+        <command>lxsession-default launcher</command>
+      </action>
+    </keybind>
+    <keybind key="A-F2">
+      <action name="Execute">
+        <command>lxsession-default launcher</command>
+      </action>
+    </keybind>
+    <!-- Keybindings for running Menu from Lxpanel -->
+    <keybind key="A-F1">
+      <action name="Execute">
+        <command>lxpanelctl menu</command>
+      </action>
+    </keybind>
+    <keybind key="C-Escape">
+      <action name="Execute">
+        <command>lxpanelctl menu</command>
+      </action>
+    </keybind>
+<!-- Keybindings to toggle fullscreen -->
+    <keybind key="F11">
+      <action name="ToggleFullscreen"/>
+    </keybind>
+<!-- Launch task manager on Ctrl + Alt + Del-->
+    <keybind key="C-A-Delete">
+      <action name="Execute">
+        <command>lxsession-default tasks</command>
+      </action>
+    </keybind>
+    <!-- Launch a terminal on Ctrl + Alt + T-->
+    <keybind key="C-A-T">
+      <action name="Execute">
+        <command>terminator</command>
+      </action>
+    </keybind>
+    <!-- Launch Firefox on Ctrl + Alt + F-->
+    <keybind key="C-A-F">
+      <action name="Execute">
+        <command>firefox</command>
+      </action>
+    </keybind>
+    <!-- Launch Chrome/Chromium on Ctrl + Alt + C-->
+    <keybind key="C-A-C">
+      <action name="Execute">
+        <command>chromium-browser</command>
+      </action>
+    </keybind>
+    <!-- Launch a filemanager on Ctrl + Alt + D-->
+    <keybind key="C-A-G">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>doublecmd</name>
+        </startupnotify>
+        <command>doublecmd</command>
+        <!--<command>lxsession-default file_manager</command>-->
+      </action>
+    </keybind>
+    <!-- Lock the screen on Ctrl + Alt + l-->
+    <keybind key="C-A-l">
+      <action name="Execute">
+        <command>lxsession-default lock</command>
+      </action>
+    </keybind>
+<!-- Keybinding for Volume management -->
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+        <command>amixer -q sset Master 3%+ unmute</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <command>amixer -q sset Master 3%- unmute</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+        <command>amixer -q sset Master toggle</command>
+      </action>
+    </keybind>
+    <!-- Keybinding for terminal button-->
+    <keybind key="XF86WWW">
+      <action name="Execute">
+        <command>lxsession-default terminal</command>
+      </action>
+    </keybind>
+    <keybind key="XF86Terminal">
+      <action name="Execute">
+        <command>lxsession-default terminal</command>
+      </action>
+    </keybind>
+    <!-- Keybinding for calculator button-->
+    <keybind key="XF86Calculator">
+      <action name="Execute">
+        <command>lxsession-default calculator</command>
+      </action>
+    </keybind>
+    <!-- Keybinding for computer button-->
+    <keybind key="XF86MyComputer">
+      <action name="Execute">
+        <command>lxsession-default file_manager</command>
+      </action>
+    </keybind>
+<!-- Keybindings for Multimedia Keys and LCD Backlight (alternative when not using gnome-power-manager or xfce4-volumed) -->
+    <keybind key="C-F7">
+      <action name="Execute">
+        <command>xset dpms force off</command>
+      </action>
+    </keybind>
+    <keybind key="C-F10">
+      <action name="Execute">
+        <command>xbacklight -dec 10</command>
+      </action>
+    </keybind>
+    <keybind key="C-F11">
+      <action name="Execute">
+        <command>xbacklight -inc 10</command>
+      </action>
+    </keybind>
+<!--
+      Take a screenshot of the current window with scrot when Alt+Print are pressed
+  -->
+    <keybind key="Print">
+      <action name="Execute">
+        <command>lxsession-default screenshot</command>
+      </action>
+    </keybind>
+    <keybind key="A-Print">
+      <action name="Execute">
+        <command>lxsession-default screenshot window</command>
+      </action>
+    </keybind>
+    <!-- Launch logout when push on the shutdown button -->
+    <keybind key="XF86PowerOff">
+      <action name="Execute">
+        <command>lxsession-default quit</command>
+      </action>
+    </keybind>
+  </keyboard>

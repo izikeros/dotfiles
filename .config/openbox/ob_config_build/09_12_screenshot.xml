@@ -1,0 +1,13 @@
+<!--
+      Take a screenshot of the current window with scrot when Alt+Print are pressed
+  -->
+    <keybind key="Print">
+      <action name="Execute">
+        <command>lxsession-default screenshot</command>
+      </action>
+    </keybind>
+    <keybind key="A-Print">
+      <action name="Execute">
+        <command>lxsession-default screenshot window</command>
+      </action>
+    </keybind>

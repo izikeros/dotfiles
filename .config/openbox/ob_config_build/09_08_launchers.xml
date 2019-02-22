@@ -1,0 +1,35 @@
+<!-- Launch task manager on Ctrl + Alt + Del-->
+    <keybind key="C-A-Delete">
+      <action name="Execute">
+        <command>lxsession-default tasks</command>
+      </action>
+    </keybind>
+    <!-- Launch a terminal on Ctrl + Alt + T-->
+    <keybind key="C-A-T">
+      <action name="Execute">
+        <command>terminator</command>
+      </action>
+    </keybind>
+    <!-- Launch Firefox on Ctrl + Alt + F-->
+    <keybind key="C-A-F">
+      <action name="Execute">
+        <command>firefox</command>
+      </action>
+    </keybind>
+    <!-- Launch Chrome/Chromium on Ctrl + Alt + C-->
+    <keybind key="C-A-C">
+      <action name="Execute">
+        <command>chromium-browser</command>
+      </action>
+    </keybind>
+    <!-- Launch a filemanager on Ctrl + Alt + D-->
+    <keybind key="C-A-G">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>doublecmd</name>
+        </startupnotify>
+        <command>doublecmd</command>
+        <!--<command>lxsession-default file_manager</command>-->
+      </action>
+    </keybind>

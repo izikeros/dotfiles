@@ -1,0 +1,6 @@
+    <!-- Lock the screen on Ctrl + Alt + l-->
+    <keybind key="C-A-l">
+      <action name="Execute">
+        <command>lxsession-default lock</command>
+      </action>
+    </keybind>
