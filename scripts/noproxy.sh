@@ -3,5 +3,5 @@
 unset http_proxy
 unset https_proxy
 unset ftp_proxy
-unset noproxy
+unset no_proxy
 
