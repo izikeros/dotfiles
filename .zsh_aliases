@@ -484,4 +484,4 @@ if [ -f ~/.zsh_aliases.local ]; then
 fi
 
 alias interfaces="ls /sys/class/net"
-
+alias rr="ranger"
