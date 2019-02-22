@@ -35,7 +35,7 @@ fi
 # remove comments
 sed -e "s/#.*$//gi" -e "/^$/d" "$1"> $TMP_FILE
 
-N=$(cat "$TMP_FILE" | wc -l)
+N=$(wc -l "$TMP_FILE")
 
 echo "Found $N packages on the list:"
 while read -r package;
@@ -60,7 +60,7 @@ then
 			if [ $? == 0 ]; then
 				echo ""
 			else
-				# 
+				#
 				NOT_INSTALLED+=("$package")
 			fi
 			echo ""
@@ -72,7 +72,7 @@ then
 		while read -r package;
 		do
 			read -r -p "Continue (y/n)?" choice
-			case "$choice" in 
+			case "$choice" in
 			  y|Y ) echo "--- $package ---"
 					$CMD "$package"
 					echo "";;
