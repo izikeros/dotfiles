@@ -21,6 +21,7 @@ neofetch
 nethogs
 numlockx
 npm
+ntp
 parallel
 powertop
 pdfsam          # (pdfsam-basic) for debian

@@ -1,7 +1,11 @@
-#mlocate         # media locate (used in rofi scripts)
-#postgresql
-#ranger
-#stow            # replacing files
-#thefuck
-#veracrypt
-#xbindkeys
+mlocate         # media locate (used in rofi scripts)
+postgresql		# Sophisticated object-relational DBMS
+python-pip		# The PyPA recommended tool for installing Python packages
+python3
+ranger
+stow            # replacing files
+thefuck
+veracrypt
+w3m
+xbindkeys
+xclip			# Command line interface to the X11 clipboard

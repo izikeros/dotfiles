@@ -1,22 +1,14 @@
 # some basic packages that can be used without graphical environment
+byobu
 curl
 git
 htop
 mc
 most
-# for arch:
-openssh
-# for debian/ubuntu
-openssh-server
-openssh-client
-
-# move to ext
-#python-pip
-#python3
-
+openssh 				# for arch
+openssh-client			# for debian/ubuntu
+openssh-server			# for debian/ubuntu
 rsync
 vim
-#w3m
 wget
-#xclip
 zsh
