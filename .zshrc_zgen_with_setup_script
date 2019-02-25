@@ -157,6 +157,11 @@ fi
 
 source ~/dotfiles/env_and_path.sh
 
+# virtualenv wrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/projects
+source /usr/bin/virtualenvwrapper.sh
+
 # fzf - fuzzy find in history
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
