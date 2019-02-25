@@ -11,6 +11,7 @@ fasd
 figlet          # large letters from text (terminal)
 firefox
 fping
+galculator
 gdmap           # windirstat-like app
 glances
 gparted
