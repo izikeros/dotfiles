@@ -17,24 +17,22 @@ for repo in "${list[@]}"
 do
     cwd=`pwd`
     if [ -d $repo ]; then
-	cd $repo
-	git status | grep -q "nothing to commit, working tree clean" && st="clean" || st="dirty"
+		cd $repo
+		git status | grep -q "nothing to commit, working tree clean" && st="clean" || st="dirty"
 
-	num_commits=`git cherry -v | wc -l`
+		num_commits=`git cherry -v | wc -l`
 
-	push_txt=""
-	if [ $num_commits -gt 0 ];then
-    	    push_txt=" # commits to push: $txtbld$num_commits.$txtrst"
-	fi
+		push_txt=""
+		if [ $num_commits -gt 0 ];then
+	    	    push_txt=" # commits to push: $txtbld$num_commits.$txtrst"
+		fi
 
-	status_txt="-- $bldblu$repo$txtrst is clean"
-	if [ $st == 'dirty' ];then
-    	    status_txt="-- $bldblu$repo$txtrst is $bldred dirty$txtrst"
-	fi
+		status_txt="-- $bldblu$repo$txtrst is clean"
+		if [ $st == 'dirty' ];then
+	    	    status_txt="-- $bldblu$repo$txtrst is $bldred dirty$txtrst"
+		fi
 
-	echo "$status_txt $push_txt"
-    else
-	echo "repo $repo does not exist, skipping"
+		echo "$status_txt $push_txt"
     fi
 done
 cd $cwd
