@@ -1,14 +1,38 @@
 #!/bin/zsh
 
 # == Vimviki diary functions
-function t(){		# open diary for today
-  DATE=$(date +%Y-%m-%d)
-  vim ~/vimwiki/diary/$DATE.md
+function md_today(){    # return filename for the diary for today
+    DATE=$(date +%Y-%m-%d)
+    DOW=$(date +%u)
+    days=(m t w h f s x)
+    DAY_LETTER=${days[$DOW]}
+    FNAME="${DATE}_${DAY_LETTER}"
+    echo "$FNAME"
 }
 
-function st(){		# open diary for today in sublime text
-  DATE=$(date +%Y-%m-%d)
-  subl3 ~/vimwiki/diary/$DATE.md
+function t(){		# open diary for today, add date if empty file
+    FNAME=$(md_today)
+    FULL_FILE="$HOME/vimwiki/diary/$FNAME.md"
+    if [ -s $FULL_FILE ]
+    then
+        vim $FULL_FILE
+    else
+        echo $FNAME > $FULL_FILE
+        vim $FULL_FILE
+    fi
+}
+
+function ts(){		# open diary for today in sublime text
+    FNAME=$(md_today)
+    FULL_FILE="$HOME/vimwiki/diary/$FNAME.md"
+    if [ -s $FULL_FILE ]
+    then
+        subl3 $FULL_FILE
+    else
+        echo $FNAME > $FULL_FILE
+        subl3 $FULL_FILE
+    fi
+
 }
 
 
