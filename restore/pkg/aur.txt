@@ -1,7 +1,6 @@
-#  installs from AUR
-dropbox
-sublime-text-dev
-screenkey  # show keys (usefull whe recording video tutorials)
-grc # another colorizer
-# visual-studio-code-bin
-peek # capture screen to gif
+visual-studio-code-bin # Visual Studio Code (vscode): Editor for building and debugging modern web and cloud applications (official binary version)
+dropbox              # A free service that lets you bring your photos, docs, and videos anywhere and share them easily.
+grc                  # Yet another colouriser for beautifying your logfiles or output of commands
+peek                 # Simple screen recorder with an easy to use interface
+screenkey            # Screencast tool to show your keys inspired by Screenflick, based on key-mon. Active fork with new features.
+sublime-text-dev     # Sophisticated text editor for code, html and prose - dev build
