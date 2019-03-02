@@ -46,6 +46,6 @@
     background_color = "#282227"
     background_darkness = 0.95
     cursor_color = "#aaaaaa"
-    font = FontAwesome 10
+    font = Font Awesome 5 Brands 10
     foreground_color = "#ebdbb2"
     show_titlebar = False
