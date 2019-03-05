@@ -338,13 +338,15 @@ function crm(){
 #--------------------------------------------
 # CALIBRE & RECOLL
 #--------------------------------------------
-CALIBRE_DIR="/mnt/sda5"
+CALIBRE_DIR="/mnt/NAS/books"
 alias c-it="calibre --with-library=$CALIBRE_DIR/books_it"
 alias c-astro="calibre --with-library=$CALIBRE_DIR/books_astro"
 alias c-life="calibre --with-library=$CALIBRE_DIR/books_life"
+alias c-ml="calibre --with-library=$CALIBRE_DIR/books_ml"
 alias r-it="recoll -c $HOME/.recoll_indexes/.recoll_it"
 alias r-astro="recoll -c $HOME/.recoll_indexes/.recoll_astro"
 alias r-life="recoll -c $HOME/.recoll_indexes/.recoll_life"
+alias r-ml="recoll -c $HOME/.recoll_indexes/.recoll_ml"
 
 #---------------------------------------------
 # HELP on comonly used sed, awk, perl commands
