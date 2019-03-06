@@ -2,10 +2,6 @@
 #
 # Only including a shebang to trigger Sublime Text to use shell syntax highlighting
 #
-# Copyright 2006-2016 Joseph Block <jpb@unixorn.net>
-#
-# BSD licensed, see LICENSE.txt
-
 # vi ft=shell
 
 #--------------------------------------------
@@ -15,7 +11,7 @@
 alias ducks='du -cksh *|sort -rh|head -11'
 
 # list directory size in current dir
-alias duu='du -sh --max-depth=1'
+alias duu='du -sh'
 
 # free/used space on devices
 alias df="pydf"
@@ -54,7 +50,10 @@ alias cd..="cd .."
 alias h="cd $HOME"
 alias cdh="cd $HOME"
 alias cdr="cd $HOME/dotfiles/bootstrap/restore"
-
+alias cdp="cd $HOME/projects"
+alias cdd="cd $HOME/Downloads"
+alias cdc="cd $HOME/.config"
+# same convention, defined below: alias cdw="cd $WIKI_HOME"
 #--------------------------------------------
 # EDIT ACTIONS
 #--------------------------------------------
@@ -69,15 +68,16 @@ alias atom="atom --disable-gpu"
 # run visual studio code without hardware acceleration
 alias code="code --disable-gpu"
 
-# notes
+# private knowledge base and diary
 WIKI_HOME="$HOME/vimwiki"
-#alias t="vim DiaryNoteToday"
-#alias t="DATE=$(date +%Y-%m-%d) &&  vim $WIKI_HOME/diary/$DATE.md"
 alias wiki="vim $WIKI_HOME/index.md"
 alias wi="vim $WIKI_HOME/index.md"
-alias wit="vim $WIKI_HOME/Technology_notes.md"
-alias td="vim $WIKI_HOME/TODO.md"
+alias wit="vim $WIKI_HOME/tech"
+alias wip="vim $WIKI_HOME/priv"
+alias wip="vim $WIKI_HOME/diary"
+alias td="vim $WIKI_HOME/5-things-TODO.md"
 alias cdw="cd $WIKI_HOME"
+# see also vimwiki related functions
 
 # shortcuts to edit files (mostly config files)
 alias vz="vim $HOME/.zshrc"
@@ -89,17 +89,17 @@ alias vv="vim $HOME/.vimrc"
 alias va="vim $HOME/dotfiles/.zsh_aliases"
 alias vf="vim $HOME/dotfiles/.zsh_functions"
 
+alias vc-"vim $HOME/.config"
 alias vs="vim $HOME/.ssh/config"
 alias vg="vim $HOME/.gitconfig"
 
 alias vd="vim $HOME/dotfiles/"
-alias vb="vim $HOME/dotfiles/bootstrap/"
-alias vp="vim $HOME/dotfiles/bootstrap/pkg/"
-alias vext="vim $HOME/dotfiles/bootstrap/pkg/ext.txt"
-alias vy="vim $HOME/dotfiles/bootstrap/pkg/yaourt_installs.sh"
+alias vr="vim $HOME/dotfiles/restore/"
+alias vrp="vim $HOME/dotfiles/restore/pkg/"
 
 alias vx="vim $HOME/dotfiles/.xbindkeysrc"
 alias ve="vim $HOME/env_and_path.sh"
+# list vim key mappings
 alias vkeys="grep --color=never -e 'map' $HOME/dotfiles/.vimrc"
 
 if [[ -x /usr/bin/subl3 ]]; then
@@ -121,6 +121,9 @@ alias list-functions="grep function ~/.zsh_functions --color=never"
 #--------------------------------------------
 #alias s="sudo su"
 alias _="sudo"
+
+alias s-s="sudo su"
+
 # install packages (Debian)
 alias ai="sudo apt install"
 # search pattern only in package names
@@ -158,6 +161,30 @@ alias mirrors="sudo reflector --score 100 --fastest 25 --sort rate --save /etc/p
 alias y-upgradable="sudo $AUR_CMD -Pu"
 alias y-rem-dep="sudo $AUR_CMD -Yc"
 #alias p-rm-orphans="sudo pacman -Rns $(pacman -Qtdq)"
+
+#--------------------------------------------
+# FASD aliases (repeated - aliases are defined in fasd source)
+#--------------------------------------------
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
+
+alias v='f -e vim' 		# quick opening files with vim
+alias m='f -e mplayer' 	# quick opening files with mplayer
+alias o='a -e xdg-open' # quick opening files with xdg-open
+
+# v def conf       =>     vim /some/awkward/path/to/type/default.conf
+# j abc            =>     cd /hell/of/a/awkward/path/to/get/to/abcdef
+# m movie          =>     mplayer /whatever/whatever/whatever/awesome_movie.mp4
+# o eng paper      =>     xdg-open /you/dont/remember/where/english_paper.pdf
+# vim `f rc lo`    =>     vim /etc/rc.local
+# vim `f rc conf`  =>     vim /etc/rc.conf
+
 
 #---------------------------------------------
 # Mount
@@ -339,10 +366,11 @@ function crm(){
 # CALIBRE & RECOLL
 #--------------------------------------------
 CALIBRE_DIR="/mnt/NAS/books"
+CALIBRE_LOCAL_DIR="/home/bulk/book"
 alias c-it="calibre --with-library=$CALIBRE_DIR/books_it"
 alias c-astro="calibre --with-library=$CALIBRE_DIR/books_astro"
 alias c-life="calibre --with-library=$CALIBRE_DIR/books_life"
-alias c-ml="calibre --with-library=$CALIBRE_DIR/books_ml"
+alias c-ml="calibre --with-library=$CALIBRE_LOCAL_DIR/books_ml"
 alias r-it="recoll -c $HOME/.recoll_indexes/.recoll_it"
 alias r-astro="recoll -c $HOME/.recoll_indexes/.recoll_astro"
 alias r-life="recoll -c $HOME/.recoll_indexes/.recoll_life"
@@ -355,7 +383,7 @@ alias r-ml="recoll -c $HOME/.recoll_indexes/.recoll_ml"
 alias h-awk="echo awk -F\':\' \'{print \$\2}\'"
 alias h-sed="man sed"
 alias h-perl="echo \"echo \"(a b c)(a b c)\" | perl -ne 'print $1 while /(a) b/g'\""
-
+alias h-terminator="echo Super+R - rotate \| C-S-E - split vert \| C-S-O - split horiz \| C-S-W - close panel"
 #---------------------------------------------
 # Comments & color removal
 #---------------------------------------------
