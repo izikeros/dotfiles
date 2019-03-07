@@ -1,6 +1,17 @@
-visual-studio-code-bin # Visual Studio Code (vscode): Editor for building and debugging modern web and cloud applications (official binary version)
+byobu                # Enhanced profile and useful notifications for tmux/screen
+cht.sh               # The only cheat sheet you need (command line client for cheat.sh)
 dropbox              # A free service that lets you bring your photos, docs, and videos anywhere and share them easily.
+google-chrome        # The popular and trusted web browser by Google (Stable Channel)
 grc                  # Yet another colouriser for beautifying your logfiles or output of commands
+nerd-fonts-ubuntu-mono # Patched font UbuntuMono from the nerd-fonts library
+openrefine           # A free, open source power tool for working with messy data and improving it
 peek                 # Simple screen recorder with an easy to use interface
+pycharm-eap          # Powerful Python and Django IDE, Early Access Program (EAP) build. Professional edition.
 screenkey            # Screencast tool to show your keys inspired by Screenflick, based on key-mon. Active fork with new features.
+siji-git             # Iconic bitmap font based on stlarch with additional glyphs
 sublime-text-dev     # Sophisticated text editor for code, html and prose - dev build
+ttf-unifont          # TrueType version of the GNU Unifont
+typora               # Typora will give you a seamless experience as both a reader and a writer.
+visual-studio-code-bin # Visual Studio Code (vscode): Editor for building and debugging modern web and cloud applications (official binary version)
+vivaldi              # An advanced browser made with the power user in mind.
+zotero               # Zotero Standalone. Is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.

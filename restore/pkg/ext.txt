@@ -2,6 +2,8 @@ arandr               # Provide a simple visual front end for XRandR 1.2.
 aspell               # A spell checker designed to eventually replace Ispell
 aspell-en            # English dictionary for aspell
 binutils             # A set of programs to assemble and manipulate binary and object files
+cups
+cifs-utils
 docker               # Pack, ship and run any application as a lightweight container
 docker-compose       # Fast, isolated development environments using Docker
 doublecmd-qt5        # twin-panel (commander-style) file manager (Qt5)
@@ -14,6 +16,7 @@ galculator           # GTK+ based scientific calculator
 gdmap                # Tool to inspect the used space of folders.
 glances              # CLI curses-based monitoring tool
 gparted              # A Partition Magic clone, frontend to GNU Parted
+hplip
 meld                 # Compare files, directories and working copies
 most                 # A terminal pager similar to 'more' and 'less'
 ncdu                 # Disk usage analyzer with an ncurses interface
@@ -28,6 +31,7 @@ powertop             # A tool to diagnose issues with power consumption and powe
 pydf                 # A colorized df clone
 python-pipenv        # Sacred Marriage of Pipfile, Pip, & Virtualenv.
 recoll               # Full text search tool based on Xapian backend
+redsocks
 redshift             # Adjusts the color temperature of your screen according to your surroundings.
 ripgrep              # A search tool that combines the usability of ag with the raw speed of grep
 screen               # Full-screen window manager that multiplexes a physical terminal
@@ -39,10 +43,12 @@ sqlite               # A C library that implements an SQL database engine
 sxiv                 # Simple X Image Viewer
 terminator           # Terminal emulator that supports tabs and grids
 the_silver_searcher  # Code searching tool similar to Ack, but faster
+ttf-roboto 
 tk                   # A windowing toolkit for use with tcl
 tlp                  # Linux Advanced Power Management
 tmux                 # A terminal multiplexer
 tree                 # A directory listing program displaying a depth indented list of files
 vlc                  # Multi-platform MPEG, VCD/DVD, and DivX player
+vpnc
 xorg-server          # Xorg X server
 xorg-xhost           # Server access control program for X
