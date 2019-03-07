@@ -90,13 +90,11 @@ source ~/.zsh_functions
 # Base PATH
 PATH=/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin
 export PATH=$HOME/bin:$PATH
-export PATH=$HOME/pycharm-community-2018.3.4/bin:$PATH
 
 # TODO: clean-up this mess with setopt!!
-setopt AUTO_CD BANG_HIST EXTENDED_HISTORY HIST_EXPIRE_DUPS_FIRST
-setopt HIST_IGNORE_ALL_DUPS HIST_FIND_NO_DUPS HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE HIST_REDUCE_BLANKS HIST_SAVE_NO_DUPS
-setopt INC_APPEND_HISTORY SHARE_HISTORY
+setopt BANG_HIST
+setopt HIST_FIND_NO_DUPS
+
 
 # set some history options
 setopt append_history
@@ -122,7 +120,7 @@ setopt autocd
 setopt completealiases
 
 # Share your history across all your terminal windows
-#setopt noclobber
+setopt noclobber
 
 # set some more options
 setopt pushd_ignore_dups
