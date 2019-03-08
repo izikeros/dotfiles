@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<doublecmd DCVersion="0.8.4 beta" ConfigVersion="10">
-  <Configuration Save="True" SortOrder="0">
+<doublecmd DCVersion="0.9.1 beta" ConfigVersion="10">
+  <Configuration Save="True" SortOrder="0" TreeType="0">
     <UseConfigInProgramDir>False</UseConfigInProgramDir>
+    <FolderTabs Save="True"/>
   </Configuration>
   <Colors>
     <FileFilters>
@@ -129,12 +130,17 @@
       <BackColor>16777215</BackColor>
     </FreeSpaceIndicator>
     <gBorderFrameWidth>1</gBorderFrameWidth>
+    <LogWindow>
+      <Info>8388608</Info>
+      <Error>255</Error>
+      <Success>32768</Success>
+    </LogWindow>
   </Colors>
   <Plugins>
     <WlxPlugins>
       <WlxPlugin Enabled="True">
         <Name>wlxMplayer</Name>
-        <Path>%COMMANDER_PATH%/plugins/wlx/wlxmplayer/wlxmplayer.wlx</Path>
+        <Path>%commander_path%/plugins/wlx/wlxmplayer/wlxmplayer.wlx</Path>
         <DetectString>(EXT="MPG")|(EXT="AVI")|(EXT="MPEG")|(EXT="FLV")</DetectString>
       </WlxPlugin>
     </WlxPlugins>
@@ -248,6 +254,20 @@
         <Path>%commander_path%/plugins/wfx/samba/samba.wfx</Path>
       </WfxPlugin>
     </WfxPlugins>
+    <TweakPluginWidth0>0</TweakPluginWidth0>
+    <TweakPluginHeight0>0</TweakPluginHeight0>
+    <TweakPluginWidth1>0</TweakPluginWidth1>
+    <TweakPluginHeight1>0</TweakPluginHeight1>
+    <TweakPluginWidth2>0</TweakPluginWidth2>
+    <TweakPluginHeight2>0</TweakPluginHeight2>
+    <TweakPluginWidth3>0</TweakPluginWidth3>
+    <TweakPluginHeight3>0</TweakPluginHeight3>
+    <TweakPluginWidth4>0</TweakPluginWidth4>
+    <TweakPluginHeight4>0</TweakPluginHeight4>
+    <AutoTweak>False</AutoTweak>
+    <WCXConfigViewMode>0</WCXConfigViewMode>
+    <PluginFilenameStyle>0</PluginFilenameStyle>
+    <PluginPathToBeRelativeTo>%COMMANDER_PATH%</PluginPathToBeRelativeTo>
   </Plugins>
   <Toolbars>
     <MainToolbar>
@@ -263,34 +283,63 @@
   <Tabs>
     <OpenedTabs>
       <Left>
-        <ActiveTab>0</ActiveTab>
+        <ActiveTab>5</ActiveTab>
         <Tab>
           <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
             <History>
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="restore">/home/izik/dotfiles/</Path>
-                  <Path Filename="..">/home/izik/dotfiles/restore/</Path>
-                  <Path Filename=".config">/home/izik/dotfiles/</Path>
-                  <Path Filename="polybar">/home/izik/dotfiles/.config/</Path>
-                  <Path Filename="modules.conf">/home/izik/dotfiles/.config/polybar/</Path>
-                  <Path Filename="polybar">/home/izik/dotfiles/.config/</Path>
-                  <Path Filename=".config">/home/izik/dotfiles/</Path>
-                  <Path Filename="dotfiles">/home/izik/</Path>
-                  <Path Filename="restore">/home/izik/dotfiles/</Path>
-                  <Path Filename="helper_functions.sh">/home/izik/dotfiles/restore/</Path>
-                  <Path Filename="restore">/home/izik/dotfiles/</Path>
-                  <Path Filename=".config">/home/izik/</Path>
-                  <Path Filename="home">/run/media/izik/3724edaa-54d9-46cf-afc9-8f3940885b04/</Path>
-                  <Path Filename="izix">/run/media/izik/3724edaa-54d9-46cf-afc9-8f3940885b04/home/</Path>
-                  <Path Filename="blog">/run/media/izik/3724edaa-54d9-46cf-afc9-8f3940885b04/home/izix/</Path>
+                  <Path Filename="..">/home/safjan/projects/batman-experiments/experiments/1/</Path>
+                  <Path Filename="..">/home/safjan/projects/batman-experiments/experiments/</Path>
+                  <Path Filename="experiments">/home/safjan/projects/batman-experiments/</Path>
+                  <Path Filename="batman-experiments">/home/safjan/projects/</Path>
+                  <Path Filename=".virtualenvs">/home/safjan/</Path>
+                  <Path Filename="batman">/home/safjan/.virtualenvs/</Path>
+                  <Path Filename="bin">/home/safjan/.virtualenvs/batman/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/bin/</Path>
+                  <Path Filename="include">/home/safjan/.virtualenvs/batman/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/include/</Path>
+                  <Path Filename="lib">/home/safjan/.virtualenvs/batman/</Path>
+                  <Path Filename="python3.7">/home/safjan/.virtualenvs/batman/lib/</Path>
+                  <Path Filename="site-packages">/home/safjan/.virtualenvs/batman/lib/python3.7/</Path>
+                  <Path Filename="logcompare-1.0.0.dist-info">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/logcompare-1.0.0.dist-info/</Path>
+                  <Path Filename="btslogparser-1.3.1.dist-info">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/btslogparser-1.3.1.dist-info/</Path>
+                  <Path Filename="btslogparser_utils">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/btslogparser_utils/</Path>
+                  <Path Filename="logcompare-1.0.0.dist-info">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/logcompare-1.0.0.dist-info/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/</Path>
+                  <Path Filename="lib">/home/safjan/.virtualenvs/batman/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/</Path>
+                  <Path Filename="logcompare.py">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
+                  <Path Filename="projects">/home/safjan/</Path>
+                  <Path Filename="batman-experiments">/home/safjan/projects/</Path>
+                  <Path Filename="experiments">/home/safjan/projects/batman-experiments/</Path>
+                  <Path Filename="1">/home/safjan/projects/batman-experiments/experiments/</Path>
+                  <Path Filename="out-csim">/home/safjan/projects/batman-experiments/experiments/1/</Path>
+                  <Path Filename="summary.csv">/home/safjan/projects/batman-experiments/experiments/1/out-csim/</Path>
+                  <Path Filename="dotfiles">/home/safjan/</Path>
+                  <Path Filename=".config">/home/safjan/dotfiles/</Path>
+                  <Path Filename="openbox">/home/safjan/dotfiles/.config/</Path>
+                  <Path Filename="ob_config_build">/home/safjan/dotfiles/.config/openbox/</Path>
+                  <Path Filename="..">/home/safjan/dotfiles/.config/openbox/ob_config_build/</Path>
+                  <Path Filename="ob_config_build">/home/safjan/dotfiles/.config/openbox/</Path>
+                  <Path Filename="..">/home/safjan/dotfiles/.config/openbox/ob_config_build/</Path>
+                  <Path Filename="ob_config_build">/home/safjan/dotfiles/.config/openbox/</Path>
+                  <Path Filename="09_keyboard">/home/safjan/dotfiles/.config/openbox/ob_config_build/</Path>
+                  <Path Filename="..">/home/safjan/dotfiles/.config/openbox/ob_config_build/09_keyboard/</Path>
+                  <Path Filename="..">/home/safjan/dotfiles/.config/openbox/ob_config_build/</Path>
+                  <Path Filename="lubuntu-rc.xml">/home/safjan/dotfiles/.config/openbox/</Path>
+                  <Path Filename="dotfiles">/home/safjan/</Path>
+                  <Path Filename="..">/home/safjan/dotfiles/</Path>
+                  <Path Filename="Downloads">/home/safjan/</Path>
+                  <Path Filename="..">/home/safjan/Downloads/</Path>
+                  <Path Filename="">/home/safjan/dotfiles/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -299,8 +348,8 @@
             </ColumnsView>
           </FileView>
           <Options>2</Options>
-          <LockPath>/home/izik/</LockPath>
-          <Title>izik</Title>
+          <LockPath>/home/safjan/dotfiles/</LockPath>
+          <Title>dotfiles</Title>
         </Tab>
         <Tab>
           <FileView Type="columns">
@@ -308,56 +357,56 @@
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="_old_stuff">/home/izik/Documents/</Path>
-                  <Path Filename="Pictures">/home/izik/</Path>
-                  <Path Filename="..">/home/izik/Pictures/</Path>
-                  <Path Filename="Documents">/home/izik/</Path>
-                  <Path Filename="documents">/home/izik/Documents/</Path>
-                  <Path Filename="..">/home/izik/Documents/documents/</Path>
-                  <Path Filename="..">/home/izik/Documents/</Path>
-                  <Path Filename="Documents">/home/izik/</Path>
-                  <Path Filename="src">/home/izik/Documents/</Path>
-                  <Path Filename="..">/home/izik/Documents/src/</Path>
-                  <Path Filename="_NOKIA_remove">/home/izik/Documents/</Path>
-                  <Path Filename="..">/home/izik/Documents/_NOKIA_remove/</Path>
-                  <Path Filename="_NOKIA_remove">/home/izik/Documents/</Path>
-                  <Path Filename="..">/home/izik/Documents/_NOKIA_remove/</Path>
-                  <Path Filename="ergonomia">/home/izik/Documents/</Path>
-                  <Path Filename="..">/home/izik/Documents/ergonomia/</Path>
-                  <Path Filename="documents">/home/izik/Documents/</Path>
-                  <Path Filename="..">/home/izik/Documents/documents/</Path>
-                  <Path Filename="documents">/home/izik/Documents/</Path>
-                  <Path Filename="wilabs">/home/izik/</Path>
-                  <Path Filename="..">/home/izik/wilabs/</Path>
-                  <Path Filename="Documents">/home/izik/</Path>
-                  <Path Filename="documents">/home/izik/Documents/</Path>
-                  <Path Filename="luxmed">/home/izik/Documents/documents/</Path>
-                  <Path Filename="..">/home/izik/Documents/documents/luxmed/</Path>
-                  <Path Filename="Faktury">/home/izik/Documents/documents/</Path>
-                  <Path Filename="..">/home/izik/Documents/documents/Faktury/</Path>
-                  <Path Filename="..">/home/izik/Documents/documents/</Path>
-                  <Path Filename="5_priv">/home/izik/Documents/</Path>
-                  <Path Filename="..">/home/izik/Documents/5_priv/</Path>
-                  <Path Filename="priv">/home/izik/Documents/</Path>
-                  <Path Filename="..">/home/izik/Documents/priv/</Path>
-                  <Path Filename="My Documents">/home/izik/Documents/</Path>
-                  <Path Filename="5_priv">/home/izik/Documents/My Documents/</Path>
-                  <Path Filename="foto">/home/izik/Documents/My Documents/5_priv/</Path>
-                  <Path Filename="Susan Sontag-O Fotografii.pdf">/home/izik/Documents/My Documents/5_priv/foto/</Path>
-                  <Path Filename="..">/home/izik/Documents/My Documents/5_priv/</Path>
-                  <Path Filename="..">/home/izik/Documents/My Documents/</Path>
-                  <Path Filename="..">/home/izik/Documents/</Path>
-                  <Path Filename="Pictures">/home/izik/</Path>
-                  <Path Filename="..">/home/izik/Pictures/</Path>
-                  <Path Filename="Documents">/home/izik/</Path>
-                  <Path Filename="..">/home/izik/Documents/</Path>
-                  <Path Filename="import">/home/izik/</Path>
-                  <Path Filename="..">/home/izik/import/</Path>
-                  <Path Filename="..">/home/izik/</Path>
-                  <Path Filename="..">/home/</Path>
-                  <Path Filename="media">/</Path>
-                  <Path Filename="..">/media/</Path>
-                  <Path Filename="">/</Path>
+                  <Path Filename="data">/home/safjan/projects/batman-experiments/experiments/1/</Path>
+                  <Path Filename="..">/home/safjan/projects/batman-experiments/experiments/1/data/</Path>
+                  <Path Filename="..">/home/safjan/projects/batman-experiments/experiments/1/</Path>
+                  <Path Filename="..">/home/safjan/projects/batman-experiments/experiments/</Path>
+                  <Path Filename="experiments">/home/safjan/projects/batman-experiments/</Path>
+                  <Path Filename="batman-experiments">/home/safjan/projects/</Path>
+                  <Path Filename=".virtualenvs">/home/safjan/</Path>
+                  <Path Filename="batman">/home/safjan/.virtualenvs/</Path>
+                  <Path Filename="bin">/home/safjan/.virtualenvs/batman/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/bin/</Path>
+                  <Path Filename="include">/home/safjan/.virtualenvs/batman/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/include/</Path>
+                  <Path Filename="lib">/home/safjan/.virtualenvs/batman/</Path>
+                  <Path Filename="python3.7">/home/safjan/.virtualenvs/batman/lib/</Path>
+                  <Path Filename="site-packages">/home/safjan/.virtualenvs/batman/lib/python3.7/</Path>
+                  <Path Filename="logcompare-1.0.0.dist-info">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/logcompare-1.0.0.dist-info/</Path>
+                  <Path Filename="btslogparser-1.3.1.dist-info">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/btslogparser-1.3.1.dist-info/</Path>
+                  <Path Filename="btslogparser_utils">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/btslogparser_utils/</Path>
+                  <Path Filename="logcompare-1.0.0.dist-info">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/logcompare-1.0.0.dist-info/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/</Path>
+                  <Path Filename="lib">/home/safjan/.virtualenvs/batman/</Path>
+                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/</Path>
+                  <Path Filename="logcompare.py">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
+                  <Path Filename="projects">/home/safjan/</Path>
+                  <Path Filename="batman-experiments">/home/safjan/projects/</Path>
+                  <Path Filename="experiments">/home/safjan/projects/batman-experiments/</Path>
+                  <Path Filename="1">/home/safjan/projects/batman-experiments/experiments/</Path>
+                  <Path Filename="out-csim">/home/safjan/projects/batman-experiments/experiments/1/</Path>
+                  <Path Filename="summary.csv">/home/safjan/projects/batman-experiments/experiments/1/out-csim/</Path>
+                  <Path Filename="dotfiles">/home/safjan/</Path>
+                  <Path Filename=".config">/home/safjan/dotfiles/</Path>
+                  <Path Filename="openbox">/home/safjan/dotfiles/.config/</Path>
+                  <Path Filename="ob_config_build">/home/safjan/dotfiles/.config/openbox/</Path>
+                  <Path Filename="..">/home/safjan/dotfiles/.config/openbox/ob_config_build/</Path>
+                  <Path Filename="ob_config_build">/home/safjan/dotfiles/.config/openbox/</Path>
+                  <Path Filename="..">/home/safjan/dotfiles/.config/openbox/ob_config_build/</Path>
+                  <Path Filename="ob_config_build">/home/safjan/dotfiles/.config/openbox/</Path>
+                  <Path Filename="09_keyboard">/home/safjan/dotfiles/.config/openbox/ob_config_build/</Path>
+                  <Path Filename="..">/home/safjan/dotfiles/.config/openbox/ob_config_build/09_keyboard/</Path>
+                  <Path Filename="..">/home/safjan/dotfiles/.config/openbox/ob_config_build/</Path>
+                  <Path Filename="lubuntu-rc.xml">/home/safjan/dotfiles/.config/openbox/</Path>
+                  <Path Filename="dotfiles">/home/safjan/</Path>
+                  <Path Filename="..">/home/safjan/dotfiles/</Path>
+                  <Path Filename="">/home/safjan/dotfiles/.config/openbox/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -365,15 +414,12 @@
               <ColumnsSet>Default</ColumnsSet>
             </ColumnsView>
           </FileView>
+          <Options>2</Options>
+          <LockPath>/home/safjan/dotfiles/.config/openbox/</LockPath>
+          <Title>openbox</Title>
         </Tab>
         <Tab>
           <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
             <History>
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
@@ -382,52 +428,80 @@
                   <Path Filename="..">/usr/lib/</Path>
                   <Path Filename="..">/usr/</Path>
                   <Path Filename="home">/</Path>
-                  <Path Filename="izik">/home/</Path>
-                  <Path Filename="wilabs">/home/izik/</Path>
-                  <Path Filename="analyzer">/home/izik/wilabs/</Path>
-                  <Path Filename="output">/home/izik/wilabs/analyzer/</Path>
-                  <Path Filename="creativity_report.pdf">/home/izik/wilabs/analyzer/output/</Path>
-                  <Path Filename="wilabs">/home/izik/</Path>
-                  <Path Filename="analyzer">/home/izik/wilabs/</Path>
-                  <Path Filename="output">/home/izik/wilabs/analyzer/</Path>
-                  <Path Filename="reviews_confusion.png">/home/izik/wilabs/analyzer/output/</Path>
-                  <Path Filename="Dropbox">/home/izik/</Path>
-                  <Path Filename="firma">/home/izik/Dropbox/</Path>
-                  <Path Filename="..">/home/izik/Dropbox/firma/</Path>
-                  <Path Filename="..">/home/izik/Dropbox/</Path>
-                  <Path Filename="..">/home/izik/</Path>
-                  <Path Filename="..">/home/</Path>
-                  <Path Filename="mnt">/</Path>
-                  <Path Filename="home">/mnt/</Path>
-                  <Path Filename="izik_home">/mnt/home/</Path>
-                  <Path Filename="..">/mnt/home/izik_home/</Path>
-                  <Path Filename="..">/mnt/home/</Path>
-                  <Path Filename="old">/mnt/</Path>
-                  <Path Filename="..">/mnt/old/</Path>
-                  <Path Filename="..">/mnt/</Path>
-                  <Path Filename="mnt">/</Path>
-                  <Path Filename="..">/home/izik/</Path>
-                  <Path Filename="izik">/home/</Path>
-                  <Path Filename="wilabs">/home/izik/</Path>
-                  <Path Filename="analyzer">/home/izik/wilabs/</Path>
-                  <Path Filename="output">/home/izik/wilabs/analyzer/</Path>
-                  <Path Filename="..">/home/izik/wilabs/analyzer/output/</Path>
-                  <Path Filename="..">/home/izik/wilabs/analyzer/</Path>
-                  <Path Filename="..">/home/izik/wilabs/</Path>
-                  <Path Filename="old">/home/izik/</Path>
-                  <Path Filename="izik">/home/</Path>
+                  <Path Filename="safjan">/home/</Path>
+                  <Path Filename=".config">/home/safjan/</Path>
+                  <Path Filename="doublecmd">/home/safjan/.config/</Path>
+                  <Path Filename="">/home/safjan/.config/doublecmd/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>1</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path Filename="ci_checks">/home/safjan/projects/</Path>
+                  <Path Filename="implement">/home/safjan/projects/ci_checks/</Path>
+                  <Path Filename="filecluster">/home/safjan/projects/</Path>
+                  <Path Filename="projects">/home/safjan/</Path>
+                  <Path Filename="safjan">/home/</Path>
                   <Path Filename="home">/</Path>
-                  <Path Filename="..">/home/izik/</Path>
-                  <Path Filename="..">/home/</Path>
-                  <Path Filename="mnt">/</Path>
-                  <Path Filename="old">/mnt/</Path>
-                  <Path Filename="home">/mnt/old/</Path>
-                  <Path Filename="izik">/mnt/old/home/</Path>
-                  <Path Filename="..">/mnt/old/home/izik/</Path>
-                  <Path Filename="">/home/izik/firma/</Path>
-                  <Path Filename="">/home/izik/</Path>
-                  <Path Filename="">/home/izik/firma/</Path>
-                  <Path Filename="">/home/izik/</Path>
+                  <Path Filename="safjan">/home/</Path>
+                  <Path Filename="Dropbox">/home/safjan/</Path>
+                  <Path Filename="dropbox">/home/safjan/Dropbox/</Path>
+                  <Path Filename="..">/home/safjan/Dropbox/dropbox/</Path>
+                  <Path Filename="..">/home/safjan/Dropbox/</Path>
+                  <Path Filename=".config">/home/safjan/</Path>
+                  <Path Filename="openbox">/home/safjan/.config/</Path>
+                  <Path Filename="rc.xml">/home/safjan/.config/openbox/</Path>
+                  <Path Filename="openbox">/home/safjan/.config/</Path>
+                  <Path Filename="projects">/home/safjan/</Path>
+                  <Path Filename="pronto_eda">/home/safjan/projects/</Path>
+                  <Path Filename="..">/home/safjan/projects/pronto_eda/</Path>
+                  <Path Filename="..">/home/safjan/Downloads/</Path>
+                  <Path Filename="Documents">/home/safjan/</Path>
+                  <Path Filename="papers">/home/safjan/Documents/</Path>
+                  <Path Filename="ML_AI">/home/safjan/Documents/papers/</Path>
+                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/</Path>
+                  <Path Filename="08109094.pdf">/home/safjan/Downloads/</Path>
+                  <Path Filename="Dropbox">/home/safjan/</Path>
+                  <Path Filename="..">/home/safjan/Dropbox/</Path>
+                  <Path Filename="Documents">/home/safjan/</Path>
+                  <Path Filename="papers">/home/safjan/Documents/</Path>
+                  <Path Filename="ML_AI">/home/safjan/Documents/papers/</Path>
+                  <Path Filename="1811.09878v1.pdf">/home/safjan/Documents/papers/ML_AI/</Path>
+                  <Path Filename="ML_AI">/home/safjan/Documents/papers/</Path>
+                  <Path Filename="papers">/home/safjan/Documents/</Path>
+                  <Path Filename="Documents">/home/safjan/</Path>
+                  <Path Filename="safjan">/home/</Path>
+                  <Path Filename="Dropbox">/home/safjan/</Path>
+                  <Path Filename="cheat">/home/safjan/Dropbox/</Path>
+                  <Path Filename="ai">/home/safjan/Dropbox/cheat/</Path>
+                  <Path Filename="..">/home/safjan/Dropbox/cheat/ai/</Path>
+                  <Path Filename="ai.git">/home/safjan/Dropbox/cheat/</Path>
+                  <Path Filename=".git">/home/safjan/Dropbox/cheat/ai.git/</Path>
+                  <Path Filename="..">/home/safjan/Dropbox/cheat/ai.git/.git/</Path>
+                  <Path Filename="PDFs">/home/safjan/Dropbox/cheat/ai.git/</Path>
+                  <Path Filename="..">/home/safjan/Dropbox/cheat/ai.git/PDFs/</Path>
+                  <Path Filename="..">/home/safjan/Dropbox/cheat/ai.git/</Path>
+                  <Path Filename="ai.git">/home/safjan/Dropbox/cheat/</Path>
+                  <Path Filename="Dropbox">/home/safjan/</Path>
+                  <Path Filename="..">/home/safjan/Downloads/</Path>
+                  <Path Filename="Documents">/home/safjan/</Path>
+                  <Path Filename="..">/home/safjan/Documents/</Path>
+                  <Path Filename="">/home/safjan/Downloads/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -436,8 +510,154 @@
             </ColumnsView>
           </FileView>
           <Options>2</Options>
-          <LockPath>/home/izik/firma/</LockPath>
-          <Title>firma</Title>
+          <LockPath>/home/safjan/Downloads/</LockPath>
+          <Title>Downloads</Title>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path Filename="..">/home/safjan/projects/kaggle/</Path>
+                  <Path Filename="kaggle">/home/safjan/projects/</Path>
+                  <Path Filename="whats_cooking_NLP">/home/safjan/projects/kaggle/</Path>
+                  <Path Filename="venv">/home/safjan/projects/kaggle/whats_cooking_NLP/</Path>
+                  <Path Filename="..">/home/safjan/projects/kaggle/whats_cooking_NLP/venv/</Path>
+                  <Path Filename="..">/home/safjan/projects/kaggle/whats_cooking_NLP/</Path>
+                  <Path Filename="..">/home/safjan/projects/kaggle/</Path>
+                  <Path Filename="_django_core">/home/safjan/projects/</Path>
+                  <Path Filename="Django-Views-Unleashed">/home/safjan/projects/_django_core/</Path>
+                  <Path Filename="wagabunda">/home/safjan/projects/</Path>
+                  <Path Filename="wagabunda">/home/safjan/projects/wagabunda/</Path>
+                  <Path Filename="..">/home/safjan/projects/wagabunda/wagabunda/</Path>
+                  <Path Filename="..">/home/safjan/projects/wagabunda/</Path>
+                  <Path Filename="django_blog">/home/safjan/projects/</Path>
+                  <Path Filename=".git">/home/safjan/projects/django_blog/</Path>
+                  <Path Filename="..">/home/safjan/projects/django_blog/.git/</Path>
+                  <Path Filename="..">/home/safjan/projects/django_blog/</Path>
+                  <Path Filename="filecluster">/home/safjan/projects/</Path>
+                  <Path Filename=".git">/home/safjan/projects/filecluster/</Path>
+                  <Path Filename="..">/home/safjan/projects/filecluster/.git/</Path>
+                  <Path Filename="..">/home/safjan/projects/filecluster/</Path>
+                  <Path Filename="flask_blog">/home/safjan/projects/</Path>
+                  <Path Filename=".git">/home/safjan/projects/flask_blog/</Path>
+                  <Path Filename="config">/home/safjan/projects/flask_blog/.git/</Path>
+                  <Path Filename="..">/home/safjan/projects/</Path>
+                  <Path Filename="music">/run/media/safjan/CARSD/</Path>
+                  <Path Filename="zlew">/run/media/safjan/CARSD/music/</Path>
+                  <Path Filename="..">/run/media/safjan/CARSD/music/zlew/</Path>
+                  <Path Filename="moja_muza">/run/media/safjan/CARSD/music/</Path>
+                  <Path Filename="Las Ketchup - Asereje (HD,16_9).mp3">/run/media/safjan/CARSD/music/moja_muza/</Path>
+                  <Path Filename="Malenczuk">/run/media/safjan/CARSD/music/</Path>
+                  <Path Filename="Maleńczuk - Cicha Woda.mp3">/run/media/safjan/CARSD/music/Malenczuk/</Path>
+                  <Path Filename="moja_muza">/run/media/safjan/CARSD/music/</Path>
+                  <Path Filename="..">/run/media/safjan/CARSD/music/moja_muza/</Path>
+                  <Path Filename="moja_muza">/run/media/safjan/CARSD/music/</Path>
+                  <Path Filename="the_analogs - strzelby z brixton.mp3">/run/media/safjan/CARSD/music/moja_muza/</Path>
+                  <Path Filename="moja_muza">/run/media/safjan/CARSD/music/</Path>
+                  <Path Filename="..">/run/media/safjan/CARSD/music/moja_muza/</Path>
+                  <Path Filename="moja_muza">/run/media/safjan/CARSD/music/</Path>
+                  <Path Filename="..">/run/media/safjan/CARSD/music/moja_muza/</Path>
+                  <Path Filename="moja_muza">/run/media/safjan/CARSD/music/</Path>
+                  <Path Filename="..">/run/media/safjan/CARSD/music/moja_muza/</Path>
+                  <Path Filename="moja_muza">/run/media/safjan/CARSD/music/</Path>
+                  <Path Filename="">/home/safjan/projects/</Path>
+                  <Path Filename=".ipynb_checkpoints">./</Path>
+                  <Path Filename="..">/home/safjan/projects/</Path>
+                  <Path Filename="vimwiki">/home/safjan/</Path>
+                  <Path Filename="diary">/home/safjan/vimwiki/</Path>
+                  <Path Filename="2019-02-15_f.md">/home/safjan/vimwiki/diary/</Path>
+                  <Path Filename="">/home/safjan/projects/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/safjan/projects/</LockPath>
+          <Title>projects</Title>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>1</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path Filename="diary">/home/safjan/vimwiki/</Path>
+                  <Path Filename="2019">/home/safjan/vimwiki/diary/</Path>
+                  <Path Filename="..">/home/safjan/vimwiki/diary/2019/</Path>
+                  <Path Filename="">/home/safjan/Documents/</Path>
+                  <Path Filename="locate">/home/safjan/Zotero/</Path>
+                  <Path Filename="..">/home/safjan/Zotero/locate/</Path>
+                  <Path Filename="pipes">/home/safjan/Zotero/</Path>
+                  <Path Filename="..">/home/safjan/Zotero/pipes/</Path>
+                  <Path Filename="pipes">/home/safjan/Zotero/</Path>
+                  <Path Filename="..">/home/safjan/Zotero/pipes/</Path>
+                  <Path Filename="storage">/home/safjan/Zotero/</Path>
+                  <Path Filename="2PVT2BC8">/home/safjan/Zotero/storage/</Path>
+                  <Path Filename="..">/home/safjan/Zotero/storage/2PVT2BC8/</Path>
+                  <Path Filename="3GGWXCZR">/home/safjan/Zotero/storage/</Path>
+                  <Path Filename="..">/home/safjan/Zotero/storage/3GGWXCZR/</Path>
+                  <Path Filename="3LRUB9NN">/home/safjan/Zotero/storage/</Path>
+                  <Path Filename="..">/home/safjan/Zotero/storage/3LRUB9NN/</Path>
+                  <Path Filename="GQGP97LW">/home/safjan/Zotero/storage/</Path>
+                  <Path Filename="..">/home/safjan/Zotero/storage/GQGP97LW/</Path>
+                  <Path Filename="..">/home/safjan/Zotero/storage/</Path>
+                  <Path Filename="..">/home/safjan/Zotero/</Path>
+                  <Path Filename="..">/home/safjan/</Path>
+                  <Path Filename="papers">/home/safjan/Documents/</Path>
+                  <Path Filename="ML_AI">/home/safjan/Documents/papers/</Path>
+                  <Path Filename="08109094.pdf">/home/safjan/Documents/papers/ML_AI/</Path>
+                  <Path Filename="ML_AI">/home/safjan/Documents/papers/</Path>
+                  <Path Filename="10.1.1.11.2062.pdf">/home/safjan/Documents/papers/ML_AI/</Path>
+                  <Path Filename="ML_AI">/home/safjan/Documents/papers/</Path>
+                  <Path Filename="1811.09878v1.pdf">/home/safjan/Documents/papers/ML_AI/</Path>
+                  <Path Filename="tmp">/home/safjan/Documents/papers/</Path>
+                  <Path Filename="..">/home/safjan/Documents/papers/tmp/</Path>
+                  <Path Filename="..">/home/safjan/Documents/papers/</Path>
+                  <Path Filename="..">/home/safjan/Documents/</Path>
+                  <Path Filename="..">/home/safjan/</Path>
+                  <Path Filename="safjan">/home/</Path>
+                  <Path Filename="Dropbox">/home/safjan/</Path>
+                  <Path Filename="feedbro-rules.json">/home/safjan/Dropbox/</Path>
+                  <Path Filename="..">/home/safjan/Documents/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/</Path>
+                  <Path Filename="_pro">/run/media/safjan/38A6-2D03/Documents/</Path>
+                  <Path Filename="Downloads">/run/media/safjan/38A6-2D03/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Downloads/</Path>
+                  <Path Filename="notes">/run/media/safjan/38A6-2D03/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/notes/</Path>
+                  <Path Filename="Pictures">/run/media/safjan/38A6-2D03/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Pictures/</Path>
+                  <Path Filename="System Volume Information">/run/media/safjan/38A6-2D03/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/System Volume Information/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/</Path>
+                  <Path Filename="..">/home/safjan/Documents/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/safjan/Documents/</LockPath>
+          <Title>Documents</Title>
         </Tab>
       </Left>
       <Right>
@@ -447,63 +667,63 @@
             <Sortings>
               <Sorting>
                 <Direction>1</Direction>
-                <Function>12</Function>
+                <Function>1</Function>
               </Sorting>
             </Sortings>
             <History>
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="materia?y_dodatkowe">/mnt/home/5_priv/_storage_documents/umowa_strzegomska/</Path>
-                  <Path Filename="..">/mnt/home/5_priv/_storage_documents/umowa_strzegomska/materia?y_dodatkowe/</Path>
-                  <Path Filename="..">/mnt/home/5_priv/_storage_documents/umowa_strzegomska/</Path>
-                  <Path Filename="2010_and older">/mnt/home/5_priv/_storage_documents/</Path>
-                  <Path Filename="mgr_Natalia_Oprzedek">/mnt/home/5_priv/_storage_documents/2010_and older/</Path>
-                  <Path Filename="plyta">/mnt/home/5_priv/_storage_documents/2010_and older/mgr_Natalia_Oprzedek/</Path>
-                  <Path Filename="..">/mnt/home/5_priv/_storage_documents/2010_and older/mgr_Natalia_Oprzedek/plyta/</Path>
-                  <Path Filename="plyta">/mnt/home/5_priv/_storage_documents/2010_and older/mgr_Natalia_Oprzedek/</Path>
-                  <Path Filename="..">/mnt/home/5_priv/_storage_documents/2010_and older/mgr_Natalia_Oprzedek/plyta/</Path>
-                  <Path Filename="..">/mnt/home/5_priv/_storage_documents/2010_and older/mgr_Natalia_Oprzedek/</Path>
-                  <Path Filename="..">/mnt/home/5_priv/_storage_documents/2010_and older/</Path>
-                  <Path Filename="_moto">/mnt/home/5_priv/_storage_documents/</Path>
-                  <Path Filename="_auto_moto">/mnt/home/5_priv/_storage_documents/_moto/</Path>
-                  <Path Filename="umowy kupna-sprzedazy auta">/mnt/home/5_priv/_storage_documents/_moto/_auto_moto/</Path>
-                  <Path Filename="..">/mnt/home/5_priv/_storage_documents/_moto/_auto_moto/umowy kupna-sprzedazy auta/</Path>
-                  <Path Filename="Postepowanie na miejscu kolizji.pdf">/mnt/home/5_priv/_storage_documents/_moto/_auto_moto/</Path>
-                  <Path Filename="_auto_moto">/mnt/home/5_priv/_storage_documents/_moto/</Path>
-                  <Path Filename="Post?powanie na miejscu kolizji drogow">/mnt/home/5_priv/_storage_documents/_moto/_auto_moto/</Path>
-                  <Path Filename="src">/home/izik/</Path>
-                  <Path Filename="filecluster">/home/izik/src/</Path>
-                  <Path Filename="inbox">/home/izik/src/filecluster/</Path>
-                  <Path Filename="..">/home/izik/src/filecluster/inbox/</Path>
-                  <Path Filename="[2017_01_26]_mix">/home/izik/src/filecluster/</Path>
-                  <Path Filename="..">/home/izik/src/filecluster/[2017_01_26]_mix/</Path>
-                  <Path Filename="[2017_01_28]_mix">/home/izik/src/filecluster/</Path>
-                  <Path Filename="IMG_1064.JPG">/home/izik/src/filecluster/[2017_01_28]_mix/</Path>
-                  <Path Filename="Documents">/home/izik/</Path>
-                  <Path Filename="..">/home/izik/Documents/</Path>
-                  <Path Filename="wilabs">/home/izik/</Path>
-                  <Path Filename="books">/home/izik/wilabs/</Path>
-                  <Path Filename="writing_idiomatic_python_3.pdf">/home/izik/wilabs/books/</Path>
-                  <Path Filename="dotfiles">/home/izik/</Path>
-                  <Path Filename=".config">/home/izik/dotfiles/</Path>
-                  <Path Filename="..">/home/izik/dotfiles/.config/</Path>
-                  <Path Filename="home">/mnt/sda3/</Path>
-                  <Path Filename="izix">/mnt/sda3/home/</Path>
-                  <Path Filename=".config">/mnt/sda3/home/izix/</Path>
-                  <Path Filename="polybar">/mnt/sda3/home/izix/.config/</Path>
-                  <Path Filename="..">/mnt/sda3/home/izix/.config/polybar/</Path>
-                  <Path Filename=".config">/home/izik/</Path>
-                  <Path Filename="openbox">/home/izik/.config/</Path>
-                  <Path Filename="..">/home/izik/.config/openbox/</Path>
-                  <Path Filename="xfce4">/home/izik/.config/</Path>
-                  <Path Filename="xfconf">/home/izik/.config/xfce4/</Path>
-                  <Path Filename="xfce-perchannel-xml">/home/izik/.config/xfce4/xfconf/</Path>
-                  <Path Filename="xfce4-keyboard-shortcuts.xml">/home/izik/.config/xfce4/xfconf/xfce-perchannel-xml/</Path>
-                  <Path Filename="..">/home/</Path>
-                  <Path Filename="bin">/</Path>
-                  <Path Filename="al-conkypin">/bin/</Path>
-                  <Path Filename="bin">/</Path>
+                  <Path Filename="overview">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/ext/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/ext/overview/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/ext/</Path>
+                  <Path Filename="ext">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/ext/</Path>
+                  <Path Filename="1702.00832.pdf">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/</Path>
+                  <Path Filename="filecluster">/home/safjan/projects/</Path>
+                  <Path Filename="Documents">/home/safjan/</Path>
+                  <Path Filename="papers">/home/safjan/Documents/</Path>
+                  <Path Filename="ML_AI">/home/safjan/Documents/papers/</Path>
+                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/</Path>
+                  <Path Filename="pronto_eda">/home/safjan/projects/</Path>
+                  <Path Filename="Documents">/home/safjan/</Path>
+                  <Path Filename="papers">/home/safjan/Documents/</Path>
+                  <Path Filename="ML_AI">/home/safjan/Documents/papers/</Path>
+                  <Path Filename="distributed">/home/safjan/Documents/papers/ML_AI/</Path>
+                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/distributed/</Path>
+                  <Path Filename="distributed_training">/home/safjan/Documents/papers/ML_AI/</Path>
+                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/distributed_training/</Path>
+                  <Path Filename="overview">/home/safjan/Documents/papers/ML_AI/</Path>
+                  <Path Filename="sel">/home/safjan/Documents/papers/ML_AI/overview/</Path>
+                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/overview/sel/</Path>
+                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/overview/</Path>
+                  <Path Filename="overview">/home/safjan/Documents/papers/ML_AI/</Path>
+                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/overview/</Path>
+                  <Path Filename="distributed">/home/safjan/Documents/papers/ML_AI/</Path>
+                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/distributed/</Path>
+                  <Path Filename="distributed_training">/home/safjan/Documents/papers/ML_AI/</Path>
+                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/distributed_training/</Path>
+                  <Path Filename="Towards an Intelligent Edge - Wireless Communication Meets Machine Learning.pdf">/home/safjan/Documents/papers/ML_AI/</Path>
+                  <Path Filename="_best">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/</Path>
+                  <Path Filename="Light-BG">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/_best/</Path>
+                  <Path Filename="Robotics">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/_best/Light-BG/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/_best/Light-BG/Robotics/</Path>
+                  <Path Filename="_General AWS">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/_best/Light-BG/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/_best/Light-BG/_General AWS/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/_best/Light-BG/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/_best/</Path>
+                  <Path Filename="we_share">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/we_share/</Path>
+                  <Path Filename="1702.00832.pdf">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/</Path>
+                  <Path Filename="..">/home/safjan/projects/</Path>
+                  <Path Filename="vimwiki">/home/safjan/</Path>
+                  <Path Filename="diary">/home/safjan/vimwiki/</Path>
+                  <Path Filename="2019-03-04_m.md">/home/safjan/vimwiki/diary/</Path>
+                  <Path Filename="bulk">/home/</Path>
+                  <Path Filename="deeplearning.ai">/home/bulk/</Path>
+                  <Path Filename="C3">/home/bulk/deeplearning.ai/</Path>
+                  <Path Filename="W1L07_-_When_to_Change_Dev_Test_Sets.mp4">/home/bulk/deeplearning.ai/C3/</Path>
+                  <Path Filename="">/home/safjan/projects/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -512,8 +732,8 @@
             </ColumnsView>
           </FileView>
           <Options>2</Options>
-          <LockPath>/home/izik/</LockPath>
-          <Title>izik</Title>
+          <LockPath>/home/safjan/projects/</LockPath>
+          <Title>projects</Title>
         </Tab>
         <Tab>
           <FileView Type="columns">
@@ -527,56 +747,56 @@
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="vimwiki">/home/izik/Dropbox/</Path>
-                  <Path Filename="..">/home/izik/Dropbox/vimwiki/</Path>
-                  <Path Filename="..">/home/izik/Dropbox/</Path>
-                  <Path Filename="dotfiles">/home/izik/</Path>
-                  <Path Filename="restore">/home/izik/dotfiles/</Path>
-                  <Path Filename="13-merge-xfce4-keyboard-shortcuts.sh">/home/izik/dotfiles/restore/</Path>
-                  <Path Filename="restore">/home/izik/dotfiles/</Path>
-                  <Path Filename="src">/home/izik/</Path>
-                  <Path Filename="..">/home/izik/src/</Path>
-                  <Path Filename="..">/home/izik/</Path>
-                  <Path Filename="bulk">/home/</Path>
-                  <Path Filename="blogs">/home/bulk/</Path>
-                  <Path Filename="blog">/home/bulk/blogs/</Path>
-                  <Path Filename="content">/home/bulk/blogs/blog/</Path>
-                  <Path Filename="posts">/home/bulk/blogs/blog/content/</Path>
-                  <Path Filename="..">/home/bulk/blogs/blog/content/posts/</Path>
-                  <Path Filename="..">/home/bulk/blogs/blog/content/</Path>
-                  <Path Filename="..">/home/bulk/blogs/blog/</Path>
-                  <Path Filename="pelican-blog">/home/bulk/blogs/</Path>
-                  <Path Filename="content">/home/bulk/blogs/pelican-blog/</Path>
-                  <Path Filename="posts">/home/bulk/blogs/pelican-blog/content/</Path>
-                  <Path Filename="..">/home/bulk/blogs/pelican-blog/content/posts/</Path>
-                  <Path Filename="..">/home/bulk/blogs/pelican-blog/content/</Path>
-                  <Path Filename="..">/home/bulk/blogs/pelican-blog/</Path>
-                  <Path Filename="..">/home/bulk/blogs/</Path>
-                  <Path Filename="blogs">/home/bulk/</Path>
-                  <Path Filename="blog">/home/bulk/blogs/</Path>
-                  <Path Filename="content">/home/bulk/blogs/blog/</Path>
-                  <Path Filename="posts">/home/bulk/blogs/blog/content/</Path>
-                  <Path Filename="..">/home/bulk/blogs/blog/content/posts/</Path>
-                  <Path Filename="..">/home/bulk/blogs/blog/content/</Path>
-                  <Path Filename="..">/home/bulk/blogs/blog/</Path>
-                  <Path Filename="my-w3-personal-blog">/home/bulk/blogs/</Path>
-                  <Path Filename="readme_img">/home/bulk/blogs/my-w3-personal-blog/</Path>
-                  <Path Filename="..">/home/bulk/blogs/my-w3-personal-blog/readme_img/</Path>
-                  <Path Filename="static">/home/bulk/blogs/my-w3-personal-blog/</Path>
-                  <Path Filename="..">/home/bulk/blogs/my-w3-personal-blog/static/</Path>
-                  <Path Filename="templates">/home/bulk/blogs/my-w3-personal-blog/</Path>
-                  <Path Filename="..">/home/bulk/blogs/my-w3-personal-blog/templates/</Path>
-                  <Path Filename="..">/home/bulk/blogs/my-w3-personal-blog/</Path>
-                  <Path Filename="..">/home/bulk/blogs/</Path>
-                  <Path Filename="..">/home/bulk/</Path>
-                  <Path Filename="izik">/home/</Path>
-                  <Path Filename="..">/home/izik/</Path>
-                  <Path Filename="bulk">/home/</Path>
-                  <Path Filename="blogs">/home/bulk/</Path>
-                  <Path Filename="blog">/home/bulk/blogs/</Path>
-                  <Path Filename=".git">/home/bulk/blogs/blog/</Path>
-                  <Path Filename="..">/home/bulk/blogs/blog/.git/</Path>
-                  <Path Filename=".git">/home/bulk/blogs/blog/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Downloads/global-slavery-index/</Path>
+                  <Path Filename="old_dl">/run/media/safjan/38A6-2D03/Downloads/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Downloads/old_dl/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Downloads/</Path>
+                  <Path Filename="Dropbox">/run/media/safjan/38A6-2D03/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Dropbox/</Path>
+                  <Path Filename="Dropbox">/run/media/safjan/38A6-2D03/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Dropbox/</Path>
+                  <Path Filename="Pictures">/run/media/safjan/38A6-2D03/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Pictures/</Path>
+                  <Path Filename="Documents">/run/media/safjan/38A6-2D03/</Path>
+                  <Path Filename="_pro">/run/media/safjan/38A6-2D03/Documents/</Path>
+                  <Path Filename="career">/run/media/safjan/38A6-2D03/Documents/_pro/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/career/</Path>
+                  <Path Filename="inbox">/run/media/safjan/38A6-2D03/Documents/_pro/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/inbox/</Path>
+                  <Path Filename="career">/run/media/safjan/38A6-2D03/Documents/_pro/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/career/</Path>
+                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/</Path>
+                  <Path Filename="Metrics _ Kaggle_files">/home/safjan/Downloads/</Path>
+                  <Path Filename="Zotero">/home/safjan/</Path>
+                  <Path Filename="storage">/home/safjan/Zotero/</Path>
+                  <Path Filename="..">/home/safjan/Zotero/storage/</Path>
+                  <Path Filename="zotero-storage-scanner-5.0.8.xpi">/home/safjan/Downloads/</Path>
+                  <Path Filename="Downloads">/home/safjan/</Path>
+                  <Path Filename="feedbro-subscriptions-20190305-215051.opml">/home/safjan/Downloads/</Path>
+                  <Path Filename="Documents">/home/safjan/</Path>
+                  <Path Filename="_pro">/home/safjan/Documents/</Path>
+                  <Path Filename="Downloads">/home/safjan/</Path>
+                  <Path Filename="iso">/home/safjan/Downloads/</Path>
+                  <Path Filename="..">/home/safjan/Downloads/iso/</Path>
+                  <Path Filename="dotfiles">/home/safjan/</Path>
+                  <Path Filename="restore">/home/safjan/dotfiles/</Path>
+                  <Path Filename="pkg-from-the-list.sh">/home/safjan/dotfiles/restore/</Path>
+                  <Path Filename="nok_bak.sh">/home/safjan/</Path>
+                  <Path Filename="_Datascientist">/home/safjan/Downloads/</Path>
+                  <Path Filename="..">/home/safjan/Downloads/_Datascientist/</Path>
+                  <Path Filename="iso">/home/safjan/Downloads/</Path>
+                  <Path Filename="..">/home/safjan/Downloads/iso/</Path>
+                  <Path Filename="new">/home/safjan/Downloads/</Path>
+                  <Path Filename="..">/home/safjan/Downloads/new/</Path>
+                  <Path Filename="trainings">/home/safjan/Downloads/</Path>
+                  <Path Filename="..">/home/safjan/Downloads/trainings/</Path>
+                  <Path Filename="rufus_files">/home/safjan/Downloads/</Path>
+                  <Path Filename="..">/home/safjan/Downloads/rufus_files/</Path>
+                  <Path Filename="old_dl">/home/safjan/Downloads/</Path>
+                  <Path Filename="..">/home/safjan/Downloads/old_dl/</Path>
+                  <Path Filename="books">/home/safjan/Downloads/</Path>
+                  <Path Filename="..">/home/safjan/Downloads/books/</Path>
+                  <Path Filename="..">/home/safjan/Downloads/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -585,154 +805,8 @@
             </ColumnsView>
           </FileView>
           <Options>2</Options>
-          <LockPath>/home/izik/Downloads/</LockPath>
+          <LockPath>/home/safjan/Downloads/</LockPath>
           <Title>Downloads</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>2</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path Filename="dotfiles">/home/izik/</Path>
-                  <Path Filename="..">/home/izik/dotfiles/</Path>
-                  <Path Filename="z">/home/izik/</Path>
-                  <Path Filename="..">/home/izik/z/</Path>
-                  <Path Filename="import">/home/izik/</Path>
-                  <Path Filename="..">/home/izik/import/</Path>
-                  <Path Filename=".oh-my-zsh">/home/izik/</Path>
-                  <Path Filename=".gitignore">/home/izik/.oh-my-zsh/</Path>
-                  <Path Filename="..">/home/izik/Documents/</Path>
-                  <Path Filename="dotfiles">/home/izik/</Path>
-                  <Path Filename=".aliases">/home/izik/dotfiles/</Path>
-                  <Path Filename="..">/home/izik/Documents/</Path>
-                  <Path Filename="dotfiles">/home/izik/</Path>
-                  <Path Filename=".aliases">/home/izik/dotfiles/</Path>
-                  <Path Filename="_cleanup">/home/izik/Documents/</Path>
-                  <Path Filename="OneNote Notebooks">/home/izik/Documents/_cleanup/</Path>
-                  <Path Filename="..">/home/izik/Documents/</Path>
-                  <Path Filename="wilabs">/home/izik/</Path>
-                  <Path Filename="ebadu">/home/izik/wilabs/</Path>
-                  <Path Filename="ebadu">/home/izik/wilabs/ebadu/</Path>
-                  <Path Filename="apps">/home/izik/wilabs/ebadu/ebadu/</Path>
-                  <Path Filename="mainapp">/home/izik/wilabs/ebadu/ebadu/apps/</Path>
-                  <Path Filename="scripts">/home/izik/wilabs/ebadu/ebadu/apps/mainapp/</Path>
-                  <Path Filename="update_items_transfertime.py">/home/izik/wilabs/ebadu/ebadu/apps/mainapp/scripts/</Path>
-                  <Path Filename="..">/home/izik/Documents/</Path>
-                  <Path Filename="wilabs">/home/izik/</Path>
-                  <Path Filename="NOTES.md">/home/izik/wilabs/</Path>
-                  <Path Filename="faktury">/home/izik/Documents/</Path>
-                  <Path Filename="2017_06">/home/izik/Documents/faktury/</Path>
-                  <Path Filename="..">/home/izik/Documents/faktury/2017_06/</Path>
-                  <Path Filename="..">/home/izik/Documents/faktury/</Path>
-                  <Path Filename="My Documents">/home/izik/Documents/</Path>
-                  <Path Filename="5_priv">/home/izik/Documents/My Documents/</Path>
-                  <Path Filename="..">/home/izik/Documents/My Documents/5_priv/</Path>
-                  <Path Filename="backup_calibre">/home/izik/Documents/My Documents/</Path>
-                  <Path Filename="5_priv">/home/izik/Documents/</Path>
-                  <Path Filename="_budzet_finanse">/home/izik/Documents/5_priv/</Path>
-                  <Path Filename="PIT">/home/izik/Documents/5_priv/_budzet_finanse/</Path>
-                  <Path Filename="pit_2016_wspolny">/home/izik/Documents/5_priv/_budzet_finanse/PIT/</Path>
-                  <Path Filename="PIT_2016_wspolny_UPO.pdf">/home/izik/Documents/5_priv/_budzet_finanse/PIT/pit_2016_wspolny/</Path>
-                  <Path Filename="">/home/izik/Documents/</Path>
-                  <Path Filename="">/home/izik/</Path>
-                  <Path Filename="">/home/izik/Documents/</Path>
-                  <Path Filename="..">/home/izik/</Path>
-                  <Path Filename="">/home/izik/Documents/</Path>
-                  <Path Filename="">/home/izik/</Path>
-                  <Path Filename="">/home/izik/Documents/</Path>
-                  <Path Filename="">/home/izik/</Path>
-                  <Path Filename="">/home/izik/Documents/</Path>
-                  <Path Filename="">/home/izik/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/izik/Documents/</LockPath>
-          <Title>Documents</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>2</Direction>
-                <Function>2</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                  <Path Filename="">/Pamięć wewnętrzna/Pictures/Office Lens/</Path>
-                  <Path Filename="">/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/Pamięć wewnętrzna/Pictures/Office Lens/</LockPath>
-          <Title>Office Lens</Title>
         </Tab>
       </Right>
     </OpenedTabs>
@@ -742,13 +816,14 @@
     <ActionOnDoubleClick>2</ActionOnDoubleClick>
   </Tabs>
   <MainWindow>
-    <Position>
+    <Position Save="True">
       <Maximized>True</Maximized>
-      <Splitter>49.8434564809017</Splitter>
+      <Splitter>50.4955659885237</Splitter>
       <Left>0</Left>
-      <Top>0</Top>
-      <Width>1600</Width>
-      <Height>874</Height>
+      <Top>25</Top>
+      <Width>958</Width>
+      <Height>1026</Height>
+      <PixelsPerInch>96</PixelsPerInch>
     </Position>
   </MainWindow>
   <Language>
@@ -765,12 +840,22 @@
     <OnlyOneAppInstance>False</OnlyOneAppInstance>
     <LynxLike>True</LynxLike>
     <FileSizeFormat>0</FileSizeFormat>
+    <OperationSizeFormat>0</OperationSizeFormat>
+    <HeaderFooterSizeFormat>0</HeaderFooterSizeFormat>
     <FileSizeDigits>1</FileSizeDigits>
+    <HeaderFooterDigits>1</HeaderFooterDigits>
+    <OperationSizeDigits>1</OperationSizeDigits>
+    <PersonalizedByte>B</PersonalizedByte>
+    <PersonalizedKilo>KB</PersonalizedKilo>
+    <PersonalizedMega>MB</PersonalizedMega>
+    <PersonalizedGiga>GB</PersonalizedGiga>
+    <PersonalizedTera>TB</PersonalizedTera>
     <MinimizeToTray>False</MinimizeToTray>
     <AlwaysShowTrayIcon>False</AlwaysShowTrayIcon>
     <Mouse>
       <Selection Enabled="True">
         <Button>0</Button>
+        <IconClick>0</IconClick>
       </Selection>
       <SingleClickStart>0</SingleClickStart>
       <ScrollMode>1</ScrollMode>
@@ -883,6 +968,8 @@
   <ToolTips>
     <ShowToolTipMode>True</ShowToolTipMode>
     <CustomFields/>
+    <ActualToolTipMode>0</ActualToolTipMode>
+    <ToolTipHideTimeOut>0</ToolTipHideTimeOut>
   </ToolTips>
   <Layout>
     <MainMenu>True</MainMenu>
@@ -1052,6 +1139,7 @@
     <CustomIcons>0</CustomIcons>
     <PixelsPerInch>96</PixelsPerInch>
     <ShowButtonGlyphs>0</ShowButtonGlyphs>
+    <ShowHiddenDimmed>False</ShowHiddenDimmed>
   </Icons>
   <IgnoreList Enabled="False">
     <IgnoreListFile>%DC_CONFIG_PATH%/ignorelist.txt</IgnoreListFile>
@@ -1067,7 +1155,7 @@
     <CopyMovePath3/>
     <CopyMovePath4/>
     <CopyMovePath5/>
-    <PaintMode>Pen</PaintMode>
+    <PaintMode>0</PaintMode>
     <PaintWidth>5</PaintWidth>
     <NumberOfColumns>1</NumberOfColumns>
     <ViewerMode>1</ViewerMode>
@@ -1076,10 +1164,13 @@
     <FontColor>16777215</FontColor>
     <TextPosition>0</TextPosition>
     <ImageExifRotate>True</ImageExifRotate>
+    <TabSpaces>8</TabSpaces>
+    <MaxTextWidth>1024</MaxTextWidth>
   </Viewer>
   <Editor>
     <EditWaitTime>2000</EditWaitTime>
     <SynEditOptions>856075</SynEditOptions>
+    <SynEditTabWidth>8</SynEditTabWidth>
   </Editor>
   <SyncDirs>
     <Subdirs>False</Subdirs>
@@ -1092,6 +1183,7 @@
     <FilterDuplicates>True</FilterDuplicates>
     <FilterSingles>True</FilterSingles>
     <FileMask>*</FileMask>
+    <Asymmetric>False</Asymmetric>
   </SyncDirs>
   <InternalAssociations>
     <OfferToAddNewFileType>True</OfferToAddNewFileType>
@@ -1126,6 +1218,7 @@
     <ColumnsSet UseFrameCursor="True">
       <Name>Default</Name>
       <CustomView>False</CustomView>
+      <FileSystem>&lt;General&gt;</FileSystem>
       <PixelsPerInch>96</PixelsPerInch>
       <CursorBorder Enabled="False">
         <Color>-2147483635</Color>
@@ -1134,7 +1227,7 @@
         <Column>
           <Title>Name</Title>
           <FuncString>[DC().GETFILENAMENOEXT{}]</FuncString>
-          <Width>428</Width>
+          <Width>581</Width>
           <Align>0</Align>
           <Font>
             <Name>Sans</Name>
