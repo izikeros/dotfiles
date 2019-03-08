@@ -283,7 +283,7 @@ function calc() {	# calcularor
 # http://sysadvent.blogspot.com/2011/12/day-9-data-in-shell.html
 
 
-function _awk_col(){  # display n-th column using awk
+function _awk_col(){  # get col number and add
   echo "$1" | egrep -v '^[0-9]+$' || echo "\$$1"
 }
 
@@ -300,15 +300,27 @@ function sum(){   # sum by n-th field
   awk $SP "{ x+=$key } END { printf(\"%d\n\", x) }"
 }
 
-function sumby(){ # ???
-  [ "${1#-F}" != "$1" ] && SP=${1} && shift
-  [ "$#" -lt 0 ] && set -- 0 1
-  key="$(_awk_col "$1")"
-  val="$(_awk_col "$2")"
-  awk $SP "{ a[$key] += $val } END { for (i in a) { printf(\"%d %s\\n\", a[i], i) } }"
+function sumby(){ # group and sum
+    # Example:
+    # # Sum one field grouping by another
+    # printf "hello:1\nworld:1\nworld:3\n" |sumby -F: 1 2
+    # 4 world
+    # 1 hello
+    #
+    [ "${1#-F}" != "$1" ] && SP=${1} && shift
+    [ "$#" -lt 0 ] && set -- 0 1
+    key="$(_awk_col "$1")"
+    val="$(_awk_col "$2")"
+    awk $SP "{ a[$key] += $val } END { for (i in a) { printf(\"%d %s\\n\", a[i], i) } }"
 }
 
-function countby(){   # ???
+function countby(){   # Count instances by field
+    # Example:
+    ## Count instances by field
+    # % printf "hello:1\nworld:1\nworld:3\n" | countby -F: 1
+    # 2 world
+    # 1 hello
+    #
   [ "${1#-F}" != "$1" ] && SP=${1} && shift
   [ "$#" -eq 0 ] && set -- 0
   key="$(_awk_col "$1")"
@@ -376,4 +388,55 @@ function fix_tmux_ssh_agent() { # ???
   done
 }
 
+function piadd(){ # pacman install and add to ext.txt packages list
+    sudo pacman -S $1
+    local fname="$HOME/dotfiles/restore/pkg/manual.txt"
+    echo ">>>> adding $1 to manual.txt package list"
+
+    if [[ -e $fname ]]
+    then
+        echo $1 >> $fname
+    else
+        echo $1 > $fname
+    fi
+
+    # ensure there are no duplicates on the list
+    sort -u -o $fname
+}
+
+function h-bash-if(){
+    # cat <<-  using <<- instead of << will ignore leading tabs or spaces
+    cat <<- EOF
+    Operator 	Description
+    ! EXPRESSION 	The EXPRESSION is false.
+    -n STRING 	The length of STRING is greater than zero.
+    -z STRING 	The lengh of STRING is zero (ie it is empty).
+    STRING1 = STRING2 	STRING1 is equal to STRING2
+    STRING1 != STRING2 	STRING1 is not equal to STRING2
+    INTEGER1 -eq INTEGER2 	INTEGER1 is numerically equal to INTEGER2
+    INTEGER1 -gt INTEGER2 	INTEGER1 is numerically greater than INTEGER2
+    INTEGER1 -lt INTEGER2 	INTEGER1 is numerically less than INTEGER2
+    -d FILE 	FILE exists and is a directory.
+    -e FILE 	FILE exists.
+    -r FILE 	FILE exists and the read permission is granted.
+    -s FILE 	FILE exists and it's size is greater than zero (ie. it is not empty).
+    -w FILE 	FILE exists and the write permission is granted.
+    -x FILE 	FILE exists and the execute permission is granted.
+EOF
+}
+
+function h-regex(){
+cat <<- EOF
+\s - matches any whitespace character (equal to [\r\n\t\f\v ])
+\w - matches any word character (equal to [a-zA-Z0-9_])
+? - "zero or one": Matches between zero and one times, as many times as possible, giving back as needed (greedy)
++ - "one or more": Matches between one and unlimited times, as many times as possible, giving back as needed (greedy)
+* - "zero or more": Matches between zero and unlimited times, as many times as possible, giving back as needed (greedy)
+a{3,} - three or more of a
+$ - start of string
+^ - end of string
+[^abc] - matches any character except for an a, b or c
+
+EOF
+}
 
