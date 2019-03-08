@@ -1,4 +1,5 @@
 arandr               # Provide a simple visual front end for XRandR 1.2.
+antiword
 aspell               # A spell checker designed to eventually replace Ispell
 aspell-en            # English dictionary for aspell
 binutils             # A set of programs to assemble and manipulate binary and object files
