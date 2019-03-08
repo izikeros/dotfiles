@@ -1,7 +1,7 @@
 curl                 # An URL retrieval utility and library
 git                  # the fast distributed version control system
 htop                 # Interactive process viewer
-mc                   # Midnight Commander is a text based filemanager/shell that emulates Norton Commander
+mc                   # text based filemanager/shell that emulates Norton Commander
 openssh              # Premier connectivity tool for remote login with the SSH protocol
 rsync                # A file transfer program to keep remote files in sync
 tmux                 # A terminal multiplexer
