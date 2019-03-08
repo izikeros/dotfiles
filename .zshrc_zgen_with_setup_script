@@ -83,6 +83,25 @@ if [ -f ~/.zgen-setup ]; then
 fi
 # end zgen
 
+
+#-------- Global Alias
+#------------------------------------------------------
+# Automatically Expanding Global Aliases (Space key to expand)
+# references: http://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
+globalias() {
+  if [[ $LBUFFER =~ '[a-zA-Z0-9]+$' ]]; then
+    zle _expand_alias
+    zle expand-word
+  fi
+  zle self-insert
+}
+zle -N globalias
+bindkey " " globalias                 # space key to expand globalalias
+bindkey "^ " magic-space            # control-space to bypass completion
+#bindkey "^[[Z" magic-space            # shift-tab to bypass completion
+bindkey -M isearch " " magic-space    # normal space during searches
+
+
 # temporal hack to ensure that my aliases has priority
 source ~/.zsh_aliases
 source ~/.zsh_functions
@@ -91,24 +110,29 @@ source ~/.zsh_functions
 PATH=/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin
 export PATH=$HOME/bin:$PATH
 
-# TODO: clean-up this mess with setopt!!
-setopt BANG_HIST
-setopt HIST_FIND_NO_DUPS
-
 
 # set some history options
+setopt BANG_HIST
+
+setopt HIST_FIND_NO_DUPS
+setopt histfindnodups
+
 setopt append_history
 setopt extended_history
 setopt hist_expire_dups_first
+
 setopt hist_ignore_all_dups
+setopt histignorealldups
+
 setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt hist_save_no_dups
 setopt hist_verify
-setopt histignorealldups
-setopt histfindnodups
+
+
 setopt incappendhistory
+
 setopt sharehistory
 setopt share_history
 
