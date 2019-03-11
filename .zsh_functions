@@ -401,7 +401,8 @@ function piadd(){ # pacman install and add to ext.txt packages list
     fi
 
     # ensure there are no duplicates on the list
-    sort -u -o $fname
+    #sort -u $fname > /tmp/sorted
+    #mv /tmp/sorted $fname
 }
 
 function h-bash-if(){
