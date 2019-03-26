@@ -13,8 +13,11 @@ xfsettingsd &
 # fancy window switcher
 skippy-xd --config ~/.config/skippy-xd/skippy-xd.rc --start-daemon &
 
-# start the panel
-al-polybar-session &
+# start the panel (disabled, use W-F12 to toggle polybar)
+#al-polybar-session &
 
-# start conky
-# al-conky-session --autostart &
+# redshift - color temperature adjustment
+redshift -c ~/.redshiftgrc &
+
+# dropbox
+dropbox &
