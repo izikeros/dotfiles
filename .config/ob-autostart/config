@@ -1,6 +1,0 @@
-# OB_Autostart config
-LAUNCH_LIST = [
-	 ("Enable window snapping","opensnap --daemon -c /etc/opensnap","0","*"),
-	 ("use warmer colors at night - redshift","redshift -l 51.11:17.04","5","*"),
-	 ("activate numpad by default (numlockx)","numlockx","0","*"),
-	]
