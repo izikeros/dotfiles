@@ -20,6 +20,16 @@
   <theme>
     <name>ArchLabs-Dark</name>
     <titleLayout>NLIMC</titleLayout>
+    <!--
+      avaible characters are NDSLIMC, each can occur at most once.
+      N: window icon
+      L: window label (AKA title).
+      I: iconify
+      M: maximize
+      C: close
+      S: shade (roll up/down)
+      D: omnipresent (on all desktops).
+  -->
     <keepBorder>yes</keepBorder>
     <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
@@ -138,7 +148,9 @@
       <action name="NextWindow">
         <allDesktops>yes</allDesktops>
         <finalactions>
-          <action name="SendToDesktop"><to>current</to></action>
+          <action name="SendToDesktop">
+            <desktop>1</desktop>
+          </action>
           <action name="focus"/>
           <action name="raise"/>
         </finalactions>
@@ -264,7 +276,7 @@
     </keybind>
     <keybind key="W-e">
       <action name="Execute">
-        <command>geany</command>
+        <command>subl3</command>
       </action>
     </keybind>
     <keybind key="W-a">
@@ -307,13 +319,16 @@
         <command>rofi_run -l</command>
       </action>
     </keybind>
-    <!--
-    <keybind key="C-A-Delete">
+    <keybind key="W-l">
       <action name="Execute">
-        <command>rofi_run -l</command>
+        <command>i3lock-fancy</command>
       </action>
     </keybind>
-    -->
+    <keybind key="W-F12">
+      <action name="Execute">
+        <command>toggle.sh -p</command>
+      </action>
+    </keybind>
     <keybind key="W-S-Escape">
       <action name="Exit"/>
     </keybind>
