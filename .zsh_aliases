@@ -161,7 +161,7 @@ alias pacman="pacman --color=always"
 # alias pacman='sudo pacman --color auto'
 alias update="sudo pacman -Syu --color=always"
 alias -g u="sudo pacman -Syu --color=always"
-alias -g uy="sudo $AUR_CMD -Syua"
+alias -g uy="$AUR_CMD -Syua"
 alias pacman-bigpkg="expac -s '%-30n %m' | sort -rhk 2 | less"
 alias mirrors="sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose"
 alias y-upgradable="sudo $AUR_CMD -Pu"
