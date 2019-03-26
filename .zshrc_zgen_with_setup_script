@@ -330,6 +330,8 @@ POWERLEVEL9K_VCS_UNSTAGED_ICON=$'\u25CF'          # ● or '\uF111'  or '\uF0
 POWERLEVEL9K_VCS_UNTRACKED_ICON=$'\uF128'         #  or '\uF059'  '\uF29C'  or '\u00B1' ?
 POWERLEVEL9K_VPN_ICON="(vpn)"
 POWERLEVEL9K_WINDOWS_ICON=$'\uF17a ' #  or '\uF17A' 
+
+
 #----------------
 # dedupe path
 #---------------
