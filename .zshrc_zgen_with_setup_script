@@ -266,7 +266,7 @@ POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$'\uE0B0'     # 
 POWERLEVEL9K_LEFT_SEGMENT_END_SEPARATOR=' '       #   or   '\uF105'  or '\uF12D' 
 POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR=$' \uE0B1' # 
 POWERLEVEL9K_LINUX_ICON=$'\uF17C '                # 
-POWERLEVEL9K_LINUX_ARCH_ICON=$'\uF303'            # 
+POWERLEVEL9K_LINUX_ARCH_ICON=$'\uF300'            # 
 POWERLEVEL9K_LINUX_CENTOS_ICON=$'\uF304'          # 
 POWERLEVEL9K_LINUX_COREOS_ICON=$'\uF305'          # 
 POWERLEVEL9K_LINUX_DEBIAN_ICON=$'\uF306'          # 
@@ -332,27 +332,8 @@ POWERLEVEL9K_VPN_ICON="(vpn)"
 POWERLEVEL9K_WINDOWS_ICON=$'\uF17a ' #  or '\uF17A' 
 
 
-#----------------
-# dedupe path
-#---------------
-# In case a plugin adds a redundant path entry, remove duplicate entries
-# from PATH
-#
-# This snippet is from Mislav Marohnić <mislav.marohnic@gmail.com>'s
-# dotfiles repo at https://github.com/mislav/dotfiles
-dedupe_path() {
-  typeset -a paths result
-  paths=($path)
 
-  while [[ ${#paths} -gt 0 ]]; do
-    p="${paths[1]}"
-    shift paths
-    [[ -z ${paths[(r)$p]} ]] && result+="$p"
-  done
-
-  export PATH=${(j+:+)result}
-}
-# (!!!) Note: takes quite long. Check if deduplications are needed
+# Note: deduplication takes quite long. Check if deduplications are needed (usually not)
 #dedupe_path
 
 #zprof # end of profiling

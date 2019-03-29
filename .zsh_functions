@@ -405,6 +405,27 @@ function piadd(){ # pacman install and add to ext.txt packages list
     #mv /tmp/sorted $fname
 }
 
+#----------------
+# dedupe path
+#---------------
+# In case a plugin adds a redundant path entry, remove duplicate entries
+# from PATH
+#
+# This snippet is from Mislav Marohnić <mislav.marohnic@gmail.com>'s
+# dotfiles repo at https://github.com/mislav/dotfiles
+function dedupe_path() { # In case a plugin adds a redundant path entry, remove duplicate entries from PATH
+  typeset -a paths result
+  paths=($path)
+
+  while [[ ${#paths} -gt 0 ]]; do
+    p="${paths[1]}"
+    shift paths
+    [[ -z ${paths[(r)$p]} ]] && result+="$p"
+  done
+
+  export PATH=${(j+:+)result}
+}
+
 function h-bash-if(){
     # cat <<-  using <<- instead of << will ignore leading tabs or spaces
     cat <<- EOF
