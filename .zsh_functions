@@ -37,15 +37,15 @@ function ts(){		# open diary for today in sublime text
 
 # == Find functions
 function fipy(){	# find in python files
-  fgrep --include="*.py" --exclude-dir={.git} --color=always -rnwi ./ -e  $1 | less -R
+  grep -F --include="*.py" --exclude-dir={.git} --color=always -rnwi ./ -e  $1 | less -R
 }
 
 function fipy2(){	# find in python files - grep using two keywords
-  fgrep --include="*.py" --exclude-dir={.git} --color=always -rnwi ./ -e $1 | grep $2
+  grep -F --include="*.py" --exclude-dir={.git} --color=always -rnwi ./ -e $1 | grep $2
 }
 
 function fipy-in-test(){	# find in python test files - grep using two keywords
-  fgrep --include="test*.py" --exclude-dir={.git} --color=always -rnwi ./ -e $1 | less -R
+  grep -F --include="test*.py" --exclude-dir={.git} --color=always -rnwi ./ -e $1 | less -R
 }
 
 # == Packages-related functions

@@ -211,16 +211,16 @@ alias ff-here="find . -maxdepth 1 -type f"
 alias ft="find ./ -name 'test*.py' | grep"
 
 # find in files (excluding .git directories)
-alias fif="fgrep --exclude-dir={.git} --color=auto -rnw ./ -e"
+alias fif="grep -F --exclude-dir={.git} --color=auto -rnw ./ -e"
 
 # find in python files (excluding .git directories)
-alias fipy1="fgrep --include=\"*.py\" --exclude-dir={.git} --color=always -rnwi ./ -e"
+alias fipy1="grep -F --include=\"*.py\" --exclude-dir={.git} --color=always -rnwi ./ -e"
 
 # find in python test files (pyt - python tests)
-alias fipyt="fgrep --include=\"test*.py\" --exclude-dir={.git} --color=always -rnwi ./ -e"
+alias fipyt="grep -F --include=\"test*.py\" --exclude-dir={.git} --color=always -rnwi ./ -e"
 
 # find in python files excluding tests (pynt - python no tests)
-alias fipynt="fgrep --include=\"*.py\" --exclude-dir={.git,tests} --color=always -rnwi ./ -e"
+alias fipynt="grep -F --include=\"*.py\" --exclude-dir={.git,tests} --color=always -rnwi ./ -e"
 
 # find markdown files created today
 alias mdtoday="find . -name \"*.md\" -mtime -1 -type f -print"
