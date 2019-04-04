@@ -19,7 +19,7 @@ monitor =
 
 modules-left   = jgmenu workspaces
 modules-center = window_switch redshift pkg
-modules-right  = temperature coreuse filesystem info-trash isrunning-dropbox memory network wifi volume battery clock
+modules-right  = temperature coreuse filesystem info-trash isrunning-dropbox memory redsocks-status vpn-vpnc-status network wifi volume battery clock
 
 
 ;=====================================================
