@@ -463,7 +463,6 @@ alias cxsh="chmod +x *.sh"
 # shortcut for tmuxifier
 alias tw="tmuxifier load-window"
 
-
 # On the rare occasions I don't want to continue a download I can always
 # delete the incomplete fragment explicitly. I usually just want to
 # complete it.
@@ -521,3 +520,4 @@ fi
 
 alias interfaces="ls /sys/class/net"
 alias rr="ranger"
+alias wh="which"
