@@ -1,4 +1,8 @@
+<?xml version="1.0"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- see:
+  http://openbox.org/wiki/Help:Actions
+   -->
   <resistance>
     <strength>10</strength>
     <screen_edge_strength>20</screen_edge_strength>
@@ -21,27 +25,32 @@
     <!-- when followMouse is enabled, and a window is given focus by moving the
        mouse into it, also raise the window -->
   </focus>
-  <placement> 
+  <placement>
     <policy>Smart</policy>
     <!-- 'Smart' or 'UnderMouse' -->
-    
     <center>yes</center>
     <!-- whether to place windows in the center of the free area found or
        the top left corner -->
-
     <monitor>Mouse</monitor>
     <!-- with Smart placement on a multi-monitor system, try to place new windows
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is, 'Primary' - only on the primary monitor -->
-
     <primaryMonitor>Mouse</primaryMonitor>
     <!-- The monitor where Openbox should place popup dialogs such as the
        focus cycling popup, or the desktop switch popup.  It can be an index
        from 1, specifying a particular monitor.  Or it can be one of the
        following: 'Mouse' - where the mouse is, or
                   'Active' - where the active window is -->
-  </placement>  <theme>
-    <name>ArchLabs-Dark</name>
+  </placement>
+  <theme>
+    <!-- 
+      Adwaita
+      Adwaita-dark
+      ArchLabs-dARK
+      ArchLabs-Dark
+      ArchLabs-Light
+     -->
+    <name>ArchLabs-Light-Alt</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       avaible characters are NDSLIMC, each can occur at most once.
@@ -55,7 +64,6 @@
   -->
     <keepBorder>yes</keepBorder>
     <animateIconify>no</animateIconify>
-    
     <font place="ActiveWindow">
       <name>Roboto</name>
       <size>11</size>
@@ -63,9 +71,8 @@
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
-      <!-- 'italic' or 'normal' -->      
+      <!-- 'italic' or 'normal' -->
     </font>
-
     <font place="InactiveWindow">
       <name>Roboto</name>
       <size>11</size>
@@ -73,9 +80,8 @@
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Italic</slant>
-      <!-- 'italic' or 'normal' --> 
+      <!-- 'italic' or 'normal' -->
     </font>
-
     <font place="MenuHeader">
       <name>Roboto</name>
       <size>11</size>
@@ -83,9 +89,8 @@
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
-      <!-- 'italic' or 'normal' -->  
+      <!-- 'italic' or 'normal' -->
     </font>
-
     <font place="MenuItem">
       <name>Roboto</name>
       <size>10</size>
@@ -93,9 +98,8 @@
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
-      <!-- 'italic' or 'normal' -->  
+      <!-- 'italic' or 'normal' -->
     </font>
-
     <font place="ActiveOnScreenDisplay">
       <name>Roboto</name>
       <size>10</size>
@@ -103,9 +107,8 @@
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
-      <!-- 'italic' or 'normal' -->  
+      <!-- 'italic' or 'normal' -->
     </font>
-    
     <font place="InactiveOnScreenDisplay">
       <name>Roboto</name>
       <size>10</size>
@@ -113,11 +116,11 @@
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
-      <!-- 'italic' or 'normal' -->  
+      <!-- 'italic' or 'normal' -->
     </font>
-  </theme> 
- <desktops>
-        <!-- this stuff is only used at startup, pagers allow you to change them
+  </theme>
+  <desktops>
+    <!-- this stuff is only used at startup, pagers allow you to change them
        during a session
 
        these are default values to use when other ones are not already set
@@ -125,12 +128,12 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>2</number>
+    <number>3</number>
     <firstdesk>0</firstdesk>
     <names>
-      <name>comm</name>
       <name>work</name>
-      <name>3</name>
+      <name>email</name>
+      <name>terminal</name>
       <name>4</name>
     </names>
     <popupTime>800</popupTime>
@@ -201,9 +204,19 @@
         <desktop>1</desktop>
       </action>
     </keybind>
-    <keybind key="S-W-1">
+    <keybind key="S-W-2">
       <action name="SendToDesktop">
-        <desktop>1</desktop>
+        <desktop>2</desktop>
+      </action>
+    </keybind>
+    <keybind key="S-W-3">
+      <action name="SendToDesktop">
+        <desktop>3</desktop>
+      </action>
+    </keybind>
+    <keybind key="S-W-4">
+      <action name="SendToDesktop">
+        <desktop>4</desktop>
       </action>
     </keybind>
     <keybind key="A-Tab">
@@ -351,6 +364,12 @@
         <command>subl3</command>
       </action>
     </keybind>
+        <!-- GALCULATOR -->
+    <keybind key="W-c">
+      <action name="Execute">
+        <command>galculator</command>
+      </action>
+    </keybind>
     <keybind key="W-a">
       <action name="Execute">
         <command>xfce4-settings-manager</command>
@@ -389,6 +408,11 @@
     <keybind key="W-x">
       <action name="Execute">
         <command>rofi_run -l</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-Delete">
+      <action name="Execute">
+        <command>xfce4-taskmanager</command>
       </action>
     </keybind>
     <keybind key="W-l">
@@ -831,31 +855,47 @@
   <menu>
     <file>menu.xml</file>
     <hideDelay>400</hideDelay>
-        <!-- if a press-release lasts longer than this setting (in milliseconds), the
+    <!-- if a press-release lasts longer than this setting (in milliseconds), the
      menu is hidden again -->
     <middle>no</middle>
-        <!-- center submenus vertically about the parent entry -->
+    <!-- center submenus vertically about the parent entry -->
     <submenuShowDelay>100</submenuShowDelay>
-        <!-- time to delay before showing a submenu after hovering over the parent
+    <!-- time to delay before showing a submenu after hovering over the parent
      entry.
      if this is a negative value, then the delay is infinite and the
      submenu will not be shown until it is clicked on -->
     <submenuHideDelay>200</submenuHideDelay>
-        <!-- time to delay before hiding a submenu when selecting another
+    <!-- time to delay before hiding a submenu when selecting another
      entry in parent menu
      if this is a negative value, then the delay is infinite and the
      submenu will not be hidden until a different submenu is opened -->
     <applicationIcons>no</applicationIcons>
-        <!-- Show applications icons if openbox is build with this support -->
+    <!-- Show applications icons if openbox is build with this support -->
     <manageDesktops>yes</manageDesktops>
   </menu>
   <applications>
+
     <application name="oblogout">
       <position force="no">
         <monitor>1</monitor>
       </position>
       <fullscreen>yes</fullscreen>
     </application>
+
+<applications>
+
+  <!-- match all windows, and remove their decorations -->
+  <application class="*">
+    <decor>no</decor>
+  </application>
+
+  <!-- but give decorations back to Firefox 
+  <application name="Firefox*">
+    <decor>yes</decor>
+  </application>
+  -->
+</applications>
+
   </applications>
 </openbox_config>
 <!-- vim:sw=2
