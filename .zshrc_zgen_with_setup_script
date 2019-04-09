@@ -98,7 +98,6 @@ globalias() {
 zle -N globalias
 bindkey " " globalias                 # space key to expand globalalias
 bindkey "^ " magic-space              # control-space to bypass completion
-#bindkey "^[[Z" magic-space           # shift-tab to bypass completion
 bindkey -M isearch " " magic-space    # normal space during searches
 
 
@@ -340,3 +339,4 @@ POWERLEVEL9K_WINDOWS_ICON=$'\uF17a ' #  or '\uF17A' 
 
 # perform check of shell script
 #shellcheck -x ~/.zshrc
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
