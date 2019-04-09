@@ -1,5 +1,5 @@
 # compton
-al-compositor --start &
+#al-compositor --start &
 
 # set proper keyboard layout
 setxkbmap -model microsoft4000 -layout pl
@@ -11,7 +11,7 @@ numlockx &
 nitrogen --restore &
 
 # required for xfce settings to work
-# xfsettingsd &
+#xfsettingsd &
 
 # fancy window switcher
 skippy-xd --config ~/.config/skippy-xd/skippy-xd.rc --start-daemon &
