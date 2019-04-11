@@ -1,5 +1,5 @@
 #!/bin/bash
-# usage: ./install_from_the_list.sh packages_list.txt [--ask]
+# usage: ./add_package_descriptions packages_list.txt [--ask]
 
 PKG_LIST_FILE="$1"
 TMP_FILE_IN=/tmp/install_list_in.txt
