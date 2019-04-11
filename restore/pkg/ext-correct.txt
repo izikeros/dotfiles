@@ -1,11 +1,10 @@
-byobu
 fgallery
 llgal
-git-gui # seems to be installed with git?
+git-gui 	# seems to be installed with git?
 posterazor
 rofi		# already installed in Archlabs
 
 pep8		# needed system-wise?
 pyflakes	# needed system-wise?
 
-shutter # hard install from AUR (a lot of compilations))
+shutter 	# hard install from AUR (a lot of compilations))

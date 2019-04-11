@@ -31,6 +31,7 @@ pdfsam               # A free open source tool to split and merge pdf documents
 powertop             # A tool to diagnose issues with power consumption and power management
 pydf                 # A colorized df clone
 python-pipenv        # Sacred Marriage of Pipfile, Pip, & Virtualenv.
+python-virtualenvwrapper
 recoll               # Full text search tool based on Xapian backend
 redsocks
 redshift             # Adjusts the color temperature of your screen according to your surroundings.
