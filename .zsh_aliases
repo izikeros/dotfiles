@@ -143,15 +143,20 @@ alias au="sudo apt update"
 # PACMAN, YAY (for AUR)
 #-------------------------------------------
 AUR_CMD="yay"
+# install package
 alias -g pi="sudo pacman -S"
 alias -g yi="$AUR_CMD -S"
 
+# search for package
 alias -g pas="pacman -Ss"
 alias -g ys="$AUR_CMD -Ss"
 
+# package information
 alias -g y-info="$AUR_CMD -Si"
 alias -g p-info="pacman -Si"
+alias -g p-files="pacman -Fl"
 
+# statistics over all packages
 alias -g y-stats="$AUR_CMD" -P --stats
 
 # remove (uninstall) package
@@ -159,7 +164,8 @@ alias -g prm="sudo pacman -Rns"
 
 alias pacman="pacman --color=always"
 # alias pacman='sudo pacman --color auto'
-alias update="sudo pacman -Syu --color=always"
+
+# update
 alias -g u="sudo pacman -Syu --color=always"
 alias -g uy="$AUR_CMD -Syua"
 alias pacman-bigpkg="expac -s '%-30n %m' | sort -rhk 2 | less"
