@@ -56,8 +56,6 @@ export COMPLETION_WAITING_DOTS="true"
 # turn off the infernal correctall for filenames
 unsetopt correctall
 
-
-
 # --------------
 # LS colors
 # -------------
@@ -67,7 +65,6 @@ unsetopt correctall
 export LSCOLORS='Exfxcxdxbxegedabagacad'
 export LS_COLORS='di=1;34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
 
-
 # Set keystrokes for substring searching
 zmodload zsh/terminfo
 #bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -76,7 +73,6 @@ zmodload zsh/terminfo
 # Load me last
 GENCOMPL_FPATH=$HOME/.zsh/complete
 
-
 # start zgen
 if [ -f ~/.zgen-setup ]; then
   source ~/.zgen-setup
@@ -84,12 +80,13 @@ fi
 # end zgen
 
 
-#-------- Global Alias
-#------------------------------------------------------
+# Global Alias Expansion
+#
 # Automatically Expanding Global Aliases (Space key to expand)
 # references: http://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
+# Currently defined to expand only capital letters
 globalias() {
-  if [[ $LBUFFER =~ '[A-Z0-9]+$' ]]; then
+  if [[ $LBUFFER =~ '[A-Z]+$' ]]; then
     zle _expand_alias
     zle expand-word
   fi
@@ -115,23 +112,17 @@ setopt BANG_HIST
 
 setopt HIST_FIND_NO_DUPS
 setopt histfindnodups
-
 setopt append_history
 setopt extended_history
 setopt hist_expire_dups_first
-
 setopt hist_ignore_all_dups
 setopt histignorealldups
-
 setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt hist_save_no_dups
 setopt hist_verify
-
-
 setopt incappendhistory
-
 setopt sharehistory
 setopt share_history
 
@@ -188,13 +179,13 @@ source /usr/bin/virtualenvwrapper.sh
 
 # fasd - fast cd
 eval "$(fasd --init auto)"
+unalias s
 
 # fuck - correct last command
 # eval "$(thefuck --alias)"
 
 ~/dotfiles/scripts/runonce.sh neofetch
-~/dotfiles/scripts/runonce.sh ~/dotfiles/scripts/check_if_repos_are_clean.sh
-~/dotfiles/scripts/runonce.sh ~/projects/list-my-gh-projects-ssh-disabled.sh
+~/dotfiles/scripts/runonce-all.sh
 
 #-----------------------
 # Powerlevel 9k
@@ -215,7 +206,7 @@ export POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
 export POWERLEVEL9K_SHOW_CHANGESET=true
 
 # Left, right prompt segments
-export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv context dir vcs)
+export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda virtualenv context dir vcs)
 export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws)
 
 export POWERLEVEL9K_DIR_SHOW_WRITABLE=true

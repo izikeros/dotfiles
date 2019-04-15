@@ -87,22 +87,18 @@ alias cdw="cd $WIKI_HOME"
 
 # shortcuts to edit files (mostly config files)
 alias vz="vim $HOME/.zshrc"
-
 alias vzs="vim $HOME/.zgen-setup"
-
 alias vv="vim $HOME/.vimrc"
-
 alias va="vim $HOME/dotfiles/.zsh_aliases"
+alias voa="vim $HOME/dotfiles/.config/openbox/autostart"
+alias vor="vim $HOME/dotfiles/.config/openbox/rc.xml"
 alias vf="vim $HOME/dotfiles/.zsh_functions"
-
 alias vc-"vim $HOME/.config"
 alias vs="vim $HOME/.ssh/config"
 alias vg="vim $HOME/.gitconfig"
-
 alias vd="vim $HOME/dotfiles/"
 alias vr="vim $HOME/dotfiles/restore/"
 alias vrp="vim $HOME/dotfiles/restore/pkg/"
-
 alias vx="vim $HOME/dotfiles/.xbindkeysrc"
 alias ve="vim $HOME/env_and_path.sh"
 # list vim key mappings
@@ -122,14 +118,14 @@ alias galias="alias | grep --color=never -i -e"
 alias list-functions="grep function ~/.zsh_functions --color=never"
 # TODO: add alias from commandline (and append to this file)
 
+#alias s="sudo su"
+alias _="sudo"
+alias please='sudo $(history -p !!)'
+alias s-s="sudo su"
+
 #--------------------------------------------
 # APT, APTITUDE, DPKG
 #--------------------------------------------
-#alias s="sudo su"
-alias _="sudo"
-
-alias s-s="sudo su"
-
 # install packages (Debian)
 alias ai="sudo apt install"
 # search pattern only in package names
@@ -178,7 +174,7 @@ alias y-rem-dep="sudo $AUR_CMD -Yc"
 # FASD aliases (repeated - aliases are defined in fasd source)
 #--------------------------------------------
 alias a='fasd -a'        # any
-alias s='fasd -si'       # show / search / select
+#alias s='fasd -si'       # show / search / select
 alias d='fasd -d'        # directory
 alias f='fasd -f'        # file
 alias sd='fasd -sid'     # interactive directory selection
