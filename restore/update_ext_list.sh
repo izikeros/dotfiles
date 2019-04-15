@@ -2,16 +2,13 @@
 # usage: ./install_from_the_list.sh packages_list.txt [--ask]
 # if there is --ask (or anything else) after filename then youwill be prompted to confirm installation of each package
 
-#INPUT_FILE=$1 
+#INPUT_FILE=$1
 INPUT_FILE_1=./pkg/ext.txt
 INPUT_FILE_2=./pkg/ext-rare.txt
 
 
 TMP_FILE_LIST=/tmp/pkg_list_restore.txt
 TMP_FILE_INSTALLED=/tmp/pkg_list_currently_installed.txt
-
-# prepare command to handle packages
-CMD=pacman
 
 # remove comments from the list and remove trailing white spaces
 sed -e "s/#.*$//gi" -e "/^$/d" "$INPUT_FILE_1" | sed 's/\s*$//g'  | sort -f > $TMP_FILE_LIST

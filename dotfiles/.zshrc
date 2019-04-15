@@ -107,7 +107,7 @@ PATH=/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin
 export PATH=$HOME/bin:$PATH
 
 
-# set some history options
+# set -o to list all available options and their current setting
 setopt BANG_HIST
 
 setopt HIST_FIND_NO_DUPS
@@ -129,7 +129,6 @@ setopt share_history
 # Correct spelling for commands
 #setopt correct
 
-# shell opts
 setopt autocd
 setopt completealiases
 
@@ -174,6 +173,16 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/projects
 source /usr/bin/virtualenvwrapper.sh
 
+if [[ -d ~/gocode ]]; then
+  export GOPATH=~/gocode
+fi
+
+# The "command not found" hook
+# requires package database created by package pkgfile
+# $ pacman -S pkgfile
+# $ pkgfile -u
+source /usr/share/doc/pkgfile/command-not-found.zsh
+
 # fzf - fuzzy find in history
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -185,7 +194,7 @@ unalias s
 # eval "$(thefuck --alias)"
 
 ~/dotfiles/scripts/runonce.sh neofetch
-~/dotfiles/scripts/runonce-all.sh
+~/dotfiles/scripts/runonce.sh ~/dotfiles/scripts/runonce-all.sh
 
 #-----------------------
 # Powerlevel 9k

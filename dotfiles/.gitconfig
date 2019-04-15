@@ -154,3 +154,5 @@
 [core]
 	editor = vim
 
+[gui]
+	spellingdictionary = en_US

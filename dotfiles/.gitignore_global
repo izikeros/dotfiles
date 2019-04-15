@@ -1,0 +1,13 @@
+#
+# Git Ignore
+#
+
+# Compiled source
+*.pyc
+*.pyo
+
+# Editor files
+.*.swp
+
+# Platform-specific files
+.DS_Store

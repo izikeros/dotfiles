@@ -4,12 +4,15 @@
 #
 # vi ft=shell
 
+# requirements: pydf, sar
+
 # Global aliases
-alias -g G='| grep'
+alias -g G='|grep'
 alias -g GH='https://github.com/'
 alias -g GHI='https://github.com/izikeros/'
-alias -g C='| wc -l'
-
+alias -g C='|wc -l'
+alias -g H='|head'
+alias -g M='|most'
 
 #--------------------------------------------
 # FILESYSTEM - DIRECTORY SIZE, LISTING
@@ -49,21 +52,20 @@ alias la='ls -A'
 alias ll='ls -lA'
 
 #--------------------------------------------
-# QUICK CHANGE DIRECTORY
+# QUICK CHANGE DIRECTORY/Bookmarks
 #--------------------------------------------
 alias ..="cd .."
 alias ...="cd ../.."
 alias cd..="cd .."
 alias h="cd $HOME"
-alias cdr="cd $HOME/dotfiles/bootstrap/restore"
-alias cdp="cd $HOME/projects"
+alias pp="cd $HOME/projects"
 alias cdd="cd $HOME/Downloads"
+alias ddd="cd $HOME/dotfiles"
 alias cdc="cd $HOME/.config"
 # same convention, defined below: alias cdw="cd $WIKI_HOME"
 #--------------------------------------------
 # EDIT ACTIONS
 #--------------------------------------------
-# Sublime
 # Sublime
 if [[ -x /usr/bin/subl3 ]]; then
   S="/usr/bin/subl3"
@@ -89,18 +91,21 @@ alias cdw="cd $WIKI_HOME"
 alias vz="vim $HOME/.zshrc"
 alias vzs="vim $HOME/.zgen-setup"
 alias vv="vim $HOME/.vimrc"
-alias va="vim $HOME/dotfiles/.zsh_aliases"
-alias voa="vim $HOME/dotfiles/.config/openbox/autostart"
-alias vor="vim $HOME/dotfiles/.config/openbox/rc.xml"
-alias vf="vim $HOME/dotfiles/.zsh_functions"
+alias va="vim $HOME/.zsh_aliases"
+alias vf="vim $HOME/.zsh_functions"
 alias vc-"vim $HOME/.config"
 alias vs="vim $HOME/.ssh/config"
 alias vg="vim $HOME/.gitconfig"
+alias ve="vim $HOME/env_and_path.sh"
+
+# shortcuts for get-started content
+alias voa="vim $HOME/dotfiles/dotfiles/.config/openbox/autostart"
+alias vor="vim $HOME/dotfiles/dotfiles/.config/openbox/rc.xml"
 alias vd="vim $HOME/dotfiles/"
 alias vr="vim $HOME/dotfiles/restore/"
 alias vrp="vim $HOME/dotfiles/restore/pkg/"
 alias vx="vim $HOME/dotfiles/.xbindkeysrc"
-alias ve="vim $HOME/env_and_path.sh"
+
 # list vim key mappings
 alias vkeys="grep --color=never -e 'map' $HOME/dotfiles/.vimrc"
 
@@ -115,6 +120,7 @@ fi
 # MEATA-ALIAS
 #--------------------------------------------
 alias galias="alias | grep --color=never -i -e"
+alias gralias="cat ~/.zsh_aliases | grep -B1 --color=never -i -e"
 alias list-functions="grep function ~/.zsh_functions --color=never"
 # TODO: add alias from commandline (and append to this file)
 
@@ -304,8 +310,9 @@ alias test-integration-list="find . -type f -name \"test_integration*\" | xargs 
 
 # colored cat for source code:
 alias ccat=ccat.sh
-alias nb="jupyter-notebook --notebook-dir $HOME/src"
 
+alias nb="jupyter notebook"
+alias jl="jupyter lab"
 #-------------------------------------------
 # PIP
 #--------------------------------------------
@@ -332,14 +339,6 @@ alias mpc="./manage.py createsuperuser"
 alias mptc='coverage run ./manage.py test --pattern="test_*.py"'
 alias mpt='./manage.py test --pattern="test_*.py"'
 alias list-models="find . -type f -name 'models.py' | xargs grep -H -P '^class' | sed 's/class/''/' | sed -E 's/\(.*$/''/' | grep -v -P '.+:$' | sed 's/\/models\.py:/''/'"
-#-------------------------------------------
-# Activate virtualenvs (& launch app)
-#-------------------------------------------
-#alias a-pelican="source ~/.virtualenvs/pelican/bin/activate"
-#alias a-ebadu="source ~/.virtualenvs/ebadu-d1.11/bin/activate"
-
-# launch jupyter-lab
-alias jl="source $HOME/.venv/jl/bin/activate && jupyter lab"
 
 #--------------------------------------------
 # DOCKER (and docker-compose)
@@ -409,12 +408,13 @@ alias stripcolors='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
 #---------------------------------------------
 # History
 #---------------------------------------------
-# show 50 most used cli commands
+# show 50 most used cli commands (assuming duplicates are not removed from
+# history)
 alias history-top="history |  cut -c7- | sort  | uniq -c | sort -nr | head -n 50"
 alias historysummary="history | awk '{a[\$2]++} END{for(i in a){printf \"%5d\t%s\n\",a[i],i}}' | sort -rn | head"
 # Dump the last 20 history entries
 alias zh="fc -l -d -D"
-# see also: zsk_stats
+# see also: zsh_stats
 
 # lsblk
 # dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
@@ -494,10 +494,6 @@ alias boots="journalctl --list-boots"
 # decrypt volume without mounting, then use e.g. test disk etc.
 # veracrypt --filesystem=none -m nokernelcrypto --mount bulk/bbb /mnt/veracrypt3
 
-if [[ -d ~/gocode ]]; then
-  export GOPATH=~/gocode
-fi
-
 alias cputop="top -o cpu"
 
 # On the rare occasions I don't want to continue a download I can always
@@ -514,12 +510,13 @@ alias zsh-loading-time="for i ({1..10}) time zsh -i -c exit"
 
 alias skip-header='tail -n +2'
 
+alias interfaces="ls /sys/class/net"
+alias rr="ranger"
+alias wh="which"
+
 # Honor old .zsh_aliases.local customizations, but print depecation warning.
 if [ -f ~/.zsh_aliases.local ]; then
   source ~/.zsh_aliases.local
   echo ".zsh_aliases.local is deprecated. Make entries in ~/.zshrc.d instead."
 fi
 
-alias interfaces="ls /sys/class/net"
-alias rr="ranger"
-alias wh="which"
