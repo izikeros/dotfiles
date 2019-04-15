@@ -11,11 +11,11 @@ pass=${bldblu}*${txtrst}
 warn=${bldred}*${txtrst}
 ques=${bldblu}?${txtrst}
 
-list=(~/dotfiles /home/bulk/dockerfiles)
+list=($HOME/dotfiles /home/bulk/dockerfiles)
 
 for repo in "${list[@]}"
 do
-    cwd=`pwd`
+	cwd=`pwd`
     if [ -d $repo ]; then
 		cd $repo
 		git status | grep -q "nothing to commit, working tree clean" && st="clean" || st="dirty"
