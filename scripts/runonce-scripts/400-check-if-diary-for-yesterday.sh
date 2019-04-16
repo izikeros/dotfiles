@@ -3,7 +3,6 @@ source $HOME/.zsh_functions
 f="$(d_file_yesterday).md"
 pth="$HOME/vimwiki/diary/"
 
-echo $pth$f
 if [[ -s "$pth$f" ]];then
     a=0
     echo "there is dirary"
