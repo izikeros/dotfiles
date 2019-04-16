@@ -18,12 +18,12 @@ do
     proj=${proj##*/}	# everything after the final "/"
 
 
-	if [[ $proj =~ ^\_ ]]; then  
+	if [[ $proj =~ ^\_ ]]; then
 	 	a=0
 	else
 		res=$dir.git/config
 	    if [ ! -e $res ]; then
-	     	echo "    $bldred$proj$txtrst is not a git repo"    
+	     	echo "    $bldred$proj$txtrst is not a git repo"
 	    fi
 	fi
 done

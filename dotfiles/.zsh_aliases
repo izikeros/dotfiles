@@ -99,21 +99,21 @@ alias vg="vim $HOME/.gitconfig"
 alias ve="vim $HOME/env_and_path.sh"
 
 # shortcuts for get-started content
-alias voa="vim $HOME/dotfiles/dotfiles/.config/openbox/autostart"
-alias vor="vim $HOME/dotfiles/dotfiles/.config/openbox/rc.xml"
+alias voa="vim $HOME/.config/openbox/autostart"
+alias vor="vim $HOME/.config/openbox/rc.xml"
 alias vd="vim $HOME/dotfiles/"
 alias vr="vim $HOME/dotfiles/restore/"
 alias vrp="vim $HOME/dotfiles/restore/pkg/"
-alias vx="vim $HOME/dotfiles/.xbindkeysrc"
+alias vx="vim $HOME/.xbindkeysrc"
 
 # list vim key mappings
-alias vkeys="grep --color=never -e 'map' $HOME/dotfiles/.vimrc"
+alias vkeys="grep --color=never -e 'map' $HOME/.vimrc"
 
 if [[ -x /usr/bin/subl3 ]]; then
   alias s-z="$S $HOME/.zshrc"
   alias s-zs="$S $HOME/.zgen-setup"
   alias sv="$S $HOME/.vimrc"
-  alias sa="$S $HOME/dotfiles/.zsh_aliases"
+  alias sa="$S $HOME/.zsh_aliases"
 fi
 
 #--------------------------------------------
