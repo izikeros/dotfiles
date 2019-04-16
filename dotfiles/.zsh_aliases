@@ -313,6 +313,7 @@ alias ccat=ccat.sh
 
 alias nb="jupyter notebook"
 alias jl="jupyter lab"
+alias wn="workon"
 #-------------------------------------------
 # PIP
 #--------------------------------------------
