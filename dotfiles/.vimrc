@@ -272,6 +272,9 @@ set completeopt-=preview
 nmap <leader>g :YcmCompleter GoTo<CR>           " YCM goto with leader-g
 nmap <leader>d :YcmCompleter GoToDefinition<CR> " YCM goto definition with leader-d
 
+nmap <F6> :w<CR>:silent !chmod 755 %<CR>:silent !./% > .tmp.xyz<CR>
+     \ :tabnew<CR>:r .tmp.xyz<CR>:silent !rm .tmp.xyz<CR>:redraw!<CR>
+
 " ==================================================
 " Deoplete
 " ==================================================
