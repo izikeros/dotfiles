@@ -28,7 +28,7 @@ do
 		fi
 
 		status_txt="-- $bldblu$repo$txtrst is clean"
-		if [ $st == 'dirty' ];then
+		if [ $st = 'dirty' ];then
 	    	    status_txt="-- $bldblu$repo$txtrst is $bldred dirty$txtrst"
 		fi
 
