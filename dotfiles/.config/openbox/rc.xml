@@ -873,8 +873,19 @@
     <!-- Show applications icons if openbox is build with this support -->
     <manageDesktops>yes</manageDesktops>
   </menu>
+  
   <applications>
+  <!-- match all windows, and remove their decorations -->
+     <application class="*">
+         <decor>no</decor>
+    </application>
 
+  <!-- but give decorations back to Firefox 
+  <application name="Firefox*">
+    <decor>yes</decor>
+  </application>
+  -->
+  
     <application name="oblogout">
       <position force="no">
         <monitor>1</monitor>
@@ -882,21 +893,8 @@
       <fullscreen>yes</fullscreen>
     </application>
 
-<applications>
 
-  <!-- match all windows, and remove their decorations -->
-  <application class="*">
-    <decor>no</decor>
-  </application>
-
-  <!-- but give decorations back to Firefox 
-  <application name="Firefox*">
-    <decor>yes</decor>
-  </application>
-  -->
 </applications>
-
-  </applications>
 </openbox_config>
 <!-- vim:sw=2
 -->
