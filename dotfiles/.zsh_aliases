@@ -392,6 +392,7 @@ alias h-awk="echo awk -F\':\' \'{print \$\2}\'"
 alias h-sed="man sed"
 alias h-perl="echo \"echo \"(a b c)(a b c)\" | perl -ne 'print $1 while /(a) b/g'\""
 alias h-terminator="echo Super+R - rotate \| C-S-E - split vert \| C-S-O - split horiz \| C-S-W - close panel"
+
 #---------------------------------------------
 # Comments & color removal
 #---------------------------------------------
@@ -432,12 +433,10 @@ alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 #---------------------------------------------
 #  blog
 #---------------------------------------------
-
 BLG="cd ~/blog; pipenv shell"
 alias blog="$BLG"
 alias pelican-run="$BLG; pelican --lr"
 alias blog-push="cd ~/blog/docs; git add .; git ci -m \"update\"; gp"
-
 
 #---------------------------------------------
 #  SSH
@@ -497,9 +496,7 @@ alias boots="journalctl --list-boots"
 
 alias cputop="top -o cpu"
 
-# On the rare occasions I don't want to continue a download I can always
-# delete the incomplete fragment explicitly. I usually just want to
-# complete it.
+# continue incomplete download
 alias wget="wget -c"
 
 alias merge='xrdb -merge ~/.Xresources'
@@ -514,6 +511,7 @@ alias skip-header='tail -n +2'
 alias interfaces="ls /sys/class/net"
 alias rr="ranger"
 alias wh="which"
+alias clr="clear"
 
 # Honor old .zsh_aliases.local customizations, but print depecation warning.
 if [ -f ~/.zsh_aliases.local ]; then
