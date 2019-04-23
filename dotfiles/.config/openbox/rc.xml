@@ -442,9 +442,10 @@
     <keybind key="A-F4">
       <action name="Close"/>
     </keybind>
-    <keybind key="A-F5">
+    <!-- A-F5 is used in Double commander to pack files -->
+    <!-- <keybind key="A-F5">
       <action name="Iconify"/>
-    </keybind>
+    </keybind>      -->
     <keybind key="A-F6">
       <action name="ToggleMaximize"/>
     </keybind>
