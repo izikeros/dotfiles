@@ -62,10 +62,15 @@
 
     ####### WHAT'S UP? ##########
     # List today's oneline commits
-    lg-today = --no-pager log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --color --date=short --since=midnight
-    lg1-my-week =!git --no-pager log --graph --pretty=format:'%C(yellow)%d%Creset %s %Cgreen(%ad, %cr)' --abbrev-commit --date=short --all --since='1 week' --no-merges --author=krystian.safjan@wilabs.com
-    lg1-all-week = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all --since='1 week' --no-merges
-    lg-all-week = git log --all --since='1 weeks' --oneline --no-merges
+    lg-today     = !git --no-pager log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --color --date=short --since=midnight
+    lg-month     = !git --no-pager log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --color --date=short --since='1 month'
+
+    # filter mine commits by the email
+    lg1-my-week  = !git --no-pager log  --graph --pretty=format:'%C(yellow)%d%Creset %s %Cgreen(%ad, %cr)' --abbrev-commit --date=short --all --since='1 week' --no-merges --author=krystian.safjan@nokia.com
+    lg1-my-month  = !git --no-pager log  --graph --pretty=format:'%C(yellow)%d%Creset %s %Cgreen(%ad, %cr)' --abbrev-commit --date=short --all --since='1 month' --no-merges --author=krystian.safjan@nokia.com
+
+    lg1-all-week = log                  --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all --since='1 week' --no-merges
+    lg-all-week  = log --all --since='1 weeks' --oneline --no-merges
 
     # see commit stats per author
     stats = shortlog -sn --all --no-merges
