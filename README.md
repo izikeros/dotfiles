@@ -7,8 +7,9 @@ Contains:
 * `dotfiles`  - real dotfiles that can be found in user home directory,
 * `polybar-scripts` - customized polybar scripts (TODO: move to separate repo, add repo clonning as new step in restore)
 * `restore`   - scripts that help to install packages, customize system: e.g. install aliases, zsh extensions,
-* `restore/pkg` - lists of packages to install
+* `restore/pkg` - lists of packages to install,
 * `scripts`   - collection of shell scripts,
+* `settings`  - settings for applications that don't fall into `dotfiles` or `.config`
 * `snippets`  - snippets for vim.
 * ~`pycharm` and `pycharm_ce`~ - configuration files for PyCharm, (depreciated, pycharm configuration is stored on github repo, see description below)
 
@@ -24,6 +25,28 @@ There are helper scripts that allows to manually update lists based on what is a
 
 # Pycharm settings
 Pycharm IDE settings are stored in separate [github repository](https://github.com/izikeros/pycharm_settings) and can be imported on launch of Pycharm
+Custom keymap:
+```xml
+<keymap version="1" name="Default for XWin copy" parent="Default for XWin">
+  <action id="NextSplitter">
+    <keyboard-shortcut first-keystroke="ctrl alt w" />
+  </action>
+  <action id="SplitVertically">
+    <keyboard-shortcut first-keystroke="shift ctrl alt back_slash" />
+  </action>
+  <action id="ToggleBookmark">
+    <keyboard-shortcut first-keystroke="f11" />
+  </action>
+  <action id="ToggleFullScreen">
+    <keyboard-shortcut first-keystroke="alt f11" />
+  </action>
+  <action id="UnsplitAll">
+    <keyboard-shortcut first-keystroke="shift ctrl alt slash" />
+  </action>
+</keymap>
+
+
+```
 # Display configuration - autorandr
 Save your current display configuration and setup with:
 ```
