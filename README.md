@@ -4,10 +4,52 @@ Collection of Linux settings, scripts, aliases that helps to transform fresh sys
 Contains:
 * `.config`   - configuration files for different programs,
 * `backup`    - scripts that help to store system configuration (config files, installed packages, etc...),
-* `pycharm` and `pycharm_ce` - configuration files for PyCharm,
+* `dotfiles`  - real dotfiles that can be found in user home directory,
+* `polybar-scripts` - customized polybar scripts (TODO: move to separate repo, add repo clonning as new step in restore)
 * `restore`   - scripts that help to install packages, customize system: e.g. install aliases, zsh extensions,
+* `restore/pkg` - lists of packages to install
 * `scripts`   - collection of shell scripts,
 * `snippets`  - snippets for vim.
-* and many other "dotfiles"
+* ~`pycharm` and `pycharm_ce`~ - configuration files for PyCharm, (depreciated, pycharm configuration is stored on github repo, see description below)
+
+# Fresh install
+Go to restore directory and launch steps you would like to apply. The scripts are ordered using 3-digit prefix.
+
+## Packages
+packages are divided into groups:
+base.txt - these are always installed either on server or desktop installation
+ext.txt  - these are
+
+There are helper scripts that allows to manually update lists based on what is already installed in the system, see: `update_aur_list.sh` and `update_ext_list.sh` (work in progress).
+
+# Pycharm settings
+Pycharm IDE settings are stored in separate [github repository](https://github.com/izikeros/pycharm_settings) and can be imported on launch of Pycharm
+# Display configuration - autorandr
+Save your current display configuration and setup with:
+```
+autorandr --save mobile
+```
+Connect an additional display, configure your setup and save it:
+```
+autorandr --save docked
+```
+Now autorandr can detect which hardware setup is active:
+```
+$ autorandr
+  mobile
+  docked (detected)
+```
+To automatically reload your setup:
+```
+$ autorandr --change
+```
+To manually load a profile:
+```
+$ autorandr --load <profile>
+```
+or simply:
+```
+$ autorandr <profile>
+```
 
 
