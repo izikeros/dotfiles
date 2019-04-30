@@ -22,6 +22,7 @@ else
 fi
 
 # Clear traces in options
+# (quora was just removing options.xml file - we are cleaning other.xml file)
 OPTIONS_FILE="other.xml"
 OPTIONS_FILE_FULLPATH="$PYCHARM_SETTINGS_DIR/config/options/$OPTIONS_FILE"
 
@@ -39,3 +40,8 @@ else
 	echo "-- after:"
 	grep evlsprt $OPTIONS_FILE_FULLPATH
 fi
+
+# clear userPrefs from ~/.java dir
+echo "Removing all pycharm data, rm -rf ~/.userPrefs/jetbrains/pycharm"
+cd ~/.java/.userPrefs/jetbrains
+rm -rf pycharm
