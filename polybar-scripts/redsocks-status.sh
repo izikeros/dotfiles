@@ -2,8 +2,8 @@
 
 if pgrep -x "redsocks" > /dev/null
 then
-    echo "Redsocks: Running"
+    echo "Redsocks: on"
 else
-    echo "Redsocks: Stopped"
+    echo "Redsocks: off"
 fi
 

@@ -69,7 +69,7 @@ alias cdc="cd $HOME/.config"
 # Sublime
 if [[ -x /usr/bin/subl3 ]]; then
   S="/usr/bin/subl3"
-  alias s3="subl3"
+  alias s="subl3"
 fi
 # run atom without hardware accelleration
 alias atom="atom --disable-gpu"

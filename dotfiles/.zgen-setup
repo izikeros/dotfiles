@@ -83,7 +83,7 @@ load-starter-plugin-list() {
 
   # Load some oh-my-zsh plugins
   #zgen oh-my-zsh plugins/pip    # pip autocompletions (seems not working correctly)
-  zgen oh-my-zsh plugins/sudo   # asily prefix your current or previous commands with `sudo` by pressing <kbd>esc</kbd> twice
+  zgen oh-my-zsh plugins/sudo   # easily prefix your current or previous commands with `sudo` by pressing <kbd>esc</kbd> twice
   #zgen oh-my-zsh plugins/aws
   #zgen oh-my-zsh plugins/chruby
   zgen oh-my-zsh plugins/colored-man-pages

@@ -58,7 +58,7 @@ function dys(){		# open diary page for yesterday in sublime text
 
 }
 
-function dts(){		# open diary page for today in sublime text
+function t(){		# open diary page for today in sublime text
     FNAME=$(d_file_today)
     FULL_FILE="$HOME/vimwiki/diary/$FNAME.md"
     if [ -s $FULL_FILE ]
