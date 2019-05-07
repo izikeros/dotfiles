@@ -74,6 +74,8 @@ sudo cp ~/Dropbox/wallpapers/crimson.jpg /usr/share/backgrounds
 
 TODO:
 - split .zshrc_pure into zshrc_plain and .zshrc_zgen
+- add tags ::server:: to restore steps, then create script to filter steps dedicated to server only
+- remove dropbox from prompt
 
 * [OBSOLETE] if using xbindkeysrc: symlink .xbindkeysrc. (Nowadays using mappings from openbox instead of xbindkeysrc)
 

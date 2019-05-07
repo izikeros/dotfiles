@@ -4,11 +4,11 @@ set -e
 
 # shellcheck source=./helper_functions.sh
 source ./helper_functions.sh
-DCMDR_PATH="dotfiles/.config/mc"
+MC_PATH=".config/mc"
 
-echo "Creating dir: $HOME/$DCMDR_PATH"
-mkdir -p "$HOME/$DCMDR_PATH"
+echo "Creating dir: $HOME/$MC_PATH"
+mkdir -p "$HOME/$MC_PATH"
 
-symlink_dotfile "$HOME/dotfiles/$DCMDR_PATH/ini" "$HOME/$DCMDR_PATH/ini"
+symlink_dotfile "$HOME/dotfiles/dotfiles/$MC_PATH/ini" "$HOME/$MC_PATH/ini"
 
 echo "### mc config symlinked"
