@@ -171,7 +171,9 @@ source ~/dotfiles/env_and_path.sh
 # virtualenv wrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/projects
-source /usr/bin/virtualenvwrapper.sh
+if [ -f /usr/bin/virtualenvwrapper.sh ]; then
+	source /usr/bin/virtualenvwrapper.sh
+fi
 
 if [[ -d ~/gocode ]]; then
   export GOPATH=~/gocode
@@ -181,22 +183,27 @@ fi
 # requires package database created by package pkgfile
 # $ pacman -S pkgfile
 # $ pkgfile -u
-source /usr/share/doc/pkgfile/command-not-found.zsh
+if [ -f /usr/share/doc/pkgfile/command-not-found.zsh ]; then
+	source /usr/share/doc/pkgfile/command-not-found.zsh
+fi
 
 # fzf - fuzzy find in history
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fasd - fast cd
-eval "$(fasd --init auto)"
-unalias s
-
+if hash fasd 2>/dev/null; then
+	eval "$(fasd --init auto)"
+	unalias s
+fi
 # fuck - correct last command
 # eval "$(thefuck --alias)"
 
 ~/dotfiles/scripts/runonce.sh neofetch
 ~/dotfiles/scripts/runonce.sh ~/dotfiles/scripts/runonce-all.sh
 
-source ~/.powerlevel9k
+if [ -f ~/.powerlevel9k ]; then
+	source ~/.powerlevel9k
+fi
 
 # Note: deduplication takes quite long. Check if deduplications are needed (usually not)
 #dedupe_path
