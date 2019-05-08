@@ -22,7 +22,7 @@ POWERLEVEL9K_MODE='nerdfont-fontconfig'
 
 # Left, right prompt segments
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda virtualenv dir vcs)
-export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws dropbox) # add custom_git_user_email
+export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
 
 
 BG_COL='235'
