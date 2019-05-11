@@ -1,1 +1,0 @@
-crete script to automatically copy files of interest to dotfiles pycharm dir
