@@ -2,6 +2,9 @@
 # Powerlevel 9k
 #-----------------------
 
+# Consider switching to powerlevel10k
+# https://github.com/romkatv/powerlevel10k
+
 #zsh_git_user_email(){
 #	local local_email=$(git config --local --get user.email) &2>/dev/nullsss
 #	local color='%F{yellow}'
@@ -16,7 +19,7 @@
 #POWERLEVEL9K_CUSTOM_GIT_USER_EMAIL="zsh_git_user_email"
 
 
-# awesome-fontconfig | 
+# awesome-fontconfig |
 # nerdfont-fontconfig | https://github.com/ryanoasis/nerd-fonts
 POWERLEVEL9K_MODE='nerdfont-fontconfig'
 
@@ -25,7 +28,7 @@ export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda virtualenv dir vcs)
 export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
 
 
-BG_COL='235'
+BG_COL='none' #'235'|'none'
 
 export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
