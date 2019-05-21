@@ -12,6 +12,15 @@ function d_file_today(){    # return filename for the diary for today
     echo "$FNAME"
 }
 
+function d_file_tomorrow(){    # return filename for the diary for tomorrow
+    DATE=$(date -d "+1day 13:00" +%Y-%m-%d)
+    DOW=$(date "-d +1day 13:00" +%u)
+    days=(m t w h f s x)
+    DAY_LETTER=${days[$DOW]}
+    FNAME="${DATE}_${DAY_LETTER}"
+    echo "$FNAME"
+}
+
 function d_file_yesterday(){    # return filename for the diary for yesterday
     DATE=$(date -d "yesterday 13:00" +%Y-%m-%d)
     DOW=$(date "-d yesterday 13:00" +%u)
@@ -19,6 +28,18 @@ function d_file_yesterday(){    # return filename for the diary for yesterday
     DAY_LETTER=${days[$DOW]}
     FNAME="${DATE}_${DAY_LETTER}"
     echo "$FNAME"
+}
+
+function dtm(){		# open diary page for tomorrow in vim
+    FNAME=$(d_file_tomorrow)
+    FULL_FILE="$HOME/vimwiki/diary/$FNAME.md"
+    if [ -s $FULL_FILE ]
+    then
+        vim $FULL_FILE
+    else
+        echo $FNAME > $FULL_FILE
+        vim $FULL_FILE
+    fi
 }
 
 function dt(){		# open diary page for today in vim
@@ -60,6 +81,19 @@ function dys(){		# open diary page for yesterday in sublime text
 
 function t(){		# open diary page for today in sublime text
     FNAME=$(d_file_today)
+    FULL_FILE="$HOME/vimwiki/diary/$FNAME.md"
+    if [ -s $FULL_FILE ]
+    then
+        subl3 $FULL_FILE
+    else
+        echo $FNAME > $FULL_FILE
+        subl3 $FULL_FILE
+    fi
+
+}
+
+function tm(){		# open diary page for today in sublime text
+    FNAME=$(d_file_tomorrow)
     FULL_FILE="$HOME/vimwiki/diary/$FNAME.md"
     if [ -s $FULL_FILE ]
     then
@@ -417,7 +451,7 @@ function canhaz-script(){ # Recursively touch with execute flag, e.g. touch + mk
   canhaz "${1}" && chmod +x "$1"
 }
 
-function write-script(){ # Create new file for script with execute flag, edit in vim
+function ws(){ # Create new file for script with execute flag, edit in vim
     touch "$1" && chmod +x "$1" && vim "$1"
 }
 

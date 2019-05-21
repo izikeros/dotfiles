@@ -98,10 +98,6 @@ bindkey "^ " magic-space              # control-space to bypass completion
 bindkey -M isearch " " magic-space    # normal space during searches
 
 
-# temporal hack to ensure that my aliases has priority
-source ~/.zsh_aliases
-source ~/.zsh_functions
-
 # Base PATH
 PATH=/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin
 export PATH=$HOME/bin:$PATH
@@ -204,6 +200,10 @@ fi
 if [ -f ~/.powerlevel9k ]; then
 	source ~/.powerlevel9k
 fi
+
+# temporal hack to ensure that my aliases has priority
+source ~/.zsh_aliases
+source ~/.zsh_functions
 
 # Note: deduplication takes quite long. Check if deduplications are needed (usually not)
 #dedupe_path

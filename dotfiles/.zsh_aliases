@@ -119,10 +119,12 @@ fi
 #--------------------------------------------
 # MEATA-ALIAS
 #--------------------------------------------
+# grep aliases active in current shell
 alias galias="alias | grep --color=never -i -e"
+# grep aliases in aliases file
 alias gralias="cat ~/.zsh_aliases | grep -B1 --color=never -i -e"
+# list functions
 alias list-functions="grep function ~/.zsh_functions --color=never"
-# TODO: add alias from commandline (and append to this file)
 
 #alias s="sudo su"
 alias _="sudo"
