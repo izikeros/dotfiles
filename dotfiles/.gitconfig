@@ -151,9 +151,9 @@
 [difftool "kdiff3"]
     trustExitCode = false
 
-[user]
-	name = Krystian Safjan
-	email = ksafjan@gmail.com
+# [user]
+# 	name = Krystian Safjan
+# 	email = ksafjan@gmail.com
 [push]
 	default = current
 [core]
