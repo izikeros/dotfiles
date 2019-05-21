@@ -62,8 +62,8 @@ unsetopt correctall
 # Yes, these are a pain to customize. Fortunately, Geoff Greer made an online
 # tool that makes it easy to customize your color scheme and keep them in sync
 # across Linux and OS X/*BSD at http://geoff.greer.fm/lscolors/
-export LSCOLORS='Exfxcxdxbxegedabagacad'
-export LS_COLORS='di=1;34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
+#export LSCOLORS='Exfxcxdxbxegedabagacad'
+#export LS_COLORS='di=1;34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
 
 # Set keystrokes for substring searching
 zmodload zsh/terminfo
@@ -200,6 +200,16 @@ fi
 if [ -f ~/.powerlevel9k ]; then
 	source ~/.powerlevel9k
 fi
+
+# --------------
+# LS colors
+# -------------
+# Yes, these are a pain to customize. Fortunately, Geoff Greer made an online
+# tool that makes it easy to customize your color scheme and keep them in sync
+# across Linux and OS X/*BSD at http://geoff.greer.fm/lscolors/
+export LSCOLORS='Exfxcxdxbxegedabagacad'
+export LS_COLORS='di=1;34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
+eval $( dircolors -b $HOME/.dircolors )
 
 # temporal hack to ensure that my aliases has priority
 source ~/.zsh_aliases
