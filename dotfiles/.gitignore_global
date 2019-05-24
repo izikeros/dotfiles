@@ -11,3 +11,5 @@
 
 # Platform-specific files
 .DS_Store
+
+.ipynb_checkpoints/
