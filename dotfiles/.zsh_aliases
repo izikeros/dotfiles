@@ -47,10 +47,10 @@ alias ls='ls --color=auto'
 alias l="ls -lah"
 # -F, --classify append indicator (one of */=>@|) to entries
 # alias l="ls -laF"
-# almost-all (do not list implied . and ..)
+# almost-all (-A: do not list . and ..)
 alias la='ls -A'
 alias ll='ls -lA'
-
+alias k='k -h'
 #--------------------------------------------
 # QUICK CHANGE DIRECTORY/Bookmarks
 #--------------------------------------------
@@ -294,6 +294,7 @@ alias week-stats-guilt="git guilt \`git log --until=\"7 days ago\" --format=\"%H
 
 alias st="git status --short"
 alias gp="git push"
+alias whoamigit="git config --get user.email;git config --get user.name"
 #--------------------------------------------
 # PYTHON, SOFTWARE PROJECT
 #-------------------------------------------
@@ -315,6 +316,7 @@ alias ccat=ccat.sh
 
 alias nb="jupyter notebook"
 alias jl="jupyter lab"
+alias jn="jupyter notebook"
 alias wn="workon"
 #-------------------------------------------
 # PIP
