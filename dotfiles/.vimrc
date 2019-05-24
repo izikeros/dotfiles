@@ -98,6 +98,8 @@ cnoremap kj <ESC>				" map ESC to kj
 
 
 nmap <C-N><C-N> :set invnumber<CR> :GitGutterToggle<CR> " toggle numbers and git gutter by hitting C-n twice
+nmap <C-L><C-L> :set invrelativenumber<CR> " toggle relative line number
+set norelativenumber " use relative numbers by default
 
 set bs=2 " make backspace behave like normal again
 
