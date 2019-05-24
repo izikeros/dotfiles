@@ -1,10 +1,12 @@
-# compton
+#!/bin/bash 
+
+# compton (not sure what are the benefits from using it)
 #al-compositor --start &
 
-# set proper keyboard layout
+# set proper keyboard layout, polish
 setxkbmap -model microsoft4000 -layout pl
 
-# enable numlock, commented out for laptop users
+# enable numlock (disable for laptop)
 numlockx &
 
 # restore wallpaper
@@ -13,7 +15,7 @@ nitrogen --restore &
 # required for xfce settings to work
 #xfsettingsd &
 
-# fancy window switcher
+# fancy window switcher (rarely used, consider removal)
 skippy-xd --config ~/.config/skippy-xd/skippy-xd.rc --start-daemon &
 
 # start the panel (disabled, use W-F12 to toggle polybar)
@@ -24,3 +26,6 @@ redshift -c ~/.redshiftgrc &
 
 # dropbox
 dropbox &
+
+# start drop-down terminal (Press F1 to pull down the window)
+tilda &
