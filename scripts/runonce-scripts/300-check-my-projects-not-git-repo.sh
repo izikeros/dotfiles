@@ -12,7 +12,7 @@ pass=${bldblu}*${txtrst}
 warn=${bldred}*${txtrst}
 ques=${bldblu}?${txtrst}
 
-for dir in $HOME/projects/*/     # list directories in the form "/tmp/dirname/"
+for dir in $HOME/projects/_priv/*/     # list directories in the form "/tmp/dirname/"
 do
 	proj=${dir%*/}      # remove the trailing "/"
     proj=${proj##*/}	# everything after the final "/"
