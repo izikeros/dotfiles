@@ -72,6 +72,8 @@
     lg1-all-week = log                  --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all --since='1 week' --no-merges
     lg-all-week  = log --all --since='1 weeks' --oneline --no-merges
 
+    taxbreak = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --since='1 month'
+
     # see commit stats per author
     stats = shortlog -sn --all --no-merges
 
