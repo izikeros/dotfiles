@@ -437,9 +437,9 @@ alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 #---------------------------------------------
 #  blog
 #---------------------------------------------
-BLG="cd ~/blog; pipenv shell"
-alias blog="$BLG"
-alias pelican-run="$BLG; pelican --lr"
+#BLG="cd ~/blog; pipenv shell"
+#alias blog="$BLG"
+#alias pelican-run="$BLG; pelican --lr"
 alias blog-push="cd ~/blog/docs; git add .; git ci -m \"update\"; gp"
 
 #---------------------------------------------
