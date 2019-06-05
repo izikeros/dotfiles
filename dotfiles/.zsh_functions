@@ -201,7 +201,7 @@ function rco(){		# git checkout to one of the recent branches
     echo "$(recent-branches | rofi -threads 0 -width 100 -dmenu -i -p "locate:")" | xargs git checkout
 }
 
-function todos(){	# git blame who put TODO statement in the code
+function todos-blame(){	# git blame who put TODO statement in the code
     AUTHOR=$1
     TYPE=$2
     AUTHOR="${AUTHOR:-Krystian}"
