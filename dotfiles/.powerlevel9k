@@ -21,7 +21,8 @@
 
 # awesome-fontconfig |
 # nerdfont-fontconfig | https://github.com/ryanoasis/nerd-fonts
-export DEFAULT_USER=safjan
+#export DEFAULT_USER=safjan
+source $HOME/.powerlevel9k-default-user
 POWERLEVEL9K_MODE='nerdfont-fontconfig'
 
 # Left, right prompt segments
