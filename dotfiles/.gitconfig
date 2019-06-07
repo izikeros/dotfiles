@@ -163,3 +163,5 @@
 
 [gui]
 	spellingdictionary = en_US
+[pager]
+	branch = false
