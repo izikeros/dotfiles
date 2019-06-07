@@ -392,10 +392,10 @@ alias r-ml="recoll -c $HOME/.recoll_indexes/.recoll_ml"
 # HELP on comonly used sed, awk, perl commands
 #---------------------------------------------
 # help on how to use awk to extract given column
-alias h-awk="echo awk -F\':\' \'{print \$\2}\'"
-alias h-sed="man sed"
-alias h-perl="echo \"echo \"(a b c)(a b c)\" | perl -ne 'print $1 while /(a) b/g'\""
-alias h-terminator="echo Super+R - rotate \| C-S-E - split vert \| C-S-O - split horiz \| C-S-W - close panel"
+#alias h-awk="echo awk -F\':\' \'{print \$\2}\'"
+#alias h-sed="man sed"
+#alias h-perl="echo \"echo \"(a b c)(a b c)\" | perl -ne 'print $1 while /(a) b/g'\""
+#alias h-terminator="echo Super+R - rotate \| C-S-E - split vert \| C-S-O - split horiz \| C-S-W - close panel"
 
 #---------------------------------------------
 # Comments & color removal
