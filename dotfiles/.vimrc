@@ -25,7 +25,7 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'roxma/nvim-yarp'
 "Plugin 'roxma/vim-hug-neovim-rpc'
 
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 
 " additional configuration for vim
 Bundle 'tpope/vim-sensible'
@@ -39,7 +39,7 @@ Plugin 'itchyny/lightline.vim'
 Bundle 'airblade/vim-gitgutter'
 
 " nice startup screen when vim openerd without any file
-Bundle 'mhinz/vim-startify'
+"Bundle 'mhinz/vim-startify'
 
 " for snippets (mainly my own templates for documents)
 "Bundle 'sirver/UltiSnips'
@@ -50,9 +50,9 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 
 " to map 'jk' and 'kj' to ESC
-Bundle 'zhou13/vim-easyescape'
+"Bundle 'zhou13/vim-easyescape'
 
-Bundle 'majutsushi/tagbar'
+"Bundle 'majutsushi/tagbar'
 
 Bundle 'vimwiki/vimwiki'
 " Try alternative, together with his dotnvim repo
