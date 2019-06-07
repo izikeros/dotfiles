@@ -171,6 +171,10 @@ if [ -f /usr/bin/virtualenvwrapper.sh ]; then
 	source /usr/bin/virtualenvwrapper.sh
 fi
 
+if [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
+	source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+fi
+
 if [[ -d ~/gocode ]]; then
   export GOPATH=~/gocode
 fi
