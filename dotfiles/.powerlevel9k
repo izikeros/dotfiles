@@ -21,6 +21,7 @@
 
 # awesome-fontconfig |
 # nerdfont-fontconfig | https://github.com/ryanoasis/nerd-fonts
+export DEFAULT_USER=safjan
 POWERLEVEL9K_MODE='nerdfont-fontconfig'
 
 # Left, right prompt segments
@@ -48,7 +49,6 @@ export POWERLEVEL9K_DIR_SHOW_WRITABLE=true
 
 # default user (for this user at localhost context is not displayed)
 #Used for some OHZsh themes to determine if user@host should be printed
-export DEFAULT_USER=izik
 
 export POWERLEVEL9K_DIR_HOME_FOREGROUND='blue'
 export POWERLEVEL9K_DIR_HOME_BACKGROUND=$BG_COL
