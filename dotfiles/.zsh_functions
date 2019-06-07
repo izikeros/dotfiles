@@ -538,3 +538,40 @@ $ - start of string
 EOF
 }
 
+function h-awk(){
+cat <<- EOF
+display column 2, where separator is ':'
+    awk -F':' '{print \$2}'
+
+sum-up column of numbers (e.g. output of parallel xargs such as counting lines)
+    awk '{s+=$1} END {print s}'
+EOF
+}
+
+
+
+function h-sed(){
+cat <<- EOF
+Remove first line (-i inplace - save to the same file)
+    sed -i 1d
+EOF
+}
+
+function h-perl(){
+cat <<- EOF
+Filter on absolute fold-changes and p-values, located in this case in columns 3 and 5 (indexed 2 and 4), respectively:
+
+perl -lane 'print if (abs($F[2]) >= 2 and $F[4] <= 0.05)' input > output
+
+??
+echo "(a b c)(a b c)" | perl -ne 'print $1 while /(a) b/g'
+EOF
+}
+
+function h-terminator(){
+cat <<- EOF
+Super+R - rotate | C-S-E - split vert | C-S-O - split horiz
+EOF
+}
+
+
