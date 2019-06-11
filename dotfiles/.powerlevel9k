@@ -21,7 +21,12 @@
 
 # awesome-fontconfig |
 # nerdfont-fontconfig | https://github.com/ryanoasis/nerd-fonts
-export DEFAULT_USER=safjan
+
+
+# default user (for this user at localhost context is not displayed)
+#Used for some OHZsh themes to determine if user@host should be printed
+#export DEFAULT_USER=safjan
+source $HOME/.powerlevel9k-default-user
 POWERLEVEL9K_MODE='nerdfont-fontconfig'
 
 # Left, right prompt segments
@@ -47,8 +52,6 @@ export POWERLEVEL9K_SHOW_CHANGESET=true
 
 export POWERLEVEL9K_DIR_SHOW_WRITABLE=true
 
-# default user (for this user at localhost context is not displayed)
-#Used for some OHZsh themes to determine if user@host should be printed
 
 export POWERLEVEL9K_DIR_HOME_FOREGROUND='blue'
 export POWERLEVEL9K_DIR_HOME_BACKGROUND=$BG_COL
@@ -84,7 +87,7 @@ POWERLEVEL9K_FAIL_ICON=$'\u2718'                  # ✘  or  '\uF00D' 
 #POWERLEVEL9K_FOLDER_ICON=$'\uF07B '               #   or  '\uF115' 
 POWERLEVEL9K_FREEBSD_ICON=$'\uF30C '              # 
 POWERLEVEL9K_GO_ICON=$'\uE724'                    #  or  '\uE626' 
-POWERLEVEL9K_HOME_ICON=$'\uF015'                  # 
+#POWERLEVEL9K_HOME_ICON=$'\uF015'                  # 
 #POWERLEVEL9K_HOME_SUB_ICON=$'\uF07C'              # 
 POWERLEVEL9K_JAVA_ICON=$'\U2615'                  # ☕︎
 POWERLEVEL9K_KUBERNETES_ICON=$'\U2388'            # ⎈
@@ -160,3 +163,9 @@ POWERLEVEL9K_VCS_UNSTAGED_ICON=$'\u25CF'          # ● or '\uF111'  or '\uF0
 POWERLEVEL9K_VCS_UNTRACKED_ICON=$'\uF128'         #  or '\uF059'  '\uF29C'  or '\u00B1' ?
 POWERLEVEL9K_VPN_ICON="(vpn)"
 POWERLEVEL9K_WINDOWS_ICON=$'\uF17a ' 			  #  or '\uF17A' 
+
+# disable folder icons
+POWERLEVEL9K_HOME_ICON=''
+POWERLEVEL9K_HOME_SUB_ICON=''
+POWERLEVEL9K_FOLDER_ICON=''
+POWERLEVEL9K_ETC_ICON=''
