@@ -58,6 +58,11 @@ alias lh='ls -lA | head -n10'
 alias ..="cd .."
 alias ...="cd ../.."
 alias cd..="cd .."
+alias 1="cd .."
+alias 2="cd ../.."
+alias 3="cd ../../.."
+alias 4="cd ../../../.."
+
 alias h="cd $HOME"
 alias pp="cd $HOME/projects"
 alias cdd="cd $HOME/Downloads"
