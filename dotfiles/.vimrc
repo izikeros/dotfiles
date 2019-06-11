@@ -91,10 +91,13 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-let g:easyescape_chars = { "j": 1, "k": 1 }
-let g:easyescape_timeout = 100
-cnoremap jk <ESC>				" map ESC to jk
-cnoremap kj <ESC>				" map ESC to kj
+"=======================
+" EASYESCAPE
+" ======================
+" let g:easyescape_chars = { "j": 1, "k": 1 }
+" let g:easyescape_timeout = 100
+" cnoremap jk <ESC>				" map ESC to jk
+" cnoremap kj <ESC>				" map ESC to kj
 
 
 nmap <C-N><C-N> :set invnumber<CR> :GitGutterToggle<CR> " toggle numbers and git gutter by hitting C-n twice
