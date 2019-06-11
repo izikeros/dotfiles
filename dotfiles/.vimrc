@@ -49,20 +49,12 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 
-" to map 'jk' and 'kj' to ESC
-"Bundle 'zhou13/vim-easyescape'
-
 "Bundle 'majutsushi/tagbar'
 
-Bundle 'vimwiki/vimwiki'
-" Try alternative, together with his dotnvim repo
-"Bundle 'lervag/wiki'
-
 " markdown preview
+" requires installation of:
+" [sudo] npm -g install instant-markdown-d
 Bundle 'suan/vim-instant-markdown'
-
-" for learning vim
-"Bundle 'wikitopian/hardmode'
 
 " to search
 "Bundle 'kien/ctrlp.vim'
@@ -77,7 +69,6 @@ call vundle#end()
 " =================== / PLUGINS ===============================
 filetype plugin indent on
 
-
 "========================
 " GENERAL SETTINGS
 "========================
@@ -91,15 +82,13 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-let g:easyescape_chars = { "j": 1, "k": 1 }
-let g:easyescape_timeout = 100
-cnoremap jk <ESC>				" map ESC to jk
-cnoremap kj <ESC>				" map ESC to kj
-
-
+" Toggle line numbering (usefull when selecting text to copy)
 nmap <C-N><C-N> :set invnumber<CR> :GitGutterToggle<CR> " toggle numbers and git gutter by hitting C-n twice
 nmap <C-L><C-L> :set invrelativenumber<CR> " toggle relative line number
-set norelativenumber " use relative numbers by default
+
+" Showing absolute line numbers for cursor line and relative for other lines
+set number 						" show line number for the cursor
+set relativenumber				" show relative line numbers (norelativenumber to disable)
 
 set bs=2 " make backspace behave like normal again
 
@@ -112,6 +101,7 @@ noremap <C-n> :nohl<CR>         " Removes highlight of your last search
 vnoremap <C-n> :nohl<CR>
 inoremap <C-n> :nohl<CR>
 
+" quick save
 noremap <C-Z> :update<CR>       " Quicksave command
 vnoremap <C-Z> <C-C>:update<CR>
 inoremap <C-Z> <C-O>:update<CR>
@@ -119,18 +109,13 @@ inoremap <C-Z> <C-O>:update<CR>
 noremap <Leader>e :quit<CR>     " Quit current window
 noremap <Leader>E :qa!<CR>      " Quit all windows
 
-"map <c-j> <c-w>j                " already reserved for moving line(s) up/down
-"map <c-k> <c-w>k
-"map <c-l> <c-w>j 				 " (not working now) bind Ctrl+l/h keys to move to the right/left window, instead of using Ctrl+w + <movement>
-"map <c-h> <c-w>h
-
 " easier moving between tabs
 map <Leader>n <esc>:tabprevious<CR>     " moving between tabs
 map <Leader>m <esc>:tabnext<CR>			" conflict with markdown preview?
 
 vnoremap <Leader>s :sort<CR>            " map sort function to a key
 
-" Try to go into visual mode (v), thenselect several lines of code here and
+" Try to go into visual mode (v), then select several lines of code here and
 " then press ``>`` several times.
 vnoremap < <gv                          " better indentation (in visual mode)
 vnoremap > >gv
@@ -146,10 +131,7 @@ color wombat256mod
 
 syntax on 								" Enable syntax highlighting
 
-" Showing absolute line numbers for cursor line and relative for other lines
-set number 						" show line numbers
-" set relativenumber				" show relative line numbers
-
+" Wrapping and margins
 set tw=79 " width of document (used by gd)
 set nowrap " don't automatically wrap on load
 set fo-=t " don't automatically wrap text when typing
@@ -157,15 +139,11 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=233
 
 
-" easier formatting of paragraphs ??
-vmap Q gq                       " easier formatting paragraphs (?)
-nmap Q gqap
-
 " Useful settings
 set history=700
 set undolevels=700
 
-" Real programmers don't use TABs but spaces
+" Use TABs instead of spaces for indentation
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -178,16 +156,16 @@ set incsearch
 set ignorecase
 set smartcase
 
-" Disable stupid backup and swap files - they trigger too many events
-" for file system watchers
+" Disable backup and swap files - they trigger too many events for file system watchers
 set nobackup
 set nowritebackup
 set noswapfile
 
-
+" Inset current time
 nnoremap <F5> "=strftime("%Y-%m-%d")<CR>		" insert current date
 inoremap <F5> <C-R>=strftime("%Y-%m-%d")<CR>
 
+" What is wildmenu???
 set wildmenu
 set wildmode=list:longest,full
 
@@ -250,7 +228,6 @@ set nofoldenable
 " let g:pymode_rope_completion = 0
 " let g:pymode_rope_complete_on_dot = 0
 
-
 "=====================================================
 " TagBar settings
 "=====================================================
@@ -290,7 +267,4 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsListSnippets="<c-l>"
-
-
-" hint: use (or map) YP to duplicate line
 
