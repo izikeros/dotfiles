@@ -50,6 +50,7 @@ alias l="ls -lah"
 # almost-all (-A: do not list . and ..)
 alias la='ls -A'
 alias ll='ls -lA'
+alias lh='ls -lA | head -n10'
 #alias k='k -h' # some problems with k plugin
 #--------------------------------------------
 # QUICK CHANGE DIRECTORY/Bookmarks
