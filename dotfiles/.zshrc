@@ -191,8 +191,9 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fasd - fast cd
-if hash fasd 2>/dev/null; then
-	eval "$(fasd --init auto)"
+#if hash fasd 2>/dev/null; then
+if [ "$(command -v fasd)" ]; then
+    eval "$(fasd --init auto)"
 	unalias s
 fi
 # fuck - correct last command
