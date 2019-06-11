@@ -50,6 +50,7 @@ alias l="ls -lah"
 # almost-all (-A: do not list . and ..)
 alias la='ls -A'
 alias ll='ls -lA'
+alias lh='ls -l | head'
 #alias k='k -h' # some problems with k plugin
 #--------------------------------------------
 # QUICK CHANGE DIRECTORY/Bookmarks
@@ -96,6 +97,7 @@ alias vf="vim $HOME/.zsh_functions"
 alias vc-"vim $HOME/.config"
 alias vs="vim $HOME/.ssh/config"
 alias vg="vim $HOME/.gitconfig"
+alias vgg="vim ./.git/config"
 alias ve="vim $HOME/env_and_path.sh"
 
 # shortcuts for get-started content

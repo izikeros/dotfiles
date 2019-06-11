@@ -574,4 +574,21 @@ Super+R - rotate | C-S-E - split vert | C-S-O - split horiz
 EOF
 }
 
+function h-comm(){
+cat <<- EOF
+#find lines only in file1
+comm -23 file1 file2
 
+#find lines only in file2
+comm -13 file1 file2
+
+#find lines common to both files
+comm -12 file1 file2
+
+       -1     suppress column 1 (lines unique to FILE1)
+
+       -2     suppress column 2 (lines unique to FILE2)
+
+       -3     suppress column 3 (lines that appear in both files)
+EOF
+}
