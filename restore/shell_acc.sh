@@ -6,3 +6,4 @@
 063-add-global-gitignore.sh
 070-install-fzf.sh
 080-install-vim.sh
+054-set-powerlevel9k-default-user.sh
