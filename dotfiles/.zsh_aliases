@@ -4,15 +4,16 @@
 #
 # vi ft=shell
 
-# requirements: pydf, sar
+# requirements: pydf - for df replacement, sar - for load
 
-# Global aliases
-alias -g G='|grep'
-alias -g GH='https://github.com/'
-alias -g GHI='https://github.com/izikeros/'
-alias -g C='|wc -l'
-alias -g H='|head'
-alias -g M='|most'
+# Global aliases (expanded in zsh with space)
+alias -g G='| grep'
+alias -g W='| wc -l'
+alias -g H='| head'
+alias -g M='| most'
+alias -g A="| awk '{s+=\$1} END {print s}'"
+alias -g X='| xargs -n1 -P\$(nproc) -I{}'
+alias -g F="find ./ -maxdepth 1 -type f -name '*.txt' -print0"
 
 #--------------------------------------------
 # FILESYSTEM - DIRECTORY SIZE, LISTING
@@ -24,7 +25,9 @@ alias ducks='du -cksh *|sort -rh|head -11'
 alias duu='du -sh'
 
 # free/used space on devices
-alias df="pydf"
+if hash pydf 2>/dev/null; then
+    alias df="pydf"
+fi
 
 # free/used space on disk devices
 alias dfd="pydf | head -n 1; pydf | grep --colour=never /dev/sd"
