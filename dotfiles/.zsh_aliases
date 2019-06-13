@@ -66,7 +66,7 @@ alias 2="cd ../.."
 alias 3="cd ../../.."
 alias 4="cd ../../../.."
 
-alias h="cd $HOME"
+#alias h="cd $HOME"
 alias pp="cd $HOME/projects"
 alias cdd="cd $HOME/Downloads"
 alias ddd="cd $HOME/dotfiles"
@@ -180,7 +180,7 @@ alias pacman="pacman --color=always"
 # alias pacman='sudo pacman --color auto'
 
 # update
-alias -g u="sudo pacman -Syu --color=always"
+alias -g pacu="sudo pacman -Syu --color=always"
 alias -g uy="$AUR_CMD -Syua"
 alias pacman-bigpkg="expac -s '%-30n %m' | sort -rhk 2 | less"
 alias mirrors="sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose"
