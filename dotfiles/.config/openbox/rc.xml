@@ -43,7 +43,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <!-- 
+    <!--
       Adwaita
       Adwaita-dark
       ArchLabs-dARK
@@ -381,14 +381,17 @@
     </keybind>
     <keybind key="A-F1">
       <action name="Execute">
-        <command>rofi_run -r</command>
+          <!--<command>rofi_run -r</command>-->
+        <command>rofi -combi-modi window,drun,ssh,run -show combi</command>
       </action>
     </keybind>
+    <!--
     <keybind key="W-space">
       <action name="Execute">
         <command>rofi -combi-modi window,drun,ssh,run -show combi</command>
       </action>
-    </keybind>
+      </keybind>
+    -->
     <keybind key="W-S-space">
       <action name="Execute">
         <command>~/dotfiles/scripts/rofi-scripts-collection/rofi-bangs.sh</command>
@@ -866,19 +869,19 @@
     <!-- Show applications icons if openbox is build with this support -->
     <manageDesktops>yes</manageDesktops>
   </menu>
-  
+
   <applications>
   <!-- match all windows, and remove their decorations -->
      <application class="*">
          <decor>no</decor>
     </application>
 
-  <!-- but give decorations back to Firefox 
+  <!-- but give decorations back to Firefox
   <application name="Firefox*">
     <decor>yes</decor>
   </application>
   -->
-  
+
     <application name="oblogout">
       <position force="no">
         <monitor>1</monitor>
