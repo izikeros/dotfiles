@@ -232,3 +232,5 @@ source ~/.zsh_functions
 # perform check of shell script
 #shellcheck -x ~/.zshrc
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+source ~/.purepower
+source ~/powerlevel10k/powerlevel10k.zsh-theme
