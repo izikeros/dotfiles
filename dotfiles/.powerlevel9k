@@ -26,6 +26,8 @@
 # default user (for this user at localhost context is not displayed)
 #Used for some OHZsh themes to determine if user@host should be printed
 #export DEFAULT_USER=safjan
+function _pp_s() { print -nr -- $2 }
+
 source $HOME/.powerlevel9k-default-user
 POWERLEVEL9K_MODE='nerdfont-fontconfig'
 
@@ -144,28 +146,56 @@ POWERLEVEL9K_SYMFONY_ICON=$'\uE757'               # 
 POWERLEVEL9K_TEST_ICON=$'\uE29A '                 #  or '\uF188' 
 POWERLEVEL9K_TIME_ICON=$'\uF017 '                 # 
 POWERLEVEL9K_TODO_ICON=$'\uF046 '                 #  or '\uF133' 
+
 POWERLEVEL9K_VCS_BOOKMARK_ICON=$'\uF461 '         #  or '\uF02E'  or '\uF097'  or '\uF08D'  or $'\uF223'  or ☿
 POWERLEVEL9K_VCS_BRANCH_ICON=$'\uF126 '           #  or '\uE702'  or 
 POWERLEVEL9K_VCS_COMMIT_ICON="-o-"                #   or '\uE729' 
-POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=$'\uF171 '    #  or '\uF172 '  or '\uE703' 
-POWERLEVEL9K_VCS_GIT_GITHUB_ICON=$'\uF113 '       #  or '\uF09B '  or '\uF092 ' 
-POWERLEVEL9K_VCS_GIT_GITLAB_ICON=$'\uF296 '       # 
+#POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=$'\uF171 '    #  or '\uF172 '  or '\uE703' 
+#POWERLEVEL9K_VCS_GIT_GITHUB_ICON=$'\uF113 '       #  or '\uF09B '  or '\uF092 ' 
+#POWERLEVEL9K_VCS_GIT_GITLAB_ICON=$'\uF296 '       # 
 POWERLEVEL9K_VCS_GIT_ICON=$'\uF1D3 '              #  or '\uF1D2' 
-POWERLEVEL9K_VCS_HG_ICON=$'\uF223 '               #  or 
-POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=$'\uF063'  #  or '\uF01a'  or '\uF0AB'  or '\ud727'  or '\u2193' ↓
-POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=$'\uF062'  #  or '\uF01b'  or '\uF0AA'  or '\uE726'  or '\u2191' ↑
-POWERLEVEL9K_VCS_REMOTE_BRANCH_ICON=$'\uF061 '    #  or '\uF18e'  or '\uF0A9'  or '\uE725'  or → or '\uE728 ' 
-POWERLEVEL9K_VCS_STAGED_ICON=$'\uF067'            # ✚ or '\uF055'  or '\uF0FE' 
-POWERLEVEL9K_VCS_STASH_ICON=$'\uF01C'             #  or '\uF192'  or ⍟
-POWERLEVEL9K_VCS_SVN_ICON=$'\uE72D '              #  or'\uE268' 
-POWERLEVEL9K_VCS_TAG_ICON=$'\uF02c '              #  or '\uF02B ' 
-POWERLEVEL9K_VCS_UNSTAGED_ICON=$'\u25CF'          # ● or '\uF111'  or '\uF06A'  or '\uF12A'  or '\uF071' 
-POWERLEVEL9K_VCS_UNTRACKED_ICON=$'\uF128'         #  or '\uF059'  '\uF29C'  or '\u00B1' ?
+#POWERLEVEL9K_VCS_HG_ICON=$'\uF223 '               #  or 
+#POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=$'\uF063'  #  or '\uF01a'  or '\uF0AB'  or '\ud727'  or '\u2193' ↓
+#POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=$'\uF062'  #  or '\uF01b'  or '\uF0AA'  or '\uE726'  or '\u2191' ↑
+#POWERLEVEL9K_VCS_REMOTE_BRANCH_ICON=$'\uF061 '    #  or '\uF18e'  or '\uF0A9'  or '\uE725'  or → or '\uE728 ' 
+#POWERLEVEL9K_VCS_STAGED_ICON=$'\uF067'            # ✚ or '\uF055'  or '\uF0FE' 
+#POWERLEVEL9K_VCS_STASH_ICON=$'\uF01C'             #  or '\uF192'  or ⍟
+#POWERLEVEL9K_VCS_SVN_ICON=$'\uE72D '              #  or'\uE268' 
+#POWERLEVEL9K_VCS_TAG_ICON=$'\uF02c '              #  or '\uF02B ' 
+#POWERLEVEL9K_VCS_UNSTAGED_ICON=$'\u25CF'          # ● or '\uF111'  or '\uF06A'  or '\uF12A'  or '\uF071' 
+#POWERLEVEL9K_VCS_UNTRACKED_ICON=$'\uF128'         #  or '\uF059'  '\uF29C'  or '\u00B1' ?
+
+
+#POWERLEVEL9K_VCS_{GIT,GIT_GITHUB,GIT_BITBUCKET,GIT_GITLAB,BRANCH}_ICON=' '
+POWERLEVEL9K_VCS_REMOTE_BRANCH_ICON=$'%{\b|%}'
+POWERLEVEL9K_VCS_COMMIT_ICON='@'
+POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
+POWERLEVEL9K_VCS_UNSTAGED_ICON='!'
+POWERLEVEL9K_VCS_STAGED_ICON='+'
+POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=$(_pp_s '<' '⇣')
+POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=$(_pp_s '>' '⇡')
+POWERLEVEL9K_VCS_STASH_ICON='*'
+POWERLEVEL9K_VCS_TAG_ICON=$'%{\b#%}'
+#POWERLEVEL9K_VCS_{STAGED,UNSTAGED}_MAX_NUM=99
+POWERLEVEL9K_VCS_GIT_ICON=' '
+#POWERLEVEL9K_VCS_GIT_ICON=$'\uF1D3 '              #  or '\uF1D2' 
+
 POWERLEVEL9K_VPN_ICON="(vpn)"
 POWERLEVEL9K_WINDOWS_ICON=$'\uF17a ' 			  #  or '\uF17A' 
+
 
 # disable folder icons
 POWERLEVEL9K_HOME_ICON=''
 POWERLEVEL9K_HOME_SUB_ICON=''
 POWERLEVEL9K_FOLDER_ICON=''
 POWERLEVEL9K_ETC_ICON=''
+
+POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''     #$'\uE0B1'
+POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''    #$'\uE0B3'
+
+# virtualenv, conda
+POWERLEVEL9K_VIRTUALENV_FOREGROUND='green'
+POWERLEVEL9K_VIRTUALENV_BACKGROUND=$BG_COL
+POWERLEVEL9K_CONDA_FOREGROUND='green'
+POWERLEVEL9K_CONDA_BACKGROUND=$BG_COL
+
