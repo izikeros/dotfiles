@@ -202,10 +202,6 @@ fi
 ~/dotfiles/scripts/runonce.sh neofetch
 ~/dotfiles/scripts/runonce.sh ~/dotfiles/scripts/runonce-all.sh
 
-if [ -f ~/.powerlevel9k ]; then
-	source ~/.powerlevel9k
-fi
-
 # --------------
 # LS colors
 # -------------
@@ -224,6 +220,27 @@ fi
 source ~/.zsh_aliases
 source ~/.zsh_functions
 
+
+# -------------
+# powerlevel10k
+# -------------
+source $HOME/.powerlevel9k-default-user
+PURE_POWER_MODE=portable  #use only ascii characters in the prompt. Try 'fancy'.
+# Left, right prompt segments
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh anaconda virtualenv dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
+
+# virtualenv, conda
+POWERLEVEL9K_VIRTUALENV_FOREGROUND='green'
+POWERLEVEL9K_VIRTUALENV_BACKGROUND=none
+POWERLEVEL9K_CONDA_FOREGROUND='green'
+POWERLEVEL9K_CONDA_BACKGROUND=none
+
+DEFAULT_USER='safjan'
+source $HOME/.powerlevel9k-default-user
+
+source ~/.purepower
+source ~/.zgen/romkatv/powerlevel10k-master/powerlevel10k.zsh-theme
 # Note: deduplication takes quite long. Check if deduplications are needed (usually not)
 #dedupe_path
 
@@ -232,5 +249,21 @@ source ~/.zsh_functions
 # perform check of shell script
 #shellcheck -x ~/.zshrc
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
+source $HOME/.powerlevel9k-default-user
+PURE_POWER_MODE=portable  #use only ascii characters in the prompt. Try 'fancy'.
+# Left, right prompt segments
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh anaconda virtualenv dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
+
+# virtualenv, conda
+POWERLEVEL9K_VIRTUALENV_FOREGROUND='green'
+POWERLEVEL9K_VIRTUALENV_BACKGROUND=none
+POWERLEVEL9K_CONDA_FOREGROUND='green'
+POWERLEVEL9K_CONDA_BACKGROUND=none
+
+DEFAULT_USER='safjan'
+source $HOME/.powerlevel9k-default-user
+
 source ~/.purepower
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.zgen/romkatv/powerlevel10k-master/powerlevel10k.zsh-theme
