@@ -266,4 +266,10 @@ DEFAULT_USER='safjan'
 source $HOME/.powerlevel9k-default-user
 
 source ~/.purepower
+
+POWERLEVEL9K_SHOW_RULER=false
+# Left, right prompt segments
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh anaconda virtualenv dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
+
 source ~/.zgen/romkatv/powerlevel10k-master/powerlevel10k.zsh-theme
