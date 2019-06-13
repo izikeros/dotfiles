@@ -528,6 +528,8 @@ alias wh="which"
 alias clr="clear"
 alias nsl="nslookup"
 
+alias ta="tmux a"
+
 # Honor old .zsh_aliases.local customizations, but print depecation warning.
 if [ -f ~/.zsh_aliases.local ]; then
   source ~/.zsh_aliases.local
