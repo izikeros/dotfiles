@@ -44,7 +44,7 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#141113"
+    background_color = "#282227"
     background_darkness = 0.95
     cursor_color = "#aaaaaa"
     font = Source Code Pro 12
