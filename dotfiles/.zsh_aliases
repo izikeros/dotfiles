@@ -53,7 +53,8 @@ alias l="ls -lah"
 # almost-all (-A: do not list . and ..)
 alias la='ls -A'
 alias ll='ls -lA'
-alias lh='ls -l | head'
+alias lh='ls -Alh --color | head; ls -Al | wc -l | xargs -I{} printf "\nShowing max 10 out of {} entries\n"'
+
 #alias k='k -h' # some problems with k plugin
 #--------------------------------------------
 # QUICK CHANGE DIRECTORY/Bookmarks
