@@ -24,7 +24,7 @@ if [ -d "$HOME"/projects/_priv ]; then
         else
             res=$dir.git/config
             if [ ! -e $res ]; then
-                echo "    $bldred$proj$txtrst is not a git repo"
+                echo "[300] $bldred$proj$txtrst is not a git repo"
             fi
         fi
     done

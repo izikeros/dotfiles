@@ -32,7 +32,7 @@ do
 	    	    status_txt="-- $bldblu$repo$txtrst is $bldred dirty$txtrst"
 		fi
 
-		echo "$status_txt $push_txt"
+		echo "[100] $status_txt $push_txt"
     fi
 done
 cd $cwd
