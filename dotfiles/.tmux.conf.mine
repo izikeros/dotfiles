@@ -1,0 +1,101 @@
+# use C-a, since it's on the home row and easier to hit than C-b
+set-option -g prefix C-a
+#unbind-key -b
+bind-key C-a send-prefix
+
+# mouse behavior
+set-option -g mouse on
+
+# Disable login shell
+set -g default-command "${SHELL}"
+
+# window 0, 1, 2, remove 1, renumber to 0, 1
+set-option -g renumber-windows on
+
+# default window start number: 1
+set-option -g base-index 1
+
+# Allows for faster key repetition
+set -s escape-time 0
+
+# Allow the arrow key to be used immediately after changing windows
+set-option -g repeat-time 0
+
+# color
+set-option -g default-terminal screen-256color
+
+bind-key a last-pane
+bind-key q display-panes
+
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
+
+bind-key H resize-pane -L 5
+bind-key J resize-pane -D 5
+bind-key K resize-pane -U 5
+bind-key L resize-pane -R 5
+
+# window setting, layout, manage
+set-window-option -g other-pane-height 25
+set-window-option -g other-pane-width 80
+#set-window-option -g window-status-current-fg magenta
+set-window-option -g display-panes-time 1500
+
+bind-key c new-window
+
+bind-key t next-window
+bind-key T previous-window
+bind-key C-o rotate-window
+
+bind-key + select-layout main-horizontal
+bind-key = select-layout main-vertical
+bind-key enter next-layout
+
+set -g status-interval 1                                                        
+set -g status-justify centre # center align window list                         
+set -g status-left-length 20                                                    
+set -g status-right-length 140                                                  
+set -g status-left '#[fg=green]#H #[fg=black]• #[fg=green,bright]#(uname -r | cut -c 1-6)#[default]'
+#set -g status-right '#[fg=green,bg=default,bright]#(tmux-mem-cpu-load) #[fg=red,dim,bg=default]#(uptime | cut -f 4-5 -d " " | cut -f 1 -d ",") #[fg=white,bg=default]%a%l:%M:%S %p#[default] #
+ 
+
+# Set status bar
+set -g status-bg black
+set -g status-fg white
+
+
+
+# Example of using a shell command in the status line
+#set -g status-right "#[fg=yellow]#(uptime | cut -d ',' -f 2-)"
+
+#set -g status-left ' #[fg=green,bold]#H#[default]'
+set -g status-right '#[fg=yellow,bold]#(cut -d " " -f 1-4 /proc/loadavg)#[default] #[fg=cyan,bold]#[default] '
+
+#set -g status-left ""
+#set -g status-right "#[fg=green]#H"
+
+# Rather than constraining window size to the maximum size of any client
+# connected to the *session*, constrain window size to the maximum size of any
+# client connected to *that window*. Much more reasonable.
+setw -g aggressive-resize on
+
+# Allows us to use C-a a <command> to send commands to a TMUX session inside
+# another TMUX session
+bind-key a send-prefix
+
+# Activity monitoring
+#setw -g monitor-activity on
+#set -g visual-activity on
+
+
+
+# Highlight active window
+#set-window-option -g window-status-current-bg red
+
+# Fix to allow mousewheel/trackpad scrolling in tmux 2.1
+#bind-key -T root WheelUpPane if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; copy-mode -e; send-keys -M"
+#bind-key -T root WheelDownPane if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; send-keys -M"
+
+
