@@ -1,14 +1,22 @@
 #!/bin/zsh
 
-source $HOME/.zsh_functions
+# TODO: make check only if running on my laptop, e.g. check hostname
+#
 
-f="$(d_file_yesterday).md"
+if [[ $HOSTNAME -eq 'archlabs' ]]; then
+    source $HOME/.zsh_functions
 
-pth="$HOME/vimwiki/diary/$f"
+    # todo: loop over e.g. last week
+    for ((i=1;i<=10;i++)); do
+        offset="-$i"
+        dt="$(d_file_offset "$offset")"
 
-if [ ! -s "$pth" ];then
-	    status_txt="-- nothing written in diary for yesterday (d-y | d-ys to edit)"
-	    echo "$status_txt"
-        echo $pth
+        pth="$HOME/vimwiki/diary/$dt.md"
+
+        if [ ! -s "$pth" ];then
+            status_txt="-- nothing written in diary for $dt ($offset)"
+    	    echo "$status_txt"
+        fi
+    done
 fi
 
