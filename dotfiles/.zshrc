@@ -101,6 +101,7 @@ bindkey -M isearch " " magic-space    # normal space during searches
 # Base PATH
 PATH=/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin
 export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.zgen/zdharma/zsh-diff-so-fancy-master/bin:$PATH
 
 
 # set -o to list all available options and their current setting
