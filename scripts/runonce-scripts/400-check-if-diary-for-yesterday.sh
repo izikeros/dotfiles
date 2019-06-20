@@ -3,7 +3,7 @@
 # TODO: make check only if running on my laptop, e.g. check hostname
 #
 
-if [[ $HOST -eq 'archlabs' ]]; then
+if [[ $HOST == 'archlabs' ]]; then
     source $HOME/.zsh_functions
 
     # todo: loop over e.g. last week
