@@ -533,6 +533,7 @@ alias ta="tmux a"
 
 # -t bios, system, baseboard, chassis, processor, memory, cache, connector, slot
 alias hwinfo="dmidecode - system"
+alias c='clear'
 
 # Honor old .zsh_aliases.local customizations, but print depecation warning.
 if [ -f ~/.zsh_aliases.local ]; then
