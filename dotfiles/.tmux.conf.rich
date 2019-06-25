@@ -1,9 +1,9 @@
 # https://github.com/seebi/tmux-colors-solarized/blob/master/tmuxcolors-256.conf
 set-option -g status-style bg=colour235,fg=colour136,default # bg=base02, fg=yellow
 
-# set window split
-bind-key v split-window -h
-bind-key b split-window
+# set window split using | and -
+bind-key | split-window -h
+bind-key - split-window
 
 # default window title colors
 set-window-option -g window-status-style fg=colour244,bg=default,dim # fg=base0
@@ -21,9 +21,9 @@ set-option -g message-style bg=colour235,fg=colour166 # bg=base02, fg=orange
 # pane number display
 set-option -g display-panes-active-colour colour33 #blue
 set-option -g display-panes-colour colour166 #orange
+
 # clock
 set-window-option -g clock-mode-colour green #green
-
 
 set -g status-interval 1
 set -g status-justify centre # center align window list
@@ -32,7 +32,7 @@ set -g status-right-length 140
 set -g status-left '#[fg=green]#H #[fg=black]• #[fg=green,bright]#(uname -r | cut -c 1-6)#[default]'
 set -g status-right '#[fg=green,bg=default,bright]#(tmux-mem-cpu-load) #[fg=red,dim,bg=default]#(uptime | cut -f 4-5 -d " " | cut -f 1 -d ",") #[fg=white,bg=default]%a%l:%M:%S %p#[default] #[fg=blue]%Y-%m-%d'
 
-# C-b is not acceptable -- Vim uses it
+# C-b is not convenien C-a is more handy
 set-option -g prefix C-a
 bind-key C-a last-window
 
@@ -56,13 +56,18 @@ setw -g monitor-activity on
 set -g visual-activity on
 
 # hjkl pane traversal
-bind h select-pane -L
-bind j select-pane -D
-bind k select-pane -U
-bind l select-pane -R
+#bind h select-pane -L
+#bind j select-pane -D
+#bind k select-pane -U
+#bind l select-pane -R
+
+# cycle (rotate) panels CCW
+bind-key C-n swap-pane -s :+.top \; rotate-window -Ut :+
+# use prefix { or } to swap panes
 
 # set to main-horizontal, 66% height for main pane
 bind m run-shell "~/.tmux/scripts/resize-adaptable.sh -l main-horizontal -p 66"
+
 # Same thing for verical layouts
 bind M run-shell "~/.tmux/scripts/resize-adaptable.sh -l main-vertical -p 50"
 
@@ -82,9 +87,9 @@ run-shell "tmux set-environment -g TMUX_VERSION_MAJOR $(tmux -V | cut -d' ' -f2 
 run-shell "tmux set-environment -g TMUX_VERSION_MINOR $(tmux -V | cut -d' ' -f2 | cut -d'.' -f2 | sed 's/[^0-9]*//g')"
 
 # Vi copypaste mode
-set-window-option -g mode-keys vi
-if-shell "test '\( #{$TMUX_VERSION_MAJOR} -eq 2 -a #{$TMUX_VERSION_MINOR} -ge 4 \)'" 'bind-key -Tcopy-mode-vi v send -X begin-selection; bind-key -Tcopy-mode-vi y send -X copy-selection-and-cancel'
-if-shell '\( #{$TMUX_VERSION_MAJOR} -eq 2 -a #{$TMUX_VERSION_MINOR} -lt 4\) -o #{$TMUX_VERSION_MAJOR} -le 1' 'bind-key -t vi-copy v begin-selection; bind-key -t vi-copy y copy-selection'
+#set-window-option -g mode-keys vi
+#if-shell "test '\( #{$TMUX_VERSION_MAJOR} -eq 2 -a #{$TMUX_VERSION_MINOR} -ge 4 \)'" 'bind-key -Tcopy-mode-vi v send -X begin-selection; bind-key -Tcopy-mode-vi y send -X copy-selection-and-cancel'
+#if-shell '\( #{$TMUX_VERSION_MAJOR} -eq 2 -a #{$TMUX_VERSION_MINOR} -lt 4\) -o #{$TMUX_VERSION_MAJOR} -le 1' 'bind-key -t vi-copy v begin-selection; bind-key -t vi-copy y copy-selection'
 
 # status bar
 if-shell '\( #{$TMUX_VERSION_MAJOR} -eq 2 -a #{$TMUX_VERSION_MINOR} -lt 2\) -o #{$TMUX_VERSION_MAJOR} -le 1' 'set-option -g status-utf8 on'
