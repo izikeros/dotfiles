@@ -536,6 +536,7 @@ alias ta="tmux a"
 
 # -t bios, system, baseboard, chassis, processor, memory, cache, connector, slot
 alias hwinfo="dmidecode - system"
+alias c='clear'
 
 alias vh='sudo vim /etc/hosts'
 alias t='diary'
