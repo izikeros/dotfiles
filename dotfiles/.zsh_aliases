@@ -509,7 +509,10 @@ alias boots="journalctl --list-boots"
 # decrypt volume without mounting, then use e.g. test disk etc.
 # veracrypt --filesystem=none -m nokernelcrypto --mount bulk/bbb /mnt/veracrypt3
 
-alias cputop="top -o cpu"
+# top, order by field %CPU
+alias cputop="top -o %CPU"
+# top, order by field %MEM
+alias memtop="top -o %MEM"
 
 # continue incomplete download
 alias wget="wget -c"
@@ -533,6 +536,9 @@ alias ta="tmux a"
 
 # -t bios, system, baseboard, chassis, processor, memory, cache, connector, slot
 alias hwinfo="dmidecode - system"
+
+alias vh='sudo vim /etc/hosts'
+alias t='diary'
 
 # Honor old .zsh_aliases.local customizations, but print depecation warning.
 if [ -f ~/.zsh_aliases.local ]; then
