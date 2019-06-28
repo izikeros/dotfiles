@@ -18,7 +18,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " not working with python (some problems with python 3)
-"Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " Deoplete (as autocomplete)
 "Plugin 'Shougo/deoplete.nvim'
@@ -28,41 +28,43 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'davidhalter/jedi-vim'
 
 " additional configuration for vim
-Bundle 'tpope/vim-sensible'
+Plugin 'tpope/vim-sensible'
 
 " guidelines for indentation
-Bundle 'Yggdroot/indentLine'
+Plugin 'Yggdroot/indentLine'
 
 " powerline replacement
 Plugin 'itchyny/lightline.vim'
 
-Bundle 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 
 " nice startup screen when vim openerd without any file
-"Bundle 'mhinz/vim-startify'
+"Plugin 'mhinz/vim-startify'
 
 " for snippets (mainly my own templates for documents)
-"Bundle 'sirver/UltiSnips'
+Plugin 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
 
 " vim-sipmate and required plugins
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
 
-"Bundle 'majutsushi/tagbar'
+"Plugin 'majutsushi/tagbar'
 
 " markdown preview
 " requires installation of:
 " [sudo] npm -g install instant-markdown-d
-Bundle 'suan/vim-instant-markdown'
+Plugin 'suan/vim-instant-markdown'
 
 " to search
-"Bundle 'kien/ctrlp.vim'
+"Plugin 'kien/ctrlp.vim'
 
 " Python plugins
 " Plugin 'janko-m/vim-test'
 " Plugin 'python-mode/python-mode'
-" Bundle 'nvie/vim-flake8'
+" Plugin 'nvie/vim-flake8'
 "Plugin 'thesheff17/youtube/master/vim/python_editing.vim'
 
 call vundle#end()
