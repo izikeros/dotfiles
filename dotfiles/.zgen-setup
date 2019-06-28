@@ -7,6 +7,9 @@
 #
 # BSD licensed, see LICENSE.txt
 
+# ZSH modules:
+# http://zsh.sourceforge.net/Doc/Release/Zsh-Modules.html
+
 # Clone zgen if you haven't already
 if [[ -z "$ZGEN_PARENT_DIR" ]]; then
   ZGEN_PARENT_DIR=$HOME
@@ -39,10 +42,10 @@ load-starter-plugin-list() {
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-history-substring-search
 
-  # Set keystrokes for substring searching
-  zmodload zsh/terminfo
-  bindkey "$terminfo[kcuu1]" history-substring-search-up
-  bindkey "$terminfo[kcud1]" history-substring-search-down
+  # Set keystrokes for substring searching (???)
+  #zmodload zsh/terminfo # Interface to the terminfo database
+  #bindkey "$terminfo[kcuu1]" history-substring-search-up
+  #bindkey "$terminfo[kcud1]" history-substring-search-down
 
   # Tab complete rakefile targets
   #zgen load unixorn/rake-completion.zshplugin
@@ -55,7 +58,7 @@ load-starter-plugin-list() {
 
   # Colorize the things if you have grc installed. Well, some of the
   # things, anyway.
-  zgen load unixorn/warhol.plugin.zsh
+  #zgen load unixorn/warhol.plugin.zsh
 
   # macOS helpers. This plugin is smart enough to detect when it isn't running
   # on macOS and not load itself, so you can safely share the same plugin list
