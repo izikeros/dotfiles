@@ -41,22 +41,23 @@ Plugin 'airblade/vim-gitgutter'
 " nice startup screen when vim openerd without any file
 "Plugin 'mhinz/vim-startify'
 
-" for snippets (mainly my own templates for documents)
-Plugin 'SirVer/ultisnips'
-" Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
-
-" vim-sipmate and required plugins
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-"Plugin 'tomtom/tlib_vim'
-"Plugin 'garbas/vim-snipmate'
+if (has('python') || has('python3'))
+    " for snippets (mainly my own templates for documents)
+    Plugin 'SirVer/ultisnips'
+    " Snippets are separated from the engine. Add this if you want them:
+    Plugin 'honza/vim-snippets'
+else
+    Plug 'garbas/vim-snipmate'
+    Plug 'MarcWeber/vim-addon-mw-utils' "required for snipmate
+    Plug 'tomtom/tlib_vim' "required for snipmate
+endif
 
 "Plugin 'majutsushi/tagbar'
 
 " markdown preview
 " requires installation of:
 " [sudo] npm -g install instant-markdown-d
-Plugin 'suan/vim-instant-markdown'
+" Plugin 'suan/vim-instant-markdown'
 
 " to search
 "Plugin 'kien/ctrlp.vim'
