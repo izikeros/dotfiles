@@ -17,8 +17,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" not working with python (some problems with python 3)
-Plugin 'Valloric/YouCompleteMe'
+if (has('python') || has('python3'))
+    Plugin 'Valloric/YouCompleteMe'
+endif
 
 " Deoplete (as autocomplete)
 "Plugin 'Shougo/deoplete.nvim'
@@ -47,9 +48,9 @@ if (has('python') || has('python3'))
     " Snippets are separated from the engine. Add this if you want them:
     Plugin 'honza/vim-snippets'
 else
-    Plug 'garbas/vim-snipmate'
-    Plug 'MarcWeber/vim-addon-mw-utils' "required for snipmate
-    Plug 'tomtom/tlib_vim' "required for snipmate
+    Plugin 'garbas/vim-snipmate'
+    Plugin 'MarcWeber/vim-addon-mw-utils' "required for snipmate
+    Plugin 'tomtom/tlib_vim' "required for snipmate
 endif
 
 "Plugin 'majutsushi/tagbar'
