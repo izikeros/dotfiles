@@ -540,6 +540,7 @@ alias c='clear'
 
 alias vh='sudo vim /etc/hosts'
 alias t='diary'
+alias tis='tig status'
 
 # Honor old .zsh_aliases.local customizations, but print depecation warning.
 if [ -f ~/.zsh_aliases.local ]; then
