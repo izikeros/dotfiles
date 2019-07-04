@@ -1,27 +1,34 @@
-byobu                # Enhanced profile and useful notifications for tmux/screen
+bfg                  # Removes large or troublesome blobs like git-filter-branch does, but faster.
 bonsai.sh-git        # A randomly generated bonsai tree in your terminal!
+brave-bin            # Web browser that blocks ads and trackers by default (binary release).
+byobu                # Enhanced profile and useful notifications for tmux/screen
 cht.sh               # The only cheat sheet you need (command line client for cheat.sh)
 dropbox              # A free service that lets you bring your photos, docs, and videos anywhere and share them easily.
-google-chrome        # The popular and trusted web browser by Google (Stable Channel)
-grc                  # Yet another colouriser for beautifying your logfiles or output of commands
-nerd-fonts-ubuntu-mono # Patched font UbuntuMono from the nerd-fonts library
-openrefine           # A free, open source power tool for working with messy data and improving it
-peek                 # Simple screen recorder with an easy to use interface
+dropbox-cli          # Command line interface for Dropbox
+gitsh                # An interactive shell for git
+google-earth         # Semi-legacy 3D interface to explore the globe, terrain, streets, buildings and other planets
 gotop                # A terminal based graphical activity monitor inspired by gtop and vtop
+grc                  # Yet another colouriser for beautifying your logfiles or output of commands
 jnetmap              # Graphical network monitoring and documentation tool
 logtop               # Display real time statistics of whatever you want.
 mattermost-desktop   # Mattermost Desktop application for Linux (Beta)
+mawk                 # An interpreter for the AWK Programming Language
 miniconda3           # Mini version of Anaconda Python distribution.
-pycharm-eap          # Powerful Python and Django IDE, Early Access Program (EAP) build. Professional edition.
-screenkey            # Screencast tool to show your keys inspired by Screenflick, based on key-mon. Active fork with new features.
-siji-git             # Iconic bitmap font based on stlarch with additional glyphs
+nerd-fonts-ubuntu-mono # Patched font UbuntuMono from the nerd-fonts library
+nerd-fonts-source-code-pro # Patched font SourceCodePro from nerd-fonts library
+openrefine           # A free, open source power tool for working with messy data and improving it
+peek                 # Simple screen recorder with an easy to use interface
+pycharm-professional # Powerful Python and Django IDE. Professional Edition.
 python-cookiecutter  # A command-line utility that creates projects from project templates
+redsocks-git         # Transparent redirector of any TCP connection to proxy using your firewall
+screenkey            # Screencast tool to show your keys inspired by Screenflick, based on key-mon. Active fork with new features.
+simple-mtpfs         # A FUSE filesystem that supports reading/writing from MTP devices
+siji-git             # Iconic bitmap font based on stlarch with additional glyphs
 sublime-text-dev     # Sophisticated text editor for code, html and prose - dev build
 ttf-unifont          # TrueType version of the GNU Unifont
 typora               # Typora will give you a seamless experience as both a reader and a writer.
-visual-studio-code-bin # Visual Studio Code (vscode): Editor for building and debugging modern web and cloud applications (official binary version)
-vivaldi              # An advanced browser made with the power user in mind.
-zotero               # Zotero Standalone. Is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.
+vscodium-bin         # Binary releases of VS Code without MS branding/telemetry/licensing.
+wpa_actiond          # Daemon that connects to wpa_supplicant and handles connect and disconnect events
 xnviewmp             # An efficient multimedia viewer, browser and converter.
-redsocks-git         # Transparent redirector of any TCP connection to proxy using your firewall
 yay                  # Yet another yogurt. Pacman wrapper and AUR helper written in go.
+zotero               # Zotero Standalone. Is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.
