@@ -168,13 +168,12 @@ source ~/dotfiles/env_and_path.sh
 # virtualenv wrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/projects
-if [ -f /usr/bin/virtualenvwrapper.sh ]; then
-	source /usr/bin/virtualenvwrapper.sh
-fi
-
-if [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
-	source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-fi
+#if [ -f /usr/bin/virtualenvwrapper.sh ]; then
+#	source /usr/bin/virtualenvwrapper.sh
+#fi
+#if [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
+#	source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+#fi
 
 if [[ -d ~/gocode ]]; then
   export GOPATH=~/gocode
@@ -226,51 +225,29 @@ source ~/.zsh_functions
 # powerlevel10k
 # -------------
 source $HOME/.powerlevel9k-default-user
+source ~/.zgen/romkatv/powerlevel10k-master/powerlevel10k.zsh-theme
+
 PURE_POWER_MODE=portable  #use only ascii characters in the prompt. Try 'fancy'.
-# Left, right prompt segments
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh anaconda virtualenv dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
+
+source ~/.purepower
 
 # virtualenv, conda
 POWERLEVEL9K_VIRTUALENV_FOREGROUND='green'
 POWERLEVEL9K_VIRTUALENV_BACKGROUND=none
 POWERLEVEL9K_CONDA_FOREGROUND='green'
 POWERLEVEL9K_CONDA_BACKGROUND=none
+POWERLEVEL9K_SHOW_RULER=false
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
+# Left, right prompt segments
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh anaconda virtualenv dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
 
-DEFAULT_USER='safjan'
-source $HOME/.powerlevel9k-default-user
-
-source ~/.purepower
-source ~/.zgen/romkatv/powerlevel10k-master/powerlevel10k.zsh-theme
 # Note: deduplication takes quite long. Check if deduplications are needed (usually not)
 #dedupe_path
 
-#zprof # end of profiling
 
 # perform check of shell script
 #shellcheck -x ~/.zshrc
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
-source $HOME/.powerlevel9k-default-user
-PURE_POWER_MODE=portable  #use only ascii characters in the prompt. Try 'fancy'.
-# Left, right prompt segments
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh anaconda virtualenv dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
-
-# virtualenv, conda
-POWERLEVEL9K_VIRTUALENV_FOREGROUND='green'
-POWERLEVEL9K_VIRTUALENV_BACKGROUND=none
-POWERLEVEL9K_CONDA_FOREGROUND='green'
-POWERLEVEL9K_CONDA_BACKGROUND=none
-
-DEFAULT_USER='safjan'
-source $HOME/.powerlevel9k-default-user
-
-source ~/.purepower
-
-POWERLEVEL9K_SHOW_RULER=false
-# Left, right prompt segments
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh anaconda virtualenv dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
-
-source ~/.zgen/romkatv/powerlevel10k-master/powerlevel10k.zsh-theme
+#zprof # end of profiling
