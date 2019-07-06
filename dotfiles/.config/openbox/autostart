@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 # compton (not sure what are the benefits from using it)
 #al-compositor --start &
@@ -20,6 +20,9 @@ skippy-xd --config ~/.config/skippy-xd/skippy-xd.rc --start-daemon &
 
 # start the panel (disabled, use W-F12 to toggle polybar)
 #al-polybar-session &
+
+# use autorandr to set monitor configuration if known detected
+autorandr --change
 
 # redshift - color temperature adjustment
 redshift -c ~/.redshiftgrc &
