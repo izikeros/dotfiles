@@ -128,13 +128,12 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>3</number>
+    <number>1</number>
     <firstdesk>0</firstdesk>
     <names>
       <name>work</name>
       <name>email</name>
       <name>terminal</name>
-      <name>4</name>
     </names>
     <popupTime>800</popupTime>
   </desktops>
@@ -334,7 +333,7 @@
         <command>scrot -d 5 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'</command>
       </action>
     </keybind>
-    <keybind key="W-f">
+    <keybind key="W-a">
       <action name="Execute">
         <command>exo-open --launch FileManager</command>
       </action>
@@ -354,12 +353,17 @@
         <command>subl3</command>
       </action>
     </keybind>
+    <keybind key="W-p">
+      <action name="Execute">
+        <command>charm</command>
+      </action>
+    </keybind>
     <keybind key="W-c">
       <action name="Execute">
         <command>galculator</command>
       </action>
     </keybind>
-    <keybind key="W-a">
+    <keybind key="W-f">
       <action name="Execute">
         <command>xfce4-settings-manager</command>
       </action>
