@@ -3,7 +3,7 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PATH="$HOME/dotfiles/scripts:$PATH"
 
-export BROWSER="firefox"
+export BROWSER="brave"
 if hash most 2>/dev/null; then
 	export PAGER="most"
 else
