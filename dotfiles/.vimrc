@@ -52,7 +52,8 @@ else
     Plugin 'MarcWeber/vim-addon-mw-utils' "required for snipmate
     Plugin 'tomtom/tlib_vim' "required for snipmate
 endif
-
+" supertab needed to have both completion and snippets working
+Plugin 'ervandew/supertab'
 "Plugin 'majutsushi/tagbar'
 
 " markdown preview
@@ -225,12 +226,6 @@ map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>  " insert breakpo
 " wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
 set nofoldenable
 
-" Neocomplete
-" let g:neocomplete#enable_at_startup = 1
-
-" turn off auto complete
-" let g:pymode_rope_completion = 0
-" let g:pymode_rope_complete_on_dot = 0
 
 "=====================================================
 " TagBar settings
@@ -255,6 +250,20 @@ set completeopt-=preview
 nmap <leader>g :YcmCompleter GoTo<CR>           " YCM goto with leader-g
 nmap <leader>d :YcmCompleter GoToDefinition<CR> " YCM goto definition with leader-d
 
+" from: https://stackoverflow.com/a/22253548/3247880
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" execute current editing file
+" see: https://stackoverflow.com/a/13647860/3247880
+" for explanation
 nmap <F6> :w<CR>:silent !chmod 755 %<CR>:silent !./% > .tmp.xyz<CR>
      \ :tabnew<CR>:r .tmp.xyz<CR>:silent !rm .tmp.xyz<CR>:redraw!<CR>
 
