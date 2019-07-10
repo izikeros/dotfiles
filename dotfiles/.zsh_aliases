@@ -444,7 +444,7 @@ alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 #alias blog="$BLG"
 #alias pelican-run="$BLG; pelican --lr"
 alias blog-push="cd ~/blog/docs; git add .; git ci -m \"update\"; gp"
-
+alias blogger="typora ~/Dropbox/vimwiki/blog-drafts&"
 #---------------------------------------------
 #  SSH
 #---------------------------------------------
