@@ -21,7 +21,4 @@ fi
 # install vundle plugins
 vim -S <(echo -e "VundleInstall \n q \n q")
 
-# symlink snippets
-symlink_dotfile ~/dotfiles/snippets ~/.vim/snippets
-
 echo "### vim installed and configured"
