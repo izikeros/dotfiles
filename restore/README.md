@@ -80,3 +80,8 @@ TODO:
 * [OBSOLETE] if using xbindkeysrc: symlink .xbindkeysrc. (Nowadays using mappings from openbox instead of xbindkeysrc)
 
 * if using plain zsh - symlink .zshrc_pure, if using zgen launch .zsh-setup
+* add script restore init - create ~/.restore with 'todo' 'done' list of
+  scripts. Put empty files there as markers or full scripts?
+* after execution of each script move from todo to done.
+* prepare machanism to filter todo via list for 'workstation' and 'remote shell' lists. There should be tags in each script.
+* add 'nokia addons' list with specific steps
