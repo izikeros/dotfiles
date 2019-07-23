@@ -4,7 +4,7 @@ aspell-en            # English dictionary for aspell
 binutils             # A set of programs to assemble and manipulate binary and object files
 cups                 # The CUPS Printing System - daemon package
 cifs-utils           # CIFS filesystem user-space tools
-dnsutils             #
+dnsutils             # 
 doublecmd-qt5        # twin-panel (commander-style) file manager (Qt5)
 evince               # Document viewer (PDF, Postscript, djvu, tiff, dvi, XPS, SyncTex support with gedit, comics books (cbr,cbz,cb7 and cbt))
 exa                  # ls replacement
@@ -29,7 +29,7 @@ powertop             # A tool to diagnose issues with power consumption and powe
 pydf                 # A colorized df clone
 python-pipenv        # Sacred Marriage of Pipfile, Pip, & Virtualenv.
 python-virtualenvwrapper # Extensions to Ian Bicking's virtualenv tool
-ranger
+ranger               # Simple, vim-like file manager
 redsocks             # Transparent redirector of any TCP connection to proxy using your firewall
 redshift             # Adjusts the color temperature of your screen according to your surroundings.
 ripgrep              # A search tool that combines the usability of ag with the raw speed of grep
@@ -40,6 +40,7 @@ sqlite               # A C library that implements an SQL database engine
 sxiv                 # Simple X Image Viewer
 terminator           # Terminal emulator that supports tabs and grids
 tig                  # Text-mode interface for Git.
+tilda                # A Gtk based drop down terminal for Linux and Unix
 the_silver_searcher  # Code searching tool similar to Ack, but faster
 tldr                 # Command line client for tldr, a collection of simplified and community-driven man pages.
 ttf-roboto           # Google's signature family of fonts
