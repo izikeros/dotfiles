@@ -4,11 +4,12 @@ aspell-en            # English dictionary for aspell
 binutils             # A set of programs to assemble and manipulate binary and object files
 cups                 # The CUPS Printing System - daemon package
 cifs-utils           # CIFS filesystem user-space tools
-dnsutils             # 
+dnsutils             #
 doublecmd-qt5        # twin-panel (commander-style) file manager (Qt5)
 evince               # Document viewer (PDF, Postscript, djvu, tiff, dvi, XPS, SyncTex support with gedit, comics books (cbr,cbz,cb7 and cbt))
 exa                  # ls replacement
 fasd                 # Command-line productivity booster, offers quick access to files and directories
+feh
 figlet               # A program for making large letters out of ordinary text
 firefox              # Standalone web browser from mozilla.org
 fping                # Utility to ping multiple hosts at once
@@ -25,6 +26,7 @@ npm                  # A package manager for javascript
 ntp                  # Network Time Protocol reference implementation
 numlockx             # Turns on the numlock key in X11.
 parallel             # A shell tool for executing jobs in parallel
+pinta
 powertop             # A tool to diagnose issues with power consumption and power management
 pydf                 # A colorized df clone
 python-pipenv        # Sacred Marriage of Pipfile, Pip, & Virtualenv.
