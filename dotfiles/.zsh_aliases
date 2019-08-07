@@ -540,6 +540,9 @@ alias tis='tig status'
 
 alias won="source /usr/bin/virtualenvwrapper.sh"
 alias won1="source /usr/share/virtualenvwrapper/virtualenvwrapper.sh"
+# usage: dd-usb if=./linux.iso of=/dev/sdb
+alias dd-usb="sudo dd bs=4M status=progress conv=fdatasync"
+alias pipr="pip install -r"
 # Honor old .zsh_aliases.local customizations, but print depecation warning.
 if [ -f ~/.zsh_aliases.local ]; then
   source ~/.zsh_aliases.local
