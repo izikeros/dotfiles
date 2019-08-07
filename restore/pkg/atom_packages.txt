@@ -1,0 +1,4 @@
+atom-latex
+graphviz-preview-plus
+language-dot
+latex
