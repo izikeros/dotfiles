@@ -521,3 +521,8 @@ comm -12 file1 file2
        -3     suppress column 3 (lines that appear in both files)
 EOF
 }
+
+function ys-popular(){
+    ys $1 | grep -e + | sed -e 's/(+//' | awk -F' ' '{print $3", "$1}' | sort -nr | head -10
+}
+
