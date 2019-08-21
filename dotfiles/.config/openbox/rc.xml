@@ -240,6 +240,7 @@
         </finalactions>
       </action>
     </keybind>
+    <!-- Duplicated
     <keybind key="W-Left">
       <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
@@ -255,7 +256,8 @@
         <width>50%</width>
       </action>
       <action name="MoveToEdgeEast"/>
-    </keybind>
+      </keybind>
+    -->
     <keybind key="S-W-Left">
       <action name="SendToDesktopLeft"/>
     </keybind>
@@ -576,13 +578,18 @@
       <action name="MaximizeFull"/>
     </keybind>
     <keybind key="W-Down">
+      <action name="Iconify"/>
+    </keybind>
+    <!-- Action: Move to center
+    <keybind key="W-Down">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <width>80%</width>
         <height>80%</height>
       </action>
       <action name="MoveToCenter"/>
-    </keybind>
+      </keybind>
+    -->
     <keybind key="W-A-Left">
       <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
@@ -876,9 +883,10 @@
 
   <applications>
   <!-- match all windows, and remove their decorations -->
-     <application class="*">
-         <decor>no</decor>
-    </application>
+    <application class="*">
+      <decor>no</decor>
+       </application>
+
 
   <!-- but give decorations back to Firefox
   <application name="Firefox*">
