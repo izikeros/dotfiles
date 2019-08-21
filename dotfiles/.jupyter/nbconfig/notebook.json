@@ -1,0 +1,21 @@
+{
+  "load_extensions": {
+    "hide_code/hide_code": true,
+    "nbextensions_configurator/config_menu/main": true,
+    "contrib_nbextensions_help_item/main": true,
+    "spellchecker/main": true,
+    "code_prettify/isort": true,
+    "keyboard_shortcut_editor/main": true,
+    "snippets_menu/main": true,
+    "snippets/main": true,
+    "move_selected_cells/main": true,
+    "isortformatter": true,
+    "isortformatter/main": true,
+    "toc2/main": false,
+    "varInspector/main": true,
+    "scratchpad/main": true
+  },
+  "toc2": {
+    "number_sections": false
+  }
+}
