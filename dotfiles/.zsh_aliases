@@ -548,4 +548,6 @@ if [ -f ~/.zsh_aliases.local ]; then
   source ~/.zsh_aliases.local
   echo ".zsh_aliases.local is deprecated. Make entries in ~/.zshrc.d instead."
 fi
+# count files in dir
+alias cf='ls | wc -l'
 
