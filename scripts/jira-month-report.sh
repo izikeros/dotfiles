@@ -15,3 +15,4 @@ url="https://jiradc.int.net.nokia.com/secure/TimesheetReport!default.jspa?startD
 echo "Opening Jira report for user: $user in project: $projectId"
 echo "Range of dates: $d_start to $d_stop"
 xdg-open $url 2>/dev/null
+echo $url
