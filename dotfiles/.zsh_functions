@@ -335,10 +335,31 @@ function countby(){   # Count instances by field
 }
 # end sysadvent
 
-function num_columns(){
+function num_columns(){  # count number of columns in csv file
+    # Example:
+    #  num_columns -F, data.csv
+    # first argument is separator definition for AWK
     [ "${1#-F}" != "$1" ] && SP=${1} && shift
     head -n1 $1 | awk $SP '{print NF}'
 }
+
+function dim(){  # display dimensions of csv file
+    [ "${1#-F}" != "$1" ] && SP=${1} && shift
+    head -n1 $1 | awk $SP '{print "number of columns:" NF}'
+    num_rows=$(wc -l < $1)
+    echo "number of rows: $a"
+}
+
+function words_freq() {  # display most frequent words in the file with count
+    # usage words_freq file.txt
+tr -c '[:alnum:]' '[\n*]' < $1 | sort | uniq -c | sort -nr | head -30
+}
+
+function words_cloud() {  # display most frequent words in the file
+    # usage words_freq file.txt
+    tr -c '[:alnum:]' '[\n*]' < $1 | sort | uniq -c | sort -nr | head -n100 | awk '{print $2}' | tr '\n' ' '
+}
+
 
 function awk_col(){ # print selected column (space separated file)
     awk -F' ' "{print \$$1}"
@@ -377,15 +398,6 @@ function bash_repeat(){ # repeat command n times: bash_repeat 3 whoami
 #function authme {	# send authentication key (id_dsa.pub) to remote host
 #  ssh "$1" 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_dsa.pub
 #}
-
-
-function canhaz(){	# Recursively touch, e.g. touch + mkdir -p so files can easily be created at depth
-  mkdir -p -- "${1%/*}" && touch -- "$1"
-}
-
-function canhaz-script(){ # Recursively touch with execute flag, e.g. touch + mkdir -p so files can easily be created at depth
-  canhaz "${1}" && chmod +x "$1"
-}
 
 function ws(){ # Create new file for script with execute flag, edit in vim
     touch "$1" && chmod +x "$1" && vim "$1"
@@ -531,6 +543,13 @@ comm -12 file1 file2
        -2     suppress column 2 (lines unique to FILE2)
 
        -3     suppress column 3 (lines that appear in both files)
+EOF
+}
+
+function h-wc(){
+cat <<- EOF
+# assign number of lines to variable
+a=\$(wc -l < file.txt)
 EOF
 }
 
