@@ -306,6 +306,8 @@ function sum(){   # sum by n-th field
 }
 
 function sumby(){ # group and sum
+    # usage:
+    # sumby -F: group_column sum_column
     # Example:
     # # Sum one field grouping by another
     # printf "hello:1\nworld:1\nworld:3\n" |sumby -F: 1 2
@@ -332,6 +334,11 @@ function countby(){   # Count instances by field
   awk $SP "{ a[$key]++ } END { for (i in a) { printf(\"%d %s\\n\", a[i], i) } }"
 }
 # end sysadvent
+
+function num_columns(){
+    [ "${1#-F}" != "$1" ] && SP=${1} && shift
+    head -n1 $1 | awk $SP '{print NF}'
+}
 
 function awk_col(){ # print selected column (space separated file)
     awk -F' ' "{print \$$1}"
@@ -429,6 +436,11 @@ function dedupe_path() { # In case a plugin adds a redundant path entry, remove 
   done
 
   export PATH=${(j+:+)result}
+}
+
+function learning() { #display info on learning progress
+    grep -v "^#" ~/vimwiki/pro/learning.md | awk -F';' '$1==0 {sum+=$3;} END{print "to report:"sum/60"h";}'
+    grep -v "^#" ~/vimwiki/pro/learning.md | awk -F';' '$1==1 {sum+=$3;} END{print "reported:"sum/60"h";}'
 }
 
 function h-bash-if(){
