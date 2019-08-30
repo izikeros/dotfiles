@@ -1,0 +1,20 @@
+Convert a column to a numeric type
+df[‘col’]=df[‘col’].astype(str).convert_objects(convert_numeric=True)
+
+Get rid of  damned scientific notation
+pd.set_option(‘display.float_format’, lambda x: ‘%.3f’ % x)
+
+
+# process field 
+def calculate_taxes(price):
+    taxes = price * 0.12
+    return taxes
+df['taxes'] = df.price.apply(calculate_taxes)
+
+
+# process rows 
+def calculate_taxes(row):
+    row['taxes'] = row['price'] * 0.12
+    return row
+
+df.apply(calculate_taxes, axis=1)

@@ -1,0 +1,25 @@
+{
+    "snippets" : [
+        {
+            "name" : "pd+np+matplotlib",
+            "code" : [
+                "import pandas as pd",
+                "import numpy as np",
+                "from matplotlib import pyplot as plt",
+                "%matplotlib inline"
+            ]
+        },
+        {
+            "name" : "notebook header (markdown)",
+            "code" : [
+                "# Title",
+                "# Purpose",
+                "# - ",
+                "# - ",
+                "# Created by: Jone Doe",
+                "# Changes:",
+                "# - 2019-08-01: KS: Add visualisations",
+            ]
+        }
+    ]
+}
