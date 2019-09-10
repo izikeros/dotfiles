@@ -13,7 +13,9 @@
     "isortformatter/main": true,
     "toc2/main": false,
     "varInspector/main": true,
-    "scratchpad/main": true
+    "scratchpad/main": true,
+    "hide_input_all/main": true,
+    "hide_input/main": true
   },
   "toc2": {
     "number_sections": false
