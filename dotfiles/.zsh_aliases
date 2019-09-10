@@ -184,7 +184,7 @@ alias mirrors="sudo reflector --score 100 --fastest 25 --sort rate --save /etc/p
 alias y-upgradable="sudo $AUR_CMD -Pu"
 alias y-rem-dep="sudo $AUR_CMD -Yc"
 #alias p-rm-orphans="sudo pacman -Rns $(pacman -Qtdq)"
-
+alias unlockdb="sudo rm /var/lib/pacman/db.lck"
 #--------------------------------------------
 # FASD aliases (repeated - aliases are defined in fasd source)
 #--------------------------------------------
