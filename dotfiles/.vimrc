@@ -17,9 +17,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-if (has('python') || has('python3'))
-    Plugin 'Valloric/YouCompleteMe'
-endif
+"if (has('python') || has('python3'))
+"    Plugin 'Valloric/YouCompleteMe'
+"endif
 
 " Deoplete (as autocomplete)
 "Plugin 'Shougo/deoplete.nvim'
@@ -42,18 +42,18 @@ Plugin 'airblade/vim-gitgutter'
 " nice startup screen when vim openerd without any file
 "Plugin 'mhinz/vim-startify'
 
-if (has('python') || has('python3'))
-    " for snippets (mainly my own templates for documents)
-    Plugin 'SirVer/ultisnips'
-    " Snippets are separated from the engine. Add this if you want them:
-    Plugin 'honza/vim-snippets'
-else
-    Plugin 'garbas/vim-snipmate'
-    Plugin 'MarcWeber/vim-addon-mw-utils' "required for snipmate
-    Plugin 'tomtom/tlib_vim' "required for snipmate
-endif
+"if (has('python') || has('python3'))
+"    " for snippets (mainly my own templates for documents)
+"    Plugin 'SirVer/ultisnips'
+"    " Snippets are separated from the engine. Add this if you want them:
+"    Plugin 'honza/vim-snippets'
+"else
+Plugin 'garbas/vim-snipmate'
+Plugin 'MarcWeber/vim-addon-mw-utils' "required for snipmate
+Plugin 'tomtom/tlib_vim' "required for snipmate
+"endif
 " supertab needed to have both completion and snippets working
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 "Plugin 'majutsushi/tagbar'
 
 " markdown preview
