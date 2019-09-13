@@ -550,4 +550,4 @@ if [ -f ~/.zsh_aliases.local ]; then
 fi
 # count files in dir
 alias cf='ls | wc -l'
-
+alias rmrf='rm -rf'
