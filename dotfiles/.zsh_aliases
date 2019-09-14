@@ -132,8 +132,7 @@ alias galias="alias | grep --color=never -i -e"
 # grep aliases in aliases file
 alias gralias="cat ~/.zsh_aliases | grep -B1 --color=never -i -e"
 # list functions
-alias list-functions="grep function ~/.zsh_functions --color=never"
-
+alias list-functions="grep function ~/.zsh_functions --color=never | sed 's/^function//' | sed 's/{//' | grep '[a-Za-z0-9\-_]*()' --color=always | column -t -s# | less"
 #alias s="sudo su"
 alias _="sudo"
 alias please='sudo $(history -p !!)'
