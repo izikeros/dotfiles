@@ -43,6 +43,7 @@ function v-todo(){		# search vimwiki pages looking for todo annotation
 }
 
 # == Find functions
+
 function fipy(){	# find in python files
   grep -F --include="*.py" --exclude-dir={.git} --color=always -rnwi ./ -e  $1 | less -R
 }
@@ -56,10 +57,6 @@ function fipy-in-test(){	# find in python test files - grep using two keywords
 }
 
 # == Packages-related functions
-function asa(){		# search only in deb package names starting with pattern
-  aptitude search ^$1 | awk '{print $2}'
-  }
-
 function pips(){  # install pip package and save it's name into requirements.txt
         echo $'\n'$1 >> requirements.txt; pip install $1
     }
