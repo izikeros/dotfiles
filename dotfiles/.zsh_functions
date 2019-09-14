@@ -242,19 +242,6 @@ function pjson {	# Pretty JSON
   fi
 }
 
-# == History and env related functions
-function hgrep40 {	# history-grep: find things in that enormous command history file (last 40 results)
-  history | egrep --color -i "$@" | tail -40
-}
-
-function hgrep {	# history-grep: find things in that enormous command history file (last 20 results)
-  history | grep -i "$@" | tail -20
-}
-
-function hgrep_full {	# history-grep: find things in that enormous command history file (all results)
-  history | egrep --color -i "$@"
-}
-
 function envgrep() {	# grep through evnironmental variables
   printenv | grep -i "$@"
 }
