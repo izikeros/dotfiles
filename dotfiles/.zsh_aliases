@@ -14,7 +14,8 @@ alias -g M='| most'
 alias -g A="| awk '{s+=\$1} END {print s}'"
 alias -g X='| xargs -n1 -P\$(nproc) -I{}'
 alias -g F="find ./ -maxdepth 1 -type f -name '*.txt' -print0"
-
+alias -g W='while true; do ls; sleep .5; done'
+alias -g FI='for i in {1..3}; do ls; sleep 1  done'
 #--------------------------------------------
 # FILESYSTEM - DIRECTORY SIZE, LISTING
 #--------------------------------------------
