@@ -142,7 +142,7 @@ function todos-blame(){	# git blame who put TODO statement in the code
 }
 
 # == Filesystem related functions
-function mkcd () {	# create directory and move into it
+function mkcd() {	# create directory and move into it
   mkdir -p "$1"
   cd "$1"
 }
@@ -191,7 +191,7 @@ function scan24() {	# Probe a /24 network for hosts
   nmap -sP ${1}/24
 }
 
-function mecp () {  # scp file to machine you're sshing into this machine from
+function mecp() {  # scp file to machine you're sshing into this machine from
   scp "$@" ${SSH_CLIENT%% *}:"$HOME/Downloads/";
 }
 
@@ -273,7 +273,7 @@ man() {		# some settings for man?
 }
 
 # From commandlinefu.com
-function watch() {
+function watch-man() {
 	t=$1; shift; while test :; do clear; date=$(date); echo -e "Every $ts: $@ \t\t\t\t $date"; $@; sleep $t; done
 }
 
@@ -384,6 +384,23 @@ function get_nr_jobs(){ # get number of jobs in the system
 
 function get_load(){  # get system load
   uptime | awk '{print $11}' | tr ',' ' '
+}
+
+function filesize-hist(){ # display distribution of file sizes in current directory
+    find . -type f -print0                                                   \
+ | xargs -0 ls -l                                                        \
+ | awk '{ n=int(log($5)/log(2));                                         \
+          if (n<10) n=10;                                                \
+          size[n]++ }                                                    \
+      END { for (i in size) printf("%d %d\n", 2^i, size[i]) }'           \
+ | sort -n                                                               \
+ | awk 'function human(x) { x[1]/=1024;                                  \
+                            if (x[1]>=1024) { x[2]++;                    \
+                                              human(x) } }               \
+        { a[1]=$1;                                                       \
+          a[2]=0;                                                        \
+          human(a);                                                      \
+          printf("%3d%s: %6d\n", a[1],substr("kMGTEPYZ",a[2]+1,1),$2) }'
 }
 
 function bash_repeat(){ # repeat command n times: bash_repeat 3 whoami
