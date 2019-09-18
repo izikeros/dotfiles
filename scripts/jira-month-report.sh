@@ -6,8 +6,9 @@ function date_offset(){
     echo $DATE
  }
 
+offset=$1
 d_stop=`date_offset 0`
-d_start=`date_offset -30`
+d_start=`date_offset -$offset`
 user=$USER
 projectId=6580
 url="https://jiradc.int.net.nokia.com/secure/TimesheetReport!default.jspa?startDate=$d_start&endDate=$d_stop&reportKey=jira-timesheet-plugin:report&targetUser=$user&projectid=$projectId&weekends=&showDetails=&sum=day&sumSubTasks=true&reportingDay=0"
