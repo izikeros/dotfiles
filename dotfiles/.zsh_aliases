@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Only including a shebang to trigger Sublime Text to use shell syntax highlighting
 #
@@ -10,11 +10,18 @@
 alias -g G='| grep'
 alias -g W='| wc -l'
 alias -g H='| head'
-alias -g M='| most'
-alias -g A="| awk '{s+=\$1} END {print s}'"
-alias -g X='| xargs -n1 -P\$(nproc) -I{}'
-alias -g F="find ./ -maxdepth 1 -type f -name '*.txt' -print0"
+alias -g L='| less'
+alias -g A="| awk -F',' '{print $1 $2}'"
+# sum the column of numbers
+alias -g AS="| awk '{s+=\$1} END {print s}'"
+alias -g X='| xargs -n1 -P$(nproc) -I{}'
+alias -g  F="find . -type f -name '*'"
+alias -g FE="find . -type f -name '*' -exec mv {} . \;"
+# pass output from find to xargs while displaying progress bar
+alias -g FPX="FIND=(find . -type f -name '*.gz') && ${FIND[@]} -print0 | pv -0lps $(${FIND[@]} | wc -l) | xargs -0 -n1 -P36 -I{}"
+# poor-man's wait
 alias -g W='while true; do ls; sleep .5; done'
+# repeat command multiple times
 alias -g FI='for i in {1..3}; do ls; sleep 1  done'
 #--------------------------------------------
 # FILESYSTEM - DIRECTORY SIZE, LISTING
@@ -72,11 +79,6 @@ alias 2="cd ../.."
 alias 3="cd ../../.."
 alias 4="cd ../../../.."
 
-#alias h="cd $HOME"
-alias pp="cd $HOME/projects"
-alias cdd="cd $HOME/Downloads"
-alias ddd="cd $HOME/dotfiles"
-alias cdc="cd $HOME/.config"
 # same convention, defined below: alias cdw="cd $WIKI_HOME"
 #--------------------------------------------
 # EDIT ACTIONS
@@ -102,13 +104,13 @@ alias vzs="vim $HOME/.zgen-setup"
 alias vv="vim $HOME/.vimrc"
 alias va="vim $HOME/.zsh_aliases"
 alias vf="vim $HOME/.zsh_functions"
-alias vc-"vim $HOME/.config"
+alias vc="vim $HOME/.config"
 alias vs="vim $HOME/.ssh/config"
 alias vg="vim $HOME/.gitconfig"
 alias vgg="vim ./.git/config"
 alias ve="vim $HOME/env_and_path.sh"
 
-# shortcuts for get-started content
+# shortcuts for 'restore system'
 alias voa="vim $HOME/.config/openbox/autostart"
 alias vor="vim $HOME/.config/openbox/rc.xml"
 alias vd="vim $HOME/dotfiles/"
@@ -130,7 +132,7 @@ fi
 # grep aliases active in current shell
 alias galias="alias | grep --color=never -i -e"
 # grep aliases in aliases file
-alias gralias="cat ~/.zsh_aliases | grep -B1 --color=never -i -e"
+alias gralias="grep -B1 --color=never -i -e ~/.zsh_aliases"
 # list functions
 alias list-functions="grep function ~/.zsh_functions --color=never | sed 's/^function//' | sed 's/{//' | grep '[a-Za-z0-9\-_]*()' --color=always | column -t -s# | less"
 #alias s="sudo su"
