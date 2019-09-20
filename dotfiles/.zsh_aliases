@@ -18,7 +18,7 @@ alias -g X='| xargs -n1 -P$(nproc) -I{}'
 alias -g  F="find . -type f -name '*'"
 alias -g FE="find . -type f -name '*' -exec mv {} . \;"
 # pass output from find to xargs while displaying progress bar
-alias -g FPX="FIND=(find . -type f -name '*.gz') && ${FIND[@]} -print0 | pv -0lps $(${FIND[@]} | wc -l) | xargs -0 -n1 -P36 -I{}"
+alias -g FPX="FIND=(find . -type f -name '*.gz') && \${FIND[@]} -print0 | pv -0lps \$(\${FIND[@]} | wc -l) | xargs -0 -n1 -P36 -I{}"
 # poor-man's wait
 alias -g W='while true; do ls; sleep .5; done'
 # repeat command multiple times
