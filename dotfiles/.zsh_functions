@@ -323,6 +323,10 @@ function awk_col(){ # print selected column (space separated file)
     awk -F' ' "{print \$$1}"
 }
 
+function corner(){ # print top-left corner of csv (sep=,) with size n (n-rows by n-columns)
+    # usage corner 10 data.csv
+    head -n$1 $2 | cut -d',' -f-$1
+}
 
 # == Shell and processes functions
 function procs_for_path() {		# list processes for given path
