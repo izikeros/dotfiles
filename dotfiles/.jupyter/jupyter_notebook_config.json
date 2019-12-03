@@ -2,7 +2,8 @@
   "NotebookApp": {
     "nbserver_extensions": {
       "jupyter_nbextensions_configurator": true,
-      "nteract_on_jupyter": true
+      "nteract_on_jupyter": false,
+      "jupyter_lsp": false
     }
   }
 }
