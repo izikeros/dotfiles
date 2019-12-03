@@ -1,8 +1,24 @@
 {
-    "snippets" : [
+    "snippets": [
         {
-            "name" : "pd+np+matplotlib",
-            "code" : [
+            "name": "notebook header (markdown)",
+            "code": [
+                "# Title",
+                "**Notebook Purpose:**",
+                "",
+                "-", 
+                "-",
+                "",
+                "**Created by:** John Doe",
+                "",
+                "**Changes:**",
+                "",
+                "- 2019-08-01: KS: Initial implementation"
+            ]
+        },
+        {
+            "name": "pd+np+mpl",
+            "code": [
                 "import pandas as pd",
                 "import numpy as np",
                 "from matplotlib import pyplot as plt",
@@ -10,16 +26,105 @@
             ]
         },
         {
-            "name" : "notebook header (markdown)",
-            "code" : [
-                "# Title",
-                "# Purpose",
-                "# - ",
-                "# - ",
-                "# Created by: Jone Doe",
-                "# Changes:",
-                "# - 2019-08-01: KS: Add visualisations",
+            "name": "sample dataframe 1",
+            "code": [
+            "raw_data = {",
+            "        'subject_id': ['1', '2', '3', '4', '5'],",
+            "        'first_name': ['Alex', 'Amy', 'Allen', 'Alice', 'Ayoung'], ",
+            "        'last_name': ['Anderson', 'Ackerman', 'Ali', 'Aoni', 'Atiches']}",
+            "df_a = pd.DataFrame(raw_data, columns = ['subject_id', 'first_name', 'last_name'])"
+            ]
+        },
+        {
+            "name": "sample dataframe 2",
+            "code": [
+            "raw_data = {",
+            "        'subject_id': ['4', '5', '6', '7', '8'],",
+            "        'first_name': ['Billy', 'Brian', 'Bran', 'Bryce', 'Betty'],",
+            "        'last_name': ['Bonder', 'Black', 'Balwner', 'Brice', 'Btisan']}",
+            "df_b = pd.DataFrame(raw_data, columns = ['subject_id', 'first_name', 'last_name'])"
+            ]
+        },
+        {
+            "name": "load numpy sparse",
+            "code": [
+                "import scipy.sparse",
+                "x = scipy.sparse.load_npz('/data/data.npz')"
+            ]
+        },
+        {
+            "name": "save numpy sparse",
+            "code": [
+                "import scipy.sparse",
+                "scipy.sparse.save_npz('data.npz', x)"
+            ]
+        },
+                {
+            "name": "Uniq from a single column",
+            "code": [
+                "list_of_unique_vals = pd.unique(df[['column_to_extract_unique_vals_from']].values.ravel())"
+            ]
+        },
+                {
+            "name": "run in joblib context",
+            "code": [
+                "with joblib.parallel_backend(n_jobs=n_jobs, backend='threading'):",
+                "   pass"
+            ]
+        },
+                {
+            "name": "set custom plot styling",
+            "code": [
+                "sys.path.append('../..')",
+                "from src.visualization.matplotlib_styling import set_styling",
+                "set_styling('bmh')",
+                "#set_styling('fivethirtyeight')"
+            ]
+        },
+        {
+            "name": "download and set custom plot styling",
+            "code": [
+                "%%bash",
+                "if [ ! -e matplotlib_styling.py ]; then",
+                "   wget https://gist.githubusercontent.com/izikeros/457a99d950310da8166050a13f4043cb/raw/4334d77bdaad867003926e7cf87ffbec7131528d/matplotlib_styling.py",
+                "fi",      
+                "from matplotlib_styling import set_styling",          
+                "set_styling('bmh')",
+                "#set_styling('fivethirtyeight')"
+            ]
+        },
+        {
+            "name": "Turn off scientific notation",
+            "code": [
+                "pd.set_option(‘display.float_format’, lambda x: ‘%.3f’ % x)"
+            ]
+        },
+        {
+            "name": "pd apply - process field",
+            "code": [
+                "def calculate_taxes(price):",
+                "    taxes = price * 0.12",
+                "    return taxes",
+                "df['taxes'] = df.price.apply(calculate_taxes)"
+            ]
+        },
+        {
+            "name": "pd apply - process rows ",
+            "code": [
+                "def calculate_taxes(row):",
+                "    row['taxes'] = row['price'] * 0.12",
+                "    return row",
+                "df.apply(calculate_taxes, axis=1)"
+            ]
+        },
+        {
+            "name": "autoreload",
+            "code": [
+                "%load_ext autoreload",
+                "%autoreload",
+                "%matplotlib inline"
             ]
         }
+
     ]
 }

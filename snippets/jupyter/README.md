@@ -1,0 +1,1 @@
+echo $(jupyter --data-dir)
