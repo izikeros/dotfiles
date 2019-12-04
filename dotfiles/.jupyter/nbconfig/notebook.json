@@ -11,11 +11,13 @@
     "move_selected_cells/main": true,
     "isortformatter": true,
     "isortformatter/main": true,
-    "toc2/main": false,
-    "varInspector/main": true,
+    "toc2/main": true,
+    "varInspector/main": false,
     "scratchpad/main": true,
     "hide_input_all/main": true,
-    "hide_input/main": true
+    "hide_input/main": true,
+    "code_prettify/autopep8": true,
+    "code_prettify/code_prettify": true
   },
   "toc2": {
     "number_sections": false
