@@ -429,6 +429,11 @@ function dedupe_path() { # In case a plugin adds a redundant path entry, remove 
   export PATH=${(j+:+)result}
 }
 
+function duplicate_definitions() { # display all definitions in notebooks in current dir (and below)
+    find . -type f -name "*.ipynb" | xargs grep -H -e "def " | grep "(" | grep ")" | grep -v ".ipynb_checkpoints" | awk -F ':' '{print($2,"|", $1)}' | sed -e 's/^[ \t]*//' | sed 's/"//' | sed -e 's/^[ \t]*//' | sed 's/^def //'| sort | column -t -s "|"
+
+}
+
 function learning() { #display info on learning progress
     grep -v "^#" ~/vimwiki/pro/learning.md | awk -F';' '$1==0 {sum+=$3;} END{print "to report:"sum/60"h";}'
     grep -v "^#" ~/vimwiki/pro/learning.md | awk -F';' '$1==1 {sum+=$3;} END{print "reported:"sum/60"h";}'
@@ -480,12 +485,18 @@ sum-up column of numbers (e.g. output of parallel xargs such as counting lines)
 EOF
 }
 
-
+function h-grep(){
+cat <<- EOF
+Do (-H)/ do not (-h) display filename
+EOF
+}
 
 function h-sed(){
 cat <<- EOF
 Remove first line (-i inplace - save to the same file)
     sed -i 1d
+Remove leading spaces and tabs
+    sed -e 's/^[ \t]*//'
 EOF
 }
 
