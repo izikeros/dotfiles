@@ -18,6 +18,8 @@ alias -g X='| xargs -n1 -P$(nproc) -I{}'
 alias -g  F="find . -type f -name '*'"
 alias -g FE="find . -type f -name '*' -exec mv {} . \;"
 # pass output from find to xargs while displaying progress bar
+# pv: l-count lines instead of bytes, 0 - lines null-terminated, s - provide
+# size
 alias -g FPX="FIND=(find . -type f -name '*.gz') && \${FIND[@]} -print0 | pv -0lps \$(\${FIND[@]} | wc -l) | xargs -0 -n1 -P36 -I{}"
 # poor-man's wait
 alias -g W='while true; do ls; sleep .5; done'
@@ -172,6 +174,9 @@ alias -g p-files="pacman -Fl"
 # statistics over all packages
 alias -g y-stats="$AUR_CMD" -P --stats
 
+# clear yay cache
+alias yay-cache-clear=$AUR_CMD -Sc --aur
+
 # remove (uninstall) package
 alias -g prm="sudo pacman -Rns"
 
@@ -308,7 +313,7 @@ alias whoamigit="git config --get user.email;git config --get user.name"
 # PYTHON, SOFTWARE PROJECT
 #-------------------------------------------
 # provide pep8 violation statistics for current directory (.)
-alias pep8-stats="pep8 --statistics -qq . | sort -k 1 -n -r"
+alias pep8-stats="pycodestyle --statistics -qq . | sort -k 1 -n -r"
 
 # count lines of code
 alias count_loc="wc -l **/*.py"
@@ -323,7 +328,6 @@ alias test-integration-list="find . -type f -name \"test_integration*\" | xargs 
 # colored cat for source code:
 alias ccat=ccat.sh
 
-alias nb="jupyter notebook"
 alias jl="jupyter lab"
 alias jn="jupyter notebook"
 alias wn="workon"
