@@ -556,7 +556,100 @@ find . ! path . -type d !
 EOF
 }
 
+function h-tilda(){
+cat <<- EOF
+F1 – Pull down and pull up (Hide and Show) Tilda terminal window.
+SHIFT+CTRL+T – Open a new tab.
+SHIFT+CTRL+W – Close the active tab.
+CTRL+PAGE_UP – Go to previous tab.
+CTRL+PAGE_DOWN – Go to next tab.
+SHIFT+CTRL+PAGE_UP – Move tab left.
+SHIFT+CTRL+PAGE_DOWN – Move tab right.
+<ALT>1 – Go to tab 1.
+<ALT>2 – Go to tab 2.
+<ALT>0 – Go to tab 10.
+SHIFT+CTRL+C – Copy text from Tilda window.
+SHIFT+CTRL+V – Paste text in Terminal.
+F11 – Toggle full screen.
+F12 – Toggle Transparency.
+SHIFT+CTRL+F – Search.
+SHIFT+CTRL+Q – Quit Tilda Terminal.
+EOF
+}
 
+function h-tmux(){
+cat <<- EOF
+* start new with session name: 'tmux new -s myname'
+* attach:  'tmux a  #  (or at, or attach)'
+* attach to named:  'tmux a -t myname'
+* list sessions: 'tmux ls'
+* kill session:  'tmux kill-session -t myname'
+* Kill all the tmux sessions:
+  tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
+
+In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:
+=== Sessions
+:new<CR>  new session
+s  list sessions
+$  name session
+
+=== Windows (tabs)
+c  create window
+w  list windows
+n  next window
+p  previous window
+f  find window
+,  name window
+&  kill window
+
+=== Panes (splits)
+%  vertical split
+"  horizontal split
+o  swap panes
+q  show pane numbers
+x  kill pane
++  break pane into window (e.g. to select text by mouse to copy)
+-  restore pane from window
+⍽  space - toggle between layouts
+<prefix> q (Show pane numbers, when the numbers show up type the key to goto that pane)
+<prefix> { (Move the current pane left)
+<prefix> } (Move the current pane right)
+<prefix> z toggle pane zoom
+
+=== Sync Panes
+You can do this by switching to the appropriate window, typing your Tmux prefix (commonly Ctrl-B or Ctrl-A) and then a colon to bring up a Tmux command line, and typing:
+:setw synchronize-panes
+You can optionally add on or off to specify which state you want; otherwise the option is simply toggled. This option is specific to one window, so it won’t change the way your other sessions or windows operate. When you’re done, toggle it off again by repeating the command. tip source
+
+=== Resizing Panes
+You can also resize panes if you don’t like the layout defaults. I personally rarely need to do this, though it’s handy to know how. Here is the basic syntax to resize panes:
+PREFIX : resize-pane -D/U/L/R (Resizes the current pane down, up, left, right)
+PREFIX : resize-pane -D/U/L/R 20 (Resizes the current pane down/up/left/right by 20 cells)
+PREFIX : resize-pane -t 2 20 (Resizes the pane with the id of 2 down by 20 cells)
+PREFIX : resize-pane -t -L 20 (Resizes the pane with the id of 2 left by 20 cells)
+EOF
+}
+
+function h-github-push-existing(){
+cat <<- EOF
+1. Initialize the local directory as a Git repository.
+git init
+2. Add the files in your new local repository. This stages them for the first commit.
+git add .
+3. Commit the files that you’ve staged in your local repository.
+git commit -m "initial commit"
+4. Copy the https url of your newly created repo
+5. In the Command prompt, add the URL for the remote repository where your local repository will be pushed.
+
+git remote add origin remote repository URL
+
+git remote -v
+6.  Push the changes in your local repository to GitHub.
+
+git push -f origin master
+
+EOF
+}
 #find . -type f -newermt "2019-09-01" \! -newermt "2019-09-30"
 function ys-popular(){
     ys $1 | grep -e + | sed -e 's/(+//' | awk -F' ' '{print $3", "$1}' | sort -nr | head -10
