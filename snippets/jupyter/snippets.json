@@ -13,7 +13,7 @@
                 "",
                 "**Changes:**",
                 "",
-                "- 2019-08-01: KS: Initial implementation"
+                "- 2019-08-01: JD: Initial implementation"
             ]
         },
         {
@@ -118,6 +118,28 @@
             ]
         },
         {
+            "name": "(snippet template)",
+            "code": [
+                "",
+                ""
+            ]
+        },
+        {
+            "name": "rename column(s)",
+            "code": [
+                "df = df.rename(columns={'before':'after'})"
+            ]
+        },   
+        {
+            "name": "bash2python, python2bash",
+            "code": [
+                "a=!ls",
+                "print(a)",
+                "b='foo'",
+                "! echo $b"
+            ]
+        },                              
+        {
             "name": "autoreload",
             "code": [
                 "%load_ext autoreload",
@@ -128,3 +150,9 @@
 
     ]
 }
+
+
+a=!ls
+print(a)
+b='foo'
+! echo $b
