@@ -21,10 +21,14 @@ echo "AUR packages on your system that are not on the restore list:"
 comm -13 $TMP_FILE_LIST $TMP_FILE_INSTALLED
 
 echo ""
-echo "Running Meld for list comparison"
+echo "Running Meld for list comparison  left: list | right: installed"
+echo "Make editions to the left pannel (list from file)"
 meld $TMP_FILE_LIST $TMP_FILE_INSTALLED
 
 ./add_package_descriptions.sh $TMP_FILE_LIST
+
+# remove duplicates from the list
+sort -uo $TMP_FILE_LIST $TMP_FILE_LIST
 
 cat $TMP_FILE_LIST
 
