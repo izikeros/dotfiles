@@ -1,34 +1,41 @@
+bastet               # Tetris(r) clone with 'bastard' block-choosing AI
 bfg                  # Removes large or troublesome blobs like git-filter-branch does, but faster.
 bonsai.sh-git        # A randomly generated bonsai tree in your terminal!
 brave-bin            # Web browser that blocks ads and trackers by default (binary release).
-byobu                # Enhanced profile and useful notifications for tmux/screen
 cht.sh               # The only cheat sheet you need (command line client for cheat.sh)
+darktable-git        # A virtual lighttable and darkroom for photographers
 dropbox              # A free service that lets you bring your photos, docs, and videos anywhere and share them easily.
 dropbox-cli          # Command line interface for Dropbox
-gitsh                # An interactive shell for git
-google-earth         # Semi-legacy 3D interface to explore the globe, terrain, streets, buildings and other planets
+google-chrome        # The popular and trusted web browser by Google (Stable Channel)
+google-earth-pro     # 3D interface to explore the globe, terrain, streets, buildings and other planets (Pro version)
 gotop                # A terminal based graphical activity monitor inspired by gtop and vtop
-grc                  # Yet another colouriser for beautifying your logfiles or output of commands
-jnetmap              # Graphical network monitoring and documentation tool
+greed                # The strategy game of Greed.
+lf-bin               # A terminal file manager inspired by ranger (Precompiled binary from official repository)
 logtop               # Display real time statistics of whatever you want.
-mattermost-desktop   # Mattermost Desktop application for Linux (Beta)
 mawk                 # An interpreter for the AWK Programming Language
 miniconda3           # Mini version of Anaconda Python distribution.
-nerd-fonts-ubuntu-mono # Patched font UbuntuMono from the nerd-fonts library
+myman                # Pacman clone with an ncurses and a graphic interface
 nerd-fonts-source-code-pro # Patched font SourceCodePro from nerd-fonts library
-openrefine           # A free, open source power tool for working with messy data and improving it
-peek                 # Simple screen recorder with an easy to use interface
-pycharm-professional # Powerful Python and Django IDE. Professional Edition.
-python-cookiecutter  # A command-line utility that creates projects from project templates
+num-utils            # Set of programs for dealing with numbers from the command line.
+onedrive-git         # Free OneDrive client written in D
+onlyoffice-bin       # An office suite that combines text, spreadsheet and presentation editors
+pycharm-professional # Python IDE for Professional Developers. Professional Edition
+qnapi                # Qt5 client for downloading movie subtitles from NapiProjekt, OpenSubtitles, Napisy24
 redsocks-git         # Transparent redirector of any TCP connection to proxy using your firewall
 screenkey            # Screencast tool to show your keys inspired by Screenflick, based on key-mon. Active fork with new features.
+shutter              # A featureful screenshot tool (formerly gscrot)
 simple-mtpfs         # A FUSE filesystem that supports reading/writing from MTP devices
-siji-git             # Iconic bitmap font based on stlarch with additional glyphs
+sublime-merge        # Meet a new Git Client, from the makers of Sublime Text
 sublime-text-dev     # Sophisticated text editor for code, html and prose - dev build
-ttf-unifont          # TrueType version of the GNU Unifont
 typora               # Typora will give you a seamless experience as both a reader and a writer.
+virtualbox-ext-oracle # Oracle VM VirtualBox Extension Pack
 vscodium-bin         # Binary releases of VS Code without MS branding/telemetry/licensing.
 wpa_actiond          # Daemon that connects to wpa_supplicant and handles connect and disconnect events
+wps-office           # Kingsoft Office (WPS Office) is an office productivity suite
+xf86-input-keyboard  # 
+xf86-input-mouse     # 
 xnviewmp             # An efficient multimedia viewer, browser and converter.
-yay                  # Yet another yogurt. Pacman wrapper and AUR helper written in go.
+xorg-server-xdmx     # 
+yay-bin              # Yet another yogurt. Pacman wrapper and AUR helper written in go. Pre-compiled.
+yed                  # Very powerful graph editor written in java
 zotero               # Zotero Standalone. Is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.
