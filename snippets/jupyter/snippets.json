@@ -11,6 +11,8 @@
                 "",
                 "**Created by:** John Doe",
                 "",
+                "**Jira:** [BRAIN-123](https://jiradc.int.net.nokia.com/browse/BRAIN-123)",
+                "",                
                 "**Changes:**",
                 "",
                 "- 2019-08-01: JD: Initial implementation"
@@ -138,7 +140,19 @@
                 "b='foo'",
                 "! echo $b"
             ]
-        },                              
+        },
+        {
+            "name": "graphviz",
+            "code": [
+                "# install graphviz and dotmagic extension:",
+                "# pip install graphviz git+https://github.com/sursingh/dotmagic.git",
+                "%load_ext dotmagic",
+                "%%dot -p",
+                "digraph {",
+                "    a -> b -> c -> a",
+                "}"
+            ]
+        }, 
         {
             "name": "autoreload",
             "code": [
@@ -150,9 +164,3 @@
 
     ]
 }
-
-
-a=!ls
-print(a)
-b='foo'
-! echo $b

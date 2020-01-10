@@ -1,20 +1,13 @@
 Convert a column to a numeric type
-df[‘col’]=df[‘col’].astype(str).convert_objects(convert_numeric=True)
+df['col']=df['col'].astype(str).convert_objects(convert_numeric=True)
 
-Get rid of  damned scientific notation
-pd.set_option(‘display.float_format’, lambda x: ‘%.3f’ % x)
+# pandas - wide display of dataframe
+pd.set_option('display.max_columns', None)
+pd.set_option('display.expand_frame_repr', False)
+pd.set_option('max_colwidth', -1)
 
+# pandas - limit precision
+pd.set_option('precision', 1)
 
-# process field 
-def calculate_taxes(price):
-    taxes = price * 0.12
-    return taxes
-df['taxes'] = df.price.apply(calculate_taxes)
-
-
-# process rows 
-def calculate_taxes(row):
-    row['taxes'] = row['price'] * 0.12
-    return row
-
-df.apply(calculate_taxes, axis=1)
+# pandas - turn of scientific notation
+pd.set_option('display.float_format', lambda x: '%.1f' % x)
