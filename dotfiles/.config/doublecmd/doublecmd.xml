@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<doublecmd DCVersion="0.9.1 beta" ConfigVersion="10">
+<doublecmd DCVersion="0.9.7 beta" ConfigVersion="10">
   <Configuration Save="True" SortOrder="0" TreeType="0">
     <UseConfigInProgramDir>False</UseConfigInProgramDir>
     <FolderTabs Save="True"/>
@@ -111,30 +111,30 @@
     </FileFilters>
     <UseCursorBorder>False</UseCursorBorder>
     <CursorBorderColor>-2147483635</CursorBorderColor>
-    <UseFrameCursor>True</UseFrameCursor>
-    <Foreground>-2147483640</Foreground>
-    <Background>-2147483643</Background>
-    <Background2>-2147483643</Background2>
-    <Cursor>-2147483635</Cursor>
-    <CursorText>-2147483634</CursorText>
-    <Mark>255</Mark>
     <InactiveCursor>-2147483645</InactiveCursor>
     <InactiveMark>128</InactiveMark>
-    <UseInvertedSelection>False</UseInvertedSelection>
     <UseInactiveSelColor>False</UseInactiveSelColor>
     <AllowOverColor>True</AllowOverColor>
-    <InactivePanelBrightness>92</InactivePanelBrightness>
-    <FreeSpaceIndicator>
-      <UseGradient>True</UseGradient>
-      <ForeColor>0</ForeColor>
-      <BackColor>16777215</BackColor>
-    </FreeSpaceIndicator>
     <gBorderFrameWidth>1</gBorderFrameWidth>
     <LogWindow>
       <Info>8388608</Info>
       <Error>255</Error>
       <Success>32768</Success>
     </LogWindow>
+    <UseFrameCursor>False</UseFrameCursor>
+    <Foreground>-2147483640</Foreground>
+    <Background>15856113</Background>
+    <Background2>15263976</Background2>
+    <Cursor>-2147483635</Cursor>
+    <CursorText>-2147483634</CursorText>
+    <Mark>255</Mark>
+    <UseInvertedSelection>False</UseInvertedSelection>
+    <InactivePanelBrightness>100</InactivePanelBrightness>
+    <FreeSpaceIndicator>
+      <UseGradient>True</UseGradient>
+      <ForeColor>0</ForeColor>
+      <BackColor>16777215</BackColor>
+    </FreeSpaceIndicator>
   </Colors>
   <Plugins>
     <WlxPlugins>
@@ -283,63 +283,42 @@
   <Tabs>
     <OpenedTabs>
       <Left>
-        <ActiveTab>5</ActiveTab>
+        <ActiveTab>0</ActiveTab>
         <Tab>
           <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
             <History>
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="..">/home/safjan/projects/batman-experiments/experiments/1/</Path>
-                  <Path Filename="..">/home/safjan/projects/batman-experiments/experiments/</Path>
-                  <Path Filename="experiments">/home/safjan/projects/batman-experiments/</Path>
-                  <Path Filename="batman-experiments">/home/safjan/projects/</Path>
-                  <Path Filename=".virtualenvs">/home/safjan/</Path>
-                  <Path Filename="batman">/home/safjan/.virtualenvs/</Path>
-                  <Path Filename="bin">/home/safjan/.virtualenvs/batman/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/bin/</Path>
-                  <Path Filename="include">/home/safjan/.virtualenvs/batman/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/include/</Path>
-                  <Path Filename="lib">/home/safjan/.virtualenvs/batman/</Path>
-                  <Path Filename="python3.7">/home/safjan/.virtualenvs/batman/lib/</Path>
-                  <Path Filename="site-packages">/home/safjan/.virtualenvs/batman/lib/python3.7/</Path>
-                  <Path Filename="logcompare-1.0.0.dist-info">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/logcompare-1.0.0.dist-info/</Path>
-                  <Path Filename="btslogparser-1.3.1.dist-info">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/btslogparser-1.3.1.dist-info/</Path>
-                  <Path Filename="btslogparser_utils">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/btslogparser_utils/</Path>
-                  <Path Filename="logcompare-1.0.0.dist-info">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/logcompare-1.0.0.dist-info/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/</Path>
-                  <Path Filename="lib">/home/safjan/.virtualenvs/batman/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/</Path>
-                  <Path Filename="logcompare.py">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
-                  <Path Filename="projects">/home/safjan/</Path>
-                  <Path Filename="batman-experiments">/home/safjan/projects/</Path>
-                  <Path Filename="experiments">/home/safjan/projects/batman-experiments/</Path>
-                  <Path Filename="1">/home/safjan/projects/batman-experiments/experiments/</Path>
-                  <Path Filename="out-csim">/home/safjan/projects/batman-experiments/experiments/1/</Path>
-                  <Path Filename="summary.csv">/home/safjan/projects/batman-experiments/experiments/1/out-csim/</Path>
-                  <Path Filename="dotfiles">/home/safjan/</Path>
-                  <Path Filename=".config">/home/safjan/dotfiles/</Path>
-                  <Path Filename="openbox">/home/safjan/dotfiles/.config/</Path>
-                  <Path Filename="ob_config_build">/home/safjan/dotfiles/.config/openbox/</Path>
-                  <Path Filename="..">/home/safjan/dotfiles/.config/openbox/ob_config_build/</Path>
-                  <Path Filename="ob_config_build">/home/safjan/dotfiles/.config/openbox/</Path>
-                  <Path Filename="..">/home/safjan/dotfiles/.config/openbox/ob_config_build/</Path>
-                  <Path Filename="ob_config_build">/home/safjan/dotfiles/.config/openbox/</Path>
-                  <Path Filename="09_keyboard">/home/safjan/dotfiles/.config/openbox/ob_config_build/</Path>
-                  <Path Filename="..">/home/safjan/dotfiles/.config/openbox/ob_config_build/09_keyboard/</Path>
-                  <Path Filename="..">/home/safjan/dotfiles/.config/openbox/ob_config_build/</Path>
-                  <Path Filename="lubuntu-rc.xml">/home/safjan/dotfiles/.config/openbox/</Path>
-                  <Path Filename="dotfiles">/home/safjan/</Path>
-                  <Path Filename="..">/home/safjan/dotfiles/</Path>
-                  <Path Filename="Downloads">/home/safjan/</Path>
-                  <Path Filename="..">/home/safjan/Downloads/</Path>
-                  <Path Filename="">/home/safjan/dotfiles/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/safjan/projects/</LockPath>
+          <Title>projects</Title>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
                 </Paths>
               </Entry>
             </History>
@@ -353,155 +332,16 @@
         </Tab>
         <Tab>
           <FileView Type="columns">
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path Filename="data">/home/safjan/projects/batman-experiments/experiments/1/</Path>
-                  <Path Filename="..">/home/safjan/projects/batman-experiments/experiments/1/data/</Path>
-                  <Path Filename="..">/home/safjan/projects/batman-experiments/experiments/1/</Path>
-                  <Path Filename="..">/home/safjan/projects/batman-experiments/experiments/</Path>
-                  <Path Filename="experiments">/home/safjan/projects/batman-experiments/</Path>
-                  <Path Filename="batman-experiments">/home/safjan/projects/</Path>
-                  <Path Filename=".virtualenvs">/home/safjan/</Path>
-                  <Path Filename="batman">/home/safjan/.virtualenvs/</Path>
-                  <Path Filename="bin">/home/safjan/.virtualenvs/batman/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/bin/</Path>
-                  <Path Filename="include">/home/safjan/.virtualenvs/batman/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/include/</Path>
-                  <Path Filename="lib">/home/safjan/.virtualenvs/batman/</Path>
-                  <Path Filename="python3.7">/home/safjan/.virtualenvs/batman/lib/</Path>
-                  <Path Filename="site-packages">/home/safjan/.virtualenvs/batman/lib/python3.7/</Path>
-                  <Path Filename="logcompare-1.0.0.dist-info">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/logcompare-1.0.0.dist-info/</Path>
-                  <Path Filename="btslogparser-1.3.1.dist-info">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/btslogparser-1.3.1.dist-info/</Path>
-                  <Path Filename="btslogparser_utils">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/btslogparser_utils/</Path>
-                  <Path Filename="logcompare-1.0.0.dist-info">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/logcompare-1.0.0.dist-info/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/python3.7/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/</Path>
-                  <Path Filename="lib">/home/safjan/.virtualenvs/batman/</Path>
-                  <Path Filename="..">/home/safjan/.virtualenvs/batman/lib/</Path>
-                  <Path Filename="logcompare.py">/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/</Path>
-                  <Path Filename="projects">/home/safjan/</Path>
-                  <Path Filename="batman-experiments">/home/safjan/projects/</Path>
-                  <Path Filename="experiments">/home/safjan/projects/batman-experiments/</Path>
-                  <Path Filename="1">/home/safjan/projects/batman-experiments/experiments/</Path>
-                  <Path Filename="out-csim">/home/safjan/projects/batman-experiments/experiments/1/</Path>
-                  <Path Filename="summary.csv">/home/safjan/projects/batman-experiments/experiments/1/out-csim/</Path>
-                  <Path Filename="dotfiles">/home/safjan/</Path>
-                  <Path Filename=".config">/home/safjan/dotfiles/</Path>
-                  <Path Filename="openbox">/home/safjan/dotfiles/.config/</Path>
-                  <Path Filename="ob_config_build">/home/safjan/dotfiles/.config/openbox/</Path>
-                  <Path Filename="..">/home/safjan/dotfiles/.config/openbox/ob_config_build/</Path>
-                  <Path Filename="ob_config_build">/home/safjan/dotfiles/.config/openbox/</Path>
-                  <Path Filename="..">/home/safjan/dotfiles/.config/openbox/ob_config_build/</Path>
-                  <Path Filename="ob_config_build">/home/safjan/dotfiles/.config/openbox/</Path>
-                  <Path Filename="09_keyboard">/home/safjan/dotfiles/.config/openbox/ob_config_build/</Path>
-                  <Path Filename="..">/home/safjan/dotfiles/.config/openbox/ob_config_build/09_keyboard/</Path>
-                  <Path Filename="..">/home/safjan/dotfiles/.config/openbox/ob_config_build/</Path>
-                  <Path Filename="lubuntu-rc.xml">/home/safjan/dotfiles/.config/openbox/</Path>
-                  <Path Filename="dotfiles">/home/safjan/</Path>
-                  <Path Filename="..">/home/safjan/dotfiles/</Path>
-                  <Path Filename="">/home/safjan/dotfiles/.config/openbox/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/dotfiles/.config/openbox/</LockPath>
-          <Title>openbox</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path Filename="..">/usr/lib/doublecmd/</Path>
-                  <Path Filename="..">/usr/lib/</Path>
-                  <Path Filename="..">/usr/</Path>
-                  <Path Filename="home">/</Path>
-                  <Path Filename="safjan">/home/</Path>
-                  <Path Filename=".config">/home/safjan/</Path>
-                  <Path Filename="doublecmd">/home/safjan/.config/</Path>
-                  <Path Filename="">/home/safjan/.config/doublecmd/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
             <Sortings>
               <Sorting>
                 <Direction>1</Direction>
-                <Function>1</Function>
+                <Function>12</Function>
               </Sorting>
             </Sortings>
             <History>
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="ci_checks">/home/safjan/projects/</Path>
-                  <Path Filename="implement">/home/safjan/projects/ci_checks/</Path>
-                  <Path Filename="filecluster">/home/safjan/projects/</Path>
-                  <Path Filename="projects">/home/safjan/</Path>
-                  <Path Filename="safjan">/home/</Path>
-                  <Path Filename="home">/</Path>
-                  <Path Filename="safjan">/home/</Path>
-                  <Path Filename="Dropbox">/home/safjan/</Path>
-                  <Path Filename="dropbox">/home/safjan/Dropbox/</Path>
-                  <Path Filename="..">/home/safjan/Dropbox/dropbox/</Path>
-                  <Path Filename="..">/home/safjan/Dropbox/</Path>
-                  <Path Filename=".config">/home/safjan/</Path>
-                  <Path Filename="openbox">/home/safjan/.config/</Path>
-                  <Path Filename="rc.xml">/home/safjan/.config/openbox/</Path>
-                  <Path Filename="openbox">/home/safjan/.config/</Path>
-                  <Path Filename="projects">/home/safjan/</Path>
-                  <Path Filename="pronto_eda">/home/safjan/projects/</Path>
-                  <Path Filename="..">/home/safjan/projects/pronto_eda/</Path>
-                  <Path Filename="..">/home/safjan/Downloads/</Path>
-                  <Path Filename="Documents">/home/safjan/</Path>
-                  <Path Filename="papers">/home/safjan/Documents/</Path>
-                  <Path Filename="ML_AI">/home/safjan/Documents/papers/</Path>
-                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/</Path>
-                  <Path Filename="08109094.pdf">/home/safjan/Downloads/</Path>
-                  <Path Filename="Dropbox">/home/safjan/</Path>
-                  <Path Filename="..">/home/safjan/Dropbox/</Path>
-                  <Path Filename="Documents">/home/safjan/</Path>
-                  <Path Filename="papers">/home/safjan/Documents/</Path>
-                  <Path Filename="ML_AI">/home/safjan/Documents/papers/</Path>
-                  <Path Filename="1811.09878v1.pdf">/home/safjan/Documents/papers/ML_AI/</Path>
-                  <Path Filename="ML_AI">/home/safjan/Documents/papers/</Path>
-                  <Path Filename="papers">/home/safjan/Documents/</Path>
-                  <Path Filename="Documents">/home/safjan/</Path>
-                  <Path Filename="safjan">/home/</Path>
-                  <Path Filename="Dropbox">/home/safjan/</Path>
-                  <Path Filename="cheat">/home/safjan/Dropbox/</Path>
-                  <Path Filename="ai">/home/safjan/Dropbox/cheat/</Path>
-                  <Path Filename="..">/home/safjan/Dropbox/cheat/ai/</Path>
-                  <Path Filename="ai.git">/home/safjan/Dropbox/cheat/</Path>
-                  <Path Filename=".git">/home/safjan/Dropbox/cheat/ai.git/</Path>
-                  <Path Filename="..">/home/safjan/Dropbox/cheat/ai.git/.git/</Path>
-                  <Path Filename="PDFs">/home/safjan/Dropbox/cheat/ai.git/</Path>
-                  <Path Filename="..">/home/safjan/Dropbox/cheat/ai.git/PDFs/</Path>
-                  <Path Filename="..">/home/safjan/Dropbox/cheat/ai.git/</Path>
-                  <Path Filename="ai.git">/home/safjan/Dropbox/cheat/</Path>
-                  <Path Filename="Dropbox">/home/safjan/</Path>
-                  <Path Filename="..">/home/safjan/Downloads/</Path>
-                  <Path Filename="Documents">/home/safjan/</Path>
-                  <Path Filename="..">/home/safjan/Documents/</Path>
-                  <Path Filename="">/home/safjan/Downloads/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -510,8 +350,8 @@
             </ColumnsView>
           </FileView>
           <Options>2</Options>
-          <LockPath>/home/safjan/Downloads/</LockPath>
-          <Title>Downloads</Title>
+          <LockPath>/home/safjan/dotfiles/.config/</LockPath>
+          <Title>.config</Title>
         </Tab>
         <Tab>
           <FileView Type="columns">
@@ -525,56 +365,6 @@
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="..">/home/safjan/projects/kaggle/</Path>
-                  <Path Filename="kaggle">/home/safjan/projects/</Path>
-                  <Path Filename="whats_cooking_NLP">/home/safjan/projects/kaggle/</Path>
-                  <Path Filename="venv">/home/safjan/projects/kaggle/whats_cooking_NLP/</Path>
-                  <Path Filename="..">/home/safjan/projects/kaggle/whats_cooking_NLP/venv/</Path>
-                  <Path Filename="..">/home/safjan/projects/kaggle/whats_cooking_NLP/</Path>
-                  <Path Filename="..">/home/safjan/projects/kaggle/</Path>
-                  <Path Filename="_django_core">/home/safjan/projects/</Path>
-                  <Path Filename="Django-Views-Unleashed">/home/safjan/projects/_django_core/</Path>
-                  <Path Filename="wagabunda">/home/safjan/projects/</Path>
-                  <Path Filename="wagabunda">/home/safjan/projects/wagabunda/</Path>
-                  <Path Filename="..">/home/safjan/projects/wagabunda/wagabunda/</Path>
-                  <Path Filename="..">/home/safjan/projects/wagabunda/</Path>
-                  <Path Filename="django_blog">/home/safjan/projects/</Path>
-                  <Path Filename=".git">/home/safjan/projects/django_blog/</Path>
-                  <Path Filename="..">/home/safjan/projects/django_blog/.git/</Path>
-                  <Path Filename="..">/home/safjan/projects/django_blog/</Path>
-                  <Path Filename="filecluster">/home/safjan/projects/</Path>
-                  <Path Filename=".git">/home/safjan/projects/filecluster/</Path>
-                  <Path Filename="..">/home/safjan/projects/filecluster/.git/</Path>
-                  <Path Filename="..">/home/safjan/projects/filecluster/</Path>
-                  <Path Filename="flask_blog">/home/safjan/projects/</Path>
-                  <Path Filename=".git">/home/safjan/projects/flask_blog/</Path>
-                  <Path Filename="config">/home/safjan/projects/flask_blog/.git/</Path>
-                  <Path Filename="..">/home/safjan/projects/</Path>
-                  <Path Filename="music">/run/media/safjan/CARSD/</Path>
-                  <Path Filename="zlew">/run/media/safjan/CARSD/music/</Path>
-                  <Path Filename="..">/run/media/safjan/CARSD/music/zlew/</Path>
-                  <Path Filename="moja_muza">/run/media/safjan/CARSD/music/</Path>
-                  <Path Filename="Las Ketchup - Asereje (HD,16_9).mp3">/run/media/safjan/CARSD/music/moja_muza/</Path>
-                  <Path Filename="Malenczuk">/run/media/safjan/CARSD/music/</Path>
-                  <Path Filename="Maleńczuk - Cicha Woda.mp3">/run/media/safjan/CARSD/music/Malenczuk/</Path>
-                  <Path Filename="moja_muza">/run/media/safjan/CARSD/music/</Path>
-                  <Path Filename="..">/run/media/safjan/CARSD/music/moja_muza/</Path>
-                  <Path Filename="moja_muza">/run/media/safjan/CARSD/music/</Path>
-                  <Path Filename="the_analogs - strzelby z brixton.mp3">/run/media/safjan/CARSD/music/moja_muza/</Path>
-                  <Path Filename="moja_muza">/run/media/safjan/CARSD/music/</Path>
-                  <Path Filename="..">/run/media/safjan/CARSD/music/moja_muza/</Path>
-                  <Path Filename="moja_muza">/run/media/safjan/CARSD/music/</Path>
-                  <Path Filename="..">/run/media/safjan/CARSD/music/moja_muza/</Path>
-                  <Path Filename="moja_muza">/run/media/safjan/CARSD/music/</Path>
-                  <Path Filename="..">/run/media/safjan/CARSD/music/moja_muza/</Path>
-                  <Path Filename="moja_muza">/run/media/safjan/CARSD/music/</Path>
-                  <Path Filename="">/home/safjan/projects/</Path>
-                  <Path Filename=".ipynb_checkpoints">./</Path>
-                  <Path Filename="..">/home/safjan/projects/</Path>
-                  <Path Filename="vimwiki">/home/safjan/</Path>
-                  <Path Filename="diary">/home/safjan/vimwiki/</Path>
-                  <Path Filename="2019-02-15_f.md">/home/safjan/vimwiki/diary/</Path>
-                  <Path Filename="">/home/safjan/projects/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -583,71 +373,21 @@
             </ColumnsView>
           </FileView>
           <Options>2</Options>
-          <LockPath>/home/safjan/projects/</LockPath>
-          <Title>projects</Title>
+          <LockPath>/home/safjan/projects/_nokia/</LockPath>
+          <Title>_nokia</Title>
         </Tab>
         <Tab>
           <FileView Type="columns">
             <Sortings>
               <Sorting>
                 <Direction>1</Direction>
-                <Function>1</Function>
+                <Function>12</Function>
               </Sorting>
             </Sortings>
             <History>
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="diary">/home/safjan/vimwiki/</Path>
-                  <Path Filename="2019">/home/safjan/vimwiki/diary/</Path>
-                  <Path Filename="..">/home/safjan/vimwiki/diary/2019/</Path>
-                  <Path Filename="">/home/safjan/Documents/</Path>
-                  <Path Filename="locate">/home/safjan/Zotero/</Path>
-                  <Path Filename="..">/home/safjan/Zotero/locate/</Path>
-                  <Path Filename="pipes">/home/safjan/Zotero/</Path>
-                  <Path Filename="..">/home/safjan/Zotero/pipes/</Path>
-                  <Path Filename="pipes">/home/safjan/Zotero/</Path>
-                  <Path Filename="..">/home/safjan/Zotero/pipes/</Path>
-                  <Path Filename="storage">/home/safjan/Zotero/</Path>
-                  <Path Filename="2PVT2BC8">/home/safjan/Zotero/storage/</Path>
-                  <Path Filename="..">/home/safjan/Zotero/storage/2PVT2BC8/</Path>
-                  <Path Filename="3GGWXCZR">/home/safjan/Zotero/storage/</Path>
-                  <Path Filename="..">/home/safjan/Zotero/storage/3GGWXCZR/</Path>
-                  <Path Filename="3LRUB9NN">/home/safjan/Zotero/storage/</Path>
-                  <Path Filename="..">/home/safjan/Zotero/storage/3LRUB9NN/</Path>
-                  <Path Filename="GQGP97LW">/home/safjan/Zotero/storage/</Path>
-                  <Path Filename="..">/home/safjan/Zotero/storage/GQGP97LW/</Path>
-                  <Path Filename="..">/home/safjan/Zotero/storage/</Path>
-                  <Path Filename="..">/home/safjan/Zotero/</Path>
-                  <Path Filename="..">/home/safjan/</Path>
-                  <Path Filename="papers">/home/safjan/Documents/</Path>
-                  <Path Filename="ML_AI">/home/safjan/Documents/papers/</Path>
-                  <Path Filename="08109094.pdf">/home/safjan/Documents/papers/ML_AI/</Path>
-                  <Path Filename="ML_AI">/home/safjan/Documents/papers/</Path>
-                  <Path Filename="10.1.1.11.2062.pdf">/home/safjan/Documents/papers/ML_AI/</Path>
-                  <Path Filename="ML_AI">/home/safjan/Documents/papers/</Path>
-                  <Path Filename="1811.09878v1.pdf">/home/safjan/Documents/papers/ML_AI/</Path>
-                  <Path Filename="tmp">/home/safjan/Documents/papers/</Path>
-                  <Path Filename="..">/home/safjan/Documents/papers/tmp/</Path>
-                  <Path Filename="..">/home/safjan/Documents/papers/</Path>
-                  <Path Filename="..">/home/safjan/Documents/</Path>
-                  <Path Filename="..">/home/safjan/</Path>
-                  <Path Filename="safjan">/home/</Path>
-                  <Path Filename="Dropbox">/home/safjan/</Path>
-                  <Path Filename="feedbro-rules.json">/home/safjan/Dropbox/</Path>
-                  <Path Filename="..">/home/safjan/Documents/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/</Path>
-                  <Path Filename="_pro">/run/media/safjan/38A6-2D03/Documents/</Path>
-                  <Path Filename="Downloads">/run/media/safjan/38A6-2D03/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Downloads/</Path>
-                  <Path Filename="notes">/run/media/safjan/38A6-2D03/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/notes/</Path>
-                  <Path Filename="Pictures">/run/media/safjan/38A6-2D03/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Pictures/</Path>
-                  <Path Filename="System Volume Information">/run/media/safjan/38A6-2D03/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/System Volume Information/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/</Path>
-                  <Path Filename="..">/home/safjan/Documents/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -656,74 +396,93 @@
             </ColumnsView>
           </FileView>
           <Options>2</Options>
-          <LockPath>/home/safjan/Documents/</LockPath>
-          <Title>Documents</Title>
+          <LockPath>/home/safjan/dotfiles/restore/</LockPath>
+          <Title>restore</Title>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/safjan/Documents/_priv/ThaiViet/</LockPath>
+          <Title>ThaiViet</Title>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/safjan/</LockPath>
+          <Title>safjan</Title>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/safjan/projects/nokia/prolog/</LockPath>
+          <Title>prolog</Title>
         </Tab>
       </Left>
       <Right>
-        <ActiveTab>1</ActiveTab>
+        <ActiveTab>0</ActiveTab>
         <Tab>
           <FileView Type="columns">
             <Sortings>
               <Sorting>
                 <Direction>1</Direction>
-                <Function>1</Function>
+                <Function>12</Function>
               </Sorting>
             </Sortings>
             <History>
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="overview">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/ext/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/ext/overview/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/ext/</Path>
-                  <Path Filename="ext">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/ext/</Path>
-                  <Path Filename="1702.00832.pdf">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/</Path>
-                  <Path Filename="filecluster">/home/safjan/projects/</Path>
-                  <Path Filename="Documents">/home/safjan/</Path>
-                  <Path Filename="papers">/home/safjan/Documents/</Path>
-                  <Path Filename="ML_AI">/home/safjan/Documents/papers/</Path>
-                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/</Path>
-                  <Path Filename="pronto_eda">/home/safjan/projects/</Path>
-                  <Path Filename="Documents">/home/safjan/</Path>
-                  <Path Filename="papers">/home/safjan/Documents/</Path>
-                  <Path Filename="ML_AI">/home/safjan/Documents/papers/</Path>
-                  <Path Filename="distributed">/home/safjan/Documents/papers/ML_AI/</Path>
-                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/distributed/</Path>
-                  <Path Filename="distributed_training">/home/safjan/Documents/papers/ML_AI/</Path>
-                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/distributed_training/</Path>
-                  <Path Filename="overview">/home/safjan/Documents/papers/ML_AI/</Path>
-                  <Path Filename="sel">/home/safjan/Documents/papers/ML_AI/overview/</Path>
-                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/overview/sel/</Path>
-                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/overview/</Path>
-                  <Path Filename="overview">/home/safjan/Documents/papers/ML_AI/</Path>
-                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/overview/</Path>
-                  <Path Filename="distributed">/home/safjan/Documents/papers/ML_AI/</Path>
-                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/distributed/</Path>
-                  <Path Filename="distributed_training">/home/safjan/Documents/papers/ML_AI/</Path>
-                  <Path Filename="..">/home/safjan/Documents/papers/ML_AI/distributed_training/</Path>
-                  <Path Filename="Towards an Intelligent Edge - Wireless Communication Meets Machine Learning.pdf">/home/safjan/Documents/papers/ML_AI/</Path>
-                  <Path Filename="_best">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/</Path>
-                  <Path Filename="Light-BG">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/_best/</Path>
-                  <Path Filename="Robotics">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/_best/Light-BG/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/_best/Light-BG/Robotics/</Path>
-                  <Path Filename="_General AWS">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/_best/Light-BG/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/_best/Light-BG/_General AWS/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/_best/Light-BG/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/_best/</Path>
-                  <Path Filename="we_share">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/we_share/</Path>
-                  <Path Filename="1702.00832.pdf">/run/media/safjan/38A6-2D03/Documents/_pro/ML_AI_DL/</Path>
-                  <Path Filename="..">/home/safjan/projects/</Path>
-                  <Path Filename="vimwiki">/home/safjan/</Path>
-                  <Path Filename="diary">/home/safjan/vimwiki/</Path>
-                  <Path Filename="2019-03-04_m.md">/home/safjan/vimwiki/diary/</Path>
-                  <Path Filename="bulk">/home/</Path>
-                  <Path Filename="deeplearning.ai">/home/bulk/</Path>
-                  <Path Filename="C3">/home/bulk/deeplearning.ai/</Path>
-                  <Path Filename="W1L07_-_When_to_Change_Dev_Test_Sets.mp4">/home/bulk/deeplearning.ai/C3/</Path>
-                  <Path Filename="">/home/safjan/projects/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -732,8 +491,8 @@
             </ColumnsView>
           </FileView>
           <Options>2</Options>
-          <LockPath>/home/safjan/projects/</LockPath>
-          <Title>projects</Title>
+          <LockPath>/home/safjan/Downloads/</LockPath>
+          <Title>Downloads</Title>
         </Tab>
         <Tab>
           <FileView Type="columns">
@@ -747,56 +506,6 @@
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Downloads/global-slavery-index/</Path>
-                  <Path Filename="old_dl">/run/media/safjan/38A6-2D03/Downloads/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Downloads/old_dl/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Downloads/</Path>
-                  <Path Filename="Dropbox">/run/media/safjan/38A6-2D03/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Dropbox/</Path>
-                  <Path Filename="Dropbox">/run/media/safjan/38A6-2D03/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Dropbox/</Path>
-                  <Path Filename="Pictures">/run/media/safjan/38A6-2D03/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Pictures/</Path>
-                  <Path Filename="Documents">/run/media/safjan/38A6-2D03/</Path>
-                  <Path Filename="_pro">/run/media/safjan/38A6-2D03/Documents/</Path>
-                  <Path Filename="career">/run/media/safjan/38A6-2D03/Documents/_pro/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/career/</Path>
-                  <Path Filename="inbox">/run/media/safjan/38A6-2D03/Documents/_pro/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/inbox/</Path>
-                  <Path Filename="career">/run/media/safjan/38A6-2D03/Documents/_pro/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/career/</Path>
-                  <Path Filename="..">/run/media/safjan/38A6-2D03/Documents/_pro/</Path>
-                  <Path Filename="Metrics _ Kaggle_files">/home/safjan/Downloads/</Path>
-                  <Path Filename="Zotero">/home/safjan/</Path>
-                  <Path Filename="storage">/home/safjan/Zotero/</Path>
-                  <Path Filename="..">/home/safjan/Zotero/storage/</Path>
-                  <Path Filename="zotero-storage-scanner-5.0.8.xpi">/home/safjan/Downloads/</Path>
-                  <Path Filename="Downloads">/home/safjan/</Path>
-                  <Path Filename="feedbro-subscriptions-20190305-215051.opml">/home/safjan/Downloads/</Path>
-                  <Path Filename="Documents">/home/safjan/</Path>
-                  <Path Filename="_pro">/home/safjan/Documents/</Path>
-                  <Path Filename="Downloads">/home/safjan/</Path>
-                  <Path Filename="iso">/home/safjan/Downloads/</Path>
-                  <Path Filename="..">/home/safjan/Downloads/iso/</Path>
-                  <Path Filename="dotfiles">/home/safjan/</Path>
-                  <Path Filename="restore">/home/safjan/dotfiles/</Path>
-                  <Path Filename="pkg-from-the-list.sh">/home/safjan/dotfiles/restore/</Path>
-                  <Path Filename="nok_bak.sh">/home/safjan/</Path>
-                  <Path Filename="_Datascientist">/home/safjan/Downloads/</Path>
-                  <Path Filename="..">/home/safjan/Downloads/_Datascientist/</Path>
-                  <Path Filename="iso">/home/safjan/Downloads/</Path>
-                  <Path Filename="..">/home/safjan/Downloads/iso/</Path>
-                  <Path Filename="new">/home/safjan/Downloads/</Path>
-                  <Path Filename="..">/home/safjan/Downloads/new/</Path>
-                  <Path Filename="trainings">/home/safjan/Downloads/</Path>
-                  <Path Filename="..">/home/safjan/Downloads/trainings/</Path>
-                  <Path Filename="rufus_files">/home/safjan/Downloads/</Path>
-                  <Path Filename="..">/home/safjan/Downloads/rufus_files/</Path>
-                  <Path Filename="old_dl">/home/safjan/Downloads/</Path>
-                  <Path Filename="..">/home/safjan/Downloads/old_dl/</Path>
-                  <Path Filename="books">/home/safjan/Downloads/</Path>
-                  <Path Filename="..">/home/safjan/Downloads/books/</Path>
-                  <Path Filename="..">/home/safjan/Downloads/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -805,8 +514,8 @@
             </ColumnsView>
           </FileView>
           <Options>2</Options>
-          <LockPath>/home/safjan/Downloads/</LockPath>
-          <Title>Downloads</Title>
+          <LockPath>/home/safjan/projects/</LockPath>
+          <Title>projects</Title>
         </Tab>
       </Right>
     </OpenedTabs>
@@ -818,11 +527,11 @@
   <MainWindow>
     <Position Save="True">
       <Maximized>True</Maximized>
-      <Splitter>50.4955659885237</Splitter>
-      <Left>0</Left>
-      <Top>25</Top>
+      <Splitter>47.678664580073</Splitter>
+      <Left>960</Left>
+      <Top>0</Top>
       <Width>958</Width>
-      <Height>1026</Height>
+      <Height>1078</Height>
       <PixelsPerInch>96</PixelsPerInch>
     </Position>
   </MainWindow>
@@ -831,11 +540,12 @@
   </Language>
   <Behaviours>
     <GoToRoot>False</GoToRoot>
-    <RunInTerminalStayOpenCmd>x-terminal-emulator</RunInTerminalStayOpenCmd>
+    <ActiveRight>False</ActiveRight>
+    <RunInTerminalStayOpenCmd>terminator</RunInTerminalStayOpenCmd>
     <RunInTerminalStayOpenParams>-e sh -c '{command}; echo -n Press ENTER to exit... ; read a'</RunInTerminalStayOpenParams>
-    <RunInTerminalCloseCmd>x-terminal-emulator</RunInTerminalCloseCmd>
+    <RunInTerminalCloseCmd>terminator</RunInTerminalCloseCmd>
     <RunInTerminalCloseParams>-e sh -c {command}</RunInTerminalCloseParams>
-    <JustRunTerminal>x-terminal-emulator</JustRunTerminal>
+    <JustRunTerminal>terminator</JustRunTerminal>
     <JustRunTermParams/>
     <OnlyOneAppInstance>False</OnlyOneAppInstance>
     <LynxLike>True</LynxLike>
@@ -1080,6 +790,9 @@
     <InitiallyClearFileMask>True</InitiallyClearFileMask>
     <NewSearchClearFiltersAction>0</NewSearchClearFiltersAction>
     <ShowMenuBarInFindFiles>True</ShowMenuBarInFindFiles>
+    <Extract>
+      <Overwrite>False</Overwrite>
+    </Extract>
   </FileOperations>
   <Log Enabled="False" LogFileWithDateInName="False">
     <FileName>%DC_CONFIG_PATH%/doublecmd.log</FileName>
@@ -1114,6 +827,7 @@
     <ShowOnlyValidEnv>True</ShowOnlyValidEnv>
     <WhereToAddNewHotDir>2</WhereToAddNewHotDir>
     <DblClickToParent>False</DblClickToParent>
+    <InplaceRenameButton>False</InplaceRenameButton>
   </Miscellaneous>
   <Thumbnails Save="True">
     <Width>128</Width>
@@ -1183,7 +897,7 @@
     <FilterDuplicates>True</FilterDuplicates>
     <FilterSingles>True</FilterSingles>
     <FileMask>*</FileMask>
-    <Asymmetric>False</Asymmetric>
+    <Asymmetric Save="False">False</Asymmetric>
   </SyncDirs>
   <InternalAssociations>
     <OfferToAddNewFileType>True</OfferToAddNewFileType>
@@ -1227,7 +941,7 @@
         <Column>
           <Title>Name</Title>
           <FuncString>[DC().GETFILENAMENOEXT{}]</FuncString>
-          <Width>581</Width>
+          <Width>556</Width>
           <Align>0</Align>
           <Font>
             <Name>Sans</Name>
