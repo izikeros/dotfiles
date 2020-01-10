@@ -381,6 +381,11 @@
         <command>pavucontrol</command>
       </action>
     </keybind>
+    <keybind key="W-r">
+      <action name="Autorandr">
+        <command>autorandr</command>
+      </action>
+    </keybind>
     <keybind key="W-s">
       <action name="Execute">
         <command>skippy-xd</command>
