@@ -20,33 +20,3 @@ monitor =
 modules-left   = jgmenu ;workspaces
 modules-center = window_switch redshift pkg
 modules-right  = temperature coreuse filesystem info-trash isrunning-dropbox memory redsocks-status vpn-vpnc-status network wifi volume battery clock
-
-
-;=====================================================
-;     i3 Bars
-;=====================================================
-
-[bar/i3-bar]
-inherit = bar/master
-
-; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor =
-
-modules-left   = jgmenu i3 menu
-modules-center = clock
-modules-right  = coreuse temperature memory pkg network volume
-
-
-;=====================================================
-;     Bspwm Bars
-;=====================================================
-
-[bar/bspwm-bar]
-inherit = bar/master
-
-; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor =
-
-modules-left   = bspwm menu
-modules-center = clock
-modules-right  = coreuse temperature memory pkg network volume
