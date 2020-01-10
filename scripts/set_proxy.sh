@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 ip route | grep -q '192.168.'
 
 greprc=$?
