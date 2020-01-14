@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# noproxy.sh - unset all proxy environmental variables
 unset http_proxy
 unset https_proxy
 unset ftp_proxy

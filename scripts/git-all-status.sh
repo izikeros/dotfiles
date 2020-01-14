@@ -1,4 +1,6 @@
 #!/bin/bash
+# git-all-status.sh - check status all git repos under given dir (recursive)
+
 list=`find ./ -name "*.git" -type d | sed 's/\.git$//g'`
 start_dir=`pwd`
 for d in $list; do

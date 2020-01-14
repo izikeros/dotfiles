@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
-#
-# count files in each dir in current directory
+# count-files.sh - count files in each dir in current directory
 #
 
 find . -maxdepth 1 -type d -print0 | while IFS= read -r -d '' i ; do

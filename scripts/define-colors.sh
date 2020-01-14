@@ -1,5 +1,5 @@
 #!/bin/bash
-# scriptname - description of script
+# define-colors.sh - define colors to be used inside bash script (source this content)
 
 #TODO: make snippet out of it
 
