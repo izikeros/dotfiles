@@ -199,7 +199,7 @@ fi
 # fuck - correct last command
 # eval "$(thefuck --alias)"
 
-~/dotfiles/scripts/runonce.sh neofetch
+#~/dotfiles/scripts/runonce.sh neofetch
 ~/dotfiles/scripts/runonce.sh ~/dotfiles/scripts/runonce-all.sh
 
 # --------------
@@ -251,3 +251,5 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
 #zprof # end of profiling
+
+source /home/safjan/.config/broot/launcher/bash/br
