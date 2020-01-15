@@ -1,25 +1,34 @@
 {
   "load_extensions": {
-    "hide_code/hide_code": true,
+    "hide_code/hide_code": false,
     "nbextensions_configurator/config_menu/main": true,
-    "contrib_nbextensions_help_item/main": true,
-    "spellchecker/main": true,
-    "code_prettify/isort": true,
-    "keyboard_shortcut_editor/main": true,
-    "snippets_menu/main": true,
+    "contrib_nbextensions_help_item/main": false,
+    "spellchecker/main": false,
+    "code_prettify/isort": false,
+    "keyboard_shortcut_editor/main": false,
+    "snippets_menu/main": false,
     "snippets/main": true,
-    "move_selected_cells/main": true,
-    "isortformatter": true,
-    "isortformatter/main": true,
+    "move_selected_cells/main": false,
+    "isortformatter": false,
+    "isortformatter/main": false,
     "toc2/main": true,
     "varInspector/main": false,
-    "scratchpad/main": true,
+    "scratchpad/main": false,
     "hide_input_all/main": true,
-    "hide_input/main": true,
+    "hide_input/main": false,
     "code_prettify/autopep8": true,
-    "code_prettify/code_prettify": true
+    "code_prettify/code_prettify": true,
+    "jupyter-js-widgets/extension": false,
+    "jupyter-vega/index": false,
+    "qgrid/extension": false,
+    "plotlywidget/extension": false,
+    "livemdpreview/livemdpreview": true,
+    "notify/notify": true
   },
   "toc2": {
     "number_sections": false
+  },
+  "notify": {
+    "sticky": false
   }
 }
