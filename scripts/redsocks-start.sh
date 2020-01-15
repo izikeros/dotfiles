@@ -2,5 +2,5 @@
 
 sudo systemctl stop redsocks.service
 sudo iptables --flush
-sudo iptables-restore < /etc/iptables/iptables.rules
+sudo cat /etc/iptables/iptables.rules | iptables-restore
 sudo systemctl start redsocks.service
