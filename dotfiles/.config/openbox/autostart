@@ -16,7 +16,7 @@ nitrogen --restore &
 #xfsettingsd &
 
 # fancy window switcher (rarely used, consider removal)
-skippy-xd --config ~/.config/skippy-xd/skippy-xd.rc --start-daemon &
+# skippy-xd --config ~/.config/skippy-xd/skippy-xd.rc --start-daemon &
 
 # start the panel (disabled, use W-F12 to toggle polybar)
 #al-polybar-session &
@@ -29,6 +29,9 @@ redshift -c ~/.redshiftgrc &
 
 # dropbox
 dropbox &
+
+# onedrive (any option to use?)
+onedrive
 
 # start drop-down terminal (Press F1 to pull down the window)
 tilda &
