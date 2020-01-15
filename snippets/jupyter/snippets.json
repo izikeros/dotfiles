@@ -160,6 +160,26 @@
                 "%autoreload",
                 "%matplotlib inline"
             ]
+        },
+        {
+            "name": "pd - turn of scientific notation",
+            "code": [
+                "pd.set_option('display.float_format', lambda x: '%.1f' % x)"
+            ]
+        },
+        {
+            "name": "pd - wide display of dataframe",
+            "code": [
+                "pd.set_option('display.max_columns', None)",
+                "pd.set_option('display.expand_frame_repr', False)",
+                "pd.set_option('max_colwidth', -1)"
+            ]
+        },
+        {
+            "name": "pd - limit precision",
+            "code": [
+                "pd.set_option('precision', 1)"
+            ]
         }
 
     ]
