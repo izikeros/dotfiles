@@ -175,17 +175,16 @@ export PROJECT_HOME=$HOME/projects
 #	source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 #fi
 
-if [[ -d ~/gocode ]]; then
-  export GOPATH=~/gocode
-fi
+[ -d ~/gocode ] && export GOPATH=~/gocode
 
 # The "command not found" hook
 # requires package database created by package pkgfile
 # $ pacman -S pkgfile
 # $ pkgfile -u
-if [ -f /usr/share/doc/pkgfile/command-not-found.zsh ]; then
-	source /usr/share/doc/pkgfile/command-not-found.zsh
-fi
+[ -f /usr/share/doc/pkgfile/command-not-found.zsh ] && source /usr/share/doc/pkgfile/command-not-found.zsh
+
+# Broot - file manager
+[ -f /home/safjan/.config/broot/launcher/bash/br ] && source /home/safjan/.config/broot/launcher/bash/br
 
 # fzf - fuzzy find in history
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -249,7 +248,4 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
 # perform check of shell script
 #shellcheck -x ~/.zshrc
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
-
 #zprof # end of profiling
-
-source /home/safjan/.config/broot/launcher/bash/br

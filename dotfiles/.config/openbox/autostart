@@ -25,7 +25,7 @@ nitrogen --restore &
 autorandr --change
 
 # redshift - color temperature adjustment
-redshift -c ~/.redshiftgrc &
+#redshift -c ~/.redshiftgrc &
 
 # dropbox
 dropbox &

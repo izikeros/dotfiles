@@ -4,7 +4,7 @@
     "nbextensions_configurator/config_menu/main": true,
     "contrib_nbextensions_help_item/main": false,
     "spellchecker/main": false,
-    "code_prettify/isort": false,
+    "code_prettify/isort": true,
     "keyboard_shortcut_editor/main": false,
     "snippets_menu/main": false,
     "snippets/main": true,
@@ -15,14 +15,14 @@
     "varInspector/main": false,
     "scratchpad/main": false,
     "hide_input_all/main": true,
-    "hide_input/main": false,
+    "hide_input/main": true,
     "code_prettify/autopep8": true,
     "code_prettify/code_prettify": true,
     "jupyter-js-widgets/extension": false,
     "jupyter-vega/index": false,
     "qgrid/extension": false,
     "plotlywidget/extension": false,
-    "livemdpreview/livemdpreview": true,
+    "livemdpreview/livemdpreview": false,
     "notify/notify": true
   },
   "toc2": {
@@ -30,5 +30,13 @@
   },
   "notify": {
     "sticky": false
+  },
+  "keys": {
+    "command": {
+      "bind": {
+        "alt-down": "jupyter-notebook:move-cell-down",
+        "alt-up": "jupyter-notebook:move-cell-up"
+      }
+    }
   }
 }

@@ -17,6 +17,8 @@ inherit = bar/master
 ; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
 monitor =
 
-modules-left   = jgmenu ;workspaces
-modules-center = window_switch redshift pkg
+modules-left   = jgmenu
+;workspaces
+modules-center = pkg
+; window_switch redshift
 modules-right  = temperature coreuse filesystem info-trash isrunning-dropbox memory redsocks-status vpn-vpnc-status network wifi volume power-consumption battery clock
