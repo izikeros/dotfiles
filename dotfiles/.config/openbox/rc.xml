@@ -358,7 +358,7 @@
     </keybind>
     <keybind key="W-p">
       <action name="Execute">
-        <command>charm</command>
+        <command>/opt/pycharm-professional/bin/charm</command>
       </action>
     </keybind>
     <keybind key="W-c">
