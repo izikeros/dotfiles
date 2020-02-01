@@ -25,13 +25,16 @@ nitrogen --restore &
 autorandr --change
 
 # redshift - color temperature adjustment
-#redshift -c ~/.redshiftgrc &
+redshift -c ~/.redshiftgrc &
 
 # dropbox
 dropbox &
 
 # onedrive (any option to use?)
-onedrive
+#onedrive
 
 # start drop-down terminal (Press F1 to pull down the window)
 tilda &
+
+# start Safe Eyes that protects your eyes from eye strain
+safeeyes &
