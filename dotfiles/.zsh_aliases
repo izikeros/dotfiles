@@ -4,9 +4,11 @@
 #
 # vi ft=shell
 
-# requirements: pydf - for df replacement, sar - for load
+# requirements: pydf - for df replacement, sar - for load, expac -for
+# pacman-bigpkg
 
 # Global aliases (expanded in zsh with space)
+VIM=nvim
 alias -g G='| grep'
 alias -g W='| wc -l'
 alias -g H='| head'
@@ -97,29 +99,29 @@ alias code="code --disable-gpu"
 
 # private knowledge base and diary
 WIKI_HOME="$HOME/vimwiki"
-alias td="vim $WIKI_HOME/5-things-TODO.md"
+alias td="$VIM $WIKI_HOME/5-things-TODO.md"
 # see also vimwiki related functions
-
+alias vim=$VIM
 # shortcuts to edit files (mostly config files)
-alias vz="vim $HOME/.zshrc"
-alias vzs="vim $HOME/.zgen-setup"
-alias vv="vim $HOME/.vimrc"
-alias va="vim $HOME/.zsh_aliases"
-alias vf="vim $HOME/.zsh_functions"
-alias vc="vim $HOME/.config"
-alias vs="vim $HOME/.ssh/config"
-alias vg="vim $HOME/.gitconfig"
-alias vgg="vim ./.git/config"
-alias ve="vim $HOME/env_and_path.sh"
+alias vz="$VIM $HOME/.zshrc"
+alias vzs="$VIM $HOME/.zgen-setup"
+alias vv="$VIM $HOME/.vimrc"
+alias va="$VIM $HOME/.zsh_aliases"
+alias vf="$VIM $HOME/.zsh_functions"
+alias vc="$VIM $HOME/.config"
+alias vs="$VIM $HOME/.ssh/config"
+alias vg="$VIM $HOME/.gitconfig"
+alias vgg="$VIM ./.git/config"
+alias ve="$VIM $HOME/env_and_path.sh"
 
 # shortcuts for 'restore system'
-alias voa="vim $HOME/.config/openbox/autostart"
-alias vor="vim $HOME/.config/openbox/rc.xml"
-alias vd="vim $HOME/dotfiles/"
-alias vx="vim $HOME/.xbindkeysrc"
+alias voa="$VIM $HOME/.config/openbox/autostart"
+alias vor="$VIM $HOME/.config/openbox/rc.xml"
+alias vd="$VIM $HOME/dotfiles/"
+alias vx="$VIM $HOME/.xbindkeysrc"
 
-# list vim key mappings
-alias vkeys="grep --color=never -e 'map' $HOME/.vimrc"
+# list $VIM key mappings
+alias vkeys="grep --color=never -e 'map' $HOME/.$VIMrc"
 
 if [[ -x /usr/bin/subl3 ]]; then
   alias s-z="$S $HOME/.zshrc"
@@ -204,7 +206,7 @@ alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 
-alias v='f -e vim' 		# quick opening files with vim
+alias v='f -e $VIM' 		# quick opening files with vim
 alias m='f -e mplayer' 	# quick opening files with mplayer
 alias o='a -e xdg-open' # quick opening files with xdg-open
 
@@ -540,7 +542,7 @@ alias ta="tmux a"
 alias hwinfo="dmidecode - system"
 alias c='clear'
 
-alias vh='sudo vim /etc/hosts'
+alias vh='sudo $VIM /etc/hosts'
 alias t='diary'
 alias tis='tig status'
 
