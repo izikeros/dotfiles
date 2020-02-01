@@ -1,7 +1,7 @@
-;---- orig
+;---- orig (day 5500-6000, night: 4500)
 ;temps=5300:3600
 ;latlon=0.000000:0.000000
-;speed=1000
+;speed=10
 ;method=Auto
 ;map=177.00|100.00;3.00|100.00;-6.00|0.00;-174.00|0.00;
 ;-----/orig
@@ -9,9 +9,8 @@
 ; Global settings for redshift
 [redshift]
 ; Set the day and night screen temperatures
-; before temps 3500:3000
-temp-day=5300
-temp-night=3600
+temp-day=6000
+temp-night=4000
 
 ; Enable/Disable a smooth transition between day and night
 ; 0 will cause a direct change from day to night screen temperature.
@@ -26,12 +25,12 @@ brightness=1.0
 ;brightness-night=0.4
 ; Set the screen gamma (for all colors, or each color channel
 ; individually)
-;gamma=0.9
+gamma=1.0
 ;gamma=0.8:0.7:0.8
 ; This can also be set individually for day and night since
 ; version 1.10.
-gamma-day=0.8:0.7:0.8
-gamma-night=0.6
+;gamma-day=0.8:0.7:0.8
+;gamma-night=0.6
 
 ; Set the location-provider: 'geoclue', 'geoclue2', 'manual'
 ; type 'redshift -l list' to see possible values.
@@ -63,3 +62,6 @@ lon=17.03
 ; to adjust _all_ screens.
 ;[randr]
 ;screen=1
+
+; Disable or enable fading between color temperatures when Redshift starts or stops
+;fade=0
