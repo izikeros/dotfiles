@@ -112,7 +112,6 @@ alias vc="$VIM $HOME/.config"
 alias vs="$VIM $HOME/.ssh/config"
 alias vg="$VIM $HOME/.gitconfig"
 alias vgg="$VIM ./.git/config"
-alias ve="$VIM $HOME/env_and_path.sh"
 
 # shortcuts for 'restore system'
 alias voa="$VIM $HOME/.config/openbox/autostart"
@@ -128,6 +127,8 @@ if [[ -x /usr/bin/subl3 ]]; then
   alias s-zs="$S $HOME/.zgen-setup"
   alias sv="$S $HOME/.vimrc"
   alias sa="$S $HOME/.zsh_aliases"
+  alias sor="$S $HOME/.config/openbox/rc.xml"
+  alias soa="$S $HOME/.config/openbox/autostart"
 fi
 
 #--------------------------------------------
