@@ -178,6 +178,7 @@
   </dock>
   <keyboard>
     <chainQuitKey/>
+    <!-- Go to desktop actions -->
     <keybind key="W-1">
       <action name="GoToDesktop">
         <to>1</to>
@@ -198,26 +199,9 @@
         <to>4</to>
       </action>
     </keybind>
-    <keybind key="S-W-1">
-      <action name="SendToDesktop">
-        <desktop>1</desktop>
-      </action>
-    </keybind>
-    <keybind key="S-W-2">
-      <action name="SendToDesktop">
-        <desktop>2</desktop>
-      </action>
-    </keybind>
-    <keybind key="S-W-3">
-      <action name="SendToDesktop">
-        <desktop>3</desktop>
-      </action>
-    </keybind>
-    <keybind key="S-W-4">
-      <action name="SendToDesktop">
-        <desktop>4</desktop>
-      </action>
-    </keybind>
+
+
+    <!-- Switching between windows -->
     <keybind key="A-Tab">
       <action name="NextWindow">
         <allDesktops>yes</allDesktops>
@@ -240,24 +224,28 @@
         </finalactions>
       </action>
     </keybind>
-    <!-- Duplicated
-    <keybind key="W-Left">
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeVert"/>
-      <action name="MoveResizeTo">
-        <width>50%</width>
+
+    <!-- Send to desktop actions -->
+    <keybind key="S-W-1">
+      <action name="SendToDesktop">
+        <desktop>1</desktop>
       </action>
-      <action name="MoveToEdgeWest"/>
     </keybind>
-    <keybind key="W-Right">
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeVert"/>
-      <action name="MoveResizeTo">
-        <width>50%</width>
+    <keybind key="S-W-2">
+      <action name="SendToDesktop">
+        <desktop>2</desktop>
       </action>
-      <action name="MoveToEdgeEast"/>
-      </keybind>
-    -->
+    </keybind>
+    <keybind key="S-W-3">
+      <action name="SendToDesktop">
+        <desktop>3</desktop>
+      </action>
+    </keybind>
+    <keybind key="S-W-4">
+      <action name="SendToDesktop">
+        <desktop>4</desktop>
+      </action>
+    </keybind>
     <keybind key="S-W-Left">
       <action name="SendToDesktopLeft"/>
     </keybind>
@@ -270,11 +258,14 @@
     <keybind key="S-W-Down">
       <action name="SendToDesktopDown"/>
     </keybind>
+    <!-- minimize window -->
     <keybind key="A-Escape">
       <action name="Lower"/>
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </keybind>
+
+    <!-- Multimedia keyboard keys -->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
         <command>pamixer -i 2</command>
@@ -325,6 +316,8 @@
         <command>galculator</command>
       </action>
     </keybind>
+
+    <!-- Screenshots -->
     <keybind key="Print">
       <action name="Execute">
             <!-- <command>scrot 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'</command> -->
@@ -336,6 +329,8 @@
         <command>scrot 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'</command>
       </action>
     </keybind>
+
+    <!-- Launchers -->
     <keybind key="W-a">
       <action name="Execute">
         <command>exo-open --launch FileManager</command>
@@ -363,9 +358,17 @@
     </keybind>
     <keybind key="W-c">
       <action name="Execute">
-        <command>galculator</command>
+        <!-- <command>galculator</command> -->
+        <!-- "Requires 'libqalculate' installed" -->
+        <command>rofi_run -c</command>
       </action>
     </keybind>
+    <keybind key="C-S-v">
+      <action name="Execute">
+        <!-- Requires greenclip installed and greenclip service (see: Arch wiki) -->
+        <command>rofi_run -c</command>
+      </action>
+    </keybind>    
     <keybind key="W-f">
       <action name="Execute">
         <command>xfce4-settings-manager</command>
@@ -424,11 +427,14 @@
         <command>i3lock-fancy</command>
       </action>
     </keybind>
+    <!-- Toggle polybar -->
     <keybind key="W-F12">
       <action name="Execute">
         <command>toggle.sh -p</command>
       </action>
     </keybind>
+
+    <!-- Openbox -->
     <keybind key="W-S-Escape">
       <action name="Exit"/>
     </keybind>
@@ -489,6 +495,8 @@
       </action>
     </keybind>
     -->
+
+    <!--  Window location management-->
     <keybind key="W-KP_1">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
