@@ -4,11 +4,24 @@
 #
 # vi ft=shell
 
-# requirements: pydf - for df replacement, sar - for load, expac -for
-# pacman-bigpkg
+# requirements:
+# pydf - for df replacement,
+# sar - for load,
+# expac - for bigpkg
+# pacman - bigpkg
+# exa - for ls replacement
+# yay
+# restic for backups
+# reflector
+# tmux, ranger, typora, vscode, atom, yt-download
+# git guilt
 
 # Global aliases (expanded in zsh with space)
-VIM=nvim
+if [ "$(command -v nvim)" ]; then
+    VIM=nvim
+else
+    VIM=vim
+fi
 alias -g G='| grep'
 alias -g W='| wc -l'
 alias -g H='| head'
@@ -536,11 +549,11 @@ alias rr="ranger"
 alias wh="which"
 alias clr="clear"
 alias nsl="nslookup"
-
 alias ta="tmux a"
 
 # -t bios, system, baseboard, chassis, processor, memory, cache, connector, slot
-alias hwinfo="dmidecode - system"
+alias hardware-info="sudo dmidecode - system" # hardware, serial number
+alias monitors="cat /sys/class/drm/card*/edid | tr -cd '\11\12\15\40-\176'"
 alias c='clear'
 
 alias vh='sudo $VIM /etc/hosts'
