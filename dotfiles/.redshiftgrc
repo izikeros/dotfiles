@@ -10,7 +10,7 @@
 [redshift]
 ; Set the day and night screen temperatures
 temp-day=6000
-temp-night=4000
+temp-night=4500
 
 ; Enable/Disable a smooth transition between day and night
 ; 0 will cause a direct change from day to night screen temperature.
@@ -25,8 +25,8 @@ brightness=1.0
 ;brightness-night=0.4
 ; Set the screen gamma (for all colors, or each color channel
 ; individually)
-gamma=1.0
-;gamma=0.8:0.7:0.8
+;gamma=1.0
+gamma=0.8:0.8:0.8
 ; This can also be set individually for day and night since
 ; version 1.10.
 ;gamma-day=0.8:0.7:0.8

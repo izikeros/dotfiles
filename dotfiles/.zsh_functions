@@ -553,6 +553,9 @@ find . -type f -size +100c
 
 # find all directories excluding current (.)
 find . ! path . -type d !
+
+# use negative regex to combine two patterns on filename
+find ./ ! -regex  '.*\(deb\|vmdk\)$'
 EOF
 }
 
@@ -650,7 +653,6 @@ git push -f origin master
 
 EOF
 }
-#find . -type f -newermt "2019-09-01" \! -newermt "2019-09-30"
 function ys-popular(){
     ys $1 | grep -e + | sed -e 's/(+//' | awk -F' ' '{print $3", "$1}' | sort -nr | head -10
 }

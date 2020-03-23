@@ -3,27 +3,33 @@
     "hide_code/hide_code": false,
     "nbextensions_configurator/config_menu/main": true,
     "contrib_nbextensions_help_item/main": false,
-    "spellchecker/main": false,
+    "spellchecker/main": true,
     "code_prettify/isort": true,
     "keyboard_shortcut_editor/main": false,
     "snippets_menu/main": false,
     "snippets/main": true,
     "move_selected_cells/main": false,
-    "isortformatter": false,
+    "isortformatter": true,
     "isortformatter/main": false,
     "toc2/main": true,
     "varInspector/main": false,
     "scratchpad/main": false,
     "hide_input_all/main": true,
     "hide_input/main": true,
-    "code_prettify/autopep8": true,
+    "code_prettify/autopep8": false,
     "code_prettify/code_prettify": true,
-    "jupyter-js-widgets/extension": false,
+    "jupyter-js-widgets/extension": true,
     "jupyter-vega/index": false,
     "qgrid/extension": false,
     "plotlywidget/extension": false,
     "livemdpreview/livemdpreview": false,
-    "notify/notify": true
+    "notify/notify": false,
+    "table_beautifier/main": true,
+    "hinterland/hinterland": false,
+    "collapsible_headings/main": true,
+    "init_cell/main": true,
+    "printview/main": true,
+    "jupytext/index": true
   },
   "toc2": {
     "number_sections": false
@@ -38,5 +44,9 @@
         "alt-up": "jupyter-notebook:move-cell-up"
       }
     }
+  },
+  "Notebook": {
+    "Toolbar": true,
+    "Header": false
   }
 }

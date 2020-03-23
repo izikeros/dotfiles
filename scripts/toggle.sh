@@ -21,6 +21,8 @@ usage()
 
      -r,--redshift     Toggle redshift or daemon monitoring icon, can use toggle option
 
+     -s,--safeeyes     Toggle safeeyes or daemon monitoring icon, can use toggle option
+
      -f,--caffeine     Toggle caffeine or daemon monitoring icon, can use toggle option
 
  ADDITIONAL:
@@ -38,6 +40,8 @@ toggle_polybar()
         al-polybar-session
     fi
 }
+
+
 
 toggle_compton()
 {
@@ -59,6 +63,28 @@ toggle_compton()
         fi
         sleep 2
     done
+}
+
+toggle_safeeyes()
+{
+    # if [[ $(pgrep safeeyes) ]]; then
+    #     pkill polybar
+    # else
+    #     safeeyes&
+    # fi
+    if (( opt == 1 )); then
+        if [[ $(pgrep safeeyes) ]]; then
+            pkill safeeyes
+        else
+            safeeyes&
+        fi
+        exit 0
+    fi
+    icon=""
+    while true; do
+        echo $(safeeyes --status)
+        sleep 2
+    done   
 }
 
 toggle_redshift()
@@ -120,6 +146,10 @@ case $1 in
         [[ $2 =~ (-t|--toggle) ]] && opt=1
         toggle_redshift
         ;;
+    -s|--safeeyes)
+        [[ $2 =~ (-t|--toggle) ]] && opt=1
+        toggle_safeeyes
+        ;;        
     -f|--caffeine)
         [[ $2 =~ (-t|--toggle) ]] && opt=1
         toggle_caffeine

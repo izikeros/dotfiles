@@ -137,6 +137,8 @@ torben_fj_mode=false
 quick_search_mode=2
 select_flags=6
 
+simple_swap=false
+
 [DiffView]
 show_symbols=false
 show_numbers=false
