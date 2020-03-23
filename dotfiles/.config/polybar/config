@@ -19,6 +19,8 @@ monitor =
 
 modules-left   = jgmenu
 ;workspaces
-modules-center = pkg redshift-temp safeeyes-status
+modules-center = pkg safeeyes-status
 ; window_switch
+; safeeyes
+; redshift-temp
 modules-right  = temperature coreuse filesystem info-trash isrunning-dropbox memory redsocks-status vpn-vpnc-status network wifi volume power-consumption battery clock
