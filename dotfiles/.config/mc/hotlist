@@ -1,0 +1,3 @@
+ENTRY "prolog" URL "/home/safjan/projects/nokia/prolog"
+ENTRY "prolog/data/subsystems" URL "/home/safjan/projects/nokia/prolog/data/subsystems"
+ENTRY "batman: prolog/data/subsystems" URL "/sh://batman/home/safjan/src/prolog/data/subsystems"
