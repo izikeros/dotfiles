@@ -24,3 +24,21 @@ modules-center = pkg safeeyes-status
 ; safeeyes
 ; redshift-temp
 modules-right  = temperature coreuse filesystem info-trash isrunning-dropbox memory redsocks-status vpn-vpnc-status network wifi volume power-consumption battery clock
+
+[bar/bottom-bar]
+inherit = bar/master
+
+; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor =
+
+; Put the bar at the bottom of the screen
+bottom = true
+
+; Enables pseudo-transparency for the bar
+; If set to true the bar can be transparent without a compositor.
+pseudo-transparency = true
+
+modules-left   = 
+modules-center = 
+modules-right  = clock
+; vim:ft=dosini
