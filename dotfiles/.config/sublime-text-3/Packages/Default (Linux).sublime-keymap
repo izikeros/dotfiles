@@ -1,0 +1,15 @@
+[
+	// Insert datetime using default format text
+  { "keys": ["f5"],
+    "command": "insert_date" },
+	// Show the panel with pre-defined options from settings
+  { "keys": ["ctrl+f5"],
+    "command": "insert_date_panel" },
+   { "keys": ["ctrl+shift+m"],
+    "command": "markdown_preview",
+     "args": {"target": "browser", "parser":"markdown"} },
+    { 
+     "keys": ["alt+`"],
+     "command": "toggle_terminus_panel"
+    }
+]
