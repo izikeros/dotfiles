@@ -374,9 +374,18 @@ function bash_repeat(){ # repeat command n times: bash_repeat 3 whoami
   done
 }
 
-#function authme {	# send authentication key (id_dsa.pub) to remote host
-#  ssh "$1" 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_dsa.pub
-#}
+function authme {	# send predefined authentication key to remote host
+  ssh "$1" 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/gitlab_nokia_id_rsa.pub
+  echo "Public key added to authorized_keys on $1"
+  echo ""
+  echo "Add something like this to yours ~/.ssh/config:"
+  echo "Host zeus
+   Hostname 10.11.12.13
+   IdentityFile ~/.ssh/id_rsa
+   User john
+   PreferredAuthentications publickey
+   IdentitiesOnly yes"
+}
 
 function ws(){ # Create new file for script with execute flag, edit in vim
     touch "$1" && chmod +x "$1" && vim "$1"

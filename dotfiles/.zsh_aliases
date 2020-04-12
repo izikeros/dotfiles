@@ -26,12 +26,15 @@ alias -g G='| grep'
 alias -g W='| wc -l'
 alias -g H='| head'
 alias -g L='| less'
+alias -g F="find . -type f -name '*'"
+alias -g FE="find . -type f -name '*' -exec mv {} . \;"
 alias -g A="| awk -F',' '{print $1 $2}'"
+
 # sum the column of numbers
 alias -g AS="| awk '{s+=\$1} END {print s}'"
 alias -g X='| xargs -n1 -P$(nproc) -I{}'
-alias -g  F="find . -type f -name '*'"
-alias -g FE="find . -type f -name '*' -exec mv {} . \;"
+alias -g R='| rofi -i -dmenu'
+
 # pass output from find to xargs while displaying progress bar
 # pv: l-count lines instead of bytes, 0 - lines null-terminated, s - provide
 # size
@@ -176,7 +179,7 @@ alias au="sudo apt update"
 AUR_CMD="yay"
 # install package
 alias -g pi="sudo pacman -S"
-alias -g yi="$AUR_CMD -S"
+alias -g yi="$AUR_CMD -S --answerclean None --answerdiff None"
 
 # search for package
 alias -g pas="pacman -Ss"
@@ -201,7 +204,7 @@ alias pacman="pacman --color=always"
 
 # update
 alias -g pacu="sudo pacman -Syu --color=always"
-alias -g uy="$AUR_CMD -Syua"
+alias -g uy="$AUR_CMD -Syua --answerclean None --answerdiff None"
 alias pacman-bigpkg="expac -s '%-30n %m' | sort -rhk 2 | less"
 alias mirrors="sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose"
 alias y-upgradable="sudo $AUR_CMD -Pu"
@@ -570,6 +573,8 @@ if [ -f ~/.zsh_aliases.local ]; then
   source ~/.zsh_aliases.local
   echo ".zsh_aliases.local is deprecated. Make entries in ~/.zshrc.d instead."
 fi
+
 # count files in dir
 alias cf='ls | wc -l'
 alias rmrf='rm -rf'
+alias rrr="autorandr | rofi -i -dmenu | awk -F'(' '{print $1}' | xargs autorandr"
