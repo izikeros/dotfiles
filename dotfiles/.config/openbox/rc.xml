@@ -353,7 +353,7 @@
     </keybind>
     <keybind key="W-p">
       <action name="Execute">
-        <command>/opt/pycharm-professional/bin/charm</command>
+        <command>/opt/pycharm-professional/bin/pycharm.sh</command>
       </action>
     </keybind>
     <keybind key="W-c">
@@ -368,7 +368,7 @@
         <!-- Requires greenclip installed and greenclip service (see: Arch wiki) -->
         <command>rofi_run -c</command>
       </action>
-    </keybind>    
+    </keybind>
     <keybind key="W-f">
       <action name="Execute">
         <command>xfce4-settings-manager</command>
@@ -385,8 +385,8 @@
       </action>
     </keybind>
     <keybind key="W-r">
-      <action name="Autorandr">
-        <command>autorandr</command>
+      <action name="Execute">
+        <command>autorandr --change</command>
       </action>
     </keybind>
     <keybind key="W-s">
