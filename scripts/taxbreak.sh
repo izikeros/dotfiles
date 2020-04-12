@@ -6,7 +6,15 @@
 
 DATE=$(date  +%Y-%m)
 AUTHOR_NAME="Krystian Safjan"
-SINCE='1 month'
-OUT_FILE=$HOME/Documents/taxbreak/${DATE}_taxbreak.txt
-git log --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%cn]" --decorate --date=short --since="$SINCE" | grep "$AUTHOR_NAME" | grep "$DATE" > "$OUT_FILE"
-echo "Git log saved to: $OUT_FILE"
+
+#SINCE='1 month'
+
+FILES_ADDED=$HOME/Documents/taxbreak/${DATE}_taxbreak_added.txt
+# TODO: improve rule: .py to capture both \.py and \.ipynb
+git diff --name-status "@{$DATE-01}" "@{$DATE-28}" | grep "^A" | grep ".py" > $FILES_ADDED
+echo "Files added to git repo saved to: $FILES_ADDED"
+
+FILE_COMMITS=$HOME/Documents/taxbreak/${DATE}_taxbreak_commits.txt
+git log --pretty=format:"%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%cn]" --decorate --date=short --since="$DATE-01" | grep "$AUTHOR_NAME" | grep "$DATE" > "$FILE_COMMITS"
+echo "Commits to git repo saved to: $FILE_COMMITS"
+
