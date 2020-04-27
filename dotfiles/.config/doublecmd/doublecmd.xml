@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<doublecmd DCVersion="0.9.7 beta" ConfigVersion="10">
+<doublecmd DCVersion="0.9.8 beta" ConfigVersion="10">
   <Configuration Save="True" SortOrder="0" TreeType="0">
     <UseConfigInProgramDir>False</UseConfigInProgramDir>
     <FolderTabs Save="True"/>
@@ -9,7 +9,7 @@
       <Filter>
         <Name>hidden</Name>
         <FileMasks>.*</FileMasks>
-        <Color>7375813</Color>
+        <Color>10329501</Color>
         <Attributes/>
       </Filter>
       <Filter>
@@ -62,7 +62,7 @@
       </Filter>
       <Filter>
         <Name>Source code</Name>
-        <FileMasks>*.cpp;*.h;*.py;*.pl;*.c;*.m;*.cs</FileMasks>
+        <FileMasks>*.cpp;*.h;*.py;*.pl;*.c;*.m;*.cs;*.nim</FileMasks>
         <Color>8388736</Color>
         <Attributes/>
       </Filter>
@@ -70,12 +70,6 @@
         <Name>Video</Name>
         <FileMasks>*.mp4;*.avi;*.mpg;*.wmv;*.ifo;*.mpeg</FileMasks>
         <Color>8421376</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>Tab separated values</Name>
-        <FileMasks>*.mean;*.median;*.total</FileMasks>
-        <Color>8388608</Color>
         <Attributes/>
       </Filter>
       <Filter>
@@ -99,13 +93,31 @@
       <Filter>
         <Name>Notebooks</Name>
         <FileMasks>*.ipynb</FileMasks>
-        <Color>32768</Color>
+        <Color>3820916</Color>
         <Attributes/>
       </Filter>
       <Filter>
-        <Name>New</Name>
-        <FileMasks>*</FileMasks>
-        <Color>0</Color>
+        <Name>Log files</Name>
+        <FileMasks>*.log</FileMasks>
+        <Color>8421376</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>Structured data</Name>
+        <FileMasks>*.yml;*.yaml;*.json</FileMasks>
+        <Color>7375813</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>Archives</Name>
+        <FileMasks>*.zip;*.rar;*.gz;*.tar;*.7z</FileMasks>
+        <Color>5490888</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>Data</Name>
+        <FileMasks>*.pkl;*.npz</FileMasks>
+        <Color>255</Color>
         <Attributes/>
       </Filter>
     </FileFilters>
@@ -123,8 +135,8 @@
     </LogWindow>
     <UseFrameCursor>False</UseFrameCursor>
     <Foreground>-2147483640</Foreground>
-    <Background>15856113</Background>
-    <Background2>15263976</Background2>
+    <Background>13953264</Background>
+    <Background2>13426662</Background2>
     <Cursor>-2147483635</Cursor>
     <CursorText>-2147483634</CursorText>
     <Mark>255</Mark>
@@ -283,19 +295,20 @@
   <Tabs>
     <OpenedTabs>
       <Left>
-        <ActiveTab>0</ActiveTab>
+        <ActiveTab>1</ActiveTab>
         <Tab>
           <FileView Type="columns">
             <Sortings>
               <Sorting>
                 <Direction>1</Direction>
-                <Function>12</Function>
+                <Function>1</Function>
               </Sorting>
             </Sortings>
             <History>
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
+                  <Path>/home/safjan/projects/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -305,7 +318,7 @@
           </FileView>
           <Options>2</Options>
           <LockPath>/home/safjan/projects/</LockPath>
-          <Title>projects</Title>
+          <Title>proj</Title>
         </Tab>
         <Tab>
           <FileView Type="columns">
@@ -319,6 +332,7 @@
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
+                  <Path>/home/safjan/dotfiles/dotfiles/.config/polybar/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -328,7 +342,7 @@
           </FileView>
           <Options>2</Options>
           <LockPath>/home/safjan/dotfiles/</LockPath>
-          <Title>dotfiles</Title>
+          <Title>dot</Title>
         </Tab>
         <Tab>
           <FileView Type="columns">
@@ -342,52 +356,7 @@
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/dotfiles/.config/</LockPath>
-          <Title>.config</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/projects/_nokia/</LockPath>
-          <Title>_nokia</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
+                  <Path>/home/safjan/dotfiles/restore/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -403,37 +372,15 @@
           <FileView Type="columns">
             <Sortings>
               <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
+                <Direction>2</Direction>
+                <Function>7</Function>
               </Sorting>
             </Sortings>
             <History>
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/Documents/_priv/ThaiViet/</LockPath>
-          <Title>ThaiViet</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
+                  <Path>/home/safjan/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -457,6 +404,7 @@
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
+                  <Path>/home/safjan/projects/nokia/prolog/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -468,9 +416,30 @@
           <LockPath>/home/safjan/projects/nokia/prolog/</LockPath>
           <Title>prolog</Title>
         </Tab>
-      </Left>
-      <Right>
-        <ActiveTab>0</ActiveTab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>2</Direction>
+                <Function>7</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path>/home/safjan/Documents/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/safjan/Documents/</LockPath>
+          <Title>doc</Title>
+        </Tab>
         <Tab>
           <FileView Type="columns">
             <Sortings>
@@ -483,6 +452,34 @@
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
+                  <Path>/home/safjan/Documents/brain/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/safjan/Documents/brain/</LockPath>
+          <Title>brain</Title>
+        </Tab>
+      </Left>
+      <Right>
+        <ActiveTab>0</ActiveTab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>2</Direction>
+                <Function>2</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path>/home/safjan/polybar-scripts/polybar-scripts/system-usb-udev/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -498,14 +495,15 @@
           <FileView Type="columns">
             <Sortings>
               <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
+                <Direction>2</Direction>
+                <Function>7</Function>
               </Sorting>
             </Sortings>
             <History>
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
+                  <Path>/home/safjan/projects/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -517,6 +515,78 @@
           <LockPath>/home/safjan/projects/</LockPath>
           <Title>projects</Title>
         </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path>/home/safjan/projects/nokia/prolog/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/safjan/projects/nokia/prolog/</LockPath>
+          <Title>prolog</Title>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>2</Direction>
+                <Function>7</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path>/home/safjan/Pictures/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/safjan/Pictures/ThaiViet_prev/</LockPath>
+          <Title>ThaiViet_prev</Title>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path>/home/safjan/Documents/brain/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/safjan/Documents/brain/</LockPath>
+          <Title>brain</Title>
+        </Tab>
       </Right>
     </OpenedTabs>
     <Options>49937</Options>
@@ -525,7 +595,7 @@
     <ActionOnDoubleClick>2</ActionOnDoubleClick>
   </Tabs>
   <MainWindow>
-    <Position Save="True">
+    <Position Save="False">
       <Maximized>True</Maximized>
       <Splitter>47.678664580073</Splitter>
       <Left>960</Left>
@@ -799,10 +869,10 @@
     <Options>1023</Options>
   </Log>
   <History>
-    <SearchReplaceHistory Save="True"/>
-    <DirHistory Save="True"/>
-    <CmdLineHistory Save="True"/>
-    <FileMaskHistory Save="True"/>
+    <SearchReplaceHistory Save="False"/>
+    <DirHistory Save="False"/>
+    <CmdLineHistory Save="False"/>
+    <FileMaskHistory Save="False"/>
   </History>
   <QuickSearch>
     <MatchBeginning>True</MatchBeginning>
@@ -929,7 +999,7 @@
   <LastDoAnyCommand>cm_Refresh</LastDoAnyCommand>
   <SearchTemplates/>
   <ColumnsSets DefaultTitleHash="540805403">
-    <ColumnsSet UseFrameCursor="True">
+    <ColumnsSet UseFrameCursor="False">
       <Name>Default</Name>
       <CustomView>False</CustomView>
       <FileSystem>&lt;General&gt;</FileSystem>
@@ -941,7 +1011,7 @@
         <Column>
           <Title>Name</Title>
           <FuncString>[DC().GETFILENAMENOEXT{}]</FuncString>
-          <Width>556</Width>
+          <Width>617</Width>
           <Align>0</Align>
           <Font>
             <Name>Sans</Name>
@@ -950,8 +1020,8 @@
             <Quality>0</Quality>
           </Font>
           <TextColor>-2147483640</TextColor>
-          <Background>-2147483643</Background>
-          <Background2>-2147483643</Background2>
+          <Background>15856113</Background>
+          <Background2>15263976</Background2>
           <MarkColor>255</MarkColor>
           <CursorColor>-2147483635</CursorColor>
           <CursorText>-2147483634</CursorText>
@@ -973,8 +1043,8 @@
             <Quality>0</Quality>
           </Font>
           <TextColor>-2147483640</TextColor>
-          <Background>-2147483643</Background>
-          <Background2>-2147483643</Background2>
+          <Background>15856113</Background>
+          <Background2>15263976</Background2>
           <MarkColor>255</MarkColor>
           <CursorColor>-2147483635</CursorColor>
           <CursorText>-2147483634</CursorText>
@@ -996,8 +1066,8 @@
             <Quality>0</Quality>
           </Font>
           <TextColor>-2147483640</TextColor>
-          <Background>-2147483643</Background>
-          <Background2>-2147483643</Background2>
+          <Background>15856113</Background>
+          <Background2>15263976</Background2>
           <MarkColor>255</MarkColor>
           <CursorColor>-2147483635</CursorColor>
           <CursorText>-2147483634</CursorText>
@@ -1010,7 +1080,7 @@
         <Column>
           <Title>Date</Title>
           <FuncString>[DC().GETFILETIME{}]</FuncString>
-          <Width>140</Width>
+          <Width>184</Width>
           <Align>1</Align>
           <Font>
             <Name>Sans</Name>
@@ -1019,8 +1089,8 @@
             <Quality>0</Quality>
           </Font>
           <TextColor>-2147483640</TextColor>
-          <Background>-2147483643</Background>
-          <Background2>-2147483643</Background2>
+          <Background>15856113</Background>
+          <Background2>15263976</Background2>
           <MarkColor>255</MarkColor>
           <CursorColor>-2147483635</CursorColor>
           <CursorText>-2147483634</CursorText>
@@ -1042,8 +1112,8 @@
             <Quality>0</Quality>
           </Font>
           <TextColor>-2147483640</TextColor>
-          <Background>-2147483643</Background>
-          <Background2>-2147483643</Background2>
+          <Background>15856113</Background>
+          <Background2>15263976</Background2>
           <MarkColor>255</MarkColor>
           <CursorColor>-2147483635</CursorColor>
           <CursorText>-2147483634</CursorText>
