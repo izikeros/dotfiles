@@ -12,8 +12,8 @@ pass=${bldblu}*${txtrst}
 warn=${bldred}*${txtrst}
 ques=${bldblu}?${txtrst}
 
-if [ -d "$HOME"/projects/_priv ]; then
-    for dir in $HOME/projects/_priv/*/     # list directories in the form "/tmp/dirname/"
+if [ -d "$HOME"/projects/priv ]; then
+    for dir in $HOME/projects/priv/*/     # list directories in the form "/tmp/dirname/"
     do
         proj=${dir%*/}      # remove the trailing "/"
         proj=${proj##*/}	# everything after the final "/"
