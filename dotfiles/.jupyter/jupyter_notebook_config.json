@@ -3,7 +3,9 @@
     "nbserver_extensions": {
       "jupyter_nbextensions_configurator": true,
       "nteract_on_jupyter": false,
-      "jupyter_lsp": false
+      "jupyter_lsp": false,
+      "notebook_snippets": false,
+      "jupyterlab_code_formatter": true
     }
   }
 }
