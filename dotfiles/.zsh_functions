@@ -448,6 +448,21 @@ function learning() { #display info on learning progress
     grep -v "^#" ~/vimwiki/pro/learning.md | awk -F';' '$1==1 {sum+=$3;} END{print "reported:"sum/60"h";}'
 }
 
+function aac-audio-recode-file() { #recode audio track in video file to AAC fomat
+    pth=$(dirname $1)
+    fname=$(basename -- "$1")
+    ext=${fname##*.}
+    fname_no_last_ext=${fname%.*}
+    suffix="_aac"
+    new_name="$pth/$fname_no_last_ext$suffix.$ext"
+    ffmpeg -i $1 -acodec aac -vcodec copy $new_name
+}
+#TODO: aac-audio-recode-dir
+
+function get-vimeo-links() { #extract vimeo links from provided url
+    wget -q $1 -O - | grep -oEi '(https:\/\/player\.vimeo.com\/video\/[0-9]*)'
+}
+
 function h-bash-if(){
     # cat <<-  using <<- instead of << will ignore leading tabs or spaces
     cat <<- EOF

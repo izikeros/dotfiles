@@ -522,8 +522,16 @@ alias brightness="xrandr --output LVDS-1 --brightness $1"
 
 alias sz="source ~/.zshrc"
 
-alias ytmp3="youtube-dl --extract-audio --audio-format mp3 --prefer-ffmpeg"
-alias yd=youtube-dl
+# Extract audio to mp3 format, add thumbnail and metadata
+alias ytmp3='youtube-dl -o "%(title)s.%(ext)s" -f bestaudio --extract-audio --embed-thumbnail --add-metadata --audio-format mp3 --prefer-ffmpeg'
+
+# Extract best possible audio quality with original format without encoding
+alias yt-audio="youtube-dl -f bestaudio --extract-audio --embed-thumbnail --add-metadata"
+
+# Download video (or whole playlist of videos) with addional file for
+# description nad thumbnail. Force AAC audio encoding to for smartTV
+# compatibility
+alias ytdl="youtube-dl -f best --write-description --write-thumbnail --audio-format aac"
 
 alias boots="journalctl --list-boots"
 
