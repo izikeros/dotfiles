@@ -1,2 +1,2 @@
 #!/bin/bash
-sed -i '/<b>/,/<\/b>/d' "$HOME/dotfiles/.config/doublecmd/doublecmd.xml"
+sed -i '/<b>/,/<\/b>/d' "$HOME/dotfiles/dotfiles/.config/doublecmd/doublecmd.xml"
