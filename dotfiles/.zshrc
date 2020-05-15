@@ -249,5 +249,6 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
 #shellcheck -x ~/.zshrc
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 [ -d $HOME/.gem/ruby/2.7.0/bin ] && export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
+[ -d $HOME/.nimble/bin ] && export PATH=$PATH:$HOME/.nimble/bin
 [ -d $HOME/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
 #zprof # end of profiling
