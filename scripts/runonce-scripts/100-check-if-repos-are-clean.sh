@@ -19,9 +19,9 @@ else
 	list=$1
 fi
 
-st_clean="$bldwht[clean ]$txtrst"
-st_dirty="$bldred[dirty ]$txtrst"
-st_n_git="$bldorg[not repo]$txtrst"
+st_clean="$bldwht\[clean \]$txtrst"
+st_dirty="$bldred\[dirty \]$txtrst"
+st_n_git="$bldorg\[not repo\]$txtrst"
 
 for repo in "${list[@]}"
 do
