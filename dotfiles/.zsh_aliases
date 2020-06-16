@@ -524,13 +524,16 @@ alias sz="source ~/.zshrc"
 
 # Extract audio to mp3 format, add thumbnail and metadata
 alias ytmp3='youtube-dl -o "%(title)s.%(ext)s" -f bestaudio --extract-audio --embed-thumbnail --add-metadata --audio-format mp3 --prefer-ffmpeg'
-
+# Convert all mp4 files in current dir to mp4
+alias mp4-to-mp3-dir='for i in *.mp4; do ffmpeg -i "$i" -q:a 0 -map a "$(basename "${i/.mp4}").mp3"; done;'
+# Convert single mp4 file to mp3
+alias mp4-to-mp3='ffmpeg -q:a 0 -map a "$(basename "${i/.mp4}").mp3" -i'
 # Extract best possible audio quality with original format without encoding
 alias yt-audio="youtube-dl -f bestaudio --extract-audio --embed-thumbnail --add-metadata"
-
 # Download video (or whole playlist of videos) with addional file for
 # description nad thumbnail. Force AAC audio encoding to for smartTV
 # compatibility
+# add --write-sub for downloading subtitles
 alias ytdl="youtube-dl -f best --write-description --write-thumbnail --audio-format aac"
 
 alias boots="journalctl --list-boots"
