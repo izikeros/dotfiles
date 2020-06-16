@@ -48,5 +48,10 @@
   "Notebook": {
     "Toolbar": true,
     "Header": false
+  },
+  "Cell": {
+    "cm_config": {
+      "lineNumbers": true
+    }
   }
 }
