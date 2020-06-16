@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE crop_size><crop_size version="1.0">
+    <array>
+        <item label="" width="1" height="1" unit="ratio" ratio="0" visible="yes"/>
+        <item label="" width="2" height="1" unit="ratio" ratio="0" visible="yes"/>
+        <item label="" width="2" height="3" unit="ratio" ratio="0" visible="yes"/>
+        <item label="" width="3" height="2" unit="ratio" ratio="0" visible="yes"/>
+        <item label="" width="4" height="3" unit="ratio" ratio="0" visible="yes"/>
+        <item label="" width="7" height="5" unit="ratio" ratio="0" visible="yes"/>
+        <item label="" width="9" height="7" unit="ratio" ratio="0" visible="yes"/>
+        <item label="12:10 (1.2)" width="12" height="10" unit="ratio" ratio="0" visible="yes"/>
+        <item label="16:9 (1.78)" width="16" height="9" unit="ratio" ratio="0" visible="yes"/>
+        <item label="16:10 (1.6)" width="16" height="10" unit="ratio" ratio="0" visible="yes"/>
+        <item label="A4, A3, ... (1.41)" width="141" height="100" unit="ratio" ratio="1.41" visible="yes"/>
+        <item label="US Letter (1.29)" width="129" height="100" unit="ratio" ratio="1.29" visible="yes"/>
+        <item label="" width="9" height="5" unit="ratio" ratio="0" visible="yes"/>
+    </array>
+</crop_size>
