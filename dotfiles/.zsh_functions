@@ -417,6 +417,9 @@ function piadd(){ # pacman install and add to ext.txt packages list
     #mv /tmp/sorted $fname
 }
 
+function pacman-files(){ # list files installed with package (works for AUR too)
+    pacman -Qlq $1 | grep -v '/$' | xargs -r du -h | sort -h
+}
 #----------------
 # dedupe path
 #---------------
@@ -457,7 +460,9 @@ function aac-audio-recode-file() { #recode audio track in video file to AAC foma
     new_name="$pth/$fname_no_last_ext$suffix.$ext"
     ffmpeg -i $1 -acodec aac -vcodec copy $new_name
 }
-#TODO: aac-audio-recode-dir
+function aac-audio-recode-dir() { # run audio recoding in whole dir
+    for i in *; do aac-audio-recode-file $i; done
+}
 
 function get-vimeo-links() { #extract vimeo links from provided url
     wget -q $1 -O - | grep -oEi '(https:\/\/player\.vimeo.com\/video\/[0-9]*)'
