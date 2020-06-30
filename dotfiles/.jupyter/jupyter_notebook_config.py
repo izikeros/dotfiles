@@ -803,3 +803,5 @@
 #c.KernelSpecManager.whitelist = set()
 
 c.FileCheckpoints.checkpoint_dir = "/tmp/_ipynb_checkpoints"
+c.NotebookApp.contents_manager_class = "jupytext.TextFileContentsManager"
+
