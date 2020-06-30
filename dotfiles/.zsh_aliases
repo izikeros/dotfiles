@@ -572,6 +572,7 @@ alias c='clear'
 
 alias vh='sudo $VIM /etc/hosts'
 alias t='diary'
+alias diary-status='$HOME/dotfiles/scripts/runonce-scripts/400-check-if-diary-for-last_days.sh'
 alias tis='tig status'
 
 alias won="source /usr/bin/virtualenvwrapper.sh"
