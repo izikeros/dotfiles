@@ -19,11 +19,11 @@ monitor =
 
 modules-left   = jgmenu updates-arch-combined
 ;workspaces
-modules-center = pkg safeeyes-statuss
+modules-center = pkg  safeeyes-status
 ; window_switch
 ; safeeyes
 ; redshift-temp
-modules-right  = temperature coreuse filesystem info-trash isrunning-dropbox memory redsocks-status vpn-vpnc-status network wifi volume power-consumption system-usb-udev battery clock
+modules-right  = temperature coreuse filesystem info-trash isrunning-dropbox memory redsocks-status vpn-vpnc-status network wireless-network wifi volume power-consumption system-usb-udev battery clock
 
 [bar/bottom-bar]
 inherit = bar/master
