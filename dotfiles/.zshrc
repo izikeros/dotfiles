@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 #zmodload zsh/zprof # if using profiler remember to uncomment zprof in the end of file
 
 # # Zsh start up sequence:
@@ -237,6 +237,7 @@ POWERLEVEL9K_CONDA_FOREGROUND='green'
 POWERLEVEL9K_CONDA_BACKGROUND=none
 POWERLEVEL9K_SHOW_RULER=false
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
+POWERLEVEL9K_SHOW_CHANGESET=true # git hash
 # Left, right prompt segments
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh anaconda virtualenv dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
