@@ -40,3 +40,7 @@ tilda &
 safeeyes &
 
 xscreensaver &
+
+# save last boots info (journalctl store very limited number of boots)
+$HOME/dotfiles/scripts/save-boot-time.sh &
+
