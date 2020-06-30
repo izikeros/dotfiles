@@ -6,6 +6,8 @@
 "
 " Some nice tips after you get bit of experience:
 " https://hackernoon.com/learning-vim-what-i-wish-i-knew-b5dca186bef7
+" NOTE: leader is comma
+"
 " ================== PLUGINS =========================
 set nocompatible              " use vim improvements compared to vi
 filetype off                  " required
@@ -100,7 +102,7 @@ set bs=2 " make backspace behave like normal again
 " Rebind <Leader> key
 " I like to have it here becuase it is easier to reach than the default and
 " it is next to ``m`` and ``n`` which I use for navigating between tabs.
-let mapleader = ","             " change leaderkey to comma (,)
+let mapleader = ","             " change leader key to comma (,)
 
 noremap <C-n> :nohl<CR>         " Removes highlight of your last search
 vnoremap <C-n> :nohl<CR>
@@ -281,3 +283,5 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsListSnippets="<c-l>"
 
+" save a file without root permission with sudo
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
