@@ -72,17 +72,17 @@ load-starter-plugin-list() {
   zgen load unixorn/git-extra-commands
 
   # Add my bitbucket git helpers plugin
-  #zgen load unixorn/bitbucket-git-helpers.plugin.zsh
+  # zgen load unixorn/bitbucket-git-helpers.plugin.zsh
 
   # A collection of scripts that might be useful to sysadmins
-  zgen load skx/sysadmin-util
+  # zgen load skx/sysadmin-util
 
   # Adds aliases to open your current repo & branch on github.
-  #zgen load peterhurford/git-it-on.zsh
+  # zgen load peterhurford/git-it-on.zsh
 
   # Tom Limoncelli's tooling for storing private information (keys, etc)
   # in a repository securely by encrypting them with gnupg
-  #zgen load StackExchange/blackbox
+  # zgen load StackExchange/blackbox
 
   # Load some oh-my-zsh plugins
   #zgen oh-my-zsh plugins/pip    # pip autocompletions (seems not working correctly)
