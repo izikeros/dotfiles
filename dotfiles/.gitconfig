@@ -137,7 +137,6 @@
 	ss = stash save
 
 [merge]
-    tool = mymeld
     #tool = kdiff3
     conflictstyle = diff3
 
@@ -181,3 +180,13 @@
 	whitespace = red reverse
 [color]
 	ui = true
+[pull]
+	ff = only
+[difftool "nbdime"]
+	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+[difftool]
+	prompt = false
+[mergetool "nbdime"]
+	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[mergetool]
+	prompt = false
