@@ -191,10 +191,10 @@ alias -g p-info="pacman -Si"
 alias -g p-files="pacman -Fl"
 
 # statistics over all packages
-alias -g y-stats="$AUR_CMD" -P --stats
+alias y-stats="$AUR_CMD -P --stats"
 
 # clear yay cache
-alias yay-cache-clear=$AUR_CMD -Sc --aur
+alias yay-cache-clear="$AUR_CMD -Sc --aur"
 
 # remove (uninstall) package
 alias -g prm="sudo pacman -Rns"
@@ -491,6 +491,8 @@ alias ssh_no_hostchecks="ssh -A -o UserKnownHostsFile=/dev/null -o GlobalKnownHo
 #--------------------------------------------
 alias wilabsvpn_up="nmcli connection up \"wilabs (openvpn)\""
 
+alias gramps="LANGUAGE=pl_PL:pl LANG=pl_PL.UTF-8 gramps"
+
 alias hnfav="firefox https://news.ycombinator.com/favorites\\?id\=izik"
 
 alias cx="chmod +x"
@@ -590,3 +592,4 @@ fi
 alias cf='ls | wc -l'
 alias rmrf='rm -rf'
 alias rrr="autorandr | rofi -i -dmenu | awk -F'(' '{print $1}' | xargs autorandr"
+alias flake8-docstrings="flake8  --select D100, D101, D104, D107"
