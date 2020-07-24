@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 FILE=$HOME/boots.log
 if [[ -e $FILE ]]; then
-    journalctl --list-boots | sed 's/^\s\+//' | cut -d ' ' -f2- >> FILE
+    journalctl --list-boots | sed 's/^\s\+//' | cut -d ' ' -f2- >> $FILE
     echo "Append to $FILE"
 else
     journalctl --list-boots | sed 's/^\s\+//' | cut -d ' ' -f2- > $FILE
