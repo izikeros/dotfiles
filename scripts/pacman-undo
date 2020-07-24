@@ -16,6 +16,8 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 ###
 
+# https://github.com/giddie/bits-n-pieces/tree/master/pacman-undo
+
 require 'time'
 require 'tempfile'
 
