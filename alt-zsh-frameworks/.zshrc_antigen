@@ -34,17 +34,6 @@ export PATH=$HOME/bin:$PATH
 #setopt HIST_IGNORE_SPACE HIST_REDUCE_BLANKS HIST_SAVE_NO_DUPS
 #setopt INC_APPEND_HISTORY SHARE_HISTORY
 
-# Alias
-#alias l='ls'
-#alias la='ls -A'
-#alias ll='ls -lA'
-#alias ls='ls --color=auto'
-#alias update='sudo pacman -Syyu'
-#alias pacman='sudo pacman --color auto'
-#alias merge='xrdb -merge ~/.Xresources'
-#alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-#alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
-
 #neofetch
 source /home/izik/dotfiles/.aliases.sh
 #source /home/izik/dotfiles/functions.sh
