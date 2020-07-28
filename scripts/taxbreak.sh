@@ -5,16 +5,15 @@
 #
 
 DATE=$(date  +%Y-%m)
-TODAY=$(date -d "$1days 13:00" +%Y-%m-%d)
-echo $TODAY
+TOMORROW=$(date -d "$1days 13:00" +%Y-%m-%d)
+echo $TOMORROW
 AUTHOR_NAME="Krystian Safjan"
 
 #SINCE='1 month'
 
 FILES_ADDED=$HOME/Documents/taxbreak/${DATE}_taxbreak_added.txt
 # TODO: improve rule: .py to capture both \.py and \.ipynb
-#git diff --name-status "@{$DATE-01}" "@{$TODAY}" | grep "^A" | grep ".py" > $FILES_ADDED
-git whatchanged --since ${DATE-01} --until ${TODAY} --oneline --name-status --pretty=format: | sort | uniq | grep ^A > $FILES_ADDED
+git whatchanged --since ${DATE-01} --until ${TOMORROW} --oneline --name-status --pretty=format: | sort | uniq | grep ^A > $FILES_ADDED
 echo "Files added to git repo saved to: $FILES_ADDED"
 
 FILE_COMMITS=$HOME/Documents/taxbreak/${DATE}_taxbreak_commits.txt
