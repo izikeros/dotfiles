@@ -19,6 +19,9 @@ function d_file_offset(){    # return filename for the diary for given offset
     echo "$FNAME"
 }
 
+function today() {      # display today's date in format YYYY-MM-DD
+    echo $(date  +%Y-%m-%d)
+}
 
 function diary(){		# open diary page for today or day with given days offset (parameter)
     FNAME=$(d_file_offset $1)
@@ -464,12 +467,23 @@ function aac-audio-recode-dir() { # run audio recoding in whole dir
     for i in *; do aac-audio-recode-file $i; done
 }
 
-function get-vimeo-links() { #extract vimeo links from provided url
+function get-vimeo-links() { # extract vimeo links from provided url
     wget -q $1 -O - | grep -oEi '(https:\/\/player\.vimeo.com\/video\/[0-9]*)'
 }
-function mman() { #display my own complementary man pages
-cat $HOME/vimwiki/man/$1
+
+function mman() {            # display my own complementary man pages
+    cat $HOME/vimwiki/man/$1
 }
+
+function pacman-mirrors() {  # Find fastests mirrors for pacman
+    timestamp=$(date +%Y-%m-%d_%H%M%S)
+    target=/etc/pacman.d/${timestamp}_mirrorlist
+    echo Creating backup of mirrorlist in $target
+    sudo mv /etc/pacman.d/mirrorlist $target
+    echo Finding fastest mirrors
+    sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose
+}
+
 function h-bash-if(){
     # cat <<-  using <<- instead of << will ignore leading tabs or spaces
     cat <<- EOF
@@ -684,6 +698,7 @@ git push -f origin master
 
 EOF
 }
+
 function ys-popular(){
     ys $1 | grep -e + | sed -e 's/(+//' | awk -F' ' '{print $3", "$1}' | sort -nr | head -10
 }
