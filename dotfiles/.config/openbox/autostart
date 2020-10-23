@@ -39,7 +39,8 @@ tilda &
 # start Safe Eyes that protects your eyes from eye strain
 safeeyes &
 
-xscreensaver &
+# start screen saver (skip splash screen at startup: -nosplash)
+xscreensaver -nosplash&
 
 # save last boots info (journalctl store very limited number of boots)
 $HOME/dotfiles/scripts/save-boot-time.sh &
