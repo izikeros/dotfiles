@@ -135,6 +135,7 @@
 	sl = stash list
 	sa = stash apply
 	ss = stash save
+	set-upstream = !git branch --set-upstream-to=origin/$(git symbolic-ref --short HEAD)
 
 [merge]
     #tool = kdiff3
@@ -161,6 +162,7 @@
 	editor = vim
     pager = diff-so-fancy | less --tabs=4 -RFX
 	excludesfile = /home/safjan/.gitignore
+	autocrlf = input
 
 [gui]
 	spellingdictionary = en_US
