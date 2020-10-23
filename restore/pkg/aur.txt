@@ -1,56 +1,78 @@
-bastet               # [1m[0m Tetris(r) clone with 'bastard' block-choosing AI
-bfg                  # [1m[0m Removes large or troublesome blobs like git-filter-branch does, but faster.
-bonsai.sh-git        # [1m[0m bonsai tree generator written in bash
-brave-bin            # [1m[0m Web browser that blocks ads and trackers by default (binary release).
-cht.sh               # [1m[0m The only cheat sheet you need (command line client for cheat.sh)
-darktable-git        # [1m[0m A virtual lighttable and darkroom for photographers
-dropbox              # [1m[0m A free service that lets you bring your photos, docs, and videos anywhere and share them easily.
-dropbox-cli          # [1m[0m Command line interface for Dropbox
-etcher-bin           # [1m[0m Flash OS images to SD cards & USB drives, safely and easily
-exercism-bin         # [1m[0m Command line client for exercism.io
-ezthumb              # [1m[0m A video thumbnail generator based on ffmpeg.
-google-chrome        # [1m[0m The popular and trusted web browser by Google (Stable Channel)
-google-earth-pro     # [1m[0m 3D interface to explore the globe, terrain, streets, buildings and other planets (Pro version)
-gotop                # [1m[0m A terminal based graphical activity monitor inspired by gtop and vtop
-greed                # [1m[0m The strategy game of Greed.
-gsview               # [1m[0m A nice looking GUI for ghostscript with some extraction features
-hamster-time-tracker2 # 
-ix                   # [1m[0m A command line pastebin - shell
-lcov                 # [1m[0m front-end for GCC's coverage testing tool gcov
-lf-bin               # [1m[0m A terminal file manager inspired by ranger (Precompiled binary from official repository)
-logtop               # [1m[0m Display real time statistics of whatever you want.
-mawk                 # [1m[0m An interpreter for the AWK Programming Language
-mindmaster           # [1m[0m Draw mind maps and brainstorming diagrams in an automatic way
-miniconda3           # [1m[0m Mini version of Anaconda Python distribution.
-mop-git              # [1m[0m Stock market tracker for hackers
-multibootusb-git     # [1m[0m Boot multiple live Linux distros from a usb flash drive.
-myman                # [1m[0m Pacman clone with an ncurses and a graphic interface
-nerd-fonts-source-code-pro # [1m[0m Patched font SourceCodePro from nerd-fonts library
-num-utils            # [1m[0m Set of programs for dealing with numbers from the command line.
-onedrive-git         # [1m[0m Free OneDrive client written in D
-onlyoffice-bin       # [1m[0m An office suite that combines text, spreadsheet and presentation editors
-pinta                # [1m[0m Drawing/editing program modeled after Paint.NET. It's goal is to provide a simplified alternative to GIMP for casual users
-polybar              # [1m[0m A fast and easy-to-use status bar
-pomo                 # [1m[0m Pomodoro CLI
-pycharm-eap          # [1m[0m Powerful Python and Django IDE, Early Access Program (EAP) build. Professional edition.
-qnapi                # [1m[0m Qt5 client for downloading movie subtitles from NapiProjekt, OpenSubtitles, Napisy24
-redsocks-git         # [1m[0m Transparent redirector of any TCP connection to proxy using your firewall
-remmina-plugin-rdesktop # [1m[0m A protocol plugin for Remmina to open a RDP connection with rdesktop.
-safeeyes             # [1m[0m A Free and Open Source tool for Linux users to reduce and prevent repetitive strain injury (RSI).
+arch-wiki-man        # The Arch Wiki as linux man pages
+audacity-extras      # 
+bastet               # Tetris(r) clone with 'bastard' block-choosing AI
+bfg                  # Removes large or troublesome blobs like git-filter-branch does, but faster.
+bonsai.sh-git        # bonsai tree generator written in bash
+brave-bin            # Web browser that blocks ads and trackers by default (binary release).
+celestia-addon-voyagers # Celestia addon: Spacecraft: Other: Voyagers 1 & 2
+cht.sh               # The only cheat sheet you need (command line client for cheat.sh)
+darktable            # Utility to organize and develop raw images
+dropbox              # A free service that lets you bring your photos, docs, and videos anywhere and share them easily.
+dropbox-cli          # Command line interface for Dropbox
+etcher-bin           # Flash OS images to SD cards & USB drives, safely and easily
+exercism-bin         # Command line client for exercism.io
+ezthumb              # A video thumbnail generator based on ffmpeg.
+fbview               # small framebuffer document viewer for pdf and djvu
+filebot47            # [Newer but paid version exist] The ultimate tool to rename TV/anime shows, download subtitles, and validate checksums.
+fortune-mod-cybersuntzu # #Cyber Sun Tzu fortune cookie file
+fortune-mod-matrix   # Fortune cookies: The Matrix trilogy
+fortune-mod-vimtips  # Vim fortune cookies
+gimp-plugin-deskew-git # Auto straighten lines of text in scanned documents
+gimp-script-divide-scanned-images # GIMP Scheme (.scm) script for splitting separate sub-images from a composite image that has a uniform background. Creates a new image from each; will call the \'deskew\' plugin on each image (if it is installed).
+gitextensions        # Graphical user interface for Git that allows you control Git without using the command line.
+git-quick-stats      # `git-quick-stats` is a simple and efficient way to access various statistics in git repository.
+google-earth-pro     # 3D interface to explore the globe, terrain, streets, buildings and other planets (Pro version)
+gotop                # A terminal based graphical activity monitor inspired by gtop and vtop
+gsview               # A nice looking GUI for ghostscript with some extraction features
+ix                   # A command line pastebin - shell
+jdownloader2         # Download manager, written in Java, for one-click hosting sites like Rapidshare and Megaupload. Uses its own updater.
+jmtpfs               # FUSE and libmtp based filesystem for accessing MTP (Media Transfer Protocol) devices
+lcov                 # front-end for GCC's coverage testing tool gcov
+lf-bin               # A terminal file manager inspired by ranger (Precompiled binary from official repository)
+logtop               # Display real time statistics of whatever you want.
+mawk                 # An interpreter for the AWK Programming Language
+micropython          # Python3 for microcontrollers, with stdlib. (unix version)
+mindmaster           # Draw mind maps and brainstorming diagrams in an automatic way
+miniconda3           # Mini version of Anaconda Python distribution.
+mop-git              # Stock market tracker for hackers
+mu-editor            # A simple Python editor for beginner programmers
+multibootusb-git     # Boot multiple live Linux distros from a usb flash drive.
+napi-bash            # Lightweight, easy and fast polish subtitle downloader from the napiprojekt.pl
+nerd-fonts-source-code-pro # Patched font SourceCodePro from nerd-fonts library
+num-utils            # Set of programs for dealing with numbers from the command line.
+onedrive-git         # Free OneDrive client written in D
+onlyoffice-bin       # An office suite that combines text, spreadsheet and presentation editors
+pdfposter            # Print large posters on multiple sheets
+perl-gtk2-unique     # Perl bindings for the C library libunique
+pinta                # Drawing/editing program modeled after Paint.NET. It's goal is to provide a simplified alternative to GIMP for casual users
+polybar              # A fast and easy-to-use status bar
+pomo                 # 
+powerstat-git        # A tool for measuring a laptops power usage via the battery.
+pycharm-eap          # Powerful Python and Django IDE, Early Access Program (EAP) build. Professional edition.
+python-opencv-python # 
+python-pydotplus     # Interface to Graphviz’s Dot language
+qnapi                # Qt client for downloading movie subtitles from NapiProjekt, OpenSubtitles, Napisy24
+redsocks-git         # Transparent redirector of any TCP connection to proxy using your firewall
+remmina-plugin-rdesktop # A protocol plugin for Remmina to open a RDP connection with rdesktop.
+rofi-greenclip       # Clipboard manager to use with rofi - Image support and blacklist
+s4cmd-python3-git    # Super S3 command line tool (git) for Python 3
+safeeyes             # A Free and Open Source tool for Linux users to reduce and prevent repetitive strain injury (RSI).
+sayonara-player      # Small, clear and fast audio player for Linux written in C++, supported by the Qt framework. It uses Gstreamer as audio backend.
 screenkey            # A screencast tool to display your keys inspired by Screenflick
-shutter              # [1m[0m A featureful screenshot tool (formerly gscrot)
-simple-mtpfs         # [1m[0m A FUSE filesystem that supports reading/writing from MTP devices
-sublime-merge        # [1m[0m Meet a new Git Client, from the makers of Sublime Text
-sublime-text-dev     # [1m[0m Sophisticated text editor for code, html and prose - dev build
-typora               # [1m[0m Typora will give you a seamless experience as both a reader and a writer.
-virtualbox-ext-oracle # [1m[0m Oracle VM VirtualBox Extension Pack
-visual-studio-code-bin # [1m[0m Visual Studio Code (vscode): Editor for building and debugging modern web and cloud applications (official binary version)
-wpa_actiond          # [1m[0m Daemon that connects to wpa_supplicant and handles connect and disconnect events
-wps-office           # [1m[0m Kingsoft Office (WPS Office) - an office productivity suite
-xf86-input-keyboard  # 
-xf86-input-mouse     # 
-xnviewmp             # [1m[0m An efficient multimedia viewer, browser and converter.
-xorg-server-xdmx     # 
-yay-bin              # [1m[0m Yet another yogurt. Pacman wrapper and AUR helper written in go. Pre-compiled.
-yed                  # [1m[0m Very powerful graph editor written in java
-zotero               # [1m[0m Zotero Standalone. Is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.
+shutter              # A featureful screenshot tool (formerly gscrot)
+simple-mtpfs         # A FUSE filesystem that supports reading/writing from MTP devices
+skypeforlinux-preview-bin # Skype for Linux - Preview/Insider Version
+sublime-merge        # Meet a new Git Client, from the makers of Sublime Text
+sublime-text-dev     # Sophisticated text editor for code, html and prose - dev build
+typora               # Typora will give you a seamless experience as both a reader and a writer.
+virtualbox-ext-oracle # Oracle VM VirtualBox Extension Pack
+visidata             # Terminal spreadsheet multitool for discovering and arranging data
+visual-studio-code-bin # Visual Studio Code (vscode): Editor for building and debugging modern web and cloud applications (official binary version)
+vrms-arch            # vrms for ArchLinux
+wpa_actiond          # Daemon that connects to wpa_supplicant and handles connect and disconnect events
+wps-office           # Kingsoft Office (WPS Office) - an office productivity suite
+xmind                # Brainstorming and Mind Mapping Software
+xnviewmp             # An efficient multimedia viewer, browser and converter.
+yay-bin              # Yet another yogurt. Pacman wrapper and AUR helper written in go. Pre-compiled.
+yed                  # Very powerful graph editor written in java
+zotero               # Zotero Standalone. Is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.
