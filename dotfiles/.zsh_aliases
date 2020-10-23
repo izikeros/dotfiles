@@ -488,9 +488,10 @@ alias ssh_no_hostchecks="ssh -A -o UserKnownHostsFile=/dev/null -o GlobalKnownHo
 #--------------------------------------------
 # OTHER
 #--------------------------------------------
-alias wilabsvpn_up="nmcli connection up \"wilabs (openvpn)\""
+alias vpn="sudo vpnc nokia-fi && ~/nsn/proxy/redsocks.sh"
+alias novpn="sudo vpnc-disconnect && ~/nsn/proxy/redsocks-stop.sh"
 
-alias gramps="LANGUAGE=pl_PL:pl LANG=pl_PL.UTF-8 gramps"
+alias gramps="GRAMPSDIR=$HOME/Documents/priv/Gramps/ LANGUAGE=pl_PL:pl LANG=pl_PL.UTF-8 gramps"
 
 alias hnfav="firefox https://news.ycombinator.com/favorites\\?id\=izik"
 
@@ -547,9 +548,6 @@ alias cputop="top -o %CPU"
 # top, order by field %MEM
 alias memtop="top -o %MEM"
 
-# continue incomplete download
-alias wget="wget -c"
-
 alias merge='xrdb -merge ~/.Xresources'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
@@ -563,13 +561,13 @@ alias interfaces="ls /sys/class/net"
 alias rr="ranger"
 alias wh="which"
 alias clr="clear"
+alias c='clear'
 alias nsl="nslookup"
 alias ta="tmux a"
 
 # -t bios, system, baseboard, chassis, processor, memory, cache, connector, slot
 alias hardware-info="sudo dmidecode - system" # hardware, serial number
 alias monitors="cat /sys/class/drm/card*/edid | tr -cd '\11\12\15\40-\176'"
-alias c='clear'
 
 alias vh='sudo $VIM /etc/hosts'
 alias t='diary'

@@ -484,6 +484,11 @@ function pacman-mirrors() {  # Find fastests mirrors for pacman
     sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose
 }
 
+function pretty_csv {       # display csv in columns, scroll vertically and horizontally
+    # from: https://www.stefaanlippens.net/pretty-csv.html
+    column -t -s, -n "$@" | less -F -S -X -K
+}
+
 function h-bash-if(){
     # cat <<-  using <<- instead of << will ignore leading tabs or spaces
     cat <<- EOF
