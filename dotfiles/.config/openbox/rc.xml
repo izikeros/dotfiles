@@ -356,10 +356,16 @@
         <command>/opt/pycharm-professional/bin/pycharm.sh</command>
       </action>
     </keybind>
+
+    <keybind key="W-S-c">
+      <action name="Execute">
+        <command>galculator</command> -->
+        <!-- "Requires 'libqalculate' installed" -->
+      </action>
+    </keybind>
     <keybind key="W-c">
       <action name="Execute">
-        <!-- <command>galculator</command> -->
-        <!-- "Requires 'libqalculate' installed" -->
+        <!-- Rofi clipboard -->
         <command>rofi_run -c</command>
       </action>
     </keybind>
@@ -377,6 +383,11 @@
     <keybind key="W-m">
       <action name="Execute">
         <command>audacious</command>
+      </action>
+    </keybind>
+  ¦ <keybind key="W-t">
+      <action name="Execute">
+        <command>typora</command>
       </action>
     </keybind>
     <keybind key="W-v">
