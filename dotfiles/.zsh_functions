@@ -489,6 +489,10 @@ function pretty_csv {       # display csv in columns, scroll vertically and hori
     column -t -s, -n "$@" | less -F -S -X -K
 }
 
+function gralias() { # grep ./zsh_aliases file
+    grep -B1 --color=never -i -e $1 $HOME/.zsh_aliases
+}
+
 function h-bash-if(){
     # cat <<-  using <<- instead of << will ignore leading tabs or spaces
     cat <<- EOF
