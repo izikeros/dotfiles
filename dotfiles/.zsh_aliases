@@ -152,8 +152,6 @@ fi
 #--------------------------------------------
 # grep aliases active in current shell
 alias galias="alias | grep --color=never -i -e"
-# grep aliases in aliases file
-alias gralias="grep -B1 --color=never -i -e ~/.zsh_aliases"
 # list functions
 alias list-functions="grep function ~/.zsh_functions --color=never | sed 's/^function//' | sed 's/{//' | grep '[a-Za-z0-9\-_]*()' --color=always | column -t -s# | less"
 #alias s="sudo su"
