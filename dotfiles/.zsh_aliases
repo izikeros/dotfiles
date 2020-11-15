@@ -489,6 +489,9 @@ alias ssh_no_hostchecks="ssh -A -o UserKnownHostsFile=/dev/null -o GlobalKnownHo
 alias vpn="sudo vpnc nokia-fi && ~/nsn/proxy/redsocks.sh"
 alias novpn="sudo vpnc-disconnect && ~/nsn/proxy/redsocks-stop.sh"
 
+# Exit to current directory (On exit, the shell returns to the directory Midnight Commander was started from, instead of the last active directory.)
+alias mc=". /usr/lib/mc/mc-wrapper.sh"
+
 alias gramps="GRAMPSDIR=$HOME/Documents/priv/Gramps/ LANGUAGE=pl_PL:pl LANG=pl_PL.UTF-8 gramps"
 
 alias hnfav="firefox https://news.ycombinator.com/favorites\\?id\=izik"
