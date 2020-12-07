@@ -486,8 +486,8 @@ alias ssh_no_hostchecks="ssh -A -o UserKnownHostsFile=/dev/null -o GlobalKnownHo
 #--------------------------------------------
 # OTHER
 #--------------------------------------------
-alias vpn="sudo vpnc nokia-fi && ~/nsn/proxy/redsocks.sh"
-alias novpn="sudo vpnc-disconnect && ~/nsn/proxy/redsocks-stop.sh"
+alias vpn="sudo vpnc nokia-fi && ~/nsn/proxy/redsocks.sh && echo '- use Nokia DNS for VPN' && ~/nsn/copy-resolv-conf.sh"
+alias novpn="sudo vpnc-disconnect && ~/nsn/proxy/redsocks-stop.sh && echo '- reload NetworkManager to restore DNS settings'  && sudo systemctl reload NetworkManager"
 
 # Exit to current directory (On exit, the shell returns to the directory Midnight Commander was started from, instead of the last active directory.)
 alias mc=". /usr/lib/mc/mc-wrapper.sh"
