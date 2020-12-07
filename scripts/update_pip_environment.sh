@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# requires pipdeptree python package installed
+
 BACK_1=pip_before_update_top_level.txt
 BACK_2=pip_before_after_update_top_level.txt
 OUT=/tmp/pip_outdated.txt

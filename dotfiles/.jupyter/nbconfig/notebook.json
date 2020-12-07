@@ -27,12 +27,15 @@
     "table_beautifier/main": true,
     "hinterland/hinterland": false,
     "collapsible_headings/main": true,
-    "init_cell/main": true,
-    "printview/main": true,
-    "jupytext/index": true
+    "init_cell/main": false,
+    "printview/main": false,
+    "jupytext/index": true,
+    "python-markdown/main": true,
+    "nbdime/index": false
   },
   "toc2": {
-    "number_sections": false
+    "number_sections": false,
+    "navigate_menu": false
   },
   "notify": {
     "sticky": false
@@ -53,5 +56,8 @@
     "cm_config": {
       "lineNumbers": true
     }
+  },
+  "init_cell": {
+    "run_on_kernel_ready": true
   }
 }
