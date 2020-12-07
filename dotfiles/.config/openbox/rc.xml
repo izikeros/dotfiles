@@ -316,17 +316,50 @@
         <command>galculator</command>
       </action>
     </keybind>
-
-    <!-- Screenshots -->
-    <keybind key="Print">
+    <keybind key="XF86Launch8">
       <action name="Execute">
-            <!-- <command>scrot 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'</command> -->
-            <command>xfce4-screenshooter -r</command>
+        <command>setxkbmap -model microsoft4000 -layout es</command>
       </action>
     </keybind>
-    <keybind key="A-Print">
+    <keybind key="XF86Launch9">
       <action name="Execute">
-        <command>scrot 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'</command>
+        <command>setxkbmap -model microsoft4000 -layout pl</command>
+      </action>
+    </keybind>
+    <keybind key="XF86Launch5">
+      <action name="Execute">
+        <command>/usr/bin/redshift -O 4900 -b 0.95</command>
+      </action>
+    </keybind>
+    <keybind key="XF86Launch6">
+      <action name="Execute">
+        <command>/usr/bin/redshift -x</command>
+      </action>
+    </keybind>    
+    <keybind key="XF86Launch7">
+      <action name="Execute">
+        <command>/usr/bin/redshift -O 6500 -b 1.0</command>
+      </action>
+    </keybind>
+
+    <!-- Screenshots -->
+    <!-- select area, save to home directory -->
+    <keybind key="Print">
+      <action name="Execute">
+        <command>ksnip --rectarea --save</command>
+      </action>
+    </keybind>
+    
+    <keybind key="S-Print">
+      <action name="Execute">
+        <command>ksnip --rectarea</command>
+      </action>
+    </keybind>
+
+    <keybind key="C-A-Print">
+      <action name="Execute">
+      	<command>ksnip --current</command>
+<!--         <command>scrot 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'</command> -->
       </action>
     </keybind>
 
@@ -385,9 +418,14 @@
         <command>audacious</command>
       </action>
     </keybind>
-  ¦ <keybind key="W-t">
+    <keybind key="W-t">
       <action name="Execute">
         <command>typora</command>
+      </action>
+    </keybind>
+    <keybind key="W-g">
+      <action name="Execute">
+        <command>gtimelog</command>
       </action>
     </keybind>
     <keybind key="W-v">
