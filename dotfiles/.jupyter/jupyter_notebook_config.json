@@ -5,7 +5,8 @@
       "nteract_on_jupyter": false,
       "jupyter_lsp": false,
       "notebook_snippets": false,
-      "jupyterlab_code_formatter": true
+      "jupyterlab_code_formatter": true,
+      "nbdime": false
     }
   }
 }
