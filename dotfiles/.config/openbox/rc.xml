@@ -9,8 +9,7 @@
   </resistance>
   <focus>
     <focusNew>yes</focusNew>
-    <!-- always try to focus new windows when they appear. other rules do
-       apply -->
+    <!-- always try to focus new windows when they appear. other rules do apply -->
     <followMouse>no</followMouse>
     <!-- move focus to a window when you move the mouse into it -->
     <focusLast>yes</focusLast>
@@ -66,7 +65,7 @@
     <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
       <name>Roboto</name>
-      <size>11</size>
+      <size>12</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -75,7 +74,7 @@
     </font>
     <font place="InactiveWindow">
       <name>Roboto</name>
-      <size>11</size>
+      <size>12</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -84,7 +83,7 @@
     </font>
     <font place="MenuHeader">
       <name>Roboto</name>
-      <size>11</size>
+      <size>12</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -93,7 +92,7 @@
     </font>
     <font place="MenuItem">
       <name>Roboto</name>
-      <size>10</size>
+      <size>11</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -102,7 +101,7 @@
     </font>
     <font place="ActiveOnScreenDisplay">
       <name>Roboto</name>
-      <size>10</size>
+      <size>11</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -111,7 +110,7 @@
     </font>
     <font place="InactiveOnScreenDisplay">
       <name>Roboto</name>
-      <size>10</size>
+      <size>11</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -335,7 +334,7 @@
       <action name="Execute">
         <command>/usr/bin/redshift -x</command>
       </action>
-    </keybind>    
+    </keybind>
     <keybind key="XF86Launch7">
       <action name="Execute">
         <command>/usr/bin/redshift -O 6500 -b 1.0</command>
@@ -349,7 +348,7 @@
         <command>ksnip --rectarea --save</command>
       </action>
     </keybind>
-    
+
     <keybind key="S-Print">
       <action name="Execute">
         <command>ksnip --rectarea</command>
@@ -381,7 +380,12 @@
     </keybind>
     <keybind key="W-e">
       <action name="Execute">
-        <command>subl3</command>
+        <command>subl3 --project ~/.config/sublime-text-3/Packages/User/Projects/vimwiki.sublime-project</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-e">
+      <action name="Execute">
+        <command>subl3 --project ~/.config/sublime-text-3/Packages/User/Projects/hiszpanski.sublime-project</command>
       </action>
     </keybind>
     <keybind key="W-p">
