@@ -31,7 +31,8 @@
     "printview/main": false,
     "jupytext/index": true,
     "python-markdown/main": true,
-    "nbdime/index": false
+    "nbdime/index": false,
+    "jupyter-black-master/jupyter-black": true
   },
   "toc2": {
     "number_sections": false,
