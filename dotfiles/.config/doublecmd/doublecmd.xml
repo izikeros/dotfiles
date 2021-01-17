@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<doublecmd DCVersion="0.9.8 beta" ConfigVersion="10">
+<doublecmd DCVersion="0.9.9 beta" ConfigVersion="10">
   <Configuration Save="True" SortOrder="0" TreeType="0">
     <UseConfigInProgramDir>False</UseConfigInProgramDir>
     <FolderTabs Save="True"/>
@@ -14,7 +14,7 @@
       </Filter>
       <Filter>
         <Name>executables</Name>
-        <FileMasks>*.exe;*.bat;*.sh</FileMasks>
+        <FileMasks>*.exe;*.bat;*.sh;*.zsh</FileMasks>
         <Color>32768</Color>
         <Attributes/>
       </Filter>
@@ -50,7 +50,7 @@
       </Filter>
       <Filter>
         <Name>Data sheet</Name>
-        <FileMasks>*.xls;*.xlsx;*.xlsm;*.csv;*.ini</FileMasks>
+        <FileMasks>*.xls;*.xlsx;*.xlsm;*.csv;*.ini;*.ods</FileMasks>
         <Color>32768</Color>
         <Attributes/>
       </Filter>
@@ -87,7 +87,7 @@
       <Filter>
         <Name>Markup</Name>
         <FileMasks>*.html;*.htm;*.md;*.markdown;*.rst</FileMasks>
-        <Color>38655</Color>
+        <Color>16711680</Color>
         <Attributes/>
       </Filter>
       <Filter>
@@ -118,6 +118,12 @@
         <Name>Data</Name>
         <FileMasks>*.pkl;*.npz</FileMasks>
         <Color>255</Color>
+        <Attributes/>
+      </Filter>
+      <Filter>
+        <Name>NFO</Name>
+        <FileMasks>*.nfo</FileMasks>
+        <Color>32896</Color>
         <Attributes/>
       </Filter>
     </FileFilters>
@@ -295,13 +301,13 @@
   <Tabs>
     <OpenedTabs>
       <Left>
-        <ActiveTab>1</ActiveTab>
+        <ActiveTab>4</ActiveTab>
         <Tab>
           <FileView Type="columns">
             <Sortings>
               <Sorting>
                 <Direction>1</Direction>
-                <Function>1</Function>
+                <Function>12</Function>
               </Sorting>
             </Sortings>
             <History>
@@ -332,7 +338,7 @@
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path>/home/safjan/dotfiles/dotfiles/.config/polybar/</Path>
+                  <Path>/home/safjan/dotfiles/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -396,15 +402,15 @@
           <FileView Type="columns">
             <Sortings>
               <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
+                <Direction>2</Direction>
+                <Function>7</Function>
               </Sorting>
             </Sortings>
             <History>
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path>/home/safjan/projects/nokia/prolog/</Path>
+                  <Path>/opt/s25rttr/s25rttr_20210113/share/s25rttr/S2/Settlers II Gold Edition/./</Path>
                 </Paths>
               </Entry>
             </History>
@@ -464,6 +470,102 @@
           <LockPath>/home/safjan/Documents/brain/</LockPath>
           <Title>brain</Title>
         </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path>/home/safjan/kdenlive_projects/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/safjan/kdenlive_projects/</LockPath>
+          <Title>kdenlive_projects</Title>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>2</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path>/home/safjan/Documents/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/safjan/Documents/dp200_201/</LockPath>
+          <Title>dp200_201</Title>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>1</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path>/home/safjan/Gramps/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/safjan/Gramps/</LockPath>
+          <Title>Gramps</Title>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path>/home/safjan/Documents/priv/hiszpanski/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+          <Options>2</Options>
+          <LockPath>/home/safjan/Documents/priv/hiszpanski/</LockPath>
+          <Title>hiszpanski</Title>
+        </Tab>
       </Left>
       <Right>
         <ActiveTab>0</ActiveTab>
@@ -472,14 +574,14 @@
             <Sortings>
               <Sorting>
                 <Direction>2</Direction>
-                <Function>2</Function>
+                <Function>7</Function>
               </Sorting>
             </Sortings>
             <History>
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path>/home/safjan/polybar-scripts/polybar-scripts/system-usb-udev/</Path>
+                  <Path>/home/safjan/Downloads/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -495,8 +597,8 @@
           <FileView Type="columns">
             <Sortings>
               <Sorting>
-                <Direction>2</Direction>
-                <Function>7</Function>
+                <Direction>1</Direction>
+                <Function>12</Function>
               </Sorting>
             </Sortings>
             <History>
@@ -519,8 +621,8 @@
           <FileView Type="columns">
             <Sortings>
               <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
+                <Direction>2</Direction>
+                <Function>7</Function>
               </Sorting>
             </Sortings>
             <History>
@@ -543,8 +645,8 @@
           <FileView Type="columns">
             <Sortings>
               <Sorting>
-                <Direction>2</Direction>
-                <Function>7</Function>
+                <Direction>1</Direction>
+                <Function>12</Function>
               </Sorting>
             </Sortings>
             <History>
@@ -587,6 +689,27 @@
           <LockPath>/home/safjan/Documents/brain/</LockPath>
           <Title>brain</Title>
         </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path>/home/safjan/projects/nokia/prolog_old/notebooks/outdated/oracle_model_management/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+        </Tab>
       </Right>
     </OpenedTabs>
     <Options>49937</Options>
@@ -606,7 +729,7 @@
     </Position>
   </MainWindow>
   <Language>
-    <POFileName>doublecmd.en.po</POFileName>
+    <POFileName>doublecmd.pl.po</POFileName>
   </Language>
   <Behaviours>
     <GoToRoot>False</GoToRoot>
@@ -805,6 +928,8 @@
       </Columns>
     </BriefView>
     <ExtraLineSpan>2</ExtraLineSpan>
+    <FolderPrefix>[</FolderPrefix>
+    <FolderPostfix>]</FolderPostfix>
   </FilesViews>
   <Keyboard>
     <Typing>
@@ -928,7 +1053,21 @@
   <IgnoreList Enabled="False">
     <IgnoreListFile>%DC_CONFIG_PATH%/ignorelist.txt</IgnoreListFile>
   </IgnoreList>
-  <DirectoryHotList/>
+  <DirectoryHotList>
+    <HotDir Name="priv" Path="/home/safjan/Documents/priv"/>
+    <HotDir Name="hiszpanski" Path="/home/safjan/Documents/priv/hiszpanski"/>
+    <HotDir Name="Downloads" Path="/home/safjan/Downloads"/>
+    <HotDir Name="books" Path="/home/safjan/Downloads/books"/>
+    <HotDir Name="inbox" Path="/home/safjan/Downloads/books/inbox"/>
+    <HotDir Name="prolog" Path="/home/safjan/projects/nokia/prolog"/>
+    <HotDir Name="notebooks" Path="/home/safjan/projects/nokia/prolog/notebooks"/>
+    <HotDir Name="src" Path="/home/safjan/projects/nokia/prolog/src"/>
+    <HotDir Name="vimwiki" Path="/home/safjan/vimwiki"/>
+    <HotDir Name="diary" Path="/home/safjan/vimwiki/diary"/>
+    <HotDir Name="Gramps" Path="/home/safjan/Gramps"/>
+    <HotDir Name="taxbreak" Path="/home/safjan/Documents/taxbreak"/>
+    <HotDir Name="Documents" Path="/home/safjan/Documents"/>
+  </DirectoryHotList>
   <Viewer>
     <PreviewVisible>False</PreviewVisible>
     <ImageStretch>False</ImageStretch>
@@ -988,7 +1127,7 @@
     <DfltRightGoTo>1</DfltRightGoTo>
     <DfltKeep>5</DfltKeep>
     <DfltSaveDirHistory>False</DfltSaveDirHistory>
-    <FavTabsLastUniqueID>{91820B69-FA4D-4688-88D9-4E7721A69FD6}</FavTabsLastUniqueID>
+    <FavTabsLastUniqueID>{E3B159A6-4AA3-4D53-9524-AFDB8D5EC300}</FavTabsLastUniqueID>
   </FavoriteTabsOptions>
   <Lua>
     <PathToLibrary>liblua5.1.so.0</PathToLibrary>
@@ -998,7 +1137,7 @@
   <UseShellForFileOperations>False</UseShellForFileOperations>
   <LastDoAnyCommand>cm_Refresh</LastDoAnyCommand>
   <SearchTemplates/>
-  <ColumnsSets DefaultTitleHash="540805403">
+  <ColumnsSets DefaultTitleHash="2148366439">
     <ColumnsSet UseFrameCursor="False">
       <Name>Default</Name>
       <CustomView>False</CustomView>
@@ -1009,9 +1148,9 @@
       </CursorBorder>
       <Columns>
         <Column>
-          <Title>Name</Title>
+          <Title>Nazwa</Title>
           <FuncString>[DC().GETFILENAMENOEXT{}]</FuncString>
-          <Width>617</Width>
+          <Width>399</Width>
           <Align>0</Align>
           <Font>
             <Name>Sans</Name>
@@ -1032,9 +1171,9 @@
           <Overcolor>True</Overcolor>
         </Column>
         <Column>
-          <Title>Ext</Title>
+          <Title>Roz.</Title>
           <FuncString>[DC().GETFILEEXT{}]</FuncString>
-          <Width>147</Width>
+          <Width>217</Width>
           <Align>0</Align>
           <Font>
             <Name>Sans</Name>
@@ -1055,9 +1194,9 @@
           <Overcolor>True</Overcolor>
         </Column>
         <Column>
-          <Title>Size</Title>
+          <Title>Rozmiar</Title>
           <FuncString>[DC().GETFILESIZE{}]</FuncString>
-          <Width>70</Width>
+          <Width>71</Width>
           <Align>1</Align>
           <Font>
             <Name>Sans</Name>
@@ -1078,9 +1217,9 @@
           <Overcolor>True</Overcolor>
         </Column>
         <Column>
-          <Title>Date</Title>
+          <Title>Data</Title>
           <FuncString>[DC().GETFILETIME{}]</FuncString>
-          <Width>184</Width>
+          <Width>162</Width>
           <Align>1</Align>
           <Font>
             <Name>Sans</Name>
@@ -1101,7 +1240,7 @@
           <Overcolor>True</Overcolor>
         </Column>
         <Column>
-          <Title>Attr</Title>
+          <Title>Atryb.</Title>
           <FuncString>[DC().GETFILEATTR{}]</FuncString>
           <Width>100</Width>
           <Align>0</Align>
@@ -1203,4 +1342,11 @@
   <MarkShowWantedAttribute>False</MarkShowWantedAttribute>
   <MarkDefaultWantedAttribute/>
   <MarkLastWantedAttribute/>
+  <Differ>
+    <Colors>
+      <Added>11206570</Added>
+      <Deleted>11184895</Deleted>
+      <Modified>16755370</Modified>
+    </Colors>
+  </Differ>
 </doublecmd>
