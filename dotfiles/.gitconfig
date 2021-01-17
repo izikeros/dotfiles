@@ -38,7 +38,7 @@
 
     lg-all = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
-    # display change statisctics (num of files changed, which files
+    # display change statistics (num of files changed, which files)
     lg-stat = !git log --abbrev-commit --graph --pretty=oneline --stat
 
     # List commits in short form, with colors and branch/tag annotations
