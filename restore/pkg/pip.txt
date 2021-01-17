@@ -1,0 +1,16 @@
+# use pip-top-level to identify relevant packages (pipdeptree based alias)
+hatch
+safeeyes
+arandr
+black
+flake8
+gtimelog
+pipenv
+Pyment
+ranger-fm
+Recoll
+s3cmd
+terminator
+virtualenvwrapper
+visidata
+youtube-dl
