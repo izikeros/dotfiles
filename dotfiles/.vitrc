@@ -1,0 +1,73 @@
+### vit rc file
+GistID: e9364360044f42f4cc9f
+
+# map \mn=:!wr needs 
+# map \cn=:!wr tasknote %TASKID<Return>
+#       When  Ctrl  +  n  is pressed, runs the command 'tasknote <ID>', where <ID> is the ID of the task that is currently selected in
+#       VIT.
+
+map c=:! task %TASKID rc.defaultwidth:200 | grep -o -P -m 1 (ftp|http)s?:// | tr -d '0 | xsel -b<Return>
+#       Copies the first link it finds to the clipboard.
+
+map z=:!r echo 'set due date'; task %TASKID modify due:today+$(read -p 'how many days from today? :' DAYS; echo $DAYS)days<Return>
+#       Asks you for input and then changes the due date of the selected task to NOW plus that many days.
+
+map <Left>=:!wr task $(task _get %TASKID.parent) edit<Return>
+       When the left arrow key is pressed, edits the parent of a recurring task (do not use on non-recurring task).
+
+## f-keys
+map <F1>=:h<Return>
+map <F2>=:blocking<Return>
+map <F3>=:waiting<Return>
+map <F4>=:active<Return>
+
+map <F5>=:minimal<Return>
+map <F6>=:ls<Return>
+map <F7>=:list<Return>
+map <F8>=:long<Return>
+
+map <F9>=:ready<Return>
+map <F10>=:next<Return>
+# leave <f11> as terminal full-screen
+map <F12>=:!w task reports<Return>
+
+## other task reports
+# map ~=:! attach %TASKID
+# ^^^ see https://github.com/ValiValpas/taskopen/blob/master/scripts/attach
+map !=:!w task _commands |pr -w 80 -t --columns 4<Return>
+map @=:!r task context 
+map \#=:!w task stats ; task burndown<Return>
+# map $=:! hledger bal 
+map %=:!w task ghistory.annual ; task summary<Return>
+map ^=:recurring<Return>
+map &=:!w task tags<Return>
+map *=:all <Return>
+map (=:oldest<Return>
+map )=:newest<Return>
+map _=:overdue<Return>
+map -=:!r task %TASKID stop<Return>
+map +=:!r task %TASKID start<Return>
+# map -p 'Export:' |=task %TASKID export$   #no space allow for export.csv, etc., must preserve leading space when entered.
+map \|=:! task %TASKID export$(read -p "Export:" EXPORTCMD; echo $EXPORTCMD)<Return>
+map \\=:! task rc._forcecolor=yes show |less -r<Return>
+# ^^^ should be 'map --prompt 'task show: \\=:! show $ |less -r
+
+## nav
+# map <Home>=none_selected, top of list, see Feature #1368
+map <Home>=0
+map <End>=G
+map <Insert>=a
+map <Del>=D
+
+map C=:!w task calendar<Return>
+
+# dashboard
+map `=:!w task logo ; fortune ; figlet Taskwarrior ; echo '     Taskwarrior is a command-line todo list manager' ; date<Return>
+map .=:modify schedule:
+map ,=:! vi ~/vimwiki.txt<Return>
+
+## external
+map o=:!w taskopen %TASKID<Return>
+# map R=:! trev.pl %TASKARGS list<Return>
+#^^^^ needs <filter> 
+# map \ct=:!wr ~/.task/scripts/tw-tod-sh/ToD.sh  
