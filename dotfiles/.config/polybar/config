@@ -17,13 +17,17 @@ inherit = bar/master
 ; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
 monitor =
 
-modules-left   = jgmenu updates-arch-combined
+modules-left   = gtime-task
+;dns-info
+;jgmenu
 ;workspaces
+
 modules-center = pkg  safeeyes-status
 ; window_switch
 ; safeeyes
 ; redshift-temp
-modules-right  = temperature coreuse filesystem info-trash isrunning-dropbox memory redsocks-status vpn-vpnc-status network wireless-network wifi volume power-consumption system-usb-udev battery clock
+modules-right  = temperature coreuse cpu-avg-freq pacman-cache filesystem info-trash memory redsocks-status vpn-vpnc-status network  network-traffic ip-addr volume pulseaudio-microphone system-usb-udev battery switch-keyboard clock diary-for-today 
+;  wifi wireless-network
 
 [bar/bottom-bar]
 inherit = bar/master

@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 if pgrep -x "redsocks" > /dev/null
 then
-    echo "Redsocks: on"
+    echo "Rs: on"
 else
-    echo "Redsocks: off"
+    echo "Rs: off"
 fi
 

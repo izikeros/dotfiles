@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 case "$1" in
     --clean)
@@ -9,6 +9,6 @@ case "$1" in
         ;;
     *)
         NUM_TRASH=$(find ~/.local/share/Trash/files/ -maxdepth 1 | wc -l)
-        echo "Trash: $NUM_TRASH"
+        echo "Tr: $NUM_TRASH"
         ;;
 esac
