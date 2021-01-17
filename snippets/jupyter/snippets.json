@@ -160,7 +160,7 @@
             ]
         },
         {
-            "name": "pd - turn of scientific notation",
+            "name": "pd - turn off scientific notation",
             "code": [
                 "pd.set_option('display.float_format', lambda x: '%.1f' % x)"
             ]
@@ -170,9 +170,33 @@
             "code": [
                 "pd.set_option('display.max_columns', None)",
                 "pd.set_option('display.expand_frame_repr', False)",
-                "pd.set_option('max_colwidth', -1)"
+                "pd.set_option('max_colwidth', None)"
             ]
         },
+        {
+            "name": "save report",
+            "code": [
+                "#TODO"
+            ]
+        },
+        {
+            "name": "plot hist from Count",
+            "code": [
+                "# TODO"
+            ]
+        },
+        {
+            "name": "plot hist from dict",
+            "code": [
+                "# TODO"
+            ]
+        },
+        {
+            "name": "annotate plot",
+            "code": [
+                "add_label_values_barh(ax)"
+            ]
+        },                                
         {
             "name": "pd - limit precision",
             "code": [
