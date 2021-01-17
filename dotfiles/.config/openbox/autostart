@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# clear packages cache - keep only last version of recently installed packages
+pacclear -rk 1 &
+
 # compton (not sure what are the benefits from using it)
 #al-compositor --start &
 
