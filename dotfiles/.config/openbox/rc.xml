@@ -343,22 +343,10 @@
 
     <!-- Screenshots -->
     <!-- select area, save to home directory -->
+
     <keybind key="Print">
       <action name="Execute">
-        <command>ksnip --rectarea --save</command>
-      </action>
-    </keybind>
-
-    <keybind key="S-Print">
-      <action name="Execute">
-        <command>ksnip --rectarea</command>
-      </action>
-    </keybind>
-
-    <keybind key="C-A-Print">
-      <action name="Execute">
       	<command>ksnip --current</command>
-<!--         <command>scrot 'ArchLabs_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; gpicview $$(xdg-user-dir PICTURES)/$f'</command> -->
       </action>
     </keybind>
 
@@ -380,12 +368,12 @@
     </keybind>
     <keybind key="W-e">
       <action name="Execute">
-        <command>subl3 --project ~/.config/sublime-text-3/Packages/User/Projects/vimwiki.sublime-project</command>
+        <command>subl3 -a --project ~/.config/sublime-text-3/Packages/User/Projects/vimwiki.sublime-project</command>
       </action>
     </keybind>
     <keybind key="W-S-e">
       <action name="Execute">
-        <command>subl3 --project ~/.config/sublime-text-3/Packages/User/Projects/hiszpanski.sublime-project</command>
+        <command>emacs</command>
       </action>
     </keybind>
     <keybind key="W-p">
@@ -453,18 +441,13 @@
         <command>rofi -combi-modi window,drun,ssh,run -show combi</command>
       </action>
     </keybind>
-    <!--
+
     <keybind key="W-space">
       <action name="Execute">
-        <command>rofi -combi-modi window,drun,ssh,run -show combi</command>
-      </action>
-      </keybind>
-    -->
-    <keybind key="W-S-space">
-      <action name="Execute">
-        <command>~/dotfiles/scripts/rofi-scripts-collection/rofi-bangs.sh</command>
+        <command>~/dotfiles/rofi-scripts/rofi-bangs-izik.sh</command>
       </action>
     </keybind>
+    <!-- shutdown, logout, hibernate, restart -->
     <keybind key="W-x">
       <action name="Execute">
         <command>rofi_run -l</command>
