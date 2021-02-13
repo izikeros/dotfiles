@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # clear packages cache - keep only last version of recently installed packages
 pacclear -rk 1 &
@@ -28,7 +28,7 @@ nitrogen --restore &
 autorandr --change
 
 # redshift - color temperature adjustment
-#redshift -c ~/.redshiftgrc &
+redshift -c ~/.redshiftgrc &
 
 # dropbox
 dropbox &
