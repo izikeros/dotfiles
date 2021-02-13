@@ -10,9 +10,9 @@ task_full_len=${#task_txt_full}
 
 task_txt=$(echo "$task_txt_full" | cut -c -30)
 task_trim_len=${#task_txt}
-if [ $task_full_len > $task_trim_len ]; then
-   task_txt="$task_txt..."
-fi
+# if [[ $task_full_len gt $task_trim_len ]]; then
+#    task_txt="$task_txt..."
+# fi
 
 task_date=$(tail -n1 ~/gtimelog/timelog.txt | awk -F': ' '{print $1}')
 
