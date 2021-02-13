@@ -243,10 +243,10 @@ fi
 if test ${COMMANDS[$choice]+isset}
 then
     # Execute the choice
-    eval echo "Executing: ${COMMANDS[$choice]}"
-    eval ${COMMANDS[$choice]}
-else
- eval  $choice | rofi
+    # eval echo "Executing: ${COMMANDS[$choice]}"
+    # eval ${COMMANDS[$choice]}
+# else
+    eval  $choice | rofi
  # prefer my above so I can use this same script to also launch apps like geany or leafpad etc (DK)
  #   echo "Unknown command: ${choice}" | rofi -dmenu -p "error"
 fi

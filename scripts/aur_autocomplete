@@ -1,8 +1,0 @@
-#compdef yay
-typeset -A opt_args
-
-_localaur () { compadd $(ls /var/aur/) ; }
-_yay() {
-	'_localaur'
-	  }
-
