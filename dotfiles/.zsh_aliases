@@ -10,11 +10,14 @@
 # expac - for bigpkg
 # pacman - bigpkg
 # exa - for ls replacement
-# yay
+# yay/paru
 # restic for backups
 # reflector
 # tmux, ranger, typora, vscode, atom, yt-download
 # git guilt
+# ranger
+# autorandr
+# rofi
 
 # Global aliases (expanded in zsh with space)
 if [ "$(command -v nvim)" ]; then
@@ -32,6 +35,7 @@ alias -g A="| awk -F',' '{print $1 $2}'"
 
 # sum the column of numbers
 alias -g AS="| awk '{s+=\$1} END {print s}'"
+# launch parallel processes using xargs
 alias -g X='| xargs -n1 -P$(nproc) -I{}'
 alias -g R='| rofi -i -dmenu'
 
@@ -172,37 +176,40 @@ alias au="sudo apt update"
 #alias largest-packages=dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
 
 #-------------------------------------------
-# PACMAN, YAY (for AUR)
+# PACMAN, PARU (for AUR)
 #-------------------------------------------
-AUR_CMD="yay"
+# select AUR helper to use
+AUR_CMD="yay" # yay | paru
 # install package
-alias -g pi="sudo pacman -S"
-alias -g yi="$AUR_CMD -S --answerclean None --answerdiff None"
+alias pi="sudo pacman -S"
+alias yi="$AUR_CMD -S --answerclean None --answerdiff None"
 
 # search for package
-alias -g pas="pacman -Ss"
-alias -g ys="$AUR_CMD -Ss"
+alias pas="pacman -Ss"
+alias  ys="$AUR_CMD -Ss"
 
 # package information
-alias -g y-info="$AUR_CMD -Si"
-alias -g p-info="pacman -Si"
-alias -g p-files="pacman -Fl"
+alias  y-info="$AUR_CMD -Si"
+alias  p-info="pacman -Si"
+alias  p-files="pacman -Fl"
 
 # statistics over all packages
 alias y-stats="$AUR_CMD -P --stats"
 
-# clear yay cache
-alias yay-cache-clear="$AUR_CMD -Sc --aur"
+# clear paru cache
+alias paru-cache-clear="$AUR_CMD -Sc --aur"
 
 # remove (uninstall) package
-alias -g prm="sudo pacman -Rns"
+alias prm="sudo pacman -Rns"
 
 alias pacman="pacman --color=always"
 # alias pacman='sudo pacman --color auto'
 
 # update
-alias -g pacu="sudo pacman -Syu --color=always"
-alias -g uy="$AUR_CMD -Syua --answerclean None --answerdiff None"
+alias pacu="sudo pacman -Syu --color=always"
+
+alias uy="$AUR_CMD -Syua --answerclean None --answerdiff None" # options for yay
+
 alias pacman-bigpkg="expac -s '%-30n %m' | sort -rhk 2 | less"
 alias y-upgradable="sudo $AUR_CMD -Pu"
 alias y-rem-dep="sudo $AUR_CMD -Yc"
@@ -407,11 +414,10 @@ function crm(){
 # CALIBRE & RECOLL
 #--------------------------------------------
 CALIBRE_DIR="/mnt/NAS/books"
-CALIBRE_LOCAL_DIR="/home/bulk/book"
 alias c-it="calibre --with-library=$CALIBRE_DIR/books_it"
 alias c-astro="calibre --with-library=$CALIBRE_DIR/books_astro"
 alias c-life="calibre --with-library=$CALIBRE_DIR/books_life"
-alias c-ml="calibre --with-library=$CALIBRE_LOCAL_DIR/books_ml"
+alias c-ml="calibre --with-library=$CALIBRE_DIR/books_ml"
 alias r-it="recoll -c $HOME/.recoll_indexes/.recoll_it"
 alias r-astro="recoll -c $HOME/.recoll_indexes/.recoll_astro"
 alias r-life="recoll -c $HOME/.recoll_indexes/.recoll_life"
@@ -469,7 +475,7 @@ alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 #BLG="cd ~/blog; pipenv shell"
 #alias blog="$BLG"
 #alias pelican-run="$BLG; pelican --lr"
-alias blog-push="cd ~/blog/docs; git add .; git ci -m \"update\"; gp"
+alias blog-push="cd ~/projects/priv/blog/docs; git add .; git ci -m \"update\"; gp"
 alias blogger="typora ~/Dropbox/vimwiki/blog-drafts&"
 #---------------------------------------------
 #  SSH
@@ -518,9 +524,6 @@ alias oneline="sed -rn 'N;s/\n/ /;p'"
 # TODO: check all git repos if they can be updated if so, ask one by one if update
 
 # backup
-alias firma-backup="restic -r $HOME/Dropbox/restic-firma backup $HOME/bulk/firma"
-alias firma-snapshots="restic -r $HOME/Dropbox/restic-firma snapshots"
-
 alias brightness="xrandr --output LVDS-1 --brightness $1"
 
 alias sz="source ~/.zshrc"
@@ -580,14 +583,13 @@ alias won1="source /usr/share/virtualenvwrapper/virtualenvwrapper.sh"
 # usage: dd-usb if=./linux.iso of=/dev/sdb
 alias dd-usb="sudo dd bs=4M status=progress conv=fdatasync"
 alias pipr="pip install -r"
-# Honor old .zsh_aliases.local customizations, but print depecation warning.
-if [ -f ~/.zsh_aliases.local ]; then
-  source ~/.zsh_aliases.local
-  echo ".zsh_aliases.local is deprecated. Make entries in ~/.zshrc.d instead."
-fi
 
 # count files in dir
 alias cf='ls | wc -l'
 alias rmrf='rm -rf'
 alias rrr="autorandr | rofi -i -dmenu | awk -F'(' '{print $1}' | xargs autorandr"
 alias flake8-docstrings="flake8  --select D100, D101, D104, D107"
+
+# find days marked with [x]
+alias gmark="find $HOME/vimwiki/diary -name '*.md' | xargs grep -F '[x]' | grep -v medytacja | awk -F'/' '{print \$NF}' | sed s'/.md//' | sed s'/_/ /' | sort"
+alias gmark-days="find ~/vimwiki/diary -name '*.md' | xargs grep -F '[x]' | awk -F'/' '{print \$NF}' | tr . _ | awk -F'_' '{print \$2}' | sort | uniq -c | sort -nr"
