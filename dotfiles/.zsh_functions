@@ -25,7 +25,8 @@ function today() {      # display today's date in format YYYY-MM-DD
 
 function diary(){		# open diary page for today or day with given days offset (parameter)
     FNAME=$(d_file_offset $1)
-    FULL_FILE="$HOME/vimwiki/diary/$FNAME.md"
+    YEAR=$(date +%Y)
+    FULL_FILE=$HOME/vimwiki/diary/"$YEAR"/"$FNAME".md
     if [ -s $FULL_FILE ]
     then
         subl3 $FULL_FILE
@@ -118,7 +119,7 @@ function dlo(){		# display logs of container with given name or name stores in c
 }
 
 function drm(){		# remove docker container using rofi
-    echo "$(docker ps -a | rofi -threads 0 -width 100 -dmenu -i -p "locate:")" | awk {'print $1'} | xargs docker rm
+    docker ps -a | rofi -width 100 -dmenu -i -p "locate:" | awk {'print $1'} | xargs docker rm
 }
 
 function drmi(){	# remove docker image using rofi
@@ -597,22 +598,6 @@ a=\$(wc -l < file.txt)
 EOF
 }
 
-function h-find(){
-cat <<- EOF
-# find files in given time range
-find . -type f -newermt "2019-09-01" \! -newermt "2019-09-30"
-
-# find files larger that 100 bytes (+100c) or smaller than 100 bytes (-100c)
-find . -type f -size +100c
-
-# find all directories excluding current (.)
-find . ! path . -type d !
-
-# use negative regex to combine two patterns on filename
-find ./ ! -regex  '.*\(deb\|vmdk\)$'
-EOF
-}
-
 function h-tilda(){
 cat <<- EOF
 F1 – Pull down and pull up (Hide and Show) Tilda terminal window.
@@ -712,3 +697,6 @@ function ys-popular(){
     ys $1 | grep -e + | sed -e 's/(+//' | awk -F' ' '{print $3", "$1}' | sort -nr | head -10
 }
 
+function zsh-stats() {
+  fc -l 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n25
+}
