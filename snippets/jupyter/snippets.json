@@ -95,7 +95,7 @@
             ]
         },
         {
-            "name": "Turn off scientific notation",
+            "name": "turn off scientific notation",
             "code": [
                 "pd.set_option(‘display.float_format’, lambda x: ‘%.3f’ % x)"
             ]
@@ -196,7 +196,13 @@
             "code": [
                 "add_label_values_barh(ax)"
             ]
-        },                                
+        },
+                {
+            "name": "display dataframe with caption",
+            "code": [
+                "display(df.style.set_caption('My caption'))"
+            ]
+        },                                 
         {
             "name": "pd - limit precision",
             "code": [
