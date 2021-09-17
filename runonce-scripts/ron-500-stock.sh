@@ -7,4 +7,4 @@
 #echo '-----'
 #~/dotfiles/scripts/bankier.sh ZLOTO WIG20 MWIG40
 #~/dotfiles/scripts/ticker.sh GC=F ^GSPC BTC-USD
-~/dotfiles/scripts/ticker.sh DOT1-USD ETH-USD BTC-USD
+#~/dotfiles/scripts/ticker.sh DOT1-USD ETH-USD BTC-USD ADA-USD
