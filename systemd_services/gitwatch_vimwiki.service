@@ -1,0 +1,10 @@
+[Unit]
+Description=Service for periodical (1min) commiting changes in vimwiki folder
+After=getty.target
+[Service]
+Type=simple
+Restart=always
+ExecStartPre=/bin/sleep 30
+ExecStart=/sbin/gitwatch -s 60 /home/safjan/vimwiki
+[Install]
+WantedBy=multi-user.target
