@@ -1,6 +1,6 @@
 {
   "load_extensions": {
-    "hide_code/hide_code": false,
+    "hide_code/hide_code": true,
     "nbextensions_configurator/config_menu/main": true,
     "contrib_nbextensions_help_item/main": false,
     "spellchecker/main": true,
@@ -32,7 +32,10 @@
     "jupytext/index": true,
     "python-markdown/main": true,
     "nbdime/index": false,
-    "jupyter-black-master/jupyter-black": true
+    "jupyter-black-master/jupyter-black": true,
+    "toggle_all_line_numbers/main": true,
+    "autoscroll/main": false,
+    "nbresuse/main": false
   },
   "toc2": {
     "number_sections": false,

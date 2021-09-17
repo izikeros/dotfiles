@@ -3,7 +3,8 @@
   "Exporter": {
     "template_path": [
       ".",
-      "/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/jupyter_contrib_nbextensions/templates"
+      "/home/safjan/.virtualenvs/batman/lib/python3.7/site-packages/jupyter_contrib_nbextensions/templates",
+      "/home/safjan/.pyenv/versions/3.8.5/envs/fastapi385/lib/python3.8/site-packages/jupyter_contrib_nbextensions/templates"
     ],
     "preprocessors": [
       "jupyter_contrib_nbextensions.nbconvert_support.CodeFoldingPreprocessor",
