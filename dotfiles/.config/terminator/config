@@ -4,6 +4,8 @@
   help = ""
 [profiles]
   [[default]]
+    audible_bell = True
+    visible_bell = True
     background_color = "#282227"
     background_darkness = 0.95
     cursor_color = "#aaaaaa"

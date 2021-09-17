@@ -322,7 +322,7 @@
     </keybind>
     <keybind key="XF86Launch9">
       <action name="Execute">
-        <command>setxkbmap -model microsoft4000 -layout pl</command>
+        <command>setxkbmap -model microsoft4000 -layout pl -option kpdl:dot</command>
       </action>
     </keybind>
     <keybind key="XF86Launch5">
@@ -346,7 +346,7 @@
 
     <keybind key="Print">
       <action name="Execute">
-      	<command>ksnip --current</command>
+      	<command>flameshot gui</command>
       </action>
     </keybind>
 
@@ -368,7 +368,7 @@
     </keybind>
     <keybind key="W-e">
       <action name="Execute">
-        <command>subl3 -a --project ~/.config/sublime-text-3/Packages/User/Projects/vimwiki.sublime-project</command>
+        <command>subl -a --project ~/.config/sublime-text-3/Packages/User/Projects/vimwiki.sublime-project</command>
       </action>
     </keybind>
     <keybind key="W-S-e">
@@ -507,9 +507,9 @@
     <keybind key="W-b">
       <action name="ToggleDecorations"/>
     </keybind>
-    <keybind key="A-W-F11">
+    <!--<keybind key="A-W-F11">
       <action name="Execute"/>
-    </keybind>
+    </keybind>-->
     <keybind key="A-r">
       <action name="Resize"/>
     </keybind>

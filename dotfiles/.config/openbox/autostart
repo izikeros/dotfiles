@@ -6,8 +6,8 @@ pacclear -rk 1 &
 # compton (not sure what are the benefits from using it)
 #al-compositor --start &
 
-# set proper keyboard layout, polish
-setxkbmap -model microsoft4000 -layout pl
+# set proper keyboard layout, polish but dot on numeric keyboard keep '.' not ','
+setxkbmap -model microsoft4000 -layout pl -option kpdl:dot
 
 # enable numlock (disable for laptop)
 numlockx &
@@ -40,11 +40,15 @@ dropbox &
 tilda &
 
 # start Safe Eyes that protects your eyes from eye strain
-safeeyes &
+#safeeyes & # for some reason safeeyes is not always starting
+$HOME/dotfiles/scripts/safeeyes_delayed_start.sh
 
 # start screen saver (skip splash screen at startup: -nosplash)
-xscreensaver -nosplash&
+# xscreensaver -nosplash&
 
 # save last boots info (journalctl store very limited number of boots)
 $HOME/dotfiles/scripts/save-boot-time.sh &
+
+# fetch my hackernews favourites and save to csv
+$HOME/scripts/get_hn_favs.sh &
 
