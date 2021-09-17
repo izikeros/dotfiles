@@ -1,0 +1,32 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"exercism",
+		"Graphvizer",
+		"Hugofy",
+		"InsertDate",
+		"JSON Reindent",
+		"JSONComma",
+		"Line Endings Unify",
+		"MarkdownEditing",
+		"MarkdownPreview",
+		"MarkdownTOC",
+		"NimLime",
+		"Package Control",
+		"Pretty JSON",
+		"ProjectManager",
+		"SublimeLinter-html-tidy",
+		"SublimeLinter-json",
+		"SublimeLinter-shellcheck",
+		"Terminal",
+		"Terminus",
+	],
+	"repositories":
+	[
+		"https://github.com/renerocksai/sublime_zk"
+	],
+}

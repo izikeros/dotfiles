@@ -1,0 +1,10 @@
+{
+	"dictionary": "Packages/Dictionaries/es_ES_utf8.dic",
+	"font_size": 19,
+	"ignored_packages":
+	[
+		"Markdown",
+		"Vintage",
+	],
+	"theme": "Default Dark.sublime-theme",
+}

@@ -1,15 +1,43 @@
 [
-	// Insert datetime using default format text
+  // Insert datetime using default format text
   { "keys": ["f5"],
     "command": "insert_date" },
-	// Show the panel with pre-defined options from settings
+  // Show the panel with pre-defined options from settings
   { "keys": ["ctrl+f5"],
     "command": "insert_date_panel" },
-   { "keys": ["ctrl+shift+m"],
+  // Change direction in vocabulary notes
+  { "keys": ["ctrl+shift+s"],
+    "command": "swap_terms" },
+  // Convert underscored md dilename to H1 heading with title
+  { "keys": ["ctrl+alt+t"],
+    "command": "filename_to_title" },    
+  // Render Markdown preview in the browser
+  { "keys": ["ctrl+shift+m"],
     "command": "markdown_preview",
      "args": {"target": "browser", "parser":"markdown"} },
-    { 
-     "keys": ["alt+`"],
-     "command": "toggle_terminus_panel"
+  {
+    "keys": ["ctrl+alt+e"],
+    "command": "set_user_setting",
+    "args": {
+        "file": "Preferences.sublime-settings",
+        "setting": "dictionary",
+        "value": "Packages/Dictionaries/pl_PL_utf8.dic"
     }
+  },
+  {
+    "keys": ["ctrl+alt+r"],
+    "command": "set_user_setting",
+    "args": {
+        "file": "Preferences.sublime-settings",
+        "setting": "dictionary",
+        "value": "Packages/Dictionaries/es_ES_utf8.dic"
+    }
+  },
+  // Show/hide terminus panel
+  { "keys": ["alt+`"],
+     "command": "toggle_terminus_panel"}
+  // TODO: Enable Polish dictionary
+  // TODO: Enable English dictionary
+  // TODO: Enable Spanish dictionary
+
 ]
