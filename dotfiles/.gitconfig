@@ -136,6 +136,7 @@
 	sa = stash apply
 	ss = stash save
 	set-upstream = !git branch --set-upstream-to=origin/$(git symbolic-ref --short HEAD)
+	ac = !git add -A && git commit -m
 
 [merge]
     #tool = kdiff3
