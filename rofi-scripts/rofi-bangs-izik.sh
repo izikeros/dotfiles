@@ -37,7 +37,7 @@ COMMANDS["brain"]="find ~/Documents/brain -name '*.md' | rofi -i -dmenu | xargs 
 LABELS["brain"]=""
 
 # search notes by title
-COMMANDS["jira"]="find ~/rofi-scripts/rjira.sh"
+COMMANDS["jira"]="~/dotfiles/rofi-scripts/rjira.sh"
 LABELS["jira"]=""
 
 # search clipboard history (uses green clip)
@@ -73,9 +73,12 @@ COMMANDS["github"]="cat ~/data/github-izikeros-stars-desc.txt | tr '\t' '^' | cu
 LABELS["github"]=""
 
 # search my hackernews favs
-COMMANDS["hackernews"]="~/dotfiles/rofi-scripts/rofi-hn-favs.sh"
+COMMANDS["hackernews"]="cat ~/data/hn_favs.csv | rofi -i -dmenu | awk -F '\";' '{print $2}' | xargs brave"
 LABELS["hackernews"]=""
 
+# play music
+COMMANDS["music"]="find ~/Music -name '*.mp3' | grep -v _Other_Audio | rofi -i -dmenu | xargs -I{} parole '{}'"
+LABELS["music"]=""
 
 # Search contents
 # rg --no-heading www.youtube
