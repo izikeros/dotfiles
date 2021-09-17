@@ -103,6 +103,8 @@ PATH=/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.zgen/zdharma/zsh-diff-so-fancy-master/bin:$PATH
 
+#export http_proxy="http://10.158.100.1:8080"
+#export https_proxy="http://10.158.100.1:8080"
 
 # set -o to list all available options and their current setting
 setopt BANG_HIST
@@ -252,4 +254,5 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
 [ -d $HOME/.nimble/bin ] && export PATH=$PATH:$HOME/.nimble/bin
 [ -d $HOME/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
 [ -d $HOME/dotfiles/runonce-scripts ] && export PATH=$PATH:$HOME/dotfiles/runonce-scripts
+[ -f $HOME/.coinmarketcap-api.key ] && export COINMARKETCAP_API_KEY=$(cat $HOME/.coinmarketcap-api.key)
 #zprof # end of profiling

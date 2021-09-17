@@ -51,7 +51,7 @@ alias -g FI='for i in {1..3}; do ls; sleep 1  done'
 # FILESYSTEM - DIRECTORY SIZE, LISTING
 #--------------------------------------------
 # list size of top 11 directories
-alias ducks='du -cksh *|sort -rh|head -11'
+alias ducks='du -cksh * | sort -rh | head -11'
 
 # list directory size in current dir
 alias duu='du -sh'
@@ -493,6 +493,7 @@ alias ssh_no_hostchecks="ssh -A -o UserKnownHostsFile=/dev/null -o GlobalKnownHo
 # OTHER
 #--------------------------------------------
 alias vpn="sudo vpnc nokia-fi && ~/nsn/proxy/redsocks.sh && echo '- use Nokia DNS for VPN' && ~/nsn/copy-resolv-conf.sh"
+alias vpn-de="sudo vpnc nokia-de && ~/nsn/proxy/redsocks.sh && echo '- use Nokia DNS for VPN' && ~/nsn/copy-resolv-conf.sh"
 alias novpn="sudo vpnc-disconnect && ~/nsn/proxy/redsocks-stop.sh && echo '- reload NetworkManager to restore DNS settings'  && sudo systemctl reload NetworkManager"
 
 # Exit to current directory (On exit, the shell returns to the directory Midnight Commander was started from, instead of the last active directory.)
@@ -516,7 +517,7 @@ alias tw="tmuxifier load-window"
 alias wget="wget -c"
 
 # replace https reference to ssh (to be used with my repos)
-alias ssh-it-github="sed -i 's/url = https:\/\/github\.com\//url = github:/'"
+alias ssh-it-github="sed -i 's/url = https:\/\/github\.com\//url = github:/' && 's/url = git@github.com/url = github/'"
 
 # join two consecutive lines in one line
 alias oneline="sed -rn 'N;s/\n/ /;p'"
@@ -591,5 +592,8 @@ alias rrr="autorandr | rofi -i -dmenu | awk -F'(' '{print $1}' | xargs autorandr
 alias flake8-docstrings="flake8  --select D100, D101, D104, D107"
 
 # find days marked with [x]
-alias gmark="find $HOME/vimwiki/diary -name '*.md' | xargs grep -F '[x]' | grep -v medytacja | awk -F'/' '{print \$NF}' | sed s'/.md//' | sed s'/_/ /' | sort"
+alias gmark="find $HOME/vimwiki/diary -name '*.md' | xargs grep -F '[x]' | grep -v medytacja | awk -F'/' '{print \$NF}' | sed s'/.md//' | sed s'/_/ /' | sed 's/:\[x\]//' | sort"
 alias gmark-days="find ~/vimwiki/diary -name '*.md' | xargs grep -F '[x]' | awk -F'/' '{print \$NF}' | tr . _ | awk -F'_' '{print \$2}' | sort | uniq -c | sort -nr"
+alias jupytext-sync-all-in-current-dir="find ./ -maxdepth 1 -name '*.ipynb' | xargs jupytext --sync"
+# double commander here
+alias dch="doublecmd .&"

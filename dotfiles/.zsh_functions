@@ -29,10 +29,10 @@ function diary(){		# open diary page for today or day with given days offset (pa
     FULL_FILE=$HOME/vimwiki/diary/"$YEAR"/"$FNAME".md
     if [ -s $FULL_FILE ]
     then
-        subl3 $FULL_FILE
+        subl $FULL_FILE
     else
         echo $FNAME > $FULL_FILE
-        subl3 $FULL_FILE
+        subl $FULL_FILE
     fi
 
 }
