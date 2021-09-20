@@ -1,7 +1,7 @@
 {
   "load_extensions": {
     "hide_code/hide_code": true,
-    "nbextensions_configurator/config_menu/main": true,
+    "nbextensions_configurator/config_menu/main": false,
     "contrib_nbextensions_help_item/main": false,
     "spellchecker/main": true,
     "code_prettify/isort": true,
@@ -33,7 +33,7 @@
     "python-markdown/main": true,
     "nbdime/index": false,
     "jupyter-black-master/jupyter-black": true,
-    "toggle_all_line_numbers/main": true,
+    "toggle_all_line_numbers/main": false,
     "autoscroll/main": false,
     "nbresuse/main": false
   },
