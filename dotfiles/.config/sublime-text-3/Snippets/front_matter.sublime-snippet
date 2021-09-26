@@ -1,0 +1,19 @@
+<!-- TODO: write plugin that will:-->
+<!-- - look for first H1 header and use it's content as title  -->
+<!-- - look for the date in YYYY-MM-DD format and use it as date, if not available, use creation date-->
+<!-- - autosuggest tags 1) on language (looking at land fefinitions on code fences) 2) based on the contents-->
+<snippet>
+	<content><![CDATA[
+---
+title: ${1}
+date: ${2}
+draft: ${3:false|true}
+tags: ${4}
+summary: ${5}
+---
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>front</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
