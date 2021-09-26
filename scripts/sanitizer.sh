@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 
 FILE_TYPE=${1:-*}
 echo "F:$FILE_TYPE"

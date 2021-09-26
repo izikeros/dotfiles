@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -e
+
 pwd
 IFS=$'\n'
 for f in $(find ./ -name '*.mp3'); do

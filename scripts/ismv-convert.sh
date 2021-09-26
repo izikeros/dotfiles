@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ismv-convert.sh - convert ismv videos to mp4 format
 
 # the native ffmpeg AAC audio encoder was experimental and you needed

@@ -1,5 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # gist: sebble/stars.sh
+
 USER=${1:-sebble}
 
 STARS=$(curl -sI https://api.github.com/users/$USER/starred?per_page=1|egrep '^Link'|egrep -o 'page=[0-9]+'|tail -1|cut -c6-)

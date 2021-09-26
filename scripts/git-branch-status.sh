@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #  git-branch-status - print pretty git branch sync status reports
 #

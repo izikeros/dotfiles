@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # stock-bankier.sh
 # Getting stock, some currency data from bankier.pl
 # Supported currency: EUR, USD

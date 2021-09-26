@@ -1,5 +1,10 @@
-#!/bin/bash
-# git-all-status.sh - check status all git repos under given dir (recursive)
+#!/usr/bin/env bash
+# git-all-status.sh
+# check status all git repos under given dir (recursive)
+# author: Krystian Safjan (ksafjan@gmail.com)
+# Licence MIT
+
+set -e
 
 list=`find ./ -name "*.git" -type d | sed 's/\.git$//g'`
 start_dir=`pwd`

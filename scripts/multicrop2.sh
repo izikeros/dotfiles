@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Developed by Fred Weinhaus 12/30/2015 .......... revised 1/4/2020
 #

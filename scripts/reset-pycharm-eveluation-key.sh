@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # https://www.quora.com/Is-there-a-way-to-extends-trial-period-of-Jetbrains-IDE
 

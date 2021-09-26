@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # bootstrap-test-file.sh - creates starter with test functions in tests subdirectory for input file
 # usage: bootstrap-test-file.sh foo.py
 
