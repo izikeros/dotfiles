@@ -587,5 +587,6 @@ alias flake8-docstrings="flake8  --select D100, D101, D104, D107"
 alias gmark="find $HOME/vimwiki/diary -name '*.md' | xargs grep -F '[x]' | grep -v medytacja | awk -F'/' '{print \$NF}' | sed s'/.md//' | sed s'/_/ /' | sed 's/:\[x\]//' | sort"
 alias gmark-days="find ~/vimwiki/diary -name '*.md' | xargs grep -F '[x]' | awk -F'/' '{print \$NF}' | tr . _ | awk -F'_' '{print \$2}' | sort | uniq -c | sort -nr"
 alias jupytext-sync-all-in-current-dir="find ./ -maxdepth 1 -name '*.ipynb' | xargs jupytext --sync"
+alias jupytext-pair-all-notebooks-in-current-dir="find . -name '*.ipynb' | xargs jupytext --set-formats ipynb,py:percent"
 # double commander here
 alias dch="doublecmd .&"
