@@ -6,6 +6,4 @@ sed 's/^\"//g' | sed 's/\",\"/\^/g' | sed 's/\"$//g' | \
 # remove duplicates
 sort -u | \
 # sort by date (recently starred first)
-sort -k4 --reverse > \
-# save to file
-~/data/github-izikeros-stars-desc-ng.txt
+sort -k4 --reverse > ~/data/github-izikeros-stars-desc-ng.txt

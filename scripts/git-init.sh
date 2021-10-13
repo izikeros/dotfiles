@@ -25,7 +25,7 @@ if [ -z "$description" ]; then
   echo No description provided
 else
   echo $description > .git/description
-  echo description written to the .git/description	
+  echo description written to the .git/description
 fi
 
 # TODO: ask if initialize readme
@@ -36,6 +36,6 @@ else
 	dirname=${PWD##*/}
 	echo "# $dirname" > README.md
 	echo $description >> README.md
-
+fi
 # Status
 git status
