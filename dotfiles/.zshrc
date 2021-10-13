@@ -255,4 +255,8 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
 [ -d $HOME/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
 [ -d $HOME/dotfiles/runonce-scripts ] && export PATH=$PATH:$HOME/dotfiles/runonce-scripts
 [ -f $HOME/.coinmarketcap-api.key ] && export COINMARKETCAP_API_KEY=$(cat $HOME/.coinmarketcap-api.key)
+
+# Add my github username as env variable
+GITHUB_USER=izikeros
+
 #zprof # end of profiling
