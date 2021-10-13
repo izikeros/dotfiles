@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+---
+title: ${1}
+date: ${2}
+status: published | draft
+tags: ${3}
+summary: ${4}
+slug: ${5}
+category: note
+citation_needed: false
+todo: 
+---
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>frontn</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

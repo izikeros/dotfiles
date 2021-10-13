@@ -7,7 +7,6 @@
 	[
 		"exercism",
 		"Graphvizer",
-		"Hugofy",
 		"InsertDate",
 		"JSON Reindent",
 		"JSONComma",
@@ -19,6 +18,7 @@
 		"Package Control",
 		"Pretty JSON",
 		"ProjectManager",
+		"SublimeLinter",
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-json",
 		"SublimeLinter-shellcheck",
