@@ -49,7 +49,13 @@ do
 			# extract hostname from line containing '.git' text
 			hosting=$(grep ".git" ./.git/config | grep -v "^\s.*#" | sed 's/http:\/\///' | sed 's/https:\/\///' | awk -F"/" '{print $1}' | awk -F":" '{print $1}' | awk -F"=" '{print $2}')
 
-			# extract user email
+			if [ "$hosting" = " github" ]; then
+                hosting=$hosting
+            else
+                hosting=$bldred$hosting$txtrst
+            fi
+
+            # extract user email
 			email=$(grep "email" ./.git/config | grep -v "^\s.*#" | awk -F"=" '{print $2}')
 
 			#echo $hosting

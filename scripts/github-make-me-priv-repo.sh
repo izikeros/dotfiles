@@ -32,5 +32,7 @@ echo "-- setting upstream"
 git set-upstream
 
 echo "-- setting authentication with the ssh-keys"
+
 # set ssh authentication
-sed -i 's/url = https:\/\/github.com\//url = github:/'
+sed -i 's/url = https:\/\/github.com\//url = github:/' .git/config
+sed -i 's/url = git@github.com/url = github/' .git/config
