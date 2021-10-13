@@ -8,27 +8,23 @@ echo "-- initializing local git repo"
 git init -b main
 
 # set user
-echo "-- setting user data"
 git config user.email "ksafjan@gmail.com"
 git config user.name "Krystian Safjan"
+echo "-- setting user data"
 
-
-DIR_NAME=${PWD##*/}
 echo "-- creating github repo: $DIR_NAME"
-gh repo create "$DIRNAME" --private
+DIR_NAME=${PWD##*/}
 
 # git pull --set-upstream origin main
 
+gh repo create "$DIRNAME" --private
+
+# create .gitignore
 echo "-- creating .gitignore"
-# ensure that .git is ignored and will not be added
+touch .gitignore
 
-
-# set upstream
-#echo "-- setting upstream"
-#git branch --set-upstream-to=origin/main main
-
-echo "-- add all files, commit and push"
 # add all files, commit and push
+echo "-- add all files, commit and push"
 git add . && git commit -m "initial commit" && git push
 
 echo "-- setting upstream"
