@@ -48,7 +48,7 @@ do
 			cd "$repo" || exit
 			# extract hostname from line containing '.git' text
 			hosting=$(grep ".git" ./.git/config | grep -v "^\s.*#" | sed 's/http:\/\///' | sed 's/https:\/\///' | awk -F"/" '{print $1}' | awk -F":" '{print $1}' | awk -F"=" '{print $2}')
-			
+
 			# extract user email
 			email=$(grep "email" ./.git/config | grep -v "^\s.*#" | awk -F"=" '{print $2}')
 
@@ -61,7 +61,7 @@ do
 			repo_size=$(du -sh . | tr '\t' ' ' | cut -d' ' -f1)
 
 			if [ "$num_commits" -gt 0 ];then
-				num_commits_text=" # commits to push: $txtbld$num_commits.$txtrst"
+				num_commits_text=" # $bldred commits to push: $num_commits.$txtrst"
 			fi
 
 			# Display text for clean repos
