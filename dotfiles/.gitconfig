@@ -29,50 +29,142 @@
     #
     # show commits that differs development (or master) current HEAD
     # nice to inspect work in given feature branch
-    hdevel = !git --no-pager log origin/devel..HEAD --abbrev-commit --pretty=oneline
-    hd = !git --no-pager log origin/development..HEAD --abbrev-commit --pretty=oneline
-    hm = !git --no-pager log origin/master..HEAD --abbrev-commit --pretty=oneline
+    hdevel = !git --no-pager log \
+        origin/devel..HEAD \
+        --abbrev-commit \
+        --pretty=oneline
+
+    hd = !git --no-pager log \
+        origin/development..HEAD \
+        --abbrev-commit \
+        --pretty=oneline
+
+    hm = !git --no-pager log \
+        origin/master..HEAD \
+        --abbrev-commit \
+        --pretty=oneline
 
     # baseline log - showing tree, relative date, without pager
-    lg = !git --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -15
+    lg = !git --no-pager log \
+        --graph \
+        --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
+        --abbrev-commit \
+        --date=relative \
+        -15
 
-    lg-all = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lg-all = !git log \
+        --graph \
+        --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
+        --abbrev-commit \
+        --date=relative
 
     # display change statistics (num of files changed, which files)
-    lg-stat = !git log --abbrev-commit --graph --pretty=oneline --stat
+    lg-stat = !git log \
+        --abbrev-commit \
+        --graph \
+        --pretty=oneline \
+        --stat
 
     # List commits in short form, with colors and branch/tag annotations
-    lg-short-log = log --oneline --decorate
+    lg-short-log = log \
+        --oneline \
+        --decorate
 
     # Commits with date/(time)
     # showing absolute dates
-    lg-date-absolute = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    lg-date-absolute = log \
+        --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" \
+        --decorate \
+        --date=short
+
     # 	showing relative dates: (e.g. $ git ld -10)
-    lg-date-relative = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    lg-date-relative = log \
+        --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" \
+        --decorate \
+        --date=relative
 
-    # showing date and time
-    lg-date-time-abs-rel = !git --no-pager log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\" -15
-    lg-date-time-abs-rel-all = !git log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+    # list 15 recent commits with graph, long date + relative date (1 day ago). Do not use pagination.
+    lg-date-time-abs-rel = !git --no-pager log --graph \
+        --abbrev-commit \
+        --decorate \
+        --all \
+        --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\" \
+        -15
 
-    # List commits showing changed files (need fix)
-    lg4 = !git --no-pager log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat -15
-    lg5 = !git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    # list all commits with graph, long date + relative date (1 day ago). Use pagination.
+    lg-date-time-abs-rel-all = !git log --graph \
+        --abbrev-commit \
+        --decorate \
+        --all \
+        --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+
+    # List 15 recent commits and files they changed, do not use pagination
+    lg4 = !git --no-pager log \
+        --pretty=format:"%Cgreen%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" \
+        --decorate \
+        --numstat -15
+
+    # List all commits and files they changed, use pagination
+    lg5 = !git log \
+        --pretty=format:"%Cgreen%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" \
+        --decorate \
+        --numstat
+
     # see all the commits related to a file, with the diff of the changes
     lg-filelog = log -u
 
     ####### WHAT'S UP? ##########
     # List today's oneline commits
-    lg-today     = !git --no-pager log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --color --date=short --since=midnight
+    lg-today = !git --no-pager log  --all \
+        --graph \
+        --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
+        --abbrev-commit \
+        --color \
+        --date=short \
+        --since=midnight
     lg-month     = !git --no-pager log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --color --date=short --since='1 month'
 
     # filter mine commits by the email
-    lg1-my-week  = !git --no-pager log  --graph --pretty=format:'%C(yellow)%d%Creset %s %Cgreen(%ad, %cr)' --abbrev-commit --date=short --all --since='1 week' --no-merges --author=krystian.safjan@nokia.com
-    lg1-my-month  = !git --no-pager log  --graph --pretty=format:'%C(yellow)%d%Creset %s %Cgreen(%ad, %cr)' --abbrev-commit --date=short --all --since='1 month' --no-merges --author=krystian.safjan@nokia.com
+    lg1-my-week  = !git --no-pager log  \
+        --graph \
+        --pretty=format:'%C(yellow)%d%Creset %s %Cgreen(%ad, %cr)' \
+        --abbrev-commit \
+        --date=short \
+        --all \
+        --since='1 week' \
+        --no-merges \
+        --author=krystian.safjan@nokia.com
 
-    lg1-all-week = log                  --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all --since='1 week' --no-merges
-    lg-all-week  = log --all --since='1 weeks' --oneline --no-merges
+    lg1-my-month  = !git --no-pager log  \
+        --graph \
+        --pretty=format:'%C(yellow)%d%Creset %s %Cgreen(%ad, %cr)' \
+        --abbrev-commit \
+        --date=short \
+        --all \
+        --since='1 month' \
+        --no-merges \
+        --author=krystian.safjan@nokia.com
 
-    taxbreak = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --since='1 month'
+    lg1-all-week = log \
+        --graph \
+        --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
+        --abbrev-commit \
+        --date=relative \
+        --all \
+        --since='1 week' \
+        --no-merges
+
+    lg-all-week  = log \
+        --all \
+        --since='1 weeks' \
+        --oneline \
+        --no-merges
+
+    taxbreak = log \
+        --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" \
+        --decorate \
+        --date=short \
+        --since='1 month'
 
     # see commit stats per author
     stats = shortlog -sn --all --no-merges
