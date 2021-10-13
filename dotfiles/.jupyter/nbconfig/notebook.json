@@ -35,7 +35,8 @@
     "jupyter-black-master/jupyter-black": true,
     "toggle_all_line_numbers/main": false,
     "autoscroll/main": false,
-    "nbresuse/main": false
+    "nbresuse/main": false,
+    "ruler/main": true
   },
   "toc2": {
     "number_sections": false,
