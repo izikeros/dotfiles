@@ -470,14 +470,6 @@ alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
 #---------------------------------------------
-#  blog
-#---------------------------------------------
-#BLG="cd ~/blog; pipenv shell"
-#alias blog="$BLG"
-#alias pelican-run="$BLG; pelican --lr"
-alias blog-push="cd ~/projects/priv/blog/docs; git add .; git ci -m \"update\"; gp"
-alias blogger="typora ~/Dropbox/vimwiki/blog-drafts&"
-#---------------------------------------------
 #  SSH
 #---------------------------------------------
 # Pass our credentials by default
