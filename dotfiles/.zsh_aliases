@@ -488,9 +488,10 @@ alias vpn="sudo vpnc nokia-fi && ~/nsn/proxy/redsocks.sh && echo '- use Nokia DN
 alias vpn-de="sudo vpnc nokia-de && ~/nsn/proxy/redsocks.sh && echo '- use Nokia DNS for VPN' && ~/nsn/copy-resolv-conf.sh"
 alias novpn="sudo vpnc-disconnect && ~/nsn/proxy/redsocks-stop.sh && echo '- reload NetworkManager to restore DNS settings'  && sudo systemctl reload NetworkManager"
 
-# Exit to current directory (On exit, the shell returns to the directory Midnight Commander was started from, instead of the last active directory.)
+# mc with exit to current directory (On exit, the shell returns to the directory Midnight Commander was started from, instead of the last active directory.)
 alias mc=". /usr/lib/mc/mc-wrapper.sh"
 
+# gramps launcher
 alias gramps="GRAMPSDIR=$HOME/Documents/priv/Gramps/ LANGUAGE=pl_PL:pl LANG=pl_PL.UTF-8 gramps"
 
 alias hnfav="firefox https://news.ycombinator.com/favorites\\?id\=izik"
@@ -568,25 +569,34 @@ alias monitors="cat /sys/class/drm/card*/edid | tr -cd '\11\12\15\40-\176'"
 
 alias vh='sudo $VIM /etc/hosts'
 alias t='diary'
-alias diary-status='$HOME/dotfiles/scripts/runonce-scripts/400-check-if-diary-for-last_days.sh'
+alias diary-status='$HOME/scripts/runonce-scripts/400-check-if-diary-for-last_days.sh'
 alias tis='tig status'
 
 alias won="source /usr/bin/virtualenvwrapper.sh"
 alias won1="source /usr/share/virtualenvwrapper/virtualenvwrapper.sh"
-# usage: dd-usb if=./linux.iso of=/dev/sdb
+# dd image with usb specific sync options. Usage: dd-usb if=./linux.iso of=/dev/sdb
 alias dd-usb="sudo dd bs=4M status=progress conv=fdatasync"
+# pip install from requirements
 alias pipr="pip install -r"
 
 # count files in dir
 alias cf='ls | wc -l'
+# force remove directory - typed without hyphens
 alias rmrf='rm -rf'
+# run aurtorandr and select configuration from menu
 alias rrr="autorandr | rofi -i -dmenu | awk -F'(' '{print $1}' | xargs autorandr"
+# perform flake8 check focused on docstring checks
 alias flake8-docstrings="flake8  --select D100, D101, D104, D107"
 
 # find days marked with [x]
 alias gmark="find $HOME/vimwiki/diary -name '*.md' | xargs grep -F '[x]' | grep -v medytacja | awk -F'/' '{print \$NF}' | sed s'/.md//' | sed s'/_/ /' | sed 's/:\[x\]//' | sort"
+# display frequency stats (per day) forr days marked with [x]
 alias gmark-days="find ~/vimwiki/diary -name '*.md' | xargs grep -F '[x]' | awk -F'/' '{print \$NF}' | tr . _ | awk -F'_' '{print \$2}' | sort | uniq -c | sort -nr"
+
+# jupytext - synchronize all notebooks and in current directory, no recursive
 alias jupytext-sync-all-in-current-dir="find ./ -maxdepth 1 -name '*.ipynb' | xargs jupytext --sync"
+# jupytext - pair all notebook in current dir and subdirs with py:percent scripts
 alias jupytext-pair-all-notebooks-in-current-dir="find . -name '*.ipynb' | xargs jupytext --set-formats ipynb,py:percent"
-# double commander here
-alias dch="doublecmd .&"
+
+# double commander here - run double commander in current directory
+alias duch="doublecmd .&"
