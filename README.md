@@ -1,25 +1,26 @@
 # <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/204px-Tux.svg.png" width="30"> dotfiles 
-Collection of Linux settings, scripts, aliases that helps to transform fresh system (usually Arch or Xubuntu) to familiar look & fell with the tools I'm using.
+Collection of Linux settings, aliases that helps to transform fresh system (usually Arch or Xubuntu) to familiar look & fell with the tools I'm using.
 
 Contains:
 * `.config`   - configuration files for different programs,
-* `backup`    - scripts that help to store system configuration (config files, installed packages, etc...),
 * `dotfiles`  - real dotfiles that can be found in user home directory,
-* `polybar-scripts` - customized polybar scripts (TODO: move to separate repo, add repo clonning as new step in restore)
-* `restore`   - scripts that help to install packages, customize system: e.g. install aliases, zsh extensions,
-* `restore/pkg` - lists of packages to install,
-* `scripts`   - collection of shell scripts,
 * `settings`  - settings for applications that don't fall into `dotfiles` or `.config`
 * `snippets`  - snippets for vim.
-* ~`pycharm` and `pycharm_ce`~ - configuration files for PyCharm, (depreciated, pycharm configuration is stored on github repo, see description below)
 
-# Fresh install
-Go to restore directory and launch steps you would like to apply. The scripts are ordered using 3-digit prefix.
+# Apply settings, installs in fresh system
+
+> Prerequisite: Ensure you have at least git installed.
+
+## Clone `dotfiles` and `scripts` repo
+
+## Step-by-step restoration of the settings
+
+Go to `restore/steps` directory from the `scripts` repo and launch steps you would like to apply. The scripts are ordered using 3-digit prefix.
 
 ## Packages
 packages are divided into groups:
-base.txt - these are always installed either on server or desktop installation
-ext.txt  - these are
+`base.txt` - these are always installed either on server or desktop installation
+`ext.txt`  - these additional are rather dedicated to laptop/workstation than server environment
 
 There are helper scripts that allows to manually update lists based on what is already installed in the system, see: `update_aur_list.sh` and `update_ext_list.sh` (work in progress).
 
