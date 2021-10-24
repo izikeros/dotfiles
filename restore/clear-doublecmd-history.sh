@@ -1,1 +1,0 @@
-/home/safjan/dotfiles/scripts/clear-doublecmd-history.sh

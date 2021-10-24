@@ -1,7 +1,0 @@
-veracrypt
-pycharm-community-edition
-python-virtualenv
-networkmanager-openvpn
-networkmanager
-docker
-docker-compose
