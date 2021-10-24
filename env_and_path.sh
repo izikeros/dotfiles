@@ -1,7 +1,7 @@
 export ARCHFLAGS="-arch x86_64"
 export EDITOR='nvim'
 export VISUAL='nvim'
-export PATH="$HOME/dotfiles/scripts:$PATH"
+export PATH="$HOME/scripts/my_scripts:$PATH"
 
 export BROWSER="brave"
 export PAGER="less"

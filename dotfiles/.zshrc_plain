@@ -284,8 +284,8 @@ source /home/izik/dotfiles/env_and_path.sh
 eval "$(fasd --init auto)"
 eval "$(thefuck --alias)"
 
-~/dotfiles/scripts/runonce.sh neofetch
-~/dotfiles/scripts/runonce.sh ~/dotfiles/scripts/check_if_repos_are_clean.sh
+~/scripts/my_scripts/runonce.sh neofetch
+~/scripts/my_scripts/runonce.sh ~/scripts/my_scripts/check_if_repos_are_clean.sh
 
 #-----------------------
 # Powerlevel 9k

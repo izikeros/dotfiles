@@ -186,7 +186,7 @@ export PROJECT_HOME=$HOME/projects
 [ -f /usr/share/doc/pkgfile/command-not-found.zsh ] && source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # Broot - file manager
-[ -f /home/safjan/.config/broot/launcher/bash/br ] && source /home/safjan/.config/broot/launcher/bash/br
+[ -f $HOME/.config/broot/launcher/bash/br ] && source $HOME/.config/broot/launcher/bash/br
 
 # fzf - fuzzy find in history
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -200,8 +200,7 @@ fi
 # fuck - correct last command
 # eval "$(thefuck --alias)"
 
-#~/dotfiles/scripts/runonce.sh neofetch
-~/dotfiles/scripts/runonce.sh ~/dotfiles/scripts/runonce-all.sh
+$HOME/scripts/my_scripts/runonce.sh $HOME/scripts/my_scripts/runonce-all.sh
 
 # --------------
 # LS colors
@@ -253,10 +252,11 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
 [ -d $HOME/.gem/ruby/2.7.0/bin ] && export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
 [ -d $HOME/.nimble/bin ] && export PATH=$PATH:$HOME/.nimble/bin
 [ -d $HOME/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
-[ -d $HOME/dotfiles/runonce-scripts ] && export PATH=$PATH:$HOME/dotfiles/runonce-scripts
+[ -d $HOME/scripts/runonce-scripts ] && export PATH=$PATH:$HOME/scripts/runonce-scripts
 [ -f $HOME/.coinmarketcap-api.key ] && export COINMARKETCAP_API_KEY=$(cat $HOME/.coinmarketcap-api.key)
 
-# Add my github username as env variable
+# Add my github username as env variable for script that gets my starred
+# projects
 GITHUB_USER=izikeros
 
 #zprof # end of profiling

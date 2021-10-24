@@ -41,17 +41,17 @@ tilda &
 
 # start Safe Eyes that protects your eyes from eye strain
 #safeeyes & # for some reason safeeyes is not always starting
-$HOME/dotfiles/scripts/delayed-start-safeeyes.sh &
+$HOME/scripts/my_scripts/delayed-start-safeeyes.sh &
 
 # start screen saver (skip splash screen at startup: -nosplash)
 # xscreensaver -nosplash&
 
 # save last boots info (journalctl store very limited number of boots)
-$HOME/dotfiles/scripts/save-boot-time.sh &
+$HOME/scripts/my_scripts/save-boot-time.sh &
 
 # fetch my HackerNews favourites and save to csv
-$HOME/scripts/delayed-start-get-hn-favs.sh &
+$HOME/scripts/my_scripts/delayed-start-get-hn-favs.sh &
 
 # fetch my Github starred projects
-#$HOME/dotfiles/scripts/delayed-start-get-github-starred.sh &
-/home/safjan/projects/priv/hacker-news-favourites-downloader/hafado.py -u izik > /homa/safjan/data/hn_fav.csv
+$HOME/scripts/my_scripts/delayed-start-get-github-starred.sh &
+#/home/safjan/projects/priv/hacker-news-favourites-downloader/hafado.py -u izik > /home/safjan/data/hn_fav.csv
