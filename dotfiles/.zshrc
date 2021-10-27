@@ -253,7 +253,6 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
 [ -d $HOME/.nimble/bin ] && export PATH=$PATH:$HOME/.nimble/bin
 [ -d $HOME/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
 [ -d $HOME/scripts/runonce-scripts ] && export PATH=$PATH:$HOME/scripts/runonce-scripts
-[ -f $HOME/.coinmarketcap-api.key ] && export COINMARKETCAP_API_KEY=$(cat $HOME/.coinmarketcap-api.key)
 
 # Add my github username as env variable for script that gets my starred
 # projects
