@@ -8,15 +8,18 @@
   // Change direction in vocabulary notes
   { "keys": ["ctrl+shift+s"],
     "command": "swap_terms" },
-  // Convert underscored md dilename to H1 heading with title
+  // Convert underscored md filename to H1 heading with title
   { "keys": ["ctrl+alt+t"],
-    "command": "filename_to_title" },    
+    "command": "filename_to_title" },
+  // Convert title (e.g. copied from article) to filename with underscores, etc.
+  { "keys": ["ctrl+alt+r"],
+    "command": "title_to_filename" },        
   // Render Markdown preview in the browser
   { "keys": ["ctrl+shift+m"],
     "command": "markdown_preview",
      "args": {"target": "browser", "parser":"markdown"} },
   {
-    "keys": ["ctrl+alt+e"],
+   "keys": ["ctrl+alt+p"],
     "command": "set_user_setting",
     "args": {
         "file": "Preferences.sublime-settings",
@@ -25,12 +28,21 @@
     }
   },
   {
-    "keys": ["ctrl+alt+r"],
+    "keys": ["ctrl+alt+e"],
     "command": "set_user_setting",
     "args": {
         "file": "Preferences.sublime-settings",
         "setting": "dictionary",
         "value": "Packages/Dictionaries/es_ES_utf8.dic"
+    }
+  },
+  {
+    "keys": ["ctrl+alt+u"],
+    "command": "set_user_setting",
+    "args": {
+        "file": "Preferences.sublime-settings",
+        "setting": "dictionary",
+        "value": "Packages/Dictionaries/en_US_utf8.dic"
     }
   },
   // Show/hide terminus panel
