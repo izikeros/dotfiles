@@ -78,7 +78,7 @@ alias top10dirs="find . -type d -print0 | xargs -0 du | sort -n | tail -10 | cut
 #--------------------------------------------
 # Smart ls alias (l=long, detailed, a=all including hidded,
 #   h=size human readable)
-#alias ls='ls --color=auto'
+alias ls='ls --color=auto'
 if hash exa 2>/dev/null; then
 	alias l="exa -lah --git"
 else

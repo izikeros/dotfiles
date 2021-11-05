@@ -128,10 +128,9 @@ load-starter-plugin-list() {
   #zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
   #zgen oh-my-zsh themes/strug
   zgen load romkatv/powerlevel10k powerlevel10k
-  #zgen load bhilburn/powerlevel9k powerlevel9k
   # Save it all to init script
 
-  zgen load zdharma/zsh-diff-so-fancy
+  zgen load z-shell/zsh-diff-so-fancy
   zgen save
 }
 
