@@ -200,7 +200,7 @@ fi
 # fuck - correct last command
 # eval "$(thefuck --alias)"
 
-$HOME/scripts/my_scripts/runonce.sh $HOME/scripts/my_scripts/runonce-all.sh
+#$HOME/scripts/my_scripts/runonce.sh $HOME/scripts/my_scripts/runonce-all.sh
 
 # --------------
 # LS colors
