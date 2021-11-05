@@ -78,7 +78,7 @@ alias top10dirs="find . -type d -print0 | xargs -0 du | sort -n | tail -10 | cut
 #--------------------------------------------
 # Smart ls alias (l=long, detailed, a=all including hidded,
 #   h=size human readable)
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
 if hash exa 2>/dev/null; then
 	alias l="exa -lah --git"
 else
@@ -489,7 +489,7 @@ alias vpn-de="sudo vpnc nokia-de && ~/nsn/proxy/redsocks.sh && echo '- use Nokia
 alias novpn="sudo vpnc-disconnect && ~/nsn/proxy/redsocks-stop.sh && echo '- reload NetworkManager to restore DNS settings'  && sudo systemctl reload NetworkManager"
 
 # mc with exit to current directory (On exit, the shell returns to the directory Midnight Commander was started from, instead of the last active directory.)
-alias mc=". /usr/lib/mc/mc-wrapper.sh"
+#alias mc=". /usr/lib/mc/mc-wrapper.sh"
 
 # gramps launcher
 alias gramps="GRAMPSDIR=$HOME/Documents/priv/Gramps/ LANGUAGE=pl_PL:pl LANG=pl_PL.UTF-8 gramps"
