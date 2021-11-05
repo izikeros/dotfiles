@@ -50,9 +50,9 @@ Plugin 'airblade/vim-gitgutter'
 "    " Snippets are separated from the engine. Add this if you want them:
 "    Plugin 'honza/vim-snippets'
 "else
-Plugin 'garbas/vim-snipmate'
-Plugin 'MarcWeber/vim-addon-mw-utils' "required for snipmate
-Plugin 'tomtom/tlib_vim' "required for snipmate
+"Plugin 'garbas/vim-snipmate'
+"Plugin 'MarcWeber/vim-addon-mw-utils' "required for snipmate
+"Plugin 'tomtom/tlib_vim' "required for snipmate
 "endif
 " supertab needed to have both completion and snippets working
 "Plugin 'ervandew/supertab'
