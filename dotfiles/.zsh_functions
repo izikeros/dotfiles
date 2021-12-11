@@ -1,18 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # NOTE function identifiers with dash are not valid for BASH
-
-# == Vimviki and diary functions
-#function d_file_today(){    # return filename for the diary for today
-#    d_file_offset()
-#}
-
 
 function d_file_offset(){    # return filename for the diary for given offset
     offset=$1
     if [ -z "${offset}" ]; then offset=0; fi
-    DATE=$(date -d "${offset}days 13:00" +%Y-%m-%d)
-    DOW=$(date "-d ${offset}days 13:00" +%u)
+    if [[ $OSTYPE == *darwin* ]]; then
+        # NOTE: requires GNU coreutils installed
+        DATE=$(gdate -d "${offset}days 13:00" +%Y-%m-%d)
+        DOW=$(gdate "-d ${offset}days 13:00" +%u)
+    else
+        DATE=$(date -d "${offset}days 13:00" +%Y-%m-%d)
+        DOW=$(date "-d ${offset}days 13:00" +%u)
+    fi
     days=(m t w h f s x)
     DAY_LETTER=${days[$DOW]}
     FNAME="${DATE}_${DAY_LETTER}"
@@ -44,6 +44,28 @@ function v-someday(){		# search vimwiki pages looking for someday annotation
 
 function v-todo(){		# search vimwiki pages looking for todo annotation
 	find "$HOME/vimwiki" -type f -name "*.md" | xargs grep -i 'todo'
+}
+
+function days_since_beginning_of_year() {
+    # local year=$1
+    # local month=$2
+    # local day=$3
+    local days_since_beginning_of_year=$(date -d "$year-$month-$day" +%j)
+    echo $days_since_beginning_of_year
+}
+
+function calculate_percentage_from_two_values() {
+    local value1=$1
+    local value2=$2
+    local percentage=$(echo "scale=2; $value1 / $value2 * 100" | bc)
+    echo $percentage
+}
+
+function diary_score () {
+    local year=$(date +%Y)
+    local num_days=$(days_since_beginning_of_year)
+    local num_entries=$(ls $HOME/vimwiki/diary/$year | wc -l)
+    echo $(calculate_percentage_from_two_values $num_entries $num_days)"%"
 }
 
 # == Find functions
@@ -100,7 +122,8 @@ function docker_fit(){	# docker fit output (???)
 
 function dlc(){		# cache docker last container id DOCKER_CACHE
     1>&2 docker ps -l
-    export DOCKER_CACHE=$(docker ps -lq)
+    DOCKER_CACHE=$(docker ps -lq)
+    export DOCKER_CACHE
 }
 
 function dlo(){		# display logs of container with given name or name stores in cache (see: dlc function)
@@ -108,27 +131,31 @@ function dlo(){		# display logs of container with given name or name stores in c
         while read data; do
             args+="$data"
         done
-        docker logs $args
+        docker logs "$args"
         return
     fi
     if [[ $DOCKER_CACHE != "" ]]; then
-        docker logs $DOCKER_CACHE
+        docker logs "$DOCKER_CACHE"
         return
     fi
-    docker logs $@
+    docker logs "$@"
 }
 
 function drm(){		# remove docker container using rofi
-    docker ps -a | rofi -width 100 -dmenu -i -p "locate:" | awk {'print $1'} | xargs docker rm
+    docker ps -a | rofi -width 100 -dmenu -i -p "locate:" | awk '{print $1}' | xargs docker rm
 }
 
 function drmi(){	# remove docker image using rofi
-    echo "$(docker images | rofi -threads 0 -width 100 -dmenu -i -p "locate:")" | awk {'print $1'} | xargs docker rmi
+    echo "$(docker images | rofi -threads 0 -width 100 -dmenu -i -p "locate:")" | awk '{print $1}' | xargs docker rmi
 }
 
 # == Git related functions
 function rco(){		# git checkout to one of the recent branches
-    echo "$(recent-branches | rofi -threads 0 -width 100 -dmenu -i -p "locate:")" | xargs git checkout
+    if [[ $OSTYPE == *darwin* ]]; then
+        echo "$(recent-branches | choose)" | xargs git checkout
+    else
+        echo "$(recent-branches | rofi -threads 0 -width 100 -dmenu -i -p "locate:")" | xargs git checkout
+    fi
 }
 
 function todos-blame(){	# git blame who put TODO statement in the code
@@ -138,7 +165,7 @@ function todos-blame(){	# git blame who put TODO statement in the code
     TYPE="${TYPE:-TODO}"
     for FILE in $(git ls-files)
     do
-        git blame $FILE | grep "$1" | grep "$2";
+        git blame "$FILE" | grep "$1" | grep "$2";
     done
 }
 
@@ -148,39 +175,12 @@ function mkcd() {	# create directory and move into it
   cd "$1" || exit
 }
 
-function extract() {	# extract content from archive
-    if [ -f $1 ] ; then
-        case $1 in
-            *.7z)       7z x $1       ;;
-            *.Z)        uncompress $1 ;;
-            *.bz2)      bunzip2 $1    ;;
-            *.gz)       gunzip $1     ;;
-            *.rar)      rar x $1      ;;
-            *.tar)      tar xf $1     ;;
-            *.tar.bz2)  tar xjf $1    ;;
-            *.tar.gz)   tar xzf $1    ;;
-            *.tar.xz)   tar xf $1     ;;
-            *.tbz2)     tar xjf $1    ;;
-            *.tgz)      tar xzf $1    ;;
-            *.zip)      unzip $1      ;;
-            *)          echo "'$1' cannot be extracted via extract()" ;;
-        esac
-    else
-        echo "'$1' is not a valid file"
-    fi
-}
-
 # from zgen starting kit (Joseph Block <jpb@unixorn.net>)
 function chg-ext() {	# Batch change extension from $1 to $2
   for file in *."$1"
   do
-    mv "$file" $(echo "$file" | sed "s/\(.*\.\)$1/\1$2/")
+    mv "$file" "$(echo "$file" | sed "s/\(.*\.\)$1/\1$2/")"
   done
-}
-
-
-function exists() {   # ???
-  if (( $+commands[$1] )); then return 0; else return 1; fi
 }
 
 function ff() { # find file with given name (or pattern) from cads@ooyala.com
@@ -264,7 +264,7 @@ function sum(){   # sum by n-th field
   [ "${1#-F}" != "$1" ] && SP=${1} && shift
   [ "$#" -eq 0 ] && set -- 0
   key="$(_awk_col "$1")"
-  awk $SP "{ x+=$key } END { printf(\"%d\n\", x) }"
+  awk "$SP" "{ x+=$key } END { printf(\"%d\n\", x) }"
 }
 
 function sumby(){ # group and sum
@@ -302,24 +302,24 @@ function num_columns(){  # count number of columns in csv file
     #  num_columns -F, data.csv
     # first argument is separator definition for AWK
     [ "${1#-F}" != "$1" ] && SP=${1} && shift
-    head -n1 $1 | awk $SP '{print NF}'
+    head -n1 "$1" | awk "$SP" '{print NF}'
 }
 
 function dim(){  # display dimensions of csv file
     [ "${1#-F}" != "$1" ] && SP=${1} && shift
-    head -n1 $1 | awk $SP '{print "number of columns:" NF}'
-    num_rows=$(wc -l < $1)
-    echo "number of rows: $a"
+    head -n1 "$1" | awk "$SP" '{print "number of columns:" NF}'
+    num_rows=$(wc -l < "$1")
+    echo "number of rows: $num_rows"
 }
 
 function words_freq() {  # display most frequent words in the file with count
     # usage words_freq file.txt
-tr -c '[:alnum:]' '[\n*]' < $1 | sort | uniq -c | sort -nr | head -30
+tr -c '[:alnum:]' '[\n*]' < "$1" | sort | uniq -c | sort -nr | head -30
 }
 
 function word_cloud() {  # display most frequent words in the file
     # usage words_freq file.txt
-    tr -c '[:alnum:]' '[\n*]' < $1 | sort | uniq -c | sort -nr | head -n100 | awk '{print $2}' | tr '\n' ' '
+    tr -c '[:alnum:]' '[\n*]' < "$1" | sort | uniq -c | sort -nr | head -n100 | awk '{print $2}' | tr '\n' ' '
 }
 
 
@@ -329,14 +329,14 @@ function awk_col(){ # print selected column (space separated file)
 
 function corner(){ # print top-left corner of csv (sep=,) with size n (n-rows by n-columns)
     # usage corner 10 data.csv
-    head -n$1 $2 | cut -d',' -f-$1
+    head -n "$1" "$2" | cut -d',' -f-"$1"
 }
 
 # == Shell and processes functions
 function procs_for_path() {		# list processes for given path
   for pid in $(lsof "$@" | cut -d' ' -f 3 | sort | uniq)
   do
-    ps -f -p $pid
+    ps -f -p "$pid"
   done
 }
 
@@ -405,15 +405,15 @@ function fix_tmux_ssh_agent() { # ???
 }
 
 function piadd(){ # pacman install and add to ext.txt packages list
-    sudo pacman -S $1
+    sudo pacman -S "$1"
     local fname="$HOME/dotfiles/restore/pkg/manual.txt"
     echo ">>>> adding $1 to manual.txt package list"
 
     if [[ -e $fname ]]
     then
-        echo $1 >> $fname
+        echo "$1" >> "$fname"
     else
-        echo $1 > $fname
+        echo "$1" > "$fname"
     fi
 
     # ensure there are no duplicates on the list
@@ -422,7 +422,7 @@ function piadd(){ # pacman install and add to ext.txt packages list
 }
 
 function pacman-files(){ # list files installed with package (works for AUR too)
-    pacman -Qlq $1 | grep -v '/$' | xargs -r du -h | sort -h
+    pacman -Qlq "$1" | grep -v '/$' | xargs -r du -h | sort -h
 }
 #----------------
 # dedupe path
@@ -434,12 +434,12 @@ function pacman-files(){ # list files installed with package (works for AUR too)
 # dotfiles repo at https://github.com/mislav/dotfiles
 function dedupe_path() { # In case a plugin adds a redundant path entry, remove duplicate entries from PATH
   typeset -a paths result
-  paths=($path)
+  paths=("$path")
 
   while [[ ${#paths} -gt 0 ]]; do
     p="${paths[1]}"
     shift paths
-    [[ -z ${paths[(r)$p]} ]] && result+="$p"
+    [[ -z ${paths[(r)$p]} ]] && result+=("$p")
   done
 
   export PATH=${(j+:+)result}
@@ -456,16 +456,16 @@ function learning() { #display info on learning progress
 }
 
 function aac-audio-recode-file() { #recode audio track in video file to AAC fomat
-    pth=$(dirname $1)
+    pth=$(dirname "$1")
     fname=$(basename -- "$1")
     ext=${fname##*.}
     fname_no_last_ext=${fname%.*}
     suffix="_aac"
     new_name="$pth/$fname_no_last_ext$suffix.$ext"
-    ffmpeg -i $1 -acodec aac -vcodec copy $new_name
+    ffmpeg -i "$1" -acodec aac -vcodec copy "$new_name"
 }
 function aac-audio-recode-dir() { # run audio recoding in whole dir
-    for i in *; do aac-audio-recode-file $i; done
+    for i in *; do aac-audio-recode-file "$i"; done
 }
 
 function get-vimeo-links() { # extract vimeo links from provided url
@@ -494,204 +494,25 @@ function gralias() { # grep ./zsh_aliases file
     grep -B1 --color=never -i -e $1 $HOME/.zsh_aliases
 }
 
-function h-bash-if(){
-    # cat <<-  using <<- instead of << will ignore leading tabs or spaces
-    cat <<- EOF
-    Operator 	Description
-    ! EXPRESSION 	The EXPRESSION is false.
-    -n STRING 	The length of STRING is greater than zero.
-    -z STRING 	The lengh of STRING is zero (ie it is empty).
-    STRING1 = STRING2 	STRING1 is equal to STRING2
-    STRING1 != STRING2 	STRING1 is not equal to STRING2
-    INTEGER1 -eq INTEGER2 	INTEGER1 is numerically equal to INTEGER2
-    INTEGER1 -gt INTEGER2 	INTEGER1 is numerically greater than INTEGER2
-    INTEGER1 -lt INTEGER2 	INTEGER1 is numerically less than INTEGER2
-    -d FILE 	FILE exists and is a directory.
-    -e FILE 	FILE exists.
-    -r FILE 	FILE exists and the read permission is granted.
-    -s FILE 	FILE exists and it's size is greater than zero (ie. it is not empty).
-    -w FILE 	FILE exists and the write permission is granted.
-    -x FILE 	FILE exists and the execute permission is granted.
-EOF
+function ssh-it-github(){
+    if [[ -z $1 ]]; then
+        GIT_CONFIG=".git/config"
+        echo "Using .git/config"
+    else
+        GIT_CONFIG=$1
+    fi
+    if [[ $OSTYPE == *darwin* ]]; then
+        sed -i '' 's/url = https:\/\/github\.com\//url = github:/' "$GIT_CONFIG"
+        sed -i '' 's/url = git@github.com/url = github/' "$GIT_CONFIG"
+    else
+        sed -i 's/url = https:\/\/github\.com\//url = github:/' "$GIT_CONFIG"
+        sed -i 's/url = git@github.com/url = github/' "$GIT_CONFIG"
+    fi
 }
 
-function h-regex(){
-cat <<- EOF
-\s - matches any whitespace character (equal to [\r\n\t\f\v ])
-\w - matches any word character (equal to [a-zA-Z0-9_])
-? - "zero or one": Matches between zero and one times, as many times as possible, giving back as needed (greedy)
-+ - "one or more": Matches between one and unlimited times, as many times as possible, giving back as needed (greedy)
-* - "zero or more": Matches between zero and unlimited times, as many times as possible, giving back as needed (greedy)
-a{3,} - three or more of a
-$ - start of string
-^ - end of string
-[^abc] - matches any character except for an a, b or c
 
-EOF
-}
 
-function h-awk(){
-cat <<- EOF
-display column 2, where separator is ':'
-    awk -F':' '{print \$2}'
 
-sum-up column of numbers (e.g. output of parallel xargs such as counting lines)
-    awk '{s+=$1} END {print s}'
-EOF
-}
-
-function h-grep(){
-cat <<- EOF
-Do (-H)/ do not (-h) display filename
-EOF
-}
-
-function h-sed(){
-cat <<- EOF
-Remove first line (-i inplace - save to the same file)
-    sed -i 1d
-Remove leading spaces and tabs
-    sed -e 's/^[ \t]*//'
-EOF
-}
-
-function h-perl(){
-cat <<- EOF
-Filter on absolute fold-changes and p-values, located in this case in columns 3 and 5 (indexed 2 and 4), respectively:
-
-perl -lane 'print if (abs($F[2]) >= 2 and $F[4] <= 0.05)' input > output
-
-??
-echo "(a b c)(a b c)" | perl -ne 'print $1 while /(a) b/g'
-EOF
-}
-
-function h-terminator(){
-cat <<- EOF
-Super+R - rotate | C-S-E - split vert | C-S-O - split horiz
-EOF
-}
-
-function h-comm(){
-cat <<- EOF
-#find lines only in file1
-comm -23 file1 file2
-
-#find lines only in file2
-comm -13 file1 file2
-
-#find lines common to both files
-comm -12 file1 file2
-
-       -1     suppress column 1 (lines unique to FILE1)
-
-       -2     suppress column 2 (lines unique to FILE2)
-
-       -3     suppress column 3 (lines that appear in both files)
-EOF
-}
-
-function h-wc(){
-cat <<- EOF
-# assign number of lines to variable
-a=\$(wc -l < file.txt)
-EOF
-}
-
-function h-tilda(){
-cat <<- EOF
-F1 – Pull down and pull up (Hide and Show) Tilda terminal window.
-SHIFT+CTRL+T – Open a new tab.
-SHIFT+CTRL+W – Close the active tab.
-CTRL+PAGE_UP – Go to previous tab.
-CTRL+PAGE_DOWN – Go to next tab.
-SHIFT+CTRL+PAGE_UP – Move tab left.
-SHIFT+CTRL+PAGE_DOWN – Move tab right.
-<ALT>1 – Go to tab 1.
-<ALT>2 – Go to tab 2.
-<ALT>0 – Go to tab 10.
-SHIFT+CTRL+C – Copy text from Tilda window.
-SHIFT+CTRL+V – Paste text in Terminal.
-F11 – Toggle full screen.
-F12 – Toggle Transparency.
-SHIFT+CTRL+F – Search.
-SHIFT+CTRL+Q – Quit Tilda Terminal.
-EOF
-}
-
-function h-tmux(){
-cat <<- EOF
-* start new with session name: 'tmux new -s myname'
-* attach:  'tmux a  #  (or at, or attach)'
-* attach to named:  'tmux a -t myname'
-* list sessions: 'tmux ls'
-* kill session:  'tmux kill-session -t myname'
-* Kill all the tmux sessions:
-  tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
-
-In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:
-=== Sessions
-:new<CR>  new session
-s  list sessions
-$  name session
-
-=== Windows (tabs)
-c  create window
-w  list windows
-n  next window
-p  previous window
-f  find window
-,  name window
-&  kill window
-
-=== Panes (splits)
-%  vertical split
-"  horizontal split
-o  swap panes
-q  show pane numbers
-x  kill pane
-+  break pane into window (e.g. to select text by mouse to copy)
--  restore pane from window
-⍽  space - toggle between layouts
-<prefix> q (Show pane numbers, when the numbers show up type the key to goto that pane)
-<prefix> { (Move the current pane left)
-<prefix> } (Move the current pane right)
-<prefix> z toggle pane zoom
-
-=== Sync Panes
-You can do this by switching to the appropriate window, typing your Tmux prefix (commonly Ctrl-B or Ctrl-A) and then a colon to bring up a Tmux command line, and typing:
-:setw synchronize-panes
-You can optionally add on or off to specify which state you want; otherwise the option is simply toggled. This option is specific to one window, so it won’t change the way your other sessions or windows operate. When you’re done, toggle it off again by repeating the command. tip source
-
-=== Resizing Panes
-You can also resize panes if you don’t like the layout defaults. I personally rarely need to do this, though it’s handy to know how. Here is the basic syntax to resize panes:
-PREFIX : resize-pane -D/U/L/R (Resizes the current pane down, up, left, right)
-PREFIX : resize-pane -D/U/L/R 20 (Resizes the current pane down/up/left/right by 20 cells)
-PREFIX : resize-pane -t 2 20 (Resizes the pane with the id of 2 down by 20 cells)
-PREFIX : resize-pane -t -L 20 (Resizes the pane with the id of 2 left by 20 cells)
-EOF
-}
-
-function h-github-push-existing(){
-cat <<- EOF
-1. Initialize the local directory as a Git repository.
-git init
-2. Add the files in your new local repository. This stages them for the first commit.
-git add .
-3. Commit the files that you’ve staged in your local repository.
-git commit -m "initial commit"
-4. Copy the https url of your newly created repo
-5. In the Command prompt, add the URL for the remote repository where your local repository will be pushed.
-
-git remote add origin remote repository URL
-
-git remote -v
-6.  Push the changes in your local repository to GitHub.
-
-git push -f origin master
-
-EOF
-}
 
 function ys-popular(){
     ys $1 | grep -e + | sed -e 's/(+//' | awk -F' ' '{print $3", "$1}' | sort -nr | head -10
