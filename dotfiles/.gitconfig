@@ -254,7 +254,7 @@
 [core]
 	editor = vim
     pager = diff-so-fancy | less --tabs=4 -RFX
-	excludesfile = /home/safjan/.gitignore
+	excludesfile = /Users/krystian.safjan/.gitignore
 	autocrlf = input
 
 [gui]
