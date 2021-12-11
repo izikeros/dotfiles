@@ -17,14 +17,34 @@
 # git guilt
 # ranger
 # autorandr
-# rofi
+# rofi (Linux) or choose (macOs)
+# pipdeptree - for python packages dependency tree, top-level packages
 
-# Global aliases (expanded in zsh with space)
+# Sections in this aliases file
+# - FILESYSTEM - DIRECTORY SIZE, LISTING
+# - LS
+# - QUICK CHANGE DIRECTORY/Bookmarks
+# - EDIT ACTIONS
+# -
+# -
+
+#--------------------------------------------
+## PROGRAM ALTERNATIVES
+#--------------------------------------------
+# use neovim in place of vim if available
 if [ "$(command -v nvim)" ]; then
     VIM=nvim
 else
     VIM=vim
 fi
+
+
+if [ "$(command -v subl)" ]; then
+    S=$(which subl)
+fi
+#--------------------------------------------
+## GLOBAL ALIASES (EXPANDED IN ZSH WITH SPACE)
+#--------------------------------------------
 alias -g G='| grep'
 alias -g W='| wc -l'
 alias -g H='| head'
@@ -37,19 +57,27 @@ alias -g A="| awk -F',' '{print $1 $2}'"
 alias -g AS="| awk '{s+=\$1} END {print s}'"
 # launch parallel processes using xargs
 alias -g X='| xargs -n1 -P$(nproc) -I{}'
-alias -g R='| rofi -i -dmenu'
+
+if [[ $OSTYPE == *darwin* ]]; then
+    alias -g R='| choose'
+else
+    alias -g R='| rofi -i -dmenu'
+fi
 
 # pass output from find to xargs while displaying progress bar
-# pv: l-count lines instead of bytes, 0 - lines null-terminated, s - provide
-# size
+# pv: l-count lines instead of bytes, 0 - lines null-terminated, s - provide size
+# usage:
 alias -g FPX="FIND=(find . -type f -name '*.gz') && \${FIND[@]} -print0 | pv -0lps \$(\${FIND[@]} | wc -l) | xargs -0 -n1 -P36 -I{}"
 # poor-man's wait
 alias -g W='while true; do ls; sleep .5; done'
 # repeat command multiple times
 alias -g FI='for i in {1..3}; do ls; sleep 1  done'
+
 #--------------------------------------------
-# FILESYSTEM - DIRECTORY SIZE, LISTING
+## FILESYSTEM - DIRECTORY SIZE, LISTING
 #--------------------------------------------
+# requrements: pydf, sar, wget, zsh
+
 # list size of top 11 directories
 alias ducks='du -cksh * | sort -rh | head -11'
 
@@ -73,28 +101,61 @@ alias top10files="find . -type f -print0 | xargs -0 du | sort -n | tail -10 | cu
 # Find 10 largest directories
 alias top10dirs="find . -type d -print0 | xargs -0 du | sort -n | tail -10 | cut -f2 | xargs -I{} du -sh {}"
 
+alias cx="chmod +x"
+
+# make all shell scripts in current directory executable
+alias cxsh="chmod +x *.sh"
+
+# count files in dir
+alias cf='ls | wc -l'
+
+# force remove directory - typed without hyphens
+alias rmrf='rm -rf'
+
+# On the rare occasions I don't want to continue a download I can always
+# delete the incomplete fragment explicitly. I usually just want to
+# complete it.
+alias wget="wget -c"
+
+# dd image with usb specific sync options. Usage: dd-usb if=./linux.iso of=/dev/sdb
+alias dd-usb="sudo dd bs=4M status=progress conv=fdatasync"
+
+# measure zsh loading time
+alias zsh-loading-time="for i ({1..10}) time zsh -i -c exit"
+# other command for comparing startup time:
+# for i ({1..10}) time zsh -ilc echo &>/dev/null || true
+
 #--------------------------------------------
-# LS
+## LS
 #--------------------------------------------
-# Smart ls alias (l=long, detailed, a=all including hidded,
-#   h=size human readable)
+# requirements: exa
+
+# Smart ls alias (l=long, detailed, a=all including hidded, h=size human readable)
 alias ls='ls --color=auto'
-if hash exa 2>/dev/null; then
+
+if [ "$(command -v exa)" ]; then
 	alias l="exa -lah --git"
 else
 	alias l="ls -lah"
 fi
+
 # -F, --classify append indicator (one of */=>@|) to entries
 # alias l="ls -laF"
-# almost-all (-A: do not list . and ..)
+
+# ls almost-all (-A: do not list . and ..)
 alias la='ls -A'
+
+# list long, almost all
 alias ll='ls -lA'
+
+# list just 'head' of directory listing (e.g. first 10 entries)
 alias lh='ls -Alh --color | head; ls -Al | wc -l | xargs -I{} printf "\nShowing max 10 out of {} entries\n"'
 
-#alias k='k -h' # some problems with k plugin
 #--------------------------------------------
-# QUICK CHANGE DIRECTORY/Bookmarks
+## QUICK CHANGE DIRECTORY/Bookmarks
 #--------------------------------------------
+#requirements:
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias cd..="cd .."
@@ -103,24 +164,27 @@ alias 2="cd ../.."
 alias 3="cd ../../.."
 alias 4="cd ../../../.."
 
-# same convention, defined below: alias cdw="cd $WIKI_HOME"
+# same convention, defined below:
+# quick cd to wiki (my notes and diary) home
+alias cdw="cd $WIKI_HOME"
+
+# quick cd to directory with projects
+alias cdp="cd $HOME/projects"
+
+# quick cd to directory with python virtualenvs
+alias cdv="cd $HOME/.virtualenvs"
+
 #--------------------------------------------
-# EDIT ACTIONS
+## EDIT ACTIONS
 #--------------------------------------------
-# Sublime
-if [[ -x /usr/bin/subl3 ]]; then
-  S="/usr/bin/subl3"
-  alias s="subl3"
-fi
+# requirements: atom, code
+
 # run atom without hardware accelleration
 alias atom="atom --disable-gpu"
+
 # run visual studio code without hardware acceleration
 alias code="code --disable-gpu"
 
-# private knowledge base and diary
-WIKI_HOME="$HOME/vimwiki"
-alias td="$VIM $WIKI_HOME/5-things-TODO.md"
-# see also vimwiki related functions
 alias vim=$VIM
 # shortcuts to edit files (mostly config files)
 alias vz="$VIM $HOME/.zshrc"
@@ -133,38 +197,40 @@ alias vs="$VIM $HOME/.ssh/config"
 alias vg="$VIM $HOME/.gitconfig"
 alias vgg="$VIM ./.git/config"
 
-# shortcuts for 'restore system'
+# shortcuts for openbox config files
 alias voa="$VIM $HOME/.config/openbox/autostart"
 alias vor="$VIM $HOME/.config/openbox/rc.xml"
-alias vd="$VIM $HOME/dotfiles/"
-alias vx="$VIM $HOME/.xbindkeysrc"
+
+alias vh='sudo $VIM /etc/hosts'
 
 # list $VIM key mappings
 alias vkeys="grep --color=never -e 'map' $HOME/.$VIMrc"
 
-if [[ -x /usr/bin/subl3 ]]; then
+if [ "$(command -v $S)" ]; then
   alias s-z="$S $HOME/.zshrc"
   alias s-zs="$S $HOME/.zgen-setup"
-  alias sv="$S $HOME/.vimrc"
-  alias sa="$S $HOME/.zsh_aliases"
+  alias s-v="$S $HOME/.vimrc"
+  alias s-a="$S $HOME/.zsh_aliases"
   alias sor="$S $HOME/.config/openbox/rc.xml"
   alias soa="$S $HOME/.config/openbox/autostart"
 fi
 
+alias sz="source ~/.zshrc"
+
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
 #--------------------------------------------
-# MEATA-ALIAS
+## MEATA-ALIAS, FUNCTIONS
 #--------------------------------------------
 # grep aliases active in current shell
 alias galias="alias | grep --color=never -i -e"
 # list functions
 alias list-functions="grep function ~/.zsh_functions --color=never | sed 's/^function//' | sed 's/{//' | grep '[a-Za-z0-9\-_]*()' --color=always | column -t -s# | less"
-#alias s="sudo su"
 alias _="sudo"
-alias please='sudo $(history -p !!)'
-alias s-s="sudo su"
+
 
 #--------------------------------------------
-# APT, APTITUDE, DPKG
+## DEBIAN PACKAGE MANAGERS - APT, APTITUDE, DPKG
 #--------------------------------------------
 # install packages (Debian)
 alias ai="sudo apt install"
@@ -176,21 +242,30 @@ alias au="sudo apt update"
 #alias largest-packages=dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
 
 #-------------------------------------------
-# PACMAN, PARU (for AUR)
+## ARCH PACKAGE MANAGERS - PACMAN, YAY (for AUR)
 #-------------------------------------------
 # select AUR helper to use
 AUR_CMD="yay" # yay | paru
-# install package
+
+# install official Arch package
 alias pi="sudo pacman -S"
+
+# install AUR or official package with AUR helper (e.g. yay)
 alias yi="$AUR_CMD -S --answerclean None --answerdiff None"
 
-# search for package
+# search for official Arch package
 alias pas="pacman -Ss"
+
+# search for AUR and official Arch packages
 alias  ys="$AUR_CMD -Ss"
 
-# package information
+# AUR package information
 alias  y-info="$AUR_CMD -Si"
+
+# official Arch package information
 alias  p-info="pacman -Si"
+
+# files belonging to Arch package
 alias  p-files="pacman -Fl"
 
 # statistics over all packages
@@ -215,9 +290,20 @@ alias y-upgradable="sudo $AUR_CMD -Pu"
 alias y-rem-dep="sudo $AUR_CMD -Yc"
 #alias p-rm-orphans="sudo pacman -Rns $(pacman -Qtdq)"
 alias unlockdb="sudo rm /var/lib/pacman/db.lck"
+
 #--------------------------------------------
-# FASD aliases (repeated - aliases are defined in fasd source)
+## MACOS PACKAGE MANAGER - BREW
 #--------------------------------------------
+# install package with brew
+alias bi="brew install"
+# search brew package
+alias bs="brew search"
+alias bu="brew update && brew upgrade && brew cleanup"
+
+#--------------------------------------------
+## FASD ALIASES
+#--------------------------------------------
+# (repeated - aliases are defined in fasd source)
 alias a='fasd -a'        # any
 #alias s='fasd -si'       # show / search / select
 alias d='fasd -d'        # directory
@@ -227,7 +313,8 @@ alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 
-alias v='f -e $VIM' 		# quick opening files with vim
+alias v='f -e $VIM' 	# quick opening files with vim
+alias s='f -e $S'
 alias m='f -e mplayer' 	# quick opening files with mplayer
 alias o='a -e xdg-open' # quick opening files with xdg-open
 
@@ -240,7 +327,7 @@ alias o='a -e xdg-open' # quick opening files with xdg-open
 
 
 #---------------------------------------------
-# Mount
+## MOUNT
 #---------------------------------------------
 alias mt="mount | column -t"
 alias gmount="mount | grep -i -e"
@@ -248,7 +335,7 @@ alias gmount="mount | grep -i -e"
 alias mountd="mount | grep /dev/sd | column -t"
 
 #--------------------------------------------
-# FIND (IN) FILES
+## FIND (IN) FILES
 #--------------------------------------------
 
 # find files in current directory
@@ -284,7 +371,7 @@ alias finde="find . ! -path '*/.venv*' ! -path '*/.fzf*' ! -path '*./bulk*' ! -p
 alias finde-files="find . -type f ! -path '*/.venv*' ! -path '*/.fzf*' ! -path '*./bulk*' ! -path '*.cache*' ! -path '*.git/*' ! -path '*.mozilla*' ! -path '*.jd*' ! -path '*.zgen/*' ! -path '*.vim*' ! -path '*.zplug*'"
 
 #--------------------------------------------
-# GIT
+## GIT
 #--------------------------------------------
 # git push with verbose ssh (useful for troubleshooting)
 alias gpv="GIT_SSH_COMMAND=\"ssh -v\" git push"
@@ -332,14 +419,20 @@ alias week-stats-guilt="git guilt \`git log --until=\"7 days ago\" --format=\"%H
 alias st="git status --short"
 alias gp="git push"
 alias whoamigit="git config --get user.email;git config --get user.name"
+
 #--------------------------------------------
-# PYTHON, SOFTWARE PROJECT
+## PYTHON, SOFTWARE PROJECT
 #-------------------------------------------
 # provide pep8 violation statistics for current directory (.)
 alias pep8-stats="pycodestyle --statistics -qq . | sort -k 1 -n -r"
 
+# flake8 - perform important checks for docstrings
+alias flake8-docstrings="flake8  --select D100, D101, D104, D107"
+
 # count lines of code
 alias count_loc="wc -l **/*.py"
+
+
 
 # test statistics
 alias test-num-files="find ./ -name \"test*\" | wc -l"
@@ -351,23 +444,41 @@ alias test-integration-list="find . -type f -name \"test_integration*\" | xargs 
 # colored cat for source code:
 alias ccat=ccat.sh
 
+alias wn="workon"
+
+#-------------------------------------------
+## JUPYTER NOTEBOOKS
+#-------------------------------------------
 alias jl="jupyter lab"
 alias jn="jupyter notebook"
-alias wn="workon"
+
+# jupytext - synchronize all notebooks and in current directory, no recursive
+alias jupytext-sync-all-in-current-dir="find ./ -maxdepth 1 -name '*.ipynb' | xargs jupytext --sync"
+
+# jupytext - pair all notebook in current dir and subdirs with py:percent scripts
+alias jupytext-pair-all-notebooks-in-current-dir="find . -name '*.ipynb' | xargs jupytext --set-formats ipynb,py:percent"
+
 #-------------------------------------------
-# PIP
-#--------------------------------------------
+## PIP
+#-------------------------------------------
 # upgrade all pip packages (system or virt-env if in virt-env)
 alias pip-upgrade-script='pip freeze local > ~/pip_before_upgrade.txt && sudo -h pip install pipdate && sudo -H pipdate'
 
+# upgrade pip itself
 alias pipup="pip install --upgrade pip"
+
+# list outdated packages (upgradable)
 alias pip-outdated="pip list --outdated --format=freeze"
 
 # list all top level packages available in environment
-alias pip-top-level="pipdeptree -fl | grep -P '^\w'"  # https://pypi.org/project/pipdeptree/
+#alias pip-top-level="pipdeptree -fl | grep -P '^\w'"  # https://pypi.org/project/pipdeptree/
+alias pip-top-level="pipdeptree -fl | grep '^\w'"  # https://pypi.org/project/pipdeptree/
+
+# pip install from requirements
+alias pipr="pip install -r"
 
 #-------------------------------------------
-# DJANGO, MANAGE.PY
+## DJANGO, MANAGE.PY
 #--------------------------------------------
 alias mp="./manage.py"
 alias mpr="./manage.py runserver"
@@ -382,7 +493,7 @@ alias mpt='./manage.py test --pattern="test_*.py"'
 alias list-models="find . -type f -name 'models.py' | xargs grep -H -P '^class' | sed 's/class/''/' | sed -E 's/\(.*$/''/' | grep -v -P '.+:$' | sed 's/\/models\.py:/''/'"
 
 #--------------------------------------------
-# DOCKER (and docker-compose)
+## DOCKER (and docker-compose)
 #-------------------------------------------
 alias dcf="docker-compose -f dev-compose.yml"
 alias dl='docker ps -lq'
@@ -411,7 +522,7 @@ function crm(){
 }
 
 #--------------------------------------------
-# CALIBRE & RECOLL
+## CALIBRE & RECOLL
 #--------------------------------------------
 CALIBRE_DIR="/mnt/NAS/books"
 alias c-it="calibre --with-library=$CALIBRE_DIR/books_it"
@@ -424,16 +535,7 @@ alias r-life="recoll -c $HOME/.recoll_indexes/.recoll_life"
 alias r-ml="recoll -c $HOME/.recoll_indexes/.recoll_ml"
 
 #---------------------------------------------
-# HELP on comonly used sed, awk, perl commands
-#---------------------------------------------
-# help on how to use awk to extract given column
-#alias h-awk="echo awk -F\':\' \'{print \$\2}\'"
-#alias h-sed="man sed"
-#alias h-perl="echo \"echo \"(a b c)(a b c)\" | perl -ne 'print $1 while /(a) b/g'\""
-#alias h-terminator="echo Super+R - rotate \| C-S-E - split vert \| C-S-O - split horiz \| C-S-W - close panel"
-
-#---------------------------------------------
-# Comments & color removal
+## TEXT MANIPULATION, COMMENTS, COLOR REMOVAL
 #---------------------------------------------
 # grep no comments
 alias catnc="egrep -v \"^\s*(#|\$)\""
@@ -446,9 +548,15 @@ alias rm-comments="sed -e \"s/#.*$//gi\" -e \"/^$/d\""
 # pipe them into files cleanly
 alias stripcolors='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
 
+# join two consecutive lines in one line
+alias oneline="sed -rn 'N;s/\n/ /;p'"
+
+alias skip-header='tail -n +2'
+
 #---------------------------------------------
-# History
+## HISTORY
 #---------------------------------------------
+
 # show 50 most used cli commands (assuming duplicates are not removed from
 # history)
 alias history-top="history |  cut -c7- | sort  | uniq -c | sort -nr | head -n 50"
@@ -461,7 +569,7 @@ alias zh="fc -l -d -D"
 # dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
 
 #---------------------------------------------
-# IP
+## IP
 #---------------------------------------------
 # A couple of different external IP lookups depending on which is down.
 alias external_ip="curl -s icanhazip.com"
@@ -470,7 +578,7 @@ alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
 #---------------------------------------------
-#  SSH
+## SSH
 #---------------------------------------------
 # Pass our credentials by default
 alias ssh="ssh -A"
@@ -480,123 +588,122 @@ alias ssh_unkeyed="/usr/bin/ssh"
 alias scp_no_hostchecks="scp -o UserKnownHostsFile=/dev/null -o GlobalKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 alias ssh_no_hostchecks="ssh -A -o UserKnownHostsFile=/dev/null -o GlobalKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 
-
 #--------------------------------------------
-# OTHER
+## SYSTEM MONITORING, SYSTEM INFO
 #--------------------------------------------
-alias vpn="sudo vpnc nokia-fi && ~/nsn/proxy/redsocks.sh && echo '- use Nokia DNS for VPN' && ~/nsn/copy-resolv-conf.sh"
-alias vpn-de="sudo vpnc nokia-de && ~/nsn/proxy/redsocks.sh && echo '- use Nokia DNS for VPN' && ~/nsn/copy-resolv-conf.sh"
-alias novpn="sudo vpnc-disconnect && ~/nsn/proxy/redsocks-stop.sh && echo '- reload NetworkManager to restore DNS settings'  && sudo systemctl reload NetworkManager"
+# top, order by field %CPU
+alias cputop="top -o %CPU"
 
-# mc with exit to current directory (On exit, the shell returns to the directory Midnight Commander was started from, instead of the last active directory.)
-#alias mc=". /usr/lib/mc/mc-wrapper.sh"
+# top, order by field %MEM
+alias memtop="top -o %MEM"
 
-# gramps launcher
-alias gramps="GRAMPSDIR=$HOME/Documents/priv/Gramps/ LANGUAGE=pl_PL:pl LANG=pl_PL.UTF-8 gramps"
+# list network interfaces
+alias interfaces="ls /sys/class/net"
 
-alias hnfav="firefox https://news.ycombinator.com/favorites\\?id\=izik"
+# set display brightness
+alias brightness="xrandr --output LVDS-1 --brightness $1"
 
-alias cx="chmod +x"
+# list boots
+alias boots="journalctl --list-boots"
 
-# make all shell scripts in current directory executable
-alias cxsh="chmod +x *.sh"
+# -t bios, system, baseboard, chassis, processor, memory, cache, connector, slot
+alias hardware-info="sudo dmidecode - system" # hardware, serial number
 
+# list monitors
+alias monitors="cat /sys/class/drm/card*/edid | tr -cd '\11\12\15\40-\176'"
+
+# run aurtorandr and select configuration from menu
+if [[ $OSTYPE != *darwin* ]]; then
+    alias rrr="autorandr | rofi -i -dmenu | awk -F'(' '{print $1}' | xargs autorandr"
+fi
+#--------------------------------------------
+## TMUX
+#--------------------------------------------
 # shortcut for tmuxifier
 alias tw="tmuxifier load-window"
 
-# On the rare occasions I don't want to continue a download I can always
-# delete the incomplete fragment explicitly. I usually just want to
-# complete it.
-alias wget="wget -c"
+# tmux attach
+alias ta="tmux a"
 
-# replace https reference to ssh (to be used with my repos)
-alias ssh-it-github="sed -i 's/url = https:\/\/github\.com\//url = github:/' && 's/url = git@github.com/url = github/'"
-
-# join two consecutive lines in one line
-alias oneline="sed -rn 'N;s/\n/ /;p'"
-
-# TODO: check all git repos if they can be updated if so, ask one by one if update
-
-# backup
-alias brightness="xrandr --output LVDS-1 --brightness $1"
-
-alias sz="source ~/.zshrc"
-
+#--------------------------------------------
+## YOUTUBE DOWNLOADERS, MEDIA CONVERTERS
+#--------------------------------------------
 # Extract audio to mp3 format, add thumbnail and metadata
 alias ytmp3='youtube-dl -o "%(title)s.%(ext)s" -f bestaudio --extract-audio --embed-thumbnail --add-metadata --audio-format mp3 --prefer-ffmpeg'
+
 # Convert all mp4 files in current dir to mp4
 alias mp4-to-mp3-dir='for i in *.mp4; do ffmpeg -i "$i" -q:a 0 -map a "$(basename "${i/.mp4}").mp3"; done;'
+
 # Convert single mp4 file to mp3
 alias mp4-to-mp3='ffmpeg -q:a 0 -map a "$(basename "${i/.mp4}").mp3" -i'
+
 # Extract best possible audio quality with original format without encoding
 alias yt-audio="youtube-dl -f bestaudio --extract-audio --embed-thumbnail --add-metadata"
+
 # Download video (or whole playlist of videos) with addional file for
 # description nad thumbnail. Force AAC audio encoding to for smartTV
 # compatibility
 # add --write-sub for downloading subtitles
 alias ytdl="youtube-dl -f best --write-description --write-thumbnail --audio-format aac"
 
-alias boots="journalctl --list-boots"
+#--------------------------------------------
+## DIARY, NOTES
+#--------------------------------------------
+# see also vimwiki related functions in ~/.zsh_functions
+
+# private knowledge base and diary
+export WIKI_HOME="$HOME/vimwiki"
+
+alias td="$VIM $WIKI_HOME/5-things-TODO.md"
+
+# find days marked with [x]
+alias gmark="find $HOME/vimwiki/diary -name '*.md' | xargs grep -F '[x]' | grep -v medytacja | awk -F'/' '{print \$NF}' | sed s'/.md//' | sed s'/_/ /' | sed 's/:\[x\]//' | sort"
+
+# display frequency stats (per day) for days marked with [x]
+alias gmark-days="find ~/vimwiki/diary -name '*.md' | xargs grep -F '[x]' | awk -F'/' '{print \$NF}' | tr . _ | awk -F'_' '{print \$2}' | sort | uniq -c | sort -nr"
+
+# shortcut for diary ('t' -> today, 't -1' -> yesterday)
+alias t='diary'
+
+# display diary status for last days
+alias diary-status='$HOME/scripts/runonce-scripts/400-check-if-diary-for-last_days.sh'
+
+#--------------------------------------------
+## APP LAUNCHERS
+#--------------------------------------------
+# double commander here - run double commander in current directory
+alias duch="doublecmd .&"
+
+alias windirstat="gdmap"
+
+# gramps launcher
+alias gramps="GRAMPSDIR=$HOME/Documents/priv/Gramps/ LANGUAGE=pl_PL:pl LANG=pl_PL.UTF-8 gramps"
+
+# shortcut to see the status (stage and commit changes if needed)
+alias tis='tig status'
+
+# shortcut for ranger
+alias rr="ranger"
+
+# mc with exit to current directory (On exit, the shell returns to the directory Midnight Commander was started from, instead of the last active directory.)
+#alias mc=". /usr/lib/mc/mc-wrapper.sh"
+
+#--------------------------------------------
+## OTHER
+#--------------------------------------------
+alias vpn="sudo vpnc nokia-fi && ~/nsn/proxy/redsocks.sh && echo '- use Nokia DNS for VPN' && ~/nsn/copy-resolv-conf.sh"
+alias vpn-de="sudo vpnc nokia-de && ~/nsn/proxy/redsocks.sh && echo '- use Nokia DNS for VPN' && ~/nsn/copy-resolv-conf.sh"
+alias novpn="sudo vpnc-disconnect && ~/nsn/proxy/redsocks-stop.sh && echo '- reload NetworkManager to restore DNS settings'  && sudo systemctl reload NetworkManager"
 
 # decrypt volume without mounting, then use e.g. test disk etc.
 # veracrypt --filesystem=none -m nokernelcrypto --mount bulk/bbb /mnt/veracrypt3
 
-# top, order by field %CPU
-alias cputop="top -o %CPU"
-# top, order by field %MEM
-alias memtop="top -o %MEM"
 
-alias merge='xrdb -merge ~/.Xresources'
-alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
-alias windirstat="gdmap"
 
-alias zsh-loading-time="for i ({1..10}) time zsh -i -c exit"
 
-alias skip-header='tail -n +2'
 
-alias interfaces="ls /sys/class/net"
-alias rr="ranger"
-alias wh="which"
-alias clr="clear"
-alias c='clear'
-alias nsl="nslookup"
-alias ta="tmux a"
 
-# -t bios, system, baseboard, chassis, processor, memory, cache, connector, slot
-alias hardware-info="sudo dmidecode - system" # hardware, serial number
-alias monitors="cat /sys/class/drm/card*/edid | tr -cd '\11\12\15\40-\176'"
 
-alias vh='sudo $VIM /etc/hosts'
-alias t='diary'
-alias diary-status='$HOME/scripts/runonce-scripts/400-check-if-diary-for-last_days.sh'
-alias tis='tig status'
 
-alias won="source /usr/bin/virtualenvwrapper.sh"
-alias won1="source /usr/share/virtualenvwrapper/virtualenvwrapper.sh"
-# dd image with usb specific sync options. Usage: dd-usb if=./linux.iso of=/dev/sdb
-alias dd-usb="sudo dd bs=4M status=progress conv=fdatasync"
-# pip install from requirements
-alias pipr="pip install -r"
 
-# count files in dir
-alias cf='ls | wc -l'
-# force remove directory - typed without hyphens
-alias rmrf='rm -rf'
-# run aurtorandr and select configuration from menu
-alias rrr="autorandr | rofi -i -dmenu | awk -F'(' '{print $1}' | xargs autorandr"
-# perform flake8 check focused on docstring checks
-alias flake8-docstrings="flake8  --select D100, D101, D104, D107"
-
-# find days marked with [x]
-alias gmark="find $HOME/vimwiki/diary -name '*.md' | xargs grep -F '[x]' | grep -v medytacja | awk -F'/' '{print \$NF}' | sed s'/.md//' | sed s'/_/ /' | sed 's/:\[x\]//' | sort"
-# display frequency stats (per day) forr days marked with [x]
-alias gmark-days="find ~/vimwiki/diary -name '*.md' | xargs grep -F '[x]' | awk -F'/' '{print \$NF}' | tr . _ | awk -F'_' '{print \$2}' | sort | uniq -c | sort -nr"
-
-# jupytext - synchronize all notebooks and in current directory, no recursive
-alias jupytext-sync-all-in-current-dir="find ./ -maxdepth 1 -name '*.ipynb' | xargs jupytext --sync"
-# jupytext - pair all notebook in current dir and subdirs with py:percent scripts
-alias jupytext-pair-all-notebooks-in-current-dir="find . -name '*.ipynb' | xargs jupytext --set-formats ipynb,py:percent"
-
-# double commander here - run double commander in current directory
-alias duch="doublecmd .&"
