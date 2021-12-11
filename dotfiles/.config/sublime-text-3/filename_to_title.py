@@ -5,9 +5,9 @@ import sublime_plugin
 # Preferences -> Key Bindings
 # and add similar to:
 # ```json
-#   // Change direction in vocabulary notes
-#   { "keys": ["ctrl+shift+s"],
-#     "command": "swap_terms" },
+#   // Change filename finished with .md to H1 markdown header
+#   { "keys": ["ctrl+alt+t"],
+#     "command": "file_name_to_title" },
 # ```
 
 class FilenameToTitleCommand(sublime_plugin.TextCommand):
