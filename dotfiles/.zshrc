@@ -1,4 +1,5 @@
 #!/bin/zsh
+# shellcheck shell=bash
 #zmodload zsh/zprof # if using profiler remember to uncomment zprof in the end of file
 
 # # Zsh start up sequence:
@@ -34,9 +35,9 @@ function zsrc() {
     autoload -U compinit zrecompile
     compinit -d "$cache/zcomp-$HOST"
     for f in ${ZDOTDIR:-$HOME}/.zshrc "$cache/zcomp-$HOST"; do
-        zrecompile -p $f && command rm -f $f.zwc.old
+        zrecompile -p "$f" && command rm -f "$f".zwc.old
     done
-    source ${ZDOTDIR:-$HOME}/.zshrc
+    source "${ZDOTDIR:-$HOME}"/.zshrc
 }
 [[ ! -e ${ZDOTDIR:-$HOME}/.zshrc.zwc ]] && zsrc &>/dev/null
 
@@ -167,16 +168,11 @@ fi
 
 source ~/dotfiles/env_and_path.sh
 
-# virtualenv wrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/projects
-#if [ -f /usr/bin/virtualenvwrapper.sh ]; then
-#	source /usr/bin/virtualenvwrapper.sh
-#fi
-#if [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
-#	source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-#fi
-
+# virtualenv wrapper (note - that virtualenvwrapper slows down shell start considerably)
+# consider using lightweight script: venv-lite.zsh
+if [ -f ~/scripts/my_scripts/venv-lite.zsh ]; then
+  source ~/scripts/my_scripts/venv-lite.zsh
+fi
 [ -d ~/gocode ] && export GOPATH=~/gocode
 
 # The "command not found" hook
@@ -186,21 +182,18 @@ export PROJECT_HOME=$HOME/projects
 [ -f /usr/share/doc/pkgfile/command-not-found.zsh ] && source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # Broot - file manager
-[ -f $HOME/.config/broot/launcher/bash/br ] && source $HOME/.config/broot/launcher/bash/br
+[ -f "$HOME/.config/broot/launcher/bash/br" ] && source "$HOME/.config/broot/launcher/bash/br"
 
 # fzf - fuzzy find in history
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fasd - fast cd
-#if hash fasd 2>/dev/null; then
 if [ "$(command -v fasd)" ]; then
     eval "$(fasd --init auto)"
 	unalias s
 fi
-# fuck - correct last command
-# eval "$(thefuck --alias)"
 
-#$HOME/scripts/my_scripts/runonce.sh $HOME/scripts/my_scripts/runonce-all.sh
+"$HOME/scripts/my_scripts/runonce.sh" "$HOME/scripts/my_scripts/runonce-all.sh"
 
 # --------------
 # LS colors
@@ -211,52 +204,46 @@ fi
 export LSCOLORS='Exfxcxdxbxegedabagacad'
 export LS_COLORS='di=1;34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
 if [ "$(command -v dircolors)" ]; then
-    eval $( dircolors -b $HOME/.dircolors )
-#else
-#    echo "no dircolors"
+    eval "$( dircolors -b "$HOME/.dircolors" )"
 fi
 
 # temporal hack to ensure that my aliases has priority
 source ~/.zsh_aliases
 source ~/.zsh_functions
-
+source ~/.zsh_functions
 
 # -------------
 # powerlevel10k
 # -------------
-source $HOME/.powerlevel9k-default-user
+source "$HOME/.powerlevel9k-default-user"
 source ~/.zgen/romkatv/powerlevel10k-master/powerlevel10k.zsh-theme
-
-PURE_POWER_MODE=portable  #use only ascii characters in the prompt. Try 'fancy'.
-
+# mode: 'portable' - use only ascii characters in the prompt. Try 'fancy'.
+export PURE_POWER_MODE=portable
 source ~/.purepower
 
 # virtualenv, conda
-POWERLEVEL9K_VIRTUALENV_FOREGROUND='green'
-POWERLEVEL9K_VIRTUALENV_BACKGROUND=none
-POWERLEVEL9K_CONDA_FOREGROUND='green'
-POWERLEVEL9K_CONDA_BACKGROUND=none
-POWERLEVEL9K_SHOW_RULER=false
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
-POWERLEVEL9K_SHOW_CHANGESET=true # git hash
+export POWERLEVEL9K_VIRTUALENV_FOREGROUND='green'
+export POWERLEVEL9K_VIRTUALENV_BACKGROUND=none
+export POWERLEVEL9K_CONDA_FOREGROUND='green'
+export POWERLEVEL9K_CONDA_BACKGROUND=none
+export POWERLEVEL9K_SHOW_RULER=false
+export POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
+export POWERLEVEL9K_SHOW_CHANGESET=true # git hash
 # Left, right prompt segments
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh anaconda virtualenv dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
+export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh anaconda virtualenv dir vcs)
+export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
 
 # Note: deduplication takes quite long. Check if deduplications are needed (usually not)
 #dedupe_path
 
-# perform check of shell script
-#shellcheck -x ~/.zshrc
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
-[ -d $HOME/.gem/ruby/2.7.0/bin ] && export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
-[ -d $HOME/.nimble/bin ] && export PATH=$PATH:$HOME/.nimble/bin
-[ -d $HOME/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
-[ -d $HOME/scripts/runonce-scripts ] && export PATH=$PATH:$HOME/scripts/runonce-scripts
+[ -d "$HOME/.gem/ruby/2.7.0/bin" ] && export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
+[ -d "$HOME/.nimble/bin" ] && export PATH=$PATH:$HOME/.nimble/bin
+[ -d "$HOME/.local/bin" ] && export PATH=$PATH:$HOME/.local/bin
+[ -d "$HOME/scripts/runonce-scripts" ] && export PATH=$PATH:$HOME/scripts/runonce-scripts
 
-# Add my github username as env variable for script that gets my starred
-# projects
-GITHUB_USER=izikeros
+# Add my github username as env variable for script that gets my starred projects
+export GITHUB_USER=izikeros
 
 
 [ -d "/usr/local/opt/coreutils/libexec/gnubin" ] && export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
