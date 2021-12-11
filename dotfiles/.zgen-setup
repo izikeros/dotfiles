@@ -30,7 +30,6 @@ load-starter-plugin-list() {
   ZGEN_LOADED=()
   ZGEN_COMPLETIONS=()
 
-  zgen oh-my-zsh
 
   # If you want to customize your plugin list, create a file named
   # .zgen-local-plugins in your home directory. That file will be sourced
@@ -41,14 +40,13 @@ load-starter-plugin-list() {
   # they break, so get the order right.
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-history-substring-search
+  # Add Fish-like autosuggestions to your ZSH
+  zgen load zsh-users/zsh-autosuggestions
 
   # Set keystrokes for substring searching (???)
   #zmodload zsh/terminfo # Interface to the terminfo database
   #bindkey "$terminfo[kcuu1]" history-substring-search-up
   #bindkey "$terminfo[kcud1]" history-substring-search-down
-
-  # Tab complete rakefile targets
-  #zgen load unixorn/rake-completion.zshplugin
 
   # Automatically run zgen update and zgen selfupdate every 7 days
   zgen load unixorn/autoupdate-zgen
@@ -58,21 +56,18 @@ load-starter-plugin-list() {
 
   # Colorize the things if you have grc installed. Well, some of the
   # things, anyway.
-  #zgen load unixorn/warhol.plugin.zsh
+  # zgen load unixorn/warhol.plugin.zsh
 
   # macOS helpers. This plugin is smart enough to detect when it isn't running
   # on macOS and not load itself, so you can safely share the same plugin list
   # across macOS and Linux/BSD
-  #zgen load unixorn/tumult.plugin.zsh
+  # zgen load unixorn/tumult.plugin.zsh
 
   # Warn you when you run a command that you've set an alias for
   zgen load djui/alias-tips
 
   # Add my collection of git helper scripts
   zgen load unixorn/git-extra-commands
-
-  # Add my bitbucket git helpers plugin
-  # zgen load unixorn/bitbucket-git-helpers.plugin.zsh
 
   # A collection of scripts that might be useful to sysadmins
   # zgen load skx/sysadmin-util
@@ -84,14 +79,21 @@ load-starter-plugin-list() {
   # in a repository securely by encrypting them with gnupg
   # zgen load StackExchange/blackbox
 
+  # zsh-autoswitch-virtualenv is a simple and quick ZSH plugin that
+  # switches python virtualenvs automatically as you move between
+  # directories. zsh-autoswitch-virtualenv also automatically detects
+  # and activates your Pipenv and Poetry projects without
+  # any setup necessary.
+  zgen load "MichaelAquilina/zsh-autoswitch-virtualenv"
+
   # Load some oh-my-zsh plugins
-  #zgen oh-my-zsh plugins/pip    # pip autocompletions (seems not working correctly)
-  zgen oh-my-zsh plugins/sudo   # easily prefix your current or previous commands with `sudo` by pressing <kbd>esc</kbd> twice
+  zgen oh-my-zsh
+  #zgen oh-my-zsh plugins/sudo   # easily prefix your current or previous commands with `sudo` by pressing <kbd>esc</kbd> twice
   #zgen oh-my-zsh plugins/aws
-  #zgen oh-my-zsh plugins/chruby
-  zgen oh-my-zsh plugins/colored-man-pages
+  #zgen oh-my-zsh plugins/colored-man-pages # this one is nice - would be good to have it
+  zgen oh-my-zsh plugins/ag
   zgen oh-my-zsh plugins/git
-  # zgen oh-my-zsh plugins/jira
+  #zgen oh-my-zsh plugins/jira
   #zgen oh-my-zsh plugins/github
   #zgen oh-my-zsh plugins/python
   #zgen oh-my-zsh plugins/rsync
@@ -118,17 +120,12 @@ load-starter-plugin-list() {
   # you'll have to explicitly generate a completion, but it's still quite cool.
   #zgen load RobSis/zsh-completion-generator
 
-  # Add Fish-like autosuggestions to your ZSH
-  zgen load zsh-users/zsh-autosuggestions
 
   # k is a zsh script / plugin to make directory listings more readable,
   # adding a bit of color and some git status information on files and directories
   zgen load supercrabtree/k
-  # Bullet train prompt setup
-  #zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
-  #zgen oh-my-zsh themes/strug
+
   zgen load romkatv/powerlevel10k powerlevel10k
-  # Save it all to init script
 
   zgen load z-shell/zsh-diff-so-fancy
   zgen save
