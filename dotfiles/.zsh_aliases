@@ -395,7 +395,7 @@ alias find-git-repos="find . -name \".git\" -type d | sed s/\.git//g | grep -v '
 alias gpq="git add . && git commit -m 'update' && git push"
 
 alias devl="git checkout development"
-alias dev="git checkout devel"
+alias dev="git checkout develop"
 
 alias lg="git --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -15"
 
@@ -445,7 +445,7 @@ alias test-integration-list="find . -type f -name \"test_integration*\" | xargs 
 alias ccat=ccat.sh
 
 alias wn="workon"
-
+alias venv-path="echo \$(dirname \$(dirname \$(which python3)))"
 #-------------------------------------------
 ## JUPYTER NOTEBOOKS
 #-------------------------------------------
@@ -700,7 +700,7 @@ alias novpn="sudo vpnc-disconnect && ~/nsn/proxy/redsocks-stop.sh && echo '- rel
 
 
 
-
+alias podlogs="kubectl -n dip get pods | fzf | awk_col 1 | xargs kubectl -n dip logs -f"
 
 
 
