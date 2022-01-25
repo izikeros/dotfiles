@@ -167,6 +167,7 @@ if [ -d ~/.zsh-completions ]; then
 fi
 
 source ~/dotfiles/env_and_path.sh
+[ -f ~/.env_secret ] && source ~/.env_secret
 
 # virtualenv wrapper (note - that virtualenvwrapper slows down shell start considerably)
 # consider using lightweight script: venv-lite.zsh
@@ -249,3 +250,6 @@ export GITHUB_USER=izikeros
 [ -d "/usr/local/opt/coreutils/libexec/gnubin" ] && export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 #zprof # end of profiling
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
