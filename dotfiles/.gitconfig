@@ -34,7 +34,12 @@
         --abbrev-commit \
         --pretty=oneline
 
-    hd = !git --no-pager log \
+    hdevelop = !git --no-pager log \
+       origin/develop..HEAD \
+       --abbrev-commit \
+       --pretty=oneline
+
+    hdevelopment = !git --no-pager log \
         origin/development..HEAD \
         --abbrev-commit \
         --pretty=oneline
