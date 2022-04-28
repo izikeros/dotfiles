@@ -41,6 +41,8 @@ function zsrc() {
 }
 [[ ! -e ${ZDOTDIR:-$HOME}/.zshrc.zwc ]] && zsrc &>/dev/null
 
+# enable mv command from zsh (e.g. for rename with pattern)
+autoload -U zmv
 
 # Set this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -253,3 +255,4 @@ export GITHUB_USER=izikeros
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+export DOCKER_HOST=unix://$HOME/docker.sock

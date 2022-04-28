@@ -477,6 +477,15 @@ alias pip-top-level="pipdeptree -fl | grep '^\w'"  # https://pypi.org/project/pi
 # pip install from requirements
 alias pipr="pip install -r"
 
+# pip list installed packages with version info
+alias pipl="pip list"
+
+# pip install requirements.txt
+alias piprr="pip install -r requirements.txt"
+
+# pip install requirements-dev.txt
+alias piprd="pip install -r requirements-dev.txt"
+
 #-------------------------------------------
 ## DJANGO, MANAGE.PY
 #--------------------------------------------
@@ -702,8 +711,7 @@ alias novpn="sudo vpnc-disconnect && ~/nsn/proxy/redsocks-stop.sh && echo '- rel
 
 alias podlogs="kubectl -n dip get pods | fzf | awk_col 1 | xargs kubectl -n dip logs -f"
 
+alias dlqa="curl -L https://raw.githubusercontent.com/izikeros/scripts/main/my_scripts/install_qa.sh | sh"
 
-
-
-
-
+alias zcp='zmv -C'
+alias zln='zmv -L'
