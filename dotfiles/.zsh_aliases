@@ -363,6 +363,8 @@ alias mdtoday="find . -name \"*.md\" -mtime -1 -type f -print"
 # extract TODO/FIXME from files in current directory (recursive) and print to
 # stdout
 alias todo-extract="find ./ -name \"*.py\" | xargs grep -h \"TODO:\|FIXME:\" 2>/dev/null | sed \"s/^[ \s]*//g\" | sed \"s/TODO://\" | sed \"s/FIXME://\" | sed \"s/# # /# /g\""
+# Exract TODOS with reference to source file. Useful for python
+alias todo-extract-ref="find ./ -name \"*.py\" | xargs grep -h \"TODO:\|FIXME:\" 2>/dev/null | sed \"s/^[ \s]*//g\" | sed \"s/TODO://\" | sed \"s/FIXME://\" | sed \"s/# # /# /g\""
 
 #alias finde='find -L . -type d \( -path "*.git" -o -path "*.fzf*" -o -path "*/Documents" -o -path "*/Downloads" -o -path "*.cache" -o -path "*/Pictures" -o -path "*/.mozilla" -o -path "*.jg" \) -prune -o -print'
 
@@ -637,8 +639,10 @@ alias ta="tmux a"
 #--------------------------------------------
 ## YOUTUBE DOWNLOADERS, MEDIA CONVERTERS
 #--------------------------------------------
+#select engine: youtube-dl | yt-dlp
+YTDL=yt-dlp
 # Extract audio to mp3 format, add thumbnail and metadata
-alias ytmp3='youtube-dl -o "%(title)s.%(ext)s" -f bestaudio --extract-audio --embed-thumbnail --add-metadata --audio-format mp3 --prefer-ffmpeg'
+alias ytmp3='$YTDL -o "%(title)s.%(ext)s" -f bestaudio --extract-audio --embed-thumbnail --add-metadata --audio-format mp3 --prefer-ffmpeg'
 
 # Convert all mp4 files in current dir to mp4
 alias mp4-to-mp3-dir='for i in *.mp4; do ffmpeg -i "$i" -q:a 0 -map a "$(basename "${i/.mp4}").mp3"; done;'
@@ -647,13 +651,13 @@ alias mp4-to-mp3-dir='for i in *.mp4; do ffmpeg -i "$i" -q:a 0 -map a "$(basenam
 alias mp4-to-mp3='ffmpeg -q:a 0 -map a "$(basename "${i/.mp4}").mp3" -i'
 
 # Extract best possible audio quality with original format without encoding
-alias yt-audio="youtube-dl -f bestaudio --extract-audio --embed-thumbnail --add-metadata"
+alias yt-audio="$YTDL -f bestaudio --extract-audio --embed-thumbnail --add-metadata"
 
 # Download video (or whole playlist of videos) with addional file for
 # description nad thumbnail. Force AAC audio encoding to for smartTV
 # compatibility
 # add --write-sub for downloading subtitles
-alias ytdl="youtube-dl -f best --write-description --write-thumbnail --audio-format aac"
+alias ytdl="$YTDL -f best --write-description --write-thumbnail --audio-format aac"
 
 #--------------------------------------------
 ## DIARY, NOTES
