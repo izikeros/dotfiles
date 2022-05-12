@@ -258,8 +258,8 @@
 	default = current
 [core]
 	editor = vim
-    pager = diff-so-fancy | less --tabs=4 -RFX
-	excludesfile = /Users/krystian.safjan/.gitignore
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	excludesfile = /home/izik/.gitignore
 	autocrlf = input
 
 [gui]
