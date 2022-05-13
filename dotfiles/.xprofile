@@ -1,28 +1,43 @@
 #!/bin/sh
 
-# ~/.xprofile
+[ -f ~/.config/zsh/.zshenv ] && . ~/.config/zsh/.zshenv
 
 # sourced at boot by ~/.xinitrc and display managers like lightdm
 
+# xdg standard configuration location (needed by some applications)
 export XDG_CONFIG_HOME="$HOME/.config"
 
+# add ~/.local/bin to the PATH (application executables)
+export PATH="$HOME/.local/bin:$PATH"
 [ -d /sbin ] && PATH="$PATH:/sbin"
 [ -d /usr/sbin ] && PATH="$PATH:/usr/sbin"
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 
-# restore the background
+# start the compositor (transparency, fade, shadows, blur, etc.)
+picom -b &
+
+# start the network tray application
+nm-applet &
+
+# start the volume tray application
+volumeicon &
+
+# restore the last wallpaper applied with nitrogen
 nitrogen --restore &
+
+# start xfce power manager
+xfce4-power-manager &
 
 # keyring and polkit daemons
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 gnome-keyring-daemon --start --components=pkcs11 &
 
-# super alone simulates Alt-F1
+# set super key alone to emulate alt+F1
 ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
 
-# dpms: timeout sleep off
+# set display timeout, sleep, and power off times
 xset dpms 600 900 1200
 
-# keyboard repeat rate
+# set keyboard repeat rate
 xset r rate 350 60

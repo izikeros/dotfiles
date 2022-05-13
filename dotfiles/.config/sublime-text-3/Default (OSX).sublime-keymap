@@ -1,13 +1,17 @@
 [
+  // Insert date in default format (seems not working)
+  { "keys": ["F5"],
+    "command": "insert_iso_date"},
+
+  // Swap terms  
   { "keys": ["ctrl+shift+s"],
     "command": "swap_terms" },
+
   // Change filename finished with .md to H1 markdown header
   { "keys": ["ctrl+shift+t"],
     "command": "filename_to_title" },
+
   // Change title to filename finished with .md
   { "keys": ["ctrl+shift+r"],
-    "command": "filename_to_title" },
-  // Insert date in default format (seems not working)
-  { "keys": ["F5"],
-    "command": "insert_iso_date"}
+    "command": "filename_to_title" }
 ]

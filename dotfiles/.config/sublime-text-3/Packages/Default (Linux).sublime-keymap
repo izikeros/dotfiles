@@ -2,24 +2,30 @@
   // Insert datetime using default format text
   { "keys": ["f5"],
     "command": "insert_date" },
-  // Show the panel with pre-defined options from settings
+
+  // Show the panel with pre-defined insert date options from settings
   { "keys": ["ctrl+f5"],
     "command": "insert_date_panel" },
+
   // Change direction in vocabulary notes
   { "keys": ["ctrl+shift+s"],
     "command": "swap_terms" },
+
   // Convert underscored md filename to H1 heading with title
   { "keys": ["ctrl+alt+t"],
     "command": "filename_to_title" },
+
   // Convert title (e.g. copied from article) to filename with underscores, etc.
   { "keys": ["ctrl+alt+r"],
-    "command": "title_to_filename" },        
+    "command": "title_to_filename" },     
+
   // Render Markdown preview in the browser
   { "keys": ["ctrl+shift+m"],
     "command": "markdown_preview",
-     "args": {"target": "browser", "parser":"markdown"} },
-  {
-   "keys": ["ctrl+alt+p"],
+     "args": {"target": "browser", "parser":"markdown"} }, 
+
+  // Switch dictionary to Polish
+  { "keys": ["ctrl+alt+p"],
     "command": "set_user_setting",
     "args": {
         "file": "Preferences.sublime-settings",
@@ -27,8 +33,9 @@
         "value": "Packages/Dictionaries/pl_PL_utf8.dic"
     }
   },
-  {
-    "keys": ["ctrl+alt+e"],
+
+  // Switch dictionary to Spanish (e - Espanol)
+  { "keys": ["ctrl+alt+e"],
     "command": "set_user_setting",
     "args": {
         "file": "Preferences.sublime-settings",
@@ -36,8 +43,9 @@
         "value": "Packages/Dictionaries/es_ES_utf8.dic"
     }
   },
-  {
-    "keys": ["ctrl+alt+u"],
+
+  // Switch dictionary to US
+  { "keys": ["ctrl+alt+u"],
     "command": "set_user_setting",
     "args": {
         "file": "Preferences.sublime-settings",
@@ -45,11 +53,8 @@
         "value": "Packages/Dictionaries/en_US_utf8.dic"
     }
   },
+
   // Show/hide terminus panel
   { "keys": ["alt+`"],
      "command": "toggle_terminus_panel"}
-  // TODO: Enable Polish dictionary
-  // TODO: Enable English dictionary
-  // TODO: Enable Spanish dictionary
-
 ]
