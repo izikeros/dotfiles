@@ -4,6 +4,7 @@
 
 function d_file_offset(){    # return filename for the diary for given offset
     offset=$1
+    USE_OFFSET=false
     if [ -z "${offset}" ]; then offset=0; fi
     if [[ $OSTYPE == *darwin* ]]; then
         # NOTE: requires GNU coreutils installed
@@ -13,9 +14,13 @@ function d_file_offset(){    # return filename for the diary for given offset
         DATE=$(date -d "${offset}days 13:00" +%Y-%m-%d)
         DOW=$(date "-d ${offset}days 13:00" +%u)
     fi
-    days=(m t w h f s x)
-    DAY_LETTER=${days[$DOW]}
-    FNAME="${DATE}_${DAY_LETTER}"
+    if [ "$USE_OFFSET" = true ]; then
+        days=(m t w h f s x)
+        DAY_LETTER=${days[$DOW]}
+        FNAME="${DATE}_${DAY_LETTER}"
+    else
+        FNAME="${DATE}"
+    fi
     echo "$FNAME"
 }
 

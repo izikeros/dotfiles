@@ -362,9 +362,9 @@ alias mdtoday="find . -name \"*.md\" -mtime -1 -type f -print"
 #alias todo-extract="find ./ | xargs grep -h \"TODO:\" | sed \"s/^[ \s]*//g\""
 # extract TODO/FIXME from files in current directory (recursive) and print to
 # stdout
-alias todo-extract="find ./ -name \"*.py\" | xargs grep -h \"TODO:\|FIXME:\" 2>/dev/null | sed \"s/^[ \s]*//g\" | sed \"s/TODO://\" | sed \"s/FIXME://\" | sed \"s/# # /# /g\""
+alias todo-extract-proj="find . -name \"*.py\" | xargs grep -h \"TODO:\|FIXME:\" 2>/dev/null | sed \"s/^[ \s]*//g\" | sed \"s/TODO://\" | sed \"s/FIXME://\" | sed \"s/# # /# /g\""
 # Exract TODOS with reference to source file. Useful for python
-alias todo-extract-ref="find ./ -name \"*.py\" | xargs grep -h \"TODO:\|FIXME:\" 2>/dev/null | sed \"s/^[ \s]*//g\" | sed \"s/TODO://\" | sed \"s/FIXME://\" | sed \"s/# # /# /g\""
+alias todo-extract-ref="find $(pwd) -name \"*.py\" | xargs grep -Hn \"TODO:\|FIXME:\" 2>/dev/null | sed \"s/^[ \s]*//g\" | sed \"s/TODO://\" | sed \"s/FIXME://\" | sed \"s/# # /# /g\""
 
 #alias finde='find -L . -type d \( -path "*.git" -o -path "*.fzf*" -o -path "*/Documents" -o -path "*/Downloads" -o -path "*.cache" -o -path "*/Pictures" -o -path "*/.mozilla" -o -path "*.jg" \) -prune -o -print'
 
@@ -657,8 +657,9 @@ alias yt-audio="$YTDL -f bestaudio --extract-audio --embed-thumbnail --add-metad
 # description nad thumbnail. Force AAC audio encoding to for smartTV
 # compatibility
 # add --write-sub for downloading subtitles
-alias ytdl="$YTDL -f best --write-description --write-thumbnail --audio-format aac"
 
+#alias ytdl="$YTDL -f best --write-description --write-thumbnail --audio-format aac"
+alias ytdl="$YTDL --write-description --write-thumbnail --audio-format aac"
 #--------------------------------------------
 ## DIARY, NOTES
 #--------------------------------------------
