@@ -17,8 +17,14 @@
 # git guilt
 # ranger
 # autorandr
-# rofi (Linux) or choose (macOs)
+# rofi (Linux) or choose (macOS)
 # pipdeptree - for python packages dependency tree, top-level packages
+# git-guilt - for checking how blame was transfered from one author to another
+#             in given range of time
+# pycodestyle - for pep8-stats
+# kubectl
+# gdmap
+# doublecmd
 
 # Sections in this aliases file
 # - FILESYSTEM - DIRECTORY SIZE, LISTING
@@ -413,10 +419,6 @@ alias week-stats="git stats --until='7 days ago'"
 # https://www.atlassian.com/blog/archives/git-guilt-blame-code-review
 #how blame shifted from one author to another during your last commit:
 # git guilt HEAD~1
-# How blame changed over period of time
-alias week-stats-guilt="git guilt \`git log --until=\"7 days ago\" --format=\"%H\" -n 1\`"
-# How blame changed since feature branch was created
-# git guilt `git merge-base development my-feature-branch` my-feature-branch
 
 alias st="git status --short"
 alias gp="git push"
@@ -668,8 +670,6 @@ alias ytdl="$YTDL --write-description --write-thumbnail --audio-format aac"
 # private knowledge base and diary
 export WIKI_HOME="$HOME/vimwiki"
 
-alias td="$VIM $WIKI_HOME/5-things-TODO.md"
-
 # find days marked with [x]
 alias gmark="find $HOME/vimwiki/diary -name '*.md' | xargs grep -F '[x]' | grep -v medytacja | awk -F'/' '{print \$NF}' | sed s'/.md//' | sed s'/_/ /' | sed 's/:\[x\]//' | sort"
 
@@ -712,11 +712,16 @@ alias novpn="sudo vpnc-disconnect && ~/nsn/proxy/redsocks-stop.sh && echo '- rel
 # decrypt volume without mounting, then use e.g. test disk etc.
 # veracrypt --filesystem=none -m nokernelcrypto --mount bulk/bbb /mnt/veracrypt3
 
-
-
 alias podlogs="kubectl -n dip get pods | fzf | awk_col 1 | xargs kubectl -n dip logs -f"
 
 alias dlqa="curl -L https://raw.githubusercontent.com/izikeros/scripts/main/my_scripts/install_qa.sh | sh"
 
+# https://zsh.sourceforge.io/Doc/Release/User-Contributions.html#index-zmv
+# Move (usually, rename) files matching the pattern srcpat to corresponding 
+# files having names of the form given by dest, where srcpat contains parentheses
+# surrounding patterns which will be replaced in turn by $1, $2, ... in dest. 
+# For example,
+# zmv '(*).lis' '$1.txt'
+# renames ‘foo.lis’ to ‘foo.txt’, ‘my.old.stuff.lis’ to ‘my.old.stuff.txt’, and so on.
 alias zcp='zmv -C'
 alias zln='zmv -L'

@@ -1,13 +1,13 @@
 # https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
 # https://hackernoon.com/lesser-known-git-commands-151a1918a60
 # https://blog.scottnonnenberg.com/better-git-configuration/
+
 [alias]
 	########### Basic aliases ###########
 	br = branch -v
 
 	# add to staged and commit (new files should be added anyway)
 	ca = commit -a
-
 	cam = commit -am
 	ci = commit
 	cm = commit -m
@@ -27,7 +27,7 @@
     #
     # https://git-scm.com/docs/git-log#_options
     #
-    # show commits that differs development (or master) current HEAD
+    # show commits that differs development/devel/master branch and current HEAD
     # nice to inspect work in given feature branch
     hdevel = !git --no-pager log \
         origin/devel..HEAD \
@@ -44,12 +44,17 @@
         --abbrev-commit \
         --pretty=oneline
 
-    hm = !git --no-pager log \
+    hmaster = !git --no-pager log \
         origin/master..HEAD \
         --abbrev-commit \
         --pretty=oneline
 
-    # baseline log - showing tree, relative date, without pager
+    hmain = !git --no-pager log \
+        origin/master..HEAD \
+        --abbrev-commit \
+        --pretty=oneline
+
+    # baseline log - showing tree, relative date, without pager, last 15 commits
     lg = !git --no-pager log \
         --graph \
         --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
@@ -57,6 +62,7 @@
         --date=relative \
         -15
 
+    # log - showing tree, relative date, with pager, all commits
     lg-all = !git log \
         --graph \
         --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
@@ -293,8 +299,8 @@
 [init]
 	defaultBranch = main
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !/usr/local/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !/usr/local/bin/gh auth git-credential
