@@ -445,8 +445,8 @@ alias test-num="ag \"def test_\" | wc -l"
 alias test-num-assertions="ag \"self.assert|ok_|eq_\" | wc -l"
 alias test-integration-list="find . -type f -name \"test_integration*\" | xargs grep -H -A 1 \"def test\" | sed 's/def//' | sed 's/self//' | sed 's/://'"
 
-# colored cat for source code:
-alias ccat=ccat.sh
+# colored cat for source code (outdated, use bat instead)
+#alias ccat=ccat.sh
 
 alias wn="workon"
 alias venv-path="echo \$(dirname \$(dirname \$(which python3)))"
@@ -457,10 +457,10 @@ alias jl="jupyter lab"
 alias jn="jupyter notebook"
 
 # jupytext - synchronize all notebooks and in current directory, no recursive
-alias jupytext-sync-all-in-current-dir="find ./ -maxdepth 1 -name '*.ipynb' | xargs jupytext --sync"
+alias jupysync-all-in-current-dir="find ./ -maxdepth 1 -name '*.ipynb' | xargs jupytext --sync"
 
 # jupytext - pair all notebook in current dir and subdirs with py:percent scripts
-alias jupytext-pair-all-notebooks-in-current-dir="find . -name '*.ipynb' | xargs jupytext --set-formats ipynb,py:percent"
+alias jupypair-all-notebooks-in-current-dir="find . -name '*.ipynb' | xargs jupytext --set-formats ipynb,py:percent"
 
 #-------------------------------------------
 ## PIP
@@ -662,6 +662,8 @@ alias yt-audio="$YTDL -f bestaudio --extract-audio --embed-thumbnail --add-metad
 
 #alias ytdl="$YTDL -f best --write-description --write-thumbnail --audio-format aac"
 alias ytdl="$YTDL --write-description --write-thumbnail --audio-format aac"
+alias ytdl-subs-en="$YTDL --write-description --write-subs --skip-download"
+alias ytdl-autosubs-en="$YTDL --write-description --write-auto-subs --skip-download"
 #--------------------------------------------
 ## DIARY, NOTES
 #--------------------------------------------
@@ -717,11 +719,12 @@ alias podlogs="kubectl -n dip get pods | fzf | awk_col 1 | xargs kubectl -n dip 
 alias dlqa="curl -L https://raw.githubusercontent.com/izikeros/scripts/main/my_scripts/install_qa.sh | sh"
 
 # https://zsh.sourceforge.io/Doc/Release/User-Contributions.html#index-zmv
-# Move (usually, rename) files matching the pattern srcpat to corresponding 
+# Move (usually, rename) files matching the pattern srcpat to corresponding
 # files having names of the form given by dest, where srcpat contains parentheses
-# surrounding patterns which will be replaced in turn by $1, $2, ... in dest. 
+# surrounding patterns which will be replaced in turn by $1, $2, ... in dest.
 # For example,
 # zmv '(*).lis' '$1.txt'
 # renames ‘foo.lis’ to ‘foo.txt’, ‘my.old.stuff.lis’ to ‘my.old.stuff.txt’, and so on.
 alias zcp='zmv -C'
 alias zln='zmv -L'
+alias cov-show='open htmlcov/index.html'
