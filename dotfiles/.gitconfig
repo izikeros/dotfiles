@@ -177,6 +177,8 @@
         --date=short \
         --since='1 month'
 
+    lg-lt ="!git log $(git describe --tags --abbrev=0)..HEAD --oneline"
+
     # see commit stats per author
     stats = shortlog -sn --all --no-merges
 
