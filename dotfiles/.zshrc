@@ -105,9 +105,8 @@ bindkey -M isearch " " magic-space    # normal space during searches
 PATH=/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.zgen/zdharma/zsh-diff-so-fancy-master/bin:$PATH
-
-#export http_proxy="http://10.158.100.1:8080"
-#export https_proxy="http://10.158.100.1:8080"
+# for pipx executables:
+export PATH=$HOME/.local/bin:$PATH
 
 # set -o to list all available options and their current setting
 setopt BANG_HIST
