@@ -459,6 +459,9 @@ alias jn="jupyter notebook"
 # jupytext - synchronize all notebooks and in current directory, no recursive
 alias jupysync-all-in-current-dir="find ./ -maxdepth 1 -name '*.ipynb' | xargs jupytext --sync"
 
+# jupytext - synchronize all notebooks and in current directory, no recursive (requires pip install "black[jupyter]")
+alias jupysync-all-in-current-dir-and-blak="find ./ -maxdepth 1 -name '*.ipynb' | xargs jupytext --pipe black --sync"
+
 # jupytext - pair all notebook in current dir and subdirs with py:percent scripts
 alias jupypair-all-notebooks-in-current-dir="find . -name '*.ipynb' | xargs jupytext --set-formats ipynb,py:percent"
 

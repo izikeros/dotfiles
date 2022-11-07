@@ -4,7 +4,10 @@ echo $(jupyter --data-dir)
 ```
 Can be e.g.: `./local/share/jupyter/nbextensions/snippets` or `/usr/local/share/jupyter/nbextensions/snippets`
 
-> NOTE: on MacBook found it in /usr/local....
+> NOTE: on MacBook found it in:
+/usr/local....
+and
+~/Library/Jupyter/nbextensions/snippets
 
 # Adding snippets
 Add new snippets to `snippets_from_extension.py`
