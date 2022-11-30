@@ -466,7 +466,7 @@
     <!-- Toggle polybar -->
     <keybind key="W-F12">
       <action name="Execute">
-        <command>toggle.sh -p</command>
+        <command>toggle-polybar.sh</command>
       </action>
     </keybind>
 
