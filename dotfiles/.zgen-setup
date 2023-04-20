@@ -126,8 +126,9 @@ load-starter-plugin-list() {
   zgen load supercrabtree/k
 
   zgen load romkatv/powerlevel10k powerlevel10k
-
-  zgen load z-shell/zsh-diff-so-fancy
+  # zgen load zdharma/zsh-diff-so-fancy
+  # zgen load z-shell/zsh-diff-so-fancy
+  zgen load zdharma-continuum/zsh-diff-so-fancy
   zgen save
 }
 

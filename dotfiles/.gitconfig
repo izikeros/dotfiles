@@ -144,7 +144,7 @@
         --all \
         --since='1 week' \
         --no-merges \
-        --author=krystian.safjan@nokia.com
+        --author=ksafjan@gmail.com
 
     lg1-my-month  = !git --no-pager log  \
         --graph \
@@ -266,7 +266,7 @@
 	default = current
 [core]
 	editor = vim
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = diff-so-fancy | less --tabs=4 -RFXi
 	excludesfile = /home/izik/.gitignore
 	autocrlf = input
 
@@ -306,3 +306,11 @@
 [credential "https://gist.github.com"]
 	helper =
 	helper = !/usr/local/bin/gh auth git-credential
+[user]
+	name = Krystian Safjan
+	email = ksafjan@gmail.com
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true

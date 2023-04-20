@@ -160,7 +160,7 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)*==34=34}:${(s.:.)LS_COLORS}")';
 
 # Load any custom zsh completions we've installed
-if [ -d ~/.zsh-completions ]; then
+if [ -d $HOME/.zsh-completions ]; then
   for completion in ~/.zsh-completions/*
   do
     source "$completion"
@@ -168,7 +168,8 @@ if [ -d ~/.zsh-completions ]; then
 fi
 
 source ~/dotfiles/env_and_path.sh
-[ -f ~/.env_secret ] && source ~/.env_secret
+[ -f $HOME/.homebrew_github_token ] && source ~/.homebrew_github_token
+[ -f $HOME/.env_secret ] && source ~/.env_secret
 
 # virtualenv wrapper (note - that virtualenvwrapper slows down shell start considerably)
 # consider using lightweight script: venv-lite.zsh
@@ -243,8 +244,11 @@ export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_e
 [ -d "$HOME/.nimble/bin" ] && export PATH=$PATH:$HOME/.nimble/bin
 [ -d "$HOME/.local/bin" ] && export PATH=$PATH:$HOME/.local/bin
 [ -d "$HOME/scripts/runonce-scripts" ] && export PATH=$PATH:$HOME/scripts/runonce-scripts
+[ -d "$HOME/.cargo/bin/" ] && export PATH=$PATH:$HOME/.cargo/bin
+[ -d "/Applications/Docker.app/Contents/Resources/bin" ] && export PATH=$PATH:/Applications/Docker.app/Contents/Resources/bin
 
-# Add my github username as env variable for script that gets my starred projects
+ #Add my github username as env variable for script that gets my starred projects
+
 export GITHUB_USER=izikeros
 
 
@@ -254,4 +258,19 @@ export GITHUB_USER=izikeros
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
-export DOCKER_HOST=unix://$HOME/docker.sock
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
