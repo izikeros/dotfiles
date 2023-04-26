@@ -233,7 +233,7 @@ export POWERLEVEL9K_SHOW_RULER=false
 export POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
 export POWERLEVEL9K_SHOW_CHANGESET=true # git hash
 # Left, right prompt segments
-export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh anaconda virtualenv dir vcs)
+export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh virtualenv dir vcs)
 export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
 
 # Note: deduplication takes quite long. Check if deduplications are needed (usually not)
@@ -247,7 +247,7 @@ export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_e
 [ -d "$HOME/.cargo/bin/" ] && export PATH=$PATH:$HOME/.cargo/bin
 [ -d "/Applications/Docker.app/Contents/Resources/bin" ] && export PATH=$PATH:/Applications/Docker.app/Contents/Resources/bin
 
- #Add my github username as env variable for script that gets my starred projects
+# Add my github username as env variable for script that gets my starred projects
 
 export GITHUB_USER=izikeros
 
