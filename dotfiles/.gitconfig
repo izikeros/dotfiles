@@ -1,58 +1,73 @@
 # https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
 # https://hackernoon.com/lesser-known-git-commands-151a1918a60
 # https://blog.scottnonnenberg.com/better-git-configuration/
+# 
+# NOTE - explanation of some options used in the aliases
+# !
+# This is a prefix that you can use with a Git command to run it as a shell command, rather than a Git subcommand. This can be useful if you want to use the output of one command as input to another command, or if you want to run a command that is not part of Git.
+
+# --abbrev=0
+# This option is used with the git describe command to ensure that only the tag name is printed, without any additional commit information. This can be useful if you want to get the name of the latest annotated tag, without any extra information.
+
+# --abbrev-commit
+# This option is used with the git log command to abbreviate the commit hash to a shorter, but still unique prefix. By default, Git shows the full 40-character commit hash, but this option allows you to shorten it to a specified number of characters (by default, 7 characters).
+
+# --graph
+# This option is used with the git log command to show the commit history in a graphical format, with branches and merges represented by lines connecting the commits. This can be useful if you want to visualize the structure of the commit history, and see how branches and merges have evolved over time.
+
+# --oneline
+# This option is used with the git log command to format the log output to show each commit on a single line, with the commit message truncated to the first line. This can be useful if you want to quickly scan through a large number of commits, and see the essential information for each commit in a compact format.
+
+# --decorate
+# This option is used with the git log command to show the names of branches and tags that point to each commit, in addition to the commit hash and message. This can be useful if you want to see which branches or tags are associated with each commit in the log output.
+
+# --pretty=oneline
+# This option is used with the git log command to format the log output in a specific way. In this case, it formats each commit on a single line, with the commit hash, author, and first line of the commit message separated by spaces. This is similar to the --oneline option, but with additional information.
+
+# --no-merges
+# This option is used with the git log command to exclude merge commits from the log output. By default, Git shows all commits, including merge commits, but this option allows you to filter out the merge commits and only show the non-merge commits in the log output. This can be useful if you want to focus on the mainline of development, and exclude the noise of merge commits.
+
 
 [alias]
-	########### Basic aliases ###########
-	br = branch -v
+    ########### Basic aliases ###########
+    # shows a list of all local and remote branches
+    br = branch -v
+    # stages all changes and commits (new files should be added anyway)
+    ca = commit -a
+    # combines staging and commit (new files should be added anyway)
+    cam = commit -am
+    # creates a new commit with the changes you have made since the last commit
+    ci = commit
+    # creates a new commit with a commit message
+    cm = commit -m
+    # clones a repository into a new directory
+    cl = clone
+    # shows the difference between the working directory and the last commit
+    diff = diff --word-diff
+    # shows the difference between the index and the last commit
+    dc = diff --cached
+    # switches to a specified branch or restores the working tree files
+    co = checkout
+    # opens gitk, a graphical history viewer
+    k = !gitk
+    # fetches the changes from the remote repository and merges them into the local one
+    pu  = pull
+    # fetches the changes from the remote repository and rebases them onto the local one
+    pur = pull --rebase
 
-	# add to staged and commit (new files should be added anyway)
-	ca = commit -a
-	cam = commit -am
-	ci = commit
-	cm = commit -m
-
-	cl = clone
-
-	diff = diff --word-diff
-	dc = diff --cached
-
-	co = checkout
-	k = !gitk
-	pu  = pull
-	pur = pull --rebase
 
 
-	######## LOG and DIFF ###############
-    #
-    # https://git-scm.com/docs/git-log#_options
-    #
-    # show commits that differs development/devel/master branch and current HEAD
-    # nice to inspect work in given feature branch
-    hdevel = !git --no-pager log \
-        origin/devel..HEAD \
-        --abbrev-commit \
-        --pretty=oneline
+    ######## LOG and DIFF ###############
+    # check the difference between the current local branch and its remote counterpart
+    #   When you run this command, it will show you the difference between the current
+    #   local branch and its remote counterpart. The @{upstream} notation is a shortcut
+    #   that Git provides, which refers to the remote tracking branch of the current 
+    #   local branch. This command is similar to running git diff HEAD origin/<current_branch_name>.
+    dup = !git --no-pager diff @{upstream}
 
-    hdevelop = !git --no-pager log \
-       origin/develop..HEAD \
-       --abbrev-commit \
-       --pretty=oneline
+    # show the commit log for the difference between the current branch and its remote counterpart:
+    lg-up = !git --no-pager log @{upstream}.. --abbrev-commit --pretty=oneline
 
-    hdevelopment = !git --no-pager log \
-        origin/development..HEAD \
-        --abbrev-commit \
-        --pretty=oneline
-
-    hmaster = !git --no-pager log \
-        origin/master..HEAD \
-        --abbrev-commit \
-        --pretty=oneline
-
-    hmain = !git --no-pager log \
-        origin/master..HEAD \
-        --abbrev-commit \
-        --pretty=oneline
 
     # baseline log - showing tree, relative date, without pager, last 15 commits
     lg = !git --no-pager log \
@@ -110,13 +125,13 @@
         --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
 
     # List 15 recent commits and files they changed, do not use pagination
-    lg4 = !git --no-pager log \
+    lg-files = !git --no-pager log \
         --pretty=format:"%Cgreen%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" \
         --decorate \
         --numstat -15
 
     # List all commits and files they changed, use pagination
-    lg5 = !git log \
+    lg-files-pagin = !git log \
         --pretty=format:"%Cgreen%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" \
         --decorate \
         --numstat
@@ -135,8 +150,8 @@
         --since=midnight
     lg-month     = !git --no-pager log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --color --date=short --since='1 month'
 
-    # filter mine commits by the email
-    lg1-my-week  = !git --no-pager log  \
+    # filter mine commits by the (my) email
+    lg-my-week  = !git --no-pager log  \
         --graph \
         --pretty=format:'%C(yellow)%d%Creset %s %Cgreen(%ad, %cr)' \
         --abbrev-commit \
@@ -144,9 +159,9 @@
         --all \
         --since='1 week' \
         --no-merges \
-        --author=ksafjan@gmail.com
+        --author="$(git config user.email)"
 
-    lg1-my-month  = !git --no-pager log  \
+    lg-my-month  = !git --no-pager log  \
         --graph \
         --pretty=format:'%C(yellow)%d%Creset %s %Cgreen(%ad, %cr)' \
         --abbrev-commit \
@@ -154,9 +169,9 @@
         --all \
         --since='1 month' \
         --no-merges \
-        --author=krystian.safjan@nokia.com
+        --author="$(git config user.email)"
 
-    lg1-all-week = log \
+    lg-all-week = log \
         --graph \
         --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
         --abbrev-commit \
@@ -165,18 +180,13 @@
         --since='1 week' \
         --no-merges
 
-    lg-all-week  = log \
-        --all \
-        --since='1 weeks' \
-        --oneline \
-        --no-merges
-
     taxbreak = log \
         --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" \
         --decorate \
         --date=short \
         --since='1 month'
 
+    # Git log in a compact format for all the commits between the latest annotated tag and the current HEAD
     lg-lt ="!git log $(git describe --tags --abbrev=0)..HEAD --oneline"
 
     # see commit stats per author
@@ -306,11 +316,8 @@
 [credential "https://gist.github.com"]
 	helper =
 	helper = !/usr/local/bin/gh auth git-credential
-[user]
-	name = Krystian Safjan
-	email = ksafjan@gmail.com
 [credential]
-	helper = 
+	helper =
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
