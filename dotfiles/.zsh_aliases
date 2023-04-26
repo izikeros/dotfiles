@@ -421,6 +421,9 @@ alias week-stats="git stats --until='7 days ago'"
 #how blame shifted from one author to another during your last commit:
 # git guilt HEAD~1
 
+# see how many lines were modified by author
+alias git-contributors='git ls-files -z | xargs -0n1 git blame -w | perl -n -e '\''/^.*?\((.*?)\s+[\d]{4}/; print $1,"\n"'\'' | sort -f | uniq -c | sort -n'
+
 alias st="git status --short"
 alias gp="git push"
 alias whoamigit="git config --get user.email;git config --get user.name"
