@@ -155,12 +155,16 @@ function drmi(){	# remove docker image using rofi
 }
 
 # == Git related functions
-function rco(){		# git checkout to one of the recent branches
+function rco(){		# git checkout to one of the recent branches GUI choose or rofi
     if [[ $OSTYPE == *darwin* ]]; then
         echo "$(recent-branches | choose)" | xargs git checkout
     else
         echo "$(recent-branches | rofi -threads 0 -width 100 -dmenu -i -p "locate:")" | xargs git checkout
     fi
+}
+
+function fco(){		# git checkout to one of the recent branches GUI-fzf
+    echo "$(recent-branches | fzf)" | xargs git checkout
 }
 
 function todos-blame(){	# git blame who put TODO statement in the code
