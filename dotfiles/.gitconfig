@@ -1,7 +1,7 @@
 # https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
 # https://hackernoon.com/lesser-known-git-commands-151a1918a60
 # https://blog.scottnonnenberg.com/better-git-configuration/
-# 
+#
 # NOTE - explanation of some options used in the aliases
 # !
 # This is a prefix that you can use with a Git command to run it as a shell command, rather than a Git subcommand. This can be useful if you want to use the output of one command as input to another command, or if you want to run a command that is not part of Git.
@@ -61,7 +61,7 @@
     # check the difference between the current local branch and its remote counterpart
     #   When you run this command, it will show you the difference between the current
     #   local branch and its remote counterpart. The @{upstream} notation is a shortcut
-    #   that Git provides, which refers to the remote tracking branch of the current 
+    #   that Git provides, which refers to the remote tracking branch of the current
     #   local branch. This command is similar to running git diff HEAD origin/<current_branch_name>.
     dup = !git --no-pager diff @{upstream}
 
@@ -312,12 +312,7 @@
 	defaultBranch = main
 [credential "https://github.com"]
 	helper =
-	helper = !/usr/local/bin/gh auth git-credential
+#	helper = !/usr/local/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper =
-	helper = !/usr/local/bin/gh auth git-credential
-[credential]
-	helper =
-	helper = /usr/local/share/gcm-core/git-credential-manager
-[credential "https://dev.azure.com"]
-	useHttpPath = true
+#	helper = !/usr/local/bin/gh auth git-credential
