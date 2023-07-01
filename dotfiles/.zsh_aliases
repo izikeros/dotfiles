@@ -742,3 +742,9 @@ alias fzgrep='rg . | fzf'
 alias fzlocate='rg . | fzf | cut -d ":" -f 1'
 # Fuzzy search every line, in every file, and open that file
 alias fvim='vim $(rg . | fzf | cut -d ":" -f 1)'
+
+alias img-rename-to-sqeuence='counter=0; extensions=("jpg" "jpeg" "png" "gif" "tiff" "heic" "heif"); for ext in "${extensions[@]}"; do shopt -s nullglob; files=(*."$ext"); shopt -u nullglob; if [[ ${#files[@]} -eq 0 ]]; then continue; fi; for file in "${files[@]}"; do newname=$(printf "img_%03d.%s" "$counter" "$ext"); mv "$file" "$newname"; ((counter++)); done; done'
+alias pip-uninstall-all="pip list --format freeze | awk -F '==' '{print $1}' | grep -v pip | xargs pip uninstall -y"
+
+
+
