@@ -167,6 +167,7 @@ if [ -d $HOME/.zsh-completions ]; then
   done
 fi
 
+# Set env variables: non-sensitive and secrets
 source ~/dotfiles/env_and_path.sh
 [ -f $HOME/.homebrew_github_token ] && source ~/.homebrew_github_token
 [ -f $HOME/.env_secret ] && source ~/.env_secret
