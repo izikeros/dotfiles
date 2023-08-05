@@ -2,17 +2,6 @@
 # shellcheck shell=bash
 #zmodload zsh/zprof # if using profiler remember to uncomment zprof in the end of file
 
-# # Zsh start up sequence:
-#  1) /etc/zshenv   -> Always run for every zsh.   (login + interactive + other)
-#  2)   ~/.zshenv   -> Usually run for every zsh.  (login + interactive + other)
-#  3) /etc/zprofile -> Run for login shells.       (login)
-#  4)   ~/.zprofile -> Run for login shells.       (login)
-#  5) /etc/zshrc    -> Run for interactive shells. (login + interactive)
-#  6)   ~/.zshrc    -> Run for interactive shells. (login + interactive)
-#  7) /etc/zlogin   -> Run for login shells.       (login)
-#  8)   ~/.zlogin   -> Run for login shells.       (login)
-#
-
 # not running interactively then bail
 [[ $- != *i* ]] && return
 
@@ -44,29 +33,35 @@ function zsrc() {
 # enable mv command from zsh (e.g. for rename with pattern)
 autoload -U zmv
 
-# Set this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+# Enable auto-suggestions (requires zsh-autosuggestions plugin)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=gray'
+plugins=(zsh-autosuggestions)
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+# Enable syntax highlighting (requires zsh-syntax-highlighting plugin)
+plugins=(zsh-syntax-highlighting)
+source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# Consolidate PATH modification
+PATH=(
+  /usr/local/bin
+  /usr/local/sbin
+  /sbin
+  /usr/sbin
+  /bin
+  /usr/bin
+  $HOME/bin
+  $HOME/.zgen/zdharma/zsh-diff-so-fancy-master/bin
+  $HOME/.local/bin
+)
+export PATH
+
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 export COMPLETION_WAITING_DOTS="true"
 
 # turn off the infernal correctall for filenames
 unsetopt correctall
-
-# --------------
-# LS colors
-# -------------
-# Yes, these are a pain to customize. Fortunately, Geoff Greer made an online
-# tool that makes it easy to customize your color scheme and keep them in sync
-# across Linux and OS X/*BSD at http://geoff.greer.fm/lscolors/
-#export LSCOLORS='Exfxcxdxbxegedabagacad'
-#export LS_COLORS='di=1;34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
 
 # Set keystrokes for substring searching
 zmodload zsh/terminfo
@@ -81,7 +76,6 @@ if [ -f ~/.zgen-setup ]; then
   source ~/.zgen-setup
 fi
 # end zgen
-
 
 # Global Alias Expansion
 #
@@ -101,44 +95,32 @@ bindkey "^ " magic-space              # control-space to bypass completion
 bindkey -M isearch " " magic-space    # normal space during searches
 
 
-# Base PATH
-PATH=/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin
-export PATH=$HOME/bin:$PATH
-export PATH=$HOME/.zgen/zdharma/zsh-diff-so-fancy-master/bin:$PATH
-# for pipx executables:
-export PATH=$HOME/.local/bin:$PATH
-
+# Set some options
 # set -o to list all available options and their current setting
-setopt BANG_HIST
+#
+# Set some options and their descriptions:
+setopt BANG_HIST                  # Allow ! style history substitution.
+setopt HIST_FIND_NO_DUPS          # Do not record duplicated commands in the history list.
+setopt histfindnodups             # Same as HIST_FIND_NO_DUPS, but using alternative name for compatibility.
+setopt append_history             # Append new history lines (commands) to the history file instead of overwriting it.
+setopt extended_history           # Save timestamps along with the history lines.
+setopt hist_expire_dups_first     # Remove older entries before removing duplicates in the history list.
+setopt hist_ignore_all_dups       # Remove all duplicates from the history list.
+setopt hist_ignore_dups           # Remove duplicates from the history list, retaining only the latest occurrence of each command.
+setopt hist_ignore_space          # Do not record commands that begin with a space character in the history list.
+setopt hist_reduce_blanks         # Remove superfluous blank lines from the history list.
+setopt hist_save_no_dups          # Save the history list without duplicates when the shell exits.
+setopt hist_verify                # Allow a user to edit a history line before it is executed.
+setopt incappendhistory           # Add the current command to the history list immediately after it is entered.
+setopt sharehistory               # Append new history lines from multiple sessions to the same history file.
+setopt share_history              # Same as sharehistory, but using alternative name for compatibility.
+setopt noclobber                  # Prevent overwriting of existing files with the > and >| redirection operators.
+setopt pushd_ignore_dups          # Do not add duplicate directories to the directory stack when using pushd.
+setopt completealiases            # Enable alias expansion during completion.
+setopt autocd                     # Automatically change to a directory without typing 'cd'.
+setopt noclobber                  # Prevent overwriting of existing files with the > and >| redirection operators.
+setopt pushd_ignore_dups          # Do not add duplicate directories to the directory stack when using pushd.
 
-setopt HIST_FIND_NO_DUPS
-setopt histfindnodups
-setopt append_history
-setopt extended_history
-setopt hist_expire_dups_first
-setopt hist_ignore_all_dups
-setopt histignorealldups
-setopt hist_ignore_dups
-setopt hist_ignore_space
-setopt hist_reduce_blanks
-setopt hist_save_no_dups
-setopt hist_verify
-setopt incappendhistory
-setopt sharehistory
-setopt share_history
-
-# Correct spelling for commands
-#setopt correct
-
-setopt autocd
-setopt completealiases
-
-# Share your history across all your terminal windows
-setopt noclobber
-
-# set some more options
-setopt pushd_ignore_dups
-#setopt pushd_silent
 
 # Keep a ton of history.
 HISTSIZE=100000
@@ -175,11 +157,6 @@ source ~/dotfiles/env_and_path.sh
 [ -f $HOME/.homebrew_github_token ] && source ~/.homebrew_github_token
 [ -f $HOME/.env_secret ] && source ~/.env_secret
 
-# virtualenv wrapper (note - that virtualenvwrapper slows down shell start considerably)
-# consider using lightweight script: venv-lite.zsh
-if [ -f ~/scripts/my_scripts/venv-lite.zsh ]; then
-  source ~/scripts/my_scripts/venv-lite.zsh
-fi
 [ -d ~/gocode ] && export GOPATH=~/gocode
 
 # The "command not found" hook
@@ -215,6 +192,7 @@ if [ "$(command -v dircolors)" ]; then
 fi
 
 # temporal hack to ensure that my aliases has priority
+
 source ~/.zsh_aliases
 source ~/.zsh_functions
 source ~/.zsh_functions
@@ -223,11 +201,15 @@ source ~/.zsh_functions
 # powerlevel10k
 # -------------
 source "$HOME/.powerlevel9k-default-user"
-source ~/.zgen/romkatv/powerlevel10k-master/powerlevel10k.zsh-theme
+source $HOME/.zgen/romkatv/powerlevel10k-master/powerlevel10k.zsh-theme
 # mode: 'portable' - use only ascii characters in the prompt. Try 'fancy'.
 export PURE_POWER_MODE=portable
-source ~/.purepower
 
+#source $HOME/.purepower # outdated
+# Conditional load of Powerline10k
+if [ -f "$HOME/.p10k.zsh" ]; then
+    source "$HOME/.p10k.zsh"
+fi
 # virtualenv, conda
 export POWERLEVEL9K_VIRTUALENV_FOREGROUND='green'
 export POWERLEVEL9K_VIRTUALENV_BACKGROUND=none
@@ -252,7 +234,6 @@ export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_e
 [ -d "/Applications/Docker.app/Contents/Resources/bin" ] && export PATH=$PATH:/Applications/Docker.app/Contents/Resources/bin
 
 # Add my github username as env variable for script that gets my starred projects
-
 export GITHUB_USER=izikeros
 
 
@@ -263,21 +244,4 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-#        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
-# <<< conda initialize <<<
-
-
 #export DOCKER_HOST=unix://$HOME/docker.sock
-
