@@ -40,27 +40,13 @@ function zsrc() {
 # enable mv command from zsh (e.g. for rename with pattern)
 autoload -U zmv
 
-# Enable auto-suggestions (requires zsh-autosuggestions plugin)
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=gray'
-plugins=(zsh-autosuggestions)
-source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Set the initial PATH
+PATH="/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin"
 
-# Enable syntax highlighting (requires zsh-syntax-highlighting plugin)
-plugins=(zsh-syntax-highlighting)
-source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Add custom paths
+PATH="$HOME/bin:$HOME/.zgen/zdharma/zsh-diff-so-fancy-master/bin:$HOME/.local/bin:$PATH"
 
-# Consolidate PATH modification
-PATH=(
-  /usr/local/bin
-  /usr/local/sbin
-  /sbin
-  /usr/sbin
-  /bin
-  /usr/bin
-  $HOME/bin
-  $HOME/.zgen/zdharma/zsh-diff-so-fancy-master/bin
-  $HOME/.local/bin
-)
+# Export the modified PATH
 export PATH
 
 
@@ -143,8 +129,6 @@ compinit
 REPORTTIME=2
 TIMEFMT="%U user %S system %P cpu %*Es total"
 
-# Expand aliases inline - see http://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
-
 # Speed up autocomplete, force prefix mapping
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
@@ -163,7 +147,6 @@ fi
 source ~/dotfiles/env_and_path.sh
 [ -f $HOME/.homebrew_github_token ] && source ~/.homebrew_github_token
 [ -f $HOME/.env_secret ] && source ~/.env_secret
-
 [ -d ~/gocode ] && export GOPATH=~/gocode
 
 # The "command not found" hook
@@ -171,9 +154,6 @@ source ~/dotfiles/env_and_path.sh
 # $ pacman -S pkgfile
 # $ pkgfile -u
 [ -f /usr/share/doc/pkgfile/command-not-found.zsh ] && source /usr/share/doc/pkgfile/command-not-found.zsh
-
-# Broot - file manager
-[ -f "$HOME/.config/broot/launcher/bash/br" ] && source "$HOME/.config/broot/launcher/bash/br"
 
 # fzf - fuzzy find in history
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -199,7 +179,6 @@ if [ "$(command -v dircolors)" ]; then
 fi
 
 # temporal hack to ensure that my aliases has priority
-
 source ~/.zsh_aliases
 source ~/.zsh_functions
 source ~/.zsh_functions
@@ -252,3 +231,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 #export DOCKER_HOST=unix://$HOME/docker.sock
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
