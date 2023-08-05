@@ -146,6 +146,9 @@ SAVEHIST=100000
 HISTFILE=~/.zsh_history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
+autoload -Uz compinit
+compinit
+
 # Long running processes should return time after they complete. Specified
 # in seconds.
 REPORTTIME=2
@@ -274,4 +277,7 @@ fi
 #fi
 #unset __conda_setup
 # <<< conda initialize <<<
+
+
+#export DOCKER_HOST=unix://$HOME/docker.sock
 
