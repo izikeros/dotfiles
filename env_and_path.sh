@@ -2,6 +2,8 @@ export ARCHFLAGS="-arch x86_64"
 export EDITOR='nvim'
 export VISUAL='nvim'
 export PATH="$HOME/scripts/my_scripts:$PATH"
+export PATH="$HOME/scripts/runonce-scripts:$PATH"
+export PATH="$HOME/scripts/runonce-scripts/disabled:$PATH"
 
 export BROWSER="brave"
 export PAGER="less"
