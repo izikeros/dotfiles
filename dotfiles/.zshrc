@@ -87,6 +87,10 @@ bindkey " " globalias                 # space key to expand globalalias
 bindkey "^ " magic-space              # control-space to bypass completion
 bindkey -M isearch " " magic-space    # normal space during searches
 
+# Fix oh-my-zsh-bug: widgets can only be called when ZLE is active
+TRAPWINCH() {
+  zle && { zle reset-prompt; zle -R }
+}
 
 # Set some options
 # set -o to list all available options and their current setting
