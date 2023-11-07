@@ -659,6 +659,11 @@ alias mp4-to-mp3-dir='for i in *.mp4; do ffmpeg -i "$i" -q:a 0 -map a "$(basenam
 # Convert single mp4 file to mp3
 alias mp4-to-mp3='ffmpeg -q:a 0 -map a "$(basename "${i/.mp4}").mp3" -i'
 
+#alias mp4-to-wav='ffmpeg -ac 1 -ar 16000  "$(basename "${i/.mp4}").wav" -i'
+#alias mp4-to-wav='ffmpeg -i "$1" -ac 1 -ar 16000 "$(basename "${1%.*}").wav"'
+alias mp4-to-wav='filename=$(basename -- "$1"); ffmpeg -i "$1" -ac 1 -ar 16000 "${filename%.*}.wav"'
+
+
 # Extract best possible audio quality with original format without encoding
 alias yt-audio="$YTDL -f bestaudio --extract-audio --embed-thumbnail --add-metadata"
 
@@ -669,8 +674,8 @@ alias yt-audio="$YTDL -f bestaudio --extract-audio --embed-thumbnail --add-metad
 
 #alias ytdl="$YTDL -f best --write-description --write-thumbnail --audio-format aac"
 alias ytdl="$YTDL --write-description --write-thumbnail --audio-format aac"
-alias ytdl-subs-en="$YTDL --write-description --write-subs --skip-download"
-alias ytdl-autosubs-en="$YTDL --write-description --write-auto-subs --skip-download"
+alias yt-subs-en="$YTDL --write-description --write-subs --skip-download"
+alias yt-autosubs-en="$YTDL --write-description --write-auto-subs --skip-download"
 #--------------------------------------------
 ## DIARY, NOTES
 #--------------------------------------------
