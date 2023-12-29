@@ -167,6 +167,7 @@ if [ "$(command -v fasd)" ]; then
     eval "$(fasd --init auto)"
 	unalias s
 fi
+#[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 "$HOME/scripts/my_scripts/runonce.sh" "$HOME/scripts/my_scripts/runonce-all.sh"
 
