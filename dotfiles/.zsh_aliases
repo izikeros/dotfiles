@@ -412,6 +412,8 @@ alias lg="git --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)
 alias my-week="git lg1-my-week"
 alias all-week="git lg1-all-week"
 alias week-stats="git stats --until='7 days ago'"
+# add PyCharm settings (from .idea dir) to ignored
+alias git-ignore-idea="echo '.idea/' >> .gitignore"
 # TODO: change to function or repair:
 #alias all-my-todos="for FILE in $(git ls-files) ; do git blame $FILE | grep 'Krystian' | grep 'TODO'; done | less"
 
