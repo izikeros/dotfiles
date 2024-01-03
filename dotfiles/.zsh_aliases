@@ -203,7 +203,7 @@ alias vc="$VIM $HOME/.config"
 alias vs="$VIM $HOME/.ssh/config"
 alias vg="$VIM $HOME/.gitconfig"
 alias vgg="$VIM ./.git/config"
-
+alias vd="$VIM ./.git/description"
 # shortcuts for openbox config files
 alias voa="$VIM $HOME/.config/openbox/autostart"
 alias vor="$VIM $HOME/.config/openbox/rc.xml"
@@ -750,7 +750,10 @@ alias fvim='vim $(rg . | fzf | cut -d ":" -f 1)'
 alias img-rename-to-sqeuence='counter=0; extensions=("jpg" "jpeg" "png" "gif" "tiff" "heic" "heif"); for ext in "${extensions[@]}"; do shopt -s nullglob; files=(*."$ext"); shopt -u nullglob; if [[ ${#files[@]} -eq 0 ]]; then continue; fi; for file in "${files[@]}"; do newname=$(printf "img_%03d.%s" "$counter" "$ext"); mv "$file" "$newname"; ((counter++)); done; done'
 # Uninstall all system-wide python packages except pip
 alias pip-uninstall-all="pip list --format freeze | awk -F '==' '{print $1}' | grep -v pip | xargs pip uninstall -y"
+# recursively remove all __pycache__ directories
 alias rmpycache="find . -type d -name '__pycache__' -exec rm -rf {} +"
-
-
+# display remote origin URL of the git repo
+alias origin="grep -A1 'remote \"origin\"' .git/config | tail -1 | sed 's/url =//'| gsed 's/^[ \t]*//'"
+alias cgita="docker run --rm -it -d -p 8787:80 -v /Users/krystian.safjan/projects/:/srv/git/ joseluisq/alpine-cgit:2; echo 'http://localhost:8787'"
+alias cgitp="docker run --rm -it -p 8787:80 -v /Users/krystian.safjan/projects/priv:/srv/git/ joseluisq/alpine-cgit:2 -d"
 
