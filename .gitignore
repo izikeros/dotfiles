@@ -1,3 +1,4 @@
 dotfiles/.config/xnviewmp/xnview.ini
 dotfiles/.config/mc/ini
 **/*.sublime_session
+.idea/
