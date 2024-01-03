@@ -106,7 +106,12 @@ function dockerip(){	# display IP of docker image
   docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
 }
 
-function docker_fit(){	# docker fit output (???)
+function docker_fit(){	#  format the output from Docker commands.
+# usage: docker_fit ps -a
+# Result:
+# the column named NAMES is now gone,
+# the "About a/an hour" was converted to "1h",and the phrase "2 hours ago" to "2h".
+# Also, you might notice that the first row is now bolded
     docker "$@" |
     sed '
         1s/ *NAMES$//g;
@@ -146,8 +151,14 @@ function dlo(){		# display logs of container with given name or name stores in c
     docker logs "$@"
 }
 
-function drm(){		# remove docker container using rofi
-    docker ps -a | rofi -width 100 -dmenu -i -p "locate:" | awk '{print $1}' | xargs docker rm
+function drm(){		# remove docker container using rofi/choose
+# if macos (darwin) use choose otherwise use rofi
+    if [[ $OSTYPE == *darwin* ]]; then
+        echo "$(docker ps -a | choose)" | awk '{print $1}' | xargs docker rm
+    else
+        echo "$(docker ps -a | rofi -threads 0 -width 100 -dmenu -i -p "locate:")" | awk '{print $1}' | xargs docker rm
+    fi
+    # docker ps -a | rofi -width 100 -dmenu -i -p "locate:" | awk '{print $1}' | xargs docker rm
 }
 
 function drmi(){	# remove docker image using rofi
@@ -513,9 +524,11 @@ function ssh-it-github(){
     if [[ $OSTYPE == *darwin* ]]; then
         sed -i '' 's/url = https:\/\/github\.com\//url = github:/' "$GIT_CONFIG"
         sed -i '' 's/url = git@github.com/url = github/' "$GIT_CONFIG"
+        echo "this repo will use now ssh url for remote origin"
     else
         sed -i 's/url = https:\/\/github\.com\//url = github:/' "$GIT_CONFIG"
         sed -i 's/url = git@github.com/url = github/' "$GIT_CONFIG"
+        echo "this repo will use now ssh url for remote origin"
     fi
 }
 
