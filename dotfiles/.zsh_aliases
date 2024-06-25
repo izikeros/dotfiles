@@ -25,6 +25,7 @@
 # kubectl
 # gdmap
 # doublecmd
+# better-branch.sh
 
 # Sections in this aliases file
 # - FILESYSTEM - DIRECTORY SIZE, LISTING
@@ -48,6 +49,8 @@ fi
 if [ "$(command -v subl)" ]; then
     S=$(which subl)
 fi
+NAS_MOUNT=/Volumes/media
+
 #--------------------------------------------
 ## GLOBAL ALIASES (EXPANDED IN ZSH WITH SPACE)
 #--------------------------------------------
@@ -141,7 +144,7 @@ alias zsh-loading-time="for i ({1..10}) time zsh -i -c exit"
 alias ls='ls --color=auto'
 
 if [ "$(command -v exa)" ]; then
-	alias l="exa -lah --git"
+	alias l="exa -lah" # was: l="exa -lah --git"
 else
 	alias l="ls -lah"
 fi
@@ -393,6 +396,9 @@ alias gg1="git gui citool"
 # list branches you worked on recently
 alias recent-branches="git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format=\"%(refname:short)\""
 
+# use the script to display branches info
+alias bb="better-branch.sh"
+
 # list git repos in current directory
 alias git-repos="find ./ -name \"*.git\" -type d | sed 's/\.git$//'"
 
@@ -498,6 +504,9 @@ alias piprr="pip install -r requirements.txt"
 # pip install requirements-dev.txt
 alias piprd="pip install -r requirements-dev.txt"
 
+# activate venv in current dir
+alias source.="source ./.venv/bin/activate"
+
 #-------------------------------------------
 ## DJANGO, MANAGE.PY
 #--------------------------------------------
@@ -545,7 +554,7 @@ function crm(){
 #--------------------------------------------
 ## CALIBRE & RECOLL
 #--------------------------------------------
-CALIBRE_DIR="/mnt/NAS/books"
+CALIBRE_DIR="/Volumes/media/books"
 alias c-it="calibre --with-library=$CALIBRE_DIR/books_it"
 alias c-astro="calibre --with-library=$CALIBRE_DIR/books_astro"
 alias c-life="calibre --with-library=$CALIBRE_DIR/books_life"
@@ -674,7 +683,8 @@ alias yt-audio="$YTDL -f bestaudio --extract-audio --embed-thumbnail --add-metad
 # add --write-sub for downloading subtitles
 
 #alias ytdl="$YTDL -f best --write-description --write-thumbnail --audio-format aac"
-alias ytdl="$YTDL --write-description --write-thumbnail --audio-format aac"
+alias ytdl-rich="$YTDL --write-description --write-thumbnail --audio-format aac"
+alias ytdl="$YTDL --audio-format aac"
 alias yt-subs-en="$YTDL --write-description --write-subs --skip-download"
 alias yt-autosubs-en="$YTDL --write-description --write-auto-subs --skip-download"
 #--------------------------------------------
@@ -751,7 +761,7 @@ alias fvim='vim $(rg . | fzf | cut -d ":" -f 1)'
 # Rename all images in current directory to have a name with sequence number
 alias img-rename-to-sqeuence='counter=0; extensions=("jpg" "jpeg" "png" "gif" "tiff" "heic" "heif"); for ext in "${extensions[@]}"; do shopt -s nullglob; files=(*."$ext"); shopt -u nullglob; if [[ ${#files[@]} -eq 0 ]]; then continue; fi; for file in "${files[@]}"; do newname=$(printf "img_%03d.%s" "$counter" "$ext"); mv "$file" "$newname"; ((counter++)); done; done'
 # Uninstall all system-wide python packages except pip
-alias pip-uninstall-all="pip list --format freeze | awk -F '==' '{print $1}' | grep -v pip | xargs pip uninstall -y"
+alias pip-uninstall-all="pip list --format freeze | awk -F '==' '{print $1}' | grep -v pip | xargs pip uninstall -y && pip install argcomplete"
 # recursively remove all __pycache__ directories
 alias rmpycache="find . -type d -name '__pycache__' -exec rm -rf {} +"
 # display remote origin URL of the git repo
