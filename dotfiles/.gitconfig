@@ -228,13 +228,26 @@
 
 	### TAG
 	lasttag = describe --tags --abbrev=0
-	lt = describe --tags --abbrev=0
+	lt      = describe --tags --abbrev=0
 	lt1 = !git describe $(git rev-list --tags --max-count=1)
 
 	### MERGE
-    # delete all branches merged with master
-	cleanup-r-master = !git branch --merged master | grep -v 'master$' | xargs git branch -d
+    # delete all branches merged with origin/master
+	cleanup-r-master = !git fetch -p | git branch --merged origin/master | grep -v 'master$' | xargs git branch -d
 
+    # delete all branches merged with origin/develop
+    cleanup-r-develop = !git branch --merged origin/develop | grep -v 'develop$' | grep -v 'master$' | xargs git branch -d
+
+    # ours, theirs -  custom commands that simplify the process of resolving merge conflicts.
+    # The general syntax "!f() { COMMANDS; }; f" is used to define a shell function to which you can pass arguments.
+    # Here's how these commands work:
+    #   1. "git co --ours $@" chooses our version of files for all paths specified by "$@". The "$@" is a placeholder for any arguments you might pass to the "ours" command.
+    #   2. "git add $@" stages the changes made in the previous step.
+    # The same process is followed for the "theirs" command, which first checks out their versions of the conflicted files, and then stages them.
+    #
+    # Together, these commands offer a quick way to resolve merge conflicts by choosing either our version or their version respectively without typing the full git commands.
+    #  Use them in your terminal like this: "git ours [filename]" or "git theirs [filename]". They can resolve all conflicts in favor of either version or can be used
+    #  file-by-file providing the flexibility to choose the best resolution for each merge conflict.
 	ours = "!f() { git co --ours $@ && git add $@; }; f"
 	theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 
@@ -256,11 +269,11 @@
 [merge]
     #tool = kdiff3
     conflictstyle = diff3
-
 [mergetool "mymeld"]
     #cmd = meld --diff $BASE $LOCAL --diff $BASE $REMOTE --diff $LOCAL $BASE $REMOTE $MERGED
     cmd = meld --diff $BASE $LOCAL --diff $BASE $REMOTE --auto-merge $LOCAL $BASE $REMOTE --output $MERGED
     #cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+    #
 [mergetool "kdiff3"]
     trustExitCode = false
 [diff]
@@ -268,10 +281,6 @@
     #guitool = kdiff3
 [difftool "kdiff3"]
     trustExitCode = false
-
-# [user]
-# 	name = Krystian Safjan
-# 	email = ksafjan@gmail.com
 [push]
 	default = current
 [core]
@@ -279,7 +288,6 @@
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	excludesfile = /Users/krystian.safjan/.gitignore
 	autocrlf = input
-
 [gui]
 	spellingdictionary = en_US
 [pager]
@@ -316,3 +324,15 @@
 [credential "https://gist.github.com"]
 	helper =
 #	helper = !/usr/local/bin/gh auth git-credential
+[includeIf "gitdir:~/projects/eyproj/"]
+    path = ~/.gitconfig-work
+[includeIf "gitdir:~/projects/oss/"]
+    path = ~/.gitconfig-priv
+[includeIf "gitdir:/Users"]
+    path = ~/.gitconfig-macos
+[includeIf "gitdir:C:"]
+    path = ~/.gitconfig-windows
+[includeIf "gitdir:/home"]
+    path = ~/.gitconfig-linux
+[maintenance]
+	repo = /Users/krystian.safjan/projects/eyproj/assurance-eyatlas-ai-guided-search
