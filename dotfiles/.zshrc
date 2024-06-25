@@ -1,3 +1,7 @@
+#!/bin/zsh
+# shellcheck shell=bash
+#zmodload zsh/zprof # if using profiler remember to uncomment zprof in the end of file
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -5,23 +9,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-#!/bin/zsh
-# shellcheck shell=bash
-#zmodload zsh/zprof # if using profiler remember to uncomment zprof in the end of file
-
 # not running interactively then bail
 [[ $- != *i* ]] && return
-
-# colors in less (default PAGER in Arch)
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
-
-export TERM="xterm-256color"
 
 # reload ~/.zshrc and compile to .zwc ...  ZDOTDIR see:
 # https://wiki.archlinux.org/index.php/zsh#Making_Zsh_your_default_shell
@@ -50,16 +39,11 @@ PATH="$HOME/bin:$HOME/.zgen/zdharma/zsh-diff-so-fancy-master/bin:$HOME/.local/bi
 export PATH
 
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-export COMPLETION_WAITING_DOTS="true"
-
 # turn off the infernal correctall for filenames
 unsetopt correctall
 
 # Set keystrokes for substring searching
 zmodload zsh/terminfo
-#bindkey "$terminfo[kcuu1]" history-substring-search-up
-#bindkey "$terminfo[kcud1]" history-substring-search-down
 
 # Load me last
 GENCOMPL_FPATH=$HOME/.zsh/complete
@@ -125,6 +109,12 @@ SAVEHIST=100000
 HISTFILE=~/.zsh_history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
+# ------ COMPLETIONS --------------
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+export COMPLETION_WAITING_DOTS="true"
+
+# The -U means mark the function vcs_info for autoloading and suppress alias expansion.
+# The -z means use zsh (rather than ksh) style. See also the functions command
 autoload -Uz compinit
 compinit
 
@@ -147,6 +137,7 @@ if [ -d $HOME/.zsh-completions ]; then
   done
 fi
 
+# ------------ Sourcing --------------
 # Set env variables: non-sensitive and secrets
 source ~/dotfiles/env_and_path.sh
 [ -f $HOME/.homebrew_github_token ] && source ~/.homebrew_github_token
@@ -169,12 +160,12 @@ if [ "$(command -v fasd)" ]; then
 fi
 #[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-"$HOME/scripts/my_scripts/runonce.sh" "$HOME/scripts/my_scripts/runonce-all.sh"
+#"$HOME/scripts/my_scripts/runonce.sh" "$HOME/scripts/my_scripts/runonce-all.sh"
 
 # --------------
-# LS colors
+# LS and LESS colors
 # -------------
-# Yes, these are a pain to customize. Fortunately, Geoff Greer made an online
+# Geoff Greer made an online
 # tool that makes it easy to customize your color scheme and keep them in sync
 # across Linux and OS X/*BSD at http://geoff.greer.fm/lscolors/
 export LSCOLORS='Exfxcxdxbxegedabagacad'
@@ -183,9 +174,18 @@ if [ "$(command -v dircolors)" ]; then
     eval "$( dircolors -b "$HOME/.dircolors" )"
 fi
 
-# temporal hack to ensure that my aliases has priority
+# colors in less (default PAGER in Arch)
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+export TERM="xterm-256color"
+
+# temporal hack to ensure that my aliases has priority over oh-my-zsh plugins
 source ~/.zsh_aliases
-source ~/.zsh_functions
 source ~/.zsh_functions
 
 # -------------
@@ -194,7 +194,7 @@ source ~/.zsh_functions
 source "$HOME/.powerlevel9k-default-user"
 source $HOME/.zgen/romkatv/powerlevel10k-master/powerlevel10k.zsh-theme
 # mode: 'portable' - use only ascii characters in the prompt. Try 'fancy'.
-export PURE_POWER_MODE=portable
+export PURE_POWER_MODE=fancy
 
 #source $HOME/.purepower # outdated
 # Conditional load of Powerline10k
@@ -213,9 +213,8 @@ export POWERLEVEL9K_SHOW_CHANGESET=true # git hash
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh virtualenv dir vcs)
 export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
 
-# Note: deduplication takes quite long. Check if deduplications are needed (usually not)
-#dedupe_path
 
+# Add to PATH
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 [ -d "$HOME/.gem/ruby/2.7.0/bin" ] && export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
 [ -d "$HOME/.nimble/bin" ] && export PATH=$PATH:$HOME/.nimble/bin
@@ -223,14 +222,17 @@ export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_e
 [ -d "$HOME/scripts/runonce-scripts" ] && export PATH=$PATH:$HOME/scripts/runonce-scripts
 [ -d "$HOME/.cargo/bin/" ] && export PATH=$PATH:$HOME/.cargo/bin
 [ -d "/Applications/Docker.app/Contents/Resources/bin" ] && export PATH=$PATH:/Applications/Docker.app/Contents/Resources/bin
+[ -d "/usr/local/opt/coreutils/libexec/gnubin" ] && export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 # Add my github username as env variable for script that gets my starred projects
 export GITHUB_USER=izikeros
 
-
-[ -d "/usr/local/opt/coreutils/libexec/gnubin" ] && export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+# Note: deduplication takes quite long. Check if deduplications are needed (usually not)
+#dedupe_path
 
 #zprof # end of profiling
+
+# initialize pyenv handing
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
@@ -239,3 +241,21 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE='/usr/local/bin/micromamba';
+export MAMBA_ROOT_PREFIX='/Users/krystian.safjan/projects/ext/verba/...';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+. "$HOME/.cargo/env"
+
+eval "$(direnv hook zsh)"
+
+source /Users/krystian.safjan/.config/broot/launcher/bash/br
