@@ -1,6 +1,10 @@
 #!/bin/zsh
 # shellcheck shell=bash
-#zmodload zsh/zprof # if using profiler remember to uncomment zprof in the end of file
+# zmodload zsh/zprof # if using profiler remember to uncomment zprof in the end of file
+# Optimizations:
+# - use lazy loading (see pyenv, mamba)
+# - Reduce number of plugins: Review your .zgen-setup file and remove any plugins you don't actively use.
+
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -24,7 +28,12 @@ function zsrc() {
     done
     source "${ZDOTDIR:-$HOME}"/.zshrc
 }
-[[ ! -e ${ZDOTDIR:-$HOME}/.zshrc.zwc ]] && zsrc &>/dev/null
+
+# Use a timestamp check: Only recompile if the .zshrc file is newer than the compiled version:
+if [[ ${ZDOTDIR:-$HOME}/.zshrc -nt ${ZDOTDIR:-$HOME}/.zshrc.zwc ]]; then
+  [[ ! -e ${ZDOTDIR:-$HOME}/.zshrc.zwc ]] && zsrc &>/dev/null
+fi
+
 
 # enable mv command from zsh (e.g. for rename with pattern)
 autoload -U zmv
@@ -32,8 +41,28 @@ autoload -U zmv
 # Set the initial PATH
 PATH="/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin"
 
-# Add custom paths
-PATH="$HOME/bin:$HOME/.zgen/zdharma/zsh-diff-so-fancy-master/bin:$HOME/.local/bin:$PATH"
+dir_path_additions=(
+    "$HOME/bin"
+    "$HOME/.zgen/zdharma/zsh-diff-so-fancy-master/bin"
+    "$HOME/.local/bin"
+    "$HOME/.gem/ruby/2.7.0/bin"
+    "$HOME/.nimble/bin"
+    "$HOME/.local/bin"
+    "$HOME/scripts/runonce-scripts"
+    "$HOME/.cargo/bin/"
+    "/Applications/Docker.app/Contents/Resources/bin"
+    "/usr/local/opt/coreutils/libexec/gnubin"
+    # Add other paths here
+)
+
+for path_dir in "${dir_path_additions[@]}"; do
+    if [ -d "$path_dir" ]; then
+        PATH="$path_dir:$PATH"
+    fi
+done
+
+# Add file to PATH
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
 # Export the modified PATH
 export PATH
@@ -115,8 +144,8 @@ export COMPLETION_WAITING_DOTS="true"
 
 # The -U means mark the function vcs_info for autoloading and suppress alias expansion.
 # The -z means use zsh (rather than ksh) style. See also the functions command
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 
 # Long running processes should return time after they complete. Specified
 # in seconds.
@@ -214,15 +243,7 @@ export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh virtualenv dir vcs)
 export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
 
 
-# Add to PATH
-[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
-[ -d "$HOME/.gem/ruby/2.7.0/bin" ] && export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
-[ -d "$HOME/.nimble/bin" ] && export PATH=$PATH:$HOME/.nimble/bin
-[ -d "$HOME/.local/bin" ] && export PATH=$PATH:$HOME/.local/bin
-[ -d "$HOME/scripts/runonce-scripts" ] && export PATH=$PATH:$HOME/scripts/runonce-scripts
-[ -d "$HOME/.cargo/bin/" ] && export PATH=$PATH:$HOME/.cargo/bin
-[ -d "/Applications/Docker.app/Contents/Resources/bin" ] && export PATH=$PATH:/Applications/Docker.app/Contents/Resources/bin
-[ -d "/usr/local/opt/coreutils/libexec/gnubin" ] && export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
 
 # Add my github username as env variable for script that gets my starred projects
 export GITHUB_USER=izikeros
@@ -230,32 +251,63 @@ export GITHUB_USER=izikeros
 # Note: deduplication takes quite long. Check if deduplications are needed (usually not)
 #dedupe_path
 
-#zprof # end of profiling
 
-# initialize pyenv handing
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+# Lazy load pyenv
+pyenv() {
+  unfunction pyenv
+  if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(command pyenv init -)"
+  fi
+  pyenv "$@"
+}
+
+# Add other pyenv-related commands that should trigger initialization
+pyenv-virtualenv() {
+  unfunction pyenv-virtualenv
+  if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(command pyenv init -)"
+    eval "$(command pyenv virtualenv-init -)"
+  fi
+  pyenv-virtualenv "$@"
+}
 
 #export DOCKER_HOST=unix://$HOME/docker.sock
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# >>> mamba initialize >>>
-# !! Contents within this block are managed by 'mamba init' !!
-export MAMBA_EXE='/usr/local/bin/micromamba';
-export MAMBA_ROOT_PREFIX='/Users/krystian.safjan/projects/ext/verba/...';
-__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-if [ $? -eq 0 ]; then
+# ----- Lazy load mamba
+mamba() {
+  # Unset this function to avoid recursion
+  unfunction mamba
+
+  # Set up mamba environment variables
+  export MAMBA_EXE='/usr/local/bin/micromamba'
+  export MAMBA_ROOT_PREFIX='/Users/krystian.safjan/projects/ext/verba/...'
+
+  # Initialize mamba
+  __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+  if [ $? -eq 0 ]; then
     eval "$__mamba_setup"
-else
+  else
     alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
-fi
-unset __mamba_setup
-# <<< mamba initialize <<<
+  fi
+  unset __mamba_setup
+
+  # Call mamba with the provided arguments
+  $MAMBA_EXE "$@"
+}
+
+# Also create a function for micromamba to ensure it's initialized
+micromamba() {
+  mamba "$@"
+}
+# ----- end of mamba
+
 . "$HOME/.cargo/env"
 
 eval "$(direnv hook zsh)"
 
 source /Users/krystian.safjan/.config/broot/launcher/bash/br
+
+# zprof # end of profiling
