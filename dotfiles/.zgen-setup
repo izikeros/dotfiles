@@ -40,7 +40,7 @@ load-starter-plugin-list() {
   # they break, so get the order right.
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-history-substring-search
-  # Add Fish-like autosuggestions to your ZSH
+  # Add Fish-like autosuggestions to your ZSH (line completion)
   zgen load zsh-users/zsh-autosuggestions
 
   # Set keystrokes for substring searching (???)
@@ -66,8 +66,9 @@ load-starter-plugin-list() {
   # Warn you when you run a command that you've set an alias for
   zgen load djui/alias-tips
 
-  # Add my collection of git helper scripts
-  zgen load unixorn/git-extra-commands
+  # Add collection of git helper scripts 
+  # - commented out since I don't know the commands there
+  # zgen load unixorn/git-extra-commands
 
   # A collection of scripts that might be useful to sysadmins
   # zgen load skx/sysadmin-util
@@ -87,12 +88,12 @@ load-starter-plugin-list() {
   #zgen load "MichaelAquilina/zsh-autoswitch-virtualenv"
 
   # Load some oh-my-zsh plugins
-  zgen oh-my-zsh
+    #zgen oh-my-zsh <-- recently commented out
   #zgen oh-my-zsh plugins/sudo   # easily prefix your current or previous commands with `sudo` by pressing <kbd>esc</kbd> twice
   #zgen oh-my-zsh plugins/aws
   #zgen oh-my-zsh plugins/colored-man-pages # this one is nice - would be good to have it
-  zgen oh-my-zsh plugins/ag
-  zgen oh-my-zsh plugins/git
+    #zgen oh-my-zsh plugins/ag <-- recently commented out
+    #zgen oh-my-zsh plugins/git <-- recently commented out
   #zgen oh-my-zsh plugins/jira
   #zgen oh-my-zsh plugins/github
   #zgen oh-my-zsh plugins/python
@@ -123,7 +124,7 @@ load-starter-plugin-list() {
 
   # k is a zsh script / plugin to make directory listings more readable,
   # adding a bit of color and some git status information on files and directories
-  zgen load supercrabtree/k
+  #zgen load supercrabtree/k
 
   zgen load romkatv/powerlevel10k powerlevel10k
   # zgen load zdharma/zsh-diff-so-fancy
