@@ -198,6 +198,14 @@
     # 'date name' - used for further processing
     lstat = log --pretty=format:"%ad\\ %cn" --date=short
 
+    # see only the commits (with diff) that have arrived since the last pull
+    #
+    # I am tracking quite a lot of open source projects by cloning them into ~/src
+    # and running git pull on them occasionally. Next, I run git news and see only
+    # the commits (with diff) that have arrived since the last pull.
+    # (from: https://leahneukirchen.org/blog/archive/2013/01/a-grab-bag-of-git-tricks.html)
+    news = log -p HEAD@{1}..HEAD@{0}
+
 	# Show modified files in last commit:
 	dl = "!git ll -1"
 
