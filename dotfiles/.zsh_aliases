@@ -9,7 +9,7 @@
 # sar - for load,
 # expac - for bigpkg
 # pacman - bigpkg
-# exa - for ls replacement
+# eza - for ls replacement
 # yay/paru
 # restic for backups
 # reflector
@@ -138,13 +138,13 @@ alias zsh-loading-time="for i ({1..10}) time zsh -i -c exit"
 #--------------------------------------------
 ## LS
 #--------------------------------------------
-# requirements: exa
+# requirements: eza
 
 # Smart ls alias (l=long, detailed, a=all including hidded, h=size human readable)
 alias ls='ls --color=auto'
 
-if [ "$(command -v exa)" ]; then
-	alias l="exa -lah" # was: l="exa -lah --git"
+if [ "$(command -v eza)" ]; then
+	alias l="eza -lah" # was: l="eza -lah --git"
 else
 	alias l="ls -lah"
 fi
@@ -235,7 +235,15 @@ alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 # grep aliases active in current shell
 alias galias="alias | grep --color=never -i -e"
 # list functions
-alias list-functions="grep function ~/.zsh_functions --color=never | sed 's/^function//' | sed 's/{//' | grep '[a-Za-z0-9\-_]*()' --color=always | column -t -s# | less"
+
+
+if [[ $OSTYPE == *darwin* ]]; then
+    alias -g R='| choose'
+    alias list-functions="grep function ~/.zsh_functions --color=never | sed 's/^function//' | sed 's/{//' | grep '[[:alnum:]_-]()' --color=never | column -t -s#"
+else
+    alias list-functions="grep function ~/.zsh_functions --color=never | sed 's/^function//' | sed 's/{//' | grep '[a-Za-z0-9\-_]*()' --color=always | column -t -s# | less"
+fi
+
 alias _="sudo"
 
 
@@ -507,6 +515,9 @@ alias piprd="pip install -r requirements-dev.txt"
 # activate venv in current dir
 alias source.="source ./.venv/bin/activate"
 
+# use uv
+#alias pip="uv pip"
+
 #-------------------------------------------
 ## DJANGO, MANAGE.PY
 #--------------------------------------------
@@ -583,6 +594,7 @@ alias oneline="sed -rn 'N;s/\n/ /;p'"
 
 alias skip-header='tail -n +2'
 
+
 #---------------------------------------------
 ## HISTORY
 #---------------------------------------------
@@ -603,9 +615,10 @@ alias zh="fc -l -d -D"
 #---------------------------------------------
 # A couple of different external IP lookups depending on which is down.
 alias external_ip="curl -s icanhazip.com"
-alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias myips="dig +short myip.opendns.com @resolver1.opendns.com && ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print $2}'"
 # Show laptop's IP addresses
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+
 
 #---------------------------------------------
 ## SSH
@@ -661,7 +674,7 @@ alias ta="tmux a"
 #select engine: youtube-dl | yt-dlp
 YTDL=yt-dlp
 # Extract audio to mp3 format, add thumbnail and metadata
-alias ytmp3='$YTDL -o "%(title)s.%(ext)s" -f bestaudio --extract-audio --embed-thumbnail --add-metadata --audio-format mp3 --prefer-ffmpeg'
+#alias ytmp3='$YTDL -o "%(title)s.%(ext)s" -f bestaudio --extract-audio --embed-thumbnail --add-metadata --audio-format mp3 --prefer-ffmpeg'
 
 # Convert all mp4 files in current dir to mp4
 alias mp4-to-mp3-dir='for i in *.mp4; do ffmpeg -i "$i" -q:a 0 -map a "$(basename "${i/.mp4}").mp3"; done;'
@@ -727,6 +740,7 @@ alias rr="ranger"
 # mc with exit to current directory (On exit, the shell returns to the directory Midnight Commander was started from, instead of the last active directory.)
 #alias mc=". /usr/lib/mc/mc-wrapper.sh"
 
+alias mc --nosubshell
 #--------------------------------------------
 ## OTHER
 #--------------------------------------------
@@ -764,8 +778,25 @@ alias img-rename-to-sqeuence='counter=0; extensions=("jpg" "jpeg" "png" "gif" "t
 alias pip-uninstall-all="pip list --format freeze | awk -F '==' '{print $1}' | grep -v pip | xargs pip uninstall -y && pip install argcomplete"
 # recursively remove all __pycache__ directories
 alias rmpycache="find . -type d -name '__pycache__' -exec rm -rf {} +"
+
 # display remote origin URL of the git repo
 alias origin="grep -A1 'remote \"origin\"' .git/config | tail -1 | sed 's/url =//'| gsed 's/^[ \t]*//'"
+
+# run cgit for all projects
 alias cgita="docker run --rm -it -d -p 8787:80 -v /Users/krystian.safjan/projects/:/srv/git/ joseluisq/alpine-cgit:2; echo 'http://localhost:8787'"
+
+# run cgit for private projects
 alias cgitp="docker run --rm -it -p 8787:80 -v /Users/krystian.safjan/projects/priv:/srv/git/ joseluisq/alpine-cgit:2 -d"
+
+# run ripgrep only over notebooks
+alias rgnb="rg --type-add 'ipynb:*.ipynb' --type ipynb"
+
+# run ripgrep only over python files
+alias rgpy="rg --type py"
+
+# adjust color theme that is good for python on dark background
+alias bat="bat --theme=TwoDark"
+
+# python PEP search and open
+alias peps='curl -s https://peps.python.org/api/peps.json | jq -r '\''to_entries[] | "\(.key): \(.value.title)"'\'' | fzf | sed '\''s/:.*//'\'' | xargs -I {} sh -c '\''open "https://peps.python.org/pep-$(printf %04d {})"'\'
 
