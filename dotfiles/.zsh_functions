@@ -24,12 +24,12 @@ function d_file_offset(){    # return filename for the diary for given offset
     echo "$FNAME"
 }
 
-function today() {      # display today's date in format YYYY-MM-DD
+function today() {    # display today's date in format YYYY-MM-DD
     date  +%Y-%m-%d
 }
 
 
-function diary(){		# open diary page for today or day with given days offset (parameter)
+function diary(){    # open diary page for today or day with given days offset (parameter)
     FNAME=$(d_file_offset "$1")
     YEAR=$(date +%Y)
     FULL_FILE=$HOME/vimwiki/diary/"$YEAR"/"$FNAME".md
@@ -44,32 +44,23 @@ function diary(){		# open diary page for today or day with given days offset (pa
 }
 
 
-function v-someday(){		# search vimwiki pages looking for someday annotation
+function v-someday(){    # search vimwiki pages looking for someday annotation
 	find "$HOME/vimwiki" -type f -name "*.md" | xargs grep -i 'someday'
 }
 
 
-function v-todo(){		# search vimwiki pages looking for todo annotation
+function v-todo(){    # search vimwiki pages looking for todo annotation
 	find "$HOME/vimwiki" -type f -name "*.md" | xargs grep -i 'todo'
 }
 
 
-function days_since_beginning_of_year() {
+function days_since_beginning_of_year() {    # display number of days since beginning of the year
     # local year=$1
     # local month=$2
     # local day=$3
     local days_since_beginning_of_year=$(date -d "$year-$month-$day" +%j)
     echo $days_since_beginning_of_year
 }
-
-
-function calculate_percentage_from_two_values() {
-    local value1=$1
-    local value2=$2
-    local percentage=$(echo "scale=2; $value1 / $value2 * 100" | bc)
-    echo $percentage
-}
-
 
 function diary_score () {
     local year=$(date +%Y)
@@ -80,28 +71,38 @@ function diary_score () {
 
 
 # == Find functions
-function fipy(){	# find in python files
+function fipy(){    # find in python files
   grep -F --include="*.py" --exclude-dir={.git} --color=always -rnwi ./ -e  "$1" | less -R
 }
 
-function fipy2(){	# find in python files - grep using two keywords
+function fipy2(){    # find in python files - grep using two keywords
   grep -F --include="*.py" --exclude-dir={.git} --color=always -rnwi ./ -e "$1" | grep "$2"
 }
 
-function fipy-in-test(){	# find in python test files - grep using two keywords
+function fipy-in-test(){    # find in python test files - grep using two keywords
   grep -F --include="test*.py" --exclude-dir={.git} --color=always -rnwi ./ -e "$1" | less -R
 }
 
 
 # == Packages-related functions
-function pips(){  # install pip package and save it's name into requirements.txt
+function pips(){    # install pip package and save it's name into requirements.txt
         echo $'\n'"$1" >> requirements.txt; pip install "$1"
     }
 
 
+function pyversion() {    # display the latests version of python package
+    curl -s "https://pypi.org/pypi/$1/json" | jq -r '.info.version'
+}
+
+
+function pyversions() {    # display all version of python package
+    curl -s "https://pypi.org/pypi/$1/json" | jq -r 'releases | keys'
+}
+
+
 # == Docker-related functions
 # source: https://github.com/rhoit/my-config/blob/master/shell/shellrc.d/docker.sh
-function dimg(){	# list docker images
+function dimg(){    # list docker images
     docker images "$@" |
         sed "s/  \+/;/g" |
         column -s\; -t |
@@ -110,12 +111,12 @@ function dimg(){	# list docker images
 
 
 # http://networkstatic.net/10-examples-of-how-to-get-docker-container-ip-address/
-function dockerip(){	# display IP of docker image
+function dockerip(){    # display IP of docker image
   docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
 }
 
 
-function docker_fit(){	#  format the output from Docker commands.
+function docker_fit(){    #  format the output from Docker commands.
 # usage: docker_fit ps -a
 # Result:
 # the column named NAMES is now gone,
@@ -140,14 +141,14 @@ function docker_fit(){	#  format the output from Docker commands.
 }
 
 
-function dlc(){		# cache docker last container id DOCKER_CACHE
+function dlc(){    # cache docker last container id DOCKER_CACHE
     1>&2 docker ps -l
     DOCKER_CACHE=$(docker ps -lq)
     export DOCKER_CACHE
 }
 
 
-function dlo(){		# display logs of container with given name or name stores in cache (see: dlc function)
+function dlo(){    # display logs of container with given name or name stores in cache (see: dlc function)
     if [[ -t 1 ]]; then
         while read data; do
             args+="$data"
@@ -163,7 +164,7 @@ function dlo(){		# display logs of container with given name or name stores in c
 }
 
 
-function drm(){		# remove docker container using rofi/choose
+function drm(){    # remove docker container using rofi/choose
 # if macos (darwin) use choose otherwise use rofi
     if [[ $OSTYPE == *darwin* ]]; then
         echo "$(docker ps -a | choose)" | awk '{print $1}' | xargs docker rm
@@ -174,13 +175,13 @@ function drm(){		# remove docker container using rofi/choose
 }
 
 
-function drmi(){	# remove docker image using rofi
+function drmi(){    # remove docker image using rofi
     echo "$(docker images | rofi -threads 0 -width 100 -dmenu -i -p "locate:")" | awk '{print $1}' | xargs docker rmi
 }
 
 
 # == Git related functions
-function rco(){		# git checkout to one of the recent branches GUI choose or rofi
+function rco(){    # git checkout to one of the recent branches GUI choose or rofi
     if [[ $OSTYPE == *darwin* ]]; then
         echo "$(recent-branches | choose)" | xargs git checkout
     else
@@ -189,12 +190,12 @@ function rco(){		# git checkout to one of the recent branches GUI choose or rofi
 }
 
 
-function fco(){		# git checkout to one of the recent branches GUI-fzf
+function fco(){    # git checkout to one of the recent branches GUI-fzf
     echo "$(recent-branches | fzf)" | xargs git checkout
 }
 
 
-fco2() { # fco2 - checkout git branch/tag
+fco2() {    # fco2 - checkout git branch/tag
   local tags branches target
   branches=$(
     git --no-pager branch --all \
@@ -210,7 +211,7 @@ fco2() { # fco2 - checkout git branch/tag
 }
 
 
-fbr() { # checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
+fbr() {    # checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
   local branches branch
   branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
   branch=$(echo "$branches" |
@@ -219,7 +220,7 @@ fbr() { # checkout git branch (including remote branches), sorted by most recent
 }
 
 
-fco_preview() { # checkout git branch/tag, with a preview showing the commits between the tag/branch and HEAD
+fco_preview() {    # checkout git branch/tag, with a preview showing the commits between the tag/branch and HEAD
   local tags branches target
   branches=$(
     git --no-pager branch --all \
@@ -235,7 +236,7 @@ fco_preview() { # checkout git branch/tag, with a preview showing the commits be
 }
 
 
-fcoc() { # checkout git commit
+fcoc() {    # checkout git commit
   local commits commit
   commits=$(git log --pretty=oneline --abbrev-commit --reverse) &&
   commit=$(echo "$commits" | fzf --tac +s +m -e) &&
@@ -243,7 +244,7 @@ fcoc() { # checkout git commit
 }
 
 
-fshow() { # git commit browser
+fshow() {    # git commit browser
   git log --graph --color=always \
       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
   fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
@@ -260,7 +261,7 @@ _gitLogLineToHash="echo {} | grep -o '[a-f0-9]\{7\}' | head -1"
 _viewGitLogLine="$_gitLogLineToHash | xargs -I % sh -c 'git show --color=always % | diff-so-fancy'"
 
 
-fcoc_preview() { # checkout git commit with previews
+fcoc_preview() {    # checkout git commit with previews
   local commit
   commit=$( glNoGraph |
     fzf --no-sort --reverse --tiebreak=index --no-multi \
@@ -269,7 +270,7 @@ fcoc_preview() { # checkout git commit with previews
 }
 
 
-fshow_preview() { # git commit browser with previews
+fshow_preview() {    # git commit browser with previews
     glNoGraph |
         fzf --no-sort --reverse --tiebreak=index --no-multi \
             --ansi --preview="$_viewGitLogLine" \
@@ -278,17 +279,17 @@ fshow_preview() { # git commit browser with previews
                 --bind "alt-y:execute:$_gitLogLineToHash | xclip"
 }
 
-function last-version() { # display most recent version of given python package
+function last-version() {    # display most recent version of given python package
     curl -s "https://pypi.org/pypi/$1/json" | jq -r '.info.version'
 }
 
 
-function all-versions() { # display all versions of given python package
+function all-versions() {    # display all versions of given python package
     curl -s "https://pypi.org/pypi/$1/json" | jq 'releases | keys'
 }
 
 
-function todos-blame(){	# git blame who put TODO statement in the code
+function todos-blame(){    # git blame who put TODO statement in the code
     AUTHOR=$1
     TYPE=$2
     AUTHOR="${AUTHOR:-Krystian}"
@@ -301,14 +302,14 @@ function todos-blame(){	# git blame who put TODO statement in the code
 
 
 # == Filesystem related functions
-function mkcd() {	# create directory and move into it
+function mkcd() {    # create directory and move into it
   mkdir -p "$1"
   cd "$1" || exit
 }
 
 
 # from zgen starting kit (Joseph Block <jpb@unixorn.net>)
-function chg-ext() {	# Batch change extension from $1 to $2
+function chg-ext() {    # Batch change extension from $1 to $2
   for file in *."$1"
   do
     mv "$file" "$(echo "$file" | sed "s/\(.*\.\)$1/\1$2/")"
@@ -316,29 +317,29 @@ function chg-ext() {	# Batch change extension from $1 to $2
 }
 
 
-function ff() { # find file with given name (or pattern) from cads@ooyala.com
+function ff() {    # find file with given name (or pattern) from cads@ooyala.com
   find . -type f -iname '*'$@'*' -ls
 }
 
 
 # == Networking related functions
-function scan24() {	# Probe a /24 network for hosts
+function scan24() {    # Probe a /24 network for hosts
   nmap -sP ${1}/24
 }
 
 
-function mecp() {  # scp file to machine you're sshing into this machine from
+function mecp() {    # scp file to machine you're sshing into this machine from
   scp "$@" ${SSH_CLIENT%% *}:"$HOME/Downloads/";
 }
 
 
-function pong(){  # ???
+function pong(){    # ping ghiven host 10 times and stop
   ping -c 10 "$@"
 }
 
 
 # from: https://coderwall.com/p/hwu5uq?i=9&p=1&q=sort%3Ascore+desc&t%5B%5D=zsh
-function pjson {	# Pretty JSON
+function pjson {    # Pretty JSON
   if [ $# -gt 0 ];
     then
     for arg in $@
@@ -354,13 +355,13 @@ function pjson {	# Pretty JSON
 }
 
 
-function envgrep() {	# grep through evnironmental variables
+function envgrep() {    # grep through evnironmental variables
   printenv | grep -i "$@"
 }
 
 
 # From Dan Ryan's blog - http://danryan.co/using-antigen-for-zsh.html
-man() {		# some settings for man?
+man() {    # some settings for man?
   env \
     LESS_TERMCAP_mb=$(printf "\e[1;31m") \
     LESS_TERMCAP_md=$(printf "\e[1;31m") \
@@ -373,14 +374,14 @@ man() {		# some settings for man?
 }
 
 
-# From commandlinefu.com
-function watch-man() {
+# From https://www.commandlinefu.com/commands/view/10335/for-all-who-dont-have-the-watch-command
+function watch-man() {    # for all who don't have the watch command
 	t=$1; shift; while test :; do clear; date=$(date); echo -e "Every $ts: $@ \t\t\t\t $date"; $@; sleep $t; done
 }
 
 
 # == Calculation functions
-function calc() {	# calcularor
+function calc() {    # calculator
   awk "BEGIN{ print $* }" ;
 }
 
@@ -389,13 +390,19 @@ function calc() {	# calcularor
 # for instructions and other data manipulation tools from console visit:
 # http://sysadvent.blogspot.com/2011/12/day-9-data-in-shell.html
 
-
-function _awk_col(){  # get col number and add
+# this function does the following:
+# If the input is not a pure number, it echoes the input as-is.
+# If the input is a pure number, it echoes the number with a $ prepended.
+# The purpose of this function seems to be to prepare column references for use in awk commands. In awk, $1, $2, etc., refer to the 1st, 2nd, etc., columns of input.
+# For example:
+# If you call _awk_col 5, it will return $5.
+# If you call _awk_col "hello", it will return hello.
+function _awk_col(){    # get col number and add
   echo "$1" | egrep -v '^[0-9]+$' || echo "\$$1"
 }
 
 
-function sum(){   # sum by n-th field
+function sum(){    # sum by n-th field
   # usage: sum column_idx
   #
   # Example:
@@ -409,7 +416,7 @@ function sum(){   # sum by n-th field
 }
 
 
-function sumby(){ # group and sum
+function sumby(){    # group and sum
     # usage:
     # sumby -F: group_column sum_column
     # Example:
@@ -426,7 +433,7 @@ function sumby(){ # group and sum
 }
 
 
-function countby(){   # Count instances by field
+function countby(){    # Count instances by field
     # Example:
     ## Count instances by field
     # % printf "hello:1\nworld:1\nworld:3\n" | countby -F: 1
@@ -440,7 +447,7 @@ function countby(){   # Count instances by field
 }
 
 
-function num_columns(){  # count number of columns in csv file
+function num_columns(){    # count number of columns in csv file
     # Example:
     #  num_columns -F, data.csv
     # first argument is separator definition for AWK
@@ -449,7 +456,7 @@ function num_columns(){  # count number of columns in csv file
 }
 
 
-function dim(){  # display dimensions of csv file
+function dim(){    # display dimensions of csv file
     [ "${1#-F}" != "$1" ] && SP=${1} && shift
     head -n1 "$1" | awk "$SP" '{print "number of columns:" NF}'
     num_rows=$(wc -l < "$1")
@@ -457,31 +464,31 @@ function dim(){  # display dimensions of csv file
 }
 
 
-function words_freq() {  # display most frequent words in the file with count
+function words_freq() {    # display most frequent words in the file with count
     # usage words_freq file.txt
 tr -c '[:alnum:]' '[\n*]' < "$1" | sort | uniq -c | sort -nr | head -30
 }
 
 
-function word_cloud() {  # display most frequent words in the file
+function word_cloud() {    # display most frequent words in the file
     # usage words_freq file.txt
     tr -c '[:alnum:]' '[\n*]' < "$1" | sort | uniq -c | sort -nr | head -n100 | awk '{print $2}' | tr '\n' ' '
 }
 
 
-function awk_col(){ # print selected column (space separated file)
+function awk_col(){    # print selected column (space separated file)
     awk -F' ' "{print \$$1}"
 }
 
 
-function corner(){ # print top-left corner of csv (sep=,) with size n (n-rows by n-columns)
+function corner(){    # print top-left corner of csv (sep=,) with size n (n-rows by n-columns)
     # usage corner 10 data.csv
     head -n "$1" "$2" | cut -d',' -f-"$1"
 }
 
 
 # == Shell and processes functions
-function procs_for_path() {		# list processes for given path
+function procs_for_path() {    # list processes for given path
   for pid in $(lsof "$@" | cut -d' ' -f 3 | sort | uniq)
   do
     ps -f -p "$pid"
@@ -489,22 +496,22 @@ function procs_for_path() {		# list processes for given path
 }
 
 
-function zombie() { # lists zombie processes
+function zombie() {    # lists zombie processes
   ps aux | awk '{if ($8=="Z") { print $2 }}'
 }
 
 
-function get_nr_jobs(){ # get number of jobs in the system
+function get_nr_jobs(){    # get number of jobs in the system
   jobs | wc -l
 }
 
 
-function get_load(){  # get system load
+function get_load(){    # get system load
   uptime | awk '{print $11}' | tr ',' ' '
 }
 
 
-function filesize-hist(){ # display distribution of file sizes in current directory
+function filesize-hist(){    # display distribution of file sizes in current directory
     find . -type f -print0                                                   \
  | xargs -0 ls -l                                                        \
  | awk '{ n=int(log($5)/log(2));                                         \
@@ -522,7 +529,7 @@ function filesize-hist(){ # display distribution of file sizes in current direct
 }
 
 
-function bash_repeat(){ # repeat command n times: bash_repeat 3 whoami
+function bash_repeat(){    # repeat command n times: bash_repeat 3 whoami
   n=$1
   shift
   while [ $(( n -= 1 )) -ge 0 ]
@@ -532,7 +539,7 @@ function bash_repeat(){ # repeat command n times: bash_repeat 3 whoami
 }
 
 
-function authme {	# send predefined authentication key to remote host
+function authme {    # send predefined authentication key to remote host
   ssh "$1" 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/gitlab_nokia_id_rsa.pub
   echo "Public key added to authorized_keys on $1"
   echo ""
@@ -546,12 +553,12 @@ function authme {	# send predefined authentication key to remote host
 }
 
 
-function ws(){ # Create new file for script with execute flag, edit in vim
+function ws(){    # Create new file for script with execute flag, edit in vim
     touch "$1" && chmod +x "$1" && vim "$1"
 }
 
 
-function fix_tmux_ssh_agent() { # ???
+function fix_tmux_ssh_agent() {    # ???
   for key in SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT; do
     if (tmux show-environment | grep "^${key}" > /dev/null); then
       value=$(tmux show-environment | grep "^${key}" | sed -e "s/^[A-Z_]*=//")
@@ -561,7 +568,7 @@ function fix_tmux_ssh_agent() { # ???
 }
 
 
-function piadd(){ # pacman install and add to ext.txt packages list
+function piadd(){    # pacman install and add to ext.txt packages list
     sudo pacman -S "$1"
     local fname="$HOME/dotfiles/restore/pkg/manual.txt"
     echo ">>>> adding $1 to manual.txt package list"
@@ -579,7 +586,7 @@ function piadd(){ # pacman install and add to ext.txt packages list
 }
 
 
-function pacman-files(){ # list files installed with package (works for AUR too)
+function pacman-files(){    # list files installed with package (works for AUR too)
     pacman -Qlq "$1" | grep -v '/$' | xargs -r du -h | sort -h
 }
 
@@ -592,7 +599,7 @@ function pacman-files(){ # list files installed with package (works for AUR too)
 #
 # This snippet is from Mislav Marohnić <mislav.marohnic@gmail.com>'s
 # dotfiles repo at https://github.com/mislav/dotfiles
-function dedupe_path() { # In case a plugin adds a redundant path entry, remove duplicate entries from PATH
+function dedupe_path() {    # In case a plugin adds a redundant path entry, remove duplicate entries from PATH
   typeset -a paths result
   paths=("$path")
 
@@ -606,19 +613,19 @@ function dedupe_path() { # In case a plugin adds a redundant path entry, remove 
 }
 
 
-function duplicate_definitions() { # display all definitions in notebooks in current dir (and below)
+function duplicate_definitions() {    # display all definitions in notebooks in current dir (and below)
     find . -type f -name "*.ipynb" | xargs grep -H -e "def " | grep "(" | grep ")" | grep -v ".ipynb_checkpoints" | awk -F ':' '{print($2,"|", $1)}' | sed -e 's/^[ \t]*//' | sed 's/"//' | sed -e 's/^[ \t]*//' | sed 's/^def //'| sort | column -t -s "|"
 
 }
 
 
-function learning() { #display info on learning progress
+function learning() {    #display info on learning progress
     grep -v "^#" ~/vimwiki/pro/learning.md | awk -F';' '$1==0 {sum+=$3;} END{print "to report:"sum/60"h";}'
     grep -v "^#" ~/vimwiki/pro/learning.md | awk -F';' '$1==1 {sum+=$3;} END{print "reported:"sum/60"h";}'
 }
 
 
-function aac-audio-recode-file() { #recode audio track in video file to AAC fomat
+function aac-audio-recode-file() {    #recode audio track in video file to AAC fomat
     pth=$(dirname "$1")
     fname=$(basename -- "$1")
     ext=${fname##*.}
@@ -629,22 +636,22 @@ function aac-audio-recode-file() { #recode audio track in video file to AAC foma
 }
 
 
-function aac-audio-recode-dir() { # run audio recoding in whole dir
+function aac-audio-recode-dir() {    # run audio recoding in whole dir
     for i in *; do aac-audio-recode-file "$i"; done
 }
 
 
-function get-vimeo-links() { # extract vimeo links from provided url
+function get-vimeo-links() {    # extract vimeo links from provided url
     wget -q $1 -O - | grep -oEi '(https:\/\/player\.vimeo.com\/video\/[0-9]*)'
 }
 
 
-function mman() {            # display my own complementary man pages
+function mman() {    # display my own complementary man pages
     cat $HOME/vimwiki/man/$1
 }
 
 
-function pacman-mirrors() {  # Find fastests mirrors for pacman
+function pacman-mirrors() {    # Find fastests mirrors for pacman
     timestamp=$(date +%Y-%m-%d_%H%M%S)
     target=/etc/pacman.d/${timestamp}_mirrorlist
     echo Creating backup of mirrorlist in $target
@@ -654,13 +661,13 @@ function pacman-mirrors() {  # Find fastests mirrors for pacman
 }
 
 
-function pretty_csv {       # display csv in columns, scroll vertically and horizontally
+function pretty_csv {    # display csv in columns, scroll vertically and horizontally
     # from: https://www.stefaanlippens.net/pretty-csv.html
     column -t -s, -n "$@" | less -F -S -X -K
 }
 
 
-function gralias() { # grep ./zsh_aliases file
+function gralias() {    # grep ./zsh_aliases file
     grep -B1 --color=never -i -e $1 $HOME/.zsh_aliases
 }
 
@@ -692,3 +699,12 @@ function ys-popular(){
 function zsh-stats() {
   fc -l 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n25
 }
+
+function ytmp3(){ # download youtube video as mp3, add thumbnail and metadata
+    yt-dlp -o "%(title)s.%(ext)s" -f bestaudio --extract-audio --embed-thumbnail --add-metadata --audio-format mp3 --prefer-ffmpeg "$1"
+}
+
+function ytmp3-chapters(){ # download youtube video as mp3, each chapter separately, add thumbnail and metadata
+    yt-dlp -o "%(title)s.%(ext)s" --split-chapters -f bestaudio --extract-audio --embed-thumbnail --add-metadata --audio-format mp3 --prefer-ffmpeg "$1"
+}
+
