@@ -52,6 +52,7 @@ dir_path_additions=(
     "$HOME/.cargo/bin/"
     "/Applications/Docker.app/Contents/Resources/bin"
     "/usr/local/opt/coreutils/libexec/gnubin"
+    "/Applications/PyCharm.app/Contents/MacOS"
     # Add other paths here
 )
 
@@ -67,7 +68,6 @@ done
 # Export the modified PATH
 export PATH
 
-
 # turn off the infernal correctall for filenames
 unsetopt correctall
 
@@ -77,11 +77,37 @@ zmodload zsh/terminfo
 # Load me last
 GENCOMPL_FPATH=$HOME/.zsh/complete
 
+# ------ COMPLETIONS --------------
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+export COMPLETION_WAITING_DOTS="true"
+
+# Speed up autocomplete, force prefix mapping
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)*==34=34}:${(s.:.)LS_COLORS}")';
+
+# Load any custom zsh completions we've installed
+if [ -d $HOME/.zsh-completions ]; then
+  for completion in ~/.zsh-completions/*
+  do
+    source "$completion"
+  done
+fi
+
+
+# The -U means mark the function vcs_info for autoloading and suppress alias expansion.
+# The -z means use zsh (rather than ksh) style. See also the functions command
+autoload -Uz compinit
+compinit
+
 # start zgen
 if [ -f ~/.zgen-setup ]; then
   source ~/.zgen-setup
 fi
-# end zgen
+
+
+
 
 # Global Alias Expansion
 #
@@ -138,33 +164,6 @@ SAVEHIST=100000
 HISTFILE=~/.zsh_history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
-# ------ COMPLETIONS --------------
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-export COMPLETION_WAITING_DOTS="true"
-
-# The -U means mark the function vcs_info for autoloading and suppress alias expansion.
-# The -z means use zsh (rather than ksh) style. See also the functions command
-# autoload -Uz compinit
-# compinit
-
-# Long running processes should return time after they complete. Specified
-# in seconds.
-REPORTTIME=2
-TIMEFMT="%U user %S system %P cpu %*Es total"
-
-# Speed up autocomplete, force prefix mapping
-zstyle ':completion:*' accept-exact '*(N)'
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
-zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)*==34=34}:${(s.:.)LS_COLORS}")';
-
-# Load any custom zsh completions we've installed
-if [ -d $HOME/.zsh-completions ]; then
-  for completion in ~/.zsh-completions/*
-  do
-    source "$completion"
-  done
-fi
 
 # ------------ Sourcing --------------
 # Set env variables: non-sensitive and secrets
@@ -242,10 +241,7 @@ export POWERLEVEL9K_SHOW_CHANGESET=true # git hash
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh virtualenv dir vcs)
 export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
 
-
-
-
-# Add my github username as env variable for script that gets my starred projects
+# Add my GitHub username as env variable for script that gets my starred projects
 export GITHUB_USER=izikeros
 
 # Note: deduplication takes quite long. Check if deduplications are needed (usually not)
@@ -274,7 +270,7 @@ pyenv-virtualenv() {
 #export DOCKER_HOST=unix://$HOME/docker.sock
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ----- Lazy load mamba
 mamba() {
@@ -309,5 +305,10 @@ micromamba() {
 eval "$(direnv hook zsh)"
 
 source /Users/krystian.safjan/.config/broot/launcher/bash/br
+
+# Long running processes should return time after they complete. Specified
+# in seconds.
+REPORTTIME=2
+TIMEFMT="%U user %S system %P cpu %*Es total"
 
 # zprof # end of profiling
