@@ -237,7 +237,9 @@
 	### TAG
 	lasttag = describe --tags --abbrev=0
 	lt      = describe --tags --abbrev=0
-	lt1 = !git describe $(git rev-list --tags --max-count=1)
+    lt1 = !git describe $(git rev-list --tags --max-count=1)
+    # tags with dates
+    ltd = for-each-ref --sort=creatordate --format '%(refname:short) %(creatordate:short)' refs/tags
 
 	### MERGE
     # delete all branches merged with origin/master
