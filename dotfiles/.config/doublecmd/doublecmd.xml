@@ -1,758 +1,201 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<doublecmd DCVersion="0.9.9 beta" ConfigVersion="10">
-  <Configuration Save="True" SortOrder="0" TreeType="0">
-    <UseConfigInProgramDir>False</UseConfigInProgramDir>
-    <FolderTabs Save="True"/>
-  </Configuration>
-  <Colors>
-    <FileFilters>
-      <Filter>
-        <Name>hidden</Name>
-        <FileMasks>.*</FileMasks>
-        <Color>10329501</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>executables</Name>
-        <FileMasks>*.exe;*.bat;*.sh;*.zsh</FileMasks>
-        <Color>32768</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>pictures</Name>
-        <FileMasks>*.jpg;*.png;*.bmp;*.jpeg;*.tiff;*.tif;*.gif;</FileMasks>
-        <Color>16711935</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>vector_graphics</Name>
-        <FileMasks>*emf;*.svg;*.ps;*.eps;*.wmf</FileMasks>
-        <Color>8388736</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>music</Name>
-        <FileMasks>*.mp3;*.mpc;*.ogg;*.flac</FileMasks>
-        <Color>33023</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>Documents</Name>
-        <FileMasks>*.docx;*.doc;*.rtf;*.odt</FileMasks>
-        <Color>8388608</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>Presentations</Name>
-        <FileMasks>*.ppt;*.pptx;*.pptm</FileMasks>
-        <Color>128</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>Data sheet</Name>
-        <FileMasks>*.xls;*.xlsx;*.xlsm;*.csv;*.ini;*.ods</FileMasks>
-        <Color>32768</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>PDF</Name>
-        <FileMasks>*.pdf</FileMasks>
-        <Color>128</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>Source code</Name>
-        <FileMasks>*.cpp;*.h;*.py;*.pl;*.c;*.m;*.cs;*.nim</FileMasks>
-        <Color>8388736</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>Video</Name>
-        <FileMasks>*.mp4;*.avi;*.mpg;*.wmv;*.ifo;*.mpeg</FileMasks>
-        <Color>8421376</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>Trace</Name>
-        <FileMasks>*.trace</FileMasks>
-        <Color>8388736</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>text file</Name>
-        <FileMasks>*.txt;*.ini;*.dat</FileMasks>
-        <Color>8421504</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>Markup</Name>
-        <FileMasks>*.html;*.htm;*.md;*.markdown;*.rst</FileMasks>
-        <Color>16711680</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>Notebooks</Name>
-        <FileMasks>*.ipynb</FileMasks>
-        <Color>3820916</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>Log files</Name>
-        <FileMasks>*.log</FileMasks>
-        <Color>8421376</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>Structured data</Name>
-        <FileMasks>*.yml;*.yaml;*.json</FileMasks>
-        <Color>7375813</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>Archives</Name>
-        <FileMasks>*.zip;*.rar;*.gz;*.tar;*.7z</FileMasks>
-        <Color>5490888</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>Data</Name>
-        <FileMasks>*.pkl;*.npz</FileMasks>
-        <Color>255</Color>
-        <Attributes/>
-      </Filter>
-      <Filter>
-        <Name>NFO</Name>
-        <FileMasks>*.nfo</FileMasks>
-        <Color>32896</Color>
-        <Attributes/>
-      </Filter>
-    </FileFilters>
-    <UseCursorBorder>False</UseCursorBorder>
-    <CursorBorderColor>-2147483635</CursorBorderColor>
-    <InactiveCursor>-2147483645</InactiveCursor>
-    <InactiveMark>128</InactiveMark>
-    <UseInactiveSelColor>False</UseInactiveSelColor>
-    <AllowOverColor>True</AllowOverColor>
-    <gBorderFrameWidth>1</gBorderFrameWidth>
-    <LogWindow>
-      <Info>8388608</Info>
-      <Error>255</Error>
-      <Success>32768</Success>
-    </LogWindow>
-    <UseFrameCursor>False</UseFrameCursor>
-    <Foreground>-2147483640</Foreground>
-    <Background>13953264</Background>
-    <Background2>13426662</Background2>
-    <Cursor>-2147483635</Cursor>
-    <CursorText>-2147483634</CursorText>
-    <Mark>255</Mark>
-    <UseInvertedSelection>False</UseInvertedSelection>
-    <InactivePanelBrightness>100</InactivePanelBrightness>
-    <FreeSpaceIndicator>
-      <UseGradient>True</UseGradient>
-      <ForeColor>0</ForeColor>
-      <BackColor>16777215</BackColor>
-    </FreeSpaceIndicator>
-  </Colors>
-  <Plugins>
-    <WlxPlugins>
-      <WlxPlugin Enabled="True">
-        <Name>wlxMplayer</Name>
-        <Path>%commander_path%/plugins/wlx/wlxmplayer/wlxmplayer.wlx</Path>
-        <DetectString>(EXT="MPG")|(EXT="AVI")|(EXT="MPEG")|(EXT="FLV")</DetectString>
-      </WlxPlugin>
-    </WlxPlugins>
-    <DsxPlugins/>
-    <WcxPlugins>
-      <WcxPlugin Enabled="True">
-        <ArchiveExt>zip</ArchiveExt>
-        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
-        <Flags>735</Flags>
-      </WcxPlugin>
-      <WcxPlugin Enabled="True">
-        <ArchiveExt>tar</ArchiveExt>
-        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
-        <Flags>223</Flags>
-      </WcxPlugin>
-      <WcxPlugin Enabled="True">
-        <ArchiveExt>bz2</ArchiveExt>
-        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
-        <Flags>91</Flags>
-      </WcxPlugin>
-      <WcxPlugin Enabled="True">
-        <ArchiveExt>tbz</ArchiveExt>
-        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
-        <Flags>95</Flags>
-      </WcxPlugin>
-      <WcxPlugin Enabled="True">
-        <ArchiveExt>gz</ArchiveExt>
-        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
-        <Flags>91</Flags>
-      </WcxPlugin>
-      <WcxPlugin Enabled="True">
-        <ArchiveExt>tgz</ArchiveExt>
-        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
-        <Flags>95</Flags>
-      </WcxPlugin>
-      <WcxPlugin Enabled="True">
-        <ArchiveExt>lzma</ArchiveExt>
-        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
-        <Flags>1</Flags>
-      </WcxPlugin>
-      <WcxPlugin Enabled="True">
-        <ArchiveExt>tlz</ArchiveExt>
-        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
-        <Flags>95</Flags>
-      </WcxPlugin>
-      <WcxPlugin Enabled="True">
-        <ArchiveExt>xz</ArchiveExt>
-        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
-        <Flags>91</Flags>
-      </WcxPlugin>
-      <WcxPlugin Enabled="True">
-        <ArchiveExt>txz</ArchiveExt>
-        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
-        <Flags>95</Flags>
-      </WcxPlugin>
-      <WcxPlugin Enabled="True">
-        <ArchiveExt>zipx</ArchiveExt>
-        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
-        <Flags>223</Flags>
-      </WcxPlugin>
-      <WcxPlugin Enabled="True">
-        <ArchiveExt>cpio</ArchiveExt>
-        <Path>%commander_path%/plugins/wcx/cpio/cpio.wcx</Path>
-        <Flags>4</Flags>
-      </WcxPlugin>
-      <WcxPlugin Enabled="True">
-        <ArchiveExt>deb</ArchiveExt>
-        <Path>%commander_path%/plugins/wcx/deb/deb.wcx</Path>
-        <Flags>4</Flags>
-      </WcxPlugin>
-      <WcxPlugin Enabled="True">
-        <ArchiveExt>rpm</ArchiveExt>
-        <Path>%commander_path%/plugins/wcx/rpm/rpm.wcx</Path>
-        <Flags>4</Flags>
-      </WcxPlugin>
-      <WcxPlugin Enabled="True">
-        <ArchiveExt>rar</ArchiveExt>
-        <Path>%commander_path%/plugins/wcx/unrar/unrar.wcx</Path>
-        <Flags>68</Flags>
-      </WcxPlugin>
-      <WcxPlugin Enabled="True">
-        <ArchiveExt>jar</ArchiveExt>
-        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
-        <Flags>990</Flags>
-      </WcxPlugin>
-    </WcxPlugins>
-    <WdxPlugins>
-      <WdxPlugin>
-        <Name>deb_wdx</Name>
-        <Path>%COMMANDER_PATH%/plugins/wdx/deb_wdx/deb_wdx.wdx</Path>
-        <DetectString>EXT="DEB"</DetectString>
-      </WdxPlugin>
-      <WdxPlugin>
-        <Name>rpm_wdx</Name>
-        <Path>%COMMANDER_PATH%/plugins/wdx/rpm_wdx/rpm_wdx.wdx</Path>
-        <DetectString>EXT="RPM"</DetectString>
-      </WdxPlugin>
-      <WdxPlugin>
-        <Name>audioinfo</Name>
-        <Path>%COMMANDER_PATH%/plugins/wdx/audioinfo/audioinfo.wdx</Path>
-        <DetectString>(EXT="MP3") | (EXT="MP2") | (EXT="MP1") | (EXT="OGG") | (EXT="WMA") | (EXT="WAV") | (EXT="VQF") | (EXT="AAC") | (EXT="APE") | (EXT="MPC") | (EXT="FLAC") | (EXT="CDA") | (EXT="TTA") | (EXT="AC3") | (EXT="DTS") | (EXT="WV") | (EXT="WVC") | (EXT="OFR") | (EXT="OFS") | (EXT="M4A") | (EXT="MP4")</DetectString>
-      </WdxPlugin>
-    </WdxPlugins>
-    <WfxPlugins>
-      <WfxPlugin Enabled="True">
-        <Name>FTP</Name>
-        <Path>%commander_path%/plugins/wfx/ftp/ftp.wfx</Path>
-      </WfxPlugin>
-      <WfxPlugin Enabled="True">
-        <Name>Windows Network</Name>
-        <Path>%commander_path%/plugins/wfx/samba/samba.wfx</Path>
-      </WfxPlugin>
-    </WfxPlugins>
-    <TweakPluginWidth0>0</TweakPluginWidth0>
-    <TweakPluginHeight0>0</TweakPluginHeight0>
-    <TweakPluginWidth1>0</TweakPluginWidth1>
-    <TweakPluginHeight1>0</TweakPluginHeight1>
-    <TweakPluginWidth2>0</TweakPluginWidth2>
-    <TweakPluginHeight2>0</TweakPluginHeight2>
-    <TweakPluginWidth3>0</TweakPluginWidth3>
-    <TweakPluginHeight3>0</TweakPluginHeight3>
-    <TweakPluginWidth4>0</TweakPluginWidth4>
-    <TweakPluginHeight4>0</TweakPluginHeight4>
-    <AutoTweak>False</AutoTweak>
-    <WCXConfigViewMode>0</WCXConfigViewMode>
-    <PluginFilenameStyle>0</PluginFilenameStyle>
-    <PluginPathToBeRelativeTo>%COMMANDER_PATH%</PluginPathToBeRelativeTo>
-  </Plugins>
+<doublecmd DCVersion="1.1.18 gamma" ConfigVersion="15">
   <Toolbars>
     <MainToolbar>
       <Row>
         <Command>
-          <ID>{D5A407ED-83AB-426C-AB08-22E2604C5847}</ID>
-          <Icon>cm_showmainmenu</Icon>
-          <Command>cm_ShowMainMenu</Command>
+          <ID>{0C2EF73B-7370-2524-3AB0-0455BE01D9F9}</ID>
+          <Icon>cm_refresh</Icon>
+          <Command>cm_Refresh</Command>
+        </Command>
+        <Command>
+          <ID>{D5478093-BD84-3945-8B8E-C40362C1B0B3}</ID>
+          <Icon>cm_runterm</Icon>
+          <Command>cm_RunTerm</Command>
+        </Command>
+        <Command>
+          <ID>{17A4CE8B-E75D-F070-F29B-4C7C1443B610}</ID>
+          <Icon>cm_options</Icon>
+          <Command>cm_Options</Command>
+        </Command>
+        <Separator>
+          <Style>False</Style>
+        </Separator>
+        <Command>
+          <ID>{DFC0EDD4-FC48-0383-D1AD-C818BB54D6E7}</ID>
+          <Icon>cm_briefview</Icon>
+          <Command>cm_BriefView</Command>
+        </Command>
+        <Command>
+          <ID>{0C550FBB-AC8B-5795-8A3B-8D83D5D4A2E8}</ID>
+          <Icon>cm_columnsview</Icon>
+          <Command>cm_ColumnsView</Command>
+        </Command>
+        <Command>
+          <ID>{3524DF2C-A227-BC94-0FFE-93A7069136FB}</ID>
+          <Icon>cm_thumbnailsview</Icon>
+          <Command>cm_ThumbnailsView</Command>
+        </Command>
+        <Separator>
+          <Style>False</Style>
+        </Separator>
+        <Command>
+          <ID>{4BC75F95-F8DE-DA91-C048-D46A2C0447B2}</ID>
+          <Icon>cm_flatview</Icon>
+          <Command>cm_FlatView</Command>
+        </Command>
+        <Separator>
+          <Style>False</Style>
+        </Separator>
+        <Command>
+          <ID>{096E27F5-0479-A81C-E31F-626CDC453D43}</ID>
+          <Icon>cm_viewhistoryprev</Icon>
+          <Command>cm_ViewHistoryPrev</Command>
+        </Command>
+        <Command>
+          <ID>{F902D83A-A1B1-39E2-361D-962E06A900CE}</ID>
+          <Icon>cm_viewhistorynext</Icon>
+          <Command>cm_ViewHistoryNext</Command>
+        </Command>
+        <Separator>
+          <Style>False</Style>
+        </Separator>
+        <Command>
+          <ID>{FBDF49A4-DB64-8EE5-C60C-BDEE0BD35617}</ID>
+          <Icon>cm_markplus</Icon>
+          <Command>cm_MarkPlus</Command>
+        </Command>
+        <Command>
+          <ID>{E1DAEF4A-CFCA-C831-BAE8-A9D13C080B75}</ID>
+          <Icon>cm_markminus</Icon>
+          <Command>cm_MarkMinus</Command>
+        </Command>
+        <Command>
+          <ID>{4DD35E4B-ADC2-64FF-241A-2425B2B3911C}</ID>
+          <Icon>cm_markinvert</Icon>
+          <Command>cm_MarkInvert</Command>
+        </Command>
+        <Separator>
+          <Style>False</Style>
+        </Separator>
+        <Command>
+          <ID>{81704235-EF8B-A707-0588-A9CD966A2F8A}</ID>
+          <Icon>cm_packfiles</Icon>
+          <Command>cm_PackFiles</Command>
+        </Command>
+        <Command>
+          <ID>{9EA5331A-9051-21A4-6855-6D3190AC66BE}</ID>
+          <Icon>cm_extractfiles</Icon>
+          <Command>cm_ExtractFiles</Command>
+        </Command>
+        <Separator>
+          <Style>False</Style>
+        </Separator>
+        <Command>
+          <ID>{09324C5A-B743-912D-8EBA-CFA5A9A57963}</ID>
+          <Icon>cm_networkconnect</Icon>
+          <Command>cm_NetworkConnect</Command>
+        </Command>
+        <Command>
+          <ID>{6CAEB178-D07E-553C-2FD3-57915EF06552}</ID>
+          <Icon>cm_search</Icon>
+          <Command>cm_Search</Command>
+        </Command>
+        <Command>
+          <ID>{7B5C6C89-DEC5-4D39-5D75-8A70017405DE}</ID>
+          <Icon>cm_multirename</Icon>
+          <Command>cm_MultiRename</Command>
+        </Command>
+        <Command>
+          <ID>{F4E214D5-D8BA-FC05-8ADB-18EBD41ACA29}</ID>
+          <Icon>cm_syncdirs</Icon>
+          <Command>cm_SyncDirs</Command>
+        </Command>
+        <Command>
+          <ID>{C4C8BFEA-2990-957E-7926-2E89A9BE3D8B}</ID>
+          <Icon>cm_copyfullnamestoclip</Icon>
+          <Command>cm_CopyFullNamesToClip</Command>
         </Command>
       </Row>
     </MainToolbar>
+    <MiddleToolbar>
+      <Row>
+        <Command>
+          <ID>{0796C4C4-3337-21FB-8D7E-A4F93FB0D1BB}</ID>
+          <Icon>cm_view</Icon>
+          <Command>cm_View</Command>
+        </Command>
+        <Command>
+          <ID>{0D29940F-2032-94A4-27E6-C7FF680525CD}</ID>
+          <Icon>cm_edit</Icon>
+          <Command>cm_Edit</Command>
+        </Command>
+        <Command>
+          <ID>{83A5F9FF-9625-B2BA-C9BD-003C686A44B0}</ID>
+          <Icon>cm_copy</Icon>
+          <Command>cm_Copy</Command>
+        </Command>
+        <Command>
+          <ID>{DA9FBBF0-BDD6-7EBD-34BB-F31643B5703D}</ID>
+          <Icon>cm_rename</Icon>
+          <Command>cm_Rename</Command>
+        </Command>
+        <Separator>
+          <Style>True</Style>
+        </Separator>
+        <Command>
+          <ID>{BBD5DD35-A2A0-C2A6-AF1C-E3427CCD3FC2}</ID>
+          <Icon>cm_packfiles</Icon>
+          <Command>cm_PackFiles</Command>
+        </Command>
+        <Command>
+          <ID>{B4FFDDD6-25C8-A7F4-1333-51193DFB5900}</ID>
+          <Icon>cm_makedir</Icon>
+          <Command>cm_MakeDir</Command>
+        </Command>
+      </Row>
+    </MiddleToolbar>
   </Toolbars>
-  <Tabs>
-    <OpenedTabs>
-      <Left>
-        <ActiveTab>4</ActiveTab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path>/home/safjan/projects/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/projects/</LockPath>
-          <Title>proj</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path>/home/safjan/dotfiles/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/dotfiles/</LockPath>
-          <Title>dot</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path>/home/safjan/dotfiles/restore/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/dotfiles/restore/</LockPath>
-          <Title>restore</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>2</Direction>
-                <Function>7</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path>/home/safjan/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/</LockPath>
-          <Title>safjan</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>2</Direction>
-                <Function>7</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path>/opt/s25rttr/s25rttr_20210113/share/s25rttr/S2/Settlers II Gold Edition/./</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/projects/nokia/prolog/</LockPath>
-          <Title>prolog</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>2</Direction>
-                <Function>7</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path>/home/safjan/Documents/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/Documents/</LockPath>
-          <Title>doc</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path>/home/safjan/Documents/brain/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/Documents/brain/</LockPath>
-          <Title>brain</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path>/home/safjan/kdenlive_projects/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/kdenlive_projects/</LockPath>
-          <Title>kdenlive_projects</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>2</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path>/home/safjan/Documents/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/Documents/dp200_201/</LockPath>
-          <Title>dp200_201</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>1</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path>/home/safjan/Gramps/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/Gramps/</LockPath>
-          <Title>Gramps</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path>/home/safjan/Documents/priv/hiszpanski/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/Documents/priv/hiszpanski/</LockPath>
-          <Title>hiszpanski</Title>
-        </Tab>
-      </Left>
-      <Right>
-        <ActiveTab>0</ActiveTab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>2</Direction>
-                <Function>7</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path>/home/safjan/Downloads/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/Downloads/</LockPath>
-          <Title>Downloads</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path>/home/safjan/projects/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/projects/</LockPath>
-          <Title>projects</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>2</Direction>
-                <Function>7</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path>/home/safjan/projects/nokia/prolog/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/projects/nokia/prolog/</LockPath>
-          <Title>prolog</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path>/home/safjan/Pictures/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/Pictures/ThaiViet_prev/</LockPath>
-          <Title>ThaiViet_prev</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path>/home/safjan/Documents/brain/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-          <Options>2</Options>
-          <LockPath>/home/safjan/Documents/brain/</LockPath>
-          <Title>brain</Title>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path>/home/safjan/projects/nokia/prolog_old/notebooks/outdated/oracle_model_management/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-        </Tab>
-      </Right>
-    </OpenedTabs>
-    <Options>49937</Options>
-    <CharacterLimit>32</CharacterLimit>
-    <Position>0</Position>
-    <ActionOnDoubleClick>2</ActionOnDoubleClick>
-  </Tabs>
   <MainWindow>
-    <Position Save="False">
-      <Maximized>True</Maximized>
-      <Splitter>47.678664580073</Splitter>
-      <Left>960</Left>
-      <Top>0</Top>
-      <Width>958</Width>
-      <Height>1078</Height>
+    <Position Save="True">
+      <Left>0</Left>
+      <Top>25</Top>
+      <Width>1680</Width>
+      <Height>997</Height>
       <PixelsPerInch>96</PixelsPerInch>
+      <Maximized>True</Maximized>
+      <Splitter>46,5712581991652</Splitter>
     </Position>
   </MainWindow>
   <Language>
-    <POFileName>doublecmd.pl.po</POFileName>
+    <POFileName>doublecmd.pot</POFileName>
   </Language>
   <Behaviours>
     <GoToRoot>False</GoToRoot>
+    <ShowCurDirTitleBar>False</ShowCurDirTitleBar>
     <ActiveRight>False</ActiveRight>
-    <RunInTerminalStayOpenCmd>terminator</RunInTerminalStayOpenCmd>
-    <RunInTerminalStayOpenParams>-e sh -c '{command}; echo -n Press ENTER to exit... ; read a'</RunInTerminalStayOpenParams>
-    <RunInTerminalCloseCmd>terminator</RunInTerminalCloseCmd>
-    <RunInTerminalCloseParams>-e sh -c {command}</RunInTerminalCloseParams>
-    <JustRunTerminal>terminator</JustRunTerminal>
-    <JustRunTermParams/>
+    <RunInTerminalStayOpenCmd>%COMMANDER_PATH%/scripts/terminal.sh</RunInTerminalStayOpenCmd>
+    <RunInTerminalStayOpenParams>'{command}'</RunInTerminalStayOpenParams>
+    <RunInTerminalCloseCmd/>
+    <RunInTerminalCloseParams/>
+    <JustRunTerminal>/Applications/Utilities/Terminal.app</JustRunTerminal>
+    <JustRunTermParams>%D</JustRunTermParams>
     <OnlyOneAppInstance>False</OnlyOneAppInstance>
     <LynxLike>True</LynxLike>
     <FileSizeFormat>0</FileSizeFormat>
     <OperationSizeFormat>0</OperationSizeFormat>
-    <HeaderFooterSizeFormat>0</HeaderFooterSizeFormat>
+    <HeaderSizeFormat>0</HeaderSizeFormat>
+    <FooterSizeFormat>0</FooterSizeFormat>
     <FileSizeDigits>1</FileSizeDigits>
-    <HeaderFooterDigits>1</HeaderFooterDigits>
+    <HeaderDigits>1</HeaderDigits>
+    <FooterDigits>1</FooterDigits>
     <OperationSizeDigits>1</OperationSizeDigits>
     <PersonalizedByte>B</PersonalizedByte>
     <PersonalizedKilo>KB</PersonalizedKilo>
     <PersonalizedMega>MB</PersonalizedMega>
     <PersonalizedGiga>GB</PersonalizedGiga>
     <PersonalizedTera>TB</PersonalizedTera>
+    <ConfirmQuit>False</ConfirmQuit>
     <MinimizeToTray>False</MinimizeToTray>
     <AlwaysShowTrayIcon>False</AlwaysShowTrayIcon>
     <Mouse>
@@ -762,13 +205,14 @@
       </Selection>
       <SingleClickStart>0</SingleClickStart>
       <ScrollMode>1</ScrollMode>
-      <WheelScrollLines>3</WheelScrollLines>
+      <WheelScrollLines>1</WheelScrollLines>
     </Mouse>
     <AutoFillColumns>False</AutoFillColumns>
     <AutoSizeColumn>1</AutoSizeColumn>
     <CustomColumnsChangeAllColumns>False</CustomColumnsChangeAllColumns>
     <BriefViewFileExtAligned>False</BriefViewFileExtAligned>
-    <DateTimeFormat>dd.mm.yyyy hh:nn:ss</DateTimeFormat>
+    <DateTimeFormat>dd/mm/yy hh:nn:ss</DateTimeFormat>
+    <ColumnsTitleLikeValues>False</ColumnsTitleLikeValues>
     <CutTextToColumnWidth>True</CutTextToColumnWidth>
     <ExtendCellWidth>False</ExtendCellWidth>
     <ShowSystemFiles>True</ShowSystemFiles>
@@ -787,13 +231,13 @@
       <KeepTerminalOpen>False</KeepTerminalOpen>
     </Viewer>
     <Editor Enabled="True">
-      <Path>/opt/sublime_text_3/sublime_text</Path>
+      <Path>/usr/local/bin/subl</Path>
       <Parameters/>
       <RunInTerminal>False</RunInTerminal>
       <KeepTerminalOpen>False</KeepTerminalOpen>
     </Editor>
-    <Differ Enabled="True">
-      <Path>/usr/bin/meld</Path>
+    <Differ Enabled="False">
+      <Path/>
       <Parameters/>
       <RunInTerminal>False</RunInTerminal>
       <KeepTerminalOpen>False</KeepTerminalOpen>
@@ -802,77 +246,89 @@
   </Tools>
   <Fonts>
     <Main>
-      <Name>Sans</Name>
-      <Size>12</Size>
+      <Name>default</Name>
+      <Size>11</Size>
       <Style>0</Style>
       <Quality>0</Quality>
     </Main>
     <Editor>
-      <Name>Liberation Mono</Name>
+      <Name>Monaco</Name>
       <Size>14</Size>
       <Style>0</Style>
       <Quality>0</Quality>
     </Editor>
     <Viewer>
-      <Name>Monospace</Name>
+      <Name>Monaco</Name>
       <Size>14</Size>
       <Style>0</Style>
       <Quality>0</Quality>
     </Viewer>
-    <Log>
-      <Name>Monospace</Name>
-      <Size>12</Size>
-      <Style>0</Style>
-      <Quality>0</Quality>
-    </Log>
     <ViewerBook>
       <Name>default</Name>
       <Size>16</Size>
       <Style>1</Style>
       <Quality>0</Quality>
     </ViewerBook>
+    <Log>
+      <Name>Monaco</Name>
+      <Size>12</Size>
+      <Style>0</Style>
+      <Quality>0</Quality>
+    </Log>
     <Console>
-      <Name>Monospace</Name>
+      <Name>Monaco</Name>
       <Size>12</Size>
       <Style>0</Style>
       <Quality>0</Quality>
     </Console>
-    <OptionsTree>
-      <Name>default</Name>
-      <Size>10</Size>
-      <Style>0</Style>
-      <Quality>0</Quality>
-    </OptionsTree>
-    <OptionsMain>
-      <Name>default</Name>
-      <Size>10</Size>
-      <Style>0</Style>
-      <Quality>0</Quality>
-    </OptionsMain>
-    <SearchResults>
-      <Name>default</Name>
-      <Size>14</Size>
-      <Style>0</Style>
-      <Quality>0</Quality>
-    </SearchResults>
     <PathEdit>
       <Name>default</Name>
-      <Size>8</Size>
+      <Size>10</Size>
       <Style>0</Style>
       <Quality>0</Quality>
     </PathEdit>
     <FunctionButtons>
       <Name>default</Name>
-      <Size>8</Size>
+      <Size>10</Size>
       <Style>0</Style>
       <Quality>0</Quality>
     </FunctionButtons>
+    <SearchResults>
+      <Name>default</Name>
+      <Size>10</Size>
+      <Style>0</Style>
+      <Quality>0</Quality>
+    </SearchResults>
+    <TreeViewMenu>
+      <Name>default</Name>
+      <Size>10</Size>
+      <Style>0</Style>
+      <Quality>0</Quality>
+    </TreeViewMenu>
+    <StatusBar>
+      <Name>default</Name>
+      <Size>0</Size>
+      <Style>0</Style>
+      <Quality>0</Quality>
+    </StatusBar>
   </Fonts>
+  <Colors>
+    <UseCursorBorder>False</UseCursorBorder>
+    <UseFrameCursor>False</UseFrameCursor>
+    <UseInvertedSelection>False</UseInvertedSelection>
+    <UseInactiveSelColor>False</UseInactiveSelColor>
+    <AllowOverColor>True</AllowOverColor>
+    <gBorderFrameWidth>1</gBorderFrameWidth>
+    <InactivePanelBrightness>100</InactivePanelBrightness>
+    <FreeSpaceIndicator>
+      <UseGradient>True</UseGradient>
+    </FreeSpaceIndicator>
+  </Colors>
   <ToolTips>
     <ShowToolTipMode>True</ShowToolTipMode>
-    <CustomFields/>
     <ActualToolTipMode>0</ActualToolTipMode>
     <ToolTipHideTimeOut>0</ToolTipHideTimeOut>
+    <CustomFields/>
   </ToolTips>
   <Layout>
     <MainMenu>True</MainMenu>
@@ -880,8 +336,19 @@
       <FlatIcons>True</FlatIcons>
       <ButtonHeight>24</ButtonHeight>
       <IconSize>16</IconSize>
+      <ShowCaptions>False</ShowCaptions>
       <ReportErrorWithCommands>False</ReportErrorWithCommands>
+      <FilenameStyle>0</FilenameStyle>
+      <PathToBeRelativeTo>%COMMANDER_PATH%</PathToBeRelativeTo>
+      <PathModifierElements>0</PathModifierElements>
     </ButtonBar>
+    <MiddleBar Enabled="False">
+      <FlatIcons>True</FlatIcons>
+      <ButtonHeight>24</ButtonHeight>
+      <IconSize>16</IconSize>
+      <ShowCaptions>False</ShowCaptions>
+      <ReportErrorWithCommands>False</ReportErrorWithCommands>
+    </MiddleBar>
     <DriveBar1>True</DriveBar1>
     <DriveBar2>True</DriveBar2>
     <DriveBarFlat>True</DriveBarFlat>
@@ -901,23 +368,27 @@
     <KeyButtons>True</KeyButtons>
     <InterfaceFlat>True</InterfaceFlat>
     <DriveFreeSpace>True</DriveFreeSpace>
-    <DriveIndicator>True</DriveIndicator>
+    <DriveIndicator>False</DriveIndicator>
     <ProgressInMenuBar>False</ProgressInMenuBar>
     <PanelOfOperationsInBackground>True</PanelOfOperationsInBackground>
     <HorizontalFilePanels>False</HorizontalFilePanels>
     <ShortFormatDriveInfo>True</ShortFormatDriveInfo>
+    <UppercaseDriveLetter>False</UppercaseDriveLetter>
+    <ShowColonAfterDrive>False</ShowColonAfterDrive>
   </Layout>
   <FilesViews>
     <Sorting>
       <CaseSensitivity>0</CaseSensitivity>
-      <NaturalSorting>True</NaturalSorting>
-      <SortFolderMode>0</SortFolderMode>
+      <NaturalSorting>False</NaturalSorting>
+      <SpecialSorting>False</SpecialSorting>
+      <SortFolderMode>1</SortFolderMode>
       <NewFilesPosition>2</NewFilesPosition>
       <UpdatedFilesPosition>2</UpdatedFilesPosition>
     </Sorting>
     <ColumnsView>
+      <LongInStatus>False</LongInStatus>
       <AutoSaveWidth>True</AutoSaveWidth>
-      <TitleStyle>1</TitleStyle>
+      <TitleStyle>2</TitleStyle>
     </ColumnsView>
     <BriefView>
       <FileExtAligned>False</FileExtAligned>
@@ -930,6 +401,7 @@
     <ExtraLineSpan>2</ExtraLineSpan>
     <FolderPrefix>[</FolderPrefix>
     <FolderPostfix>]</FolderPostfix>
+    <RenameConfirmMouse>False</RenameConfirmMouse>
   </FilesViews>
   <Keyboard>
     <Typing>
@@ -942,9 +414,13 @@
   </Keyboard>
   <FileOperations>
     <BufferSize>524288</BufferSize>
+    <LongNameAlert>True</LongNameAlert>
     <HashBufferSize>8388608</HashBufferSize>
     <UseMmapInSearch>False</UseMmapInSearch>
     <PartialNameSearch>True</PartialNameSearch>
+    <InitiallyClearFileMask>True</InitiallyClearFileMask>
+    <NewSearchClearFiltersAction>0</NewSearchClearFiltersAction>
+    <ShowMenuBarInFindFiles>True</ShowMenuBarInFindFiles>
     <WipePassNumber>1</WipePassNumber>
     <DropReadOnlyFlag>False</DropReadOnlyFlag>
     <ProcessComments>False</ProcessComments>
@@ -953,7 +429,7 @@
     <UseTrash>True</UseTrash>
     <SkipFileOpError>False</SkipFileOpError>
     <TypeOfDuplicatedRename>0</TypeOfDuplicatedRename>
-    <ShowDialogOnDragDrop>False</ShowDialogOnDragDrop>
+    <ShowDialogOnDragDrop>True</ShowDialogOnDragDrop>
     <DragAndDropTextRichtextDesireLevel>0</DragAndDropTextRichtextDesireLevel>
     <DragAndDropTextHtmlDesireLevel>1</DragAndDropTextHtmlDesireLevel>
     <DragAndDropTextUnicodeDesireLevel>2</DragAndDropTextUnicodeDesireLevel>
@@ -961,7 +437,6 @@
     <DragAndDropAskFormatEachTime>False</DragAndDropAskFormatEachTime>
     <DragAndDropTextAutoFilename>False</DragAndDropTextAutoFilename>
     <DragAndDropSaveUnicodeTextInUFT8>True</DragAndDropSaveUnicodeTextInUFT8>
-    <OverwriteFolder>False</OverwriteFolder>
     <NtfsHourTimeDelay>False</NtfsHourTimeDelay>
     <AutoExtractOpenMask/>
     <SearchDefaultTemplate/>
@@ -970,34 +445,55 @@
     <Options>
       <Symlink>0</Symlink>
       <CorrectLinks>False</CorrectLinks>
+      <CopyOnWrite>2</CopyOnWrite>
       <FileExists>0</FileExists>
       <DirectoryExists>0</DirectoryExists>
       <SetPropertyError>0</SetPropertyError>
-      <ReserveSpace>False</ReserveSpace>
+      <ReserveSpace>True</ReserveSpace>
       <CheckFreeSpace>True</CheckFreeSpace>
       <CopyAttributes>True</CopyAttributes>
+      <CopyXattributes>True</CopyXattributes>
+      <Verify>False</Verify>
       <CopyTime>True</CopyTime>
       <CopyOwnership>False</CopyOwnership>
       <CopyPermissions>False</CopyPermissions>
       <ExcludeEmptyTemplateDirectories>True</ExcludeEmptyTemplateDirectories>
-      <Verify>False</Verify>
     </Options>
-    <InitiallyClearFileMask>True</InitiallyClearFileMask>
-    <NewSearchClearFiltersAction>0</NewSearchClearFiltersAction>
-    <ShowMenuBarInFindFiles>True</ShowMenuBarInFindFiles>
     <Extract>
       <Overwrite>False</Overwrite>
     </Extract>
+    <MultiRename>
+      <MulRenShowMenuBarOnTop>True</MulRenShowMenuBarOnTop>
+      <MulRenInvalidCharReplacement>.</MulRenInvalidCharReplacement>
+      <MulRenLaunchBehavor>0</MulRenLaunchBehavor>
+      <MulRenExitModifiedPreset>0</MulRenExitModifiedPreset>
+      <MulRenSaveRenamingLog>0</MulRenSaveRenamingLog>
+      <MulRenLogFilename>%DC_CONFIG_PATH%/multirename.log</MulRenLogFilename>
+      <MultRenDailyIndividualDirLog>True</MultRenDailyIndividualDirLog>
+      <MulRenFilenameWithFullPathInLog>False</MulRenFilenameWithFullPathInLog>
+      <MulRenPathRangeSeparator>- </MulRenPathRangeSeparator>
+    </MultiRename>
   </FileOperations>
-  <Log Enabled="False" LogFileWithDateInName="False">
+  <Tabs>
+    <Options>54033</Options>
+    <CharacterLimit>32</CharacterLimit>
+    <Position>0</Position>
+    <ActionOnDoubleClick>2</ActionOnDoubleClick>
+  </Tabs>
+  <Log Enabled="False" Count="0" LogFileWithDateInName="False">
     <FileName>%DC_CONFIG_PATH%/doublecmd.log</FileName>
     <Options>1023</Options>
   </Log>
+  <Configuration Save="True" SortOrder="1" TreeType="0">
+    <FolderTabs Save="True"/>
+  </Configuration>
   <History>
-    <SearchReplaceHistory Save="False"/>
-    <DirHistory Save="False"/>
-    <CmdLineHistory Save="False"/>
-    <FileMaskHistory Save="False"/>
+    <SearchReplaceHistory Save="True"/>
+    <DirHistory Save="True" Count="30"/>
+    <CmdLineHistory Save="True"/>
+    <FileMaskHistory Save="True"/>
+    <VolumeSizeHistory Save="True"/>
+    <CreateDirectoriesHistory Save="True"/>
   </History>
   <QuickSearch>
     <MatchBeginning>True</MatchBeginning>
@@ -1013,65 +509,65 @@
     <GridVertLine>False</GridVertLine>
     <GridHorzLine>False</GridHorzLine>
     <ShowWarningMessages>True</ShowWarningMessages>
-    <SpaceMovesDown>True</SpaceMovesDown>
+    <SpaceMovesDown>False</SpaceMovesDown>
     <DirBrackets>True</DirBrackets>
     <InplaceRename>False</InplaceRename>
+    <InplaceRenameButton>True</InplaceRenameButton>
+    <DblClickToParent>False</DblClickToParent>
+    <DoubleClickEditPath>False</DoubleClickEditPath>
     <HotDirAddTargetOrNot>False</HotDirAddTargetOrNot>
     <HotDirFullExpandOrNot>False</HotDirFullExpandOrNot>
     <ShowPathInPopup>False</ShowPathInPopup>
     <ShowOnlyValidEnv>True</ShowOnlyValidEnv>
     <WhereToAddNewHotDir>2</WhereToAddNewHotDir>
-    <DblClickToParent>False</DblClickToParent>
-    <InplaceRenameButton>False</InplaceRenameButton>
+    <FilenameStyle>0</FilenameStyle>
+    <PathToBeRelativeTo>%COMMANDER_PATH%</PathToBeRelativeTo>
+    <PathModifierElements>0</PathModifierElements>
+    <DefaultTextEncoding>none</DefaultTextEncoding>
+    <DecimalSeparator>�</DecimalSeparator>
   </Miscellaneous>
   <Thumbnails Save="True">
     <Width>128</Width>
     <Height>128</Height>
   </Thumbnails>
+  <Description>
+    <CreateNewUnicode>True</CreateNewUnicode>
+    <DefaultEncoding>2</DefaultEncoding>
+    <CreateNewEncoding>3</CreateNewEncoding>
+  </Description>
   <AutoRefresh>
     <Options>3</Options>
     <ExcludeDirs/>
     <Mode>1</Mode>
   </AutoRefresh>
   <Icons>
+    <Theme>dctheme</Theme>
+    <ShowHiddenDimmed>False</ShowHiddenDimmed>
     <ShowMode>3</ShowMode>
-    <ShowOverlays>False</ShowOverlays>
-    <Size>16</Size>
+    <ShowOverlays>True</ShowOverlays>
+    <Size>32</Size>
+    <DiskSize>16</DiskSize>
+    <DiskAlpha>50</DiskAlpha>
+    <ToolSize>24</ToolSize>
     <Exclude>False</Exclude>
     <ExcludeDirs/>
+    <CustomIcons>0</CustomIcons>
+    <PixelsPerInch>96</PixelsPerInch>
     <ShowInMenus Enabled="False">
       <Size>16</Size>
     </ShowInMenus>
-    <Theme>dctheme</Theme>
-    <DiskSize>16</DiskSize>
-    <DiskAlpha>50</DiskAlpha>
-    <CustomIcons>0</CustomIcons>
-    <PixelsPerInch>96</PixelsPerInch>
     <ShowButtonGlyphs>0</ShowButtonGlyphs>
-    <ShowHiddenDimmed>False</ShowHiddenDimmed>
   </Icons>
   <IgnoreList Enabled="False">
     <IgnoreListFile>%DC_CONFIG_PATH%/ignorelist.txt</IgnoreListFile>
   </IgnoreList>
-  <DirectoryHotList>
-    <HotDir Name="priv" Path="/home/safjan/Documents/priv"/>
-    <HotDir Name="hiszpanski" Path="/home/safjan/Documents/priv/hiszpanski"/>
-    <HotDir Name="Downloads" Path="/home/safjan/Downloads"/>
-    <HotDir Name="books" Path="/home/safjan/Downloads/books"/>
-    <HotDir Name="inbox" Path="/home/safjan/Downloads/books/inbox"/>
-    <HotDir Name="prolog" Path="/home/safjan/projects/nokia/prolog"/>
-    <HotDir Name="notebooks" Path="/home/safjan/projects/nokia/prolog/notebooks"/>
-    <HotDir Name="src" Path="/home/safjan/projects/nokia/prolog/src"/>
-    <HotDir Name="vimwiki" Path="/home/safjan/vimwiki"/>
-    <HotDir Name="diary" Path="/home/safjan/vimwiki/diary"/>
-    <HotDir Name="Gramps" Path="/home/safjan/Gramps"/>
-    <HotDir Name="taxbreak" Path="/home/safjan/Documents/taxbreak"/>
-    <HotDir Name="Documents" Path="/home/safjan/Documents"/>
-  </DirectoryHotList>
+  <DirectoryHotList/>
   <Viewer>
     <PreviewVisible>False</PreviewVisible>
     <ImageStretch>False</ImageStretch>
-    <ImageStretchLargeOnly>False</ImageStretchLargeOnly>
+    <ImageExifRotate>True</ImageExifRotate>
+    <ImageStretchLargeOnly>True</ImageStretchLargeOnly>
+    <ImageShowTransparency>False</ImageShowTransparency>
     <ImageCenter>True</ImageCenter>
     <CopyMovePath1/>
     <CopyMovePath2/>
@@ -1081,199 +577,65 @@
     <PaintMode>0</PaintMode>
     <PaintWidth>5</PaintWidth>
     <NumberOfColumns>1</NumberOfColumns>
-    <ViewerMode>1</ViewerMode>
-    <PaintColor>255</PaintColor>
-    <BackgroundColor>0</BackgroundColor>
-    <FontColor>16777215</FontColor>
-    <TextPosition>0</TextPosition>
-    <ImageExifRotate>True</ImageExifRotate>
     <TabSpaces>8</TabSpaces>
     <MaxTextWidth>1024</MaxTextWidth>
+    <ViewerMode>1</ViewerMode>
+    <PrintMargins>200|200|200|200</PrintMargins>
+    <ShowCaret>False</ShowCaret>
+    <WrapText>False</WrapText>
+    <LeftMargin>4</LeftMargin>
+    <ExtraLineSpan>0</ExtraLineSpan>
+    <PaintColor>255</PaintColor>
+    <TextPosition>0</TextPosition>
+    <AutoCopy>True</AutoCopy>
+    <SynEditMask>*</SynEditMask>
+    <JpegQuality>80</JpegQuality>
+    <MaxCodeSize>128</MaxCodeSize>
   </Viewer>
   <Editor>
     <EditWaitTime>2000</EditWaitTime>
     <SynEditOptions>856075</SynEditOptions>
     <SynEditTabWidth>8</SynEditTabWidth>
+    <SynEditRightEdge>80</SynEditRightEdge>
+    <SynEditBlockIndent>2</SynEditBlockIndent>
+    <FindWordAtCursor>True</FindWordAtCursor>
   </Editor>
+  <Differ>
+    <IgnoreCase>False</IgnoreCase>
+    <AutoCompare>True</AutoCompare>
+    <KeepScrolling>True</KeepScrolling>
+    <PaintBackground>True</PaintBackground>
+    <LineDifferences>False</LineDifferences>
+    <IgnoreWhiteSpace>False</IgnoreWhiteSpace>
+  </Differ>
   <SyncDirs>
     <Subdirs>False</Subdirs>
     <ByContent>False</ByContent>
-    <IgnoreDate>True</IgnoreDate>
+    <Asymmetric Save="False">False</Asymmetric>
+    <IgnoreDate>False</IgnoreDate>
     <FilterCopyRight>True</FilterCopyRight>
-    <FilterEqual>False</FilterEqual>
-    <FilterNotEqual>False</FilterNotEqual>
-    <FilterCopyLeft>False</FilterCopyLeft>
+    <FilterEqual>True</FilterEqual>
+    <FilterNotEqual>True</FilterNotEqual>
+    <FilterCopyLeft>True</FilterCopyLeft>
     <FilterDuplicates>True</FilterDuplicates>
     <FilterSingles>True</FilterSingles>
-    <FileMask>*</FileMask>
-    <Asymmetric Save="False">False</Asymmetric>
+    <FileMask Save="True">*</FileMask>
+    <DateTimeFormat>yyyy.mm.dd hh:nn:ss</DateTimeFormat>
+    <FilterUnknown>True</FilterUnknown>
   </SyncDirs>
   <InternalAssociations>
-    <OfferToAddNewFileType>True</OfferToAddNewFileType>
+    <OfferToAddNewFileType>False</OfferToAddNewFileType>
     <LastCustomAction>Custom action</LastCustomAction>
     <ExpandedContextMenu>False</ExpandedContextMenu>
+    <DefaultContextActions>True</DefaultContextActions>
     <ExecuteViaShell>False</ExecuteViaShell>
     <OpenSystemWithTerminalClose>False</OpenSystemWithTerminalClose>
     <OpenSystemWithTerminalStayOpen>False</OpenSystemWithTerminalStayOpen>
     <IncludeFileAssociation>False</IncludeFileAssociation>
+    <FilenameStyle>0</FilenameStyle>
+    <PathToBeRelativeTo>%COMMANDER_PATH%</PathToBeRelativeTo>
+    <PathModifierElements>0</PathModifierElements>
   </InternalAssociations>
-  <FavoriteTabsOptions>
-    <FavoriteTabsUseRestoreExtraOptions>False</FavoriteTabsUseRestoreExtraOptions>
-    <WhereToAdd>1</WhereToAdd>
-    <Expand>True</Expand>
-    <GotoConfigAftSav>False</GotoConfigAftSav>
-    <GotoConfigAftReSav>False</GotoConfigAftReSav>
-    <DfltLeftGoTo>0</DfltLeftGoTo>
-    <DfltRightGoTo>1</DfltRightGoTo>
-    <DfltKeep>5</DfltKeep>
-    <DfltSaveDirHistory>False</DfltSaveDirHistory>
-    <FavTabsLastUniqueID>{E3B159A6-4AA3-4D53-9524-AFDB8D5EC300}</FavTabsLastUniqueID>
-  </FavoriteTabsOptions>
-  <Lua>
-    <PathToLibrary>liblua5.1.so.0</PathToLibrary>
-  </Lua>
-  <NameShortcutFile>shortcuts.scf</NameShortcutFile>
-  <LastUsedPacker>zip</LastUsedPacker>
-  <UseShellForFileOperations>False</UseShellForFileOperations>
-  <LastDoAnyCommand>cm_Refresh</LastDoAnyCommand>
-  <SearchTemplates/>
-  <ColumnsSets DefaultTitleHash="2148366439">
-    <ColumnsSet UseFrameCursor="False">
-      <Name>Default</Name>
-      <CustomView>False</CustomView>
-      <FileSystem>&lt;General&gt;</FileSystem>
-      <PixelsPerInch>96</PixelsPerInch>
-      <CursorBorder Enabled="False">
-        <Color>-2147483635</Color>
-      </CursorBorder>
-      <Columns>
-        <Column>
-          <Title>Nazwa</Title>
-          <FuncString>[DC().GETFILENAMENOEXT{}]</FuncString>
-          <Width>399</Width>
-          <Align>0</Align>
-          <Font>
-            <Name>Sans</Name>
-            <Size>12</Size>
-            <Style>0</Style>
-            <Quality>0</Quality>
-          </Font>
-          <TextColor>-2147483640</TextColor>
-          <Background>15856113</Background>
-          <Background2>15263976</Background2>
-          <MarkColor>255</MarkColor>
-          <CursorColor>-2147483635</CursorColor>
-          <CursorText>-2147483634</CursorText>
-          <InactiveCursorColor>-2147483645</InactiveCursorColor>
-          <InactiveMarkColor>255</InactiveMarkColor>
-          <UseInvertedSelection>False</UseInvertedSelection>
-          <UseInactiveSelColor>False</UseInactiveSelColor>
-          <Overcolor>True</Overcolor>
-        </Column>
-        <Column>
-          <Title>Roz.</Title>
-          <FuncString>[DC().GETFILEEXT{}]</FuncString>
-          <Width>217</Width>
-          <Align>0</Align>
-          <Font>
-            <Name>Sans</Name>
-            <Size>12</Size>
-            <Style>0</Style>
-            <Quality>0</Quality>
-          </Font>
-          <TextColor>-2147483640</TextColor>
-          <Background>15856113</Background>
-          <Background2>15263976</Background2>
-          <MarkColor>255</MarkColor>
-          <CursorColor>-2147483635</CursorColor>
-          <CursorText>-2147483634</CursorText>
-          <InactiveCursorColor>-2147483645</InactiveCursorColor>
-          <InactiveMarkColor>255</InactiveMarkColor>
-          <UseInvertedSelection>False</UseInvertedSelection>
-          <UseInactiveSelColor>False</UseInactiveSelColor>
-          <Overcolor>True</Overcolor>
-        </Column>
-        <Column>
-          <Title>Rozmiar</Title>
-          <FuncString>[DC().GETFILESIZE{}]</FuncString>
-          <Width>71</Width>
-          <Align>1</Align>
-          <Font>
-            <Name>Sans</Name>
-            <Size>12</Size>
-            <Style>0</Style>
-            <Quality>0</Quality>
-          </Font>
-          <TextColor>-2147483640</TextColor>
-          <Background>15856113</Background>
-          <Background2>15263976</Background2>
-          <MarkColor>255</MarkColor>
-          <CursorColor>-2147483635</CursorColor>
-          <CursorText>-2147483634</CursorText>
-          <InactiveCursorColor>-2147483645</InactiveCursorColor>
-          <InactiveMarkColor>255</InactiveMarkColor>
-          <UseInvertedSelection>False</UseInvertedSelection>
-          <UseInactiveSelColor>False</UseInactiveSelColor>
-          <Overcolor>True</Overcolor>
-        </Column>
-        <Column>
-          <Title>Data</Title>
-          <FuncString>[DC().GETFILETIME{}]</FuncString>
-          <Width>162</Width>
-          <Align>1</Align>
-          <Font>
-            <Name>Sans</Name>
-            <Size>12</Size>
-            <Style>0</Style>
-            <Quality>0</Quality>
-          </Font>
-          <TextColor>-2147483640</TextColor>
-          <Background>15856113</Background>
-          <Background2>15263976</Background2>
-          <MarkColor>255</MarkColor>
-          <CursorColor>-2147483635</CursorColor>
-          <CursorText>-2147483634</CursorText>
-          <InactiveCursorColor>-2147483645</InactiveCursorColor>
-          <InactiveMarkColor>255</InactiveMarkColor>
-          <UseInvertedSelection>False</UseInvertedSelection>
-          <UseInactiveSelColor>False</UseInactiveSelColor>
-          <Overcolor>True</Overcolor>
-        </Column>
-        <Column>
-          <Title>Atryb.</Title>
-          <FuncString>[DC().GETFILEATTR{}]</FuncString>
-          <Width>100</Width>
-          <Align>0</Align>
-          <Font>
-            <Name>Sans</Name>
-            <Size>12</Size>
-            <Style>0</Style>
-            <Quality>0</Quality>
-          </Font>
-          <TextColor>-2147483640</TextColor>
-          <Background>15856113</Background>
-          <Background2>15263976</Background2>
-          <MarkColor>255</MarkColor>
-          <CursorColor>-2147483635</CursorColor>
-          <CursorText>-2147483634</CursorText>
-          <InactiveCursorColor>-2147483645</InactiveCursorColor>
-          <InactiveMarkColor>255</InactiveMarkColor>
-          <UseInvertedSelection>False</UseInvertedSelection>
-          <UseInactiveSelColor>False</UseInactiveSelColor>
-          <Overcolor>True</Overcolor>
-        </Column>
-      </Columns>
-    </ColumnsSet>
-  </ColumnsSets>
-  <MultiRenamePresets>
-    <LastPreset/>
-    <Presets/>
-  </MultiRenamePresets>
-  <Description>
-    <CreateNewUnicode>True</CreateNewUnicode>
-    <DefaultEncoding>2</DefaultEncoding>
-    <CreateNewEncoding>3</CreateNewEncoding>
-  </Description>
   <TreeViewMenu>
     <UseTVMDirectoryHotlistFMC>False</UseTVMDirectoryHotlistFMC>
     <UseTVMDirectoryHotlistFDC>False</UseTVMDirectoryHotlistFDC>
@@ -1321,32 +683,248 @@
       <ShowWholeBranchIfMatch>False</ShowWholeBranchIfMatch>
     </Context06>
     <TreeViewMenuUseKeyboardShortcut>True</TreeViewMenuUseKeyboardShortcut>
-    <BackgroundColor>-2147483617</BackgroundColor>
-    <ShortcutColor>255</ShortcutColor>
-    <NormalTextColor>-2147483640</NormalTextColor>
-    <SecondaryTextColor>-2147483642</SecondaryTextColor>
-    <FoundTextColor>-2147483635</FoundTextColor>
-    <UnselectableTextColor>-2147483631</UnselectableTextColor>
-    <CursorColor>-2147483635</CursorColor>
-    <ShortcutUnderCursor>-2147483634</ShortcutUnderCursor>
-    <NormalTextUnderCursor>-2147483634</NormalTextUnderCursor>
-    <SecondaryTextUnderCursor>-2147483628</SecondaryTextUnderCursor>
-    <FoundTextUnderCursor>65535</FoundTextUnderCursor>
-    <UnselectableUnderCursor>-2147483631</UnselectableUnderCursor>
   </TreeViewMenu>
+  <FavoriteTabsOptions>
+    <FavoriteTabsUseRestoreExtraOptions>False</FavoriteTabsUseRestoreExtraOptions>
+    <WhereToAdd>1</WhereToAdd>
+    <Expand>True</Expand>
+    <GotoConfigAftSav>False</GotoConfigAftSav>
+    <GotoConfigAftReSav>False</GotoConfigAftReSav>
+    <DfltLeftGoTo>0</DfltLeftGoTo>
+    <DfltRightGoTo>1</DfltRightGoTo>
+    <DfltKeep>5</DfltKeep>
+    <DfltSaveDirHistory>False</DfltSaveDirHistory>
+    <FavTabsLastUniqueID>{0F830BFA-B090-1227-EB1E-DE200532D0E9}</FavTabsLastUniqueID>
+  </FavoriteTabsOptions>
+  <Lua>
+    <PathToLibrary>liblua5.1.dylib</PathToLibrary>
+  </Lua>
+  <NameShortcutFile>shortcuts.scf</NameShortcutFile>
   <HotKeySortOrder>0</HotKeySortOrder>
   <UseEnterToCloseHotKeyEditor>True</UseEnterToCloseHotKeyEditor>
+  <LastUsedPacker>zip</LastUsedPacker>
+  <LastDoAnyCommand>cm_Refresh</LastDoAnyCommand>
   <MarkMaskCaseSensitive>False</MarkMaskCaseSensitive>
   <MarkMaskIgnoreAccents>False</MarkMaskIgnoreAccents>
   <MarkMaskFilterWindows>False</MarkMaskFilterWindows>
   <MarkShowWantedAttribute>False</MarkShowWantedAttribute>
   <MarkDefaultWantedAttribute/>
   <MarkLastWantedAttribute/>
-  <Differ>
-    <Colors>
-      <Added>11206570</Added>
-      <Deleted>11184895</Deleted>
-      <Modified>16755370</Modified>
-    </Colors>
-  </Differ>
+  <SearchTemplates/>
+  <ColumnsSets DefaultTitleHash="540805403">
+    <ColumnsSet UseFrameCursor="False">
+      <Name>Default</Name>
+      <Unique>ECC3393E-75D5-4A9B-89CE-4CDF396E712B</Unique>
+      <CustomView>False</CustomView>
+      <FileSystem>&lt;General&gt;</FileSystem>
+      <PixelsPerInch>96</PixelsPerInch>
+      <CursorBorder Enabled="False"/>
+      <Columns>
+        <Column>
+          <Title>Name</Title>
+          <Unique>1C273988-A084-07FC-455F-6D8E7EF4F58B</Unique>
+          <FuncString>[DC().GETFILENAMENOEXT{}]</FuncString>
+          <Width>689</Width>
+          <Align>0</Align>
+          <Font>
+            <Name>default</Name>
+            <Size>10</Size>
+            <Style>1</Style>
+            <Quality>0</Quality>
+          </Font>
+          <UseInvertedSelection>False</UseInvertedSelection>
+          <UseInactiveSelColor>False</UseInactiveSelColor>
+          <Overcolor>True</Overcolor>
+        </Column>
+        <Column>
+          <Title>Ext</Title>
+          <Unique>19573A65-B3DE-346D-22CF-28AC96577C62</Unique>
+          <FuncString>[DC().GETFILEEXT{}]</FuncString>
+          <Width>193</Width>
+          <Align>0</Align>
+          <Font>
+            <Name>default</Name>
+            <Size>10</Size>
+            <Style>1</Style>
+            <Quality>0</Quality>
+          </Font>
+          <UseInvertedSelection>False</UseInvertedSelection>
+          <UseInactiveSelColor>False</UseInactiveSelColor>
+          <Overcolor>True</Overcolor>
+        </Column>
+        <Column>
+          <Title>Size</Title>
+          <Unique>2CA31E9C-6CB4-02AD-6B26-BEF836EDDB54</Unique>
+          <FuncString>[DC().GETFILESIZE{}]</FuncString>
+          <Width>70</Width>
+          <Align>1</Align>
+          <Font>
+            <Name>default</Name>
+            <Size>10</Size>
+            <Style>1</Style>
+            <Quality>0</Quality>
+          </Font>
+          <UseInvertedSelection>False</UseInvertedSelection>
+          <UseInactiveSelColor>False</UseInactiveSelColor>
+          <Overcolor>True</Overcolor>
+        </Column>
+        <Column>
+          <Title>Date</Title>
+          <Unique>5AC64D8D-0289-26E8-5791-238D5BE203EA</Unique>
+          <FuncString>[DC().GETFILETIME{}]</FuncString>
+          <Width>140</Width>
+          <Align>1</Align>
+          <Font>
+            <Name>default</Name>
+            <Size>10</Size>
+            <Style>1</Style>
+            <Quality>0</Quality>
+          </Font>
+          <UseInvertedSelection>False</UseInvertedSelection>
+          <UseInactiveSelColor>False</UseInactiveSelColor>
+          <Overcolor>True</Overcolor>
+        </Column>
+        <Column>
+          <Title>Attr</Title>
+          <Unique>7B487CA1-D1C5-51B1-23DF-71852EAE185F</Unique>
+          <FuncString>[DC().GETFILEATTR{}]</FuncString>
+          <Width>100</Width>
+          <Align>0</Align>
+          <Font>
+            <Name>default</Name>
+            <Size>10</Size>
+            <Style>1</Style>
+            <Quality>0</Quality>
+          </Font>
+          <UseInvertedSelection>False</UseInvertedSelection>
+          <UseInactiveSelColor>False</UseInactiveSelColor>
+          <Overcolor>True</Overcolor>
+        </Column>
+      </Columns>
+    </ColumnsSet>
+  </ColumnsSets>
+  <Plugins>
+    <DsxPlugins/>
+    <WcxPlugins>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>zip</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>735</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>jar</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>990</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>tar</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>223</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>bz2</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>91</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>tbz</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>95</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>gz</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>91</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>tgz</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>95</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>lzma</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>1</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>tlz</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/zip/zip.wcx</Path>
+        <Flags>95</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>cpio</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/cpio/cpio.wcx</Path>
+        <Flags>4</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>deb</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/deb/deb.wcx</Path>
+        <Flags>4</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>rpm</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/rpm/rpm.wcx</Path>
+        <Flags>4</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>rar</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/unrar/unrar.wcx</Path>
+        <Flags>607</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>b64</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/base64/base64.wcx</Path>
+        <Flags>1</Flags>
+      </WcxPlugin>
+      <WcxPlugin Enabled="True">
+        <ArchiveExt>b64</ArchiveExt>
+        <Path>%commander_path%/plugins/wcx/base64/base64.wcx</Path>
+        <Flags>1</Flags>
+      </WcxPlugin>
+    </WcxPlugins>
+    <WdxPlugins>
+      <WdxPlugin>
+        <Name>deb_wdx</Name>
+        <Path>%commander_path%/plugins/wdx/deb_wdx/deb_wdx.wdx</Path>
+        <DetectString>EXT="DEB"</DetectString>
+      </WdxPlugin>
+      <WdxPlugin>
+        <Name>rpm_wdx</Name>
+        <Path>%commander_path%/plugins/wdx/rpm_wdx/rpm_wdx.wdx</Path>
+        <DetectString>EXT="RPM"</DetectString>
+      </WdxPlugin>
+      <WdxPlugin>
+        <Name>audioinfo</Name>
+        <Path>%commander_path%/plugins/wdx/audioinfo/audioinfo.wdx</Path>
+        <DetectString>(EXT="MP3") | (EXT="MP2") | (EXT="MP1") | (EXT="OGG") | (EXT="WMA") | (EXT="WAV") | (EXT="VQF") | (EXT="AAC") | (EXT="APE") | (EXT="MPC") | (EXT="FLAC") | (EXT="CDA") | (EXT="TTA") | (EXT="AC3") | (EXT="DTS") | (EXT="WV") | (EXT="WVC") | (EXT="OFR") | (EXT="OFS") | (EXT="M4A") | (EXT="MP4") | (EXT="OPUS")</DetectString>
+      </WdxPlugin>
+    </WdxPlugins>
+    <WfxPlugins>
+      <WfxPlugin Enabled="True">
+        <Name>FTP</Name>
+        <Path>%commander_path%/plugins/wfx/ftp/ftp.wfx</Path>
+      </WfxPlugin>
+    </WfxPlugins>
+    <WlxPlugins>
+      <WlxPlugin Enabled="True">
+        <Name>MacPreview</Name>
+        <Path>%commander_path%/plugins/wlx/MacPreview/MacPreview.wlx</Path>
+        <DetectString>(EXT!="")</DetectString>
+      </WlxPlugin>
+    </WlxPlugins>
+    <TweakPluginWidth0>0</TweakPluginWidth0>
+    <TweakPluginHeight0>0</TweakPluginHeight0>
+    <TweakPluginWidth1>0</TweakPluginWidth1>
+    <TweakPluginHeight1>0</TweakPluginHeight1>
+    <TweakPluginWidth2>0</TweakPluginWidth2>
+    <TweakPluginHeight2>0</TweakPluginHeight2>
+    <TweakPluginWidth3>0</TweakPluginWidth3>
+    <TweakPluginHeight3>0</TweakPluginHeight3>
+    <TweakPluginWidth4>0</TweakPluginWidth4>
+    <TweakPluginHeight4>0</TweakPluginHeight4>
+    <AutoTweak>False</AutoTweak>
+    <WCXConfigViewMode>0</WCXConfigViewMode>
+    <PluginFilenameStyle>0</PluginFilenameStyle>
+    <PluginPathToBeRelativeTo>%COMMANDER_PATH%</PluginPathToBeRelativeTo>
+  </Plugins>
 </doublecmd>
