@@ -141,8 +141,8 @@
     </LogWindow>
     <UseFrameCursor>False</UseFrameCursor>
     <Foreground>-2147483640</Foreground>
-    <Background>13953264</Background>
-    <Background2>13426662</Background2>
+    <Background>-2147483643</Background>
+    <Background2>-2147483643</Background2>
     <Cursor>-2147483635</Cursor>
     <CursorText>-2147483634</CursorText>
     <Mark>255</Mark>
