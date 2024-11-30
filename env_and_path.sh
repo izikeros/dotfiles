@@ -5,6 +5,9 @@ export PATH="$HOME/scripts/my_scripts:$PATH"
 export PATH="$HOME/scripts/runonce-scripts:$PATH"
 export PATH="$HOME/scripts/runonce-scripts/disabled:$PATH"
 
+# for numpy/pandas to use all 16 cores
+export NUMEXPR_MAX_THREADS=16
+
 export BROWSER="brave"
 export PAGER="less"
 #export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
