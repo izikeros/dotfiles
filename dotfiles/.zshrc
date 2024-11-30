@@ -24,7 +24,11 @@ function zsrc() {
     autoload -U compinit zrecompile
     compinit -d "$cache/zcomp-$HOST"
     for f in ${ZDOTDIR:-$HOME}/.zshrc "$cache/zcomp-$HOST"; do
-        zrecompile -p "$f" && command rm -f "$f".zwc.old
+        if zrecompile -p "$f"; then
+            command rm -f "$f".zwc.old
+        else
+            echo "Error recompiling $f" >&2
+        fi
     done
     source "${ZDOTDIR:-$HOME}"/.zshrc
 }
@@ -52,8 +56,12 @@ dir_path_additions=(
     "$HOME/.cargo/bin/"
     "/Applications/Docker.app/Contents/Resources/bin"
     "/usr/local/opt/coreutils/libexec/gnubin"
-    "/Applications/PyCharm.app/Contents/MacOS"
-    # Add other paths here
+    "/usr/local/opt/ccache/libexec"
+    "/Applications/PyCharm.app/Contents/MacOS"  # pycharm
+    "/Applications/VLC.app/Contents/MacOS"  # VLC
+    "/Applications/Double Commander.app/Contents/MacOS" # doublecmd
+    "/Applications/calibre.app/Contents/MacOS" # calibre ebook-convert
+    "/Applications/Sublime Merge.app/Contents/MacOS" # sublime_merge
 )
 
 for path_dir in "${dir_path_additions[@]}"; do
@@ -100,14 +108,6 @@ fi
 # The -z means use zsh (rather than ksh) style. See also the functions command
 autoload -Uz compinit
 compinit
-
-# start zgen
-if [ -f ~/.zgen-setup ]; then
-  source ~/.zgen-setup
-fi
-
-
-
 
 # Global Alias Expansion
 #
@@ -273,42 +273,83 @@ pyenv-virtualenv() {
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ----- Lazy load mamba
-mamba() {
-  # Unset this function to avoid recursion
-  unfunction mamba
+# Set up mamba environment variables
+export MAMBA_EXE='/usr/local/bin/micromamba'
+export MAMBA_ROOT_PREFIX="$HOME/projects/ext/verba/..."
 
-  # Set up mamba environment variables
-  export MAMBA_EXE='/usr/local/bin/micromamba'
-  export MAMBA_ROOT_PREFIX='/Users/krystian.safjan/projects/ext/verba/...'
-
-  # Initialize mamba
-  __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+# Initialize mamba once
+if [ -x "$MAMBA_EXE" ]; then
+  __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2>/dev/null)"
   if [ $? -eq 0 ]; then
     eval "$__mamba_setup"
   else
-    alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+    alias micromamba="$MAMBA_EXE"  # Fallback alias if setup fails
   fi
   unset __mamba_setup
+else
+  echo "Warning: Mamba executable not found at $MAMBA_EXE" >&2
+fi
 
-  # Call mamba with the provided arguments
+# Define lazy-loading function for mamba
+mamba() {
+  unfunction mamba  # Avoid recursion
   $MAMBA_EXE "$@"
 }
 
-# Also create a function for micromamba to ensure it's initialized
+# Ensure micromamba calls mamba
 micromamba() {
   mamba "$@"
 }
+
 # ----- end of mamba
 
+# Source Cargo environment
 . "$HOME/.cargo/env"
 
+# Initialize direnv
 eval "$(direnv hook zsh)"
 
-source /Users/krystian.safjan/.config/broot/launcher/bash/br
+# Source broot launcher
+source "$HOME/.config/broot/launcher/bash/br"
 
 # Long running processes should return time after they complete. Specified
 # in seconds.
 REPORTTIME=2
 TIMEFMT="%U user %S system %P cpu %*Es total"
 
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+zinit load zdharma-continuum/history-search-multi-word    
+# zinit load zsh-users/zsh-history-substring-search
+zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+# git - provides aliases (gl, gcb, ...) and functions (gbda - Deletes all merged branches,...)
+#   See: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
+zinit snippet OMZ::plugins/git
+# zinit snippet OMZ::plugins/docker
+zinit light djui/alias-tips
+
+### End of Zinit's installer chunk
+# Uncomment the following line to enable zsh profiling
 # zprof # end of profiling
