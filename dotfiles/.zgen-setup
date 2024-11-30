@@ -64,7 +64,7 @@ load-starter-plugin-list() {
   # zgen load unixorn/tumult.plugin.zsh
 
   # Warn you when you run a command that you've set an alias for
-  zgen load djui/alias-tips
+  #zgen load djui/alias-tips
 
   # Add collection of git helper scripts
   # - commented out since I don't know the commands there
@@ -106,7 +106,7 @@ load-starter-plugin-list() {
   # utilities distributed with pip.
   #zgen load sharat87/pip-app
 
-  zgen load chrissicool/zsh-256color
+  #zgen load chrissicool/zsh-256color
 
   # Load more completion files for zsh from the zsh-lovers github repo
   # zgen load zsh-users/zsh-completions src
@@ -127,10 +127,10 @@ load-starter-plugin-list() {
   # adding a bit of color and some git status information on files and directories
   #zgen load supercrabtree/k
 
-  zgen load romkatv/powerlevel10k powerlevel10k
+  # zgen load romkatv/powerlevel10k powerlevel10k
   # zgen load zdharma/zsh-diff-so-fancy
   # zgen load z-shell/zsh-diff-so-fancy
-  zgen load zdharma-continuum/zsh-diff-so-fancy
+  # zgen load zdharma-continuum/zsh-diff-so-fancy
   zgen save
 }
 

@@ -62,12 +62,12 @@
     #   When you run this command, it will show you the difference between the current
     #   local branch and its remote counterpart. The @{upstream} notation is a shortcut
     #   that Git provides, which refers to the remote tracking branch of the current
-    #   local branch. This command is similar to running git diff HEAD origin/<current_branch_name>.
+    #   local branch. This command is similar to running git diff HEAD origin/<current_branch_name>:.
     dup = !git --no-pager diff @{upstream}
 
-    # show the commit log for the difference between the current branch and its remote counterpart:
+    # show the commit log for the difference between the current branch and its remote counterpart
     lg-up = !git --no-pager log @{upstream}.. --abbrev-commit --pretty=oneline
-
+    lg-down = !git --no-pager log ..@{upstream} --abbrev-commit --pretty=oneline
 
     # baseline log - showing tree, relative date, without pager, last 15 commits
     lg = !git --no-pager log \
@@ -179,6 +179,12 @@
         --all \
         --since='1 week' \
         --no-merges
+
+    # list commits that are going to be pushed to remote repo
+    # @{u} represents the upstream branch of the current branch, so git log @{u}..
+    # lists commits on your current branch that haven’t been pushed yet.
+    # for some reason this alias don't work
+    outgoing = log --oneline {u}..
 
     taxbreak = log \
         --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" \
