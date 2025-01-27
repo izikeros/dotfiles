@@ -9,9 +9,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # not running interactively then bail
 [[ $- != *i* ]] && return
@@ -176,7 +176,7 @@ source ~/dotfiles/env_and_path.sh
 # requires package database created by package pkgfile
 # $ pacman -S pkgfile
 # $ pkgfile -u
-[ -f /usr/share/doc/pkgfile/command-not-found.zsh ] && source /usr/share/doc/pkgfile/command-not-found.zsh
+#[ -f /usr/share/doc/pkgfile/command-not-found.zsh ] && source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # fzf - fuzzy find in history
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -186,8 +186,11 @@ if [ "$(command -v fasd)" ]; then
     eval "$(fasd --init auto)"
 	unalias s
 fi
+
+# autojump
 #[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
+# my runonce scripts
 #"$HOME/scripts/my_scripts/runonce.sh" "$HOME/scripts/my_scripts/runonce-all.sh"
 
 # --------------
@@ -237,16 +240,19 @@ export POWERLEVEL9K_CONDA_BACKGROUND=none
 export POWERLEVEL9K_SHOW_RULER=false
 export POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
 export POWERLEVEL9K_SHOW_CHANGESET=true # git hash
-# Left, right prompt segments
+# # Left, right prompt segments
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh virtualenv dir vcs)
 export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(aws) # dropbox, add custom_git_user_email
+
+# -------------
+# Misc
+# -------------
 
 # Add my GitHub username as env variable for script that gets my starred projects
 export GITHUB_USER=izikeros
 
 # Note: deduplication takes quite long. Check if deduplications are needed (usually not)
 #dedupe_path
-
 
 # Lazy load pyenv
 pyenv() {
@@ -269,39 +275,36 @@ pyenv-virtualenv() {
 
 #export DOCKER_HOST=unix://$HOME/docker.sock
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# # ----- Lazy load mamba
+# # Set up mamba environment variables
+# export MAMBA_EXE='/usr/local/bin/micromamba'
+# export MAMBA_ROOT_PREFIX="$HOME/projects/ext/verba/..."
 
-# ----- Lazy load mamba
-# Set up mamba environment variables
-export MAMBA_EXE='/usr/local/bin/micromamba'
-export MAMBA_ROOT_PREFIX="$HOME/projects/ext/verba/..."
+# # Initialize mamba once
+# if [ -x "$MAMBA_EXE" ]; then
+#   __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2>/dev/null)"
+#   if [ $? -eq 0 ]; then
+#     eval "$__mamba_setup"
+#   else
+#     alias micromamba="$MAMBA_EXE"  # Fallback alias if setup fails
+#   fi
+#   unset __mamba_setup
+# else
+#   echo "Warning: Mamba executable not found at $MAMBA_EXE" >&2
+# fi
 
-# Initialize mamba once
-if [ -x "$MAMBA_EXE" ]; then
-  __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2>/dev/null)"
-  if [ $? -eq 0 ]; then
-    eval "$__mamba_setup"
-  else
-    alias micromamba="$MAMBA_EXE"  # Fallback alias if setup fails
-  fi
-  unset __mamba_setup
-else
-  echo "Warning: Mamba executable not found at $MAMBA_EXE" >&2
-fi
+# # Define lazy-loading function for mamba
+# mamba() {
+#   unfunction mamba  # Avoid recursion
+#   $MAMBA_EXE "$@"
+# }
 
-# Define lazy-loading function for mamba
-mamba() {
-  unfunction mamba  # Avoid recursion
-  $MAMBA_EXE "$@"
-}
+# # Ensure micromamba calls mamba
+# micromamba() {
+#   mamba "$@"
+# }
 
-# Ensure micromamba calls mamba
-micromamba() {
-  mamba "$@"
-}
-
-# ----- end of mamba
+# # ----- end of mamba
 
 # Source Cargo environment
 . "$HOME/.cargo/env"
@@ -339,7 +342,7 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust
 
-zinit load zdharma-continuum/history-search-multi-word    
+zinit load zdharma-continuum/history-search-multi-word
 # zinit load zsh-users/zsh-history-substring-search
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
