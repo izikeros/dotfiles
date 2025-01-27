@@ -417,13 +417,13 @@ alias gpv="GIT_SSH_COMMAND=\"ssh -v\" git push"
 alias gg="git gui"
 
 # open git gui for single commit
-alias gg1="git gui citool"
+#alias gg1="git gui citool"
 
 # list branches you worked on recently
 alias recent-branches="git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format=\"%(refname:short)\""
 
 # use the script to display branches info
-alias bb="better-branch.sh"
+alias bb="better-branch-fast.sh"
 
 # list git repos in current directory
 alias git-repos="find ./ -name \"*.git\" -type d | sed 's/\.git$//'"
@@ -811,6 +811,8 @@ alias rmpycache="find . -type d -name '__pycache__' -exec rm -rf {} +"
 # open the file selected with fzf
 alias fzopen='open $(fzf)'
 
+# run winamp (with wine)
+alias winamp="/Users/krystian.safjan/.wine/drive_c/Program Files (x86)/Winamp/winamp.exe"
 
 # adjust color theme that is good for python on dark background
 alias bat="bat --theme=TwoDark"
