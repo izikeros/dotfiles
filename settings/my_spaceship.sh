@@ -1,3 +1,12 @@
+# integration with .zshrc:
+# ------------------------
+# Zsh plugin management (if using zinit)
+# zinit light spaceship-prompt/spaceship-prompt
+#
+# Spaceship Prompt Configuration
+# source /path/to/these/spaceship/settings.zsh  # Or directly paste the configurations
+
+
 # ORDER
 SPACESHIP_PROMPT_ORDER=(
   time
