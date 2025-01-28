@@ -350,6 +350,9 @@ zinit light zsh-users/zsh-completions
 # git - provides aliases (gl, gcb, ...) and functions (gbda - Deletes all merged branches,...)
 #   See: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
 zinit snippet OMZ::plugins/git
+# replace unwanted alias
+alias gg="git gui"
+
 # zinit snippet OMZ::plugins/docker
 zinit light djui/alias-tips
 
